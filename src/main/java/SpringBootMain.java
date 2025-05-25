@@ -25,7 +25,7 @@ import cronapp.framework.boot.CronappInitializer;
 public class SpringBootMain extends CronappInitializer {
 
     static {
-        TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+        TimeZone.setDefault(TimeZone.getTimeZone("Brazil/West"));
     }
 
 	public static void main(String[] args) {
