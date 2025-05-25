@@ -1,0 +1,191 @@
+{
+  "customId": "query167731",
+  "queryName": "Produto para o 2° Formulario",
+  "sourceType": "entityFullName",
+  "baseEntity": null,
+  "blockly": null,
+  "entitySimpleName": "Produto",
+  "entityFullName": "app_cont.entity.Produto",
+  "query": {
+    "isValid": true,
+    "isEmpty": false,
+    "operationType": "object",
+    "isNativeQuery": false,
+    "namespace": "app_cont",
+    "type": "select",
+    "rulesEntity": [
+      {
+        "entity": "Produto",
+        "namespace": "app_cont.entity.Produto",
+        "dataSourceOptions": {
+          "id": "app_cont.Produto",
+          "customId": "Produto",
+          "customQueryName": "app_cont.Produto",
+          "paramValues": [],
+          "entityFullName": "app_cont.entity.Produto",
+          "schemaFields": [
+            {
+              "name": "id",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "codPsv",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "codBar",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "codGpr",
+              "type": "Int64",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "codSbg",
+              "type": "Int64",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "custTab",
+              "type": "Double",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "descGpr",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "descPsv",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "descSbg",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "_objectKey",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": true
+            }
+          ],
+          "type": "entity",
+          "hasError": false,
+          "customName": "Produto",
+          "fullName": "app_cont.entity.Produto",
+          "labelName": "app_cont.entity.Produto (Produto)"
+        },
+        "alias": "p"
+      }
+    ],
+    "rulesSelect": [
+      {
+        "func": "get",
+        "field": "p.codBar",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "p.codPsv",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "p.descPsv",
+        "type": "string"
+      }
+    ],
+    "rulesJoin": [],
+    "rulesGroupBy": [],
+    "rulesHaving": [],
+    "rulesOrderBy": [],
+    "rules": {
+      "condition": "AND",
+      "rules": [],
+      "not": false,
+      "valid": true
+    },
+    "isRawSql": false,
+    "multiTenant": false,
+    "paginatorAutomatic": false,
+    "pagination": false
+  },
+  "queryParamsValues": [],
+  "verbs": {
+    "GET": true,
+    "GETAuthorities": null,
+    "POST": true,
+    "POSTAuthorities": null,
+    "PUT": true,
+    "PUTAuthorities": null,
+    "DELETE": true,
+    "DELETEAuthorities": null,
+    "FILTER": true,
+    "FILTERAuthorities": null,
+    "COUNT": true,
+    "COUNTAuthorities": null
+  },
+  "events": {
+    "beforeInsert": null,
+    "beforeUpdate": null,
+    "beforeDelete": null,
+    "afterInsert": null,
+    "afterUpdate": null,
+    "afterDelete": null,
+    "onNavigate": null,
+    "onAuthorize": null,
+    "onError": null
+  },
+  "defaultValues": {
+    "codBar": null,
+    "codPsv": null,
+    "descPsv": null
+  },
+  "defaultValuesProperties": {
+    "codBar": null,
+    "codPsv": null,
+    "descPsv": null
+  },
+  "security": {
+    "codBar": null,
+    "codPsv": null,
+    "descPsv": null
+  },
+  "calcFields": {},
+  "calcFieldsSecurity": {},
+  "calcFieldsProperties": {},
+  "headers": {},
+  "errorHandles": {
+    "primaryKey": null,
+    "foreignKey": null
+  },
+  "serviceUrl": "api/cronapi/odata/v2/app_cont/query167731/",
+  "audit": false,
+  "swagger": false
+}

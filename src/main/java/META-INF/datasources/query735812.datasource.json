@@ -1,0 +1,185 @@
+{
+  "customId": "query735812",
+  "queryName": "Ordenar Produto do 2° Formulario Pela Data",
+  "sourceType": "entityFullName",
+  "baseEntity": null,
+  "blockly": null,
+  "entitySimpleName": "Formulario2",
+  "entityFullName": "app_cont.entity.Formulario2",
+  "query": {
+    "isValid": true,
+    "isEmpty": false,
+    "operationType": "object",
+    "isNativeQuery": false,
+    "namespace": "app_cont",
+    "type": "select",
+    "rulesEntity": [
+      {
+        "entity": "Formulario2",
+        "namespace": "app_cont.entity.Formulario2",
+        "dataSourceOptions": {
+          "id": "app_cont.Formulario2",
+          "customId": "Formulario2",
+          "customQueryName": "app_cont.Formulario2",
+          "paramValues": [],
+          "entityFullName": "app_cont.entity.Formulario2",
+          "schemaFields": [
+            {
+              "name": "id",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "prod",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "quant",
+              "type": "Double",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "cont",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "data",
+              "type": "DateTime",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "_objectKey",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": true
+            }
+          ],
+          "type": "entity",
+          "hasError": false,
+          "customName": "Formulario2",
+          "fullName": "app_cont.entity.Formulario2",
+          "labelName": "app_cont.entity.Formulario2 (Formulario2)"
+        },
+        "alias": "f"
+      }
+    ],
+    "rulesSelect": [
+      {
+        "func": "get",
+        "field": "f.prod",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "f.quant",
+        "type": "double"
+      },
+      {
+        "func": "get",
+        "field": "f.data",
+        "type": "date"
+      }
+    ],
+    "rulesJoin": [],
+    "rulesGroupBy": [],
+    "rulesHaving": [],
+    "rulesOrderBy": [
+      {
+        "func": "get",
+        "field": "f.data",
+        "order": "desc"
+      }
+    ],
+    "rules": {
+      "condition": "AND",
+      "rules": [
+        {
+          "id": "f.cont",
+          "field": "f.cont",
+          "type": "string",
+          "input": "text",
+          "operator": "equal",
+          "valueType": "param",
+          "value": ":cont",
+          "valueIsField": false
+        }
+      ],
+      "not": false,
+      "valid": true
+    },
+    "isRawSql": false,
+    "multiTenant": false,
+    "paginatorAutomatic": false,
+    "pagination": false
+  },
+  "queryParamsValues": [
+    {
+      "fieldName": "cont",
+      "fieldValue": ""
+    }
+  ],
+  "verbs": {
+    "GET": true,
+    "GETAuthorities": null,
+    "POST": true,
+    "POSTAuthorities": null,
+    "PUT": true,
+    "PUTAuthorities": null,
+    "DELETE": true,
+    "DELETEAuthorities": null,
+    "FILTER": true,
+    "FILTERAuthorities": null,
+    "COUNT": true,
+    "COUNTAuthorities": null
+  },
+  "events": {
+    "beforeInsert": null,
+    "beforeUpdate": null,
+    "beforeDelete": null,
+    "afterInsert": null,
+    "afterUpdate": null,
+    "afterDelete": null,
+    "onNavigate": null,
+    "onAuthorize": null,
+    "onError": null
+  },
+  "defaultValues": {
+    "prod": null,
+    "quant": null,
+    "data": null
+  },
+  "defaultValuesProperties": {
+    "prod": null,
+    "quant": null,
+    "data": null
+  },
+  "security": {
+    "prod": null,
+    "quant": null,
+    "data": null
+  },
+  "calcFields": {},
+  "calcFieldsSecurity": {},
+  "calcFieldsProperties": {},
+  "headers": {},
+  "errorHandles": {
+    "primaryKey": null,
+    "foreignKey": null
+  },
+  "serviceUrl": "api/cronapi/odata/v2/app_cont/query735812/",
+  "audit": false,
+  "swagger": false
+}

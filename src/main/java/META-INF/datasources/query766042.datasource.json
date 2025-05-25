@@ -1,0 +1,76 @@
+{
+  "customId": "query766042",
+  "queryName": "Confronto dos Formularios",
+  "sourceType": "entityFullName",
+  "baseEntity": null,
+  "blockly": null,
+  "entitySimpleName": "Formulario1",
+  "entityFullName": "app_cont.entity.Formulario1",
+  "query": {
+    "isEmpty": true,
+    "isRawSql": true,
+    "isNativeQuery": false,
+    "namespace": "app_cont",
+    "sqlContent": "select \n\tf.prod, \n\tf.quant, \n\tfo.quant \nfrom \n\tFormulario1 f \njoin\n\tFormulario2 fo on (f.prod \u003d fo.prod) \nwhere \n\tf.cont \u003d :cont AND \n\tf.quant \u003d fo.quant",
+    "multiTenant": false,
+    "paginatorAutomatic": false,
+    "pagination": false
+  },
+  "queryParamsValues": [
+    {
+      "fieldName": "cont",
+      "fieldValue": ""
+    }
+  ],
+  "verbs": {
+    "GET": true,
+    "GETAuthorities": null,
+    "POST": true,
+    "POSTAuthorities": null,
+    "PUT": true,
+    "PUTAuthorities": null,
+    "DELETE": true,
+    "DELETEAuthorities": null,
+    "FILTER": true,
+    "FILTERAuthorities": null,
+    "COUNT": true,
+    "COUNTAuthorities": null
+  },
+  "events": {
+    "beforeInsert": null,
+    "beforeUpdate": null,
+    "beforeDelete": null,
+    "afterInsert": null,
+    "afterUpdate": null,
+    "afterDelete": null,
+    "onNavigate": null,
+    "onAuthorize": null,
+    "onError": null
+  },
+  "defaultValues": {
+    "prod": null,
+    "quant": null,
+    "quant_1": null
+  },
+  "defaultValuesProperties": {
+    "prod": null,
+    "quant": null,
+    "quant_1": null
+  },
+  "security": {
+    "prod": null,
+    "quant": null,
+    "quant_1": null
+  },
+  "calcFields": {},
+  "calcFieldsSecurity": {},
+  "calcFieldsProperties": {},
+  "headers": {},
+  "errorHandles": {
+    "primaryKey": null,
+    "foreignKey": null
+  },
+  "serviceUrl": "api/cronapi/odata/v2/app_cont/query766042/",
+  "audit": false,
+  "swagger": false
+}

@@ -23,7 +23,7 @@ import cronapp.framework.core.persistence.*;
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("app_cont.entity.Formulario2")
-@CronappTable(role=CronappTableRole.CLASS)
+@CronappTable(role=CronappTableRole.ASSOCIATION_CLASS)
 public class Formulario2 implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -43,10 +43,10 @@ public class Formulario2 implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Produto")
-    @Column(name = "prod", nullable = true, unique = false, insertable=true, updatable=true)
+    @ManyToOne
+    @JoinColumn(name="prod", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
         
-        private java.lang.String prod;
+        private Produto prod;
 
 
     /**
@@ -61,10 +61,20 @@ public class Formulario2 implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Contagem")
-    @Column(name = "cont", nullable = true, unique = false, insertable=true, updatable=true)
+    @ManyToOne
+    @JoinColumn(name="cont", nullable = true, referencedColumnName = "id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "FORMULARIO2_CONT_CONTAGEM_ID", foreignKeyDefinition = "FOREIGN KEY (cont) REFERENCES CONTAGEM (id) ON DELETE CASCADE"))
         
-        private java.lang.String cont;
+        private Contagem cont;
+
+
+    /**
+    * @generated
+    */
+    @Temporal(TemporalType.TIMESTAMP)
+    @CronappColumn(attributeType="DATETIME", label="Data")
+    @Column(name = "data", nullable = true, unique = false, insertable=true, updatable=true)
+        
+        private java.util.Date data;
 
 
     /**
@@ -97,7 +107,7 @@ public class Formulario2 implements Serializable {
     * return prod
     * @generated
     */
-    public java.lang.String getProd() {
+    public Produto getProd() {
         return this.prod;
     }
 
@@ -106,7 +116,7 @@ public class Formulario2 implements Serializable {
     * @param prod prod
     * @generated
     */
-    public Formulario2 setProd(java.lang.String prod) {
+    public Formulario2 setProd(Produto prod) {
         this.prod = prod;
         return this;
     }
@@ -133,7 +143,7 @@ public class Formulario2 implements Serializable {
     * return cont
     * @generated
     */
-    public java.lang.String getCont() {
+    public Contagem getCont() {
         return this.cont;
     }
 
@@ -142,8 +152,26 @@ public class Formulario2 implements Serializable {
     * @param cont cont
     * @generated
     */
-    public Formulario2 setCont(java.lang.String cont) {
+    public Formulario2 setCont(Contagem cont) {
         this.cont = cont;
+        return this;
+    }
+    /**
+    * Obtém data
+    * return data
+    * @generated
+    */
+    public java.util.Date getData() {
+        return this.data;
+    }
+
+    /**
+    * Define data
+    * @param data data
+    * @generated
+    */
+    public Formulario2 setData(java.util.Date data) {
+        this.data = data;
         return this;
     }
 

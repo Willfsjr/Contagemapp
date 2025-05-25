@@ -52,10 +52,10 @@ public class Contagem implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Loja")
-    @Column(name = "loja", nullable = true, unique = false, insertable=true, updatable=true)
+    @ManyToOne
+    @JoinColumn(name="loja", nullable = true, referencedColumnName = "id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "CONTAGEM_LOJA_LOJA_ID", foreignKeyDefinition = "FOREIGN KEY (loja) REFERENCES LOJA (id) ON DELETE CASCADE"))
         
-        private java.lang.String loja;
+        private Loja loja;
 
 
     /**
@@ -65,6 +65,16 @@ public class Contagem implements Serializable {
     @Column(name = "ativa", nullable = true, unique = false, insertable=true, updatable=true)
         
         private byte[] ativa;
+
+
+    /**
+    * @generated
+    */
+    @Temporal(TemporalType.TIMESTAMP)
+    @CronappColumn(attributeType="DATETIME", label="Data")
+    @Column(name = "data", nullable = true, unique = false, insertable=true, updatable=true)
+        
+        private java.util.Date data;
 
 
     /**
@@ -115,7 +125,7 @@ public class Contagem implements Serializable {
     * return loja
     * @generated
     */
-    public java.lang.String getLoja() {
+    public Loja getLoja() {
         return this.loja;
     }
 
@@ -124,7 +134,7 @@ public class Contagem implements Serializable {
     * @param loja loja
     * @generated
     */
-    public Contagem setLoja(java.lang.String loja) {
+    public Contagem setLoja(Loja loja) {
         this.loja = loja;
         return this;
     }
@@ -144,6 +154,24 @@ public class Contagem implements Serializable {
     */
     public Contagem setAtiva(byte[] ativa) {
         this.ativa = ativa;
+        return this;
+    }
+    /**
+    * Obtém data
+    * return data
+    * @generated
+    */
+    public java.util.Date getData() {
+        return this.data;
+    }
+
+    /**
+    * Define data
+    * @param data data
+    * @generated
+    */
+    public Contagem setData(java.util.Date data) {
+        this.data = data;
         return this;
     }
 
