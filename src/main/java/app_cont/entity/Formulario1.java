@@ -44,27 +44,27 @@ public class Formulario1 implements Serializable {
     * @generated
     */
     @ManyToOne
-    @JoinColumn(name="prod", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
+    @JoinColumn(name="produto_id", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
         
-        private Produto prod;
+        private Produto produto;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="Quantidade do 1° Formulario")
-    @Column(name = "quant", nullable = true, unique = false, insertable=true, updatable=true)
+    @CronappColumn(attributeType="INTEGER", label="Quantidade do 1° Formulario")
+    @Column(name = "quantidade", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Double quant;
+        private java.lang.Integer quantidade;
 
 
     /**
     * @generated
     */
     @ManyToOne
-    @JoinColumn(name="cont", nullable = true, referencedColumnName = "id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "FORMULARIO1_CONT_CONTAGEM_ID", foreignKeyDefinition = "FOREIGN KEY (cont) REFERENCES CONTAGEM (id) ON DELETE CASCADE"))
+    @JoinColumn(name="contagem_id", nullable = true, referencedColumnName = "id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "FORMULARIO1_CONTAGEM_ID_CONTAGEM_ID", foreignKeyDefinition = "FOREIGN KEY (contagem_id) REFERENCES CONTAGEM (id) ON DELETE CASCADE"))
         
-        private Contagem cont;
+        private Contagem contagem;
 
 
     /**
@@ -103,57 +103,57 @@ public class Formulario1 implements Serializable {
         return this;
     }
     /**
-    * Obtém prod
-    * return prod
+    * Obtém produto
+    * return produto
     * @generated
     */
-    public Produto getProd() {
-        return this.prod;
+    public Produto getProduto() {
+        return this.produto;
     }
 
     /**
-    * Define prod
-    * @param prod prod
+    * Define produto
+    * @param produto produto
     * @generated
     */
-    public Formulario1 setProd(Produto prod) {
-        this.prod = prod;
+    public Formulario1 setProduto(Produto produto) {
+        this.produto = produto;
         return this;
     }
     /**
-    * Obtém quant
-    * return quant
+    * Obtém quantidade
+    * return quantidade
     * @generated
     */
-    public java.lang.Double getQuant() {
-        return this.quant;
+    public java.lang.Integer getQuantidade() {
+        return this.quantidade;
     }
 
     /**
-    * Define quant
-    * @param quant quant
+    * Define quantidade
+    * @param quantidade quantidade
     * @generated
     */
-    public Formulario1 setQuant(java.lang.Double quant) {
-        this.quant = quant;
+    public Formulario1 setQuantidade(java.lang.Integer quantidade) {
+        this.quantidade = quantidade;
         return this;
     }
     /**
-    * Obtém cont
-    * return cont
+    * Obtém contagem
+    * return contagem
     * @generated
     */
-    public Contagem getCont() {
-        return this.cont;
+    public Contagem getContagem() {
+        return this.contagem;
     }
 
     /**
-    * Define cont
-    * @param cont cont
+    * Define contagem
+    * @param contagem contagem
     * @generated
     */
-    public Formulario1 setCont(Contagem cont) {
-        this.cont = cont;
+    public Formulario1 setContagem(Contagem contagem) {
+        this.contagem = contagem;
         return this;
     }
     /**

@@ -113,6 +113,15 @@ public class Produto implements Serializable {
 
 
     /**
+    * @generated
+    */
+    @ManyToOne
+    @JoinColumn(name="contagem_id", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
+        
+        private Contagem contagem;
+
+
+    /**
     * Construtor
     * @generated
     */
@@ -279,6 +288,24 @@ public class Produto implements Serializable {
     */
     public Produto setDescSbg(java.lang.String descSbg) {
         this.descSbg = descSbg;
+        return this;
+    }
+    /**
+    * Obtém contagem
+    * return contagem
+    * @generated
+    */
+    public Contagem getContagem() {
+        return this.contagem;
+    }
+
+    /**
+    * Define contagem
+    * @param contagem contagem
+    * @generated
+    */
+    public Produto setContagem(Contagem contagem) {
+        this.contagem = contagem;
         return this;
     }
 

@@ -52,10 +52,10 @@ public class Loja implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="Codigo da Loja")
-    @Column(name = "codLoj", nullable = true, unique = false, insertable=true, updatable=true)
+    @CronappColumn(attributeType="INTEGER", label="Codigo da Loja")
+    @Column(name = "codigo", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long codLoj;
+        private java.lang.Integer codigo;
 
 
     /**
@@ -102,21 +102,21 @@ public class Loja implements Serializable {
         return this;
     }
     /**
-    * Obtém codLoj
-    * return codLoj
+    * Obtém codigo
+    * return codigo
     * @generated
     */
-    public java.lang.Long getCodLoj() {
-        return this.codLoj;
+    public java.lang.Integer getCodigo() {
+        return this.codigo;
     }
 
     /**
-    * Define codLoj
-    * @param codLoj codLoj
+    * Define codigo
+    * @param codigo codigo
     * @generated
     */
-    public Loja setCodLoj(java.lang.Long codLoj) {
-        this.codLoj = codLoj;
+    public Loja setCodigo(java.lang.Integer codigo) {
+        this.codigo = codigo;
         return this;
     }
 

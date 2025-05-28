@@ -53,7 +53,7 @@ public class Contagem implements Serializable {
     * @generated
     */
     @ManyToOne
-    @JoinColumn(name="loja", nullable = true, referencedColumnName = "id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "CONTAGEM_LOJA_LOJA_ID", foreignKeyDefinition = "FOREIGN KEY (loja) REFERENCES LOJA (id) ON DELETE CASCADE"))
+    @JoinColumn(name="loja_id", nullable = true, referencedColumnName = "id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "CONTAGEM_LOJA_ID_LOJA_ID", foreignKeyDefinition = "FOREIGN KEY (loja_id) REFERENCES LOJA (id) ON DELETE CASCADE"))
         
         private Loja loja;
 
@@ -61,10 +61,10 @@ public class Contagem implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="BYTE_ARRAY", label="Ativa")
-    @Column(name = "ativa", nullable = true, unique = false, insertable=true, updatable=true)
+    @CronappColumn(attributeType="BOOLEAN", label="Encerrado")
+    @Column(name = "encerrado", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private byte[] ativa;
+        private java.lang.Boolean encerrado;
 
 
     /**
@@ -139,21 +139,21 @@ public class Contagem implements Serializable {
         return this;
     }
     /**
-    * Obtém ativa
-    * return ativa
+    * Obtém encerrado
+    * return encerrado
     * @generated
     */
-    public byte[] getAtiva() {
-        return this.ativa;
+    public java.lang.Boolean getEncerrado() {
+        return this.encerrado;
     }
 
     /**
-    * Define ativa
-    * @param ativa ativa
+    * Define encerrado
+    * @param encerrado encerrado
     * @generated
     */
-    public Contagem setAtiva(byte[] ativa) {
-        this.ativa = ativa;
+    public Contagem setEncerrado(java.lang.Boolean encerrado) {
+        this.encerrado = encerrado;
         return this;
     }
     /**

@@ -11,14 +11,14 @@
     "isRawSql": true,
     "isNativeQuery": false,
     "namespace": "app_cont",
-    "sqlContent": "select \n\tf.prod, \n\tf.quant, \n\tfo.quant \nfrom \n\tFormulario1 f \njoin\n\tFormulario2 fo on (f.prod \u003d fo.prod) \nwhere \n\tf.cont \u003d :cont AND \n\tf.quant \u003d fo.quant",
+    "sqlContent": "select \n\tf.produto, \n\tf.quantidade, \n\tfo.quantidade \nfrom \n\tFormulario1 f \njoin\n\tFormulario2 fo on (f.produto \u003d fo.produto) \nwhere \n\tf.contagem \u003d :contagem AND \n\tf.quantidade \u003d fo.quantidade",
     "multiTenant": false,
     "paginatorAutomatic": false,
     "pagination": false
   },
   "queryParamsValues": [
     {
-      "fieldName": "cont",
+      "fieldName": "contagem",
       "fieldValue": ""
     }
   ],
@@ -48,22 +48,22 @@
     "onError": null
   },
   "defaultValues": {
-    "prod": null,
-    "prod_codPsv": null,
-    "quant": null,
-    "quant_1": null
+    "produto": null,
+    "produto_codPsv": null,
+    "quantidade": null,
+    "quantidade_1": null
   },
   "defaultValuesProperties": {
-    "prod": null,
-    "prod_codPsv": null,
-    "quant": null,
-    "quant_1": null
+    "produto": null,
+    "produto_codPsv": null,
+    "quantidade": null,
+    "quantidade_1": null
   },
   "security": {
-    "prod": null,
-    "prod_codPsv": null,
-    "quant": null,
-    "quant_1": null
+    "produto": null,
+    "produto_codPsv": null,
+    "quantidade": null,
+    "quantidade_1": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},

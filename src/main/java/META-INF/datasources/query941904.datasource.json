@@ -11,14 +11,14 @@
     "isRawSql": true,
     "isNativeQuery": false,
     "namespace": "app_cont",
-    "sqlContent": "select \n\tf.prod, \n\tf.quant, \n\te.qteTotal \nfrom \n\tFormulario1 f \njoin\n\tEstoque e on (f.prod.codPsv \u003d e.codPsv) \nwhere \n\tf.quant \u003c\u003e e.qteTotal AND \n\tf.cont \u003d :cont",
+    "sqlContent": "select \n\tf.produto, \n\tf.quantidade, \n\te.qteTotal \nfrom \n\tFormulario1 f \njoin\n\tEstoque e on (f.produto.codPsv \u003d e.codPsv) \nwhere \n\tf.quantidade \u003c\u003e e.qteTotal AND \n\tf.contagem \u003d :contagem",
     "multiTenant": false,
     "paginatorAutomatic": false,
     "pagination": false
   },
   "queryParamsValues": [
     {
-      "fieldName": "cont",
+      "fieldName": "contagem",
       "fieldValue": ""
     }
   ],
@@ -48,21 +48,21 @@
     "onError": null
   },
   "defaultValues": {
-    "prod": null,
-    "prod_codPsv": null,
-    "quant": null,
+    "produto": null,
+    "produto_codPsv": null,
+    "quantidade": null,
     "qteTotal": null
   },
   "defaultValuesProperties": {
-    "prod": null,
-    "prod_codPsv": null,
-    "quant": null,
+    "produto": null,
+    "produto_codPsv": null,
+    "quantidade": null,
     "qteTotal": null
   },
   "security": {
-    "prod": null,
-    "prod_codPsv": null,
-    "quant": null,
+    "produto": null,
+    "produto_codPsv": null,
+    "quantidade": null,
     "qteTotal": null
   },
   "calcFields": {},

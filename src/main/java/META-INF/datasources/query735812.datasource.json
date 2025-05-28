@@ -79,13 +79,13 @@
     "rulesSelect": [
       {
         "func": "get",
-        "field": "f.prod",
+        "field": "f.produto",
         "type": "string"
       },
       {
         "func": "get",
-        "field": "f.quant",
-        "type": "double"
+        "field": "f.quantidade",
+        "type": "integer"
       },
       {
         "func": "get",
@@ -107,13 +107,13 @@
       "condition": "AND",
       "rules": [
         {
-          "id": "f.cont",
-          "field": "f.cont",
+          "id": "f.contagem",
+          "field": "f.contagem",
           "type": "string",
           "input": "text",
           "operator": "equal",
           "valueType": "param",
-          "value": ":cont",
+          "value": ":contagem",
           "valueIsField": false
         }
       ],
@@ -127,7 +127,7 @@
   },
   "queryParamsValues": [
     {
-      "fieldName": "cont",
+      "fieldName": "contagem",
       "fieldValue": ""
     }
   ],
@@ -157,21 +157,21 @@
     "onError": null
   },
   "defaultValues": {
-    "prod": null,
-    "prod_codPsv": null,
-    "quant": null,
+    "produto": null,
+    "produto_codPsv": null,
+    "quantidade": null,
     "data": null
   },
   "defaultValuesProperties": {
-    "prod": null,
-    "prod_codPsv": null,
-    "quant": null,
+    "produto": null,
+    "produto_codPsv": null,
+    "quantidade": null,
     "data": null
   },
   "security": {
-    "prod": null,
-    "prod_codPsv": null,
-    "quant": null,
+    "produto": null,
+    "produto_codPsv": null,
+    "quantidade": null,
     "data": null
   },
   "calcFields": {},
