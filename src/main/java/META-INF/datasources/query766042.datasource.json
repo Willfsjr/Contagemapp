@@ -1,5 +1,5 @@
 {
-  "customId": "query766042",
+  "customId": "confrontoformulario",
   "queryName": "Confronto dos Formularios",
   "sourceType": "entityFullName",
   "baseEntity": null,
@@ -49,16 +49,19 @@
   },
   "defaultValues": {
     "prod": null,
+    "prod_codPsv": null,
     "quant": null,
     "quant_1": null
   },
   "defaultValuesProperties": {
     "prod": null,
+    "prod_codPsv": null,
     "quant": null,
     "quant_1": null
   },
   "security": {
     "prod": null,
+    "prod_codPsv": null,
     "quant": null,
     "quant_1": null
   },

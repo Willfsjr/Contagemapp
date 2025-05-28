@@ -1,5 +1,5 @@
 {
-  "customId": "query937716",
+  "customId": "ordenarproduto1",
   "queryName": "Ordenar Produto do 1° Formulario Pela Data",
   "sourceType": "entityFullName",
   "baseEntity": null,
@@ -159,16 +159,19 @@
   "defaultValues": {
     "data": null,
     "prod": null,
+    "prod_codPsv": null,
     "quant": null
   },
   "defaultValuesProperties": {
     "data": null,
     "prod": null,
+    "prod_codPsv": null,
     "quant": null
   },
   "security": {
     "data": null,
     "prod": null,
+    "prod_codPsv": null,
     "quant": null
   },
   "calcFields": {},

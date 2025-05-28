@@ -1,5 +1,5 @@
 {
-  "customId": "query413781",
+  "customId": "contagem",
   "queryName": "Contagem",
   "sourceType": "entityFullName",
   "baseEntity": null,
@@ -61,19 +61,25 @@
     "id": null,
     "nome": null,
     "loja": null,
-    "ativa": null
+    "ativa": null,
+    "data": null,
+    "loja_nome": null
   },
   "defaultValuesProperties": {
     "id": null,
     "nome": null,
     "loja": null,
-    "ativa": null
+    "ativa": null,
+    "data": null,
+    "loja_nome": null
   },
   "security": {
     "id": null,
     "nome": null,
     "loja": null,
-    "ativa": null
+    "ativa": null,
+    "data": null,
+    "loja_nome": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},
