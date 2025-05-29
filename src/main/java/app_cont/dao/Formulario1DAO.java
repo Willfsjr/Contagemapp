@@ -19,6 +19,6 @@ import org.springframework.transaction.annotation.*;
  */
 @Repository("app_cont-Formulario1DAO")
 @Transactional(transactionManager="app_cont-TransactionManager")
-public interface Formulario1DAO extends JpaRepository<Formulario1, java.lang.String> {
+public interface Formulario1DAO extends JpaRepository<Formulario1, Formulario1PK> {
 
 }

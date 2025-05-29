@@ -1,5 +1,5 @@
 {
-  "customId": "contagem",
+  "customId": "contagen",
   "queryName": "Contagem",
   "sourceType": "entityFullName",
   "baseEntity": null,
@@ -49,8 +49,69 @@
   "events": {
     "beforeInsert": null,
     "beforeUpdate": null,
-    "beforeDelete": null,
-    "afterInsert": null,
+    "beforeDelete": {
+      "type": "server",
+      "blocklyMethod": "apagarProdutoDaContagem",
+      "blocklyClass": "blockly.Contagem",
+      "blocklyLanguage": "java",
+      "blocklyParams": [
+        {
+          "id": "ffdf7eb6",
+          "name": "idContagem",
+          "value": "primaryKey",
+          "type": "CUSTOM"
+        }
+      ],
+      "blocklyJson": {
+        "namespace": "blockly.Contagem",
+        "sourcePath": "src/main/java/blockly/Contagem.blockly",
+        "language": "java",
+        "methods": [
+          {
+            "name": "obterProdutoParaContagem",
+            "hasReturn": "true",
+            "params": [
+              "idContagem"
+            ]
+          },
+          {
+            "name": "apagarProdutoDaContagem",
+            "hasReturn": "true",
+            "params": [
+              "idContagem"
+            ]
+          }
+        ]
+      }
+    },
+    "afterInsert": {
+      "type": "server",
+      "blocklyMethod": "obterProdutoParaContagem",
+      "blocklyClass": "blockly.Contagem",
+      "blocklyLanguage": "java",
+      "blocklyParams": [
+        {
+          "id": "1b7b51d5",
+          "name": "idContagem",
+          "value": "primaryKey",
+          "type": "CUSTOM"
+        }
+      ],
+      "blocklyJson": {
+        "namespace": "blockly.Contagem",
+        "sourcePath": "src/main/java/blockly/Contagem.blockly",
+        "language": "java",
+        "methods": [
+          {
+            "name": "obterProdutoParaContagem",
+            "hasReturn": "true",
+            "params": [
+              "idContagem"
+            ]
+          }
+        ]
+      }
+    },
     "afterUpdate": null,
     "afterDelete": null,
     "onNavigate": null,
@@ -61,7 +122,7 @@
     "id": null,
     "nome": null,
     "loja": null,
-    "ativa": null,
+    "encerrado": null,
     "data": null,
     "loja_nome": null
   },
@@ -69,7 +130,7 @@
     "id": null,
     "nome": null,
     "loja": null,
-    "ativa": null,
+    "encerrado": null,
     "data": null,
     "loja_nome": null
   },
@@ -77,7 +138,7 @@
     "id": null,
     "nome": null,
     "loja": null,
-    "ativa": null,
+    "encerrado": null,
     "data": null,
     "loja_nome": null
   },

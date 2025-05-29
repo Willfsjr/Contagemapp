@@ -19,6 +19,7 @@ import cronapp.framework.core.persistence.*;
 * @generated
 */
 @jakarta.persistence.Entity
+@IdClass(ContagemPK.class)
 @jakarta.persistence.Table(name = "\"CONTAGEM\"")
 @XmlRootElement
 @CronappSecurity
@@ -35,27 +36,17 @@ public class Contagem implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
-    @Column(name = "id", nullable = false, insertable=true, updatable=true)
-        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
-
-
-    /**
-    * @generated
-    */
-    @CronappColumn(attributeType="STRING", label="Nome")
-    @Column(name = "nome", nullable = true, unique = false, insertable=true, updatable=true)
-        
-        private java.lang.String nome;
-
-
-    /**
-    * @generated
-    */
-    @ManyToOne
-    @JoinColumn(name="loja_id", nullable = true, referencedColumnName = "id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "CONTAGEM_LOJA_ID_LOJA_ID", foreignKeyDefinition = "FOREIGN KEY (loja_id) REFERENCES LOJA (id) ON DELETE CASCADE"))
-        
+    @JoinColumn(name="loja", nullable = false, referencedColumnName = "id", insertable=true, updatable=true)
         private Loja loja;
+
+
+    /**
+    * @generated
+    */
+    @CronappColumn(attributeType="STRING", label="Name")
+    @Column(name = "name", nullable = true, unique = false, insertable=true, updatable=true)
+        
+        private java.lang.String name;
 
 
     /**
@@ -85,42 +76,6 @@ public class Contagem implements Serializable {
     }
 
     /**
-    * Obtém id
-    * return id
-    * @generated
-    */
-    public java.lang.String getId() {
-        return this.id;
-    }
-
-    /**
-    * Define id
-    * @param id id
-    * @generated
-    */
-    public Contagem setId(java.lang.String id) {
-        this.id = id;
-        return this;
-    }
-    /**
-    * Obtém nome
-    * return nome
-    * @generated
-    */
-    public java.lang.String getNome() {
-        return this.nome;
-    }
-
-    /**
-    * Define nome
-    * @param nome nome
-    * @generated
-    */
-    public Contagem setNome(java.lang.String nome) {
-        this.nome = nome;
-        return this;
-    }
-    /**
     * Obtém loja
     * return loja
     * @generated
@@ -136,6 +91,24 @@ public class Contagem implements Serializable {
     */
     public Contagem setLoja(Loja loja) {
         this.loja = loja;
+        return this;
+    }
+    /**
+    * Obtém name
+    * return name
+    * @generated
+    */
+    public java.lang.String getName() {
+        return this.name;
+    }
+
+    /**
+    * Define name
+    * @param name name
+    * @generated
+    */
+    public Contagem setName(java.lang.String name) {
+        this.name = name;
         return this;
     }
     /**
@@ -183,7 +156,7 @@ public class Contagem implements Serializable {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
 Contagem object = (Contagem)obj;
-        if (id != null ? !id.equals(object.id) : object.id != null) return false;
+        if (loja != null ? !loja.equals(object.loja) : object.loja != null) return false;
         return true;
     }
 
@@ -193,7 +166,7 @@ Contagem object = (Contagem)obj;
     @Override
     public int hashCode() {
         int result = 1;
-        result = 31 * result + ((id == null) ? 0 : id.hashCode());
+        result = 31 * result + ((loja == null) ? 0 : loja.hashCode());
         return result;
     }
 

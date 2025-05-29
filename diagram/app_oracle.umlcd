@@ -276,7 +276,7 @@
         "Qte Total"
       ],
       "methods": [],
-      "modelType": "Table",
+      "modelType": "View",
       "name": "Estoquecontagem",
       "nullables": [
         "codiPsv",
@@ -603,7 +603,7 @@
         "Desc Sbg"
       ],
       "methods": [],
-      "modelType": "Table",
+      "modelType": "View",
       "name": "Produtocontagem",
       "nullables": [
         "codiPsv"

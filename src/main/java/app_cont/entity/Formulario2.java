@@ -19,11 +19,12 @@ import cronapp.framework.core.persistence.*;
 * @generated
 */
 @jakarta.persistence.Entity
+@IdClass(Formulario2PK.class)
 @jakarta.persistence.Table(name = "\"FORMULARIO2\"")
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("app_cont.entity.Formulario2")
-@CronappTable(role=CronappTableRole.ASSOCIATION_CLASS)
+@CronappTable(role=CronappTableRole.CLASS)
 public class Formulario2 implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,36 +36,17 @@ public class Formulario2 implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
-    @Column(name = "id", nullable = false, insertable=true, updatable=true)
-        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
-
-
-    /**
-    * @generated
-    */
-    @ManyToOne
-    @JoinColumn(name="produto_id", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
-        
+    @JoinColumn(name="produto", nullable = false, referencedColumnName = "contagem", insertable=true, updatable=true)
         private Produto produto;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="Quantidade")
+    @CronappColumn(attributeType="DOUBLE", label="Quantidade")
     @Column(name = "quantidade", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer quantidade;
-
-
-    /**
-    * @generated
-    */
-    @ManyToOne
-    @JoinColumn(name="contagem_id", nullable = true, referencedColumnName = "id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "FORMULARIO2_CONTAGEM_ID_CONTAGEM_ID", foreignKeyDefinition = "FOREIGN KEY (contagem_id) REFERENCES CONTAGEM (id) ON DELETE CASCADE"))
-        
-        private Contagem contagem;
+        private java.lang.Double quantidade;
 
 
     /**
@@ -84,24 +66,6 @@ public class Formulario2 implements Serializable {
     public Formulario2(){
     }
 
-    /**
-    * Obtém id
-    * return id
-    * @generated
-    */
-    public java.lang.String getId() {
-        return this.id;
-    }
-
-    /**
-    * Define id
-    * @param id id
-    * @generated
-    */
-    public Formulario2 setId(java.lang.String id) {
-        this.id = id;
-        return this;
-    }
     /**
     * Obtém produto
     * return produto
@@ -125,7 +89,7 @@ public class Formulario2 implements Serializable {
     * return quantidade
     * @generated
     */
-    public java.lang.Integer getQuantidade() {
+    public java.lang.Double getQuantidade() {
         return this.quantidade;
     }
 
@@ -134,26 +98,8 @@ public class Formulario2 implements Serializable {
     * @param quantidade quantidade
     * @generated
     */
-    public Formulario2 setQuantidade(java.lang.Integer quantidade) {
+    public Formulario2 setQuantidade(java.lang.Double quantidade) {
         this.quantidade = quantidade;
-        return this;
-    }
-    /**
-    * Obtém contagem
-    * return contagem
-    * @generated
-    */
-    public Contagem getContagem() {
-        return this.contagem;
-    }
-
-    /**
-    * Define contagem
-    * @param contagem contagem
-    * @generated
-    */
-    public Formulario2 setContagem(Contagem contagem) {
-        this.contagem = contagem;
         return this;
     }
     /**
@@ -183,7 +129,7 @@ public class Formulario2 implements Serializable {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
 Formulario2 object = (Formulario2)obj;
-        if (id != null ? !id.equals(object.id) : object.id != null) return false;
+        if (produto != null ? !produto.equals(object.produto) : object.produto != null) return false;
         return true;
     }
 
@@ -193,7 +139,7 @@ Formulario2 object = (Formulario2)obj;
     @Override
     public int hashCode() {
         int result = 1;
-        result = 31 * result + ((id == null) ? 0 : id.hashCode());
+        result = 31 * result + ((produto == null) ? 0 : produto.hashCode());
         return result;
     }
 

@@ -43,19 +43,19 @@ public class Loja implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Nome da Loja")
-    @Column(name = "nome", nullable = true, unique = false, insertable=true, updatable=true)
+    @CronappColumn(attributeType="STRING", label="Name")
+    @Column(name = "name", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String nome;
+        private java.lang.String name;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="Codigo da Loja")
+    @CronappColumn(attributeType="SHORT", label="Codigo")
     @Column(name = "codigo", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer codigo;
+        private java.lang.Short codigo;
 
 
     /**
@@ -84,21 +84,21 @@ public class Loja implements Serializable {
         return this;
     }
     /**
-    * Obtém nome
-    * return nome
+    * Obtém name
+    * return name
     * @generated
     */
-    public java.lang.String getNome() {
-        return this.nome;
+    public java.lang.String getName() {
+        return this.name;
     }
 
     /**
-    * Define nome
-    * @param nome nome
+    * Define name
+    * @param name name
     * @generated
     */
-    public Loja setNome(java.lang.String nome) {
-        this.nome = nome;
+    public Loja setName(java.lang.String name) {
+        this.name = name;
         return this;
     }
     /**
@@ -106,7 +106,7 @@ public class Loja implements Serializable {
     * return codigo
     * @generated
     */
-    public java.lang.Integer getCodigo() {
+    public java.lang.Short getCodigo() {
         return this.codigo;
     }
 
@@ -115,7 +115,7 @@ public class Loja implements Serializable {
     * @param codigo codigo
     * @generated
     */
-    public Loja setCodigo(java.lang.Integer codigo) {
+    public Loja setCodigo(java.lang.Short codigo) {
         this.codigo = codigo;
         return this;
     }
