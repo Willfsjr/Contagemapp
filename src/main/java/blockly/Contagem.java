@@ -18,7 +18,7 @@ public static final int TIMEOUT = 300;
  * @param idContagem
  *
  * @author Willian Ferreira
- * @since 29/05/2025, 11:12:43
+ * @since 29/05/2025, 14:26:42
  *
  */
 public static Var apagarProdutoDaContagem(@ParamMetaData(description = "idContagem", id = "ffdf7eb6") @RequestBody(required = false) Var idContagem) throws Exception {
@@ -38,7 +38,7 @@ public static Var apagarProdutoDaContagem(@ParamMetaData(description = "idContag
  * @param idContagem
  *
  * @author Willian Ferreira
- * @since 29/05/2025, 11:12:43
+ * @since 29/05/2025, 14:26:42
  *
  */
 public static Var obterProdutoParaContagem(@ParamMetaData(description = "idContagem", id = "1b7b51d5") @RequestBody(required = false) Var idContagem) throws Exception {
@@ -63,7 +63,7 @@ public static Var obterProdutoParaContagem(@ParamMetaData(description = "idConta
     produtosERP =
     cronapi.database.Operations.query(Var.valueOf("app_oracle.entity.Produtocontagem"),Var.valueOf("select \n	p.codiPsv, \n	p.descPsv, \n	p.codiBar, \n	p.custTab \nfrom \n	Produtocontagem p"));
     produtosExistentes =
-    cronapi.database.Operations.queryPaged(Var.valueOf("app_cont.entity.Produto"),Var.valueOf("select \n	p.codPsv \nfrom \n	Produto p  \nwhere \n	p.contagem = :contagem"),Var.valueOf(true),Var.valueOf("contagem",idContagem));
+    cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Produto"),Var.valueOf("select \n	p.codiPsv \nfrom \n	Produto p  \nwhere \n	p.contagem = :contagem"),Var.valueOf("contagem",idContagem));
     codigoTexto =
     Var.valueOf("");
     primeiro =
@@ -72,7 +72,7 @@ public static Var obterProdutoParaContagem(@ParamMetaData(description = "idConta
         p = Var.valueOf(it_p.next());
         codigo =
         cronapi.map.Operations.getMapField(p,
-        Var.valueOf("codPsv"));
+        Var.valueOf("codiPsv"));
         if (primeiro.getObjectAsBoolean()) {
             codigoTexto =
             Var.valueOf(
@@ -113,15 +113,15 @@ public static Var obterProdutoParaContagem(@ParamMetaData(description = "idConta
         .negate().getObjectAsBoolean()) {
             salvar =
             cronapi.database.Operations.insert(Var.valueOf("app_cont.entity.Produto"),
-            cronapi.map.Operations.createObjectMapWith(Var.valueOf("codPsv",
+            cronapi.map.Operations.createObjectMapWith(Var.valueOf("contagem",idContagem) , Var.valueOf("codiPsv",
             cronapi.map.Operations.getMapField(mapLinha,
             Var.valueOf("codiPsv"))) , Var.valueOf("descPsv",
             cronapi.map.Operations.getMapField(mapLinha,
-            Var.valueOf("descPsv"))) , Var.valueOf("codBar",
+            Var.valueOf("descPsv"))) , Var.valueOf("codiBar",
             cronapi.map.Operations.getMapField(mapLinha,
             Var.valueOf("codiBar"))) , Var.valueOf("custTab",
             cronapi.map.Operations.getMapField(mapLinha,
-            Var.valueOf("custTab"))) , Var.valueOf("contagem",idContagem)));
+            Var.valueOf("custTab")))));
             contador =
             cronapi.math.Operations.sum(contador,
             Var.valueOf(1));

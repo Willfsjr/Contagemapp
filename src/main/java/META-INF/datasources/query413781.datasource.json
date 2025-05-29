@@ -49,41 +49,7 @@
   "events": {
     "beforeInsert": null,
     "beforeUpdate": null,
-    "beforeDelete": {
-      "type": "server",
-      "blocklyMethod": "apagarProdutoDaContagem",
-      "blocklyClass": "blockly.Contagem",
-      "blocklyLanguage": "java",
-      "blocklyParams": [
-        {
-          "id": "ffdf7eb6",
-          "name": "idContagem",
-          "value": "primaryKey",
-          "type": "CUSTOM"
-        }
-      ],
-      "blocklyJson": {
-        "namespace": "blockly.Contagem",
-        "sourcePath": "src/main/java/blockly/Contagem.blockly",
-        "language": "java",
-        "methods": [
-          {
-            "name": "obterProdutoParaContagem",
-            "hasReturn": "true",
-            "params": [
-              "idContagem"
-            ]
-          },
-          {
-            "name": "apagarProdutoDaContagem",
-            "hasReturn": "true",
-            "params": [
-              "idContagem"
-            ]
-          }
-        ]
-      }
-    },
+    "beforeDelete": null,
     "afterInsert": {
       "type": "server",
       "blocklyMethod": "obterProdutoParaContagem",
@@ -119,28 +85,25 @@
     "onError": null
   },
   "defaultValues": {
-    "id": null,
-    "nome": null,
     "loja": null,
+    "name": null,
     "encerrado": null,
     "data": null,
-    "loja_nome": null
+    "loja_name": null
   },
   "defaultValuesProperties": {
-    "id": null,
-    "nome": null,
     "loja": null,
+    "name": null,
     "encerrado": null,
     "data": null,
-    "loja_nome": null
+    "loja_name": null
   },
   "security": {
-    "id": null,
-    "nome": null,
     "loja": null,
+    "name": null,
     "encerrado": null,
     "data": null,
-    "loja_nome": null
+    "loja_name": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><blockly audit="false" blocklyType="WEB" bpmnAble="false" formTarget="src/main/webapp/views/admin/contagem.view.html" functionCategory="" linkHelp="" multilayer="false" resourceType="JS" ruleDescription="Contagem" ruleName="Contagem" ruleSynchronous="false" ruleTimeout="" ruleType="I" showAsFunction="false" soap="false" swagger="false">
-  <metadata scale="1" scrollx="240" scrolly="-251" target="ej/^#jVy4?*d]c(/Hi)A"/>
+  <metadata scale="1" scrollx="251.5" scrolly="-251" target="/l-,|)^dxL:w)i5LU]^K"/>
   <block asynccall="false" colour="#995ba5" datasourcetype="" id="Anb:u5+^,0vLkL9QIqn5" origintype="procedures_defreturn" output="false" score="9007199254740991" tooltip="Cria uma função que possui um valor de retorno." type="procedures_defreturn" valueconstant="" x="-328" y="140">
     <field customattributes="" name="NAME">validarNome</field>
     <statement name="STACK">
@@ -17,7 +17,7 @@
                 </mutation>
                 <value name="ARG0">
                   <block asynccall="false" colour="#934848" datasourcetype="" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="4AeJ;8v5R[8KO^587oax" origintype="form_fieldscreen_callreturn" output="true" score="9007199254740991" type="form_fieldscreen_callreturn" valueconstant="">
-                    <field customattributes="" name="SELECT">contagem.active.nome</field>
+                    <field customattributes="" name="SELECT">contagem.active.name</field>
                   </block>
                 </value>
               </block>

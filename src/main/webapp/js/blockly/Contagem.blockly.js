@@ -10,14 +10,14 @@ window.blockly.js.blockly.Contagem = window.blockly.js.blockly.Contagem || {};
  *
  *
  * @author Willian Ferreira
- * @since 28/05/2025, 18:00:52
+ * @since 29/05/2025, 14:18:45
  *
  */
 window.blockly.js.blockly.Contagem.validarNomeArgs = [];
 window.blockly.js.blockly.Contagem.validarNome = async function() {
- var valido;
+
   //
-  if (this.cronapi.logic.isNullOrEmpty(this.cronapi.screen.getValueOfField("contagem.active.nome"))) {
+  if (this.cronapi.logic.isNullOrEmpty(this.cronapi.screen.getValueOfField("contagem.active.name"))) {
     //
     this.cronapi.screen.notify('warning','Informe um Nome');
     //
@@ -36,12 +36,12 @@ window.blockly.js.blockly.Contagem.validarNome = async function() {
  *
  *
  * @author Willian Ferreira
- * @since 28/05/2025, 18:00:52
+ * @since 29/05/2025, 14:18:45
  *
  */
 window.blockly.js.blockly.Contagem.definirDataArgs = [];
 window.blockly.js.blockly.Contagem.definirData = async function() {
- var valido;
+
   //
   this.cronapi.screen.changeValueOfField("contagem.active.data", this.cronapi.dateTime.getNow());
 }
@@ -53,12 +53,12 @@ window.blockly.js.blockly.Contagem.definirData = async function() {
  *
  *
  * @author Willian Ferreira
- * @since 28/05/2025, 18:00:52
+ * @since 29/05/2025, 14:18:45
  *
  */
 window.blockly.js.blockly.Contagem.validarLojaArgs = [];
 window.blockly.js.blockly.Contagem.validarLoja = async function() {
- var valido;
+
   //
   if (this.cronapi.logic.isNullOrEmpty(this.cronapi.screen.getValueOfField("contagem.active.loja"))) {
     //
@@ -79,12 +79,12 @@ window.blockly.js.blockly.Contagem.validarLoja = async function() {
  *
  *
  * @author Willian Ferreira
- * @since 28/05/2025, 18:00:52
+ * @since 29/05/2025, 14:18:45
  *
  */
 window.blockly.js.blockly.Contagem.GravarArgs = [];
 window.blockly.js.blockly.Contagem.Gravar = async function() {
- var valido;
+
   //
   if ((await this.cronapi.client('blockly.js.blockly.Contagem.validarNome').run()) && (await this.cronapi.client('blockly.js.blockly.Contagem.validarLoja').run())) {
     //
