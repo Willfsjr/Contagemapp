@@ -107,17 +107,7 @@
     "rulesSelect": [
       {
         "func": "get",
-        "field": "p.codBar",
-        "type": "string"
-      },
-      {
-        "func": "get",
-        "field": "p.codPsv",
-        "type": "string"
-      },
-      {
-        "func": "get",
-        "field": "p.descPsv",
+        "field": "p",
         "type": "string"
       }
     ],
@@ -127,7 +117,18 @@
     "rulesOrderBy": [],
     "rules": {
       "condition": "AND",
-      "rules": [],
+      "rules": [
+        {
+          "id": "p.contagem",
+          "field": "p.contagem",
+          "type": "string",
+          "input": "text",
+          "operator": "equal",
+          "valueType": "param",
+          "value": ":contagem",
+          "valueIsField": false
+        }
+      ],
       "not": false,
       "valid": true
     },
@@ -136,7 +137,12 @@
     "paginatorAutomatic": false,
     "pagination": false
   },
-  "queryParamsValues": [],
+  "queryParamsValues": [
+    {
+      "fieldName": "contagem",
+      "fieldValue": ""
+    }
+  ],
   "verbs": {
     "GET": true,
     "GETAuthorities": null,
@@ -163,19 +169,28 @@
     "onError": null
   },
   "defaultValues": {
-    "codBar": null,
-    "codPsv": null,
-    "descPsv": null
+    "contagem": null,
+    "codiPsv": null,
+    "descPsv": null,
+    "codiBar": null,
+    "custTab": null,
+    "contagem_name": null
   },
   "defaultValuesProperties": {
-    "codBar": null,
-    "codPsv": null,
-    "descPsv": null
+    "contagem": null,
+    "codiPsv": null,
+    "descPsv": null,
+    "codiBar": null,
+    "custTab": null,
+    "contagem_name": null
   },
   "security": {
-    "codBar": null,
-    "codPsv": null,
-    "descPsv": null
+    "contagem": null,
+    "codiPsv": null,
+    "descPsv": null,
+    "codiBar": null,
+    "custTab": null,
+    "contagem_name": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},

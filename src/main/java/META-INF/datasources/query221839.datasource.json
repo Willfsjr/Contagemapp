@@ -1,11 +1,11 @@
 {
-  "customId": "produtoformulario1",
-  "queryName": "Produto para o 1° Formulario",
+  "customId": "consultaformulario1",
+  "queryName": "1° Formulario",
   "sourceType": "entityFullName",
   "baseEntity": null,
   "blockly": null,
-  "entitySimpleName": "Produto",
-  "entityFullName": "app_cont.entity.Produto",
+  "entitySimpleName": "Formulario1",
+  "entityFullName": "app_cont.entity.Formulario1",
   "query": {
     "isValid": true,
     "isEmpty": false,
@@ -15,74 +15,32 @@
     "type": "select",
     "rulesEntity": [
       {
-        "entity": "Produto",
-        "namespace": "app_cont.entity.Produto",
+        "entity": "Formulario1",
+        "namespace": "app_cont.entity.Formulario1",
         "dataSourceOptions": {
-          "id": "app_cont.Produto",
-          "customId": "Produto",
-          "customQueryName": "app_cont.Produto",
+          "id": "app_cont.Formulario1",
+          "customId": "Formulario1",
+          "customQueryName": "app_cont.Formulario1",
           "paramValues": [],
-          "entityFullName": "app_cont.entity.Produto",
+          "entityFullName": "app_cont.entity.Formulario1",
           "schemaFields": [
             {
-              "name": "id",
-              "type": "String",
-              "nullable": false,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "codPsv",
+              "name": "produto",
               "type": "String",
               "nullable": true,
               "notEmpty": false,
               "key": false
             },
             {
-              "name": "codBar",
-              "type": "String",
-              "nullable": true,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "codGpr",
-              "type": "Int64",
-              "nullable": true,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "codSbg",
-              "type": "Int64",
-              "nullable": true,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "custTab",
+              "name": "quantidade",
               "type": "Double",
               "nullable": true,
               "notEmpty": false,
               "key": false
             },
             {
-              "name": "descGpr",
-              "type": "String",
-              "nullable": true,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "descPsv",
-              "type": "String",
-              "nullable": true,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "descSbg",
-              "type": "String",
+              "name": "data",
+              "type": "DateTime",
               "nullable": true,
               "notEmpty": false,
               "key": false
@@ -93,21 +51,28 @@
               "nullable": false,
               "notEmpty": false,
               "key": true
+            },
+            {
+              "name": "produto_codiPsv",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
             }
           ],
           "type": "entity",
           "hasError": false,
-          "customName": "Produto",
-          "fullName": "app_cont.entity.Produto",
-          "labelName": "app_cont.entity.Produto (Produto)"
+          "customName": "Formulario1",
+          "fullName": "app_cont.entity.Formulario1",
+          "labelName": "app_cont.entity.Formulario1 (Formulario1)"
         },
-        "alias": "p"
+        "alias": "f"
       }
     ],
     "rulesSelect": [
       {
         "func": "get",
-        "field": "p",
+        "field": "f",
         "type": "string"
       }
     ],
@@ -119,13 +84,13 @@
       "condition": "AND",
       "rules": [
         {
-          "id": "p.contagem",
-          "field": "p.contagem",
+          "id": "f.produto.contagem",
+          "field": "f.produto.contagem",
           "type": "string",
           "input": "text",
           "operator": "equal",
           "valueType": "param",
-          "value": ":contagem",
+          "value": ":produtoContagem",
           "valueIsField": false
         }
       ],
@@ -139,7 +104,7 @@
   },
   "queryParamsValues": [
     {
-      "fieldName": "contagem",
+      "fieldName": "produtoContagem",
       "fieldValue": ""
     }
   ],
@@ -169,28 +134,22 @@
     "onError": null
   },
   "defaultValues": {
-    "contagem": null,
-    "codiPsv": null,
-    "descPsv": null,
-    "codiBar": null,
-    "custTab": null,
-    "contagem_name": null
+    "produto": null,
+    "quantidade": null,
+    "data": null,
+    "produto_codiPsv": null
   },
   "defaultValuesProperties": {
-    "contagem": null,
-    "codiPsv": null,
-    "descPsv": null,
-    "codiBar": null,
-    "custTab": null,
-    "contagem_name": null
+    "produto": null,
+    "quantidade": null,
+    "data": null,
+    "produto_codiPsv": null
   },
   "security": {
-    "contagem": null,
-    "codiPsv": null,
-    "descPsv": null,
-    "codiBar": null,
-    "custTab": null,
-    "contagem_name": null
+    "produto": null,
+    "quantidade": null,
+    "data": null,
+    "produto_codiPsv": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},
@@ -200,7 +159,7 @@
     "primaryKey": null,
     "foreignKey": null
   },
-  "serviceUrl": "api/cronapi/odata/v2/app_cont/query431073/",
+  "serviceUrl": "api/cronapi/odata/v2/app_cont/query221839/",
   "audit": false,
   "swagger": false
 }
