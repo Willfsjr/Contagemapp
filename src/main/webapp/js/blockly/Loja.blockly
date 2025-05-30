@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><blockly audit="false" blocklyType="WEB" bpmnAble="false" formTarget="src/main/webapp/views/admin/loja.view.html" functionCategory="" linkHelp="" multilayer="false" resourceType="JS" ruleDescription="Loja" ruleName="Loja" ruleSynchronous="false" ruleTimeout="" ruleType="I" showAsFunction="false" soap="false" swagger="false">
-  <metadata scale="1" scrollx="310.50000000000006" scrolly="-188.00000000000006" target="f[x#{[?Dw3(X4az/j,#x"/>
+  <metadata scale="1" scrollx="314.8" scrolly="-187.99999999999994" target="f[x#{[?Dw3(X4az/j,#x"/>
   <block asynccall="false" colour="#995ba5" datasourcetype="" id="Anb:u5+^,0vLkL9QIqn5" origintype="procedures_defreturn" output="false" score="9007199254740991" tooltip="Cria uma função que possui um valor de retorno." type="procedures_defreturn" valueconstant="" x="-350" y="130">
-    <field customattributes="" name="NAME">validarNome</field>
+    <field customattributes="" name="NAME">validarName</field>
     <statement name="STACK">
       <block asynccall="false" colour="#5b80a5" datasourcetype="" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="i3d:VC0;#TB.G@w5E.XF" origintype="controls_if" output="false" score="9007199254740991" tooltip="function () { [native code] }" type="controls_if" valueconstant="">
         <mutation else="1"/>
@@ -57,6 +57,11 @@
         </statement>
       </block>
     </statement>
+    <value name="RETURN">
+      <block asynccall="false" colour="#0088ee" datasourcetype="" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="F3MO,:mE3S?p5AKQ,gUv" origintype="variables_get" output="true" score="9007199254740991" tooltip="Retorna o valor desta variável." type="variables_get" valueconstant="">
+        <field customattributes="" name="VAR">valido</field>
+      </block>
+    </value>
   </block>
   <block asynccall="false" colour="#fca03b" datasourcetype="" id="^SSnS=^?hI{jptCU`@mc" origintype="procedures_defreturn" output="false" score="9007199254740991" tooltip="Cria uma função que possui um valor de retorno." type="procedures_defreturn" valueconstant="" x="-298" y="185">
     <field customattributes="" name="NAME">validarCodigo</field>
@@ -115,6 +120,11 @@
         </statement>
       </block>
     </statement>
+    <value name="RETURN">
+      <block asynccall="false" colour="#0088ee" datasourcetype="" dependencyby="^SSnS=^?hI{jptCU`@mc" id="nG{P`iHYQIYl0l|v;~X{" origintype="variables_get" output="true" score="9007199254740991" tooltip="Retorna o valor desta variável." type="variables_get" valueconstant="">
+        <field customattributes="" name="VAR">valido</field>
+      </block>
+    </value>
   </block>
   <block asynccall="false" colour="#fca03b" datasourcetype="" id="f[x#{[?Dw3(X4az/j,#x" origintype="procedures_defreturn" output="false" score="9007199254740991" tooltip="Cria uma função que possui um valor de retorno." type="procedures_defreturn" valueconstant="" x="-231" y="320">
     <field customattributes="" name="NAME">Gravar</field>
@@ -126,8 +136,8 @@
             <mutation items="2"/>
             <field customattributes="" name="OP1">AND</field>
             <value name="ARG0">
-              <block asynccall="false" colour="#fca03b" datasourcetype="" dependencyby="f[x#{[?Dw3(X4az/j,#x" id="?M-))F4RaW{Xb(?Dix1$" origintype="procedures_callreturn" output="true" score="9007199254740991" tooltip="Executa a função definida pelo usuário &quot;validarNome&quot; e usa seu retorno." type="procedures_callreturn" valueconstant="">
-                <mutation name="validarNome" return-raw-type="undefined"/>
+              <block asynccall="false" colour="#fca03b" datasourcetype="" dependencyby="f[x#{[?Dw3(X4az/j,#x" id="?M-))F4RaW{Xb(?Dix1$" origintype="procedures_callreturn" output="true" score="9007199254740991" tooltip="Executa a função definida pelo usuário &quot;validarName&quot; e usa seu retorno." type="procedures_callreturn" valueconstant="">
+                <mutation name="validarName" return-raw-type="undefined"/>
               </block>
             </value>
             <value name="ARG1">

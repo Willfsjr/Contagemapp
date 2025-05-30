@@ -19,7 +19,6 @@ import cronapp.framework.core.persistence.*;
 * @generated
 */
 @jakarta.persistence.Entity
-@IdClass(ProdutoPK.class)
 @jakarta.persistence.Table(name = "\"PRODUTO\"")
 @XmlRootElement
 @CronappSecurity
@@ -36,8 +35,9 @@ public class Produto implements Serializable {
     * @generated
     */
     @Id
-    @JoinColumn(name="contagem", nullable = false, referencedColumnName = "loja", insertable=true, updatable=true)
-        private Contagem contagem;
+    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
+    @Column(name = "id", nullable = false, insertable=true, updatable=true)
+        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
@@ -77,6 +77,15 @@ public class Produto implements Serializable {
 
 
     /**
+    * @generated
+    */
+    @ManyToOne
+    @JoinColumn(name="fk_contagem", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
+        
+        private Contagem contagem;
+
+
+    /**
     * Construtor
     * @generated
     */
@@ -84,21 +93,21 @@ public class Produto implements Serializable {
     }
 
     /**
-    * Obtém contagem
-    * return contagem
+    * Obtém id
+    * return id
     * @generated
     */
-    public Contagem getContagem() {
-        return this.contagem;
+    public java.lang.String getId() {
+        return this.id;
     }
 
     /**
-    * Define contagem
-    * @param contagem contagem
+    * Define id
+    * @param id id
     * @generated
     */
-    public Produto setContagem(Contagem contagem) {
-        this.contagem = contagem;
+    public Produto setId(java.lang.String id) {
+        this.id = id;
         return this;
     }
     /**
@@ -173,6 +182,24 @@ public class Produto implements Serializable {
         this.custTab = custTab;
         return this;
     }
+    /**
+    * Obtém contagem
+    * return contagem
+    * @generated
+    */
+    public Contagem getContagem() {
+        return this.contagem;
+    }
+
+    /**
+    * Define contagem
+    * @param contagem contagem
+    * @generated
+    */
+    public Produto setContagem(Contagem contagem) {
+        this.contagem = contagem;
+        return this;
+    }
 
     /**
     * @generated
@@ -182,7 +209,7 @@ public class Produto implements Serializable {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
 Produto object = (Produto)obj;
-        if (contagem != null ? !contagem.equals(object.contagem) : object.contagem != null) return false;
+        if (id != null ? !id.equals(object.id) : object.id != null) return false;
         return true;
     }
 
@@ -192,7 +219,7 @@ Produto object = (Produto)obj;
     @Override
     public int hashCode() {
         int result = 1;
-        result = 31 * result + ((contagem == null) ? 0 : contagem.hashCode());
+        result = 31 * result + ((id == null) ? 0 : id.hashCode());
         return result;
     }
 

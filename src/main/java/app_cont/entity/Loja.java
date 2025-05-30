@@ -36,7 +36,7 @@ public class Loja implements Serializable {
     */
     @Id
     @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
-    @Column(name = "id", nullable = false, insertable=true, updatable=true)
+    @Column(name = "loja_id", nullable = false, insertable=true, updatable=true)
         private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
 
 

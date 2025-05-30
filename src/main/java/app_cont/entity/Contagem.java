@@ -19,7 +19,6 @@ import cronapp.framework.core.persistence.*;
 * @generated
 */
 @jakarta.persistence.Entity
-@IdClass(ContagemPK.class)
 @jakarta.persistence.Table(name = "\"CONTAGEM\"")
 @XmlRootElement
 @CronappSecurity
@@ -36,8 +35,9 @@ public class Contagem implements Serializable {
     * @generated
     */
     @Id
-    @JoinColumn(name="loja", nullable = false, referencedColumnName = "id", insertable=true, updatable=true)
-        private Loja loja;
+    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
+    @Column(name = "id", nullable = false, insertable=true, updatable=true)
+        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
@@ -69,6 +69,15 @@ public class Contagem implements Serializable {
 
 
     /**
+    * @generated
+    */
+    @ManyToOne
+    @JoinColumn(name="fk_loja", nullable = true, referencedColumnName = "loja_id", insertable=true, updatable=true)
+        
+        private Loja loja;
+
+
+    /**
     * Construtor
     * @generated
     */
@@ -76,21 +85,21 @@ public class Contagem implements Serializable {
     }
 
     /**
-    * Obtém loja
-    * return loja
+    * Obtém id
+    * return id
     * @generated
     */
-    public Loja getLoja() {
-        return this.loja;
+    public java.lang.String getId() {
+        return this.id;
     }
 
     /**
-    * Define loja
-    * @param loja loja
+    * Define id
+    * @param id id
     * @generated
     */
-    public Contagem setLoja(Loja loja) {
-        this.loja = loja;
+    public Contagem setId(java.lang.String id) {
+        this.id = id;
         return this;
     }
     /**
@@ -147,6 +156,24 @@ public class Contagem implements Serializable {
         this.data = data;
         return this;
     }
+    /**
+    * Obtém loja
+    * return loja
+    * @generated
+    */
+    public Loja getLoja() {
+        return this.loja;
+    }
+
+    /**
+    * Define loja
+    * @param loja loja
+    * @generated
+    */
+    public Contagem setLoja(Loja loja) {
+        this.loja = loja;
+        return this;
+    }
 
     /**
     * @generated
@@ -156,7 +183,7 @@ public class Contagem implements Serializable {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
 Contagem object = (Contagem)obj;
-        if (loja != null ? !loja.equals(object.loja) : object.loja != null) return false;
+        if (id != null ? !id.equals(object.id) : object.id != null) return false;
         return true;
     }
 
@@ -166,7 +193,7 @@ Contagem object = (Contagem)obj;
     @Override
     public int hashCode() {
         int result = 1;
-        result = 31 * result + ((loja == null) ? 0 : loja.hashCode());
+        result = 31 * result + ((id == null) ? 0 : id.hashCode());
         return result;
     }
 

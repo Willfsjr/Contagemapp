@@ -72,11 +72,11 @@
     {
       "angle": 0,
       "attributes": [
-        "codiPsv:java.lang.String",
-        "codiDpt:java.lang.Long",
-        "codiEmp:java.lang.Integer",
-        "descPsv:java.lang.String",
-        "qteTotal:java.lang.Double"
+        "CODI_PSV:java.lang.String",
+        "CODI_DPT:java.lang.Long",
+        "CODI_EMP:java.lang.Integer",
+        "DESC_PSV:java.lang.String",
+        "QTE_TOTAL:java.lang.Double"
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
@@ -89,12 +89,12 @@
         ".uml-class-attrs-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "* codiPsv\ncodiDpt\ncodiEmp\ndescPsv\nqteTotal\n"
+          "text": "* CODI_PSV\nCODI_DPT\nCODI_EMP\nDESC_PSV\nQTE_TOTAL\n"
         },
         ".uml-class-attrs-value": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "ref-x": 130,
+          "ref-x": 133,
           "text": "Texto\nInteiro Longo\nInteiro\nTexto\nNumérico\n"
         },
         ".uml-class-methods-rect": {
@@ -155,7 +155,7 @@
       ],
       "fields": [
         {
-          "name": "codiPsv",
+          "name": "CODI_PSV",
           "type": "java.lang.String",
           "dbName": "CODI_PSV",
           "dbLength": 15,
@@ -165,7 +165,7 @@
           "isUpdatable": true,
           "dbPrecision": "",
           "dbScale": "",
-          "label": "Codi Psv",
+          "label": "CODI  PSV",
           "mask": "",
           "isUniqueKey": false,
           "isNullable": false,
@@ -174,7 +174,7 @@
           "sequence": ""
         },
         {
-          "name": "codiDpt",
+          "name": "CODI_DPT",
           "type": "java.lang.Long",
           "dbName": "CODI_DPT",
           "dbLength": "",
@@ -184,13 +184,13 @@
           "isUpdatable": true,
           "dbPrecision": "",
           "dbScale": "",
-          "label": "Codi Dpt",
+          "label": "CODI  DPT",
           "mask": "",
           "isUniqueKey": false,
           "isNullable": false
         },
         {
-          "name": "codiEmp",
+          "name": "CODI_EMP",
           "type": "java.lang.Integer",
           "dbName": "CODI_EMP",
           "dbLength": "",
@@ -200,13 +200,13 @@
           "isUpdatable": true,
           "dbPrecision": "",
           "dbScale": "",
-          "label": "Codi Emp",
+          "label": "CODI  EMP",
           "mask": "",
           "isUniqueKey": false,
           "isNullable": false
         },
         {
-          "name": "descPsv",
+          "name": "DESC_PSV",
           "type": "java.lang.String",
           "dbName": "DESC_PSV",
           "dbLength": 120,
@@ -216,13 +216,13 @@
           "isUpdatable": true,
           "dbPrecision": "",
           "dbScale": "",
-          "label": "Desc Psv",
+          "label": "DESC  PSV",
           "mask": "",
           "isUniqueKey": false,
           "isNullable": true
         },
         {
-          "name": "qteTotal",
+          "name": "QTE_TOTAL",
           "type": "java.lang.Double",
           "dbName": "QTE_TOTAL",
           "dbLength": "",
@@ -232,7 +232,7 @@
           "isUpdatable": true,
           "dbPrecision": "",
           "dbScale": "",
-          "label": "Qte Total",
+          "label": "QTE  TOTAL",
           "mask": "",
           "isUniqueKey": false,
           "isNullable": true
@@ -245,7 +245,7 @@
         "",
         ""
       ],
-      "id": "4e372376-952b-4212-9ef9-b2d4cd12bf60",
+      "id": "807473db-0da4-46c7-96cd-81dcbf9ca324",
       "insertable": [
         true,
         true,
@@ -284,8 +284,8 @@
         "codiEmp"
       ],
       "position": {
-        "x": 86,
-        "y": 76
+        "x": 50,
+        "y": 15
       },
       "primaryKeys": [
         "codiPsv"
@@ -302,7 +302,7 @@
       ],
       "size": {
         "height": 150,
-        "width": 213
+        "width": 216
       },
       "tableName": "ESTOQUECONTAGEM",
       "tableScheme": "NEWFRD",
@@ -321,14 +321,14 @@
     {
       "angle": 0,
       "attributes": [
-        "codiPsv:java.lang.String",
-        "codiBar:java.lang.String",
-        "codiGpr:java.lang.Long",
-        "codiSbg:java.lang.Long",
-        "custTab:java.lang.Double",
-        "descGpr:java.lang.String",
-        "descPsv:java.lang.String",
-        "descSbg:java.lang.String"
+        "CODI_PSV:java.lang.String",
+        "CODI_BAR:java.lang.String",
+        "CODI_GPR:java.lang.Long",
+        "CODI_SBG:java.lang.Long",
+        "CUST_TAB:java.lang.Double",
+        "DESC_GPR:java.lang.String",
+        "DESC_PSV:java.lang.String",
+        "DESC_SBG:java.lang.String"
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
@@ -341,12 +341,12 @@
         ".uml-class-attrs-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "* codiPsv\ncodiBar\ncodiGpr\ncodiSbg\ncustTab\ndescGpr\ndescPsv\ndescSbg\n"
+          "text": "* CODI_PSV\nCODI_BAR\nCODI_GPR\nCODI_SBG\nCUST_TAB\nDESC_GPR\nDESC_PSV\nDESC_SBG\n"
         },
         ".uml-class-attrs-value": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "ref-x": 130,
+          "ref-x": 133,
           "text": "Texto\nTexto\nInteiro Longo\nInteiro Longo\nNumérico\nTexto\nTexto\nTexto\n"
         },
         ".uml-class-methods-rect": {
@@ -380,38 +380,22 @@
       "dbFieldNames": [
         "CODI_PSV",
         "CODI_BAR",
-        "CODI_GPR",
-        "CODI_SBG",
         "CUST_TAB",
-        "DESC_GPR",
-        "DESC_PSV",
-        "DESC_SBG"
+        "DESC_PSV"
       ],
       "dbLengths": [
         15,
         14,
         "",
-        "",
-        "",
-        40,
-        120,
-        30
+        120
       ],
       "dbPrecisions": [
         "",
         "",
-        "",
-        "",
         9,
-        "",
-        "",
         ""
       ],
       "dbScales": [
-        "",
-        "",
-        "",
-        "",
         "",
         "",
         "",
@@ -419,7 +403,7 @@
       ],
       "fields": [
         {
-          "name": "codiPsv",
+          "name": "CODI_PSV",
           "type": "java.lang.String",
           "dbName": "CODI_PSV",
           "dbLength": 15,
@@ -429,7 +413,7 @@
           "isUpdatable": true,
           "dbPrecision": "",
           "dbScale": "",
-          "label": "Codi Psv",
+          "label": "CODI  PSV",
           "mask": "",
           "isUniqueKey": false,
           "isNullable": false,
@@ -438,7 +422,7 @@
           "sequence": ""
         },
         {
-          "name": "codiBar",
+          "name": "CODI_BAR",
           "type": "java.lang.String",
           "dbName": "CODI_BAR",
           "dbLength": 14,
@@ -448,13 +432,13 @@
           "isUpdatable": true,
           "dbPrecision": "",
           "dbScale": "",
-          "label": "Codi Bar",
+          "label": "CODI  BAR",
           "mask": "",
           "isUniqueKey": false,
           "isNullable": true
         },
         {
-          "name": "codiGpr",
+          "name": "CODI_GPR",
           "type": "java.lang.Long",
           "dbName": "CODI_GPR",
           "dbLength": "",
@@ -464,13 +448,13 @@
           "isUpdatable": true,
           "dbPrecision": "",
           "dbScale": "",
-          "label": "Codi Gpr",
+          "label": "CODI  GPR",
           "mask": "",
           "isUniqueKey": false,
           "isNullable": true
         },
         {
-          "name": "codiSbg",
+          "name": "CODI_SBG",
           "type": "java.lang.Long",
           "dbName": "CODI_SBG",
           "dbLength": "",
@@ -480,13 +464,13 @@
           "isUpdatable": true,
           "dbPrecision": "",
           "dbScale": "",
-          "label": "Codi Sbg",
+          "label": "CODI  SBG",
           "mask": "",
           "isUniqueKey": false,
           "isNullable": true
         },
         {
-          "name": "custTab",
+          "name": "CUST_TAB",
           "type": "java.lang.Double",
           "dbName": "CUST_TAB",
           "dbLength": "",
@@ -496,13 +480,13 @@
           "isUpdatable": true,
           "dbPrecision": 9,
           "dbScale": 9,
-          "label": "Cust Tab",
+          "label": "CUST  TAB",
           "mask": "",
           "isUniqueKey": false,
           "isNullable": true
         },
         {
-          "name": "descGpr",
+          "name": "DESC_GPR",
           "type": "java.lang.String",
           "dbName": "DESC_GPR",
           "dbLength": 40,
@@ -512,13 +496,13 @@
           "isUpdatable": true,
           "dbPrecision": "",
           "dbScale": "",
-          "label": "Desc Gpr",
+          "label": "DESC  GPR",
           "mask": "",
           "isUniqueKey": false,
           "isNullable": true
         },
         {
-          "name": "descPsv",
+          "name": "DESC_PSV",
           "type": "java.lang.String",
           "dbName": "DESC_PSV",
           "dbLength": 120,
@@ -528,13 +512,13 @@
           "isUpdatable": true,
           "dbPrecision": "",
           "dbScale": "",
-          "label": "Desc Psv",
+          "label": "DESC  PSV",
           "mask": "",
           "isUniqueKey": false,
           "isNullable": true
         },
         {
-          "name": "descSbg",
+          "name": "DESC_SBG",
           "type": "java.lang.String",
           "dbName": "DESC_SBG",
           "dbLength": 30,
@@ -544,7 +528,7 @@
           "isUpdatable": true,
           "dbPrecision": "",
           "dbScale": "",
-          "label": "Desc Sbg",
+          "label": "DESC  SBG",
           "mask": "",
           "isUniqueKey": false,
           "isNullable": true
@@ -554,18 +538,10 @@
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        "",
         ""
       ],
-      "id": "62f5ef13-d06a-42be-93e9-d200c0395da6",
+      "id": "979bfa8d-741b-402d-925a-437a3643da8f",
       "insertable": [
-        true,
-        true,
-        true,
-        true,
         true,
         true,
         true,
@@ -576,17 +552,9 @@
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        "",
         ""
       ],
       "keyTypes": [
-        "None",
-        "None",
-        "None",
-        "None",
         "None",
         "None",
         "None",
@@ -595,22 +563,18 @@
       "labels": [
         "Codi Psv",
         "Codi Bar",
-        "Codi Gpr",
-        "Codi Sbg",
         "Cust Tab",
-        "Desc Gpr",
-        "Desc Psv",
-        "Desc Sbg"
+        "Desc Psv"
       ],
       "methods": [],
-      "modelType": "View",
+      "modelType": "Table",
       "name": "Produtocontagem",
       "nullables": [
         "codiPsv"
       ],
       "position": {
-        "x": 340,
-        "y": 62
+        "x": 316,
+        "y": 0
       },
       "primaryKeys": [
         "codiPsv"
@@ -622,25 +586,17 @@
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        "",
         ""
       ],
       "size": {
         "height": 180,
-        "width": 213
+        "width": 216
       },
       "tableName": "PRODUTOCONTAGEM",
       "tableScheme": "NEWFRD",
       "type": "uml.Class",
       "uniqueKeys": [],
       "updatable": [
-        true,
-        true,
-        true,
-        true,
         true,
         true,
         true,
@@ -656,8 +612,8 @@
       "name": "",
       "id": "95d75f47-dad1-441d-883d-f9a40e720071",
       "cells": [
-        "4e372376-952b-4212-9ef9-b2d4cd12bf60",
-        "62f5ef13-d06a-42be-93e9-d200c0395da6"
+        "807473db-0da4-46c7-96cd-81dcbf9ca324",
+        "979bfa8d-741b-402d-925a-437a3643da8f"
       ],
       "groupPositions": []
     }

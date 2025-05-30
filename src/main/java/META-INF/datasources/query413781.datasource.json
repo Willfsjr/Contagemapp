@@ -8,28 +8,102 @@
   "entityFullName": "app_cont.entity.Contagem",
   "query": {
     "isValid": true,
+    "isEmpty": false,
+    "operationType": "object",
+    "isNativeQuery": false,
+    "namespace": "app_cont",
+    "type": "select",
     "rulesEntity": [
       {
         "entity": "Contagem",
-        "alias": "c",
-        "namespace": "app_cont.entity.Contagem"
+        "namespace": "app_cont.entity.Contagem",
+        "dataSourceOptions": {
+          "id": "app_cont.Contagem",
+          "customId": "Contagem",
+          "customQueryName": "app_cont.Contagem",
+          "paramValues": [],
+          "entityFullName": "app_cont.entity.Contagem",
+          "schemaFields": [
+            {
+              "name": "id",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "name",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "encerrado",
+              "type": "Boolean",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "data",
+              "type": "DateTime",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "loja",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "_objectKey",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": true
+            },
+            {
+              "name": "loja_name",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            }
+          ],
+          "type": "entity",
+          "hasError": false,
+          "customName": "Contagem",
+          "fullName": "app_cont.entity.Contagem",
+          "labelName": "app_cont.entity.Contagem (Contagem)"
+        },
+        "alias": "c"
       }
     ],
     "rulesSelect": [
       {
         "func": "get",
-        "field": "c"
+        "field": "c",
+        "type": "string"
       }
     ],
+    "rulesJoin": [],
     "rulesGroupBy": [],
     "rulesHaving": [],
     "rulesOrderBy": [],
     "rules": {
       "condition": "AND",
+      "rules": [],
       "not": false,
-      "valid": true,
-      "rules": []
-    }
+      "valid": true
+    },
+    "isRawSql": false,
+    "multiTenant": false,
+    "paginatorAutomatic": false,
+    "pagination": false
   },
   "queryParamsValues": [],
   "verbs": {
@@ -40,7 +114,9 @@
     "PUT": true,
     "PUTAuthorities": null,
     "DELETE": true,
-    "DELETEAuthorities": null,
+    "DELETEAuthorities": [
+      "Authenticated"
+    ],
     "FILTER": true,
     "FILTERAuthorities": null,
     "COUNT": true,
@@ -50,34 +126,7 @@
     "beforeInsert": null,
     "beforeUpdate": null,
     "beforeDelete": null,
-    "afterInsert": {
-      "type": "server",
-      "blocklyMethod": "obterProdutoParaContagem",
-      "blocklyClass": "blockly.Contagem",
-      "blocklyLanguage": "java",
-      "blocklyParams": [
-        {
-          "id": "1b7b51d5",
-          "name": "idContagem",
-          "value": "primaryKey",
-          "type": "CUSTOM"
-        }
-      ],
-      "blocklyJson": {
-        "namespace": "blockly.Contagem",
-        "sourcePath": "src/main/java/blockly/Contagem.blockly",
-        "language": "java",
-        "methods": [
-          {
-            "name": "obterProdutoParaContagem",
-            "hasReturn": "true",
-            "params": [
-              "idContagem"
-            ]
-          }
-        ]
-      }
-    },
+    "afterInsert": null,
     "afterUpdate": null,
     "afterDelete": null,
     "onNavigate": null,
@@ -85,24 +134,27 @@
     "onError": null
   },
   "defaultValues": {
-    "loja": null,
+    "id": null,
     "name": null,
     "encerrado": null,
     "data": null,
+    "loja": null,
     "loja_name": null
   },
   "defaultValuesProperties": {
-    "loja": null,
+    "id": null,
     "name": null,
     "encerrado": null,
     "data": null,
+    "loja": null,
     "loja_name": null
   },
   "security": {
-    "loja": null,
+    "id": null,
     "name": null,
     "encerrado": null,
     "data": null,
+    "loja": null,
     "loja_name": null
   },
   "calcFields": {},

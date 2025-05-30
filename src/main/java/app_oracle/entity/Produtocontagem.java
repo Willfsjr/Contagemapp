@@ -35,72 +35,72 @@ public class Produtocontagem implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Codi Psv")
+    @CronappColumn(attributeType="STRING", label="CODI  PSV")
     @Column(name = "CODI_PSV", nullable = false, length=15, insertable=true, updatable=true)
-        private java.lang.String codiPsv;
+        private java.lang.String coDI_PSV;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Codi Bar")
+    @CronappColumn(attributeType="STRING", label="CODI  BAR")
     @Column(name = "CODI_BAR", nullable = true, unique = false, length=14, insertable=true, updatable=true)
         
-        private java.lang.String codiBar;
+        private java.lang.String coDI_BAR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="Codi Gpr")
+    @CronappColumn(attributeType="LONG", label="CODI  GPR")
     @Column(name = "CODI_GPR", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long codiGpr;
+        private java.lang.Long coDI_GPR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="Codi Sbg")
+    @CronappColumn(attributeType="LONG", label="CODI  SBG")
     @Column(name = "CODI_SBG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long codiSbg;
+        private java.lang.Long coDI_SBG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="Cust Tab")
+    @CronappColumn(attributeType="DOUBLE", label="CUST  TAB")
     @Column(name = "CUST_TAB", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double custTab;
+        private java.lang.Double cuST_TAB;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Gpr")
+    @CronappColumn(attributeType="STRING", label="DESC  GPR")
     @Column(name = "DESC_GPR", nullable = true, unique = false, length=40, insertable=true, updatable=true)
         
-        private java.lang.String descGpr;
+        private java.lang.String deSC_GPR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Psv")
+    @CronappColumn(attributeType="STRING", label="DESC  PSV")
     @Column(name = "DESC_PSV", nullable = true, unique = false, length=120, insertable=true, updatable=true)
         
-        private java.lang.String descPsv;
+        private java.lang.String deSC_PSV;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Sbg")
+    @CronappColumn(attributeType="STRING", label="DESC  SBG")
     @Column(name = "DESC_SBG", nullable = true, unique = false, length=30, insertable=true, updatable=true)
         
-        private java.lang.String descSbg;
+        private java.lang.String deSC_SBG;
 
 
     /**
@@ -111,147 +111,147 @@ public class Produtocontagem implements Serializable {
     }
 
     /**
-    * Obtém codiPsv
-    * return codiPsv
+    * Obtém coDI_PSV
+    * return coDI_PSV
     * @generated
     */
-    public java.lang.String getCodiPsv() {
-        return this.codiPsv;
+    public java.lang.String getCoDI_PSV() {
+        return this.coDI_PSV;
     }
 
     /**
-    * Define codiPsv
-    * @param codiPsv codiPsv
+    * Define coDI_PSV
+    * @param coDI_PSV coDI_PSV
     * @generated
     */
-    public Produtocontagem setCodiPsv(java.lang.String codiPsv) {
-        this.codiPsv = codiPsv;
+    public Produtocontagem setCoDI_PSV(java.lang.String coDI_PSV) {
+        this.coDI_PSV = coDI_PSV;
         return this;
     }
     /**
-    * Obtém codiBar
-    * return codiBar
+    * Obtém coDI_BAR
+    * return coDI_BAR
     * @generated
     */
-    public java.lang.String getCodiBar() {
-        return this.codiBar;
+    public java.lang.String getCoDI_BAR() {
+        return this.coDI_BAR;
     }
 
     /**
-    * Define codiBar
-    * @param codiBar codiBar
+    * Define coDI_BAR
+    * @param coDI_BAR coDI_BAR
     * @generated
     */
-    public Produtocontagem setCodiBar(java.lang.String codiBar) {
-        this.codiBar = codiBar;
+    public Produtocontagem setCoDI_BAR(java.lang.String coDI_BAR) {
+        this.coDI_BAR = coDI_BAR;
         return this;
     }
     /**
-    * Obtém codiGpr
-    * return codiGpr
+    * Obtém coDI_GPR
+    * return coDI_GPR
     * @generated
     */
-    public java.lang.Long getCodiGpr() {
-        return this.codiGpr;
+    public java.lang.Long getCoDI_GPR() {
+        return this.coDI_GPR;
     }
 
     /**
-    * Define codiGpr
-    * @param codiGpr codiGpr
+    * Define coDI_GPR
+    * @param coDI_GPR coDI_GPR
     * @generated
     */
-    public Produtocontagem setCodiGpr(java.lang.Long codiGpr) {
-        this.codiGpr = codiGpr;
+    public Produtocontagem setCoDI_GPR(java.lang.Long coDI_GPR) {
+        this.coDI_GPR = coDI_GPR;
         return this;
     }
     /**
-    * Obtém codiSbg
-    * return codiSbg
+    * Obtém coDI_SBG
+    * return coDI_SBG
     * @generated
     */
-    public java.lang.Long getCodiSbg() {
-        return this.codiSbg;
+    public java.lang.Long getCoDI_SBG() {
+        return this.coDI_SBG;
     }
 
     /**
-    * Define codiSbg
-    * @param codiSbg codiSbg
+    * Define coDI_SBG
+    * @param coDI_SBG coDI_SBG
     * @generated
     */
-    public Produtocontagem setCodiSbg(java.lang.Long codiSbg) {
-        this.codiSbg = codiSbg;
+    public Produtocontagem setCoDI_SBG(java.lang.Long coDI_SBG) {
+        this.coDI_SBG = coDI_SBG;
         return this;
     }
     /**
-    * Obtém custTab
-    * return custTab
+    * Obtém cuST_TAB
+    * return cuST_TAB
     * @generated
     */
-    public java.lang.Double getCustTab() {
-        return this.custTab;
+    public java.lang.Double getCuST_TAB() {
+        return this.cuST_TAB;
     }
 
     /**
-    * Define custTab
-    * @param custTab custTab
+    * Define cuST_TAB
+    * @param cuST_TAB cuST_TAB
     * @generated
     */
-    public Produtocontagem setCustTab(java.lang.Double custTab) {
-        this.custTab = custTab;
+    public Produtocontagem setCuST_TAB(java.lang.Double cuST_TAB) {
+        this.cuST_TAB = cuST_TAB;
         return this;
     }
     /**
-    * Obtém descGpr
-    * return descGpr
+    * Obtém deSC_GPR
+    * return deSC_GPR
     * @generated
     */
-    public java.lang.String getDescGpr() {
-        return this.descGpr;
+    public java.lang.String getDeSC_GPR() {
+        return this.deSC_GPR;
     }
 
     /**
-    * Define descGpr
-    * @param descGpr descGpr
+    * Define deSC_GPR
+    * @param deSC_GPR deSC_GPR
     * @generated
     */
-    public Produtocontagem setDescGpr(java.lang.String descGpr) {
-        this.descGpr = descGpr;
+    public Produtocontagem setDeSC_GPR(java.lang.String deSC_GPR) {
+        this.deSC_GPR = deSC_GPR;
         return this;
     }
     /**
-    * Obtém descPsv
-    * return descPsv
+    * Obtém deSC_PSV
+    * return deSC_PSV
     * @generated
     */
-    public java.lang.String getDescPsv() {
-        return this.descPsv;
+    public java.lang.String getDeSC_PSV() {
+        return this.deSC_PSV;
     }
 
     /**
-    * Define descPsv
-    * @param descPsv descPsv
+    * Define deSC_PSV
+    * @param deSC_PSV deSC_PSV
     * @generated
     */
-    public Produtocontagem setDescPsv(java.lang.String descPsv) {
-        this.descPsv = descPsv;
+    public Produtocontagem setDeSC_PSV(java.lang.String deSC_PSV) {
+        this.deSC_PSV = deSC_PSV;
         return this;
     }
     /**
-    * Obtém descSbg
-    * return descSbg
+    * Obtém deSC_SBG
+    * return deSC_SBG
     * @generated
     */
-    public java.lang.String getDescSbg() {
-        return this.descSbg;
+    public java.lang.String getDeSC_SBG() {
+        return this.deSC_SBG;
     }
 
     /**
-    * Define descSbg
-    * @param descSbg descSbg
+    * Define deSC_SBG
+    * @param deSC_SBG deSC_SBG
     * @generated
     */
-    public Produtocontagem setDescSbg(java.lang.String descSbg) {
-        this.descSbg = descSbg;
+    public Produtocontagem setDeSC_SBG(java.lang.String deSC_SBG) {
+        this.deSC_SBG = deSC_SBG;
         return this;
     }
 
@@ -263,7 +263,7 @@ public class Produtocontagem implements Serializable {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
 Produtocontagem object = (Produtocontagem)obj;
-        if (codiPsv != null ? !codiPsv.equals(object.codiPsv) : object.codiPsv != null) return false;
+        if (coDI_PSV != null ? !coDI_PSV.equals(object.coDI_PSV) : object.coDI_PSV != null) return false;
         return true;
     }
 
@@ -273,7 +273,7 @@ Produtocontagem object = (Produtocontagem)obj;
     @Override
     public int hashCode() {
         int result = 1;
-        result = 31 * result + ((codiPsv == null) ? 0 : codiPsv.hashCode());
+        result = 31 * result + ((coDI_PSV == null) ? 0 : coDI_PSV.hashCode());
         return result;
     }
 

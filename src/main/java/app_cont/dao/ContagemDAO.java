@@ -19,6 +19,6 @@ import org.springframework.transaction.annotation.*;
  */
 @Repository("app_cont-ContagemDAO")
 @Transactional(transactionManager="app_cont-TransactionManager")
-public interface ContagemDAO extends JpaRepository<Contagem, ContagemPK> {
+public interface ContagemDAO extends JpaRepository<Contagem, java.lang.String> {
 
 }

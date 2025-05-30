@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><blockly audit="false" blocklyType="WEB" bpmnAble="false" formTarget="src/main/webapp/views/admin/contagem.view.html" functionCategory="" linkHelp="" multilayer="false" resourceType="JS" ruleDescription="Contagem" ruleName="Contagem" ruleSynchronous="false" ruleTimeout="" ruleType="I" showAsFunction="false" soap="false" swagger="false">
-  <metadata scale="1" scrollx="251.5" scrolly="-251" target="/l-,|)^dxL:w)i5LU]^K"/>
+  <metadata scale="1" scrollx="235.79999999999995" scrolly="-251" target="ej/^#jVy4?*d]c(/Hi)A"/>
   <block asynccall="false" colour="#995ba5" datasourcetype="" id="Anb:u5+^,0vLkL9QIqn5" origintype="procedures_defreturn" output="false" score="9007199254740991" tooltip="Cria uma função que possui um valor de retorno." type="procedures_defreturn" valueconstant="" x="-328" y="140">
-    <field customattributes="" name="NAME">validarNome</field>
+    <field customattributes="" name="NAME">validarName</field>
     <statement name="STACK">
       <block asynccall="false" colour="#5b80a5" datasourcetype="" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="i3d:VC0;#TB.G@w5E.XF" origintype="controls_if" output="false" score="9007199254740991" tooltip="function () { [native code] }" type="controls_if" valueconstant="">
         <mutation else="1"/>
@@ -160,8 +160,8 @@
             <mutation items="2"/>
             <field customattributes="" name="OP1">AND</field>
             <value name="ARG0">
-              <block asynccall="false" colour="#fca03b" datasourcetype="" dependencyby="/l-,|)^dxL:w)i5LU]^K" id="iGJ;qr)aXt1}IP6BCFe_" origintype="procedures_callreturn" output="true" score="9007199254740991" tooltip="Executa a função definida pelo usuário &quot;validarNome&quot; e usa seu retorno." type="procedures_callreturn" valueconstant="">
-                <mutation name="validarNome" return-raw-type="undefined"/>
+              <block asynccall="false" colour="#fca03b" datasourcetype="" dependencyby="/l-,|)^dxL:w)i5LU]^K" id="iGJ;qr)aXt1}IP6BCFe_" origintype="procedures_callreturn" output="true" score="9007199254740991" tooltip="Executa a função definida pelo usuário &quot;validarName&quot; e usa seu retorno." type="procedures_callreturn" valueconstant="">
+                <mutation name="validarName" return-raw-type="undefined"/>
               </block>
             </value>
             <value name="ARG1">

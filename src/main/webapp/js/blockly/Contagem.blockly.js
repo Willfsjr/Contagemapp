@@ -4,17 +4,17 @@ window.blockly.js.blockly = window.blockly.js.blockly || {};
 window.blockly.js.blockly.Contagem = window.blockly.js.blockly.Contagem || {};
 
 /**
- * @function validarNome
+ * @function validarName
  *
  *
  *
  *
  * @author Willian Ferreira
- * @since 29/05/2025, 14:18:45
+ * @since 29/05/2025, 15:32:59
  *
  */
-window.blockly.js.blockly.Contagem.validarNomeArgs = [];
-window.blockly.js.blockly.Contagem.validarNome = async function() {
+window.blockly.js.blockly.Contagem.validarNameArgs = [];
+window.blockly.js.blockly.Contagem.validarName = async function() {
 
   //
   if (this.cronapi.logic.isNullOrEmpty(this.cronapi.screen.getValueOfField("contagem.active.name"))) {
@@ -36,7 +36,7 @@ window.blockly.js.blockly.Contagem.validarNome = async function() {
  *
  *
  * @author Willian Ferreira
- * @since 29/05/2025, 14:18:45
+ * @since 29/05/2025, 15:32:59
  *
  */
 window.blockly.js.blockly.Contagem.definirDataArgs = [];
@@ -53,7 +53,7 @@ window.blockly.js.blockly.Contagem.definirData = async function() {
  *
  *
  * @author Willian Ferreira
- * @since 29/05/2025, 14:18:45
+ * @since 29/05/2025, 15:32:59
  *
  */
 window.blockly.js.blockly.Contagem.validarLojaArgs = [];
@@ -79,14 +79,14 @@ window.blockly.js.blockly.Contagem.validarLoja = async function() {
  *
  *
  * @author Willian Ferreira
- * @since 29/05/2025, 14:18:45
+ * @since 29/05/2025, 15:32:59
  *
  */
 window.blockly.js.blockly.Contagem.GravarArgs = [];
 window.blockly.js.blockly.Contagem.Gravar = async function() {
 
   //
-  if ((await this.cronapi.client('blockly.js.blockly.Contagem.validarNome').run()) && (await this.cronapi.client('blockly.js.blockly.Contagem.validarLoja').run())) {
+  if ((await this.cronapi.client('blockly.js.blockly.Contagem.validarName').run()) && (await this.cronapi.client('blockly.js.blockly.Contagem.validarLoja').run())) {
     //
     (await this.cronapi.client('cronapi.screen.post').run("contagem"));
   } else {

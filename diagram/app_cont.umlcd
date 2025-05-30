@@ -50,6 +50,7 @@
       "chkApi": false,
       "dataSource": "jdbc/contdb_dev",
       "disableCache": false,
+      "generationType": "none",
       "id": "paperCell",
       "methods": [],
       "namespace": "app_cont",
@@ -71,36 +72,37 @@
     {
       "angle": 0,
       "attributes": [
-        "loja:Loja",
+        "id:java.lang.String",
         "name:java.lang.String",
         "encerrado:java.lang.Boolean",
-        "data:java.sql.Date"
+        "data:java.sql.Date",
+        "loja:Loja"
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
           "fill": "#F0F0F0",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
-          "height": 100,
+          "height": 120,
           "stroke": "#C2C2C2",
           "transform": "translate(0,40)"
         },
         ".uml-class-attrs-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "* loja\nname\nencerrado\ndata\n"
+          "text": "* id\nname\nencerrado\ndata\nloja\n"
         },
         ".uml-class-attrs-value": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
           "ref-x": 123,
-          "text": "Loja\nTexto\nLógico\nData e Hora\n"
+          "text": "Texto\nTexto\nLógico\nData e Hora\nLoja\n"
         },
         ".uml-class-methods-rect": {
           "fill": "#F0F0F0",
           "height": 20,
           "stroke": "#C2C2C2",
           "stroke-width": 1,
-          "transform": "translate(0,140)"
+          "transform": "translate(0,160)"
         },
         ".uml-class-methods-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
@@ -122,20 +124,20 @@
       "audit": false,
       "fields": [
         {
-          "name": "loja",
-          "type": "Loja",
-          "dbName": "loja",
+          "name": "id",
+          "type": "java.lang.String",
+          "dbName": "id",
           "dbLength": "",
           "dbPrecision": "",
           "dbScale": "",
-          "dbDefaultValue": "",
-          "label": "Loja",
+          "dbDefaultValue": "UUID.randomUUID().toString().toUpperCase()",
+          "label": "Id",
           "mask": "",
           "isPrimaryKey": true,
           "isUniqueKey": false,
           "isNullable": false,
           "isNotEmpty": false,
-          "pkType": "None",
+          "pkType": "UUID",
           "multitenantContext": "",
           "jsonIgnore": false,
           "isTransient": false,
@@ -146,7 +148,7 @@
           "referencedColumnName": "",
           "isSearchable": false,
           "sequence": "",
-          "isCascade": true,
+          "isCascade": false,
           "isVersion": false,
           "storageId": "",
           "storageKey": "",
@@ -272,6 +274,31 @@
           "useOuterJoin": false,
           "regionAWS": "",
           "columnDefinition": ""
+        },
+        {
+          "name": "loja",
+          "type": "Loja",
+          "dbName": "fk_loja",
+          "label": "Loja",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "isNotEmpty": false,
+          "multitenantContext": "",
+          "pkType": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "isCascade": false,
+          "isVersion": false,
+          "idIndex": false,
+          "useOuterJoin": false
         }
       ],
       "generateView": "Auto",
@@ -281,8 +308,8 @@
       "modelType": "Table",
       "name": "Contagem",
       "position": {
-        "x": 456,
-        "y": 392
+        "x": 378,
+        "y": 270
       },
       "queries": [],
       "realName": "",
@@ -290,7 +317,7 @@
       "role": "Class",
       "runtimeClass": "cronos.widgets.joint.uml.Class",
       "size": {
-        "height": 140,
+        "height": 150,
         "width": 198
       },
       "swagger": false,
@@ -303,35 +330,37 @@
     {
       "angle": 0,
       "attributes": [
-        "produto:Produto",
+        "id:java.lang.String",
         "quantidade:java.lang.Double",
-        "data:java.sql.Date"
+        "data:java.sql.Date",
+        "contagem:Contagem",
+        "produto:Produto"
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
           "fill": "#F0F0F0",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
-          "height": 80,
+          "height": 120,
           "stroke": "#C2C2C2",
           "transform": "translate(0,40)"
         },
         ".uml-class-attrs-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "* produto\nquantidade\ndata\n"
+          "text": "* id\nquantidade\ndata\ncontagem\nproduto\n"
         },
         ".uml-class-attrs-value": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
           "ref-x": 132,
-          "text": "Produto\nNumérico\nData e Hora\n"
+          "text": "Texto\nNumérico\nData e Hora\nContagem\nProduto\n"
         },
         ".uml-class-methods-rect": {
           "fill": "#F0F0F0",
           "height": 20,
           "stroke": "#C2C2C2",
           "stroke-width": 1,
-          "transform": "translate(0,120)"
+          "transform": "translate(0,160)"
         },
         ".uml-class-methods-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
@@ -353,20 +382,20 @@
       "audit": false,
       "fields": [
         {
-          "name": "produto",
-          "type": "Produto",
-          "dbName": "produto",
+          "name": "id",
+          "type": "java.lang.String",
+          "dbName": "id",
           "dbLength": "",
           "dbPrecision": "",
           "dbScale": "",
-          "dbDefaultValue": "",
-          "label": "Produto",
+          "dbDefaultValue": "UUID.randomUUID().toString().toUpperCase()",
+          "label": "Id",
           "mask": "",
           "isPrimaryKey": true,
           "isUniqueKey": false,
           "isNullable": false,
           "isNotEmpty": false,
-          "pkType": "None",
+          "pkType": "UUID",
           "multitenantContext": "",
           "jsonIgnore": false,
           "isTransient": false,
@@ -377,7 +406,7 @@
           "referencedColumnName": "",
           "isSearchable": false,
           "sequence": "",
-          "isCascade": true,
+          "isCascade": false,
           "isVersion": false,
           "storageId": "",
           "storageKey": "",
@@ -437,6 +466,82 @@
           "dbScale": "",
           "dbDefaultValue": "",
           "label": "Data",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
+        },
+        {
+          "name": "contagem",
+          "type": "Contagem",
+          "dbName": "fk_contagem",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Contagem",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
+        },
+        {
+          "name": "produto",
+          "type": "Produto",
+          "dbName": "fk_produto",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Produto",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
@@ -474,8 +579,8 @@
       "modelType": "Table",
       "name": "Formulario1",
       "position": {
-        "x": 108,
-        "y": 80
+        "x": 88,
+        "y": 38
       },
       "queries": [],
       "realName": "",
@@ -483,7 +588,7 @@
       "role": "Class",
       "runtimeClass": "cronos.widgets.joint.uml.Class",
       "size": {
-        "height": 130,
+        "height": 150,
         "width": 207
       },
       "swagger": false,
@@ -496,35 +601,37 @@
     {
       "angle": 0,
       "attributes": [
-        "produto:Produto",
+        "id:java.lang.String",
         "quantidade:java.lang.Double",
-        "data:java.sql.Date"
+        "data:java.sql.Date",
+        "contagem:Contagem",
+        "produto:Produto"
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
           "fill": "#F0F0F0",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
-          "height": 80,
+          "height": 120,
           "stroke": "#C2C2C2",
           "transform": "translate(0,40)"
         },
         ".uml-class-attrs-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "* produto\nquantidade\ndata\n"
+          "text": "* id\nquantidade\ndata\ncontagem\nproduto\n"
         },
         ".uml-class-attrs-value": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
           "ref-x": 132,
-          "text": "Produto\nNumérico\nData e Hora\n"
+          "text": "Texto\nNumérico\nData e Hora\nContagem\nProduto\n"
         },
         ".uml-class-methods-rect": {
           "fill": "#F0F0F0",
           "height": 20,
           "stroke": "#C2C2C2",
           "stroke-width": 1,
-          "transform": "translate(0,120)"
+          "transform": "translate(0,160)"
         },
         ".uml-class-methods-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
@@ -546,20 +653,20 @@
       "audit": false,
       "fields": [
         {
-          "name": "produto",
-          "type": "Produto",
-          "dbName": "produto",
+          "name": "id",
+          "type": "java.lang.String",
+          "dbName": "id",
           "dbLength": "",
           "dbPrecision": "",
           "dbScale": "",
-          "dbDefaultValue": "",
-          "label": "Produto",
+          "dbDefaultValue": "UUID.randomUUID().toString().toUpperCase()",
+          "label": "Id",
           "mask": "",
           "isPrimaryKey": true,
           "isUniqueKey": false,
           "isNullable": false,
           "isNotEmpty": false,
-          "pkType": "None",
+          "pkType": "UUID",
           "multitenantContext": "",
           "jsonIgnore": false,
           "isTransient": false,
@@ -658,6 +765,56 @@
           "useOuterJoin": false,
           "regionAWS": "",
           "columnDefinition": ""
+        },
+        {
+          "name": "contagem",
+          "type": "Contagem",
+          "dbName": "fk_contagem",
+          "label": "Contagem",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "isNotEmpty": false,
+          "multitenantContext": "",
+          "pkType": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "isCascade": false,
+          "isVersion": false,
+          "idIndex": false,
+          "useOuterJoin": false
+        },
+        {
+          "name": "produto",
+          "type": "Produto",
+          "dbName": "fk_produto",
+          "label": "Produto",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "isNotEmpty": false,
+          "multitenantContext": "",
+          "pkType": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "isCascade": false,
+          "isVersion": false,
+          "idIndex": false,
+          "useOuterJoin": false
         }
       ],
       "generateView": "Auto",
@@ -667,8 +824,8 @@
       "modelType": "Table",
       "name": "Formulario2",
       "position": {
-        "x": 116,
-        "y": 476
+        "x": 90,
+        "y": 518
       },
       "queries": [],
       "realName": "",
@@ -676,7 +833,7 @@
       "role": "Class",
       "runtimeClass": "cronos.widgets.joint.uml.Class",
       "size": {
-        "height": 130,
+        "height": 150,
         "width": 207
       },
       "swagger": false,
@@ -741,7 +898,7 @@
         {
           "name": "id",
           "type": "java.lang.String",
-          "dbName": "id",
+          "dbName": "loja_id",
           "dbLength": "",
           "dbPrecision": "",
           "dbScale": "",
@@ -860,8 +1017,8 @@
       "modelType": "Table",
       "name": "Loja",
       "position": {
-        "x": 110,
-        "y": 276
+        "x": 650,
+        "y": 282
       },
       "queries": [],
       "realName": "",
@@ -882,37 +1039,38 @@
     {
       "angle": 0,
       "attributes": [
-        "contagem:Contagem",
+        "id:java.lang.String",
         "codiPsv:java.lang.String",
         "descPsv:java.lang.String",
         "codiBar:java.lang.String",
-        "custTab:java.lang.Double"
+        "custTab:java.lang.Double",
+        "contagem:Contagem"
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
           "fill": "#F0F0F0",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
-          "height": 120,
+          "height": 140,
           "stroke": "#C2C2C2",
           "transform": "translate(0,40)"
         },
         ".uml-class-attrs-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "* contagem\ncodiPsv\ndescPsv\ncodiBar\ncustTab\n"
+          "text": "* id\ncodiPsv\ndescPsv\ncodiBar\ncustTab\ncontagem\n"
         },
         ".uml-class-attrs-value": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "ref-x": 142,
-          "text": "Contagem\nTexto\nTexto\nTexto\nNumérico\n"
+          "ref-x": 136,
+          "text": "Texto\nTexto\nTexto\nTexto\nNumérico\nContagem\n"
         },
         ".uml-class-methods-rect": {
           "fill": "#F0F0F0",
           "height": 20,
           "stroke": "#C2C2C2",
           "stroke-width": 1,
-          "transform": "translate(0,160)"
+          "transform": "translate(0,180)"
         },
         ".uml-class-methods-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
@@ -934,20 +1092,20 @@
       "audit": false,
       "fields": [
         {
-          "name": "contagem",
-          "type": "Contagem",
-          "dbName": "contagem",
+          "name": "id",
+          "type": "java.lang.String",
+          "dbName": "id",
           "dbLength": "",
           "dbPrecision": "",
           "dbScale": "",
-          "dbDefaultValue": "",
-          "label": "Contagem",
+          "dbDefaultValue": "UUID.randomUUID().toString().toUpperCase()",
+          "label": "Id",
           "mask": "",
           "isPrimaryKey": true,
           "isUniqueKey": false,
           "isNullable": false,
           "isNotEmpty": false,
-          "pkType": "None",
+          "pkType": "UUID",
           "multitenantContext": "",
           "jsonIgnore": false,
           "isTransient": false,
@@ -958,7 +1116,7 @@
           "referencedColumnName": "",
           "isSearchable": false,
           "sequence": "",
-          "isCascade": true,
+          "isCascade": false,
           "isVersion": false,
           "storageId": "",
           "storageKey": "",
@@ -1122,6 +1280,31 @@
           "useOuterJoin": false,
           "regionAWS": "",
           "columnDefinition": ""
+        },
+        {
+          "name": "contagem",
+          "type": "Contagem",
+          "dbName": "fk_contagem",
+          "label": "Contagem",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "isNotEmpty": false,
+          "multitenantContext": "",
+          "pkType": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "isCascade": false,
+          "isVersion": false,
+          "idIndex": false,
+          "useOuterJoin": false
         }
       ],
       "generateView": "Auto",
@@ -1131,8 +1314,8 @@
       "modelType": "Table",
       "name": "Produto",
       "position": {
-        "x": 452,
-        "y": 158
+        "x": 94,
+        "y": 270
       },
       "queries": [],
       "realName": "",
@@ -1140,164 +1323,46 @@
       "role": "Class",
       "runtimeClass": "cronos.widgets.joint.uml.Class",
       "size": {
-        "height": 150,
-        "width": 207
+        "height": 160,
+        "width": 201
       },
       "swagger": false,
       "tableName": "PRODUTO",
       "tableScheme": null,
       "type": "uml.Class",
       "usePhysicalNames": false,
-      "z": 4
+      "z": 16
     },
     {
       "associationType": "Association",
-      "id": "4046003c-46b0-4224-867d-8d2e8305ef20",
-      "name": "",
-      "queries": [],
-      "relationFields": [
-        "produto:target"
+      "attrs": {
+        ".marker-source": {
+          "d": "M 40 10 L 20 20 L 0 10 L 20 0 z",
+          "fill": "#cecece"
+        },
+        ".marker-target": {
+          "d": "",
+          "fill": ""
+        }
+      },
+      "id": "187cc371-ffa2-4493-af9e-be3e95e2464a",
+      "labels": [
+        {
+          "position": 0.9,
+          "attrs": {
+            "rect": {
+              "fill": "transparent"
+            },
+            "text": {
+              "text": "*",
+              "font-family": "Arial",
+              "font-size": "12px",
+              "fill": "#cecece"
+            }
+          }
+        }
       ],
-      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
-      "source": {
-        "id": "4b9cd62c-47c1-4bff-951b-f617ac0d4741"
-      },
-      "target": {
-        "id": "2b62ca71-64b2-4d74-a86a-84f3dde6a99b"
-      },
-      "type": "uml.Composition",
-      "vertices": []
-    },
-    {
-      "associationType": "Association",
-      "id": "6dfdd86e-2085-4477-aa9e-0a8f275fc9c9",
-      "name": "",
-      "queries": [],
-      "relationFields": [
-        "produto:target"
-      ],
-      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
-      "source": {
-        "id": "93e84505-9634-450d-8a4e-be520c5e87db"
-      },
-      "target": {
-        "id": "4ff5eca1-6420-49b9-b4c7-333885281172"
-      },
-      "type": "uml.Composition",
-      "vertices": []
-    },
-    {
-      "associationType": "Association",
-      "id": "70493ceb-a67a-48bd-836e-1816ded57f82",
-      "name": "",
-      "queries": [],
-      "relationFields": [
-        "contagem:target"
-      ],
-      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
-      "source": {
-        "id": "93e84505-9634-450d-8a4e-be520c5e87db"
-      },
-      "target": {
-        "id": "14cb1534-91d4-4b8b-8c6f-bc50eced9ee4"
-      },
-      "type": "uml.Composition",
-      "vertices": []
-    },
-    {
-      "associationType": "Association",
-      "id": "90d6ed26-d9ca-4b24-8292-45bd5a1936e8",
-      "name": "",
-      "queries": [],
-      "relationFields": [
-        "produto:target"
-      ],
-      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
-      "source": {
-        "id": "14cb1534-91d4-4b8b-8c6f-bc50eced9ee4"
-      },
-      "target": {
-        "id": "4ff5eca1-6420-49b9-b4c7-333885281172"
-      },
-      "type": "uml.Composition",
-      "vertices": []
-    },
-    {
-      "associationType": "Association",
-      "id": "a13ff719-7bee-4949-bde1-ebbe45aac070",
-      "name": "",
-      "queries": [],
-      "relationFields": [
-        "contagem:target"
-      ],
-      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
-      "source": {
-        "id": "4b9cd62c-47c1-4bff-951b-f617ac0d4741"
-      },
-      "target": {
-        "id": "14cb1534-91d4-4b8b-8c6f-bc50eced9ee4"
-      },
-      "type": "uml.Composition",
-      "vertices": []
-    },
-    {
-      "associationType": "Association",
-      "id": "acdcc4f9-cb65-4edd-897d-620ce6846f3f",
-      "name": "",
-      "queries": [],
-      "relationFields": [
-        "produto:target"
-      ],
-      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
-      "source": {
-        "id": "14cb1534-91d4-4b8b-8c6f-bc50eced9ee4"
-      },
-      "target": {
-        "id": "2b62ca71-64b2-4d74-a86a-84f3dde6a99b"
-      },
-      "type": "uml.Composition",
-      "vertices": []
-    },
-    {
-      "associationType": "Association",
-      "id": "d220264d-07fc-42cb-9f95-64520d817ae0",
-      "name": "",
-      "queries": [],
-      "relationFields": [
-        "produto:target"
-      ],
-      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
-      "source": {
-        "id": "93e84505-9634-450d-8a4e-be520c5e87db"
-      },
-      "target": {
-        "id": "2b62ca71-64b2-4d74-a86a-84f3dde6a99b"
-      },
-      "type": "uml.Composition",
-      "vertices": []
-    },
-    {
-      "associationType": "Association",
-      "id": "e21107a8-7678-4b17-8d9f-7d2973d1bafa",
-      "name": "",
-      "queries": [],
-      "relationFields": [
-        "produto:target"
-      ],
-      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
-      "source": {
-        "id": "4b9cd62c-47c1-4bff-951b-f617ac0d4741"
-      },
-      "target": {
-        "id": "4ff5eca1-6420-49b9-b4c7-333885281172"
-      },
-      "type": "uml.Composition",
-      "vertices": []
-    },
-    {
-      "associationType": "Association",
-      "id": "e6e6e374-db05-4e66-a605-64422e7b4ca6",
-      "name": "",
+      "name": null,
       "queries": [],
       "relationFields": [
         "loja:target"
@@ -1310,7 +1375,233 @@
         "id": "4b9cd62c-47c1-4bff-951b-f617ac0d4741"
       },
       "type": "uml.Composition",
-      "vertices": []
+      "vertices": [],
+      "z": 17
+    },
+    {
+      "associationType": "Association",
+      "attrs": {
+        ".marker-source": {
+          "d": "M 40 10 L 20 20 L 0 10 L 20 0 z",
+          "fill": "#cecece"
+        },
+        ".marker-target": {
+          "d": "",
+          "fill": ""
+        }
+      },
+      "id": "4869b85b-83c5-457c-b8ea-5d524e6a1575",
+      "labels": [
+        {
+          "position": 0.9,
+          "attrs": {
+            "rect": {
+              "fill": "transparent"
+            },
+            "text": {
+              "text": "*",
+              "font-family": "Arial",
+              "font-size": "12px",
+              "fill": "#cecece"
+            }
+          }
+        }
+      ],
+      "name": null,
+      "queries": [],
+      "relationFields": [
+        "contagem:target"
+      ],
+      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
+      "source": {
+        "id": "4b9cd62c-47c1-4bff-951b-f617ac0d4741"
+      },
+      "target": {
+        "id": "14cb1534-91d4-4b8b-8c6f-bc50eced9ee4"
+      },
+      "type": "uml.Composition",
+      "vertices": [],
+      "z": 18
+    },
+    {
+      "associationType": "Association",
+      "attrs": {
+        ".marker-source": {
+          "d": "M 40 10 L 20 20 L 0 10 L 20 0 z",
+          "fill": "#cecece"
+        },
+        ".marker-target": {
+          "d": "",
+          "fill": ""
+        }
+      },
+      "id": "917bcfb9-2556-452d-accc-78e242819a6a",
+      "labels": [
+        {
+          "position": 0.9,
+          "attrs": {
+            "rect": {
+              "fill": "transparent"
+            },
+            "text": {
+              "text": "1",
+              "font-family": "Arial",
+              "font-size": "12px",
+              "fill": "#cecece"
+            }
+          }
+        }
+      ],
+      "name": null,
+      "queries": [],
+      "relationFields": [
+        "contagem:source"
+      ],
+      "runtimeClass": "cronos.widgets.joint.arrow.OneToOne",
+      "source": {
+        "id": "2b62ca71-64b2-4d74-a86a-84f3dde6a99b"
+      },
+      "target": {
+        "id": "4b9cd62c-47c1-4bff-951b-f617ac0d4741"
+      },
+      "type": "uml.Composition",
+      "vertices": [],
+      "z": 19
+    },
+    {
+      "associationType": "Association",
+      "attrs": {
+        ".marker-source": {
+          "d": "M 40 10 L 20 20 L 0 10 L 20 0 z",
+          "fill": "#cecece"
+        },
+        ".marker-target": {
+          "d": "",
+          "fill": ""
+        }
+      },
+      "id": "a90fb222-bd1a-42cd-9932-e0e4df026c0a",
+      "labels": [
+        {
+          "position": 0.9,
+          "attrs": {
+            "rect": {
+              "fill": "transparent"
+            },
+            "text": {
+              "text": "1",
+              "font-family": "Arial",
+              "font-size": "12px",
+              "fill": "#cecece"
+            }
+          }
+        }
+      ],
+      "name": null,
+      "queries": [],
+      "relationFields": [
+        "contagem:source"
+      ],
+      "runtimeClass": "cronos.widgets.joint.arrow.OneToOne",
+      "source": {
+        "id": "4ff5eca1-6420-49b9-b4c7-333885281172"
+      },
+      "target": {
+        "id": "4b9cd62c-47c1-4bff-951b-f617ac0d4741"
+      },
+      "type": "uml.Composition",
+      "vertices": [],
+      "z": 20
+    },
+    {
+      "associationType": "Association",
+      "attrs": {
+        ".marker-source": {
+          "d": "M 40 10 L 20 20 L 0 10 L 20 0 z",
+          "fill": "#cecece"
+        },
+        ".marker-target": {
+          "d": "",
+          "fill": ""
+        }
+      },
+      "id": "beb411bb-1ff5-4dc5-9582-f7192b3557d5",
+      "labels": [
+        {
+          "position": 0.9,
+          "attrs": {
+            "rect": {
+              "fill": "transparent"
+            },
+            "text": {
+              "text": "*",
+              "font-family": "Arial",
+              "font-size": "12px",
+              "fill": "#cecece"
+            }
+          }
+        }
+      ],
+      "name": null,
+      "queries": [],
+      "relationFields": [
+        "produto:target"
+      ],
+      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
+      "source": {
+        "id": "14cb1534-91d4-4b8b-8c6f-bc50eced9ee4"
+      },
+      "target": {
+        "id": "4ff5eca1-6420-49b9-b4c7-333885281172"
+      },
+      "type": "uml.Composition",
+      "vertices": [],
+      "z": 21
+    },
+    {
+      "associationType": "Association",
+      "attrs": {
+        ".marker-source": {
+          "d": "M 40 10 L 20 20 L 0 10 L 20 0 z",
+          "fill": "#cecece"
+        },
+        ".marker-target": {
+          "d": "",
+          "fill": ""
+        }
+      },
+      "id": "ff9bf955-6b34-42ed-8511-f3b86e4f98ca",
+      "labels": [
+        {
+          "position": 0.9,
+          "attrs": {
+            "rect": {
+              "fill": "transparent"
+            },
+            "text": {
+              "text": "*",
+              "font-family": "Arial",
+              "font-size": "12px",
+              "fill": "#cecece"
+            }
+          }
+        }
+      ],
+      "name": null,
+      "queries": [],
+      "relationFields": [
+        "produto:target"
+      ],
+      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
+      "source": {
+        "id": "14cb1534-91d4-4b8b-8c6f-bc50eced9ee4"
+      },
+      "target": {
+        "id": "2b62ca71-64b2-4d74-a86a-84f3dde6a99b"
+      },
+      "type": "uml.Composition",
+      "vertices": [],
+      "z": 22
     }
   ],
   "selectedGroup": "",

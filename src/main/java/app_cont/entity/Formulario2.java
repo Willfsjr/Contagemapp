@@ -19,7 +19,6 @@ import cronapp.framework.core.persistence.*;
 * @generated
 */
 @jakarta.persistence.Entity
-@IdClass(Formulario2PK.class)
 @jakarta.persistence.Table(name = "\"FORMULARIO2\"")
 @XmlRootElement
 @CronappSecurity
@@ -36,8 +35,9 @@ public class Formulario2 implements Serializable {
     * @generated
     */
     @Id
-    @JoinColumn(name="produto", nullable = false, referencedColumnName = "contagem", insertable=true, updatable=true)
-        private Produto produto;
+    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
+    @Column(name = "id", nullable = false, insertable=true, updatable=true)
+        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
@@ -60,6 +60,24 @@ public class Formulario2 implements Serializable {
 
 
     /**
+    * @generated
+    */
+    @OneToOne
+    @JoinColumn(name="fk_contagem", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
+        
+        private Contagem contagem;
+
+
+    /**
+    * @generated
+    */
+    @ManyToOne
+    @JoinColumn(name="fk_produto", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
+        
+        private Produto produto;
+
+
+    /**
     * Construtor
     * @generated
     */
@@ -67,21 +85,21 @@ public class Formulario2 implements Serializable {
     }
 
     /**
-    * Obtém produto
-    * return produto
+    * Obtém id
+    * return id
     * @generated
     */
-    public Produto getProduto() {
-        return this.produto;
+    public java.lang.String getId() {
+        return this.id;
     }
 
     /**
-    * Define produto
-    * @param produto produto
+    * Define id
+    * @param id id
     * @generated
     */
-    public Formulario2 setProduto(Produto produto) {
-        this.produto = produto;
+    public Formulario2 setId(java.lang.String id) {
+        this.id = id;
         return this;
     }
     /**
@@ -120,6 +138,42 @@ public class Formulario2 implements Serializable {
         this.data = data;
         return this;
     }
+    /**
+    * Obtém contagem
+    * return contagem
+    * @generated
+    */
+    public Contagem getContagem() {
+        return this.contagem;
+    }
+
+    /**
+    * Define contagem
+    * @param contagem contagem
+    * @generated
+    */
+    public Formulario2 setContagem(Contagem contagem) {
+        this.contagem = contagem;
+        return this;
+    }
+    /**
+    * Obtém produto
+    * return produto
+    * @generated
+    */
+    public Produto getProduto() {
+        return this.produto;
+    }
+
+    /**
+    * Define produto
+    * @param produto produto
+    * @generated
+    */
+    public Formulario2 setProduto(Produto produto) {
+        this.produto = produto;
+        return this;
+    }
 
     /**
     * @generated
@@ -129,7 +183,7 @@ public class Formulario2 implements Serializable {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
 Formulario2 object = (Formulario2)obj;
-        if (produto != null ? !produto.equals(object.produto) : object.produto != null) return false;
+        if (id != null ? !id.equals(object.id) : object.id != null) return false;
         return true;
     }
 
@@ -139,7 +193,7 @@ Formulario2 object = (Formulario2)obj;
     @Override
     public int hashCode() {
         int result = 1;
-        result = 31 * result + ((produto == null) ? 0 : produto.hashCode());
+        result = 31 * result + ((id == null) ? 0 : id.hashCode());
         return result;
     }
 
