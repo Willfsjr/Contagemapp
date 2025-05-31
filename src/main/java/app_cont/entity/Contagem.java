@@ -35,18 +35,19 @@ public class Contagem implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
-    @Column(name = "id", nullable = false, insertable=true, updatable=true)
-        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
+    @CronappColumn(attributeType="STRING", label="Id")
+    @Column(name = "id", nullable = false, length=255, insertable=true, updatable=true)
+        private java.lang.String id;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Name")
-    @Column(name = "name", nullable = true, unique = false, insertable=true, updatable=true)
+    @Temporal(TemporalType.TIMESTAMP)
+    @CronappColumn(attributeType="DATETIME", label="Data")
+    @Column(name = "data", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
-        private java.lang.String name;
+        private java.util.Date data;
 
 
     /**
@@ -61,20 +62,19 @@ public class Contagem implements Serializable {
     /**
     * @generated
     */
-    @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="Data")
-    @Column(name = "data", nullable = true, unique = false, insertable=true, updatable=true)
+    @ManyToOne
+    @JoinColumn(name="fk_loja", nullable = true, referencedColumnName = "loja_id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "FK_CONTAGEM_fk_loja", foreignKeyDefinition = "FOREIGN KEY (fk_loja) REFERENCES LOJA (loja_id)"))
         
-        private java.util.Date data;
+        private Loja loja;
 
 
     /**
     * @generated
     */
-    @ManyToOne
-    @JoinColumn(name="fk_loja", nullable = true, referencedColumnName = "loja_id", insertable=true, updatable=true)
+    @CronappColumn(attributeType="STRING", label="Name")
+    @Column(name = "name", nullable = true, unique = false, length=255, insertable=true, updatable=true)
         
-        private Loja loja;
+        private java.lang.String name;
 
 
     /**
@@ -103,21 +103,21 @@ public class Contagem implements Serializable {
         return this;
     }
     /**
-    * Obtém name
-    * return name
+    * Obtém data
+    * return data
     * @generated
     */
-    public java.lang.String getName() {
-        return this.name;
+    public java.util.Date getData() {
+        return this.data;
     }
 
     /**
-    * Define name
-    * @param name name
+    * Define data
+    * @param data data
     * @generated
     */
-    public Contagem setName(java.lang.String name) {
-        this.name = name;
+    public Contagem setData(java.util.Date data) {
+        this.data = data;
         return this;
     }
     /**
@@ -139,24 +139,6 @@ public class Contagem implements Serializable {
         return this;
     }
     /**
-    * Obtém data
-    * return data
-    * @generated
-    */
-    public java.util.Date getData() {
-        return this.data;
-    }
-
-    /**
-    * Define data
-    * @param data data
-    * @generated
-    */
-    public Contagem setData(java.util.Date data) {
-        this.data = data;
-        return this;
-    }
-    /**
     * Obtém loja
     * return loja
     * @generated
@@ -172,6 +154,24 @@ public class Contagem implements Serializable {
     */
     public Contagem setLoja(Loja loja) {
         this.loja = loja;
+        return this;
+    }
+    /**
+    * Obtém name
+    * return name
+    * @generated
+    */
+    public java.lang.String getName() {
+        return this.name;
+    }
+
+    /**
+    * Define name
+    * @param name name
+    * @generated
+    */
+    public Contagem setName(java.lang.String name) {
+        this.name = name;
         return this;
     }
 

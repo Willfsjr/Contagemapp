@@ -35,34 +35,16 @@ public class Produto implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
-    @Column(name = "id", nullable = false, insertable=true, updatable=true)
-        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
-
-
-    /**
-    * @generated
-    */
-    @CronappColumn(attributeType="STRING", label="Codi Psv")
-    @Column(name = "CODI_PSV", nullable = true, unique = false, insertable=true, updatable=true)
-        
-        private java.lang.String codiPsv;
-
-
-    /**
-    * @generated
-    */
-    @CronappColumn(attributeType="STRING", label="Desc Psv")
-    @Column(name = "DESC_PSV", nullable = true, unique = false, insertable=true, updatable=true)
-        
-        private java.lang.String descPsv;
+    @CronappColumn(attributeType="STRING", label="Id")
+    @Column(name = "id", nullable = false, length=255, insertable=true, updatable=true)
+        private java.lang.String id;
 
 
     /**
     * @generated
     */
     @CronappColumn(attributeType="STRING", label="Codi Bar")
-    @Column(name = "CODI_BAR", nullable = true, unique = false, insertable=true, updatable=true)
+    @Column(name = "codi_bar", nullable = true, unique = false, length=255, insertable=true, updatable=true)
         
         private java.lang.String codiBar;
 
@@ -70,8 +52,26 @@ public class Produto implements Serializable {
     /**
     * @generated
     */
+    @CronappColumn(attributeType="STRING", label="Codi Psv")
+    @Column(name = "codi_psv", nullable = true, unique = false, length=255, insertable=true, updatable=true)
+        
+        private java.lang.String codiPsv;
+
+
+    /**
+    * @generated
+    */
+    @ManyToOne
+    @JoinColumn(name="fk_contagem", nullable = true, referencedColumnName = "id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "FK_PRODUTO_fk_contagem", foreignKeyDefinition = "FOREIGN KEY (fk_contagem) REFERENCES CONTAGEM (id)"))
+        
+        private Contagem contagem;
+
+
+    /**
+    * @generated
+    */
     @CronappColumn(attributeType="DOUBLE", label="Cust Tab")
-    @Column(name = "CUST_TAB", nullable = true, unique = false, insertable=true, updatable=true)
+    @Column(name = "cust_tab", nullable = true, unique = false, precision=17, scale=17, insertable=true, updatable=true)
         
         private java.lang.Double custTab;
 
@@ -79,10 +79,10 @@ public class Produto implements Serializable {
     /**
     * @generated
     */
-    @ManyToOne
-    @JoinColumn(name="fk_contagem", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
+    @CronappColumn(attributeType="STRING", label="Desc Psv")
+    @Column(name = "desc_psv", nullable = true, unique = false, length=255, insertable=true, updatable=true)
         
-        private Contagem contagem;
+        private java.lang.String descPsv;
 
 
     /**
@@ -111,6 +111,24 @@ public class Produto implements Serializable {
         return this;
     }
     /**
+    * Obtém codiBar
+    * return codiBar
+    * @generated
+    */
+    public java.lang.String getCodiBar() {
+        return this.codiBar;
+    }
+
+    /**
+    * Define codiBar
+    * @param codiBar codiBar
+    * @generated
+    */
+    public Produto setCodiBar(java.lang.String codiBar) {
+        this.codiBar = codiBar;
+        return this;
+    }
+    /**
     * Obtém codiPsv
     * return codiPsv
     * @generated
@@ -129,39 +147,21 @@ public class Produto implements Serializable {
         return this;
     }
     /**
-    * Obtém descPsv
-    * return descPsv
+    * Obtém contagem
+    * return contagem
     * @generated
     */
-    public java.lang.String getDescPsv() {
-        return this.descPsv;
+    public Contagem getContagem() {
+        return this.contagem;
     }
 
     /**
-    * Define descPsv
-    * @param descPsv descPsv
+    * Define contagem
+    * @param contagem contagem
     * @generated
     */
-    public Produto setDescPsv(java.lang.String descPsv) {
-        this.descPsv = descPsv;
-        return this;
-    }
-    /**
-    * Obtém codiBar
-    * return codiBar
-    * @generated
-    */
-    public java.lang.String getCodiBar() {
-        return this.codiBar;
-    }
-
-    /**
-    * Define codiBar
-    * @param codiBar codiBar
-    * @generated
-    */
-    public Produto setCodiBar(java.lang.String codiBar) {
-        this.codiBar = codiBar;
+    public Produto setContagem(Contagem contagem) {
+        this.contagem = contagem;
         return this;
     }
     /**
@@ -183,21 +183,21 @@ public class Produto implements Serializable {
         return this;
     }
     /**
-    * Obtém contagem
-    * return contagem
+    * Obtém descPsv
+    * return descPsv
     * @generated
     */
-    public Contagem getContagem() {
-        return this.contagem;
+    public java.lang.String getDescPsv() {
+        return this.descPsv;
     }
 
     /**
-    * Define contagem
-    * @param contagem contagem
+    * Define descPsv
+    * @param descPsv descPsv
     * @generated
     */
-    public Produto setContagem(Contagem contagem) {
-        this.contagem = contagem;
+    public Produto setDescPsv(java.lang.String descPsv) {
+        this.descPsv = descPsv;
         return this;
     }
 

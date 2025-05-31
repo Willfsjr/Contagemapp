@@ -35,18 +35,9 @@ public class Loja implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
-    @Column(name = "loja_id", nullable = false, insertable=true, updatable=true)
-        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
-
-
-    /**
-    * @generated
-    */
-    @CronappColumn(attributeType="STRING", label="Name")
-    @Column(name = "name", nullable = true, unique = false, insertable=true, updatable=true)
-        
-        private java.lang.String name;
+    @CronappColumn(attributeType="STRING", label="Loja Id")
+    @Column(name = "loja_id", nullable = false, length=255, insertable=true, updatable=true)
+        private java.lang.String lojaId;
 
 
     /**
@@ -59,6 +50,15 @@ public class Loja implements Serializable {
 
 
     /**
+    * @generated
+    */
+    @CronappColumn(attributeType="STRING", label="Name")
+    @Column(name = "name", nullable = true, unique = false, length=255, insertable=true, updatable=true)
+        
+        private java.lang.String name;
+
+
+    /**
     * Construtor
     * @generated
     */
@@ -66,39 +66,21 @@ public class Loja implements Serializable {
     }
 
     /**
-    * Obtém id
-    * return id
+    * Obtém lojaId
+    * return lojaId
     * @generated
     */
-    public java.lang.String getId() {
-        return this.id;
+    public java.lang.String getLojaId() {
+        return this.lojaId;
     }
 
     /**
-    * Define id
-    * @param id id
+    * Define lojaId
+    * @param lojaId lojaId
     * @generated
     */
-    public Loja setId(java.lang.String id) {
-        this.id = id;
-        return this;
-    }
-    /**
-    * Obtém name
-    * return name
-    * @generated
-    */
-    public java.lang.String getName() {
-        return this.name;
-    }
-
-    /**
-    * Define name
-    * @param name name
-    * @generated
-    */
-    public Loja setName(java.lang.String name) {
-        this.name = name;
+    public Loja setLojaId(java.lang.String lojaId) {
+        this.lojaId = lojaId;
         return this;
     }
     /**
@@ -119,6 +101,24 @@ public class Loja implements Serializable {
         this.codigo = codigo;
         return this;
     }
+    /**
+    * Obtém name
+    * return name
+    * @generated
+    */
+    public java.lang.String getName() {
+        return this.name;
+    }
+
+    /**
+    * Define name
+    * @param name name
+    * @generated
+    */
+    public Loja setName(java.lang.String name) {
+        this.name = name;
+        return this;
+    }
 
     /**
     * @generated
@@ -128,7 +128,7 @@ public class Loja implements Serializable {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
 Loja object = (Loja)obj;
-        if (id != null ? !id.equals(object.id) : object.id != null) return false;
+        if (lojaId != null ? !lojaId.equals(object.lojaId) : object.lojaId != null) return false;
         return true;
     }
 
@@ -138,7 +138,7 @@ Loja object = (Loja)obj;
     @Override
     public int hashCode() {
         int result = 1;
-        result = 31 * result + ((id == null) ? 0 : id.hashCode());
+        result = 31 * result + ((lojaId == null) ? 0 : lojaId.hashCode());
         return result;
     }
 

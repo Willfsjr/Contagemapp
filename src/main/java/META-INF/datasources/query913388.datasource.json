@@ -1,5 +1,5 @@
 {
-  "customId": "consultaformulario2",
+  "customId": "form2",
   "queryName": "2° Formulario",
   "sourceType": "entityFullName",
   "baseEntity": null,
@@ -82,18 +82,7 @@
     "rulesOrderBy": [],
     "rules": {
       "condition": "AND",
-      "rules": [
-        {
-          "id": "f.produto.contagem",
-          "field": "f.produto.contagem",
-          "type": "string",
-          "input": "text",
-          "operator": "equal",
-          "valueType": "param",
-          "value": ":produtoContagem",
-          "valueIsField": false
-        }
-      ],
+      "rules": [],
       "not": false,
       "valid": true
     },
@@ -102,12 +91,7 @@
     "paginatorAutomatic": false,
     "pagination": false
   },
-  "queryParamsValues": [
-    {
-      "fieldName": "produtoContagem",
-      "fieldValue": ""
-    }
-  ],
+  "queryParamsValues": [],
   "verbs": {
     "GET": true,
     "GETAuthorities": null,
@@ -134,21 +118,30 @@
     "onError": null
   },
   "defaultValues": {
-    "produto": null,
+    "id": null,
     "quantidade": null,
     "data": null,
+    "contagem": null,
+    "produto": null,
+    "contagem_name": null,
     "produto_codiPsv": null
   },
   "defaultValuesProperties": {
-    "produto": null,
+    "id": null,
     "quantidade": null,
     "data": null,
+    "contagem": null,
+    "produto": null,
+    "contagem_name": null,
     "produto_codiPsv": null
   },
   "security": {
-    "produto": null,
+    "id": null,
     "quantidade": null,
     "data": null,
+    "contagem": null,
+    "produto": null,
+    "contagem_name": null,
     "produto_codiPsv": null
   },
   "calcFields": {},

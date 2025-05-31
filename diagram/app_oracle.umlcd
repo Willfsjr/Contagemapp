@@ -56,7 +56,7 @@
       "namespace": "app_oracle",
       "position": {
         "x": 0,
-        "y": 90
+        "y": 75
       },
       "queries": [],
       "runtimeClass": "cronos.widgets.joint.uml.Paper",
@@ -285,7 +285,7 @@
       ],
       "position": {
         "x": 50,
-        "y": 15
+        "y": 0
       },
       "primaryKeys": [
         "codiPsv"
@@ -323,38 +323,34 @@
       "attributes": [
         "CODI_PSV:java.lang.String",
         "CODI_BAR:java.lang.String",
-        "CODI_GPR:java.lang.Long",
-        "CODI_SBG:java.lang.Long",
         "CUST_TAB:java.lang.Double",
-        "DESC_GPR:java.lang.String",
-        "DESC_PSV:java.lang.String",
-        "DESC_SBG:java.lang.String"
+        "DESC_PSV:java.lang.String"
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
           "fill": "#F0F0F0",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
-          "height": 180,
+          "height": 100,
           "stroke": "#C2C2C2",
           "transform": "translate(0,40)"
         },
         ".uml-class-attrs-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "* CODI_PSV\nCODI_BAR\nCODI_GPR\nCODI_SBG\nCUST_TAB\nDESC_GPR\nDESC_PSV\nDESC_SBG\n"
+          "text": "* CODI_PSV\nCODI_BAR\nCUST_TAB\nDESC_PSV\n"
         },
         ".uml-class-attrs-value": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "ref-x": 133,
-          "text": "Texto\nTexto\nInteiro Longo\nInteiro Longo\nNumérico\nTexto\nTexto\nTexto\n"
+          "ref-x": 138,
+          "text": "Texto\nTexto\nNumérico\nTexto\n"
         },
         ".uml-class-methods-rect": {
           "fill": "#F0F0F0",
           "height": 20,
           "stroke": "#C2C2C2",
           "stroke-width": 1,
-          "transform": "translate(0,220)"
+          "transform": "translate(0,140)"
         },
         ".uml-class-methods-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
@@ -438,38 +434,6 @@
           "isNullable": true
         },
         {
-          "name": "CODI_GPR",
-          "type": "java.lang.Long",
-          "dbName": "CODI_GPR",
-          "dbLength": "",
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
-          "dbPrecision": "",
-          "dbScale": "",
-          "label": "CODI  GPR",
-          "mask": "",
-          "isUniqueKey": false,
-          "isNullable": true
-        },
-        {
-          "name": "CODI_SBG",
-          "type": "java.lang.Long",
-          "dbName": "CODI_SBG",
-          "dbLength": "",
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
-          "dbPrecision": "",
-          "dbScale": "",
-          "label": "CODI  SBG",
-          "mask": "",
-          "isUniqueKey": false,
-          "isNullable": true
-        },
-        {
           "name": "CUST_TAB",
           "type": "java.lang.Double",
           "dbName": "CUST_TAB",
@@ -486,22 +450,6 @@
           "isNullable": true
         },
         {
-          "name": "DESC_GPR",
-          "type": "java.lang.String",
-          "dbName": "DESC_GPR",
-          "dbLength": 40,
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
-          "dbPrecision": "",
-          "dbScale": "",
-          "label": "DESC  GPR",
-          "mask": "",
-          "isUniqueKey": false,
-          "isNullable": true
-        },
-        {
           "name": "DESC_PSV",
           "type": "java.lang.String",
           "dbName": "DESC_PSV",
@@ -513,22 +461,6 @@
           "dbPrecision": "",
           "dbScale": "",
           "label": "DESC  PSV",
-          "mask": "",
-          "isUniqueKey": false,
-          "isNullable": true
-        },
-        {
-          "name": "DESC_SBG",
-          "type": "java.lang.String",
-          "dbName": "DESC_SBG",
-          "dbLength": 30,
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
-          "dbPrecision": "",
-          "dbScale": "",
-          "label": "DESC  SBG",
           "mask": "",
           "isUniqueKey": false,
           "isNullable": true
@@ -567,14 +499,14 @@
         "Desc Psv"
       ],
       "methods": [],
-      "modelType": "Table",
+      "modelType": "View",
       "name": "Produtocontagem",
       "nullables": [
         "codiPsv"
       ],
       "position": {
         "x": 316,
-        "y": 0
+        "y": 5
       },
       "primaryKeys": [
         "codiPsv"
@@ -589,8 +521,8 @@
         ""
       ],
       "size": {
-        "height": 180,
-        "width": 216
+        "height": 140,
+        "width": 201
       },
       "tableName": "PRODUTOCONTAGEM",
       "tableScheme": "NEWFRD",

@@ -40,7 +40,7 @@
         <class>app_cont.entity.Formulario1</class>
         <class>app_cont.entity.Formulario2</class>
         <properties>
-            <property name="eclipselink.ddl-generation" value="none"/>
+            <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
             <property name="cronapp.diagram.namespace" value="app_cont"/>
         </properties>
     </persistence-unit>

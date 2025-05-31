@@ -16,7 +16,7 @@ public static final int TIMEOUT = 300;
 /**
  *
  * @author Willian Ferreira
- * @since 30/05/2025, 15:07:50
+ * @since 30/05/2025, 17:42:06
  *
  */
 public static Var apagarProdutoDaContagem() throws Exception {
@@ -45,7 +45,7 @@ public static Var apagarProdutoDaContagem() throws Exception {
  * @param idContagem
  *
  * @author Willian Ferreira
- * @since 30/05/2025, 15:07:50
+ * @since 30/05/2025, 17:42:06
  *
  */
 public static Var obterProdutoParaContagem(@ParamMetaData(description = "idContagem", id = "1b7b51d5") @RequestBody(required = false) Var idContagem) throws Exception {
@@ -92,6 +92,8 @@ public static Var obterProdutoParaContagem(@ParamMetaData(description = "idConta
             Var.valueOf(1));
         } // end for
         cronapi.database.Operations.commitTransaction(Var.valueOf("app_cont"));
+        cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.hideModal"),
+        Var.valueOf("modal71744"));
         cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("success"),
         Var.valueOf(
         Var.valueOf("Importação Concluída com Sucesso: ").getObjectAsString() +

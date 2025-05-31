@@ -107,7 +107,17 @@
     "rulesSelect": [
       {
         "func": "get",
-        "field": "p",
+        "field": "p.codiPsv",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "p.descPsv",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "p.codiBar",
         "type": "string"
       }
     ],
@@ -169,28 +179,19 @@
     "onError": null
   },
   "defaultValues": {
-    "contagem": null,
     "codiPsv": null,
     "descPsv": null,
-    "codiBar": null,
-    "custTab": null,
-    "contagem_name": null
+    "codiBar": null
   },
   "defaultValuesProperties": {
-    "contagem": null,
     "codiPsv": null,
     "descPsv": null,
-    "codiBar": null,
-    "custTab": null,
-    "contagem_name": null
+    "codiBar": null
   },
   "security": {
-    "contagem": null,
     "codiPsv": null,
     "descPsv": null,
-    "codiBar": null,
-    "custTab": null,
-    "contagem_name": null
+    "codiBar": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},

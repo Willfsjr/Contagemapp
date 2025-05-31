@@ -23,7 +23,7 @@ import cronapp.framework.core.persistence.*;
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("app_cont.entity.Formulario2")
-@CronappTable(role=CronappTableRole.CLASS)
+@CronappTable(role=CronappTableRole.ASSOCIATION_CLASS)
 public class Formulario2 implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,35 +35,16 @@ public class Formulario2 implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
-    @Column(name = "id", nullable = false, insertable=true, updatable=true)
-        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
-
-
-    /**
-    * @generated
-    */
-    @CronappColumn(attributeType="DOUBLE", label="Quantidade")
-    @Column(name = "quantidade", nullable = true, unique = false, insertable=true, updatable=true)
-        
-        private java.lang.Double quantidade;
-
-
-    /**
-    * @generated
-    */
-    @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="Data")
-    @Column(name = "data", nullable = true, unique = false, insertable=true, updatable=true)
-        
-        private java.util.Date data;
+    @CronappColumn(attributeType="STRING", label="Id")
+    @Column(name = "id", nullable = false, length=255, insertable=true, updatable=true)
+        private java.lang.String id;
 
 
     /**
     * @generated
     */
     @OneToOne
-    @JoinColumn(name="fk_contagem", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
+    @JoinColumn(name="fk_contagem", nullable = true, referencedColumnName = "id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "FK_FORMULARIO2_fk_contagem", foreignKeyDefinition = "FOREIGN KEY (fk_contagem) REFERENCES CONTAGEM (id)"))
         
         private Contagem contagem;
 
@@ -71,10 +52,29 @@ public class Formulario2 implements Serializable {
     /**
     * @generated
     */
+    @Temporal(TemporalType.TIMESTAMP)
+    @CronappColumn(attributeType="DATETIME", label="Data")
+    @Column(name = "data", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
+        
+        private java.util.Date data;
+
+
+    /**
+    * @generated
+    */
     @ManyToOne
-    @JoinColumn(name="fk_produto", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
+    @JoinColumn(name="fk_produto", nullable = true, referencedColumnName = "id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "FK_FORMULARIO2_fk_produto", foreignKeyDefinition = "FOREIGN KEY (fk_produto) REFERENCES PRODUTO (id)"))
         
         private Produto produto;
+
+
+    /**
+    * @generated
+    */
+    @CronappColumn(attributeType="DOUBLE", label="Quantidade")
+    @Column(name = "quantidade", nullable = true, unique = false, precision=17, scale=17, insertable=true, updatable=true)
+        
+        private java.lang.Double quantidade;
 
 
     /**
@@ -103,21 +103,21 @@ public class Formulario2 implements Serializable {
         return this;
     }
     /**
-    * Obtém quantidade
-    * return quantidade
+    * Obtém contagem
+    * return contagem
     * @generated
     */
-    public java.lang.Double getQuantidade() {
-        return this.quantidade;
+    public Contagem getContagem() {
+        return this.contagem;
     }
 
     /**
-    * Define quantidade
-    * @param quantidade quantidade
+    * Define contagem
+    * @param contagem contagem
     * @generated
     */
-    public Formulario2 setQuantidade(java.lang.Double quantidade) {
-        this.quantidade = quantidade;
+    public Formulario2 setContagem(Contagem contagem) {
+        this.contagem = contagem;
         return this;
     }
     /**
@@ -139,24 +139,6 @@ public class Formulario2 implements Serializable {
         return this;
     }
     /**
-    * Obtém contagem
-    * return contagem
-    * @generated
-    */
-    public Contagem getContagem() {
-        return this.contagem;
-    }
-
-    /**
-    * Define contagem
-    * @param contagem contagem
-    * @generated
-    */
-    public Formulario2 setContagem(Contagem contagem) {
-        this.contagem = contagem;
-        return this;
-    }
-    /**
     * Obtém produto
     * return produto
     * @generated
@@ -172,6 +154,24 @@ public class Formulario2 implements Serializable {
     */
     public Formulario2 setProduto(Produto produto) {
         this.produto = produto;
+        return this;
+    }
+    /**
+    * Obtém quantidade
+    * return quantidade
+    * @generated
+    */
+    public java.lang.Double getQuantidade() {
+        return this.quantidade;
+    }
+
+    /**
+    * Define quantidade
+    * @param quantidade quantidade
+    * @generated
+    */
+    public Formulario2 setQuantidade(java.lang.Double quantidade) {
+        this.quantidade = quantidade;
         return this;
     }
 
