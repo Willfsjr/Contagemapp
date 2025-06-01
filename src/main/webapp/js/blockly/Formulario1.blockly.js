@@ -10,12 +10,12 @@ window.blockly.js.blockly.Formulario1 = window.blockly.js.blockly.Formulario1 ||
  *
  *
  * @author Willian Ferreira
- * @since 01/06/2025, 03:29:00
+ * @since 01/06/2025, 05:07:10
  *
  */
 window.blockly.js.blockly.Formulario1.validarProdutoArgs = [];
 window.blockly.js.blockly.Formulario1.validarProduto = async function() {
- var contObj, form1Obj;
+ var contObj, nomeCont, form1Obj;
   //
   if (this.cronapi.logic.isNullOrEmpty(this.cronapi.screen.getValueOfField("form1.active.produto"))) {
     //
@@ -36,12 +36,12 @@ window.blockly.js.blockly.Formulario1.validarProduto = async function() {
  *
  *
  * @author Willian Ferreira
- * @since 01/06/2025, 03:29:00
+ * @since 01/06/2025, 05:07:10
  *
  */
 window.blockly.js.blockly.Formulario1.validarQuantidadeArgs = [];
 window.blockly.js.blockly.Formulario1.validarQuantidade = async function() {
- var contObj, form1Obj;
+ var contObj, nomeCont, form1Obj;
   //
   if (this.cronapi.screen.getValueOfField("form1.active.quantidade") < 0 || this.cronapi.logic.isNullOrEmpty(this.cronapi.screen.getValueOfField("form1.active.quantidade"))) {
     //
@@ -62,12 +62,12 @@ window.blockly.js.blockly.Formulario1.validarQuantidade = async function() {
  *
  *
  * @author Willian Ferreira
- * @since 01/06/2025, 03:29:00
+ * @since 01/06/2025, 05:07:10
  *
  */
 window.blockly.js.blockly.Formulario1.gravarArgs = [];
 window.blockly.js.blockly.Formulario1.gravar = async function() {
- var contObj, form1Obj;
+ var contObj, nomeCont, form1Obj;
   //
   if (((await this.cronapi.client('blockly.js.blockly.Formulario1.validarProduto').run()) && (await this.cronapi.client('blockly.js.blockly.Formulario1.validarQuantidade').run())) == true) {
     //
@@ -76,39 +76,4 @@ window.blockly.js.blockly.Formulario1.gravar = async function() {
     //
     this.cronapi.screen.notify('error','Erro: Verifique os campos ');
   }
-}
-
-/**
- * @function excluir
- *
- *
- *
- * @param form1Obj
- *
- * @author Willian Ferreira
- * @since 01/06/2025, 03:29:00
- *
- */
-window.blockly.js.blockly.Formulario1.excluirArgs = [{ description: 'form1Obj', id: '51fe5732' }];
-window.blockly.js.blockly.Formulario1.excluir = async function(form1Obj) {
- var contObj;
-  //
-  (await this.cronapi.server('blockly.Formulario1.Excluir').names('b6d76f15').toPromise().run(form1Obj));
-}
-
-/**
- * @function definirData
- *
- *
- *
- *
- * @author Willian Ferreira
- * @since 01/06/2025, 03:29:00
- *
- */
-window.blockly.js.blockly.Formulario1.definirDataArgs = [];
-window.blockly.js.blockly.Formulario1.definirData = async function() {
- var contObj, form1Obj;
-  //
-  this.cronapi.screen.changeValueOfField("form1.active.data", this.cronapi.dateTime.getNow());
 }

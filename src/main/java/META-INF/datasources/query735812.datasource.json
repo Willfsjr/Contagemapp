@@ -32,29 +32,22 @@
               "key": false
             },
             {
-              "name": "prod",
-              "type": "String",
+              "name": "data",
+              "type": "DateTime",
               "nullable": true,
               "notEmpty": false,
               "key": false
             },
             {
-              "name": "quant",
+              "name": "quantidade",
               "type": "Double",
               "nullable": true,
               "notEmpty": false,
               "key": false
             },
             {
-              "name": "cont",
+              "name": "produto",
               "type": "String",
-              "nullable": true,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "data",
-              "type": "DateTime",
               "nullable": true,
               "notEmpty": false,
               "key": false
@@ -65,6 +58,13 @@
               "nullable": false,
               "notEmpty": false,
               "key": true
+            },
+            {
+              "name": "produto_codiBar",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
             }
           ],
           "type": "entity",
@@ -79,7 +79,12 @@
     "rulesSelect": [
       {
         "func": "get",
-        "field": "f.produto",
+        "field": "f.data",
+        "type": "date"
+      },
+      {
+        "func": "get",
+        "field": "f.produto.descPsv",
         "type": "string"
       },
       {
@@ -89,8 +94,8 @@
       },
       {
         "func": "get",
-        "field": "f.data",
-        "type": "date"
+        "field": "f.produto",
+        "type": "string"
       }
     ],
     "rulesJoin": [],
@@ -157,22 +162,25 @@
     "onError": null
   },
   "defaultValues": {
-    "produto": null,
-    "produto_codiPsv": null,
+    "data": null,
+    "produto_descPsv": null,
     "quantidade": null,
-    "data": null
+    "produto": null,
+    "produto_codiBar": null
   },
   "defaultValuesProperties": {
-    "produto": null,
-    "produto_codiPsv": null,
+    "data": null,
+    "produto_descPsv": null,
     "quantidade": null,
-    "data": null
+    "produto": null,
+    "produto_codiBar": null
   },
   "security": {
-    "produto": null,
-    "produto_codiPsv": null,
+    "data": null,
+    "produto_descPsv": null,
     "quantidade": null,
-    "data": null
+    "produto": null,
+    "produto_codiBar": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},

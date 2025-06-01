@@ -63,7 +63,7 @@ public class Formulario2 implements Serializable {
     * @generated
     */
     @ManyToOne
-    @JoinColumn(name="fk_produto", nullable = true, referencedColumnName = "id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "FORMULARIO2_FK_PRODUTO_PRODUTO_ID", foreignKeyDefinition = "FOREIGN KEY (fk_produto) REFERENCES PRODUTO (id) ON DELETE CASCADE"))
+    @JoinColumn(name="fk_produto", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
         
         private Produto produto;
 

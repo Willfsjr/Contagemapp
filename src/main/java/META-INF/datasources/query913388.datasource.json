@@ -25,8 +25,15 @@
           "entityFullName": "app_cont.entity.Formulario2",
           "schemaFields": [
             {
-              "name": "produto",
+              "name": "id",
               "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "data",
+              "type": "DateTime",
               "nullable": true,
               "notEmpty": false,
               "key": false
@@ -39,8 +46,8 @@
               "key": false
             },
             {
-              "name": "data",
-              "type": "DateTime",
+              "name": "produto",
+              "type": "String",
               "nullable": true,
               "notEmpty": false,
               "key": false
@@ -53,7 +60,7 @@
               "key": true
             },
             {
-              "name": "produto_codiPsv",
+              "name": "produto_codiBar",
               "type": "String",
               "nullable": true,
               "notEmpty": false,
@@ -73,6 +80,11 @@
       {
         "func": "get",
         "field": "f",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "f.produto.descPsv",
         "type": "string"
       }
     ],
@@ -119,30 +131,27 @@
   },
   "defaultValues": {
     "id": null,
-    "quantidade": null,
     "data": null,
-    "contagem": null,
+    "quantidade": null,
     "produto": null,
-    "contagem_name": null,
-    "produto_codiPsv": null
+    "produto_codiBar": null,
+    "produto_descPsv": null
   },
   "defaultValuesProperties": {
     "id": null,
-    "quantidade": null,
     "data": null,
-    "contagem": null,
+    "quantidade": null,
     "produto": null,
-    "contagem_name": null,
-    "produto_codiPsv": null
+    "produto_codiBar": null,
+    "produto_descPsv": null
   },
   "security": {
     "id": null,
-    "quantidade": null,
     "data": null,
-    "contagem": null,
+    "quantidade": null,
     "produto": null,
-    "contagem_name": null,
-    "produto_codiPsv": null
+    "produto_codiBar": null,
+    "produto_descPsv": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},

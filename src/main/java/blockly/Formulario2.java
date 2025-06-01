@@ -8,33 +8,33 @@ import org.springframework.web.bind.annotation.*;
 
 @CronapiMetaData(type = "blockly")
 @CronappSecurity
-public class Formulario1 {
+public class Formulario2 {
 
 public static final int TIMEOUT = 300;
 
 /**
  *
- * @param produto
+ * @param produto2
  *
  * @author Willian Ferreira
- * @since 01/06/2025, 05:16:21
+ * @since 01/06/2025, 06:20:46
  *
  */
-public static Var excluir(@ParamMetaData(description = "produto", id = "b6d76f15") @RequestBody(required = false) Var produto) throws Exception {
+public static Var excluir(@ParamMetaData(description = "produto2", id = "a0607922") @RequestBody(required = false) Var produto2) throws Exception {
  return new Callable<Var>() {
 
    public Var call() throws Exception {
-    cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Formulario1"), Var.valueOf("delete from \n	\n	Formulario1  \nwhere \n	produto = :produto"),Var.valueOf("produto",produto));
+    cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Formulario2"), Var.valueOf("delete from \n	\n	Formulario2  \nwhere \n	produto = :produto"),Var.valueOf("produto",produto2));
     cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("success"),
     Var.valueOf("Produto Excluído"));
     cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.refreshDatasource"),
-    Var.valueOf("OrdenarProdutoDo1FormularioPelaData"),
+    Var.valueOf("form2"),
     Var.valueOf("true"));
     cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.refreshDatasource"),
-    Var.valueOf("ProdutoParaO1Formulario"),
+    Var.valueOf("ProdutoParaO2Formulario"),
     Var.valueOf("true"));
     cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.refreshDatasource"),
-    Var.valueOf("form1"),
+    Var.valueOf("OrdenarProdutoDo2FormularioPelaData"),
     Var.valueOf("true"));
     return Var.VAR_NULL;
    }
@@ -44,53 +44,53 @@ public static Var excluir(@ParamMetaData(description = "produto", id = "b6d76f15
 /**
  *
  * @author Willian Ferreira
- * @since 01/06/2025, 05:16:21
+ * @since 01/06/2025, 06:20:46
  *
  */
 public static Var gravar() throws Exception {
  return new Callable<Var>() {
 
    private Var quantidade = Var.VAR_NULL;
-   private Var produto = Var.VAR_NULL;
+   private Var produto2 = Var.VAR_NULL;
    private Var contagem = Var.VAR_NULL;
    private Var inserir = Var.VAR_NULL;
 
    public Var call() throws Exception {
     quantidade =
     cronapi.screen.Operations.getValueOfField(
-    Var.valueOf("form1.active.quantidade"));
-    produto =
+    Var.valueOf("form2.active.quantidade"));
+    produto2 =
     cronapi.screen.Operations.getValueOfField(
-    Var.valueOf("form1.active.produto"));
+    Var.valueOf("form2.active.produto"));
     contagem =
     cronapi.screen.Operations.getValueOfField(
-    Var.valueOf("params.contObj"));
+    Var.valueOf("params.contObj2"));
     if (
     cronapi.logic.Operations.isNullOrEmpty(
-    cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Formulario1"),Var.valueOf("select \n	f.produto \nfrom \n	Formulario1 f  \nwhere \n	f.produto = :produto AND \n	f.produto.contagem = :produtoContagem"),Var.valueOf("produto",produto),Var.valueOf("produtoContagem",contagem))).getObjectAsBoolean()) {
+    cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Formulario2"),Var.valueOf("select \n	fo.produto \nfrom \n	Formulario2 fo  \nwhere \n	fo.produto = :produto AND \n	fo.produto.contagem = :produtoContagem"),Var.valueOf("produto",produto2),Var.valueOf("produtoContagem",contagem))).getObjectAsBoolean()) {
         inserir =
-        cronapi.database.Operations.insert(Var.valueOf("app_cont.entity.Formulario1"),
-        cronapi.object.Operations.newObject(Var.valueOf("app_cont.entity.Formulario1"),Var.valueOf("data",
-        cronapi.dateTime.Operations.getNow()),Var.valueOf("quantidade",quantidade),Var.valueOf("produto",produto)));
+        cronapi.database.Operations.insert(Var.valueOf("app_cont.entity.Formulario2"),
+        cronapi.object.Operations.newObject(Var.valueOf("app_cont.entity.Formulario2"),Var.valueOf("data",
+        cronapi.dateTime.Operations.getNow()),Var.valueOf("quantidade",quantidade),Var.valueOf("produto",produto2)));
         cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("success"),
         Var.valueOf("Produto Inserido"));
     } else {
-        cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Formulario1"), Var.valueOf("update \n	Formulario1  \nset \n	quantidade = :quantidade, \n	data = :data \nwhere \n	produto = :produto AND \n	produto.contagem = :contagem"),Var.valueOf("quantidade",quantidade),Var.valueOf("data",
-        cronapi.dateTime.Operations.getNow()),Var.valueOf("produto",produto),Var.valueOf("contagem",contagem));
+        cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Formulario2"), Var.valueOf("update \n	Formulario2  \nset \n	quantidade = :quantidade, \n	data = :data \nwhere \n	produto = :produto AND \n	produto.contagem = :contagem"),Var.valueOf("quantidade",quantidade),Var.valueOf("data",
+        cronapi.dateTime.Operations.getNow()),Var.valueOf("produto",produto2),Var.valueOf("contagem",contagem));
         cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("success"),
         Var.valueOf("Produto Atualizado"));
     }
     cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.refreshDatasource"),
-    Var.valueOf("form1"),
+    Var.valueOf("form2"),
     Var.valueOf("true"));
     cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.refreshDatasource"),
-    Var.valueOf("OrdenarProdutoDo1FormularioPelaData"),
+    Var.valueOf("OrdenarProdutoDo2FormularioPelaData"),
     Var.valueOf("true"));
     cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.refreshDatasource"),
-    Var.valueOf("ProdutoParaO1Formulario"),
+    Var.valueOf("ProdutoParaO2Formulario"),
     Var.valueOf("true"));
     cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.backNormalState"),
-    Var.valueOf("form1"));
+    Var.valueOf("form2"));
     return Var.VAR_NULL;
    }
  }.call();

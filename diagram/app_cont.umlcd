@@ -751,7 +751,7 @@
           "referencedColumnName": "",
           "isSearchable": false,
           "sequence": "",
-          "isCascade": true,
+          "isCascade": false,
           "isVersion": false,
           "storageId": "",
           "storageKey": "",
