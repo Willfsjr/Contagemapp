@@ -1,0 +1,245 @@
+{
+  "customId": "conform2",
+  "queryName": "Confronto do Formulario2",
+  "sourceType": "entityFullName",
+  "baseEntity": null,
+  "blockly": null,
+  "entitySimpleName": "Formulario2",
+  "entityFullName": "app_cont.entity.Formulario2",
+  "query": {
+    "isValid": true,
+    "isEmpty": false,
+    "operationType": "object",
+    "isNativeQuery": false,
+    "namespace": "app_cont",
+    "type": "select",
+    "rulesEntity": [
+      {
+        "entity": "Formulario2",
+        "namespace": "app_cont.entity.Formulario2",
+        "dataSourceOptions": {
+          "id": "app_cont.Formulario2",
+          "customId": "Formulario2",
+          "customQueryName": "app_cont.Formulario2",
+          "paramValues": [],
+          "entityFullName": "app_cont.entity.Formulario2",
+          "schemaFields": [
+            {
+              "name": "id",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "data",
+              "type": "DateTime",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "quantidade",
+              "type": "Double",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "produto",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "_objectKey",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": true
+            },
+            {
+              "name": "produto_codiBar",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            }
+          ],
+          "type": "entity",
+          "hasError": false,
+          "customName": "Formulario2",
+          "fullName": "app_cont.entity.Formulario2",
+          "labelName": "app_cont.entity.Formulario2 (Formulario2)"
+        },
+        "alias": "f"
+      }
+    ],
+    "rulesSelect": [
+      {
+        "func": "get",
+        "field": "f.produto.descPsv",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "f.quantidade",
+        "type": "double"
+      },
+      {
+        "func": "get",
+        "field": "fo.quantidade",
+        "type": "double"
+      }
+    ],
+    "rulesJoin": [
+      {
+        "entity": "Formulario1",
+        "namespace": "app_cont.entity.Formulario1",
+        "dataSourceOptions": {
+          "id": "app_cont.Formulario1",
+          "customId": "Formulario1",
+          "customQueryName": "app_cont.Formulario1",
+          "paramValues": [],
+          "entityFullName": "app_cont.entity.Formulario1",
+          "schemaFields": [
+            {
+              "name": "id",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "data",
+              "type": "DateTime",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "quantidade",
+              "type": "Double",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "produto",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "_objectKey",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": true
+            },
+            {
+              "name": "produto_codiBar",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            }
+          ],
+          "type": "entity",
+          "hasError": false,
+          "customName": "Formulario1",
+          "fullName": "app_cont.entity.Formulario1",
+          "labelName": "app_cont.entity.Formulario1 (Formulario1)"
+        },
+        "alias": "fo",
+        "joinType": "join",
+        "joinField": "f.produto",
+        "joinOperator": "equal",
+        "joinTargetField": "fo.produto"
+      }
+    ],
+    "rulesGroupBy": [],
+    "rulesHaving": [],
+    "rulesOrderBy": [],
+    "rules": {
+      "condition": "AND",
+      "rules": [
+        {
+          "id": "f.produto.contagem",
+          "field": "f.produto.contagem",
+          "type": "string",
+          "input": "text",
+          "operator": "equal",
+          "valueType": "param",
+          "value": ":produtoContagem",
+          "valueIsField": false
+        }
+      ],
+      "not": false,
+      "valid": true
+    },
+    "isRawSql": false,
+    "multiTenant": false,
+    "paginatorAutomatic": false,
+    "pagination": false
+  },
+  "queryParamsValues": [
+    {
+      "fieldName": "produtoContagem",
+      "fieldValue": ""
+    }
+  ],
+  "verbs": {
+    "GET": true,
+    "GETAuthorities": null,
+    "POST": true,
+    "POSTAuthorities": null,
+    "PUT": true,
+    "PUTAuthorities": null,
+    "DELETE": true,
+    "DELETEAuthorities": null,
+    "FILTER": true,
+    "FILTERAuthorities": null,
+    "COUNT": true,
+    "COUNTAuthorities": null
+  },
+  "events": {
+    "beforeInsert": null,
+    "beforeUpdate": null,
+    "beforeDelete": null,
+    "afterInsert": null,
+    "afterUpdate": null,
+    "afterDelete": null,
+    "onNavigate": null,
+    "onAuthorize": null,
+    "onError": null
+  },
+  "defaultValues": {
+    "produto_descPsv": null,
+    "quantidade": null,
+    "quantidade_1": null
+  },
+  "defaultValuesProperties": {
+    "produto_descPsv": null,
+    "quantidade": null,
+    "quantidade_1": null
+  },
+  "security": {
+    "produto_descPsv": null,
+    "quantidade": null,
+    "quantidade_1": null
+  },
+  "calcFields": {},
+  "calcFieldsSecurity": {},
+  "calcFieldsProperties": {},
+  "headers": {},
+  "errorHandles": {
+    "primaryKey": null,
+    "foreignKey": null
+  },
+  "serviceUrl": "api/cronapi/odata/v2/app_cont/query158407/",
+  "audit": false,
+  "swagger": false
+}
