@@ -35,9 +35,9 @@ public class Loja implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Loja Id")
-    @Column(name = "loja_id", nullable = false, length=255, insertable=true, updatable=true)
-        private java.lang.String lojaId;
+    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
+    @Column(name = "id", nullable = false, length=0, insertable=true, updatable=true)
+        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
@@ -66,21 +66,21 @@ public class Loja implements Serializable {
     }
 
     /**
-    * Obtém lojaId
-    * return lojaId
+    * Obtém id
+    * return id
     * @generated
     */
-    public java.lang.String getLojaId() {
-        return this.lojaId;
+    public java.lang.String getId() {
+        return this.id;
     }
 
     /**
-    * Define lojaId
-    * @param lojaId lojaId
+    * Define id
+    * @param id id
     * @generated
     */
-    public Loja setLojaId(java.lang.String lojaId) {
-        this.lojaId = lojaId;
+    public Loja setId(java.lang.String id) {
+        this.id = id;
         return this;
     }
     /**
@@ -128,7 +128,7 @@ public class Loja implements Serializable {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
 Loja object = (Loja)obj;
-        if (lojaId != null ? !lojaId.equals(object.lojaId) : object.lojaId != null) return false;
+        if (id != null ? !id.equals(object.id) : object.id != null) return false;
         return true;
     }
 
@@ -138,7 +138,7 @@ Loja object = (Loja)obj;
     @Override
     public int hashCode() {
         int result = 1;
-        result = 31 * result + ((lojaId == null) ? 0 : lojaId.hashCode());
+        result = 31 * result + ((id == null) ? 0 : id.hashCode());
         return result;
     }
 

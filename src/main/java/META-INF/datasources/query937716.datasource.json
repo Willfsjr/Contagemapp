@@ -91,6 +91,11 @@
         "func": "get",
         "field": "f.quantidade",
         "type": "double"
+      },
+      {
+        "func": "get",
+        "field": "f.produto",
+        "type": "string"
       }
     ],
     "rulesJoin": [],
@@ -107,13 +112,13 @@
       "condition": "AND",
       "rules": [
         {
-          "id": "f.contagem",
-          "field": "f.contagem",
+          "id": "f.produto.contagem",
+          "field": "f.produto.contagem",
           "type": "string",
           "input": "text",
           "operator": "equal",
           "valueType": "param",
-          "value": ":contagem",
+          "value": ":produtoContagem",
           "valueIsField": false
         }
       ],
@@ -127,7 +132,7 @@
   },
   "queryParamsValues": [
     {
-      "fieldName": "contagem",
+      "fieldName": "produtoContagem",
       "fieldValue": ""
     }
   ],
@@ -159,17 +164,23 @@
   "defaultValues": {
     "data": null,
     "produto_descPsv": null,
-    "quantidade": null
+    "quantidade": null,
+    "produto": null,
+    "produto_codiBar": null
   },
   "defaultValuesProperties": {
     "data": null,
     "produto_descPsv": null,
-    "quantidade": null
+    "quantidade": null,
+    "produto": null,
+    "produto_codiBar": null
   },
   "security": {
     "data": null,
     "produto_descPsv": null,
-    "quantidade": null
+    "quantidade": null,
+    "produto": null,
+    "produto_codiBar": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},

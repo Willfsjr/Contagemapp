@@ -10,14 +10,14 @@ window.blockly.js.blockly.Formulario1 = window.blockly.js.blockly.Formulario1 ||
  *
  *
  * @author Willian Ferreira
- * @since 31/05/2025, 14:41:36
+ * @since 01/06/2025, 03:29:00
  *
  */
 window.blockly.js.blockly.Formulario1.validarProdutoArgs = [];
 window.blockly.js.blockly.Formulario1.validarProduto = async function() {
- var idContagem, contagemObject;
+ var contObj, form1Obj;
   //
-  if (this.cronapi.logic.isNullOrEmpty(this.cronapi.screen.getValueOfField("formulario1.active.produto"))) {
+  if (this.cronapi.logic.isNullOrEmpty(this.cronapi.screen.getValueOfField("form1.active.produto"))) {
     //
     this.cronapi.screen.notify('warning','Informe um Produto');
     //
@@ -36,14 +36,14 @@ window.blockly.js.blockly.Formulario1.validarProduto = async function() {
  *
  *
  * @author Willian Ferreira
- * @since 31/05/2025, 14:41:36
+ * @since 01/06/2025, 03:29:00
  *
  */
 window.blockly.js.blockly.Formulario1.validarQuantidadeArgs = [];
 window.blockly.js.blockly.Formulario1.validarQuantidade = async function() {
- var idContagem, contagemObject;
+ var contObj, form1Obj;
   //
-  if (this.cronapi.screen.getValueOfField("formulario1.active.quantidade") < 0 || this.cronapi.logic.isNullOrEmpty(this.cronapi.screen.getValueOfField("formulario1.active.quantidade"))) {
+  if (this.cronapi.screen.getValueOfField("form1.active.quantidade") < 0 || this.cronapi.logic.isNullOrEmpty(this.cronapi.screen.getValueOfField("form1.active.quantidade"))) {
     //
     this.cronapi.screen.notify('warning','Informe uma Quantidade Valida');
     //
@@ -56,48 +56,59 @@ window.blockly.js.blockly.Formulario1.validarQuantidade = async function() {
 }
 
 /**
- * @function definirDataIdContagem
- *
- *
- *
- * @param contagemObject
- *
- * @author Willian Ferreira
- * @since 31/05/2025, 14:41:36
- *
- */
-window.blockly.js.blockly.Formulario1.definirDataIdContagemArgs = [{ description: 'contagemObject', id: '317e9263' }];
-window.blockly.js.blockly.Formulario1.definirDataIdContagem = async function(contagemObject) {
- var idContagem;
-  //
-  this.cronapi.screen.changeValueOfField("formulario1.active.data", this.cronapi.dateTime.getNow());
-  //
-  this.cronapi.screen.changeValueOfField("formulario1.active.contagem", contagemObject);
-}
-
-/**
  * @function gravar
  *
  *
  *
  *
  * @author Willian Ferreira
- * @since 31/05/2025, 14:41:36
+ * @since 01/06/2025, 03:29:00
  *
  */
 window.blockly.js.blockly.Formulario1.gravarArgs = [];
 window.blockly.js.blockly.Formulario1.gravar = async function() {
- var idContagem, contagemObject;
+ var contObj, form1Obj;
   //
-  if ((await this.cronapi.client('blockly.js.blockly.Formulario1.validarProduto').run()) && (await this.cronapi.client('blockly.js.blockly.Formulario1.validarQuantidade').run())) {
+  if (((await this.cronapi.client('blockly.js.blockly.Formulario1.validarProduto').run()) && (await this.cronapi.client('blockly.js.blockly.Formulario1.validarQuantidade').run())) == true) {
     //
-    (await this.cronapi.client('cronapi.screen.post').run("formulario1"));
-    //
-    this.cronapi.screen.refreshDatasource("formulario1", 'true');
-    //
-    this.cronapi.screen.refreshDatasource("OrdenarProdutoDo1FormularioPelaData", 'true');
+    (await this.cronapi.server('blockly.Formulario1.gravar').toPromise().run());
   } else {
     //
     this.cronapi.screen.notify('error','Erro: Verifique os campos ');
   }
+}
+
+/**
+ * @function excluir
+ *
+ *
+ *
+ * @param form1Obj
+ *
+ * @author Willian Ferreira
+ * @since 01/06/2025, 03:29:00
+ *
+ */
+window.blockly.js.blockly.Formulario1.excluirArgs = [{ description: 'form1Obj', id: '51fe5732' }];
+window.blockly.js.blockly.Formulario1.excluir = async function(form1Obj) {
+ var contObj;
+  //
+  (await this.cronapi.server('blockly.Formulario1.Excluir').names('b6d76f15').toPromise().run(form1Obj));
+}
+
+/**
+ * @function definirData
+ *
+ *
+ *
+ *
+ * @author Willian Ferreira
+ * @since 01/06/2025, 03:29:00
+ *
+ */
+window.blockly.js.blockly.Formulario1.definirDataArgs = [];
+window.blockly.js.blockly.Formulario1.definirData = async function() {
+ var contObj, form1Obj;
+  //
+  this.cronapi.screen.changeValueOfField("form1.active.data", this.cronapi.dateTime.getNow());
 }

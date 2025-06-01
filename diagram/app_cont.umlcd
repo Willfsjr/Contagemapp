@@ -50,11 +50,12 @@
       "chkApi": false,
       "dataSource": "jdbc/contdb_dev",
       "disableCache": false,
+      "generationType": "none",
       "id": "paperCell",
       "methods": [],
       "namespace": "app_cont",
       "position": {
-        "x": 233.5,
+        "x": 0,
         "y": 65
       },
       "queries": [],
@@ -74,8 +75,8 @@
         "id:java.lang.String",
         "data:java.sql.Date",
         "encerrado:java.lang.Boolean",
-        "loja:Loja",
-        "name:java.lang.String"
+        "name:java.lang.String",
+        "loja:Loja"
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
@@ -88,13 +89,13 @@
         ".uml-class-attrs-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "* id\ndata\nencerrado\nloja\nname\n"
+          "text": "* id\ndata\nencerrado\nname\nloja\n"
         },
         ".uml-class-attrs-value": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
           "ref-x": 123,
-          "text": "Texto\nData e Hora\nLógico\nLoja\nTexto\n"
+          "text": "Texto\nData e Hora\nLógico\nTexto\nLoja\n"
         },
         ".uml-class-methods-rect": {
           "fill": "#F0F0F0",
@@ -126,84 +127,191 @@
           "name": "id",
           "type": "java.lang.String",
           "dbName": "id",
-          "dbLength": 255,
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
+          "dbLength": 0,
           "dbPrecision": "",
           "dbScale": "",
+          "dbDefaultValue": "UUID.randomUUID().toString().toUpperCase()",
           "label": "Id",
           "mask": "",
+          "isPrimaryKey": true,
           "isUniqueKey": false,
           "isNullable": false,
-          "isPrimaryKey": true,
-          "pkType": "None",
-          "sequence": ""
+          "isNotEmpty": false,
+          "pkType": "UUID",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
         },
         {
           "name": "data",
           "type": "java.sql.Date",
           "dbName": "data",
           "dbLength": "",
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
           "dbPrecision": 6,
           "dbScale": 6,
+          "dbDefaultValue": "",
           "label": "Data",
           "mask": "",
+          "isPrimaryKey": false,
           "isUniqueKey": false,
-          "isNullable": true
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
         },
         {
           "name": "encerrado",
           "type": "java.lang.Boolean",
           "dbName": "encerrado",
           "dbLength": "",
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
           "dbPrecision": "",
           "dbScale": "",
+          "dbDefaultValue": "",
           "label": "Encerrado",
           "mask": "",
+          "isPrimaryKey": false,
           "isUniqueKey": false,
-          "isNullable": true
-        },
-        {
-          "name": "loja",
-          "type": "Loja",
-          "dbName": "fk_loja",
-          "dbLength": 255,
-          "foreignKeyName": "FK_CONTAGEM_fk_loja",
-          "joins": "fk_loja:loja_id",
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
           "isInsertable": true,
           "isUpdatable": true,
-          "dbPrecision": "",
-          "dbScale": "",
-          "label": "Loja",
-          "mask": "",
-          "isUniqueKey": false,
-          "isNullable": true
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
         },
         {
           "name": "name",
           "type": "java.lang.String",
           "dbName": "name",
           "dbLength": 255,
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
           "dbPrecision": "",
           "dbScale": "",
+          "dbDefaultValue": "",
           "label": "Name",
           "mask": "",
+          "isPrimaryKey": false,
           "isUniqueKey": false,
-          "isNullable": true
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
+        },
+        {
+          "name": "loja",
+          "type": "Loja",
+          "dbName": "fk_loja",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Loja",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": true,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
         }
       ],
       "generateView": "Auto",
@@ -213,7 +321,7 @@
       "modelType": "Table",
       "name": "Contagem",
       "position": {
-        "x": 289.5,
+        "x": 56,
         "y": 180
       },
       "queries": [],
@@ -236,37 +344,35 @@
       "angle": 0,
       "attributes": [
         "id:java.lang.String",
-        "contagem:Contagem",
         "data:java.sql.Date",
-        "produto:Produto",
-        "quantidade:java.lang.Double"
+        "quantidade:java.lang.Double",
+        "produto:Produto"
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
-          "fill": "#fffec0",
+          "fill": "#F0F0F0",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
-          "height": 120,
+          "height": 100,
           "stroke": "#C2C2C2",
           "transform": "translate(0,40)"
         },
         ".uml-class-attrs-text": {
-          "fill": "#000",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "* id\ncontagem\ndata\nproduto\nquantidade\n"
+          "text": "* id\ndata\nquantidade\nproduto\n"
         },
         ".uml-class-attrs-value": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
           "ref-x": 132,
-          "text": "Texto\nContagem\nData e Hora\nProduto\nNumérico\n"
+          "text": "Texto\nData e Hora\nNumérico\nProduto\n"
         },
         ".uml-class-methods-rect": {
-          "fill": "#fffec0",
+          "fill": "#F0F0F0",
           "height": 20,
           "stroke": "#C2C2C2",
           "stroke-width": 1,
-          "transform": "translate(0,160)"
+          "transform": "translate(0,140)"
         },
         ".uml-class-methods-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
@@ -274,7 +380,7 @@
           "text": ""
         },
         ".uml-class-name-rect": {
-          "fill": "#fffec0",
+          "fill": "#F0F0F0",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "height": 40,
           "stroke": "#C2C2C2",
@@ -291,84 +397,140 @@
           "name": "id",
           "type": "java.lang.String",
           "dbName": "id",
-          "dbLength": 255,
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
+          "dbLength": 0,
           "dbPrecision": "",
           "dbScale": "",
+          "dbDefaultValue": "UUID.randomUUID().toString().toUpperCase()",
           "label": "Id",
           "mask": "",
+          "isPrimaryKey": true,
           "isUniqueKey": false,
           "isNullable": false,
-          "isPrimaryKey": true,
-          "pkType": "None",
-          "sequence": ""
-        },
-        {
-          "name": "contagem",
-          "type": "Contagem",
-          "dbName": "fk_contagem",
-          "dbLength": 255,
-          "foreignKeyName": "FK_FORMULARIO1_fk_contagem",
-          "joins": "fk_contagem:id",
+          "isNotEmpty": false,
+          "pkType": "UUID",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
           "isInsertable": true,
           "isUpdatable": true,
-          "dbPrecision": "",
-          "dbScale": "",
-          "label": "Contagem",
-          "mask": "",
-          "isUniqueKey": false,
-          "isNullable": true
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
         },
         {
           "name": "data",
           "type": "java.sql.Date",
           "dbName": "data",
           "dbLength": "",
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
           "dbPrecision": 6,
           "dbScale": 6,
+          "dbDefaultValue": "",
           "label": "Data",
           "mask": "",
+          "isPrimaryKey": false,
           "isUniqueKey": false,
-          "isNullable": true
-        },
-        {
-          "name": "produto",
-          "type": "Produto",
-          "dbName": "fk_produto",
-          "dbLength": 255,
-          "foreignKeyName": "FK_FORMULARIO1_fk_produto",
-          "joins": "fk_produto:id",
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
           "isInsertable": true,
           "isUpdatable": true,
-          "dbPrecision": "",
-          "dbScale": "",
-          "label": "Produto",
-          "mask": "",
-          "isUniqueKey": false,
-          "isNullable": true
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
         },
         {
           "name": "quantidade",
           "type": "java.lang.Double",
           "dbName": "quantidade",
           "dbLength": "",
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
           "dbPrecision": 17,
           "dbScale": 17,
+          "dbDefaultValue": "",
           "label": "Quantidade",
           "mask": "",
+          "isPrimaryKey": false,
           "isUniqueKey": false,
-          "isNullable": true
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
+        },
+        {
+          "name": "produto",
+          "type": "Produto",
+          "dbName": "fk_produto",
+          "label": "Produto",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "isNotEmpty": false,
+          "multitenantContext": "",
+          "pkType": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "isCascade": false,
+          "isVersion": false,
+          "idIndex": false,
+          "useOuterJoin": false
         }
       ],
       "generateView": "Auto",
@@ -378,16 +540,16 @@
       "modelType": "Table",
       "name": "Formulario1",
       "position": {
-        "x": 0,
-        "y": 590
+        "x": 380,
+        "y": 490
       },
       "queries": [],
       "realName": "",
       "restSecurity": null,
-      "role": "AssociationClass",
+      "role": "Class",
       "runtimeClass": "cronos.widgets.joint.uml.Class",
       "size": {
-        "height": 150,
+        "height": 140,
         "width": 207
       },
       "swagger": false,
@@ -395,43 +557,41 @@
       "tableScheme": null,
       "type": "uml.Class",
       "usePhysicalNames": false,
-      "z": 7
+      "z": 31
     },
     {
       "angle": 0,
       "attributes": [
         "id:java.lang.String",
-        "contagem:Contagem",
         "data:java.sql.Date",
-        "produto:Produto",
-        "quantidade:java.lang.Double"
+        "quantidade:java.lang.Double",
+        "produto:Produto"
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
-          "fill": "#fffec0",
+          "fill": "#F0F0F0",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
-          "height": 120,
+          "height": 100,
           "stroke": "#C2C2C2",
           "transform": "translate(0,40)"
         },
         ".uml-class-attrs-text": {
-          "fill": "#000",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "* id\ncontagem\ndata\nproduto\nquantidade\n"
+          "text": "* id\ndata\nquantidade\nproduto\n"
         },
         ".uml-class-attrs-value": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
           "ref-x": 132,
-          "text": "Texto\nContagem\nData e Hora\nProduto\nNumérico\n"
+          "text": "Texto\nData e Hora\nNumérico\nProduto\n"
         },
         ".uml-class-methods-rect": {
-          "fill": "#fffec0",
+          "fill": "#F0F0F0",
           "height": 20,
           "stroke": "#C2C2C2",
           "stroke-width": 1,
-          "transform": "translate(0,160)"
+          "transform": "translate(0,140)"
         },
         ".uml-class-methods-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
@@ -439,7 +599,7 @@
           "text": ""
         },
         ".uml-class-name-rect": {
-          "fill": "#fffec0",
+          "fill": "#F0F0F0",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "height": 40,
           "stroke": "#C2C2C2",
@@ -456,84 +616,153 @@
           "name": "id",
           "type": "java.lang.String",
           "dbName": "id",
-          "dbLength": 255,
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
+          "dbLength": 0,
           "dbPrecision": "",
           "dbScale": "",
+          "dbDefaultValue": "UUID.randomUUID().toString().toUpperCase()",
           "label": "Id",
           "mask": "",
+          "isPrimaryKey": true,
           "isUniqueKey": false,
           "isNullable": false,
-          "isPrimaryKey": true,
-          "pkType": "None",
-          "sequence": ""
-        },
-        {
-          "name": "contagem",
-          "type": "Contagem",
-          "dbName": "fk_contagem",
-          "dbLength": 255,
-          "foreignKeyName": "FK_FORMULARIO2_fk_contagem",
-          "joins": "fk_contagem:id",
+          "isNotEmpty": false,
+          "pkType": "UUID",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
           "isInsertable": true,
           "isUpdatable": true,
-          "dbPrecision": "",
-          "dbScale": "",
-          "label": "Contagem",
-          "mask": "",
-          "isUniqueKey": false,
-          "isNullable": true
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
         },
         {
           "name": "data",
           "type": "java.sql.Date",
           "dbName": "data",
           "dbLength": "",
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
           "dbPrecision": 6,
           "dbScale": 6,
+          "dbDefaultValue": "",
           "label": "Data",
           "mask": "",
+          "isPrimaryKey": false,
           "isUniqueKey": false,
-          "isNullable": true
-        },
-        {
-          "name": "produto",
-          "type": "Produto",
-          "dbName": "fk_produto",
-          "dbLength": 255,
-          "foreignKeyName": "FK_FORMULARIO2_fk_produto",
-          "joins": "fk_produto:id",
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
           "isInsertable": true,
           "isUpdatable": true,
-          "dbPrecision": "",
-          "dbScale": "",
-          "label": "Produto",
-          "mask": "",
-          "isUniqueKey": false,
-          "isNullable": true
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
         },
         {
           "name": "quantidade",
           "type": "java.lang.Double",
           "dbName": "quantidade",
           "dbLength": "",
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
           "dbPrecision": 17,
           "dbScale": 17,
+          "dbDefaultValue": "",
           "label": "Quantidade",
           "mask": "",
+          "isPrimaryKey": false,
           "isUniqueKey": false,
-          "isNullable": true
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
+        },
+        {
+          "name": "produto",
+          "type": "Produto",
+          "dbName": "fk_produto",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Produto",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": true,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
         }
       ],
       "generateView": "Auto",
@@ -543,16 +772,16 @@
       "modelType": "Table",
       "name": "Formulario2",
       "position": {
-        "x": 491,
-        "y": 590
+        "x": 366,
+        "y": 274
       },
       "queries": [],
       "realName": "",
       "restSecurity": null,
-      "role": "AssociationClass",
+      "role": "Class",
       "runtimeClass": "cronos.widgets.joint.uml.Class",
       "size": {
-        "height": 150,
+        "height": 140,
         "width": 207
       },
       "swagger": false,
@@ -565,7 +794,7 @@
     {
       "angle": 0,
       "attributes": [
-        "lojaId:java.lang.String",
+        "id:java.lang.String",
         "codigo:java.lang.Short",
         "name:java.lang.String"
       ],
@@ -580,7 +809,7 @@
         ".uml-class-attrs-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "* lojaId\ncodigo\nname\n"
+          "text": "* id\ncodigo\nname\n"
         },
         ".uml-class-attrs-value": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
@@ -615,55 +844,118 @@
       "audit": false,
       "fields": [
         {
-          "name": "lojaId",
+          "name": "id",
           "type": "java.lang.String",
-          "dbName": "loja_id",
-          "dbLength": 255,
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
+          "dbName": "id",
+          "dbLength": 0,
           "dbPrecision": "",
           "dbScale": "",
-          "label": "Loja Id",
+          "dbDefaultValue": "UUID.randomUUID().toString().toUpperCase()",
+          "label": "Id",
           "mask": "",
+          "isPrimaryKey": true,
           "isUniqueKey": false,
           "isNullable": false,
-          "isPrimaryKey": true,
-          "pkType": "None",
-          "sequence": ""
+          "isNotEmpty": false,
+          "pkType": "UUID",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
         },
         {
           "name": "codigo",
           "type": "java.lang.Short",
           "dbName": "codigo",
           "dbLength": "",
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
           "dbPrecision": "",
           "dbScale": "",
+          "dbDefaultValue": "",
           "label": "Codigo",
           "mask": "",
+          "isPrimaryKey": false,
           "isUniqueKey": false,
-          "isNullable": true
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
         },
         {
           "name": "name",
           "type": "java.lang.String",
           "dbName": "name",
           "dbLength": 255,
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
           "dbPrecision": "",
           "dbScale": "",
+          "dbDefaultValue": "",
           "label": "Name",
           "mask": "",
+          "isPrimaryKey": false,
           "isUniqueKey": false,
-          "isNullable": true
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
         }
       ],
       "generateView": "Auto",
@@ -673,7 +965,7 @@
       "modelType": "Table",
       "name": "Loja",
       "position": {
-        "x": 283.5,
+        "x": 50,
         "y": 0
       },
       "queries": [],
@@ -698,9 +990,9 @@
         "id:java.lang.String",
         "codiBar:java.lang.String",
         "codiPsv:java.lang.String",
-        "contagem:Contagem",
         "custTab:java.lang.Double",
-        "descPsv:java.lang.String"
+        "descPsv:java.lang.String",
+        "contagem:Contagem"
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
@@ -713,13 +1005,13 @@
         ".uml-class-attrs-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "* id\ncodiBar\ncodiPsv\ncontagem\ncustTab\ndescPsv\n"
+          "text": "* id\ncodiBar\ncodiPsv\ncustTab\ndescPsv\ncontagem\n"
         },
         ".uml-class-attrs-value": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
           "ref-x": 136,
-          "text": "Texto\nTexto\nTexto\nContagem\nNumérico\nTexto\n"
+          "text": "Texto\nTexto\nTexto\nNumérico\nTexto\nContagem\n"
         },
         ".uml-class-methods-rect": {
           "fill": "#F0F0F0",
@@ -751,100 +1043,229 @@
           "name": "id",
           "type": "java.lang.String",
           "dbName": "id",
-          "dbLength": 255,
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
+          "dbLength": 0,
           "dbPrecision": "",
           "dbScale": "",
+          "dbDefaultValue": "UUID.randomUUID().toString().toUpperCase()",
           "label": "Id",
           "mask": "",
+          "isPrimaryKey": true,
           "isUniqueKey": false,
           "isNullable": false,
-          "isPrimaryKey": true,
-          "pkType": "None",
-          "sequence": ""
+          "isNotEmpty": false,
+          "pkType": "UUID",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
         },
         {
           "name": "codiBar",
           "type": "java.lang.String",
           "dbName": "codi_bar",
           "dbLength": 255,
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
           "dbPrecision": "",
           "dbScale": "",
+          "dbDefaultValue": "",
           "label": "Codi Bar",
           "mask": "",
+          "isPrimaryKey": false,
           "isUniqueKey": false,
-          "isNullable": true
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
         },
         {
           "name": "codiPsv",
           "type": "java.lang.String",
           "dbName": "codi_psv",
           "dbLength": 255,
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
           "dbPrecision": "",
           "dbScale": "",
+          "dbDefaultValue": "",
           "label": "Codi Psv",
           "mask": "",
+          "isPrimaryKey": false,
           "isUniqueKey": false,
-          "isNullable": true
-        },
-        {
-          "name": "contagem",
-          "type": "Contagem",
-          "dbName": "fk_contagem",
-          "dbLength": 255,
-          "foreignKeyName": "FK_PRODUTO_fk_contagem",
-          "joins": "fk_contagem:id",
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
           "isInsertable": true,
           "isUpdatable": true,
-          "dbPrecision": "",
-          "dbScale": "",
-          "label": "Contagem",
-          "mask": "",
-          "isUniqueKey": false,
-          "isNullable": true
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
         },
         {
           "name": "custTab",
           "type": "java.lang.Double",
           "dbName": "cust_tab",
           "dbLength": "",
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
           "dbPrecision": 17,
           "dbScale": 17,
+          "dbDefaultValue": "",
           "label": "Cust Tab",
           "mask": "",
+          "isPrimaryKey": false,
           "isUniqueKey": false,
-          "isNullable": true
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
         },
         {
           "name": "descPsv",
           "type": "java.lang.String",
           "dbName": "desc_psv",
           "dbLength": 255,
-          "foreignKeyName": "",
-          "joins": "",
-          "isInsertable": true,
-          "isUpdatable": true,
           "dbPrecision": "",
           "dbScale": "",
+          "dbDefaultValue": "",
           "label": "Desc Psv",
           "mask": "",
+          "isPrimaryKey": false,
           "isUniqueKey": false,
-          "isNullable": true
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
+        },
+        {
+          "name": "contagem",
+          "type": "Contagem",
+          "dbName": "fk_contagem",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Contagem",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": true,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
         }
       ],
       "generateView": "Auto",
@@ -854,7 +1275,7 @@
       "modelType": "Table",
       "name": "Produto",
       "position": {
-        "x": 131,
+        "x": 54,
         "y": 380
       },
       "queries": [],
@@ -885,7 +1306,52 @@
           "fill": ""
         }
       },
-      "id": "187cc371-ffa2-4493-af9e-be3e95e2464a",
+      "id": "0e5fb273-6789-4062-be4c-84197ff7266f",
+      "labels": [
+        {
+          "position": 0.9,
+          "attrs": {
+            "rect": {
+              "fill": "transparent"
+            },
+            "text": {
+              "text": "*",
+              "font-family": "Arial",
+              "font-size": "12px",
+              "fill": "#cecece"
+            }
+          }
+        }
+      ],
+      "name": null,
+      "queries": [],
+      "relationFields": [
+        "produto:target"
+      ],
+      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
+      "source": {
+        "id": "14cb1534-91d4-4b8b-8c6f-bc50eced9ee4"
+      },
+      "target": {
+        "id": "2b62ca71-64b2-4d74-a86a-84f3dde6a99b"
+      },
+      "type": "uml.Composition",
+      "vertices": [],
+      "z": 29
+    },
+    {
+      "associationType": "Association",
+      "attrs": {
+        ".marker-source": {
+          "d": "M 40 10 L 20 20 L 0 10 L 20 0 z",
+          "fill": "#cecece"
+        },
+        ".marker-target": {
+          "d": "",
+          "fill": ""
+        }
+      },
+      "id": "5f38c2e6-82f3-4205-bfdb-e63da6fbacd0",
       "labels": [
         {
           "position": 0.9,
@@ -916,97 +1382,7 @@
       },
       "type": "uml.Composition",
       "vertices": [],
-      "z": 17
-    },
-    {
-      "associationType": "Association",
-      "attrs": {
-        ".marker-source": {
-          "d": "M 40 10 L 20 20 L 0 10 L 20 0 z",
-          "fill": "#cecece"
-        },
-        ".marker-target": {
-          "d": "",
-          "fill": ""
-        }
-      },
-      "id": "4869b85b-83c5-457c-b8ea-5d524e6a1575",
-      "labels": [
-        {
-          "position": 0.9,
-          "attrs": {
-            "rect": {
-              "fill": "transparent"
-            },
-            "text": {
-              "text": "*",
-              "font-family": "Arial",
-              "font-size": "12px",
-              "fill": "#cecece"
-            }
-          }
-        }
-      ],
-      "name": null,
-      "queries": [],
-      "relationFields": [
-        "contagem:target"
-      ],
-      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
-      "source": {
-        "id": "4b9cd62c-47c1-4bff-951b-f617ac0d4741"
-      },
-      "target": {
-        "id": "14cb1534-91d4-4b8b-8c6f-bc50eced9ee4"
-      },
-      "type": "uml.Composition",
-      "vertices": [],
-      "z": 18
-    },
-    {
-      "associationType": "Association",
-      "attrs": {
-        ".marker-source": {
-          "d": "M 40 10 L 20 20 L 0 10 L 20 0 z",
-          "fill": "#cecece"
-        },
-        ".marker-target": {
-          "d": "",
-          "fill": ""
-        }
-      },
-      "id": "917bcfb9-2556-452d-accc-78e242819a6a",
-      "labels": [
-        {
-          "position": 0.9,
-          "attrs": {
-            "rect": {
-              "fill": "transparent"
-            },
-            "text": {
-              "text": "1",
-              "font-family": "Arial",
-              "font-size": "12px",
-              "fill": "#cecece"
-            }
-          }
-        }
-      ],
-      "name": null,
-      "queries": [],
-      "relationFields": [
-        "contagem:source"
-      ],
-      "runtimeClass": "cronos.widgets.joint.arrow.OneToOne",
-      "source": {
-        "id": "2b62ca71-64b2-4d74-a86a-84f3dde6a99b"
-      },
-      "target": {
-        "id": "4b9cd62c-47c1-4bff-951b-f617ac0d4741"
-      },
-      "type": "uml.Composition",
-      "vertices": [],
-      "z": 19
+      "z": 25
     },
     {
       "attrs": {
@@ -1066,7 +1442,7 @@
           "fill": ""
         }
       },
-      "id": "a90fb222-bd1a-42cd-9932-e0e4df026c0a",
+      "id": "e609109e-2ed0-4eb9-aeb6-29b351cccf67",
       "labels": [
         {
           "position": 0.9,
@@ -1075,7 +1451,7 @@
               "fill": "transparent"
             },
             "text": {
-              "text": "1",
+              "text": "*",
               "font-family": "Arial",
               "font-size": "12px",
               "fill": "#cecece"
@@ -1086,18 +1462,18 @@
       "name": null,
       "queries": [],
       "relationFields": [
-        "contagem:source"
+        "contagem:target"
       ],
-      "runtimeClass": "cronos.widgets.joint.arrow.OneToOne",
+      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
       "source": {
-        "id": "4ff5eca1-6420-49b9-b4c7-333885281172"
+        "id": "4b9cd62c-47c1-4bff-951b-f617ac0d4741"
       },
       "target": {
-        "id": "4b9cd62c-47c1-4bff-951b-f617ac0d4741"
+        "id": "14cb1534-91d4-4b8b-8c6f-bc50eced9ee4"
       },
       "type": "uml.Composition",
       "vertices": [],
-      "z": 20
+      "z": 26
     },
     {
       "associationType": "Association",
@@ -1111,7 +1487,7 @@
           "fill": ""
         }
       },
-      "id": "beb411bb-1ff5-4dc5-9582-f7192b3557d5",
+      "id": "ecd2f071-0104-4ae7-9427-b6ff2c396161",
       "labels": [
         {
           "position": 0.9,
@@ -1142,7 +1518,7 @@
       },
       "type": "uml.Composition",
       "vertices": [],
-      "z": 21
+      "z": 32
     },
     {
       "attrs": {
@@ -1189,51 +1565,6 @@
       "type": "uml.Composition",
       "vertices": [],
       "z": 23
-    },
-    {
-      "associationType": "Association",
-      "attrs": {
-        ".marker-source": {
-          "d": "M 40 10 L 20 20 L 0 10 L 20 0 z",
-          "fill": "#cecece"
-        },
-        ".marker-target": {
-          "d": "",
-          "fill": ""
-        }
-      },
-      "id": "ff9bf955-6b34-42ed-8511-f3b86e4f98ca",
-      "labels": [
-        {
-          "position": 0.9,
-          "attrs": {
-            "rect": {
-              "fill": "transparent"
-            },
-            "text": {
-              "text": "*",
-              "font-family": "Arial",
-              "font-size": "12px",
-              "fill": "#cecece"
-            }
-          }
-        }
-      ],
-      "name": null,
-      "queries": [],
-      "relationFields": [
-        "produto:target"
-      ],
-      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
-      "source": {
-        "id": "14cb1534-91d4-4b8b-8c6f-bc50eced9ee4"
-      },
-      "target": {
-        "id": "2b62ca71-64b2-4d74-a86a-84f3dde6a99b"
-      },
-      "type": "uml.Composition",
-      "vertices": [],
-      "z": 22
     }
   ],
   "selectedGroup": "",

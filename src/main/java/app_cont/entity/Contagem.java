@@ -35,9 +35,9 @@ public class Contagem implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Id")
-    @Column(name = "id", nullable = false, length=255, insertable=true, updatable=true)
-        private java.lang.String id;
+    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
+    @Column(name = "id", nullable = false, length=0, insertable=true, updatable=true)
+        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
@@ -62,19 +62,19 @@ public class Contagem implements Serializable {
     /**
     * @generated
     */
-    @ManyToOne
-    @JoinColumn(name="fk_loja", nullable = true, referencedColumnName = "loja_id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "FK_CONTAGEM_fk_loja", foreignKeyDefinition = "FOREIGN KEY (fk_loja) REFERENCES LOJA (loja_id)"))
+    @CronappColumn(attributeType="STRING", label="Name")
+    @Column(name = "name", nullable = true, unique = false, length=255, insertable=true, updatable=true)
         
-        private Loja loja;
+        private java.lang.String name;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Name")
-    @Column(name = "name", nullable = true, unique = false, length=255, insertable=true, updatable=true)
+    @ManyToOne
+    @JoinColumn(name="fk_loja", nullable = true, referencedColumnName = "id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "CONTAGEM_FK_LOJA_LOJA_ID", foreignKeyDefinition = "FOREIGN KEY (fk_loja) REFERENCES LOJA (id) ON DELETE CASCADE"))
         
-        private java.lang.String name;
+        private Loja loja;
 
 
     /**
@@ -139,24 +139,6 @@ public class Contagem implements Serializable {
         return this;
     }
     /**
-    * Obtém loja
-    * return loja
-    * @generated
-    */
-    public Loja getLoja() {
-        return this.loja;
-    }
-
-    /**
-    * Define loja
-    * @param loja loja
-    * @generated
-    */
-    public Contagem setLoja(Loja loja) {
-        this.loja = loja;
-        return this;
-    }
-    /**
     * Obtém name
     * return name
     * @generated
@@ -172,6 +154,24 @@ public class Contagem implements Serializable {
     */
     public Contagem setName(java.lang.String name) {
         this.name = name;
+        return this;
+    }
+    /**
+    * Obtém loja
+    * return loja
+    * @generated
+    */
+    public Loja getLoja() {
+        return this.loja;
+    }
+
+    /**
+    * Define loja
+    * @param loja loja
+    * @generated
+    */
+    public Contagem setLoja(Loja loja) {
+        this.loja = loja;
         return this;
     }
 

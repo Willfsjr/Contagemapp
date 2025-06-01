@@ -15,21 +15,18 @@ public static final int TIMEOUT = 300;
 
 /**
  *
+ * @param contagemObject
+ *
  * @author Willian Ferreira
- * @since 30/05/2025, 17:42:06
+ * @since 31/05/2025, 23:29:55
  *
  */
-public static Var apagarProdutoDaContagem() throws Exception {
+public static Var apagarProdutoDaContagem(@ParamMetaData(description = "contagemObject", id = "33ac3b42") @RequestBody(required = false) Var contagemObject) throws Exception {
  return new Callable<Var>() {
 
-   private Var idContagem = Var.VAR_NULL;
-
    public Var call() throws Exception {
-    idContagem =
-    cronapi.screen.Operations.getValueOfField(
-    Var.valueOf("contagem.active.id"));
-    cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Produto"), Var.valueOf("delete from \n	\n	Produto  \nwhere \n	contagem.id = :id"),Var.valueOf("id",idContagem));
-    cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Contagem"), Var.valueOf("delete from \n	\n	Contagem  \nwhere \n	id = :id"),Var.valueOf("id",idContagem));
+    cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Produto"), Var.valueOf("delete from \n	\n	Produto  \nwhere \n	contagem = :contagem"),Var.valueOf("contagem",contagemObject));
+    cronapi.database.Operations.remove(Var.valueOf("app_cont.entity.Contagem"),contagemObject);
     cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("success"),
     Var.valueOf("Contagem Apagada!"));
     cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.refreshDatasource"),
@@ -42,13 +39,13 @@ public static Var apagarProdutoDaContagem() throws Exception {
 
 /**
  *
- * @param idContagem
+ * @param contagemObject
  *
  * @author Willian Ferreira
- * @since 30/05/2025, 17:42:06
+ * @since 31/05/2025, 23:29:55
  *
  */
-public static Var obterProdutoParaContagem(@ParamMetaData(description = "idContagem", id = "1b7b51d5") @RequestBody(required = false) Var idContagem) throws Exception {
+public static Var obterProdutoParaContagem(@ParamMetaData(description = "contagemObject", id = "1b7b51d5") @RequestBody(required = false) Var contagemObject) throws Exception {
  return new Callable<Var>() {
 
    private Var produtosERP = Var.VAR_NULL;
@@ -84,7 +81,7 @@ public static Var obterProdutoParaContagem(@ParamMetaData(description = "idConta
             cronapi.map.Operations.getMapField(linha,
             Var.valueOf("CUST_TAB"));
             mapProduto =
-            cronapi.map.Operations.createObjectMapWith(Var.valueOf("codiPsv",codiPsv) , Var.valueOf("descPsv",descPsv) , Var.valueOf("codiBar",codiBar) , Var.valueOf("custTab",custTab) , Var.valueOf("contagem",idContagem));
+            cronapi.map.Operations.createObjectMapWith(Var.valueOf("codiPsv",codiPsv) , Var.valueOf("descPsv",descPsv) , Var.valueOf("codiBar",codiBar) , Var.valueOf("custTab",custTab) , Var.valueOf("contagem",contagemObject));
             inserir =
             cronapi.database.Operations.insert(Var.valueOf("app_cont.entity.Produto"),mapProduto);
             contador =

@@ -23,7 +23,7 @@ import cronapp.framework.core.persistence.*;
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("app_cont.entity.Formulario1")
-@CronappTable(role=CronappTableRole.ASSOCIATION_CLASS)
+@CronappTable(role=CronappTableRole.CLASS)
 public class Formulario1 implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,18 +35,9 @@ public class Formulario1 implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Id")
-    @Column(name = "id", nullable = false, length=255, insertable=true, updatable=true)
-        private java.lang.String id;
-
-
-    /**
-    * @generated
-    */
-    @OneToOne
-    @JoinColumn(name="fk_contagem", nullable = true, referencedColumnName = "id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "FK_FORMULARIO1_fk_contagem", foreignKeyDefinition = "FOREIGN KEY (fk_contagem) REFERENCES CONTAGEM (id)"))
-        
-        private Contagem contagem;
+    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
+    @Column(name = "id", nullable = false, length=0, insertable=true, updatable=true)
+        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
@@ -62,19 +53,19 @@ public class Formulario1 implements Serializable {
     /**
     * @generated
     */
-    @ManyToOne
-    @JoinColumn(name="fk_produto", nullable = true, referencedColumnName = "id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "FK_FORMULARIO1_fk_produto", foreignKeyDefinition = "FOREIGN KEY (fk_produto) REFERENCES PRODUTO (id)"))
+    @CronappColumn(attributeType="DOUBLE", label="Quantidade")
+    @Column(name = "quantidade", nullable = true, unique = false, precision=17, scale=17, insertable=true, updatable=true)
         
-        private Produto produto;
+        private java.lang.Double quantidade;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="Quantidade")
-    @Column(name = "quantidade", nullable = true, unique = false, precision=17, scale=17, insertable=true, updatable=true)
+    @ManyToOne
+    @JoinColumn(name="fk_produto", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
         
-        private java.lang.Double quantidade;
+        private Produto produto;
 
 
     /**
@@ -103,24 +94,6 @@ public class Formulario1 implements Serializable {
         return this;
     }
     /**
-    * Obtém contagem
-    * return contagem
-    * @generated
-    */
-    public Contagem getContagem() {
-        return this.contagem;
-    }
-
-    /**
-    * Define contagem
-    * @param contagem contagem
-    * @generated
-    */
-    public Formulario1 setContagem(Contagem contagem) {
-        this.contagem = contagem;
-        return this;
-    }
-    /**
     * Obtém data
     * return data
     * @generated
@@ -139,24 +112,6 @@ public class Formulario1 implements Serializable {
         return this;
     }
     /**
-    * Obtém produto
-    * return produto
-    * @generated
-    */
-    public Produto getProduto() {
-        return this.produto;
-    }
-
-    /**
-    * Define produto
-    * @param produto produto
-    * @generated
-    */
-    public Formulario1 setProduto(Produto produto) {
-        this.produto = produto;
-        return this;
-    }
-    /**
     * Obtém quantidade
     * return quantidade
     * @generated
@@ -172,6 +127,24 @@ public class Formulario1 implements Serializable {
     */
     public Formulario1 setQuantidade(java.lang.Double quantidade) {
         this.quantidade = quantidade;
+        return this;
+    }
+    /**
+    * Obtém produto
+    * return produto
+    * @generated
+    */
+    public Produto getProduto() {
+        return this.produto;
+    }
+
+    /**
+    * Define produto
+    * @param produto produto
+    * @generated
+    */
+    public Formulario1 setProduto(Produto produto) {
+        this.produto = produto;
         return this;
     }
 

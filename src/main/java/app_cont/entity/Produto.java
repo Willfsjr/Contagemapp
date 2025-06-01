@@ -35,9 +35,9 @@ public class Produto implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Id")
-    @Column(name = "id", nullable = false, length=255, insertable=true, updatable=true)
-        private java.lang.String id;
+    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
+    @Column(name = "id", nullable = false, length=0, insertable=true, updatable=true)
+        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
@@ -61,15 +61,6 @@ public class Produto implements Serializable {
     /**
     * @generated
     */
-    @ManyToOne
-    @JoinColumn(name="fk_contagem", nullable = true, referencedColumnName = "id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "FK_PRODUTO_fk_contagem", foreignKeyDefinition = "FOREIGN KEY (fk_contagem) REFERENCES CONTAGEM (id)"))
-        
-        private Contagem contagem;
-
-
-    /**
-    * @generated
-    */
     @CronappColumn(attributeType="DOUBLE", label="Cust Tab")
     @Column(name = "cust_tab", nullable = true, unique = false, precision=17, scale=17, insertable=true, updatable=true)
         
@@ -83,6 +74,15 @@ public class Produto implements Serializable {
     @Column(name = "desc_psv", nullable = true, unique = false, length=255, insertable=true, updatable=true)
         
         private java.lang.String descPsv;
+
+
+    /**
+    * @generated
+    */
+    @ManyToOne
+    @JoinColumn(name="fk_contagem", nullable = true, referencedColumnName = "id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "PRODUTO_FK_CONTAGEM_CONTAGEM_ID", foreignKeyDefinition = "FOREIGN KEY (fk_contagem) REFERENCES CONTAGEM (id) ON DELETE CASCADE"))
+        
+        private Contagem contagem;
 
 
     /**
@@ -147,24 +147,6 @@ public class Produto implements Serializable {
         return this;
     }
     /**
-    * Obtém contagem
-    * return contagem
-    * @generated
-    */
-    public Contagem getContagem() {
-        return this.contagem;
-    }
-
-    /**
-    * Define contagem
-    * @param contagem contagem
-    * @generated
-    */
-    public Produto setContagem(Contagem contagem) {
-        this.contagem = contagem;
-        return this;
-    }
-    /**
     * Obtém custTab
     * return custTab
     * @generated
@@ -198,6 +180,24 @@ public class Produto implements Serializable {
     */
     public Produto setDescPsv(java.lang.String descPsv) {
         this.descPsv = descPsv;
+        return this;
+    }
+    /**
+    * Obtém contagem
+    * return contagem
+    * @generated
+    */
+    public Contagem getContagem() {
+        return this.contagem;
+    }
+
+    /**
+    * Define contagem
+    * @param contagem contagem
+    * @generated
+    */
+    public Produto setContagem(Contagem contagem) {
+        this.contagem = contagem;
         return this;
     }
 
