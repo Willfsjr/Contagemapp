@@ -7,180 +7,11 @@
   "entitySimpleName": "Formulario2",
   "entityFullName": "app_cont.entity.Formulario2",
   "query": {
-    "isValid": true,
-    "isEmpty": false,
-    "operationType": "object",
+    "isEmpty": true,
+    "isRawSql": true,
     "isNativeQuery": false,
     "namespace": "app_cont",
-    "type": "select",
-    "rulesEntity": [
-      {
-        "entity": "Formulario2",
-        "namespace": "app_cont.entity.Formulario2",
-        "dataSourceOptions": {
-          "id": "app_cont.Formulario2",
-          "customId": "Formulario2",
-          "customQueryName": "app_cont.Formulario2",
-          "paramValues": [],
-          "entityFullName": "app_cont.entity.Formulario2",
-          "schemaFields": [
-            {
-              "name": "id",
-              "type": "String",
-              "nullable": false,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "data",
-              "type": "DateTime",
-              "nullable": true,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "quantidade",
-              "type": "Double",
-              "nullable": true,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "produto",
-              "type": "String",
-              "nullable": true,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "_objectKey",
-              "type": "String",
-              "nullable": false,
-              "notEmpty": false,
-              "key": true
-            },
-            {
-              "name": "produto_codiBar",
-              "type": "String",
-              "nullable": true,
-              "notEmpty": false,
-              "key": false
-            }
-          ],
-          "type": "entity",
-          "hasError": false,
-          "customName": "Formulario2",
-          "fullName": "app_cont.entity.Formulario2",
-          "labelName": "app_cont.entity.Formulario2 (Formulario2)"
-        },
-        "alias": "f"
-      }
-    ],
-    "rulesSelect": [
-      {
-        "func": "get",
-        "field": "f.produto.descPsv",
-        "type": "string"
-      },
-      {
-        "func": "get",
-        "field": "f.quantidade",
-        "type": "double"
-      },
-      {
-        "func": "get",
-        "field": "fo.quantidade",
-        "type": "double"
-      }
-    ],
-    "rulesJoin": [
-      {
-        "entity": "Formulario1",
-        "namespace": "app_cont.entity.Formulario1",
-        "dataSourceOptions": {
-          "id": "app_cont.Formulario1",
-          "customId": "Formulario1",
-          "customQueryName": "app_cont.Formulario1",
-          "paramValues": [],
-          "entityFullName": "app_cont.entity.Formulario1",
-          "schemaFields": [
-            {
-              "name": "id",
-              "type": "String",
-              "nullable": false,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "data",
-              "type": "DateTime",
-              "nullable": true,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "quantidade",
-              "type": "Double",
-              "nullable": true,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "produto",
-              "type": "String",
-              "nullable": true,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "_objectKey",
-              "type": "String",
-              "nullable": false,
-              "notEmpty": false,
-              "key": true
-            },
-            {
-              "name": "produto_codiBar",
-              "type": "String",
-              "nullable": true,
-              "notEmpty": false,
-              "key": false
-            }
-          ],
-          "type": "entity",
-          "hasError": false,
-          "customName": "Formulario1",
-          "fullName": "app_cont.entity.Formulario1",
-          "labelName": "app_cont.entity.Formulario1 (Formulario1)"
-        },
-        "alias": "fo",
-        "joinType": "join",
-        "joinField": "f.produto",
-        "joinOperator": "equal",
-        "joinTargetField": "fo.produto"
-      }
-    ],
-    "rulesGroupBy": [],
-    "rulesHaving": [],
-    "rulesOrderBy": [],
-    "rules": {
-      "condition": "AND",
-      "rules": [
-        {
-          "id": "f.produto.contagem",
-          "field": "f.produto.contagem",
-          "type": "string",
-          "input": "text",
-          "operator": "equal",
-          "valueType": "param",
-          "value": ":produtoContagem",
-          "valueIsField": false
-        }
-      ],
-      "not": false,
-      "valid": true
-    },
-    "isRawSql": false,
+    "sqlContent": "select \n\tfo, \n\tfo.produto.descPsv, \n\tfo.quantidade, \n\tf.quantidade \nfrom \n\tFormulario2 fo \njoin\n\tFormulario1 f on (fo.produto \u003d f.produto) \nwhere \n\tfo.quantidade \u003c\u003e f.quantidade AND \n\tfo.produto.contagem \u003d :produtoContagem",
     "multiTenant": false,
     "paginatorAutomatic": false,
     "pagination": false
@@ -217,19 +48,34 @@
     "onError": null
   },
   "defaultValues": {
-    "produto_descPsv": null,
+    "id": null,
+    "data": null,
     "quantidade": null,
-    "quantidade_1": null
+    "produto": null,
+    "produto_codiBar": null,
+    "produto_descPsv": null,
+    "quantidade_1": null,
+    "quantidade_2": null
   },
   "defaultValuesProperties": {
-    "produto_descPsv": null,
+    "id": null,
+    "data": null,
     "quantidade": null,
-    "quantidade_1": null
+    "produto": null,
+    "produto_codiBar": null,
+    "produto_descPsv": null,
+    "quantidade_1": null,
+    "quantidade_2": null
   },
   "security": {
-    "produto_descPsv": null,
+    "id": null,
+    "data": null,
     "quantidade": null,
-    "quantidade_1": null
+    "produto": null,
+    "produto_codiBar": null,
+    "produto_descPsv": null,
+    "quantidade_1": null,
+    "quantidade_2": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},
