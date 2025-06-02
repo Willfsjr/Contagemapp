@@ -344,6 +344,225 @@
       "angle": 0,
       "attributes": [
         "id:java.lang.String",
+        "codiDpt:java.lang.String",
+        "qteTotal:java.lang.String",
+        "formulario1:Formulario1"
+      ],
+      "attrs": {
+        ".uml-class-attrs-rect": {
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "height": 100,
+          "stroke": "#C2C2C2",
+          "transform": "translate(0,40)"
+        },
+        ".uml-class-attrs-text": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "font-size": 11,
+          "text": "* id\ncodiDpt\nqteTotal\nformulario1\n"
+        },
+        ".uml-class-attrs-value": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "font-size": 11,
+          "ref-x": 144,
+          "text": "Texto\nTexto\nTexto\nFormulario1\n"
+        },
+        ".uml-class-methods-rect": {
+          "fill": "#F0F0F0",
+          "height": 20,
+          "stroke": "#C2C2C2",
+          "stroke-width": 1,
+          "transform": "translate(0,140)"
+        },
+        ".uml-class-methods-text": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "font-size": 11,
+          "text": ""
+        },
+        ".uml-class-name-rect": {
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "height": 40,
+          "stroke": "#C2C2C2",
+          "transform": "translate(0,0)"
+        },
+        ".uml-class-name-text": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "text": "Estoque"
+        }
+      },
+      "audit": false,
+      "fields": [
+        {
+          "name": "id",
+          "type": "java.lang.String",
+          "dbName": "id",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "UUID.randomUUID().toString().toUpperCase()",
+          "label": "Id",
+          "mask": "",
+          "isPrimaryKey": true,
+          "isUniqueKey": false,
+          "isNullable": false,
+          "isNotEmpty": false,
+          "pkType": "UUID",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
+        },
+        {
+          "name": "codiDpt",
+          "type": "java.lang.String",
+          "dbName": "codiDpt",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Codi Dpt",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
+        },
+        {
+          "name": "qteTotal",
+          "type": "java.lang.String",
+          "dbName": "qteTotal",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Qte Total",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
+        },
+        {
+          "name": "formulario1",
+          "type": "Formulario1",
+          "dbName": "fk_formulario1",
+          "label": "Formulario 1",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "isNotEmpty": false,
+          "multitenantContext": "",
+          "pkType": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "isCascade": false,
+          "isVersion": false,
+          "idIndex": false,
+          "useOuterJoin": false
+        }
+      ],
+      "generateView": "Auto",
+      "id": "6da087c6-4e14-48cb-a353-af361661bdf4",
+      "isRest": "true",
+      "methods": [],
+      "modelType": "Table",
+      "name": "Estoque",
+      "position": {
+        "x": 402,
+        "y": 44
+      },
+      "queries": [],
+      "realName": "",
+      "restSecurity": null,
+      "role": "Class",
+      "runtimeClass": "cronos.widgets.joint.uml.Class",
+      "size": {
+        "height": 140,
+        "width": 219
+      },
+      "swagger": false,
+      "tableName": "ESTOQUE",
+      "tableScheme": null,
+      "type": "uml.Class",
+      "usePhysicalNames": false,
+      "z": 33
+    },
+    {
+      "angle": 0,
+      "attributes": [
+        "id:java.lang.String",
         "data:java.sql.Date",
         "quantidade:java.lang.Double",
         "produto:Produto"
@@ -540,8 +759,8 @@
       "modelType": "Table",
       "name": "Formulario1",
       "position": {
-        "x": 380,
-        "y": 490
+        "x": 400,
+        "y": 240
       },
       "queries": [],
       "realName": "",
@@ -772,8 +991,8 @@
       "modelType": "Table",
       "name": "Formulario2",
       "position": {
-        "x": 366,
-        "y": 274
+        "x": 560,
+        "y": 408
       },
       "queries": [],
       "realName": "",
@@ -1306,6 +1525,51 @@
           "fill": ""
         }
       },
+      "id": "01feecd3-9083-48d4-ae08-2837e0eaaf42",
+      "labels": [
+        {
+          "position": 0.9,
+          "attrs": {
+            "rect": {
+              "fill": "transparent"
+            },
+            "text": {
+              "text": "*",
+              "font-family": "Arial",
+              "font-size": "12px",
+              "fill": "#cecece"
+            }
+          }
+        }
+      ],
+      "name": null,
+      "queries": [],
+      "relationFields": [
+        "formulario1:target"
+      ],
+      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
+      "source": {
+        "id": "4ff5eca1-6420-49b9-b4c7-333885281172"
+      },
+      "target": {
+        "id": "6da087c6-4e14-48cb-a353-af361661bdf4"
+      },
+      "type": "uml.Composition",
+      "vertices": [],
+      "z": 34
+    },
+    {
+      "associationType": "Association",
+      "attrs": {
+        ".marker-source": {
+          "d": "M 40 10 L 20 20 L 0 10 L 20 0 z",
+          "fill": "#cecece"
+        },
+        ".marker-target": {
+          "d": "",
+          "fill": ""
+        }
+      },
       "id": "0e5fb273-6789-4062-be4c-84197ff7266f",
       "labels": [
         {
@@ -1576,6 +1840,7 @@
         "2b62ca71-64b2-4d74-a86a-84f3dde6a99b",
         "93e84505-9634-450d-8a4e-be520c5e87db",
         "4ff5eca1-6420-49b9-b4c7-333885281172",
+        "6da087c6-4e14-48cb-a353-af361661bdf4",
         "4b9cd62c-47c1-4bff-951b-f617ac0d4741",
         "14cb1534-91d4-4b8b-8c6f-bc50eced9ee4"
       ],

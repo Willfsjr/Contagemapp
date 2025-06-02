@@ -36,6 +36,7 @@
         <non-jta-data-source>java:comp/env/jdbc/contdb_dev</non-jta-data-source>
         <class>app_cont.entity.Produto</class>
         <class>app_cont.entity.Contagem</class>
+        <class>app_cont.entity.Estoque</class>
         <class>app_cont.entity.Loja</class>
         <class>app_cont.entity.Formulario1</class>
         <class>app_cont.entity.Formulario2</class>
