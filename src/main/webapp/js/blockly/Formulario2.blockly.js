@@ -10,12 +10,12 @@ window.blockly.js.blockly.Formulario2 = window.blockly.js.blockly.Formulario2 ||
  *
  *
  * @author Willian Ferreira
- * @since 01/06/2025, 05:18:10
+ * @since 03/06/2025, 17:41:01
  *
  */
 window.blockly.js.blockly.Formulario2.validarProdutoArgs = [];
 window.blockly.js.blockly.Formulario2.validarProduto = async function() {
- var contObj, nomeCont;
+ var contObj2, nomeCont2, valido;
   //
   if (this.cronapi.logic.isNullOrEmpty(this.cronapi.screen.getValueOfField("form2.active.produto"))) {
     //
@@ -36,12 +36,12 @@ window.blockly.js.blockly.Formulario2.validarProduto = async function() {
  *
  *
  * @author Willian Ferreira
- * @since 01/06/2025, 05:18:10
+ * @since 03/06/2025, 17:41:01
  *
  */
 window.blockly.js.blockly.Formulario2.gravarArgs = [];
 window.blockly.js.blockly.Formulario2.gravar = async function() {
- var contObj, nomeCont;
+ var contObj2, nomeCont2, valido;
   //
   if (((await this.cronapi.client('blockly.js.blockly.Formulario2.validarProduto').run()) && (await this.cronapi.client('blockly.js.blockly.Formulario2.validarQuantidade').run())) == true) {
     //
@@ -59,14 +59,14 @@ window.blockly.js.blockly.Formulario2.gravar = async function() {
  *
  *
  * @author Willian Ferreira
- * @since 01/06/2025, 05:18:10
+ * @since 03/06/2025, 17:41:01
  *
  */
 window.blockly.js.blockly.Formulario2.validarQuantidadeArgs = [];
 window.blockly.js.blockly.Formulario2.validarQuantidade = async function() {
- var contObj, nomeCont;
+ var contObj2, nomeCont2, valido;
   //
-  if (this.cronapi.screen.getValueOfField("form2.active.quantidade") < 0 || this.cronapi.logic.isNullOrEmpty(this.cronapi.screen.getValueOfField("form2.active.quantidade"))) {
+  if (this.cronapi.screen.getValueOfField("form2.active.quantidade2") < 0 || this.cronapi.logic.isNullOrEmpty(this.cronapi.screen.getValueOfField("form2.active.quantidade2"))) {
     //
     this.cronapi.screen.notify('warning','Informe uma Quantidade Valida');
     //

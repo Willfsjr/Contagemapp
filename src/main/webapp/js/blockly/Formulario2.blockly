@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><blockly audit="false" blocklyType="WEB" bpmnAble="false" formTarget="src/main/webapp/views/logged/form2.view.html" functionCategory="" linkHelp="" multilayer="false" resourceType="JS" ruleDescription="Formulario2" ruleName="Formulario2" ruleSynchronous="false" ruleTimeout="" ruleType="I" showAsFunction="false" soap="false" swagger="false">
-  <metadata scale="1" scrollx="185.5" scrolly="-138.60000000000002" target="rpa|Hu5{j_Qakk7uc3c7"/>
+  <metadata scale="1" scrollx="-270.83319767441867" scrolly="-180.9999999999999" target="}Q:pFmYTgo,^$*BtL0(f"/>
   <block asynccall="false" colour="#995ba5" datasourcetype="" id="Anb:u5+^,0vLkL9QIqn5" origintype="procedures_defreturn" output="false" score="9007199254740991" tooltip="Cria uma função que possui um valor de retorno." type="procedures_defreturn" valueconstant="" x="-350" y="130">
     <field customattributes="" name="NAME">validarProduto</field>
     <statement name="STACK">
@@ -132,7 +132,7 @@
                     </mutation>
                     <value name="ARG0">
                       <block asynccall="false" colour="#934848" datasourcetype="" dependencyby="}Q:pFmYTgo,^$*BtL0(f" id="7;6|#vJiq3S^`c8v$kqm" origintype="form_fieldscreen_callreturn" output="true" score="9007199254740991" type="form_fieldscreen_callreturn" valueconstant="">
-                        <field customattributes="" name="SELECT">form2.active.quantidade</field>
+                        <field customattributes="" name="SELECT">form2.active.quantidade2</field>
                       </block>
                     </value>
                   </block>
@@ -156,7 +156,7 @@
                     </mutation>
                     <value name="ARG0">
                       <block asynccall="false" colour="#934848" datasourcetype="" dependencyby="}Q:pFmYTgo,^$*BtL0(f" id="U/[F,Qs[AeZEf:bnJ;9{" origintype="form_fieldscreen_callreturn" output="true" score="9007199254740991" type="form_fieldscreen_callreturn" valueconstant="">
-                        <field customattributes="" name="SELECT">form2.active.quantidade</field>
+                        <field customattributes="" name="SELECT">form2.active.quantidade2</field>
                       </block>
                     </value>
                   </block>

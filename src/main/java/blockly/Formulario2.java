@@ -17,7 +17,7 @@ public static final int TIMEOUT = 300;
  * @param produto2
  *
  * @author Willian Ferreira
- * @since 01/06/2025, 06:20:46
+ * @since 03/06/2025, 17:36:06
  *
  */
 public static Var excluir(@ParamMetaData(description = "produto2", id = "a0607922") @RequestBody(required = false) Var produto2) throws Exception {
@@ -44,7 +44,7 @@ public static Var excluir(@ParamMetaData(description = "produto2", id = "a060792
 /**
  *
  * @author Willian Ferreira
- * @since 01/06/2025, 06:20:46
+ * @since 03/06/2025, 17:36:06
  *
  */
 public static Var gravar() throws Exception {
@@ -58,7 +58,7 @@ public static Var gravar() throws Exception {
    public Var call() throws Exception {
     quantidade =
     cronapi.screen.Operations.getValueOfField(
-    Var.valueOf("form2.active.quantidade"));
+    Var.valueOf("form2.active.quantidade2"));
     produto2 =
     cronapi.screen.Operations.getValueOfField(
     Var.valueOf("form2.active.produto"));
@@ -71,11 +71,11 @@ public static Var gravar() throws Exception {
         inserir =
         cronapi.database.Operations.insert(Var.valueOf("app_cont.entity.Formulario2"),
         cronapi.object.Operations.newObject(Var.valueOf("app_cont.entity.Formulario2"),Var.valueOf("data",
-        cronapi.dateTime.Operations.getNow()),Var.valueOf("quantidade",quantidade),Var.valueOf("produto",produto2)));
+        cronapi.dateTime.Operations.getNow()),Var.valueOf("quantidade2",quantidade),Var.valueOf("produto",produto2)));
         cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("success"),
         Var.valueOf("Produto Inserido"));
     } else {
-        cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Formulario2"), Var.valueOf("update \n	Formulario2  \nset \n	quantidade = :quantidade, \n	data = :data \nwhere \n	produto = :produto AND \n	produto.contagem = :contagem"),Var.valueOf("quantidade",quantidade),Var.valueOf("data",
+        cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Formulario2"), Var.valueOf("update \n	Formulario2  \nset \n	quantidade2 = :quantidade2, \n	data = :data \nwhere \n	produto = :produto AND \n	produto.contagem = :contagem"),Var.valueOf("quantidade2",quantidade),Var.valueOf("data",
         cronapi.dateTime.Operations.getNow()),Var.valueOf("produto",produto2),Var.valueOf("contagem",contagem));
         cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("success"),
         Var.valueOf("Produto Atualizado"));

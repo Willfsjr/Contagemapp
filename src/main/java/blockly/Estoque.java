@@ -18,7 +18,7 @@ public static final int TIMEOUT = 300;
  * @param contObjEst
  *
  * @author Willian Ferreira
- * @since 02/06/2025, 10:48:00
+ * @since 03/06/2025, 17:59:22
  *
  */
 public static Var obterProdutoEstoqueLoja(@ParamMetaData(description = "contObjEst", id = "dfd8366c") @RequestBody(required = false) Var contObjEst) throws Exception {
@@ -26,6 +26,7 @@ public static Var obterProdutoEstoqueLoja(@ParamMetaData(description = "contObjE
 
    private Var validarEstEntrada = Var.VAR_NULL;
    private Var produto = Var.VAR_NULL;
+   private Var loja = Var.VAR_NULL;
    private Var codigoLoja = Var.VAR_NULL;
    private Var linha1 = Var.VAR_NULL;
    private Var codigoProduto = Var.VAR_NULL;
@@ -54,15 +55,18 @@ public static Var obterProdutoEstoqueLoja(@ParamMetaData(description = "contObjE
     cronapi.logic.Operations.isNullOrEmpty(validarEstEntrada).getObjectAsBoolean()).getObjectAsBoolean()) {
         produto =
         cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Formulario1"),Var.valueOf("select \n	f.produto.codiPsv \nfrom \n	Formulario1 f  \nwhere \n	f.produto.contagem = :produtoContagem"),Var.valueOf("produtoContagem",contObjEst));
-        codigoLoja =
+        loja =
         cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Formulario1"),Var.valueOf("select \n	f.produto.contagem.loja.codigo \nfrom \n	Formulario1 f  \nwhere \n	f.produto.contagem = :produtoContagem"),Var.valueOf("produtoContagem",contObjEst));
+        codigoLoja =
+        cronapi.list.Operations.get(loja,
+        Var.valueOf(1));
         for (Iterator it_linha1 = produto.iterator(); it_linha1.hasNext();) {
             linha1 = Var.valueOf(it_linha1.next());
-            codigoProduto =
-            cronapi.map.Operations.getMapField(linha1,
-            Var.valueOf("codiPsv"));
+            codigoProduto = linha1;
             estoque =
             cronapi.database.Operations.executeNativeQuery(Var.valueOf("app_oracle.entity.Estoquecontagem"),Var.valueOf("select CODI_PSV, CODI_DPT, QTE_TOTAL from ESTOQUECONTAGEM  where CODI_PSV = :CODI_PSV AND CODI_EMP = :CODI_EMP"),Var.valueOf("CODI_PSV",codigoProduto),Var.valueOf("CODI_EMP",codigoLoja));
+            System.out.println(codigoLoja.getObjectAsString());
+            System.out.println(linha1.getObjectAsString());
             listaBase =
             /*# sourceMappingStart=T5dcE74z~?@A_+epr1cg */
             ( cronapi.logic.Operations.isNull(estoqueERP)
@@ -79,7 +83,7 @@ public static Var obterProdutoEstoqueLoja(@ParamMetaData(description = "contObjE
                 cronapi.map.Operations.getMapField(linha2,
                 Var.valueOf("CODI_PSV"));
                 form1Obj =
-                cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Formulario1"),Var.valueOf("select \n	f \nfrom \n	Formulario1 f  \nwhere \n	f.produto.codiPsv = :produtoCodiPsv AND \n	f.produto.contagem = :produtoContagem"),Var.valueOf("produtoCodiPsv",codiPsv),Var.valueOf("produtoContagem",contObjEst));
+                cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Formulario1"),Var.valueOf("select \n	f.id \nfrom \n	Formulario1 f  \nwhere \n	f.produto.codiPsv = :produtoCodiPsv AND \n	f.produto.contagem = :produtoContagem"),Var.valueOf("produtoCodiPsv",codiPsv),Var.valueOf("produtoContagem",contObjEst));
                 codiDpt =
                 cronapi.map.Operations.getMapField(linha2,
                 Var.valueOf("CODI_DPT"));
@@ -87,7 +91,7 @@ public static Var obterProdutoEstoqueLoja(@ParamMetaData(description = "contObjE
                 cronapi.map.Operations.getMapField(linha2,
                 Var.valueOf("QTE_TOTAL"));
                 mapProduto =
-                cronapi.map.Operations.createObjectMapWith(Var.valueOf("formulario1",form1Obj) , Var.valueOf("codiDpt",codiDpt) , Var.valueOf("qteTotal",qteTotal));
+                cronapi.map.Operations.createObjectMapWith(Var.valueOf("codiDpt",codiDpt) , Var.valueOf("qteTotal",qteTotal) , Var.valueOf("formulario1",form1Obj));
                 inserir =
                 cronapi.database.Operations.insert(Var.valueOf("app_cont.entity.Estoque"),mapProduto);
                 contador =
@@ -112,17 +116,15 @@ public static Var obterProdutoEstoqueLoja(@ParamMetaData(description = "contObjE
             cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Estoque"), Var.valueOf("delete from \n	\n	Estoque  \nwhere \n	formulario1.produto.contagem = :produtoContagem"),Var.valueOf("produtoContagem",contObjEst));
             produto =
             cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Formulario1"),Var.valueOf("select \n	f.produto.codiPsv \nfrom \n	Formulario1 f \nleft join\n	Estoque e \n	on (f.produto = e.formulario1.produto) \n	and f.produto.contagem = e.formulario1.produto.contagem \nwhere \n	f.produto.contagem = :produtoContagem AND \n	e.id IS NULL"),Var.valueOf("produtoContagem",contObjEst));
-            codigoLoja =
+            loja =
             cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Formulario1"),Var.valueOf("select \n	f.produto.contagem.loja.codigo \nfrom \n	Formulario1 f  \nwhere \n	f.produto.contagem = :produtoContagem"),Var.valueOf("produtoContagem",contObjEst));
             for (Iterator it_linha1 = produto.iterator(); it_linha1.hasNext();) {
                 linha1 = Var.valueOf(it_linha1.next());
-                codigoProduto =
-                cronapi.map.Operations.getMapField(linha1,
-                Var.valueOf("codiPsv"));
+                codigoProduto = linha1;
                 estoque =
                 cronapi.database.Operations.executeNativeQuery(Var.valueOf("app_oracle.entity.Estoquecontagem"),Var.valueOf("select CODI_PSV, CODI_DPT, QTE_TOTAL from ESTOQUECONTAGEM  where CODI_PSV = :CODI_PSV AND CODI_EMP = :CODI_EMP"),Var.valueOf("CODI_PSV",codigoProduto),Var.valueOf("CODI_EMP",codigoLoja));
                 listaBase =
-                /*# sourceMappingStart=v4r+,4^4uU`o@Km}`@ha */
+                /*# sourceMappingStart=0nc,8}2pA_gl,E[R6[sO */
                 ( cronapi.logic.Operations.isNull(estoqueERP)
                 .negate().getObjectAsBoolean() ? estoqueERP :
                 cronapi.list.Operations.newList());
@@ -137,7 +139,7 @@ public static Var obterProdutoEstoqueLoja(@ParamMetaData(description = "contObjE
                     cronapi.map.Operations.getMapField(linha2,
                     Var.valueOf("CODI_PSV"));
                     form1Obj =
-                    cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Formulario1"),Var.valueOf("select \n	f \nfrom \n	Formulario1 f  \nwhere \n	f.produto.codiPsv = :produtoCodiPsv AND \n	f.produto.contagem = :produtoContagem"),Var.valueOf("produtoCodiPsv",codiPsv),Var.valueOf("produtoContagem",contObjEst));
+                    cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Formulario1"),Var.valueOf("select \n	f.id \nfrom \n	Formulario1 f  \nwhere \n	f.produto.codiPsv = :produtoCodiPsv AND \n	f.produto.contagem = :produtoContagem"),Var.valueOf("produtoCodiPsv",codiPsv),Var.valueOf("produtoContagem",contObjEst));
                     codiDpt =
                     cronapi.map.Operations.getMapField(linha2,
                     Var.valueOf("CODI_DPT"));
@@ -145,7 +147,7 @@ public static Var obterProdutoEstoqueLoja(@ParamMetaData(description = "contObjE
                     cronapi.map.Operations.getMapField(linha2,
                     Var.valueOf("QTE_TOTAL"));
                     mapProduto =
-                    cronapi.map.Operations.createObjectMapWith(Var.valueOf("formulario1",form1Obj) , Var.valueOf("codiDpt",codiDpt) , Var.valueOf("qteTotal",qteTotal));
+                    cronapi.map.Operations.createObjectMapWith(Var.valueOf("codiDpt",codiDpt) , Var.valueOf("qteTotal",qteTotal) , Var.valueOf("formulario1",form1Obj));
                     inserir =
                     cronapi.database.Operations.insert(Var.valueOf("app_cont.entity.Estoque"),mapProduto);
                     contador =
