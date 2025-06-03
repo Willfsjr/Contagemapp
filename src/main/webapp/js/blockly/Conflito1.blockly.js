@@ -4,18 +4,35 @@ window.blockly.js.blockly = window.blockly.js.blockly || {};
 window.blockly.js.blockly.Conflito1 = window.blockly.js.blockly.Conflito1 || {};
 
 /**
- * @function atualizar
+ * @function esconderModal
  *
  *
  *
  *
  * @author Willian Ferreira
- * @since 01/06/2025, 16:40:35
+ * @since 03/06/2025, 14:53:00
  *
  */
-window.blockly.js.blockly.Conflito1.atualizarArgs = [];
-window.blockly.js.blockly.Conflito1.atualizar = async function() {
+window.blockly.js.blockly.Conflito1.esconderModalArgs = [];
+window.blockly.js.blockly.Conflito1.esconderModal = async function() {
  var contNameConf, contObjConf;
   //
-  this.cronapi.screen.refreshDatasource("conform1", 'true');
+  this.cronapi.screen.hideModal("modal79293");
+}
+
+/**
+ * @function exibirModal
+ *
+ *
+ *
+ *
+ * @author Willian Ferreira
+ * @since 03/06/2025, 14:53:00
+ *
+ */
+window.blockly.js.blockly.Conflito1.exibirModalArgs = [];
+window.blockly.js.blockly.Conflito1.exibirModal = async function() {
+ var contNameConf, contObjConf;
+  //
+  this.cronapi.screen.showModal("modal79293");
 }

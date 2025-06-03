@@ -53,10 +53,10 @@ public class Formulario2 implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="Quantidade")
-    @Column(name = "quantidade", nullable = true, unique = false, precision=17, scale=17, insertable=true, updatable=true)
+    @CronappColumn(attributeType="INTEGER", label="Quantidade 2")
+    @Column(name = "quantidade2", nullable = true, unique = false, scale=17, insertable=true, updatable=true)
         
-        private java.lang.Double quantidade;
+        private java.lang.Integer quantidade2;
 
 
     /**
@@ -112,21 +112,21 @@ public class Formulario2 implements Serializable {
         return this;
     }
     /**
-    * Obtém quantidade
-    * return quantidade
+    * Obtém quantidade2
+    * return quantidade2
     * @generated
     */
-    public java.lang.Double getQuantidade() {
-        return this.quantidade;
+    public java.lang.Integer getQuantidade2() {
+        return this.quantidade2;
     }
 
     /**
-    * Define quantidade
-    * @param quantidade quantidade
+    * Define quantidade2
+    * @param quantidade2 quantidade2
     * @generated
     */
-    public Formulario2 setQuantidade(java.lang.Double quantidade) {
-        this.quantidade = quantidade;
+    public Formulario2 setQuantidade2(java.lang.Integer quantidade2) {
+        this.quantidade2 = quantidade2;
         return this;
     }
     /**

@@ -564,7 +564,7 @@
       "attributes": [
         "id:java.lang.String",
         "data:java.sql.Date",
-        "quantidade:java.lang.Double",
+        "quantidade1:java.lang.Integer",
         "produto:Produto"
       ],
       "attrs": {
@@ -578,13 +578,13 @@
         ".uml-class-attrs-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "* id\ndata\nquantidade\nproduto\n"
+          "text": "* id\ndata\nquantidade1\nproduto\n"
         },
         ".uml-class-attrs-value": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
           "ref-x": 132,
-          "text": "Texto\nData e Hora\nNumérico\nProduto\n"
+          "text": "Texto\nData e Hora\nInteiro\nProduto\n"
         },
         ".uml-class-methods-rect": {
           "fill": "#F0F0F0",
@@ -689,14 +689,14 @@
           "columnDefinition": ""
         },
         {
-          "name": "quantidade",
-          "type": "java.lang.Double",
-          "dbName": "quantidade",
+          "name": "quantidade1",
+          "type": "java.lang.Integer",
+          "dbName": "quantidade1",
           "dbLength": "",
-          "dbPrecision": 17,
+          "dbPrecision": "",
           "dbScale": 17,
           "dbDefaultValue": "",
-          "label": "Quantidade",
+          "label": "Quantidade 1",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
@@ -730,14 +730,18 @@
           "name": "produto",
           "type": "Produto",
           "dbName": "fk_produto",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
           "label": "Produto",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
           "isNullable": true,
           "isNotEmpty": false,
-          "multitenantContext": "",
           "pkType": "",
+          "multitenantContext": "",
           "jsonIgnore": false,
           "isTransient": false,
           "isInsertable": true,
@@ -746,10 +750,19 @@
           "passwordPolicy": "none",
           "referencedColumnName": "",
           "isSearchable": false,
+          "sequence": "",
           "isCascade": false,
           "isVersion": false,
-          "idIndex": false,
-          "useOuterJoin": false
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
         }
       ],
       "generateView": "Auto",
@@ -783,7 +796,7 @@
       "attributes": [
         "id:java.lang.String",
         "data:java.sql.Date",
-        "quantidade:java.lang.Double",
+        "quantidade2:java.lang.Integer",
         "produto:Produto"
       ],
       "attrs": {
@@ -797,13 +810,13 @@
         ".uml-class-attrs-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "* id\ndata\nquantidade\nproduto\n"
+          "text": "* id\ndata\nquantidade2\nproduto\n"
         },
         ".uml-class-attrs-value": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
           "ref-x": 132,
-          "text": "Texto\nData e Hora\nNumérico\nProduto\n"
+          "text": "Texto\nData e Hora\nInteiro\nProduto\n"
         },
         ".uml-class-methods-rect": {
           "fill": "#F0F0F0",
@@ -908,14 +921,14 @@
           "columnDefinition": ""
         },
         {
-          "name": "quantidade",
-          "type": "java.lang.Double",
-          "dbName": "quantidade",
+          "name": "quantidade2",
+          "type": "java.lang.Integer",
+          "dbName": "quantidade2",
           "dbLength": "",
-          "dbPrecision": 17,
+          "dbPrecision": "",
           "dbScale": 17,
           "dbDefaultValue": "",
-          "label": "Quantidade",
+          "label": "Quantidade 2",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,

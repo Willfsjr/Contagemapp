@@ -89,8 +89,8 @@
       },
       {
         "func": "get",
-        "field": "f.quantidade",
-        "type": "double"
+        "field": "f.quantidade1",
+        "type": "integer"
       },
       {
         "func": "get",
@@ -164,21 +164,21 @@
   "defaultValues": {
     "data": null,
     "produto_descPsv": null,
-    "quantidade": null,
+    "quantidade1": null,
     "produto": null,
     "produto_codiBar": null
   },
   "defaultValuesProperties": {
     "data": null,
     "produto_descPsv": null,
-    "quantidade": null,
+    "quantidade1": null,
     "produto": null,
     "produto_codiBar": null
   },
   "security": {
     "data": null,
     "produto_descPsv": null,
-    "quantidade": null,
+    "quantidade1": null,
     "produto": null,
     "produto_codiBar": null
   },
