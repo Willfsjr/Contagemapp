@@ -17,25 +17,35 @@ public static final int TIMEOUT = 300;
  * @param produto
  *
  * @author Willian Ferreira
- * @since 03/06/2025, 17:36:17
+ * @since 03/06/2025, 21:24:45
  *
  */
 public static Var excluir(@ParamMetaData(description = "produto", id = "b6d76f15") @RequestBody(required = false) Var produto) throws Exception {
  return new Callable<Var>() {
 
+   private Var excecao = Var.VAR_NULL;
+
    public Var call() throws Exception {
-    cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Formulario1"), Var.valueOf("delete from \n	\n	Formulario1  \nwhere \n	produto = :produto"),Var.valueOf("produto",produto));
-    cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("success"),
-    Var.valueOf("Produto Excluído"));
-    cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.refreshDatasource"),
-    Var.valueOf("OrdenarProdutoDo1FormularioPelaData"),
-    Var.valueOf("true"));
-    cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.refreshDatasource"),
-    Var.valueOf("ProdutoParaO1Formulario"),
-    Var.valueOf("true"));
-    cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.refreshDatasource"),
-    Var.valueOf("form1"),
-    Var.valueOf("true"));
+    try {
+         cronapi.database.Operations.beginTransaction(Var.valueOf("app_cont"));
+        cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Estoque"), Var.valueOf("delete from \n	\n	Estoque  \nwhere \n	formulario1.produto = :produto"),Var.valueOf("produto",produto));
+        cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Formulario1"), Var.valueOf("delete from \n	\n	Formulario1  \nwhere \n	produto = :produto"),Var.valueOf("produto",produto));
+        cronapi.database.Operations.commitTransaction(Var.valueOf("app_cont"));
+        cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("success"),
+        Var.valueOf("Produto Excluído"));
+        cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.refreshDatasource"),
+        Var.valueOf("OrdenarProdutoDo1FormularioPelaData"),
+        Var.valueOf("true"));
+        cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.refreshDatasource"),
+        Var.valueOf("ProdutoParaO1Formulario"),
+        Var.valueOf("true"));
+        cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.refreshDatasource"),
+        Var.valueOf("form1"),
+        Var.valueOf("true"));
+     } catch (Exception excecao_exception) {
+          excecao = Var.valueOf(excecao_exception);
+         cronapi.database.Operations.rollbackTransaction(Var.valueOf("app_cont"));
+     }
     return Var.VAR_NULL;
    }
  }.call();
@@ -44,7 +54,7 @@ public static Var excluir(@ParamMetaData(description = "produto", id = "b6d76f15
 /**
  *
  * @author Willian Ferreira
- * @since 03/06/2025, 17:36:17
+ * @since 03/06/2025, 21:24:45
  *
  */
 public static Var gravar() throws Exception {
