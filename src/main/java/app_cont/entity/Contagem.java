@@ -23,7 +23,7 @@ import cronapp.framework.core.persistence.*;
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("app_cont.entity.Contagem")
-@CronappTable(role=CronappTableRole.ASSOCIATION_CLASS)
+@CronappTable(role=CronappTableRole.CLASS)
 public class Contagem implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -84,6 +84,24 @@ public class Contagem implements Serializable {
     @JoinColumn(name="FK_DEPOSITO", nullable = true, referencedColumnName = "ID", insertable=true, updatable=true)
         
         private Deposito depCont;
+
+
+    /**
+    * @generated
+    */
+    @ManyToOne
+    @JoinColumn(name="FK_GRUPO", nullable = true, referencedColumnName = "ID", insertable=true, updatable=true)
+        
+        private Grupo gprCont;
+
+
+    /**
+    * @generated
+    */
+    @ManyToOne
+    @JoinColumn(name="FK_SUBGRUPO", nullable = true, referencedColumnName = "ID", insertable=true, updatable=true)
+        
+        private SubGrupo sbgCont;
 
 
     /**
@@ -199,6 +217,42 @@ public class Contagem implements Serializable {
     */
     public Contagem setDepCont(Deposito depCont) {
         this.depCont = depCont;
+        return this;
+    }
+    /**
+    * Obtém gprCont
+    * return gprCont
+    * @generated
+    */
+    public Grupo getGprCont() {
+        return this.gprCont;
+    }
+
+    /**
+    * Define gprCont
+    * @param gprCont gprCont
+    * @generated
+    */
+    public Contagem setGprCont(Grupo gprCont) {
+        this.gprCont = gprCont;
+        return this;
+    }
+    /**
+    * Obtém sbgCont
+    * return sbgCont
+    * @generated
+    */
+    public SubGrupo getSbgCont() {
+        return this.sbgCont;
+    }
+
+    /**
+    * Define sbgCont
+    * @param sbgCont sbgCont
+    * @generated
+    */
+    public Contagem setSbgCont(SubGrupo sbgCont) {
+        this.sbgCont = sbgCont;
         return this;
     }
 

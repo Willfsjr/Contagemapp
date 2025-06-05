@@ -618,34 +618,35 @@
         "fimCont:java.lang.Boolean",
         "dataCont:java.sql.Date",
         "lojaCont:Loja",
-        "depCont:Deposito"
+        "depCont:Deposito",
+        "gprCont:Grupo",
+        "sbgCont:SubGrupo"
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
-          "fill": "#fffec0",
+          "fill": "#F0F0F0",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
-          "height": 140,
+          "height": 180,
           "stroke": "#C2C2C2",
           "transform": "translate(0,40)"
         },
         ".uml-class-attrs-text": {
-          "fill": "#000",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "* id\ndescCont\nfimCont\ndataCont\nlojaCont\ndepCont\n"
+          "text": "* id\ndescCont\nfimCont\ndataCont\nlojaCont\ndepCont\ngprCont\nsbgCont\n"
         },
         ".uml-class-attrs-value": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
           "ref-x": 135,
-          "text": "Texto\nTexto\nLógico\nData e Hora\nLoja\nDeposito\n"
+          "text": "Texto\nTexto\nLógico\nData e Hora\nLoja\nDeposito\nGrupo\nSubGrupo\n"
         },
         ".uml-class-methods-rect": {
-          "fill": "#fffec0",
+          "fill": "#F0F0F0",
           "height": 20,
           "stroke": "#C2C2C2",
           "stroke-width": 1,
-          "transform": "translate(0,180)"
+          "transform": "translate(0,220)"
         },
         ".uml-class-methods-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
@@ -653,7 +654,7 @@
           "text": ""
         },
         ".uml-class-name-rect": {
-          "fill": "#fffec0",
+          "fill": "#F0F0F0",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "height": 40,
           "stroke": "#C2C2C2",
@@ -893,6 +894,82 @@
           "useOuterJoin": false,
           "regionAWS": "",
           "columnDefinition": ""
+        },
+        {
+          "name": "gprCont",
+          "type": "Grupo",
+          "dbName": "FK_GRUPO",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Gpr Cont",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
+        },
+        {
+          "name": "sbgCont",
+          "type": "SubGrupo",
+          "dbName": "FK_SUBGRUPO",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Sbg Cont",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
         }
       ],
       "generateView": "Auto",
@@ -908,10 +985,10 @@
       "queries": [],
       "realName": "",
       "restSecurity": null,
-      "role": "AssociationClass",
+      "role": "Class",
       "runtimeClass": "cronos.widgets.joint.uml.Class",
       "size": {
-        "height": 160,
+        "height": 180,
         "width": 210
       },
       "swagger": false,
@@ -2140,8 +2217,8 @@
       "modelType": "Table",
       "name": "Grupo",
       "position": {
-        "x": 842,
-        "y": 10
+        "x": 830,
+        "y": 84
       },
       "queries": [],
       "realName": "",
@@ -2726,7 +2803,7 @@
         ".uml-class-attrs-value": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "ref-x": 148,
+          "ref-x": 151,
           "text": "Texto\nInteiro\nTexto\nGrupo\n"
         },
         ".uml-class-methods-rect": {
@@ -2915,8 +2992,8 @@
       "modelType": "Table",
       "name": "SubGrupo",
       "position": {
-        "x": 842,
-        "y": 210
+        "x": 840,
+        "y": 266
       },
       "queries": [],
       "realName": "",
@@ -3216,6 +3293,51 @@
           "fill": ""
         }
       },
+      "id": "7c1eb764-7f05-4a47-9e4a-f2e44af58320",
+      "labels": [
+        {
+          "position": 0.9,
+          "attrs": {
+            "rect": {
+              "fill": "transparent"
+            },
+            "text": {
+              "text": "*",
+              "font-family": "Arial",
+              "font-size": "12px",
+              "fill": "#cecece"
+            }
+          }
+        }
+      ],
+      "name": null,
+      "queries": [],
+      "relationFields": [
+        "sbgCont:target"
+      ],
+      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
+      "source": {
+        "id": "4d6b785a-97fd-4d53-98b3-1591caa1c0f8"
+      },
+      "target": {
+        "id": "4b9cd62c-47c1-4bff-951b-f617ac0d4741"
+      },
+      "type": "uml.Composition",
+      "vertices": [],
+      "z": 51
+    },
+    {
+      "associationType": "Association",
+      "attrs": {
+        ".marker-source": {
+          "d": "M 40 10 L 20 20 L 0 10 L 20 0 z",
+          "fill": "#cecece"
+        },
+        ".marker-target": {
+          "d": "",
+          "fill": ""
+        }
+      },
       "id": "7e748222-6ad0-4f1b-8741-7daa00843464",
       "labels": [
         {
@@ -3429,6 +3551,51 @@
       "type": "uml.Composition",
       "vertices": [],
       "z": 45
+    },
+    {
+      "associationType": "Association",
+      "attrs": {
+        ".marker-source": {
+          "d": "M 40 10 L 20 20 L 0 10 L 20 0 z",
+          "fill": "#cecece"
+        },
+        ".marker-target": {
+          "d": "",
+          "fill": ""
+        }
+      },
+      "id": "ea8b6a38-d5da-4dce-9127-a2401400792a",
+      "labels": [
+        {
+          "position": 0.9,
+          "attrs": {
+            "rect": {
+              "fill": "transparent"
+            },
+            "text": {
+              "text": "*",
+              "font-family": "Arial",
+              "font-size": "12px",
+              "fill": "#cecece"
+            }
+          }
+        }
+      ],
+      "name": null,
+      "queries": [],
+      "relationFields": [
+        "gprCont:target"
+      ],
+      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
+      "source": {
+        "id": "ed4ba772-237d-4b32-9930-2ad4661d3866"
+      },
+      "target": {
+        "id": "4b9cd62c-47c1-4bff-951b-f617ac0d4741"
+      },
+      "type": "uml.Composition",
+      "vertices": [],
+      "z": 50
     },
     {
       "attrs": {
