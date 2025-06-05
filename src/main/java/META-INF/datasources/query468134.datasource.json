@@ -1,6 +1,6 @@
 {
-  "customId": "contagen",
-  "queryName": "Contagem",
+  "customId": "pesquisarcontagens",
+  "queryName": "Pesquisar Contagens",
   "sourceType": "entityFullName",
   "baseEntity": null,
   "blockly": null,
@@ -32,28 +32,35 @@
               "key": false
             },
             {
-              "name": "name",
+              "name": "descCont",
               "type": "String",
               "nullable": true,
               "notEmpty": false,
               "key": false
             },
             {
-              "name": "encerrado",
+              "name": "fimCont",
               "type": "Boolean",
               "nullable": true,
               "notEmpty": false,
               "key": false
             },
             {
-              "name": "data",
+              "name": "dataCont",
               "type": "DateTime",
               "nullable": true,
               "notEmpty": false,
               "key": false
             },
             {
-              "name": "loja",
+              "name": "lojaCont",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "depCont",
               "type": "String",
               "nullable": true,
               "notEmpty": false,
@@ -67,7 +74,14 @@
               "key": true
             },
             {
-              "name": "loja_name",
+              "name": "lojaCont_descLoja",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "depCont_descDpt",
               "type": "String",
               "nullable": true,
               "notEmpty": false,
@@ -93,10 +107,27 @@
     "rulesJoin": [],
     "rulesGroupBy": [],
     "rulesHaving": [],
-    "rulesOrderBy": [],
+    "rulesOrderBy": [
+      {
+        "func": "get",
+        "field": "c.dataCont",
+        "order": "desc"
+      }
+    ],
     "rules": {
       "condition": "AND",
-      "rules": [],
+      "rules": [
+        {
+          "id": "c.fimCont",
+          "field": "c.fimCont",
+          "type": "boolean",
+          "input": "text",
+          "operator": "equal",
+          "valueType": "param",
+          "value": "false",
+          "valueIsField": false
+        }
+      ],
       "not": false,
       "valid": true
     },
@@ -114,9 +145,7 @@
     "PUT": true,
     "PUTAuthorities": null,
     "DELETE": true,
-    "DELETEAuthorities": [
-      "Authenticated"
-    ],
+    "DELETEAuthorities": null,
     "FILTER": true,
     "FILTERAuthorities": null,
     "COUNT": true,
@@ -135,27 +164,33 @@
   },
   "defaultValues": {
     "id": null,
-    "name": null,
-    "encerrado": null,
-    "data": null,
-    "loja": null,
-    "loja_name": null
+    "descCont": null,
+    "fimCont": null,
+    "dataCont": null,
+    "lojaCont": null,
+    "depCont": null,
+    "lojaCont_descLoja": null,
+    "depCont_descDpt": null
   },
   "defaultValuesProperties": {
     "id": null,
-    "name": null,
-    "encerrado": null,
-    "data": null,
-    "loja": null,
-    "loja_name": null
+    "descCont": null,
+    "fimCont": null,
+    "dataCont": null,
+    "lojaCont": null,
+    "depCont": null,
+    "lojaCont_descLoja": null,
+    "depCont_descDpt": null
   },
   "security": {
     "id": null,
-    "name": null,
-    "encerrado": null,
-    "data": null,
-    "loja": null,
-    "loja_name": null
+    "descCont": null,
+    "fimCont": null,
+    "dataCont": null,
+    "lojaCont": null,
+    "depCont": null,
+    "lojaCont_descLoja": null,
+    "depCont_descDpt": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},
@@ -165,7 +200,7 @@
     "primaryKey": null,
     "foreignKey": null
   },
-  "serviceUrl": "api/cronapi/odata/v2/app_cont/query413781/",
+  "serviceUrl": "api/cronapi/odata/v2/app_cont/query468134/",
   "audit": false,
   "swagger": false
 }

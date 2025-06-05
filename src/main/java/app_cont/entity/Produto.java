@@ -23,7 +23,7 @@ import cronapp.framework.core.persistence.*;
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("app_cont.entity.Produto")
-@CronappTable(role=CronappTableRole.CLASS)
+@CronappTable(role=CronappTableRole.ASSOCIATION_CLASS)
 public class Produto implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -36,15 +36,33 @@ public class Produto implements Serializable {
     */
     @Id
     @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
-    @Column(name = "id", nullable = false, length=0, insertable=true, updatable=true)
+    @Column(name = "ID", nullable = false, length=0, insertable=true, updatable=true)
         private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
     * @generated
     */
+    @CronappColumn(attributeType="STRING", label="Codi Prod")
+    @Column(name = "CODI_PROD", nullable = true, unique = false, length=255, insertable=true, updatable=true)
+        
+        private java.lang.String codiProd;
+
+
+    /**
+    * @generated
+    */
+    @CronappColumn(attributeType="STRING", label="Desc Prod")
+    @Column(name = "DESC_PROD", nullable = true, unique = false, length=255, insertable=true, updatable=true)
+        
+        private java.lang.String descProd;
+
+
+    /**
+    * @generated
+    */
     @CronappColumn(attributeType="STRING", label="Codi Bar")
-    @Column(name = "codi_bar", nullable = true, unique = false, length=255, insertable=true, updatable=true)
+    @Column(name = "CODI_BAR", nullable = true, unique = false, length=255, insertable=true, updatable=true)
         
         private java.lang.String codiBar;
 
@@ -52,17 +70,8 @@ public class Produto implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Codi Psv")
-    @Column(name = "codi_psv", nullable = true, unique = false, length=255, insertable=true, updatable=true)
-        
-        private java.lang.String codiPsv;
-
-
-    /**
-    * @generated
-    */
     @CronappColumn(attributeType="DOUBLE", label="Cust Tab")
-    @Column(name = "cust_tab", nullable = true, unique = false, precision=17, scale=17, insertable=true, updatable=true)
+    @Column(name = "CUST_TAB", nullable = true, unique = false, precision=17, scale=17, insertable=true, updatable=true)
         
         private java.lang.Double custTab;
 
@@ -70,19 +79,19 @@ public class Produto implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Psv")
-    @Column(name = "desc_psv", nullable = true, unique = false, length=255, insertable=true, updatable=true)
+    @ManyToOne
+    @JoinColumn(name="FK_SUBGRUPO", nullable = true, referencedColumnName = "ID", insertable=true, updatable=true)
         
-        private java.lang.String descPsv;
+        private SubGrupo sbgProd;
 
 
     /**
     * @generated
     */
     @ManyToOne
-    @JoinColumn(name="fk_contagem", nullable = true, referencedColumnName = "id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "PRODUTO_FK_CONTAGEM_CONTAGEM_ID", foreignKeyDefinition = "FOREIGN KEY (fk_contagem) REFERENCES CONTAGEM (id) ON DELETE CASCADE"))
+    @JoinColumn(name="FK_CONTAGEM", nullable = true, referencedColumnName = "ID", insertable=true, updatable=true)
         
-        private Contagem contagem;
+        private Contagem contProd;
 
 
     /**
@@ -111,6 +120,42 @@ public class Produto implements Serializable {
         return this;
     }
     /**
+    * Obtém codiProd
+    * return codiProd
+    * @generated
+    */
+    public java.lang.String getCodiProd() {
+        return this.codiProd;
+    }
+
+    /**
+    * Define codiProd
+    * @param codiProd codiProd
+    * @generated
+    */
+    public Produto setCodiProd(java.lang.String codiProd) {
+        this.codiProd = codiProd;
+        return this;
+    }
+    /**
+    * Obtém descProd
+    * return descProd
+    * @generated
+    */
+    public java.lang.String getDescProd() {
+        return this.descProd;
+    }
+
+    /**
+    * Define descProd
+    * @param descProd descProd
+    * @generated
+    */
+    public Produto setDescProd(java.lang.String descProd) {
+        this.descProd = descProd;
+        return this;
+    }
+    /**
     * Obtém codiBar
     * return codiBar
     * @generated
@@ -126,24 +171,6 @@ public class Produto implements Serializable {
     */
     public Produto setCodiBar(java.lang.String codiBar) {
         this.codiBar = codiBar;
-        return this;
-    }
-    /**
-    * Obtém codiPsv
-    * return codiPsv
-    * @generated
-    */
-    public java.lang.String getCodiPsv() {
-        return this.codiPsv;
-    }
-
-    /**
-    * Define codiPsv
-    * @param codiPsv codiPsv
-    * @generated
-    */
-    public Produto setCodiPsv(java.lang.String codiPsv) {
-        this.codiPsv = codiPsv;
         return this;
     }
     /**
@@ -165,39 +192,39 @@ public class Produto implements Serializable {
         return this;
     }
     /**
-    * Obtém descPsv
-    * return descPsv
+    * Obtém sbgProd
+    * return sbgProd
     * @generated
     */
-    public java.lang.String getDescPsv() {
-        return this.descPsv;
+    public SubGrupo getSbgProd() {
+        return this.sbgProd;
     }
 
     /**
-    * Define descPsv
-    * @param descPsv descPsv
+    * Define sbgProd
+    * @param sbgProd sbgProd
     * @generated
     */
-    public Produto setDescPsv(java.lang.String descPsv) {
-        this.descPsv = descPsv;
+    public Produto setSbgProd(SubGrupo sbgProd) {
+        this.sbgProd = sbgProd;
         return this;
     }
     /**
-    * Obtém contagem
-    * return contagem
+    * Obtém contProd
+    * return contProd
     * @generated
     */
-    public Contagem getContagem() {
-        return this.contagem;
+    public Contagem getContProd() {
+        return this.contProd;
     }
 
     /**
-    * Define contagem
-    * @param contagem contagem
+    * Define contProd
+    * @param contProd contProd
     * @generated
     */
-    public Produto setContagem(Contagem contagem) {
-        this.contagem = contagem;
+    public Produto setContProd(Contagem contProd) {
+        this.contProd = contProd;
         return this;
     }
 

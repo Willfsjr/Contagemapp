@@ -23,7 +23,7 @@ import cronapp.framework.core.persistence.*;
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("app_cont.entity.Contagem")
-@CronappTable(role=CronappTableRole.CLASS)
+@CronappTable(role=CronappTableRole.ASSOCIATION_CLASS)
 public class Contagem implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -36,45 +36,54 @@ public class Contagem implements Serializable {
     */
     @Id
     @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
-    @Column(name = "id", nullable = false, length=0, insertable=true, updatable=true)
+    @Column(name = "ID", nullable = false, length=0, insertable=true, updatable=true)
         private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
     * @generated
     */
+    @CronappColumn(attributeType="STRING", label="Desc Cont")
+    @Column(name = "DESC_CONT", nullable = true, unique = false, length=255, insertable=true, updatable=true)
+        
+        private java.lang.String descCont;
+
+
+    /**
+    * @generated
+    */
+    @CronappColumn(attributeType="BOOLEAN", label="Fim Cont")
+    @Column(name = "FIM_CONT", nullable = true, unique = false, insertable=true, updatable=true)
+        
+        private java.lang.Boolean fimCont;
+
+
+    /**
+    * @generated
+    */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="Data")
-    @Column(name = "data", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
+    @CronappColumn(attributeType="DATETIME", label="Data Cont")
+    @Column(name = "DATA_CONT", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
-        private java.util.Date data;
-
-
-    /**
-    * @generated
-    */
-    @CronappColumn(attributeType="BOOLEAN", label="Encerrado")
-    @Column(name = "encerrado", nullable = true, unique = false, insertable=true, updatable=true)
-        
-        private java.lang.Boolean encerrado;
-
-
-    /**
-    * @generated
-    */
-    @CronappColumn(attributeType="STRING", label="Name")
-    @Column(name = "name", nullable = true, unique = false, length=255, insertable=true, updatable=true)
-        
-        private java.lang.String name;
+        private java.util.Date dataCont;
 
 
     /**
     * @generated
     */
     @ManyToOne
-    @JoinColumn(name="fk_loja", nullable = true, referencedColumnName = "id", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "CONTAGEM_FK_LOJA_LOJA_ID", foreignKeyDefinition = "FOREIGN KEY (fk_loja) REFERENCES LOJA (id) ON DELETE CASCADE"))
+    @JoinColumn(name="FK_LOJA", nullable = true, referencedColumnName = "ID", insertable=true, updatable=true, foreignKey = @ForeignKey(name = "CONTAGEM_FK_LOJA_LOJA_ID", foreignKeyDefinition = "FOREIGN KEY (FK_LOJA) REFERENCES LOJA (ID) ON DELETE CASCADE"))
         
-        private Loja loja;
+        private Loja lojaCont;
+
+
+    /**
+    * @generated
+    */
+    @ManyToOne
+    @JoinColumn(name="FK_DEPOSITO", nullable = true, referencedColumnName = "ID", insertable=true, updatable=true)
+        
+        private Deposito depCont;
 
 
     /**
@@ -103,75 +112,93 @@ public class Contagem implements Serializable {
         return this;
     }
     /**
-    * Obtém data
-    * return data
+    * Obtém descCont
+    * return descCont
     * @generated
     */
-    public java.util.Date getData() {
-        return this.data;
+    public java.lang.String getDescCont() {
+        return this.descCont;
     }
 
     /**
-    * Define data
-    * @param data data
+    * Define descCont
+    * @param descCont descCont
     * @generated
     */
-    public Contagem setData(java.util.Date data) {
-        this.data = data;
+    public Contagem setDescCont(java.lang.String descCont) {
+        this.descCont = descCont;
         return this;
     }
     /**
-    * Obtém encerrado
-    * return encerrado
+    * Obtém fimCont
+    * return fimCont
     * @generated
     */
-    public java.lang.Boolean getEncerrado() {
-        return this.encerrado;
+    public java.lang.Boolean getFimCont() {
+        return this.fimCont;
     }
 
     /**
-    * Define encerrado
-    * @param encerrado encerrado
+    * Define fimCont
+    * @param fimCont fimCont
     * @generated
     */
-    public Contagem setEncerrado(java.lang.Boolean encerrado) {
-        this.encerrado = encerrado;
+    public Contagem setFimCont(java.lang.Boolean fimCont) {
+        this.fimCont = fimCont;
         return this;
     }
     /**
-    * Obtém name
-    * return name
+    * Obtém dataCont
+    * return dataCont
     * @generated
     */
-    public java.lang.String getName() {
-        return this.name;
+    public java.util.Date getDataCont() {
+        return this.dataCont;
     }
 
     /**
-    * Define name
-    * @param name name
+    * Define dataCont
+    * @param dataCont dataCont
     * @generated
     */
-    public Contagem setName(java.lang.String name) {
-        this.name = name;
+    public Contagem setDataCont(java.util.Date dataCont) {
+        this.dataCont = dataCont;
         return this;
     }
     /**
-    * Obtém loja
-    * return loja
+    * Obtém lojaCont
+    * return lojaCont
     * @generated
     */
-    public Loja getLoja() {
-        return this.loja;
+    public Loja getLojaCont() {
+        return this.lojaCont;
     }
 
     /**
-    * Define loja
-    * @param loja loja
+    * Define lojaCont
+    * @param lojaCont lojaCont
     * @generated
     */
-    public Contagem setLoja(Loja loja) {
-        this.loja = loja;
+    public Contagem setLojaCont(Loja lojaCont) {
+        this.lojaCont = lojaCont;
+        return this;
+    }
+    /**
+    * Obtém depCont
+    * return depCont
+    * @generated
+    */
+    public Deposito getDepCont() {
+        return this.depCont;
+    }
+
+    /**
+    * Define depCont
+    * @param depCont depCont
+    * @generated
+    */
+    public Contagem setDepCont(Deposito depCont) {
+        this.depCont = depCont;
         return this;
     }
 

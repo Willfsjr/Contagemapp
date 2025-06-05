@@ -1,24 +1,24 @@
 {
-  "customId": "loja",
-  "queryName": "Loja",
+  "customId": "contagemapp",
+  "queryName": "Contagem",
   "sourceType": "entityFullName",
   "baseEntity": null,
   "blockly": null,
-  "entitySimpleName": "Loja",
-  "entityFullName": "app_cont.entity.Loja",
+  "entitySimpleName": "Contagem",
+  "entityFullName": "app_cont.entity.Contagem",
   "query": {
     "isValid": true,
     "rulesEntity": [
       {
-        "entity": "Loja",
-        "alias": "l",
-        "namespace": "app_cont.entity.Loja"
+        "entity": "Contagem",
+        "alias": "c",
+        "namespace": "app_cont.entity.Contagem"
       }
     ],
     "rulesSelect": [
       {
         "func": "get",
-        "field": "l"
+        "field": "c"
       }
     ],
     "rulesGroupBy": [],
@@ -59,18 +59,33 @@
   },
   "defaultValues": {
     "id": null,
-    "nome": null,
-    "codLoj": null
+    "descCont": null,
+    "fimCont": null,
+    "dataCont": null,
+    "lojaCont": null,
+    "depCont": null,
+    "lojaCont_descLoja": null,
+    "depCont_descDpt": null
   },
   "defaultValuesProperties": {
     "id": null,
-    "nome": null,
-    "codLoj": null
+    "descCont": null,
+    "fimCont": null,
+    "dataCont": null,
+    "lojaCont": null,
+    "depCont": null,
+    "lojaCont_descLoja": null,
+    "depCont_descDpt": null
   },
   "security": {
     "id": null,
-    "nome": null,
-    "codLoj": null
+    "descCont": null,
+    "fimCont": null,
+    "dataCont": null,
+    "lojaCont": null,
+    "depCont": null,
+    "lojaCont_descLoja": null,
+    "depCont_descDpt": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},
@@ -80,7 +95,7 @@
     "primaryKey": null,
     "foreignKey": null
   },
-  "serviceUrl": "api/cronapi/odata/v2/app_cont/query919397/",
+  "serviceUrl": "api/cronapi/odata/v2/app_cont/query752710/",
   "audit": false,
   "swagger": false
 }

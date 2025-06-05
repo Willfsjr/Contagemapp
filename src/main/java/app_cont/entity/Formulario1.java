@@ -36,36 +36,45 @@ public class Formulario1 implements Serializable {
     */
     @Id
     @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
-    @Column(name = "id", nullable = false, length=0, insertable=true, updatable=true)
+    @Column(name = "ID", nullable = false, length=0, insertable=true, updatable=true)
         private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
     * @generated
     */
-    @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="Data")
-    @Column(name = "data", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
+    @CronappColumn(attributeType="DOUBLE", label="Quant Form 1")
+    @Column(name = "QUANT_FORM1", nullable = true, unique = false, scale=17, insertable=true, updatable=true)
         
-        private java.util.Date data;
+        private java.lang.Double quantForm1;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="Quantidade 1")
-    @Column(name = "quantidade1", nullable = true, unique = false, scale=17, insertable=true, updatable=true)
+    @Temporal(TemporalType.TIMESTAMP)
+    @CronappColumn(attributeType="DATETIME", label="Data Form 1")
+    @Column(name = "DATA_FORM1", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
-        private java.lang.Integer quantidade1;
+        private java.util.Date dataForm1;
 
 
     /**
     * @generated
     */
     @ManyToOne
-    @JoinColumn(name="fk_produto", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
+    @JoinColumn(name="FK_PRODUTO", nullable = true, referencedColumnName = "ID", insertable=true, updatable=true)
         
-        private Produto produto;
+        private Produto prodForm1;
+
+
+    /**
+    * @generated
+    */
+    @ManyToOne
+    @JoinColumn(name="FK_CONTAGEM", nullable = true, referencedColumnName = "ID", insertable=true, updatable=true)
+        
+        private Contagem contForm1;
 
 
     /**
@@ -94,57 +103,75 @@ public class Formulario1 implements Serializable {
         return this;
     }
     /**
-    * Obtém data
-    * return data
+    * Obtém quantForm1
+    * return quantForm1
     * @generated
     */
-    public java.util.Date getData() {
-        return this.data;
+    public java.lang.Double getQuantForm1() {
+        return this.quantForm1;
     }
 
     /**
-    * Define data
-    * @param data data
+    * Define quantForm1
+    * @param quantForm1 quantForm1
     * @generated
     */
-    public Formulario1 setData(java.util.Date data) {
-        this.data = data;
+    public Formulario1 setQuantForm1(java.lang.Double quantForm1) {
+        this.quantForm1 = quantForm1;
         return this;
     }
     /**
-    * Obtém quantidade1
-    * return quantidade1
+    * Obtém dataForm1
+    * return dataForm1
     * @generated
     */
-    public java.lang.Integer getQuantidade1() {
-        return this.quantidade1;
+    public java.util.Date getDataForm1() {
+        return this.dataForm1;
     }
 
     /**
-    * Define quantidade1
-    * @param quantidade1 quantidade1
+    * Define dataForm1
+    * @param dataForm1 dataForm1
     * @generated
     */
-    public Formulario1 setQuantidade1(java.lang.Integer quantidade1) {
-        this.quantidade1 = quantidade1;
+    public Formulario1 setDataForm1(java.util.Date dataForm1) {
+        this.dataForm1 = dataForm1;
         return this;
     }
     /**
-    * Obtém produto
-    * return produto
+    * Obtém prodForm1
+    * return prodForm1
     * @generated
     */
-    public Produto getProduto() {
-        return this.produto;
+    public Produto getProdForm1() {
+        return this.prodForm1;
     }
 
     /**
-    * Define produto
-    * @param produto produto
+    * Define prodForm1
+    * @param prodForm1 prodForm1
     * @generated
     */
-    public Formulario1 setProduto(Produto produto) {
-        this.produto = produto;
+    public Formulario1 setProdForm1(Produto prodForm1) {
+        this.prodForm1 = prodForm1;
+        return this;
+    }
+    /**
+    * Obtém contForm1
+    * return contForm1
+    * @generated
+    */
+    public Contagem getContForm1() {
+        return this.contForm1;
+    }
+
+    /**
+    * Define contForm1
+    * @param contForm1 contForm1
+    * @generated
+    */
+    public Formulario1 setContForm1(Contagem contForm1) {
+        this.contForm1 = contForm1;
         return this;
     }
 

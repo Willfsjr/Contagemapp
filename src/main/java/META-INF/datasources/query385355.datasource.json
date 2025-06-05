@@ -1,0 +1,98 @@
+{
+  "customId": "formulario1app",
+  "queryName": "1º Formulario",
+  "sourceType": "entityFullName",
+  "baseEntity": null,
+  "blockly": null,
+  "entitySimpleName": "Formulario1",
+  "entityFullName": "app_cont.entity.Formulario1",
+  "query": {
+    "isValid": true,
+    "rulesEntity": [
+      {
+        "entity": "Formulario1",
+        "alias": "f",
+        "namespace": "app_cont.entity.Formulario1"
+      }
+    ],
+    "rulesSelect": [
+      {
+        "func": "get",
+        "field": "f"
+      }
+    ],
+    "rulesGroupBy": [],
+    "rulesHaving": [],
+    "rulesOrderBy": [],
+    "rules": {
+      "condition": "AND",
+      "not": false,
+      "valid": true,
+      "rules": []
+    }
+  },
+  "queryParamsValues": [],
+  "verbs": {
+    "GET": true,
+    "GETAuthorities": null,
+    "POST": true,
+    "POSTAuthorities": null,
+    "PUT": true,
+    "PUTAuthorities": null,
+    "DELETE": true,
+    "DELETEAuthorities": null,
+    "FILTER": true,
+    "FILTERAuthorities": null,
+    "COUNT": true,
+    "COUNTAuthorities": null
+  },
+  "events": {
+    "beforeInsert": null,
+    "beforeUpdate": null,
+    "beforeDelete": null,
+    "afterInsert": null,
+    "afterUpdate": null,
+    "afterDelete": null,
+    "onNavigate": null,
+    "onAuthorize": null,
+    "onError": null
+  },
+  "defaultValues": {
+    "id": null,
+    "quantForm1": null,
+    "dataForm1": null,
+    "prodForm1": null,
+    "contForm1": null,
+    "prodForm1_codiProd": null,
+    "contForm1_descCont": null
+  },
+  "defaultValuesProperties": {
+    "id": null,
+    "quantForm1": null,
+    "dataForm1": null,
+    "prodForm1": null,
+    "contForm1": null,
+    "prodForm1_codiProd": null,
+    "contForm1_descCont": null
+  },
+  "security": {
+    "id": null,
+    "quantForm1": null,
+    "dataForm1": null,
+    "prodForm1": null,
+    "contForm1": null,
+    "prodForm1_codiProd": null,
+    "contForm1_descCont": null
+  },
+  "calcFields": {},
+  "calcFieldsSecurity": {},
+  "calcFieldsProperties": {},
+  "headers": {},
+  "errorHandles": {
+    "primaryKey": null,
+    "foreignKey": null
+  },
+  "serviceUrl": "api/cronapi/odata/v2/app_cont/query385355/",
+  "audit": false,
+  "swagger": false
+}

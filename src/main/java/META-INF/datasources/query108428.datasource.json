@@ -1,0 +1,86 @@
+{
+  "customId": "lojaapp",
+  "queryName": "Loja",
+  "sourceType": "entityFullName",
+  "baseEntity": null,
+  "blockly": null,
+  "entitySimpleName": "Loja",
+  "entityFullName": "app_cont.entity.Loja",
+  "query": {
+    "isValid": true,
+    "rulesEntity": [
+      {
+        "entity": "Loja",
+        "alias": "l",
+        "namespace": "app_cont.entity.Loja"
+      }
+    ],
+    "rulesSelect": [
+      {
+        "func": "get",
+        "field": "l"
+      }
+    ],
+    "rulesGroupBy": [],
+    "rulesHaving": [],
+    "rulesOrderBy": [],
+    "rules": {
+      "condition": "AND",
+      "not": false,
+      "valid": true,
+      "rules": []
+    }
+  },
+  "queryParamsValues": [],
+  "verbs": {
+    "GET": true,
+    "GETAuthorities": null,
+    "POST": true,
+    "POSTAuthorities": null,
+    "PUT": true,
+    "PUTAuthorities": null,
+    "DELETE": true,
+    "DELETEAuthorities": null,
+    "FILTER": true,
+    "FILTERAuthorities": null,
+    "COUNT": true,
+    "COUNTAuthorities": null
+  },
+  "events": {
+    "beforeInsert": null,
+    "beforeUpdate": null,
+    "beforeDelete": null,
+    "afterInsert": null,
+    "afterUpdate": null,
+    "afterDelete": null,
+    "onNavigate": null,
+    "onAuthorize": null,
+    "onError": null
+  },
+  "defaultValues": {
+    "id": null,
+    "descLoja": null,
+    "codiLoja": null
+  },
+  "defaultValuesProperties": {
+    "id": null,
+    "descLoja": null,
+    "codiLoja": null
+  },
+  "security": {
+    "id": null,
+    "descLoja": null,
+    "codiLoja": null
+  },
+  "calcFields": {},
+  "calcFieldsSecurity": {},
+  "calcFieldsProperties": {},
+  "headers": {},
+  "errorHandles": {
+    "primaryKey": null,
+    "foreignKey": null
+  },
+  "serviceUrl": "api/cronapi/odata/v2/app_cont/query108428/",
+  "audit": false,
+  "swagger": false
+}

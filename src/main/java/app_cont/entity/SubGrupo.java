@@ -15,16 +15,16 @@ import cronapi.swagger.CronappSwagger;
 import cronapp.framework.core.persistence.*;
 
 /**
-* Classe que representa a tabela LOJA
+* Classe que representa a tabela SUBGRUPO
 * @generated
 */
 @jakarta.persistence.Entity
-@jakarta.persistence.Table(name = "\"LOJA\"")
+@jakarta.persistence.Table(name = "\"SUBGRUPO\"")
 @XmlRootElement
 @CronappSecurity
-@JsonFilter("app_cont.entity.Loja")
+@JsonFilter("app_cont.entity.SubGrupo")
 @CronappTable(role=CronappTableRole.CLASS)
-public class Loja implements Serializable {
+public class SubGrupo implements Serializable {
     /**
     * UID da classe, necessário na serialização
     * @generated
@@ -36,33 +36,42 @@ public class Loja implements Serializable {
     */
     @Id
     @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
-    @Column(name = "ID", nullable = false, length=0, insertable=true, updatable=true)
+    @Column(name = "ID", nullable = false, insertable=true, updatable=true)
         private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Loja")
-    @Column(name = "DESC_LOJA", nullable = true, unique = false, length=255, insertable=true, updatable=true)
+    @CronappColumn(attributeType="INTEGER", label="Codi Sbg")
+    @Column(name = "CODI_SBG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String descLoja;
+        private java.lang.Integer codiSbg;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="Codi Loja")
-    @Column(name = "CODI_LOJA", nullable = true, unique = false, insertable=true, updatable=true)
+    @CronappColumn(attributeType="STRING", label="Desc Sbg")
+    @Column(name = "DESC_SBG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer codiLoja;
+        private java.lang.String descSbg;
+
+
+    /**
+    * @generated
+    */
+    @ManyToOne
+    @JoinColumn(name="FK_GRUPO", nullable = true, referencedColumnName = "ID", insertable=true, updatable=true)
+        
+        private Grupo gprSbg;
 
 
     /**
     * Construtor
     * @generated
     */
-    public Loja(){
+    public SubGrupo(){
     }
 
     /**
@@ -79,44 +88,62 @@ public class Loja implements Serializable {
     * @param id id
     * @generated
     */
-    public Loja setId(java.lang.String id) {
+    public SubGrupo setId(java.lang.String id) {
         this.id = id;
         return this;
     }
     /**
-    * Obtém descLoja
-    * return descLoja
+    * Obtém codiSbg
+    * return codiSbg
     * @generated
     */
-    public java.lang.String getDescLoja() {
-        return this.descLoja;
+    public java.lang.Integer getCodiSbg() {
+        return this.codiSbg;
     }
 
     /**
-    * Define descLoja
-    * @param descLoja descLoja
+    * Define codiSbg
+    * @param codiSbg codiSbg
     * @generated
     */
-    public Loja setDescLoja(java.lang.String descLoja) {
-        this.descLoja = descLoja;
+    public SubGrupo setCodiSbg(java.lang.Integer codiSbg) {
+        this.codiSbg = codiSbg;
         return this;
     }
     /**
-    * Obtém codiLoja
-    * return codiLoja
+    * Obtém descSbg
+    * return descSbg
     * @generated
     */
-    public java.lang.Integer getCodiLoja() {
-        return this.codiLoja;
+    public java.lang.String getDescSbg() {
+        return this.descSbg;
     }
 
     /**
-    * Define codiLoja
-    * @param codiLoja codiLoja
+    * Define descSbg
+    * @param descSbg descSbg
     * @generated
     */
-    public Loja setCodiLoja(java.lang.Integer codiLoja) {
-        this.codiLoja = codiLoja;
+    public SubGrupo setDescSbg(java.lang.String descSbg) {
+        this.descSbg = descSbg;
+        return this;
+    }
+    /**
+    * Obtém gprSbg
+    * return gprSbg
+    * @generated
+    */
+    public Grupo getGprSbg() {
+        return this.gprSbg;
+    }
+
+    /**
+    * Define gprSbg
+    * @param gprSbg gprSbg
+    * @generated
+    */
+    public SubGrupo setGprSbg(Grupo gprSbg) {
+        this.gprSbg = gprSbg;
         return this;
     }
 
@@ -127,7 +154,7 @@ public class Loja implements Serializable {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-Loja object = (Loja)obj;
+SubGrupo object = (SubGrupo)obj;
         if (id != null ? !id.equals(object.id) : object.id != null) return false;
         return true;
     }

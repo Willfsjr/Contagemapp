@@ -1,6 +1,6 @@
 {
-  "customId": "produtoformulario2",
-  "queryName": "Produto para o 2° Formulario",
+  "customId": "produtoformulario2app",
+  "queryName": "Produto para o 2º Formulario",
   "sourceType": "entityFullName",
   "baseEntity": null,
   "blockly": null,
@@ -32,29 +32,22 @@
               "key": false
             },
             {
-              "name": "codPsv",
+              "name": "codiProd",
               "type": "String",
               "nullable": true,
               "notEmpty": false,
               "key": false
             },
             {
-              "name": "codBar",
+              "name": "descProd",
               "type": "String",
               "nullable": true,
               "notEmpty": false,
               "key": false
             },
             {
-              "name": "codGpr",
-              "type": "Int64",
-              "nullable": true,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "codSbg",
-              "type": "Int64",
+              "name": "codiBar",
+              "type": "String",
               "nullable": true,
               "notEmpty": false,
               "key": false
@@ -67,21 +60,14 @@
               "key": false
             },
             {
-              "name": "descGpr",
+              "name": "sbgProd",
               "type": "String",
               "nullable": true,
               "notEmpty": false,
               "key": false
             },
             {
-              "name": "descPsv",
-              "type": "String",
-              "nullable": true,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "descSbg",
+              "name": "contProd",
               "type": "String",
               "nullable": true,
               "notEmpty": false,
@@ -93,6 +79,20 @@
               "nullable": false,
               "notEmpty": false,
               "key": true
+            },
+            {
+              "name": "sbgProd_descSbg",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "contProd_descCont",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
             }
           ],
           "type": "entity",
@@ -119,13 +119,13 @@
       "condition": "AND",
       "rules": [
         {
-          "id": "p.contagem",
-          "field": "p.contagem",
+          "id": "p.contProd",
+          "field": "p.contProd",
           "type": "string",
           "input": "text",
           "operator": "equal",
           "valueType": "param",
-          "value": ":contagem",
+          "value": ":contProd",
           "valueIsField": false
         }
       ],
@@ -139,7 +139,7 @@
   },
   "queryParamsValues": [
     {
-      "fieldName": "contagem",
+      "fieldName": "contProd",
       "fieldValue": ""
     }
   ],
@@ -170,30 +170,36 @@
   },
   "defaultValues": {
     "id": null,
+    "codiProd": null,
+    "descProd": null,
     "codiBar": null,
-    "codiPsv": null,
     "custTab": null,
-    "descPsv": null,
-    "contagem": null,
-    "contagem_name": null
+    "sbgProd": null,
+    "contProd": null,
+    "sbgProd_descSbg": null,
+    "contProd_descCont": null
   },
   "defaultValuesProperties": {
     "id": null,
+    "codiProd": null,
+    "descProd": null,
     "codiBar": null,
-    "codiPsv": null,
     "custTab": null,
-    "descPsv": null,
-    "contagem": null,
-    "contagem_name": null
+    "sbgProd": null,
+    "contProd": null,
+    "sbgProd_descSbg": null,
+    "contProd_descCont": null
   },
   "security": {
     "id": null,
+    "codiProd": null,
+    "descProd": null,
     "codiBar": null,
-    "codiPsv": null,
     "custTab": null,
-    "descPsv": null,
-    "contagem": null,
-    "contagem_name": null
+    "sbgProd": null,
+    "contProd": null,
+    "sbgProd_descSbg": null,
+    "contProd_descCont": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},
@@ -203,7 +209,7 @@
     "primaryKey": null,
     "foreignKey": null
   },
-  "serviceUrl": "api/cronapi/odata/v2/app_cont/query167731/",
+  "serviceUrl": "api/cronapi/odata/v2/app_cont/query747880/",
   "audit": false,
   "swagger": false
 }

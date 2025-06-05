@@ -1,11 +1,11 @@
 {
-  "customId": "pesquisarcontagens",
-  "queryName": "Pesquisar Contagens",
+  "customId": "produtoformulario1app",
+  "queryName": "Produto para o 1º Formulario",
   "sourceType": "entityFullName",
   "baseEntity": null,
   "blockly": null,
-  "entitySimpleName": "Contagem",
-  "entityFullName": "app_cont.entity.Contagem",
+  "entitySimpleName": "Produto",
+  "entityFullName": "app_cont.entity.Produto",
   "query": {
     "isValid": true,
     "isEmpty": false,
@@ -15,14 +15,14 @@
     "type": "select",
     "rulesEntity": [
       {
-        "entity": "Contagem",
-        "namespace": "app_cont.entity.Contagem",
+        "entity": "Produto",
+        "namespace": "app_cont.entity.Produto",
         "dataSourceOptions": {
-          "id": "app_cont.Contagem",
-          "customId": "Contagem",
-          "customQueryName": "app_cont.Contagem",
+          "id": "app_cont.Produto",
+          "customId": "Produto",
+          "customQueryName": "app_cont.Produto",
           "paramValues": [],
-          "entityFullName": "app_cont.entity.Contagem",
+          "entityFullName": "app_cont.entity.Produto",
           "schemaFields": [
             {
               "name": "id",
@@ -32,28 +32,42 @@
               "key": false
             },
             {
-              "name": "name",
+              "name": "codiProd",
               "type": "String",
               "nullable": true,
               "notEmpty": false,
               "key": false
             },
             {
-              "name": "encerrado",
-              "type": "Boolean",
+              "name": "descProd",
+              "type": "String",
               "nullable": true,
               "notEmpty": false,
               "key": false
             },
             {
-              "name": "data",
-              "type": "DateTime",
+              "name": "codiBar",
+              "type": "String",
               "nullable": true,
               "notEmpty": false,
               "key": false
             },
             {
-              "name": "loja",
+              "name": "custTab",
+              "type": "Double",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "sbgProd",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "contProd",
               "type": "String",
               "nullable": true,
               "notEmpty": false,
@@ -67,7 +81,14 @@
               "key": true
             },
             {
-              "name": "loja_name",
+              "name": "sbgProd_descSbg",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "contProd_descCont",
               "type": "String",
               "nullable": true,
               "notEmpty": false,
@@ -76,41 +97,35 @@
           ],
           "type": "entity",
           "hasError": false,
-          "customName": "Contagem",
-          "fullName": "app_cont.entity.Contagem",
-          "labelName": "app_cont.entity.Contagem (Contagem)"
+          "customName": "Produto",
+          "fullName": "app_cont.entity.Produto",
+          "labelName": "app_cont.entity.Produto (Produto)"
         },
-        "alias": "c"
+        "alias": "p"
       }
     ],
     "rulesSelect": [
       {
         "func": "get",
-        "field": "c",
+        "field": "p",
         "type": "string"
       }
     ],
     "rulesJoin": [],
     "rulesGroupBy": [],
     "rulesHaving": [],
-    "rulesOrderBy": [
-      {
-        "func": "get",
-        "field": "c.data",
-        "order": "desc"
-      }
-    ],
+    "rulesOrderBy": [],
     "rules": {
       "condition": "AND",
       "rules": [
         {
-          "id": "c.encerrado",
-          "field": "c.encerrado",
-          "type": "boolean",
+          "id": "p.contProd",
+          "field": "p.contProd",
+          "type": "string",
           "input": "text",
           "operator": "equal",
           "valueType": "param",
-          "value": "false",
+          "value": ":contProd",
           "valueIsField": false
         }
       ],
@@ -122,7 +137,12 @@
     "paginatorAutomatic": false,
     "pagination": false
   },
-  "queryParamsValues": [],
+  "queryParamsValues": [
+    {
+      "fieldName": "contProd",
+      "fieldValue": ""
+    }
+  ],
   "verbs": {
     "GET": true,
     "GETAuthorities": null,
@@ -150,27 +170,36 @@
   },
   "defaultValues": {
     "id": null,
-    "name": null,
-    "encerrado": null,
-    "data": null,
-    "loja": null,
-    "loja_name": null
+    "codiProd": null,
+    "descProd": null,
+    "codiBar": null,
+    "custTab": null,
+    "sbgProd": null,
+    "contProd": null,
+    "sbgProd_descSbg": null,
+    "contProd_descCont": null
   },
   "defaultValuesProperties": {
     "id": null,
-    "name": null,
-    "encerrado": null,
-    "data": null,
-    "loja": null,
-    "loja_name": null
+    "codiProd": null,
+    "descProd": null,
+    "codiBar": null,
+    "custTab": null,
+    "sbgProd": null,
+    "contProd": null,
+    "sbgProd_descSbg": null,
+    "contProd_descCont": null
   },
   "security": {
     "id": null,
-    "name": null,
-    "encerrado": null,
-    "data": null,
-    "loja": null,
-    "loja_name": null
+    "codiProd": null,
+    "descProd": null,
+    "codiBar": null,
+    "custTab": null,
+    "sbgProd": null,
+    "contProd": null,
+    "sbgProd_descSbg": null,
+    "contProd_descCont": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},
@@ -180,7 +209,7 @@
     "primaryKey": null,
     "foreignKey": null
   },
-  "serviceUrl": "api/cronapi/odata/v2/app_cont/query11809/",
+  "serviceUrl": "api/cronapi/odata/v2/app_cont/query620332/",
   "audit": false,
   "swagger": false
 }

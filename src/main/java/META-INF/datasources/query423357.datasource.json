@@ -1,6 +1,6 @@
 {
-  "customId": "ordenarproduto2",
-  "queryName": "Ordenar Produto do 2° Formulario Pela Data",
+  "customId": "ordenarproduto2app",
+  "queryName": "Ordenar Produto do 2º Formulario Pela Data",
   "sourceType": "entityFullName",
   "baseEntity": null,
   "blockly": null,
@@ -32,21 +32,28 @@
               "key": false
             },
             {
-              "name": "data",
-              "type": "DateTime",
-              "nullable": true,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "quantidade",
+              "name": "quantForm2",
               "type": "Double",
               "nullable": true,
               "notEmpty": false,
               "key": false
             },
             {
-              "name": "produto",
+              "name": "dataForm2",
+              "type": "DateTime",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "prodForm2",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "contForm2",
               "type": "String",
               "nullable": true,
               "notEmpty": false,
@@ -60,7 +67,14 @@
               "key": true
             },
             {
-              "name": "produto_codiBar",
+              "name": "prodForm2_codiProd",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "contForm2_descCont",
               "type": "String",
               "nullable": true,
               "notEmpty": false,
@@ -79,22 +93,22 @@
     "rulesSelect": [
       {
         "func": "get",
-        "field": "f.data",
+        "field": "f.dataForm2",
         "type": "date"
       },
       {
         "func": "get",
-        "field": "f.produto.descPsv",
+        "field": "f.prodForm2.descProd",
         "type": "string"
       },
       {
         "func": "get",
-        "field": "f.quantidade2",
-        "type": "integer"
+        "field": "f.quantForm2",
+        "type": "double"
       },
       {
         "func": "get",
-        "field": "f.produto",
+        "field": "f.prodForm2",
         "type": "string"
       }
     ],
@@ -104,7 +118,7 @@
     "rulesOrderBy": [
       {
         "func": "get",
-        "field": "f.data",
+        "field": "f.dataForm2",
         "order": "desc"
       }
     ],
@@ -112,13 +126,13 @@
       "condition": "AND",
       "rules": [
         {
-          "id": "f.produto.contagem",
-          "field": "f.produto.contagem",
+          "id": "f.contForm2",
+          "field": "f.contForm2",
           "type": "string",
           "input": "text",
           "operator": "equal",
           "valueType": "param",
-          "value": ":produtoContagem",
+          "value": ":contForm2",
           "valueIsField": false
         }
       ],
@@ -132,7 +146,7 @@
   },
   "queryParamsValues": [
     {
-      "fieldName": "produtoContagem",
+      "fieldName": "contForm2",
       "fieldValue": ""
     }
   ],
@@ -162,25 +176,25 @@
     "onError": null
   },
   "defaultValues": {
-    "data": null,
-    "produto_descPsv": null,
-    "quantidade2": null,
-    "produto": null,
-    "produto_codiBar": null
+    "dataForm2": null,
+    "prodForm2_descProd": null,
+    "quantForm2": null,
+    "prodForm2": null,
+    "prodForm2_codiProd": null
   },
   "defaultValuesProperties": {
-    "data": null,
-    "produto_descPsv": null,
-    "quantidade2": null,
-    "produto": null,
-    "produto_codiBar": null
+    "dataForm2": null,
+    "prodForm2_descProd": null,
+    "quantForm2": null,
+    "prodForm2": null,
+    "prodForm2_codiProd": null
   },
   "security": {
-    "data": null,
-    "produto_descPsv": null,
-    "quantidade2": null,
-    "produto": null,
-    "produto_codiBar": null
+    "dataForm2": null,
+    "prodForm2_descProd": null,
+    "quantForm2": null,
+    "prodForm2": null,
+    "prodForm2_codiProd": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},
@@ -190,7 +204,7 @@
     "primaryKey": null,
     "foreignKey": null
   },
-  "serviceUrl": "api/cronapi/odata/v2/app_cont/query735812/",
+  "serviceUrl": "api/cronapi/odata/v2/app_cont/query423357/",
   "audit": false,
   "swagger": false
 }

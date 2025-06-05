@@ -24,8 +24,16 @@
     <persistence-unit name="app_oracle" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <non-jta-data-source>java:comp/env/jdbc/oracle_dev</non-jta-data-source>
+        <class>app_oracle.entity.CODBARRA</class>
+        <class>app_oracle.entity.PRODSERV</class>
         <class>app_oracle.entity.Produtocontagem</class>
+        <class>app_oracle.entity.SUBGRUPO</class>
+        <class>app_oracle.entity.TABELA</class>
+        <class>app_oracle.entity.TOAD_PLAN_TABLE</class>
+        <class>app_oracle.entity.GRUPO</class>
         <class>app_oracle.entity.Estoquecontagem</class>
+        <class>app_oracle.entity.CADEMP</class>
+        <class>app_oracle.entity.DEPOSITO</class>
         <properties>
             <property name="eclipselink.ddl-generation" value="none"/>
             <property name="cronapp.diagram.namespace" value="app_oracle"/>
@@ -34,14 +42,19 @@
     <persistence-unit name="app_cont" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <non-jta-data-source>java:comp/env/jdbc/contdb_dev</non-jta-data-source>
+        <class>app_cont.entity.AtualizaEstoque</class>
+        <class>app_cont.entity.Grupo</class>
+        <class>app_cont.entity.AtualizaProduto</class>
+        <class>app_cont.entity.SubGrupo</class>
         <class>app_cont.entity.Produto</class>
         <class>app_cont.entity.Contagem</class>
         <class>app_cont.entity.Estoque</class>
         <class>app_cont.entity.Loja</class>
+        <class>app_cont.entity.Deposito</class>
         <class>app_cont.entity.Formulario1</class>
         <class>app_cont.entity.Formulario2</class>
         <properties>
-            <property name="eclipselink.ddl-generation" value="none"/>
+            <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
             <property name="cronapp.diagram.namespace" value="app_cont"/>
         </properties>
     </persistence-unit>

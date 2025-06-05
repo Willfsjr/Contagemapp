@@ -52,6 +52,24 @@ public class Produtocontagem implements Serializable {
     /**
     * @generated
     */
+    @CronappColumn(attributeType="LONG", label="CODI  GPR")
+    @Column(name = "CODI_GPR", nullable = true, unique = false, insertable=true, updatable=true)
+        
+        private java.lang.Long coDI_GPR;
+
+
+    /**
+    * @generated
+    */
+    @CronappColumn(attributeType="LONG", label="CODI  SBG")
+    @Column(name = "CODI_SBG", nullable = true, unique = false, insertable=true, updatable=true)
+        
+        private java.lang.Long coDI_SBG;
+
+
+    /**
+    * @generated
+    */
     @CronappColumn(attributeType="DOUBLE", label="CUST  TAB")
     @Column(name = "CUST_TAB", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
@@ -61,10 +79,28 @@ public class Produtocontagem implements Serializable {
     /**
     * @generated
     */
+    @CronappColumn(attributeType="STRING", label="DESC  GPR")
+    @Column(name = "DESC_GPR", nullable = true, unique = false, length=40, insertable=true, updatable=true)
+        
+        private java.lang.String deSC_GPR;
+
+
+    /**
+    * @generated
+    */
     @CronappColumn(attributeType="STRING", label="DESC  PSV")
     @Column(name = "DESC_PSV", nullable = true, unique = false, length=120, insertable=true, updatable=true)
         
         private java.lang.String deSC_PSV;
+
+
+    /**
+    * @generated
+    */
+    @CronappColumn(attributeType="STRING", label="DESC  SBG")
+    @Column(name = "DESC_SBG", nullable = true, unique = false, length=30, insertable=true, updatable=true)
+        
+        private java.lang.String deSC_SBG;
 
 
     /**
@@ -111,6 +147,42 @@ public class Produtocontagem implements Serializable {
         return this;
     }
     /**
+    * Obtém coDI_GPR
+    * return coDI_GPR
+    * @generated
+    */
+    public java.lang.Long getCoDI_GPR() {
+        return this.coDI_GPR;
+    }
+
+    /**
+    * Define coDI_GPR
+    * @param coDI_GPR coDI_GPR
+    * @generated
+    */
+    public Produtocontagem setCoDI_GPR(java.lang.Long coDI_GPR) {
+        this.coDI_GPR = coDI_GPR;
+        return this;
+    }
+    /**
+    * Obtém coDI_SBG
+    * return coDI_SBG
+    * @generated
+    */
+    public java.lang.Long getCoDI_SBG() {
+        return this.coDI_SBG;
+    }
+
+    /**
+    * Define coDI_SBG
+    * @param coDI_SBG coDI_SBG
+    * @generated
+    */
+    public Produtocontagem setCoDI_SBG(java.lang.Long coDI_SBG) {
+        this.coDI_SBG = coDI_SBG;
+        return this;
+    }
+    /**
     * Obtém cuST_TAB
     * return cuST_TAB
     * @generated
@@ -129,6 +201,24 @@ public class Produtocontagem implements Serializable {
         return this;
     }
     /**
+    * Obtém deSC_GPR
+    * return deSC_GPR
+    * @generated
+    */
+    public java.lang.String getDeSC_GPR() {
+        return this.deSC_GPR;
+    }
+
+    /**
+    * Define deSC_GPR
+    * @param deSC_GPR deSC_GPR
+    * @generated
+    */
+    public Produtocontagem setDeSC_GPR(java.lang.String deSC_GPR) {
+        this.deSC_GPR = deSC_GPR;
+        return this;
+    }
+    /**
     * Obtém deSC_PSV
     * return deSC_PSV
     * @generated
@@ -144,6 +234,24 @@ public class Produtocontagem implements Serializable {
     */
     public Produtocontagem setDeSC_PSV(java.lang.String deSC_PSV) {
         this.deSC_PSV = deSC_PSV;
+        return this;
+    }
+    /**
+    * Obtém deSC_SBG
+    * return deSC_SBG
+    * @generated
+    */
+    public java.lang.String getDeSC_SBG() {
+        return this.deSC_SBG;
+    }
+
+    /**
+    * Define deSC_SBG
+    * @param deSC_SBG deSC_SBG
+    * @generated
+    */
+    public Produtocontagem setDeSC_SBG(java.lang.String deSC_SBG) {
+        this.deSC_SBG = deSC_SBG;
         return this;
     }
 

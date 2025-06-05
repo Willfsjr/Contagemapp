@@ -1,0 +1,86 @@
+{
+  "customId": "depositoapp",
+  "queryName": "Deposito",
+  "sourceType": "entityFullName",
+  "baseEntity": null,
+  "blockly": null,
+  "entitySimpleName": "Deposito",
+  "entityFullName": "app_cont.entity.Deposito",
+  "query": {
+    "isValid": true,
+    "rulesEntity": [
+      {
+        "entity": "Deposito",
+        "alias": "d",
+        "namespace": "app_cont.entity.Deposito"
+      }
+    ],
+    "rulesSelect": [
+      {
+        "func": "get",
+        "field": "d"
+      }
+    ],
+    "rulesGroupBy": [],
+    "rulesHaving": [],
+    "rulesOrderBy": [],
+    "rules": {
+      "condition": "AND",
+      "not": false,
+      "valid": true,
+      "rules": []
+    }
+  },
+  "queryParamsValues": [],
+  "verbs": {
+    "GET": true,
+    "GETAuthorities": null,
+    "POST": true,
+    "POSTAuthorities": null,
+    "PUT": true,
+    "PUTAuthorities": null,
+    "DELETE": true,
+    "DELETEAuthorities": null,
+    "FILTER": true,
+    "FILTERAuthorities": null,
+    "COUNT": true,
+    "COUNTAuthorities": null
+  },
+  "events": {
+    "beforeInsert": null,
+    "beforeUpdate": null,
+    "beforeDelete": null,
+    "afterInsert": null,
+    "afterUpdate": null,
+    "afterDelete": null,
+    "onNavigate": null,
+    "onAuthorize": null,
+    "onError": null
+  },
+  "defaultValues": {
+    "id": null,
+    "descDpt": null,
+    "codiDpt": null
+  },
+  "defaultValuesProperties": {
+    "id": null,
+    "descDpt": null,
+    "codiDpt": null
+  },
+  "security": {
+    "id": null,
+    "descDpt": null,
+    "codiDpt": null
+  },
+  "calcFields": {},
+  "calcFieldsSecurity": {},
+  "calcFieldsProperties": {},
+  "headers": {},
+  "errorHandles": {
+    "primaryKey": null,
+    "foreignKey": null
+  },
+  "serviceUrl": "api/cronapi/odata/v2/app_cont/query575261/",
+  "audit": false,
+  "swagger": false
+}

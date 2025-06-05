@@ -15,16 +15,16 @@ import cronapi.swagger.CronappSwagger;
 import cronapp.framework.core.persistence.*;
 
 /**
-* Classe que representa a tabela ESTOQUE
+* Classe que representa a tabela ATUALIZA_ESTOQUE
 * @generated
 */
 @jakarta.persistence.Entity
-@jakarta.persistence.Table(name = "\"ESTOQUE\"")
+@jakarta.persistence.Table(name = "\"ATUALIZA_ESTOQUE\"")
 @XmlRootElement
 @CronappSecurity
-@JsonFilter("app_cont.entity.Estoque")
+@JsonFilter("app_cont.entity.AtualizaEstoque")
 @CronappTable(role=CronappTableRole.CLASS)
-public class Estoque implements Serializable {
+public class AtualizaEstoque implements Serializable {
     /**
     * UID da classe, necessário na serialização
     * @generated
@@ -43,10 +43,10 @@ public class Estoque implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Codi Est")
-    @Column(name = "CODI_EST", nullable = true, unique = false, insertable=true, updatable=true)
+    @CronappColumn(attributeType="STRING", label="Codi Psv")
+    @Column(name = "CODI_PSV", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String codiEst;
+        private java.lang.String codiPsv;
 
 
     /**
@@ -77,19 +77,10 @@ public class Estoque implements Serializable {
 
 
     /**
-    * @generated
-    */
-    @ManyToOne
-    @JoinColumn(name="FK_CONTAGEM", nullable = true, referencedColumnName = "ID", insertable=true, updatable=true)
-        
-        private Contagem contEst;
-
-
-    /**
     * Construtor
     * @generated
     */
-    public Estoque(){
+    public AtualizaEstoque(){
     }
 
     /**
@@ -106,26 +97,26 @@ public class Estoque implements Serializable {
     * @param id id
     * @generated
     */
-    public Estoque setId(java.lang.String id) {
+    public AtualizaEstoque setId(java.lang.String id) {
         this.id = id;
         return this;
     }
     /**
-    * Obtém codiEst
-    * return codiEst
+    * Obtém codiPsv
+    * return codiPsv
     * @generated
     */
-    public java.lang.String getCodiEst() {
-        return this.codiEst;
+    public java.lang.String getCodiPsv() {
+        return this.codiPsv;
     }
 
     /**
-    * Define codiEst
-    * @param codiEst codiEst
+    * Define codiPsv
+    * @param codiPsv codiPsv
     * @generated
     */
-    public Estoque setCodiEst(java.lang.String codiEst) {
-        this.codiEst = codiEst;
+    public AtualizaEstoque setCodiPsv(java.lang.String codiPsv) {
+        this.codiPsv = codiPsv;
         return this;
     }
     /**
@@ -142,7 +133,7 @@ public class Estoque implements Serializable {
     * @param codiDpt codiDpt
     * @generated
     */
-    public Estoque setCodiDpt(java.lang.Integer codiDpt) {
+    public AtualizaEstoque setCodiDpt(java.lang.Integer codiDpt) {
         this.codiDpt = codiDpt;
         return this;
     }
@@ -160,7 +151,7 @@ public class Estoque implements Serializable {
     * @param codiEmp codiEmp
     * @generated
     */
-    public Estoque setCodiEmp(java.lang.Integer codiEmp) {
+    public AtualizaEstoque setCodiEmp(java.lang.Integer codiEmp) {
         this.codiEmp = codiEmp;
         return this;
     }
@@ -178,26 +169,8 @@ public class Estoque implements Serializable {
     * @param qteTotal qteTotal
     * @generated
     */
-    public Estoque setQteTotal(java.lang.Double qteTotal) {
+    public AtualizaEstoque setQteTotal(java.lang.Double qteTotal) {
         this.qteTotal = qteTotal;
-        return this;
-    }
-    /**
-    * Obtém contEst
-    * return contEst
-    * @generated
-    */
-    public Contagem getContEst() {
-        return this.contEst;
-    }
-
-    /**
-    * Define contEst
-    * @param contEst contEst
-    * @generated
-    */
-    public Estoque setContEst(Contagem contEst) {
-        this.contEst = contEst;
         return this;
     }
 
@@ -208,7 +181,7 @@ public class Estoque implements Serializable {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-Estoque object = (Estoque)obj;
+AtualizaEstoque object = (AtualizaEstoque)obj;
         if (id != null ? !id.equals(object.id) : object.id != null) return false;
         return true;
     }

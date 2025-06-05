@@ -15,16 +15,16 @@ import cronapi.swagger.CronappSwagger;
 import cronapp.framework.core.persistence.*;
 
 /**
-* Classe que representa a tabela LOJA
+* Classe que representa a tabela DEPOSITO
 * @generated
 */
 @jakarta.persistence.Entity
-@jakarta.persistence.Table(name = "\"LOJA\"")
+@jakarta.persistence.Table(name = "\"DEPOSITO\"")
 @XmlRootElement
 @CronappSecurity
-@JsonFilter("app_cont.entity.Loja")
+@JsonFilter("app_cont.entity.Deposito")
 @CronappTable(role=CronappTableRole.CLASS)
-public class Loja implements Serializable {
+public class Deposito implements Serializable {
     /**
     * UID da classe, necessário na serialização
     * @generated
@@ -36,33 +36,33 @@ public class Loja implements Serializable {
     */
     @Id
     @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
-    @Column(name = "ID", nullable = false, length=0, insertable=true, updatable=true)
+    @Column(name = "ID", nullable = false, insertable=true, updatable=true)
         private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Loja")
-    @Column(name = "DESC_LOJA", nullable = true, unique = false, length=255, insertable=true, updatable=true)
+    @CronappColumn(attributeType="STRING", label="Desc Dpt")
+    @Column(name = "DESC_DPT", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String descLoja;
+        private java.lang.String descDpt;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="Codi Loja")
-    @Column(name = "CODI_LOJA", nullable = true, unique = false, insertable=true, updatable=true)
+    @CronappColumn(attributeType="INTEGER", label="Codi Dpt")
+    @Column(name = "CODI_DPT", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer codiLoja;
+        private java.lang.Integer codiDpt;
 
 
     /**
     * Construtor
     * @generated
     */
-    public Loja(){
+    public Deposito(){
     }
 
     /**
@@ -79,44 +79,44 @@ public class Loja implements Serializable {
     * @param id id
     * @generated
     */
-    public Loja setId(java.lang.String id) {
+    public Deposito setId(java.lang.String id) {
         this.id = id;
         return this;
     }
     /**
-    * Obtém descLoja
-    * return descLoja
+    * Obtém descDpt
+    * return descDpt
     * @generated
     */
-    public java.lang.String getDescLoja() {
-        return this.descLoja;
+    public java.lang.String getDescDpt() {
+        return this.descDpt;
     }
 
     /**
-    * Define descLoja
-    * @param descLoja descLoja
+    * Define descDpt
+    * @param descDpt descDpt
     * @generated
     */
-    public Loja setDescLoja(java.lang.String descLoja) {
-        this.descLoja = descLoja;
+    public Deposito setDescDpt(java.lang.String descDpt) {
+        this.descDpt = descDpt;
         return this;
     }
     /**
-    * Obtém codiLoja
-    * return codiLoja
+    * Obtém codiDpt
+    * return codiDpt
     * @generated
     */
-    public java.lang.Integer getCodiLoja() {
-        return this.codiLoja;
+    public java.lang.Integer getCodiDpt() {
+        return this.codiDpt;
     }
 
     /**
-    * Define codiLoja
-    * @param codiLoja codiLoja
+    * Define codiDpt
+    * @param codiDpt codiDpt
     * @generated
     */
-    public Loja setCodiLoja(java.lang.Integer codiLoja) {
-        this.codiLoja = codiLoja;
+    public Deposito setCodiDpt(java.lang.Integer codiDpt) {
+        this.codiDpt = codiDpt;
         return this;
     }
 
@@ -127,7 +127,7 @@ public class Loja implements Serializable {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-Loja object = (Loja)obj;
+Deposito object = (Deposito)obj;
         if (id != null ? !id.equals(object.id) : object.id != null) return false;
         return true;
     }
