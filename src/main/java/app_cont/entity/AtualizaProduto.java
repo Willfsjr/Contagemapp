@@ -77,6 +77,15 @@ public class AtualizaProduto implements Serializable {
 
 
     /**
+    * @generated
+    */
+    @ManyToOne
+    @JoinColumn(name="FK_CONTAGEM", nullable = true, referencedColumnName = "ID", insertable=true, updatable=true)
+        
+        private Contagem contAtuProd;
+
+
+    /**
     * Construtor
     * @generated
     */
@@ -171,6 +180,24 @@ public class AtualizaProduto implements Serializable {
     */
     public AtualizaProduto setCustTab(java.lang.Double custTab) {
         this.custTab = custTab;
+        return this;
+    }
+    /**
+    * Obtém contAtuProd
+    * return contAtuProd
+    * @generated
+    */
+    public Contagem getContAtuProd() {
+        return this.contAtuProd;
+    }
+
+    /**
+    * Define contAtuProd
+    * @param contAtuProd contAtuProd
+    * @generated
+    */
+    public AtualizaProduto setContAtuProd(Contagem contAtuProd) {
+        this.contAtuProd = contAtuProd;
         return this;
     }
 

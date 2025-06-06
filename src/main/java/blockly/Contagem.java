@@ -17,7 +17,7 @@ public static final int TIMEOUT = 300;
  * @param contagemObject
  *
  * @author Willian Ferreira
- * @since 05/06/2025, 17:43:33
+ * @since 05/06/2025, 20:23:26
  *
  */
 public static Var apagarProdutoDaContagem(@ParamMetaData(description = "contagemObject", id = "33ac3b42") @RequestBody(required = false) Var contagemObject) throws Exception {
@@ -44,40 +44,60 @@ public static Var apagarProdutoDaContagem(@ParamMetaData(description = "contagem
  * @param contObj
  *
  * @author Willian Ferreira
- * @since 05/06/2025, 17:43:33
+ * @since 05/06/2025, 20:23:26
  *
  */
 public static Var obterProdutoParaContagem(@ParamMetaData(description = "contObj", id = "1b7b51d5") @RequestBody(required = false) Var contObj) throws Exception {
  return new Callable<Var>() {
 
+   private Var codiGpr = Var.VAR_NULL;
+   private Var codiSbg = Var.VAR_NULL;
    private Var produtosERP = Var.VAR_NULL;
    private Var contador = Var.VAR_NULL;
    private Var inserir = Var.VAR_NULL;
    private Var excecao = Var.VAR_NULL;
 
    public Var call() throws Exception {
-    produtosERP =
-    cronapi.database.Operations.query(Var.valueOf("app_oracle.entity.Produtocontagem"),Var.valueOf("select \n	p.coDI_PSV, \n	p.deSC_PSV, \n	p.coDI_BAR, \n	p.cuST_TAB \nfrom \n	Produtocontagem p  \nwhere \n	p.coDI_GPR = :coDI_GPR AND \n	p.coDI_SBG = :coDI_SBG"),Var.valueOf("coDI_GPR",
+    codiGpr =
+    cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Grupo"),Var.valueOf("select \n	g.codiGpr \nfrom \n	Grupo g  \nwhere \n	g = :g"),Var.valueOf("g",
     cronapi.screen.Operations.getValueOfField(
-    Var.valueOf("contagem.active.dataCont"))),Var.valueOf("coDI_SBG",
+    Var.valueOf("contagem.active.gprCont"))));
+    codiSbg =
+    cronapi.database.Operations.query(Var.valueOf("app_cont.entity.SubGrupo"),Var.valueOf("select \n	s.codiSbg \nfrom \n	SubGrupo s  \nwhere \n	s = :s"),Var.valueOf("s",
     cronapi.screen.Operations.getValueOfField(
-    Var.valueOf("contagem.active.dataCont"))));
+    Var.valueOf("contagem.active.sbgCont"))));
+    if (
+    Var.valueOf(
+    cronapi.logic.Operations.isNullOrEmpty(codiGpr).getObjectAsBoolean() &&
+    cronapi.logic.Operations.isNullOrEmpty(codiSbg).getObjectAsBoolean()).getObjectAsBoolean()) {
+        produtosERP =
+        cronapi.database.Operations.query(Var.valueOf("app_oracle.entity.Produtocontagem"),Var.valueOf("select \n	p.coDI_PSV, \n	p.deSC_PSV, \n	p.coDI_BAR, \n	p.cuST_TAB \nfrom \n	Produtocontagem p"));
+    } else {
+        if (
+        cronapi.logic.Operations.isNullOrEmpty(codiSbg).getObjectAsBoolean()) {
+            produtosERP =
+            cronapi.database.Operations.query(Var.valueOf("app_oracle.entity.Produtocontagem"),Var.valueOf("select \n	p.coDI_PSV, \n	p.deSC_PSV, \n	p.coDI_BAR, \n	p.cuST_TAB \nfrom \n	Produtocontagem p  \nwhere \n	p.coDI_GPR = :coDI_GPR"),Var.valueOf("coDI_GPR",codiGpr));
+        } else {
+            produtosERP =
+            cronapi.database.Operations.query(Var.valueOf("app_oracle.entity.Produtocontagem"),Var.valueOf("select \n	p.coDI_PSV, \n	p.deSC_PSV, \n	p.coDI_BAR, \n	p.cuST_TAB \nfrom \n	Produtocontagem p  \nwhere \n	p.coDI_GPR = :coDI_GPR AND \n	p.coDI_SBG = :coDI_SBG"),Var.valueOf("coDI_GPR",codiGpr),Var.valueOf("coDI_SBG",codiSbg));
+        }
+    }
     contador =
     Var.valueOf(0);
     try {
          while (
         cronapi.database.Operations.hasElement(produtosERP).getObjectAsBoolean()) {
             inserir =
-            cronapi.database.Operations.insert(Var.valueOf("app_cont.entity.Produto"),
-            cronapi.object.Operations.newObject(Var.valueOf("app_cont.entity.Produto"),Var.valueOf("codiBar",
+            cronapi.database.Operations.insert(Var.valueOf("app_cont.entity.AtualizaProduto"),
+            cronapi.object.Operations.newObject(Var.valueOf("app_cont.entity.AtualizaProduto"),Var.valueOf("codiPsv",
             cronapi.database.Operations.getField(produtosERP,
-            Var.valueOf("this[2]"))),Var.valueOf("codiPsv",
+            Var.valueOf("this[0]"))),Var.valueOf("descPsv",
             cronapi.database.Operations.getField(produtosERP,
-            Var.valueOf("this[0]"))),Var.valueOf("custTab",
+            Var.valueOf("this[1]"))),Var.valueOf("codiBar",
             cronapi.database.Operations.getField(produtosERP,
-            Var.valueOf("this[3]"))),Var.valueOf("descPsv",
+            Var.valueOf("this[2]"))),Var.valueOf("custTab",
             cronapi.database.Operations.getField(produtosERP,
-            Var.valueOf("this[1]"))),Var.valueOf("contagem",contObj)));
+            Var.valueOf("this[3]"))),Var.valueOf("contAtuProd",contObj)));
             contador =
             cronapi.math.Operations.sum(contador,
             Var.valueOf(1));
