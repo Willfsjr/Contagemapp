@@ -79,7 +79,7 @@
                     <div data-component="crn-textinput" id="crn-textinput-gprSbg_descGpr-26330" class="">
                         <div class="form-group">
                                 <label for="textinput-gprSbg_descGpr" class="">Grupo</label>
-                                <input type="text" ng-model="subgrupoapp.active.gprSbg_descGpr" class="form-control k-textbox" id="textinput-gprSbg_descGpr" placeholder="Grupo do SubGrupo" mask="" mask-placeholder="" ng-required="false">
+                                <input type="text" ng-model="subgrupoapp.active.gprSbg_descGpr" class="form-control k-textbox" id="textinput-gprSbg_descGpr" placeholder="Grupo do SubGrupo" mask="" mask-placeholder="" ng-required="false" ng-change="cronapi.client('js.blockly.SubGrupo.validarGrupo').run()">
                         </div>
                     </div>
                 <!-- NtoN  -->

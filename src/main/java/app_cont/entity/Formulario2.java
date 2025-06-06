@@ -63,9 +63,9 @@ public class Formulario2 implements Serializable {
     * @generated
     */
     @ManyToOne
-    @JoinColumn(name="FK_PRODUTO", nullable = true, referencedColumnName = "ID", insertable=true, updatable=true)
+    @JoinColumn(name="FK_PRODUTO2", nullable = true, referencedColumnName = "ID", insertable=true, updatable=true)
         
-        private Produto prodForm2;
+        private Produto2 prodForm2;
 
 
     /**
@@ -143,7 +143,7 @@ public class Formulario2 implements Serializable {
     * return prodForm2
     * @generated
     */
-    public Produto getProdForm2() {
+    public Produto2 getProdForm2() {
         return this.prodForm2;
     }
 
@@ -152,7 +152,7 @@ public class Formulario2 implements Serializable {
     * @param prodForm2 prodForm2
     * @generated
     */
-    public Formulario2 setProdForm2(Produto prodForm2) {
+    public Formulario2 setProdForm2(Produto2 prodForm2) {
         this.prodForm2 = prodForm2;
         return this;
     }

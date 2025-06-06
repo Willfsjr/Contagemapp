@@ -4,8 +4,8 @@
   "sourceType": "entityFullName",
   "baseEntity": null,
   "blockly": null,
-  "entitySimpleName": "Produto",
-  "entityFullName": "app_cont.entity.Produto",
+  "entitySimpleName": "AtualizaProduto",
+  "entityFullName": "app_cont.entity.AtualizaProduto",
   "query": {
     "isValid": true,
     "isEmpty": false,
@@ -15,14 +15,14 @@
     "type": "select",
     "rulesEntity": [
       {
-        "entity": "Produto",
-        "namespace": "app_cont.entity.Produto",
+        "entity": "AtualizaProduto",
+        "namespace": "app_cont.entity.AtualizaProduto",
         "dataSourceOptions": {
-          "id": "app_cont.Produto",
-          "customId": "Produto",
-          "customQueryName": "app_cont.Produto",
+          "id": "app_cont.AtualizaProduto",
+          "customId": "AtualizaProduto",
+          "customQueryName": "app_cont.AtualizaProduto",
           "paramValues": [],
-          "entityFullName": "app_cont.entity.Produto",
+          "entityFullName": "app_cont.entity.AtualizaProduto",
           "schemaFields": [
             {
               "name": "id",
@@ -32,14 +32,14 @@
               "key": false
             },
             {
-              "name": "codiProd",
+              "name": "codiPsv",
               "type": "String",
               "nullable": true,
               "notEmpty": false,
               "key": false
             },
             {
-              "name": "descProd",
+              "name": "descPsv",
               "type": "String",
               "nullable": true,
               "notEmpty": false,
@@ -60,14 +60,7 @@
               "key": false
             },
             {
-              "name": "sbgProd",
-              "type": "String",
-              "nullable": true,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "contProd",
+              "name": "contAtuProd",
               "type": "String",
               "nullable": true,
               "notEmpty": false,
@@ -81,14 +74,7 @@
               "key": true
             },
             {
-              "name": "sbgProd_descSbg",
-              "type": "String",
-              "nullable": true,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "contProd_descCont",
+              "name": "contAtuProd_descCont",
               "type": "String",
               "nullable": true,
               "notEmpty": false,
@@ -97,17 +83,17 @@
           ],
           "type": "entity",
           "hasError": false,
-          "customName": "Produto",
-          "fullName": "app_cont.entity.Produto",
-          "labelName": "app_cont.entity.Produto (Produto)"
+          "customName": "AtualizaProduto",
+          "fullName": "app_cont.entity.AtualizaProduto",
+          "labelName": "app_cont.entity.AtualizaProduto (AtualizaProduto)"
         },
-        "alias": "p"
+        "alias": "a"
       }
     ],
     "rulesSelect": [
       {
         "func": "get",
-        "field": "p",
+        "field": "a",
         "type": "string"
       }
     ],
@@ -119,13 +105,13 @@
       "condition": "AND",
       "rules": [
         {
-          "id": "p.contProd",
-          "field": "p.contProd",
+          "id": "a.contAtuProd",
+          "field": "a.contAtuProd",
           "type": "string",
           "input": "text",
           "operator": "equal",
           "valueType": "param",
-          "value": ":contProd",
+          "value": ":contAtuProd",
           "valueIsField": false
         }
       ],
@@ -139,7 +125,7 @@
   },
   "queryParamsValues": [
     {
-      "fieldName": "contProd",
+      "fieldName": "contAtuProd",
       "fieldValue": ""
     }
   ],
@@ -170,36 +156,30 @@
   },
   "defaultValues": {
     "id": null,
-    "codiProd": null,
-    "descProd": null,
+    "codiPsv": null,
+    "descPsv": null,
     "codiBar": null,
     "custTab": null,
-    "sbgProd": null,
-    "contProd": null,
-    "sbgProd_descSbg": null,
-    "contProd_descCont": null
+    "contAtuProd": null,
+    "contAtuProd_descCont": null
   },
   "defaultValuesProperties": {
     "id": null,
-    "codiProd": null,
-    "descProd": null,
+    "codiPsv": null,
+    "descPsv": null,
     "codiBar": null,
     "custTab": null,
-    "sbgProd": null,
-    "contProd": null,
-    "sbgProd_descSbg": null,
-    "contProd_descCont": null
+    "contAtuProd": null,
+    "contAtuProd_descCont": null
   },
   "security": {
     "id": null,
-    "codiProd": null,
-    "descProd": null,
+    "codiPsv": null,
+    "descPsv": null,
     "codiBar": null,
     "custTab": null,
-    "sbgProd": null,
-    "contProd": null,
-    "sbgProd_descSbg": null,
-    "contProd_descCont": null
+    "contAtuProd": null,
+    "contAtuProd_descCont": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},

@@ -63,7 +63,7 @@
                     <div data-component="crn-textinput" id="crn-textinput-nome-37634" class="">
                         <div class="form-group">
                                 <label for="textinput-nome" class="">Nome</label>
-                                <input type="text" ng-model="loja.active.descLoja" class="form-control k-textbox" id="textinput-nome" placeholder="Nome da Loja" mask="" mask-placeholder="" ng-required="false" ng-blur="cronapi.client('js.blockly.Loja.validarName').run()">
+                                <input type="text" ng-model="loja.active.descLoja" class="form-control k-textbox" id="textinput-nome" placeholder="Nome da Loja" mask="" mask-placeholder="" ng-required="false" ng-blur="" ng-change="cronapi.client('js.blockly.Deposito.validarNome').run()">
                         </div>
                     </div>
 
@@ -71,7 +71,7 @@
                     <div data-component="crn-textinput" id="crn-textinput-codigo-37634" class="">
                         <div class="form-group">
                                 <label for="textinput-codigo" class="">Codigo</label>
-                                <input type="integer" ng-model="loja.active.codiLoja" class="form-control k-textbox" id="textinput-codigo" placeholder="Codigo da Loja" mask="0;0" mask-placeholder="" ng-required="false" ng-blur="cronapi.client('js.blockly.Loja.validarCodigo').run()">
+                                <input type="integer" ng-model="loja.active.codiLoja" class="form-control k-textbox" id="textinput-codigo" placeholder="Codigo da Loja" mask="0;0" mask-placeholder="" ng-required="false" ng-blur="" ng-change="cronapi.client('js.blockly.Loja.validarCodigo').run()">
                         </div>
                     </div>
                 <!-- NtoN  -->

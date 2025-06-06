@@ -46,7 +46,7 @@
             </div>
             <div class="active-bar" ng-hide="!datasource.editing &amp;&amp; !datasource.inserting">
                 <div class="component-holder ng-scope" data-component="crn-button" id="btn_crud_post_39235">
-                    <button class="btn k-button btn-block btn-success btn-fab" ng-click="datasource.post()" aria-label="{{'SaveChanges' | translate}}" xattr-fullsize="btn-block" xattr-theme="btn-success" xattr-disabled="">
+                    <button class="btn k-button btn-block btn-success btn-fab" ng-click="cronapi.client('js.blockly.Deposito.gravar').run()" aria-label="{{'SaveChanges' | translate}}" xattr-fullsize="btn-block" xattr-theme="btn-success" xattr-disabled="">
                         <i class="glyphicon glyphicon-ok" icon-theme=""></i>
                     </button>
                 </div>
@@ -63,7 +63,7 @@
                     <div data-component="crn-textinput" id="crn-textinput-descDpt-39235" class="">
                         <div class="form-group">
                                 <label for="textinput-descDpt" class="">Nome</label>
-                                <input type="text" ng-model="depositoapp.active.descDpt" class="form-control k-textbox" id="textinput-descDpt" placeholder="Descrição do Deposito" mask="" mask-placeholder="" ng-required="false">
+                                <input type="text" ng-model="depositoapp.active.descDpt" class="form-control k-textbox" id="textinput-descDpt" placeholder="Descrição do Deposito" mask="" mask-placeholder="" ng-required="false" ng-change="cronapi.client('js.blockly.Deposito.validarNome').run()">
                         </div>
                     </div>
 
@@ -71,7 +71,7 @@
                     <div data-component="crn-textinput" id="crn-textinput-codiDpt-39235" class="">
                         <div class="form-group">
                                 <label for="textinput-codiDpt" class="">Codigo</label>
-                                <input type="integer" ng-model="depositoapp.active.codiDpt" class="form-control k-textbox" id="textinput-codiDpt" placeholder="Codigo do Deposito" mask="" mask-placeholder="" ng-required="false">
+                                <input type="integer" ng-model="depositoapp.active.codiDpt" class="form-control k-textbox" id="textinput-codiDpt" placeholder="Codigo do Deposito" mask="" mask-placeholder="" ng-required="false" ng-change="cronapi.client('js.blockly.Deposito.validarCodigo').run()">
                         </div>
                     </div>
                 <!-- NtoN  -->

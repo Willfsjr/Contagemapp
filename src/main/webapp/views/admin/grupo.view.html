@@ -46,7 +46,7 @@
             </div>
             <div class="active-bar" ng-hide="!datasource.editing &amp;&amp; !datasource.inserting">
                 <div class="component-holder ng-scope" data-component="crn-button" id="btn_crud_post_94895">
-                    <button class="btn k-button btn-block btn-success btn-fab" ng-click="datasource.post()" aria-label="{{'SaveChanges' | translate}}" xattr-fullsize="btn-block" xattr-theme="btn-success" xattr-disabled="">
+                    <button class="btn k-button btn-block btn-success btn-fab" ng-click="cronapi.client('js.blockly.Grupo.gravar').run()" aria-label="{{'SaveChanges' | translate}}" xattr-fullsize="btn-block" xattr-theme="btn-success" xattr-disabled="">
                         <i class="glyphicon glyphicon-ok" icon-theme=""></i>
                     </button>
                 </div>
@@ -63,7 +63,7 @@
                     <div data-component="crn-textinput" id="crn-textinput-descGpr-94895" class="">
                         <div class="form-group">
                                 <label for="textinput-descGpr" class="">Nome</label>
-                                <input type="text" ng-model="grupoapp.active.descGpr" class="form-control k-textbox" id="textinput-descGpr" placeholder="Descrição do Grupo" mask="" mask-placeholder="" ng-required="false">
+                                <input type="text" ng-model="grupoapp.active.descGpr" class="form-control k-textbox" id="textinput-descGpr" placeholder="Descrição do Grupo" mask="" mask-placeholder="" ng-required="false" ng-change="cronapi.client('js.blockly.Grupo.validarNome').run()">
                         </div>
                     </div>
 
@@ -71,7 +71,7 @@
                     <div data-component="crn-textinput" id="crn-textinput-codiGpr-94895" class="">
                         <div class="form-group">
                                 <label for="textinput-codiGpr" class="">Codigo</label>
-                                <input type="integer" ng-model="grupoapp.active.codiGpr" class="form-control k-textbox" id="textinput-codiGpr" placeholder="Codigo do Grupo" mask="" mask-placeholder="" ng-required="false">
+                                <input type="integer" ng-model="grupoapp.active.codiGpr" class="form-control k-textbox" id="textinput-codiGpr" placeholder="Codigo do Grupo" mask="" mask-placeholder="" ng-required="false" ng-change="cronapi.client('js.blockly.Grupo.validarCodigo').run()">
                         </div>
                     </div>
                 <!-- NtoN  -->

@@ -98,7 +98,7 @@
       },
       {
         "func": "get",
-        "field": "f.prodForm1.descProd",
+        "field": "f.prodForm1.descProd1",
         "type": "string"
       },
       {
@@ -177,24 +177,24 @@
   },
   "defaultValues": {
     "dataForm1": null,
-    "prodForm1_descProd": null,
+    "prodForm1_descProd1": null,
     "quantForm1": null,
     "prodForm1": null,
-    "prodForm1_codiProd": null
+    "prodForm1_codiProd1": null
   },
   "defaultValuesProperties": {
     "dataForm1": null,
-    "prodForm1_descProd": null,
+    "prodForm1_descProd1": null,
     "quantForm1": null,
     "prodForm1": null,
-    "prodForm1_codiProd": null
+    "prodForm1_codiProd1": null
   },
   "security": {
     "dataForm1": null,
-    "prodForm1_descProd": null,
+    "prodForm1_descProd1": null,
     "quantForm1": null,
     "prodForm1": null,
-    "prodForm1_codiProd": null
+    "prodForm1_codiProd1": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},
