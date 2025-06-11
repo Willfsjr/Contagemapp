@@ -19,6 +19,6 @@ import org.springframework.transaction.annotation.*;
  */
 @Repository("app_oracle-GRUPODAO")
 @Transactional(transactionManager="app_oracle-TransactionManager")
-public interface GRUPODAO extends JpaRepository<GRUPO, java.lang.Long> {
+public interface GRUPODAO extends JpaRepository<GRUPO, java.lang.Integer> {
 
 }

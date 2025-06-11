@@ -23,7 +23,7 @@ import cronapp.framework.core.persistence.*;
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("app_oracle.entity.TOAD_PLAN_TABLE")
-@CronappTable(role=CronappTableRole.AUTO)
+@CronappTable(role=CronappTableRole.CLASS)
 public class TOAD_PLAN_TABLE implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -52,46 +52,46 @@ public class TOAD_PLAN_TABLE implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="BYTES")
+    @CronappColumn(attributeType="INTEGER", label="BYTES")
     @Column(name = "BYTES", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long BYTES;
+        private java.lang.Integer BYTES;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CARDINALITY")
+    @CronappColumn(attributeType="INTEGER", label="CARDINALITY")
     @Column(name = "CARDINALITY", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CARDINALITY;
+        private java.lang.Integer CARDINALITY;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="COST")
+    @CronappColumn(attributeType="INTEGER", label="COST")
     @Column(name = "COST", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long COST;
+        private java.lang.Integer COST;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CPU  COST")
+    @CronappColumn(attributeType="INTEGER", label="CPU  COST")
     @Column(name = "CPU_COST", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CPU_COST;
+        private java.lang.Integer CPU_COST;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="DEPTH")
+    @CronappColumn(attributeType="INTEGER", label="DEPTH")
     @Column(name = "DEPTH", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long DEPTH;
+        private java.lang.Integer DEPTH;
 
 
     /**
@@ -115,19 +115,19 @@ public class TOAD_PLAN_TABLE implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="ID")
+    @CronappColumn(attributeType="INTEGER", label="ID")
     @Column(name = "ID", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long ID;
+        private java.lang.Integer ID;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="IO  COST")
+    @CronappColumn(attributeType="INTEGER", label="IO  COST")
     @Column(name = "IO_COST", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long IO_COST;
+        private java.lang.Integer IO_COST;
 
 
     /**
@@ -142,10 +142,10 @@ public class TOAD_PLAN_TABLE implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="OBJECT  INSTANCE")
+    @CronappColumn(attributeType="INTEGER", label="OBJECT  INSTANCE")
     @Column(name = "OBJECT_INSTANCE", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long OBJECT_INSTANCE;
+        private java.lang.Integer OBJECT_INSTANCE;
 
 
     /**
@@ -241,19 +241,19 @@ public class TOAD_PLAN_TABLE implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="PARENT  ID")
+    @CronappColumn(attributeType="INTEGER", label="PARENT  ID")
     @Column(name = "PARENT_ID", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long PARENT_ID;
+        private java.lang.Integer PARENT_ID;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="PARTITION  ID")
+    @CronappColumn(attributeType="INTEGER", label="PARTITION  ID")
     @Column(name = "PARTITION_ID", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long PARTITION_ID;
+        private java.lang.Integer PARTITION_ID;
 
 
     /**
@@ -286,10 +286,10 @@ public class TOAD_PLAN_TABLE implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="POSITION")
+    @CronappColumn(attributeType="INTEGER", label="POSITION")
     @Column(name = "POSITION", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long POSITION;
+        private java.lang.Integer POSITION;
 
 
     /**
@@ -331,19 +331,19 @@ public class TOAD_PLAN_TABLE implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="TEMP  SPACE")
+    @CronappColumn(attributeType="INTEGER", label="TEMP  SPACE")
     @Column(name = "TEMP_SPACE", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long TEMP_SPACE;
+        private java.lang.Integer TEMP_SPACE;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="TIME")
+    @CronappColumn(attributeType="INTEGER", label="TIME")
     @Column(name = "TIME", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long TIME;
+        private java.lang.Integer TIME;
 
 
     /**
@@ -404,7 +404,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return BYTES
     * @generated
     */
-    public java.lang.Long getBYTES() {
+    public java.lang.Integer getBYTES() {
         return this.BYTES;
     }
 
@@ -413,7 +413,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param BYTES BYTES
     * @generated
     */
-    public TOAD_PLAN_TABLE setBYTES(java.lang.Long BYTES) {
+    public TOAD_PLAN_TABLE setBYTES(java.lang.Integer BYTES) {
         this.BYTES = BYTES;
         return this;
     }
@@ -422,7 +422,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return CARDINALITY
     * @generated
     */
-    public java.lang.Long getCARDINALITY() {
+    public java.lang.Integer getCARDINALITY() {
         return this.CARDINALITY;
     }
 
@@ -431,7 +431,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param CARDINALITY CARDINALITY
     * @generated
     */
-    public TOAD_PLAN_TABLE setCARDINALITY(java.lang.Long CARDINALITY) {
+    public TOAD_PLAN_TABLE setCARDINALITY(java.lang.Integer CARDINALITY) {
         this.CARDINALITY = CARDINALITY;
         return this;
     }
@@ -440,7 +440,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return COST
     * @generated
     */
-    public java.lang.Long getCOST() {
+    public java.lang.Integer getCOST() {
         return this.COST;
     }
 
@@ -449,7 +449,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param COST COST
     * @generated
     */
-    public TOAD_PLAN_TABLE setCOST(java.lang.Long COST) {
+    public TOAD_PLAN_TABLE setCOST(java.lang.Integer COST) {
         this.COST = COST;
         return this;
     }
@@ -458,7 +458,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return CPU_COST
     * @generated
     */
-    public java.lang.Long getCPU_COST() {
+    public java.lang.Integer getCPU_COST() {
         return this.CPU_COST;
     }
 
@@ -467,7 +467,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param CPU_COST CPU_COST
     * @generated
     */
-    public TOAD_PLAN_TABLE setCPU_COST(java.lang.Long CPU_COST) {
+    public TOAD_PLAN_TABLE setCPU_COST(java.lang.Integer CPU_COST) {
         this.CPU_COST = CPU_COST;
         return this;
     }
@@ -476,7 +476,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return DEPTH
     * @generated
     */
-    public java.lang.Long getDEPTH() {
+    public java.lang.Integer getDEPTH() {
         return this.DEPTH;
     }
 
@@ -485,7 +485,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param DEPTH DEPTH
     * @generated
     */
-    public TOAD_PLAN_TABLE setDEPTH(java.lang.Long DEPTH) {
+    public TOAD_PLAN_TABLE setDEPTH(java.lang.Integer DEPTH) {
         this.DEPTH = DEPTH;
         return this;
     }
@@ -530,7 +530,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return ID
     * @generated
     */
-    public java.lang.Long getID() {
+    public java.lang.Integer getID() {
         return this.ID;
     }
 
@@ -539,7 +539,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param ID ID
     * @generated
     */
-    public TOAD_PLAN_TABLE setID(java.lang.Long ID) {
+    public TOAD_PLAN_TABLE setID(java.lang.Integer ID) {
         this.ID = ID;
         return this;
     }
@@ -548,7 +548,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return IO_COST
     * @generated
     */
-    public java.lang.Long getIO_COST() {
+    public java.lang.Integer getIO_COST() {
         return this.IO_COST;
     }
 
@@ -557,7 +557,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param IO_COST IO_COST
     * @generated
     */
-    public TOAD_PLAN_TABLE setIO_COST(java.lang.Long IO_COST) {
+    public TOAD_PLAN_TABLE setIO_COST(java.lang.Integer IO_COST) {
         this.IO_COST = IO_COST;
         return this;
     }
@@ -584,7 +584,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return OBJECT_INSTANCE
     * @generated
     */
-    public java.lang.Long getOBJECT_INSTANCE() {
+    public java.lang.Integer getOBJECT_INSTANCE() {
         return this.OBJECT_INSTANCE;
     }
 
@@ -593,7 +593,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param OBJECT_INSTANCE OBJECT_INSTANCE
     * @generated
     */
-    public TOAD_PLAN_TABLE setOBJECT_INSTANCE(java.lang.Long OBJECT_INSTANCE) {
+    public TOAD_PLAN_TABLE setOBJECT_INSTANCE(java.lang.Integer OBJECT_INSTANCE) {
         this.OBJECT_INSTANCE = OBJECT_INSTANCE;
         return this;
     }
@@ -782,7 +782,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return PARENT_ID
     * @generated
     */
-    public java.lang.Long getPARENT_ID() {
+    public java.lang.Integer getPARENT_ID() {
         return this.PARENT_ID;
     }
 
@@ -791,7 +791,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param PARENT_ID PARENT_ID
     * @generated
     */
-    public TOAD_PLAN_TABLE setPARENT_ID(java.lang.Long PARENT_ID) {
+    public TOAD_PLAN_TABLE setPARENT_ID(java.lang.Integer PARENT_ID) {
         this.PARENT_ID = PARENT_ID;
         return this;
     }
@@ -800,7 +800,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return PARTITION_ID
     * @generated
     */
-    public java.lang.Long getPARTITION_ID() {
+    public java.lang.Integer getPARTITION_ID() {
         return this.PARTITION_ID;
     }
 
@@ -809,7 +809,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param PARTITION_ID PARTITION_ID
     * @generated
     */
-    public TOAD_PLAN_TABLE setPARTITION_ID(java.lang.Long PARTITION_ID) {
+    public TOAD_PLAN_TABLE setPARTITION_ID(java.lang.Integer PARTITION_ID) {
         this.PARTITION_ID = PARTITION_ID;
         return this;
     }
@@ -872,7 +872,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return POSITION
     * @generated
     */
-    public java.lang.Long getPOSITION() {
+    public java.lang.Integer getPOSITION() {
         return this.POSITION;
     }
 
@@ -881,7 +881,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param POSITION POSITION
     * @generated
     */
-    public TOAD_PLAN_TABLE setPOSITION(java.lang.Long POSITION) {
+    public TOAD_PLAN_TABLE setPOSITION(java.lang.Integer POSITION) {
         this.POSITION = POSITION;
         return this;
     }
@@ -962,7 +962,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return TEMP_SPACE
     * @generated
     */
-    public java.lang.Long getTEMP_SPACE() {
+    public java.lang.Integer getTEMP_SPACE() {
         return this.TEMP_SPACE;
     }
 
@@ -971,7 +971,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param TEMP_SPACE TEMP_SPACE
     * @generated
     */
-    public TOAD_PLAN_TABLE setTEMP_SPACE(java.lang.Long TEMP_SPACE) {
+    public TOAD_PLAN_TABLE setTEMP_SPACE(java.lang.Integer TEMP_SPACE) {
         this.TEMP_SPACE = TEMP_SPACE;
         return this;
     }
@@ -980,7 +980,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return TIME
     * @generated
     */
-    public java.lang.Long getTIME() {
+    public java.lang.Integer getTIME() {
         return this.TIME;
     }
 
@@ -989,7 +989,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param TIME TIME
     * @generated
     */
-    public TOAD_PLAN_TABLE setTIME(java.lang.Long TIME) {
+    public TOAD_PLAN_TABLE setTIME(java.lang.Integer TIME) {
         this.TIME = TIME;
         return this;
     }

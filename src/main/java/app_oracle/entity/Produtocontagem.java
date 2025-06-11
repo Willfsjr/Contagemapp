@@ -23,7 +23,7 @@ import cronapp.framework.core.persistence.*;
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("app_oracle.entity.Produtocontagem")
-@CronappTable(role=CronappTableRole.AUTO)
+@CronappTable(role=CronappTableRole.CLASS)
 public class Produtocontagem implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -52,19 +52,19 @@ public class Produtocontagem implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODI  GPR")
+    @CronappColumn(attributeType="INTEGER", label="CODI  GPR")
     @Column(name = "CODI_GPR", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long coDI_GPR;
+        private java.lang.Integer coDI_GPR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODI  SBG")
+    @CronappColumn(attributeType="INTEGER", label="CODI  SBG")
     @Column(name = "CODI_SBG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long coDI_SBG;
+        private java.lang.Integer coDI_SBG;
 
 
     /**
@@ -151,7 +151,7 @@ public class Produtocontagem implements Serializable {
     * return coDI_GPR
     * @generated
     */
-    public java.lang.Long getCoDI_GPR() {
+    public java.lang.Integer getCoDI_GPR() {
         return this.coDI_GPR;
     }
 
@@ -160,7 +160,7 @@ public class Produtocontagem implements Serializable {
     * @param coDI_GPR coDI_GPR
     * @generated
     */
-    public Produtocontagem setCoDI_GPR(java.lang.Long coDI_GPR) {
+    public Produtocontagem setCoDI_GPR(java.lang.Integer coDI_GPR) {
         this.coDI_GPR = coDI_GPR;
         return this;
     }
@@ -169,7 +169,7 @@ public class Produtocontagem implements Serializable {
     * return coDI_SBG
     * @generated
     */
-    public java.lang.Long getCoDI_SBG() {
+    public java.lang.Integer getCoDI_SBG() {
         return this.coDI_SBG;
     }
 
@@ -178,7 +178,7 @@ public class Produtocontagem implements Serializable {
     * @param coDI_SBG coDI_SBG
     * @generated
     */
-    public Produtocontagem setCoDI_SBG(java.lang.Long coDI_SBG) {
+    public Produtocontagem setCoDI_SBG(java.lang.Integer coDI_SBG) {
         this.coDI_SBG = coDI_SBG;
         return this;
     }

@@ -23,7 +23,7 @@ import cronapp.framework.core.persistence.*;
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("app_oracle.entity.DEPOSITO")
-@CronappTable(role=CronappTableRole.AUTO)
+@CronappTable(role=CronappTableRole.CLASS)
 public class DEPOSITO implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,9 +35,9 @@ public class DEPOSITO implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="LONG", label="CODI  DPT")
+    @CronappColumn(attributeType="INTEGER", label="CODI  DPT")
     @Column(name = "CODI_DPT", nullable = false, insertable=true, updatable=true)
-        private java.lang.Long CODI_DPT;
+        private java.lang.Integer CODI_DPT;
 
 
     /**
@@ -52,19 +52,19 @@ public class DEPOSITO implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODIPESLANREG")
+    @CronappColumn(attributeType="INTEGER", label="CODIPESLANREG")
     @Column(name = "CODIPESLANREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODIPESLANREG;
+        private java.lang.Integer CODIPESLANREG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODIPESMANUTREG")
+    @CronappColumn(attributeType="INTEGER", label="CODIPESMANUTREG")
     @Column(name = "CODIPESMANUTREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODIPESMANUTREG;
+        private java.lang.Integer CODIPESMANUTREG;
 
 
     /**
@@ -79,10 +79,10 @@ public class DEPOSITO implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODI  TRA")
+    @CronappColumn(attributeType="INTEGER", label="CODI  TRA")
     @Column(name = "CODI_TRA", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODI_TRA;
+        private java.lang.Integer CODI_TRA;
 
 
     /**
@@ -192,7 +192,7 @@ public class DEPOSITO implements Serializable {
     * return CODI_DPT
     * @generated
     */
-    public java.lang.Long getCODI_DPT() {
+    public java.lang.Integer getCODI_DPT() {
         return this.CODI_DPT;
     }
 
@@ -201,7 +201,7 @@ public class DEPOSITO implements Serializable {
     * @param CODI_DPT CODI_DPT
     * @generated
     */
-    public DEPOSITO setCODI_DPT(java.lang.Long CODI_DPT) {
+    public DEPOSITO setCODI_DPT(java.lang.Integer CODI_DPT) {
         this.CODI_DPT = CODI_DPT;
         return this;
     }
@@ -228,7 +228,7 @@ public class DEPOSITO implements Serializable {
     * return CODIPESLANREG
     * @generated
     */
-    public java.lang.Long getCODIPESLANREG() {
+    public java.lang.Integer getCODIPESLANREG() {
         return this.CODIPESLANREG;
     }
 
@@ -237,7 +237,7 @@ public class DEPOSITO implements Serializable {
     * @param CODIPESLANREG CODIPESLANREG
     * @generated
     */
-    public DEPOSITO setCODIPESLANREG(java.lang.Long CODIPESLANREG) {
+    public DEPOSITO setCODIPESLANREG(java.lang.Integer CODIPESLANREG) {
         this.CODIPESLANREG = CODIPESLANREG;
         return this;
     }
@@ -246,7 +246,7 @@ public class DEPOSITO implements Serializable {
     * return CODIPESMANUTREG
     * @generated
     */
-    public java.lang.Long getCODIPESMANUTREG() {
+    public java.lang.Integer getCODIPESMANUTREG() {
         return this.CODIPESMANUTREG;
     }
 
@@ -255,7 +255,7 @@ public class DEPOSITO implements Serializable {
     * @param CODIPESMANUTREG CODIPESMANUTREG
     * @generated
     */
-    public DEPOSITO setCODIPESMANUTREG(java.lang.Long CODIPESMANUTREG) {
+    public DEPOSITO setCODIPESMANUTREG(java.lang.Integer CODIPESMANUTREG) {
         this.CODIPESMANUTREG = CODIPESMANUTREG;
         return this;
     }
@@ -282,7 +282,7 @@ public class DEPOSITO implements Serializable {
     * return CODI_TRA
     * @generated
     */
-    public java.lang.Long getCODI_TRA() {
+    public java.lang.Integer getCODI_TRA() {
         return this.CODI_TRA;
     }
 
@@ -291,7 +291,7 @@ public class DEPOSITO implements Serializable {
     * @param CODI_TRA CODI_TRA
     * @generated
     */
-    public DEPOSITO setCODI_TRA(java.lang.Long CODI_TRA) {
+    public DEPOSITO setCODI_TRA(java.lang.Integer CODI_TRA) {
         this.CODI_TRA = CODI_TRA;
         return this;
     }

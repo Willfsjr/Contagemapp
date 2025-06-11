@@ -25,7 +25,7 @@ public class TABELAPK implements Serializable {
   /**
    * @generated
    */
-  private java.lang.Long TABE_CTA;
+  private java.lang.Integer TABE_CTA;
 
   /**
    * Construtor
@@ -57,7 +57,7 @@ public class TABELAPK implements Serializable {
    * return TABE_CTA
    * @generated
    */
-  public java.lang.Long getTABE_CTA(){
+  public java.lang.Integer getTABE_CTA(){
     return this.TABE_CTA;
   }
 
@@ -66,7 +66,7 @@ public class TABELAPK implements Serializable {
    * @param TABE_CTA TABE_CTA
    * @generated
    */
-  public TABELAPK setTABE_CTA(java.lang.Long TABE_CTA){
+  public TABELAPK setTABE_CTA(java.lang.Integer TABE_CTA){
     this.TABE_CTA = TABE_CTA;
     return this;
   }

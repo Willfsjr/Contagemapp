@@ -19,6 +19,6 @@ import org.springframework.transaction.annotation.*;
  */
 @Repository("app_oracle-DEPOSITODAO")
 @Transactional(transactionManager="app_oracle-TransactionManager")
-public interface DEPOSITODAO extends JpaRepository<DEPOSITO, java.lang.Long> {
+public interface DEPOSITODAO extends JpaRepository<DEPOSITO, java.lang.Integer> {
 
 }

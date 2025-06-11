@@ -24,7 +24,7 @@ import cronapp.framework.core.persistence.*;
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("app_oracle.entity.TABELA")
-@CronappTable(role=CronappTableRole.AUTO)
+@CronappTable(role=CronappTableRole.CLASS)
 public class TABELA implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -44,9 +44,9 @@ public class TABELA implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="LONG", label="TABE  CTA")
+    @CronappColumn(attributeType="INTEGER", label="TABE  CTA")
     @Column(name = "TABE_CTA", nullable = false, insertable=true, updatable=true)
-        private java.lang.Long TABE_CTA;
+        private java.lang.Integer TABE_CTA;
 
 
 
@@ -116,19 +116,19 @@ public class TABELA implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODIPESLANREG")
+    @CronappColumn(attributeType="INTEGER", label="CODIPESLANREG")
     @Column(name = "CODIPESLANREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODIPESLANREG;
+        private java.lang.Integer CODIPESLANREG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODIPESMANUTREG")
+    @CronappColumn(attributeType="INTEGER", label="CODIPESMANUTREG")
     @Column(name = "CODIPESMANUTREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODIPESMANUTREG;
+        private java.lang.Integer CODIPESMANUTREG;
 
 
     /**
@@ -355,7 +355,7 @@ public class TABELA implements Serializable {
     * return TABE_CTA
     * @generated
     */
-    public java.lang.Long getTABE_CTA() {
+    public java.lang.Integer getTABE_CTA() {
         return this.TABE_CTA;
     }
 
@@ -364,7 +364,7 @@ public class TABELA implements Serializable {
     * @param TABE_CTA TABE_CTA
     * @generated
     */
-    public TABELA setTABE_CTA(java.lang.Long TABE_CTA) {
+    public TABELA setTABE_CTA(java.lang.Integer TABE_CTA) {
         this.TABE_CTA = TABE_CTA;
         return this;
     }
@@ -499,7 +499,7 @@ public class TABELA implements Serializable {
     * return CODIPESLANREG
     * @generated
     */
-    public java.lang.Long getCODIPESLANREG() {
+    public java.lang.Integer getCODIPESLANREG() {
         return this.CODIPESLANREG;
     }
 
@@ -508,7 +508,7 @@ public class TABELA implements Serializable {
     * @param CODIPESLANREG CODIPESLANREG
     * @generated
     */
-    public TABELA setCODIPESLANREG(java.lang.Long CODIPESLANREG) {
+    public TABELA setCODIPESLANREG(java.lang.Integer CODIPESLANREG) {
         this.CODIPESLANREG = CODIPESLANREG;
         return this;
     }
@@ -517,7 +517,7 @@ public class TABELA implements Serializable {
     * return CODIPESMANUTREG
     * @generated
     */
-    public java.lang.Long getCODIPESMANUTREG() {
+    public java.lang.Integer getCODIPESMANUTREG() {
         return this.CODIPESMANUTREG;
     }
 
@@ -526,7 +526,7 @@ public class TABELA implements Serializable {
     * @param CODIPESMANUTREG CODIPESMANUTREG
     * @generated
     */
-    public TABELA setCODIPESMANUTREG(java.lang.Long CODIPESMANUTREG) {
+    public TABELA setCODIPESMANUTREG(java.lang.Integer CODIPESMANUTREG) {
         this.CODIPESMANUTREG = CODIPESMANUTREG;
         return this;
     }

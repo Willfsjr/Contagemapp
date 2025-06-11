@@ -23,7 +23,7 @@ import cronapp.framework.core.persistence.*;
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("app_oracle.entity.PRODSERV")
-@CronappTable(role=CronappTableRole.AUTO)
+@CronappTable(role=CronappTableRole.CLASS)
 public class PRODSERV implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -133,19 +133,19 @@ public class PRODSERV implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODIPESLANREG")
+    @CronappColumn(attributeType="INTEGER", label="CODIPESLANREG")
     @Column(name = "CODIPESLANREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODIPESLANREG;
+        private java.lang.Integer CODIPESLANREG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODIPESMANUTREG")
+    @CronappColumn(attributeType="INTEGER", label="CODIPESMANUTREG")
     @Column(name = "CODIPESMANUTREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODIPESMANUTREG;
+        private java.lang.Integer CODIPESMANUTREG;
 
 
     /**
@@ -160,28 +160,28 @@ public class PRODSERV implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODI  BDC")
+    @CronappColumn(attributeType="INTEGER", label="CODI  BDC")
     @Column(name = "CODI_BDC", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODI_BDC;
+        private java.lang.Integer CODI_BDC;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODI  CFP")
+    @CronappColumn(attributeType="INTEGER", label="CODI  CFP")
     @Column(name = "CODI_CFP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODI_CFP;
+        private java.lang.Integer CODI_CFP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODI  CUN")
+    @CronappColumn(attributeType="INTEGER", label="CODI  CUN")
     @Column(name = "CODI_CUN", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODI_CUN;
+        private java.lang.Integer CODI_CUN;
 
 
     /**
@@ -196,28 +196,28 @@ public class PRODSERV implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODI  GPR")
+    @CronappColumn(attributeType="INTEGER", label="CODI  GPR")
     @Column(name = "CODI_GPR", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODI_GPR;
+        private java.lang.Integer CODI_GPR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODI  PES")
+    @CronappColumn(attributeType="INTEGER", label="CODI  PES")
     @Column(name = "CODI_PES", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODI_PES;
+        private java.lang.Integer CODI_PES;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODI  PRI")
+    @CronappColumn(attributeType="INTEGER", label="CODI  PRI")
     @Column(name = "CODI_PRI", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODI_PRI;
+        private java.lang.Integer CODI_PRI;
 
 
     /**
@@ -232,19 +232,19 @@ public class PRODSERV implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODI  SBG")
+    @CronappColumn(attributeType="INTEGER", label="CODI  SBG")
     @Column(name = "CODI_SBG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODI_SBG;
+        private java.lang.Integer CODI_SBG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODI  TIP")
+    @CronappColumn(attributeType="INTEGER", label="CODI  TIP")
     @Column(name = "CODI_TIP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODI_TIP;
+        private java.lang.Integer CODI_TIP;
 
 
     /**
@@ -488,19 +488,19 @@ public class PRODSERV implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="QTPA  PSV")
+    @CronappColumn(attributeType="INTEGER", label="QTPA  PSV")
     @Column(name = "QTPA_PSV", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long QTPA_PSV;
+        private java.lang.Integer QTPA_PSV;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="SAGM  PSV")
+    @CronappColumn(attributeType="INTEGER", label="SAGM  PSV")
     @Column(name = "SAGM_PSV", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long SAGM_PSV;
+        private java.lang.Integer SAGM_PSV;
 
 
     /**
@@ -524,10 +524,10 @@ public class PRODSERV implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="TPEF  PSV")
+    @CronappColumn(attributeType="INTEGER", label="TPEF  PSV")
     @Column(name = "TPEF_PSV", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long TPEF_PSV;
+        private java.lang.Integer TPEF_PSV;
 
 
     /**
@@ -551,10 +551,10 @@ public class PRODSERV implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="UNFA  PSV")
+    @CronappColumn(attributeType="INTEGER", label="UNFA  PSV")
     @Column(name = "UNFA_PSV", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long UNFA_PSV;
+        private java.lang.Integer UNFA_PSV;
 
 
     /**
@@ -795,7 +795,7 @@ public class PRODSERV implements Serializable {
     * return CODIPESLANREG
     * @generated
     */
-    public java.lang.Long getCODIPESLANREG() {
+    public java.lang.Integer getCODIPESLANREG() {
         return this.CODIPESLANREG;
     }
 
@@ -804,7 +804,7 @@ public class PRODSERV implements Serializable {
     * @param CODIPESLANREG CODIPESLANREG
     * @generated
     */
-    public PRODSERV setCODIPESLANREG(java.lang.Long CODIPESLANREG) {
+    public PRODSERV setCODIPESLANREG(java.lang.Integer CODIPESLANREG) {
         this.CODIPESLANREG = CODIPESLANREG;
         return this;
     }
@@ -813,7 +813,7 @@ public class PRODSERV implements Serializable {
     * return CODIPESMANUTREG
     * @generated
     */
-    public java.lang.Long getCODIPESMANUTREG() {
+    public java.lang.Integer getCODIPESMANUTREG() {
         return this.CODIPESMANUTREG;
     }
 
@@ -822,7 +822,7 @@ public class PRODSERV implements Serializable {
     * @param CODIPESMANUTREG CODIPESMANUTREG
     * @generated
     */
-    public PRODSERV setCODIPESMANUTREG(java.lang.Long CODIPESMANUTREG) {
+    public PRODSERV setCODIPESMANUTREG(java.lang.Integer CODIPESMANUTREG) {
         this.CODIPESMANUTREG = CODIPESMANUTREG;
         return this;
     }
@@ -849,7 +849,7 @@ public class PRODSERV implements Serializable {
     * return CODI_BDC
     * @generated
     */
-    public java.lang.Long getCODI_BDC() {
+    public java.lang.Integer getCODI_BDC() {
         return this.CODI_BDC;
     }
 
@@ -858,7 +858,7 @@ public class PRODSERV implements Serializable {
     * @param CODI_BDC CODI_BDC
     * @generated
     */
-    public PRODSERV setCODI_BDC(java.lang.Long CODI_BDC) {
+    public PRODSERV setCODI_BDC(java.lang.Integer CODI_BDC) {
         this.CODI_BDC = CODI_BDC;
         return this;
     }
@@ -867,7 +867,7 @@ public class PRODSERV implements Serializable {
     * return CODI_CFP
     * @generated
     */
-    public java.lang.Long getCODI_CFP() {
+    public java.lang.Integer getCODI_CFP() {
         return this.CODI_CFP;
     }
 
@@ -876,7 +876,7 @@ public class PRODSERV implements Serializable {
     * @param CODI_CFP CODI_CFP
     * @generated
     */
-    public PRODSERV setCODI_CFP(java.lang.Long CODI_CFP) {
+    public PRODSERV setCODI_CFP(java.lang.Integer CODI_CFP) {
         this.CODI_CFP = CODI_CFP;
         return this;
     }
@@ -885,7 +885,7 @@ public class PRODSERV implements Serializable {
     * return CODI_CUN
     * @generated
     */
-    public java.lang.Long getCODI_CUN() {
+    public java.lang.Integer getCODI_CUN() {
         return this.CODI_CUN;
     }
 
@@ -894,7 +894,7 @@ public class PRODSERV implements Serializable {
     * @param CODI_CUN CODI_CUN
     * @generated
     */
-    public PRODSERV setCODI_CUN(java.lang.Long CODI_CUN) {
+    public PRODSERV setCODI_CUN(java.lang.Integer CODI_CUN) {
         this.CODI_CUN = CODI_CUN;
         return this;
     }
@@ -921,7 +921,7 @@ public class PRODSERV implements Serializable {
     * return CODI_GPR
     * @generated
     */
-    public java.lang.Long getCODI_GPR() {
+    public java.lang.Integer getCODI_GPR() {
         return this.CODI_GPR;
     }
 
@@ -930,7 +930,7 @@ public class PRODSERV implements Serializable {
     * @param CODI_GPR CODI_GPR
     * @generated
     */
-    public PRODSERV setCODI_GPR(java.lang.Long CODI_GPR) {
+    public PRODSERV setCODI_GPR(java.lang.Integer CODI_GPR) {
         this.CODI_GPR = CODI_GPR;
         return this;
     }
@@ -939,7 +939,7 @@ public class PRODSERV implements Serializable {
     * return CODI_PES
     * @generated
     */
-    public java.lang.Long getCODI_PES() {
+    public java.lang.Integer getCODI_PES() {
         return this.CODI_PES;
     }
 
@@ -948,7 +948,7 @@ public class PRODSERV implements Serializable {
     * @param CODI_PES CODI_PES
     * @generated
     */
-    public PRODSERV setCODI_PES(java.lang.Long CODI_PES) {
+    public PRODSERV setCODI_PES(java.lang.Integer CODI_PES) {
         this.CODI_PES = CODI_PES;
         return this;
     }
@@ -957,7 +957,7 @@ public class PRODSERV implements Serializable {
     * return CODI_PRI
     * @generated
     */
-    public java.lang.Long getCODI_PRI() {
+    public java.lang.Integer getCODI_PRI() {
         return this.CODI_PRI;
     }
 
@@ -966,7 +966,7 @@ public class PRODSERV implements Serializable {
     * @param CODI_PRI CODI_PRI
     * @generated
     */
-    public PRODSERV setCODI_PRI(java.lang.Long CODI_PRI) {
+    public PRODSERV setCODI_PRI(java.lang.Integer CODI_PRI) {
         this.CODI_PRI = CODI_PRI;
         return this;
     }
@@ -993,7 +993,7 @@ public class PRODSERV implements Serializable {
     * return CODI_SBG
     * @generated
     */
-    public java.lang.Long getCODI_SBG() {
+    public java.lang.Integer getCODI_SBG() {
         return this.CODI_SBG;
     }
 
@@ -1002,7 +1002,7 @@ public class PRODSERV implements Serializable {
     * @param CODI_SBG CODI_SBG
     * @generated
     */
-    public PRODSERV setCODI_SBG(java.lang.Long CODI_SBG) {
+    public PRODSERV setCODI_SBG(java.lang.Integer CODI_SBG) {
         this.CODI_SBG = CODI_SBG;
         return this;
     }
@@ -1011,7 +1011,7 @@ public class PRODSERV implements Serializable {
     * return CODI_TIP
     * @generated
     */
-    public java.lang.Long getCODI_TIP() {
+    public java.lang.Integer getCODI_TIP() {
         return this.CODI_TIP;
     }
 
@@ -1020,7 +1020,7 @@ public class PRODSERV implements Serializable {
     * @param CODI_TIP CODI_TIP
     * @generated
     */
-    public PRODSERV setCODI_TIP(java.lang.Long CODI_TIP) {
+    public PRODSERV setCODI_TIP(java.lang.Integer CODI_TIP) {
         this.CODI_TIP = CODI_TIP;
         return this;
     }
@@ -1497,7 +1497,7 @@ public class PRODSERV implements Serializable {
     * return QTPA_PSV
     * @generated
     */
-    public java.lang.Long getQTPA_PSV() {
+    public java.lang.Integer getQTPA_PSV() {
         return this.QTPA_PSV;
     }
 
@@ -1506,7 +1506,7 @@ public class PRODSERV implements Serializable {
     * @param QTPA_PSV QTPA_PSV
     * @generated
     */
-    public PRODSERV setQTPA_PSV(java.lang.Long QTPA_PSV) {
+    public PRODSERV setQTPA_PSV(java.lang.Integer QTPA_PSV) {
         this.QTPA_PSV = QTPA_PSV;
         return this;
     }
@@ -1515,7 +1515,7 @@ public class PRODSERV implements Serializable {
     * return SAGM_PSV
     * @generated
     */
-    public java.lang.Long getSAGM_PSV() {
+    public java.lang.Integer getSAGM_PSV() {
         return this.SAGM_PSV;
     }
 
@@ -1524,7 +1524,7 @@ public class PRODSERV implements Serializable {
     * @param SAGM_PSV SAGM_PSV
     * @generated
     */
-    public PRODSERV setSAGM_PSV(java.lang.Long SAGM_PSV) {
+    public PRODSERV setSAGM_PSV(java.lang.Integer SAGM_PSV) {
         this.SAGM_PSV = SAGM_PSV;
         return this;
     }
@@ -1569,7 +1569,7 @@ public class PRODSERV implements Serializable {
     * return TPEF_PSV
     * @generated
     */
-    public java.lang.Long getTPEF_PSV() {
+    public java.lang.Integer getTPEF_PSV() {
         return this.TPEF_PSV;
     }
 
@@ -1578,7 +1578,7 @@ public class PRODSERV implements Serializable {
     * @param TPEF_PSV TPEF_PSV
     * @generated
     */
-    public PRODSERV setTPEF_PSV(java.lang.Long TPEF_PSV) {
+    public PRODSERV setTPEF_PSV(java.lang.Integer TPEF_PSV) {
         this.TPEF_PSV = TPEF_PSV;
         return this;
     }
@@ -1623,7 +1623,7 @@ public class PRODSERV implements Serializable {
     * return UNFA_PSV
     * @generated
     */
-    public java.lang.Long getUNFA_PSV() {
+    public java.lang.Integer getUNFA_PSV() {
         return this.UNFA_PSV;
     }
 
@@ -1632,7 +1632,7 @@ public class PRODSERV implements Serializable {
     * @param UNFA_PSV UNFA_PSV
     * @generated
     */
-    public PRODSERV setUNFA_PSV(java.lang.Long UNFA_PSV) {
+    public PRODSERV setUNFA_PSV(java.lang.Integer UNFA_PSV) {
         this.UNFA_PSV = UNFA_PSV;
         return this;
     }

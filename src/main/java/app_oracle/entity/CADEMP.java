@@ -24,7 +24,7 @@ import cronapp.framework.core.persistence.*;
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("app_oracle.entity.CADEMP")
-@CronappTable(role=CronappTableRole.AUTO)
+@CronappTable(role=CronappTableRole.CLASS)
 public class CADEMP implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -341,10 +341,10 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CLIA  EMP")
+    @CronappColumn(attributeType="INTEGER", label="CLIA  EMP")
     @Column(name = "CLIA_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CLIA_EMP;
+        private java.lang.Integer CLIA_EMP;
 
 
     /**
@@ -359,10 +359,10 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CMER  EMP")
+    @CronappColumn(attributeType="INTEGER", label="CMER  EMP")
     @Column(name = "CMER_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CMER_EMP;
+        private java.lang.Integer CMER_EMP;
 
 
     /**
@@ -386,19 +386,19 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="COD 1 TRA")
+    @CronappColumn(attributeType="INTEGER", label="COD 1 TRA")
     @Column(name = "COD1_TRA", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long COD1_TRA;
+        private java.lang.Integer COD1_TRA;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="COD 2 TRA")
+    @CronappColumn(attributeType="INTEGER", label="COD 2 TRA")
     @Column(name = "COD2_TRA", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long COD2_TRA;
+        private java.lang.Integer COD2_TRA;
 
 
     /**
@@ -413,28 +413,28 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODIPESLANREG")
+    @CronappColumn(attributeType="INTEGER", label="CODIPESLANREG")
     @Column(name = "CODIPESLANREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODIPESLANREG;
+        private java.lang.Integer CODIPESLANREG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODIPESMANUTREG")
+    @CronappColumn(attributeType="INTEGER", label="CODIPESMANUTREG")
     @Column(name = "CODIPESMANUTREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODIPESMANUTREG;
+        private java.lang.Integer CODIPESMANUTREG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODI  AUD")
+    @CronappColumn(attributeType="INTEGER", label="CODI  AUD")
     @Column(name = "CODI_AUD", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODI_AUD;
+        private java.lang.Integer CODI_AUD;
 
 
     /**
@@ -449,19 +449,19 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODI  CTD")
+    @CronappColumn(attributeType="INTEGER", label="CODI  CTD")
     @Column(name = "CODI_CTD", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODI_CTD;
+        private java.lang.Integer CODI_CTD;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODI  FCR")
+    @CronappColumn(attributeType="INTEGER", label="CODI  FCR")
     @Column(name = "CODI_FCR", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODI_FCR;
+        private java.lang.Integer CODI_FCR;
 
 
     /**
@@ -476,19 +476,19 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODI  MUN")
+    @CronappColumn(attributeType="INTEGER", label="CODI  MUN")
     @Column(name = "CODI_MUN", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODI_MUN;
+        private java.lang.Integer CODI_MUN;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODI  PES")
+    @CronappColumn(attributeType="INTEGER", label="CODI  PES")
     @Column(name = "CODI_PES", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODI_PES;
+        private java.lang.Integer CODI_PES;
 
 
     /**
@@ -539,10 +539,10 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CTRL  SOE")
+    @CronappColumn(attributeType="INTEGER", label="CTRL  SOE")
     @Column(name = "CTRL_SOE", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CTRL_SOE;
+        private java.lang.Integer CTRL_SOE;
 
 
     /**
@@ -880,10 +880,10 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="EMPR  FOL")
+    @CronappColumn(attributeType="INTEGER", label="EMPR  FOL")
     @Column(name = "EMPR_FOL", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long EMPR_FOL;
+        private java.lang.Integer EMPR_FOL;
 
 
     /**
@@ -952,10 +952,10 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="EULL  EMP")
+    @CronappColumn(attributeType="INTEGER", label="EULL  EMP")
     @Column(name = "EULL_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long EULL_EMP;
+        private java.lang.Integer EULL_EMP;
 
 
     /**
@@ -1213,19 +1213,19 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="LCTE  EMP")
+    @CronappColumn(attributeType="INTEGER", label="LCTE  EMP")
     @Column(name = "LCTE_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long LCTE_EMP;
+        private java.lang.Integer LCTE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="LMDF  EMP")
+    @CronappColumn(attributeType="INTEGER", label="LMDF  EMP")
     @Column(name = "LMDF_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long LMDF_EMP;
+        private java.lang.Integer LMDF_EMP;
 
 
     /**
@@ -1285,10 +1285,10 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="MOD  EMP")
+    @CronappColumn(attributeType="INTEGER", label="MOD  EMP")
     @Column(name = "MOD_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long MOD_EMP;
+        private java.lang.Integer MOD_EMP;
 
 
     /**
@@ -1339,10 +1339,10 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="MUNC  EMP")
+    @CronappColumn(attributeType="INTEGER", label="MUNC  EMP")
     @Column(name = "MUNC_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long MUNC_EMP;
+        private java.lang.Integer MUNC_EMP;
 
 
     /**
@@ -1438,10 +1438,10 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="NLCC  EMP")
+    @CronappColumn(attributeType="INTEGER", label="NLCC  EMP")
     @Column(name = "NLCC_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long NLCC_EMP;
+        private java.lang.Integer NLCC_EMP;
 
 
     /**
@@ -1456,10 +1456,10 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="NLTS  EMP")
+    @CronappColumn(attributeType="INTEGER", label="NLTS  EMP")
     @Column(name = "NLTS_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long NLTS_EMP;
+        private java.lang.Integer NLTS_EMP;
 
 
     /**
@@ -1474,10 +1474,10 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="NRLT  EMP")
+    @CronappColumn(attributeType="INTEGER", label="NRLT  EMP")
     @Column(name = "NRLT_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long NRLT_EMP;
+        private java.lang.Integer NRLT_EMP;
 
 
     /**
@@ -1501,28 +1501,28 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="NTAR  EMP")
+    @CronappColumn(attributeType="INTEGER", label="NTAR  EMP")
     @Column(name = "NTAR_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long NTAR_EMP;
+        private java.lang.Integer NTAR_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="NTCT  EMP")
+    @CronappColumn(attributeType="INTEGER", label="NTCT  EMP")
     @Column(name = "NTCT_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long NTCT_EMP;
+        private java.lang.Integer NTCT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="NUCO  EMP")
+    @CronappColumn(attributeType="INTEGER", label="NUCO  EMP")
     @Column(name = "NUCO_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long NUCO_EMP;
+        private java.lang.Integer NUCO_EMP;
 
 
     /**
@@ -1600,10 +1600,10 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="PEFI  EMP")
+    @CronappColumn(attributeType="INTEGER", label="PEFI  EMP")
     @Column(name = "PEFI_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long PEFI_EMP;
+        private java.lang.Integer PEFI_EMP;
 
 
     /**
@@ -2871,7 +2871,7 @@ public class CADEMP implements Serializable {
     * return CLIA_EMP
     * @generated
     */
-    public java.lang.Long getCLIA_EMP() {
+    public java.lang.Integer getCLIA_EMP() {
         return this.CLIA_EMP;
     }
 
@@ -2880,7 +2880,7 @@ public class CADEMP implements Serializable {
     * @param CLIA_EMP CLIA_EMP
     * @generated
     */
-    public CADEMP setCLIA_EMP(java.lang.Long CLIA_EMP) {
+    public CADEMP setCLIA_EMP(java.lang.Integer CLIA_EMP) {
         this.CLIA_EMP = CLIA_EMP;
         return this;
     }
@@ -2907,7 +2907,7 @@ public class CADEMP implements Serializable {
     * return CMER_EMP
     * @generated
     */
-    public java.lang.Long getCMER_EMP() {
+    public java.lang.Integer getCMER_EMP() {
         return this.CMER_EMP;
     }
 
@@ -2916,7 +2916,7 @@ public class CADEMP implements Serializable {
     * @param CMER_EMP CMER_EMP
     * @generated
     */
-    public CADEMP setCMER_EMP(java.lang.Long CMER_EMP) {
+    public CADEMP setCMER_EMP(java.lang.Integer CMER_EMP) {
         this.CMER_EMP = CMER_EMP;
         return this;
     }
@@ -2961,7 +2961,7 @@ public class CADEMP implements Serializable {
     * return COD1_TRA
     * @generated
     */
-    public java.lang.Long getCOD1_TRA() {
+    public java.lang.Integer getCOD1_TRA() {
         return this.COD1_TRA;
     }
 
@@ -2970,7 +2970,7 @@ public class CADEMP implements Serializable {
     * @param COD1_TRA COD1_TRA
     * @generated
     */
-    public CADEMP setCOD1_TRA(java.lang.Long COD1_TRA) {
+    public CADEMP setCOD1_TRA(java.lang.Integer COD1_TRA) {
         this.COD1_TRA = COD1_TRA;
         return this;
     }
@@ -2979,7 +2979,7 @@ public class CADEMP implements Serializable {
     * return COD2_TRA
     * @generated
     */
-    public java.lang.Long getCOD2_TRA() {
+    public java.lang.Integer getCOD2_TRA() {
         return this.COD2_TRA;
     }
 
@@ -2988,7 +2988,7 @@ public class CADEMP implements Serializable {
     * @param COD2_TRA COD2_TRA
     * @generated
     */
-    public CADEMP setCOD2_TRA(java.lang.Long COD2_TRA) {
+    public CADEMP setCOD2_TRA(java.lang.Integer COD2_TRA) {
         this.COD2_TRA = COD2_TRA;
         return this;
     }
@@ -3015,7 +3015,7 @@ public class CADEMP implements Serializable {
     * return CODIPESLANREG
     * @generated
     */
-    public java.lang.Long getCODIPESLANREG() {
+    public java.lang.Integer getCODIPESLANREG() {
         return this.CODIPESLANREG;
     }
 
@@ -3024,7 +3024,7 @@ public class CADEMP implements Serializable {
     * @param CODIPESLANREG CODIPESLANREG
     * @generated
     */
-    public CADEMP setCODIPESLANREG(java.lang.Long CODIPESLANREG) {
+    public CADEMP setCODIPESLANREG(java.lang.Integer CODIPESLANREG) {
         this.CODIPESLANREG = CODIPESLANREG;
         return this;
     }
@@ -3033,7 +3033,7 @@ public class CADEMP implements Serializable {
     * return CODIPESMANUTREG
     * @generated
     */
-    public java.lang.Long getCODIPESMANUTREG() {
+    public java.lang.Integer getCODIPESMANUTREG() {
         return this.CODIPESMANUTREG;
     }
 
@@ -3042,7 +3042,7 @@ public class CADEMP implements Serializable {
     * @param CODIPESMANUTREG CODIPESMANUTREG
     * @generated
     */
-    public CADEMP setCODIPESMANUTREG(java.lang.Long CODIPESMANUTREG) {
+    public CADEMP setCODIPESMANUTREG(java.lang.Integer CODIPESMANUTREG) {
         this.CODIPESMANUTREG = CODIPESMANUTREG;
         return this;
     }
@@ -3051,7 +3051,7 @@ public class CADEMP implements Serializable {
     * return CODI_AUD
     * @generated
     */
-    public java.lang.Long getCODI_AUD() {
+    public java.lang.Integer getCODI_AUD() {
         return this.CODI_AUD;
     }
 
@@ -3060,7 +3060,7 @@ public class CADEMP implements Serializable {
     * @param CODI_AUD CODI_AUD
     * @generated
     */
-    public CADEMP setCODI_AUD(java.lang.Long CODI_AUD) {
+    public CADEMP setCODI_AUD(java.lang.Integer CODI_AUD) {
         this.CODI_AUD = CODI_AUD;
         return this;
     }
@@ -3087,7 +3087,7 @@ public class CADEMP implements Serializable {
     * return CODI_CTD
     * @generated
     */
-    public java.lang.Long getCODI_CTD() {
+    public java.lang.Integer getCODI_CTD() {
         return this.CODI_CTD;
     }
 
@@ -3096,7 +3096,7 @@ public class CADEMP implements Serializable {
     * @param CODI_CTD CODI_CTD
     * @generated
     */
-    public CADEMP setCODI_CTD(java.lang.Long CODI_CTD) {
+    public CADEMP setCODI_CTD(java.lang.Integer CODI_CTD) {
         this.CODI_CTD = CODI_CTD;
         return this;
     }
@@ -3105,7 +3105,7 @@ public class CADEMP implements Serializable {
     * return CODI_FCR
     * @generated
     */
-    public java.lang.Long getCODI_FCR() {
+    public java.lang.Integer getCODI_FCR() {
         return this.CODI_FCR;
     }
 
@@ -3114,7 +3114,7 @@ public class CADEMP implements Serializable {
     * @param CODI_FCR CODI_FCR
     * @generated
     */
-    public CADEMP setCODI_FCR(java.lang.Long CODI_FCR) {
+    public CADEMP setCODI_FCR(java.lang.Integer CODI_FCR) {
         this.CODI_FCR = CODI_FCR;
         return this;
     }
@@ -3141,7 +3141,7 @@ public class CADEMP implements Serializable {
     * return CODI_MUN
     * @generated
     */
-    public java.lang.Long getCODI_MUN() {
+    public java.lang.Integer getCODI_MUN() {
         return this.CODI_MUN;
     }
 
@@ -3150,7 +3150,7 @@ public class CADEMP implements Serializable {
     * @param CODI_MUN CODI_MUN
     * @generated
     */
-    public CADEMP setCODI_MUN(java.lang.Long CODI_MUN) {
+    public CADEMP setCODI_MUN(java.lang.Integer CODI_MUN) {
         this.CODI_MUN = CODI_MUN;
         return this;
     }
@@ -3159,7 +3159,7 @@ public class CADEMP implements Serializable {
     * return CODI_PES
     * @generated
     */
-    public java.lang.Long getCODI_PES() {
+    public java.lang.Integer getCODI_PES() {
         return this.CODI_PES;
     }
 
@@ -3168,7 +3168,7 @@ public class CADEMP implements Serializable {
     * @param CODI_PES CODI_PES
     * @generated
     */
-    public CADEMP setCODI_PES(java.lang.Long CODI_PES) {
+    public CADEMP setCODI_PES(java.lang.Integer CODI_PES) {
         this.CODI_PES = CODI_PES;
         return this;
     }
@@ -3267,7 +3267,7 @@ public class CADEMP implements Serializable {
     * return CTRL_SOE
     * @generated
     */
-    public java.lang.Long getCTRL_SOE() {
+    public java.lang.Integer getCTRL_SOE() {
         return this.CTRL_SOE;
     }
 
@@ -3276,7 +3276,7 @@ public class CADEMP implements Serializable {
     * @param CTRL_SOE CTRL_SOE
     * @generated
     */
-    public CADEMP setCTRL_SOE(java.lang.Long CTRL_SOE) {
+    public CADEMP setCTRL_SOE(java.lang.Integer CTRL_SOE) {
         this.CTRL_SOE = CTRL_SOE;
         return this;
     }
@@ -3915,7 +3915,7 @@ public class CADEMP implements Serializable {
     * return EMPR_FOL
     * @generated
     */
-    public java.lang.Long getEMPR_FOL() {
+    public java.lang.Integer getEMPR_FOL() {
         return this.EMPR_FOL;
     }
 
@@ -3924,7 +3924,7 @@ public class CADEMP implements Serializable {
     * @param EMPR_FOL EMPR_FOL
     * @generated
     */
-    public CADEMP setEMPR_FOL(java.lang.Long EMPR_FOL) {
+    public CADEMP setEMPR_FOL(java.lang.Integer EMPR_FOL) {
         this.EMPR_FOL = EMPR_FOL;
         return this;
     }
@@ -4059,7 +4059,7 @@ public class CADEMP implements Serializable {
     * return EULL_EMP
     * @generated
     */
-    public java.lang.Long getEULL_EMP() {
+    public java.lang.Integer getEULL_EMP() {
         return this.EULL_EMP;
     }
 
@@ -4068,7 +4068,7 @@ public class CADEMP implements Serializable {
     * @param EULL_EMP EULL_EMP
     * @generated
     */
-    public CADEMP setEULL_EMP(java.lang.Long EULL_EMP) {
+    public CADEMP setEULL_EMP(java.lang.Integer EULL_EMP) {
         this.EULL_EMP = EULL_EMP;
         return this;
     }
@@ -4581,7 +4581,7 @@ public class CADEMP implements Serializable {
     * return LCTE_EMP
     * @generated
     */
-    public java.lang.Long getLCTE_EMP() {
+    public java.lang.Integer getLCTE_EMP() {
         return this.LCTE_EMP;
     }
 
@@ -4590,7 +4590,7 @@ public class CADEMP implements Serializable {
     * @param LCTE_EMP LCTE_EMP
     * @generated
     */
-    public CADEMP setLCTE_EMP(java.lang.Long LCTE_EMP) {
+    public CADEMP setLCTE_EMP(java.lang.Integer LCTE_EMP) {
         this.LCTE_EMP = LCTE_EMP;
         return this;
     }
@@ -4599,7 +4599,7 @@ public class CADEMP implements Serializable {
     * return LMDF_EMP
     * @generated
     */
-    public java.lang.Long getLMDF_EMP() {
+    public java.lang.Integer getLMDF_EMP() {
         return this.LMDF_EMP;
     }
 
@@ -4608,7 +4608,7 @@ public class CADEMP implements Serializable {
     * @param LMDF_EMP LMDF_EMP
     * @generated
     */
-    public CADEMP setLMDF_EMP(java.lang.Long LMDF_EMP) {
+    public CADEMP setLMDF_EMP(java.lang.Integer LMDF_EMP) {
         this.LMDF_EMP = LMDF_EMP;
         return this;
     }
@@ -4725,7 +4725,7 @@ public class CADEMP implements Serializable {
     * return MOD_EMP
     * @generated
     */
-    public java.lang.Long getMOD_EMP() {
+    public java.lang.Integer getMOD_EMP() {
         return this.MOD_EMP;
     }
 
@@ -4734,7 +4734,7 @@ public class CADEMP implements Serializable {
     * @param MOD_EMP MOD_EMP
     * @generated
     */
-    public CADEMP setMOD_EMP(java.lang.Long MOD_EMP) {
+    public CADEMP setMOD_EMP(java.lang.Integer MOD_EMP) {
         this.MOD_EMP = MOD_EMP;
         return this;
     }
@@ -4833,7 +4833,7 @@ public class CADEMP implements Serializable {
     * return MUNC_EMP
     * @generated
     */
-    public java.lang.Long getMUNC_EMP() {
+    public java.lang.Integer getMUNC_EMP() {
         return this.MUNC_EMP;
     }
 
@@ -4842,7 +4842,7 @@ public class CADEMP implements Serializable {
     * @param MUNC_EMP MUNC_EMP
     * @generated
     */
-    public CADEMP setMUNC_EMP(java.lang.Long MUNC_EMP) {
+    public CADEMP setMUNC_EMP(java.lang.Integer MUNC_EMP) {
         this.MUNC_EMP = MUNC_EMP;
         return this;
     }
@@ -5031,7 +5031,7 @@ public class CADEMP implements Serializable {
     * return NLCC_EMP
     * @generated
     */
-    public java.lang.Long getNLCC_EMP() {
+    public java.lang.Integer getNLCC_EMP() {
         return this.NLCC_EMP;
     }
 
@@ -5040,7 +5040,7 @@ public class CADEMP implements Serializable {
     * @param NLCC_EMP NLCC_EMP
     * @generated
     */
-    public CADEMP setNLCC_EMP(java.lang.Long NLCC_EMP) {
+    public CADEMP setNLCC_EMP(java.lang.Integer NLCC_EMP) {
         this.NLCC_EMP = NLCC_EMP;
         return this;
     }
@@ -5067,7 +5067,7 @@ public class CADEMP implements Serializable {
     * return NLTS_EMP
     * @generated
     */
-    public java.lang.Long getNLTS_EMP() {
+    public java.lang.Integer getNLTS_EMP() {
         return this.NLTS_EMP;
     }
 
@@ -5076,7 +5076,7 @@ public class CADEMP implements Serializable {
     * @param NLTS_EMP NLTS_EMP
     * @generated
     */
-    public CADEMP setNLTS_EMP(java.lang.Long NLTS_EMP) {
+    public CADEMP setNLTS_EMP(java.lang.Integer NLTS_EMP) {
         this.NLTS_EMP = NLTS_EMP;
         return this;
     }
@@ -5103,7 +5103,7 @@ public class CADEMP implements Serializable {
     * return NRLT_EMP
     * @generated
     */
-    public java.lang.Long getNRLT_EMP() {
+    public java.lang.Integer getNRLT_EMP() {
         return this.NRLT_EMP;
     }
 
@@ -5112,7 +5112,7 @@ public class CADEMP implements Serializable {
     * @param NRLT_EMP NRLT_EMP
     * @generated
     */
-    public CADEMP setNRLT_EMP(java.lang.Long NRLT_EMP) {
+    public CADEMP setNRLT_EMP(java.lang.Integer NRLT_EMP) {
         this.NRLT_EMP = NRLT_EMP;
         return this;
     }
@@ -5157,7 +5157,7 @@ public class CADEMP implements Serializable {
     * return NTAR_EMP
     * @generated
     */
-    public java.lang.Long getNTAR_EMP() {
+    public java.lang.Integer getNTAR_EMP() {
         return this.NTAR_EMP;
     }
 
@@ -5166,7 +5166,7 @@ public class CADEMP implements Serializable {
     * @param NTAR_EMP NTAR_EMP
     * @generated
     */
-    public CADEMP setNTAR_EMP(java.lang.Long NTAR_EMP) {
+    public CADEMP setNTAR_EMP(java.lang.Integer NTAR_EMP) {
         this.NTAR_EMP = NTAR_EMP;
         return this;
     }
@@ -5175,7 +5175,7 @@ public class CADEMP implements Serializable {
     * return NTCT_EMP
     * @generated
     */
-    public java.lang.Long getNTCT_EMP() {
+    public java.lang.Integer getNTCT_EMP() {
         return this.NTCT_EMP;
     }
 
@@ -5184,7 +5184,7 @@ public class CADEMP implements Serializable {
     * @param NTCT_EMP NTCT_EMP
     * @generated
     */
-    public CADEMP setNTCT_EMP(java.lang.Long NTCT_EMP) {
+    public CADEMP setNTCT_EMP(java.lang.Integer NTCT_EMP) {
         this.NTCT_EMP = NTCT_EMP;
         return this;
     }
@@ -5193,7 +5193,7 @@ public class CADEMP implements Serializable {
     * return NUCO_EMP
     * @generated
     */
-    public java.lang.Long getNUCO_EMP() {
+    public java.lang.Integer getNUCO_EMP() {
         return this.NUCO_EMP;
     }
 
@@ -5202,7 +5202,7 @@ public class CADEMP implements Serializable {
     * @param NUCO_EMP NUCO_EMP
     * @generated
     */
-    public CADEMP setNUCO_EMP(java.lang.Long NUCO_EMP) {
+    public CADEMP setNUCO_EMP(java.lang.Integer NUCO_EMP) {
         this.NUCO_EMP = NUCO_EMP;
         return this;
     }
@@ -5355,7 +5355,7 @@ public class CADEMP implements Serializable {
     * return PEFI_EMP
     * @generated
     */
-    public java.lang.Long getPEFI_EMP() {
+    public java.lang.Integer getPEFI_EMP() {
         return this.PEFI_EMP;
     }
 
@@ -5364,7 +5364,7 @@ public class CADEMP implements Serializable {
     * @param PEFI_EMP PEFI_EMP
     * @generated
     */
-    public CADEMP setPEFI_EMP(java.lang.Long PEFI_EMP) {
+    public CADEMP setPEFI_EMP(java.lang.Integer PEFI_EMP) {
         this.PEFI_EMP = PEFI_EMP;
         return this;
     }

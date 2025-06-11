@@ -20,12 +20,12 @@ public class SUBGRUPOPK implements Serializable {
   /**
    * @generated
    */
-  private java.lang.Long CODI_GPR;
+  private java.lang.Integer CODI_GPR;
 
   /**
    * @generated
    */
-  private java.lang.Long CODI_SBG;
+  private java.lang.Integer CODI_SBG;
 
   /**
    * Construtor
@@ -39,7 +39,7 @@ public class SUBGRUPOPK implements Serializable {
    * return CODI_GPR
    * @generated
    */
-  public java.lang.Long getCODI_GPR(){
+  public java.lang.Integer getCODI_GPR(){
     return this.CODI_GPR;
   }
 
@@ -48,7 +48,7 @@ public class SUBGRUPOPK implements Serializable {
    * @param CODI_GPR CODI_GPR
    * @generated
    */
-  public SUBGRUPOPK setCODI_GPR(java.lang.Long CODI_GPR){
+  public SUBGRUPOPK setCODI_GPR(java.lang.Integer CODI_GPR){
     this.CODI_GPR = CODI_GPR;
     return this;
   }
@@ -57,7 +57,7 @@ public class SUBGRUPOPK implements Serializable {
    * return CODI_SBG
    * @generated
    */
-  public java.lang.Long getCODI_SBG(){
+  public java.lang.Integer getCODI_SBG(){
     return this.CODI_SBG;
   }
 
@@ -66,7 +66,7 @@ public class SUBGRUPOPK implements Serializable {
    * @param CODI_SBG CODI_SBG
    * @generated
    */
-  public SUBGRUPOPK setCODI_SBG(java.lang.Long CODI_SBG){
+  public SUBGRUPOPK setCODI_SBG(java.lang.Integer CODI_SBG){
     this.CODI_SBG = CODI_SBG;
     return this;
   }

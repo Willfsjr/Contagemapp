@@ -23,7 +23,7 @@ import cronapp.framework.core.persistence.*;
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("app_oracle.entity.GRUPO")
-@CronappTable(role=CronappTableRole.AUTO)
+@CronappTable(role=CronappTableRole.CLASS)
 public class GRUPO implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,27 +35,27 @@ public class GRUPO implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="LONG", label="CODI  GPR")
+    @CronappColumn(attributeType="INTEGER", label="CODI  GPR")
     @Column(name = "CODI_GPR", nullable = false, insertable=true, updatable=true)
-        private java.lang.Long CODI_GPR;
+        private java.lang.Integer CODI_GPR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODIPESLANREG")
+    @CronappColumn(attributeType="INTEGER", label="CODIPESLANREG")
     @Column(name = "CODIPESLANREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODIPESLANREG;
+        private java.lang.Integer CODIPESLANREG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="CODIPESMANUTREG")
+    @CronappColumn(attributeType="INTEGER", label="CODIPESMANUTREG")
     @Column(name = "CODIPESMANUTREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long CODIPESMANUTREG;
+        private java.lang.Integer CODIPESMANUTREG;
 
 
     /**
@@ -155,10 +155,10 @@ public class GRUPO implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="QADC  GPR")
+    @CronappColumn(attributeType="INTEGER", label="QADC  GPR")
     @Column(name = "QADC_GPR", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long QADC_GPR;
+        private java.lang.Integer QADC_GPR;
 
 
     /**
@@ -200,7 +200,7 @@ public class GRUPO implements Serializable {
     * return CODI_GPR
     * @generated
     */
-    public java.lang.Long getCODI_GPR() {
+    public java.lang.Integer getCODI_GPR() {
         return this.CODI_GPR;
     }
 
@@ -209,7 +209,7 @@ public class GRUPO implements Serializable {
     * @param CODI_GPR CODI_GPR
     * @generated
     */
-    public GRUPO setCODI_GPR(java.lang.Long CODI_GPR) {
+    public GRUPO setCODI_GPR(java.lang.Integer CODI_GPR) {
         this.CODI_GPR = CODI_GPR;
         return this;
     }
@@ -218,7 +218,7 @@ public class GRUPO implements Serializable {
     * return CODIPESLANREG
     * @generated
     */
-    public java.lang.Long getCODIPESLANREG() {
+    public java.lang.Integer getCODIPESLANREG() {
         return this.CODIPESLANREG;
     }
 
@@ -227,7 +227,7 @@ public class GRUPO implements Serializable {
     * @param CODIPESLANREG CODIPESLANREG
     * @generated
     */
-    public GRUPO setCODIPESLANREG(java.lang.Long CODIPESLANREG) {
+    public GRUPO setCODIPESLANREG(java.lang.Integer CODIPESLANREG) {
         this.CODIPESLANREG = CODIPESLANREG;
         return this;
     }
@@ -236,7 +236,7 @@ public class GRUPO implements Serializable {
     * return CODIPESMANUTREG
     * @generated
     */
-    public java.lang.Long getCODIPESMANUTREG() {
+    public java.lang.Integer getCODIPESMANUTREG() {
         return this.CODIPESMANUTREG;
     }
 
@@ -245,7 +245,7 @@ public class GRUPO implements Serializable {
     * @param CODIPESMANUTREG CODIPESMANUTREG
     * @generated
     */
-    public GRUPO setCODIPESMANUTREG(java.lang.Long CODIPESMANUTREG) {
+    public GRUPO setCODIPESMANUTREG(java.lang.Integer CODIPESMANUTREG) {
         this.CODIPESMANUTREG = CODIPESMANUTREG;
         return this;
     }
@@ -434,7 +434,7 @@ public class GRUPO implements Serializable {
     * return QADC_GPR
     * @generated
     */
-    public java.lang.Long getQADC_GPR() {
+    public java.lang.Integer getQADC_GPR() {
         return this.QADC_GPR;
     }
 
@@ -443,7 +443,7 @@ public class GRUPO implements Serializable {
     * @param QADC_GPR QADC_GPR
     * @generated
     */
-    public GRUPO setQADC_GPR(java.lang.Long QADC_GPR) {
+    public GRUPO setQADC_GPR(java.lang.Integer QADC_GPR) {
         this.QADC_GPR = QADC_GPR;
         return this;
     }
