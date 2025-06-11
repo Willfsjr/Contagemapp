@@ -35,45 +35,45 @@ public class Estoquecontagem implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="CODI  PSV")
+    @CronappColumn(attributeType="STRING", label="Codi Psv")
     @Column(name = "CODI_PSV", nullable = false, length=15, insertable=true, updatable=true)
-        private java.lang.String coDI_PSV;
+        private java.lang.String codiPsv;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODI  DPT")
+    @CronappColumn(attributeType="INTEGER", label="Codi Dpt")
     @Column(name = "CODI_DPT", nullable = false, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer coDI_DPT;
+        private java.lang.Integer codiDpt;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODI  EMP")
+    @CronappColumn(attributeType="INTEGER", label="Codi Emp")
     @Column(name = "CODI_EMP", nullable = false, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer coDI_EMP;
+        private java.lang.Integer codiEmp;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="DESC  PSV")
+    @CronappColumn(attributeType="STRING", label="Desc Psv")
     @Column(name = "DESC_PSV", nullable = true, unique = false, length=120, insertable=true, updatable=true)
         
-        private java.lang.String deSC_PSV;
+        private java.lang.String descPsv;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="QTE  TOTAL")
+    @CronappColumn(attributeType="DOUBLE", label="Qte Total")
     @Column(name = "QTE_TOTAL", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Double qtE_TOTAL;
+        private java.lang.Double qteTotal;
 
 
     /**
@@ -84,93 +84,93 @@ public class Estoquecontagem implements Serializable {
     }
 
     /**
-    * Obtém coDI_PSV
-    * return coDI_PSV
+    * Obtém codiPsv
+    * return codiPsv
     * @generated
     */
-    public java.lang.String getCoDI_PSV() {
-        return this.coDI_PSV;
+    public java.lang.String getCodiPsv() {
+        return this.codiPsv;
     }
 
     /**
-    * Define coDI_PSV
-    * @param coDI_PSV coDI_PSV
+    * Define codiPsv
+    * @param codiPsv codiPsv
     * @generated
     */
-    public Estoquecontagem setCoDI_PSV(java.lang.String coDI_PSV) {
-        this.coDI_PSV = coDI_PSV;
+    public Estoquecontagem setCodiPsv(java.lang.String codiPsv) {
+        this.codiPsv = codiPsv;
         return this;
     }
     /**
-    * Obtém coDI_DPT
-    * return coDI_DPT
+    * Obtém codiDpt
+    * return codiDpt
     * @generated
     */
-    public java.lang.Integer getCoDI_DPT() {
-        return this.coDI_DPT;
+    public java.lang.Integer getCodiDpt() {
+        return this.codiDpt;
     }
 
     /**
-    * Define coDI_DPT
-    * @param coDI_DPT coDI_DPT
+    * Define codiDpt
+    * @param codiDpt codiDpt
     * @generated
     */
-    public Estoquecontagem setCoDI_DPT(java.lang.Integer coDI_DPT) {
-        this.coDI_DPT = coDI_DPT;
+    public Estoquecontagem setCodiDpt(java.lang.Integer codiDpt) {
+        this.codiDpt = codiDpt;
         return this;
     }
     /**
-    * Obtém coDI_EMP
-    * return coDI_EMP
+    * Obtém codiEmp
+    * return codiEmp
     * @generated
     */
-    public java.lang.Integer getCoDI_EMP() {
-        return this.coDI_EMP;
+    public java.lang.Integer getCodiEmp() {
+        return this.codiEmp;
     }
 
     /**
-    * Define coDI_EMP
-    * @param coDI_EMP coDI_EMP
+    * Define codiEmp
+    * @param codiEmp codiEmp
     * @generated
     */
-    public Estoquecontagem setCoDI_EMP(java.lang.Integer coDI_EMP) {
-        this.coDI_EMP = coDI_EMP;
+    public Estoquecontagem setCodiEmp(java.lang.Integer codiEmp) {
+        this.codiEmp = codiEmp;
         return this;
     }
     /**
-    * Obtém deSC_PSV
-    * return deSC_PSV
+    * Obtém descPsv
+    * return descPsv
     * @generated
     */
-    public java.lang.String getDeSC_PSV() {
-        return this.deSC_PSV;
+    public java.lang.String getDescPsv() {
+        return this.descPsv;
     }
 
     /**
-    * Define deSC_PSV
-    * @param deSC_PSV deSC_PSV
+    * Define descPsv
+    * @param descPsv descPsv
     * @generated
     */
-    public Estoquecontagem setDeSC_PSV(java.lang.String deSC_PSV) {
-        this.deSC_PSV = deSC_PSV;
+    public Estoquecontagem setDescPsv(java.lang.String descPsv) {
+        this.descPsv = descPsv;
         return this;
     }
     /**
-    * Obtém qtE_TOTAL
-    * return qtE_TOTAL
+    * Obtém qteTotal
+    * return qteTotal
     * @generated
     */
-    public java.lang.Double getQtE_TOTAL() {
-        return this.qtE_TOTAL;
+    public java.lang.Double getQteTotal() {
+        return this.qteTotal;
     }
 
     /**
-    * Define qtE_TOTAL
-    * @param qtE_TOTAL qtE_TOTAL
+    * Define qteTotal
+    * @param qteTotal qteTotal
     * @generated
     */
-    public Estoquecontagem setQtE_TOTAL(java.lang.Double qtE_TOTAL) {
-        this.qtE_TOTAL = qtE_TOTAL;
+    public Estoquecontagem setQteTotal(java.lang.Double qteTotal) {
+        this.qteTotal = qteTotal;
         return this;
     }
 
@@ -182,7 +182,7 @@ public class Estoquecontagem implements Serializable {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
 Estoquecontagem object = (Estoquecontagem)obj;
-        if (coDI_PSV != null ? !coDI_PSV.equals(object.coDI_PSV) : object.coDI_PSV != null) return false;
+        if (codiPsv != null ? !codiPsv.equals(object.codiPsv) : object.codiPsv != null) return false;
         return true;
     }
 
@@ -192,7 +192,7 @@ Estoquecontagem object = (Estoquecontagem)obj;
     @Override
     public int hashCode() {
         int result = 1;
-        result = 31 * result + ((coDI_PSV == null) ? 0 : coDI_PSV.hashCode());
+        result = 31 * result + ((codiPsv == null) ? 0 : codiPsv.hashCode());
         return result;
     }
 
