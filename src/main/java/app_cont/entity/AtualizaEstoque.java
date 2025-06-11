@@ -77,6 +77,15 @@ public class AtualizaEstoque implements Serializable {
 
 
     /**
+    * @generated
+    */
+    @ManyToOne
+    @JoinColumn(name="FK_CONTAGEM", nullable = true, referencedColumnName = "ID", insertable=true, updatable=true)
+        
+        private Contagem contEst;
+
+
+    /**
     * Construtor
     * @generated
     */
@@ -171,6 +180,24 @@ public class AtualizaEstoque implements Serializable {
     */
     public AtualizaEstoque setQteTotal(java.lang.Double qteTotal) {
         this.qteTotal = qteTotal;
+        return this;
+    }
+    /**
+    * Obtém contEst
+    * return contEst
+    * @generated
+    */
+    public Contagem getContEst() {
+        return this.contEst;
+    }
+
+    /**
+    * Define contEst
+    * @param contEst contEst
+    * @generated
+    */
+    public AtualizaEstoque setContEst(Contagem contEst) {
+        this.contEst = contEst;
         return this;
     }
 

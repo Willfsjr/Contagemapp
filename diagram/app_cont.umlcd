@@ -76,33 +76,34 @@
         "codiPsv:java.lang.String",
         "codiDpt:java.lang.Integer",
         "codiEmp:java.lang.Integer",
-        "qteTotal:java.lang.Double"
+        "qteTotal:java.lang.Double",
+        "contEst:Contagem"
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
           "fill": "#F0F0F0",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
-          "height": 120,
+          "height": 140,
           "stroke": "#C2C2C2",
           "transform": "translate(0,40)"
         },
         ".uml-class-attrs-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "* id\ncodiPsv\ncodiDpt\ncodiEmp\nqteTotal\n"
+          "text": "* id\ncodiPsv\ncodiDpt\ncodiEmp\nqteTotal\ncontEst\n"
         },
         ".uml-class-attrs-value": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "ref-x": 138,
-          "text": "Texto\nTexto\nInteiro\nInteiro\nNumérico\n"
+          "ref-x": 136,
+          "text": "Texto\nTexto\nInteiro\nInteiro\nNumérico\nContagem\n"
         },
         ".uml-class-methods-rect": {
           "fill": "#F0F0F0",
           "height": 20,
           "stroke": "#C2C2C2",
           "stroke-width": 1,
-          "transform": "translate(0,160)"
+          "transform": "translate(0,180)"
         },
         ".uml-class-methods-text": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
@@ -312,6 +313,44 @@
           "useOuterJoin": false,
           "regionAWS": "",
           "columnDefinition": ""
+        },
+        {
+          "name": "contEst",
+          "type": "Contagem",
+          "dbName": "FK_CONTAGEM",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Cont Est",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "isNotEmpty": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": "",
+          "columnDefinition": ""
         }
       ],
       "generateView": "Auto",
@@ -321,8 +360,8 @@
       "modelType": "Table",
       "name": "AtualizaEstoque",
       "position": {
-        "x": 1087,
-        "y": 0
+        "x": 1090,
+        "y": 60
       },
       "queries": [],
       "realName": "",
@@ -330,7 +369,7 @@
       "role": "Class",
       "runtimeClass": "cronos.widgets.joint.uml.Class",
       "size": {
-        "height": 150,
+        "height": 160,
         "width": 201
       },
       "swagger": false,
@@ -3644,6 +3683,51 @@
       "type": "uml.Composition",
       "vertices": [],
       "z": 53
+    },
+    {
+      "associationType": "Association",
+      "attrs": {
+        ".marker-source": {
+          "d": "M 40 10 L 20 20 L 0 10 L 20 0 z",
+          "fill": "#cecece"
+        },
+        ".marker-target": {
+          "d": "",
+          "fill": ""
+        }
+      },
+      "id": "22babc11-e0c6-4b3e-bf09-387bb5ec45da",
+      "labels": [
+        {
+          "position": 0.9,
+          "attrs": {
+            "rect": {
+              "fill": "transparent"
+            },
+            "text": {
+              "text": "*",
+              "font-family": "Arial",
+              "font-size": "12px",
+              "fill": "#cecece"
+            }
+          }
+        }
+      ],
+      "name": null,
+      "queries": [],
+      "relationFields": [
+        "contEst:target"
+      ],
+      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
+      "source": {
+        "id": "4b9cd62c-47c1-4bff-951b-f617ac0d4741"
+      },
+      "target": {
+        "id": "90fd0263-2160-404e-9963-11847cc61b70"
+      },
+      "type": "uml.Composition",
+      "vertices": [],
+      "z": 59
     },
     {
       "associationType": "Association",
