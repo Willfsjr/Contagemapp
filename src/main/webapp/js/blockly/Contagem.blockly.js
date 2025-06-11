@@ -10,7 +10,7 @@ window.blockly.js.blockly.Contagem = window.blockly.js.blockly.Contagem || {};
  *
  *
  * @author Willian Ferreira
- * @since 10/06/2025, 17:55:38
+ * @since 10/06/2025, 20:41:31
  *
  */
 window.blockly.js.blockly.Contagem.validarNameArgs = [];
@@ -36,7 +36,7 @@ window.blockly.js.blockly.Contagem.validarName = async function() {
  *
  *
  * @author Willian Ferreira
- * @since 10/06/2025, 17:55:38
+ * @since 10/06/2025, 20:41:31
  *
  */
 window.blockly.js.blockly.Contagem.validarLojaArgs = [];
@@ -62,7 +62,7 @@ window.blockly.js.blockly.Contagem.validarLoja = async function() {
  *
  *
  * @author Willian Ferreira
- * @since 10/06/2025, 17:55:38
+ * @since 10/06/2025, 20:41:31
  *
  */
 window.blockly.js.blockly.Contagem.definirDataEncerradoArgs = [];
@@ -71,9 +71,9 @@ window.blockly.js.blockly.Contagem.definirDataEncerrado = async function() {
   //
   this.cronapi.screen.changeValueOfField("contagem.active.dataCont", this.cronapi.dateTime.getNow());
   //
-  this.cronapi.screen.changeValueOfField("contagem.active.gprCont", '');
+  this.cronapi.screen.changeValueOfField("contagem.active.gprCont", 'E08D72DF-2E34-47D3-96FF-D7658332C151');
   //
-  this.cronapi.screen.changeValueOfField("contagem.active.sbgCont", '');
+  this.cronapi.screen.changeValueOfField("contagem.active.sbgCont", '72623208-3E65-4A1C-9141-5292E99D7F6B');
   //
   this.cronapi.screen.changeValueOfField("contagem.active.fimCont", false);
 }
@@ -86,7 +86,7 @@ window.blockly.js.blockly.Contagem.definirDataEncerrado = async function() {
  * @param contObj
  *
  * @author Willian Ferreira
- * @since 10/06/2025, 17:55:38
+ * @since 10/06/2025, 20:41:31
  *
  */
 window.blockly.js.blockly.Contagem.GravarArgs = [{ description: 'contObj', id: 'be511096' }];
@@ -111,7 +111,7 @@ window.blockly.js.blockly.Contagem.Gravar = async function(contObj) {
  *
  *
  * @author Willian Ferreira
- * @since 10/06/2025, 17:55:38
+ * @since 10/06/2025, 20:41:31
  *
  */
 window.blockly.js.blockly.Contagem.abrirModalArgs = [];
@@ -128,7 +128,7 @@ window.blockly.js.blockly.Contagem.abrirModal = async function() {
  *
  *
  * @author Willian Ferreira
- * @since 10/06/2025, 17:55:38
+ * @since 10/06/2025, 20:41:31
  *
  */
 window.blockly.js.blockly.Contagem.validarDepositoArgs = [];

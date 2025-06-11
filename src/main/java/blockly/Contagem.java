@@ -17,7 +17,7 @@ public static final int TIMEOUT = 300;
  * @param contagemObject
  *
  * @author Willian Ferreira
- * @since 05/06/2025, 20:23:26
+ * @since 10/06/2025, 20:49:52
  *
  */
 public static Var apagarProdutoDaContagem(@ParamMetaData(description = "contagemObject", id = "33ac3b42") @RequestBody(required = false) Var contagemObject) throws Exception {
@@ -27,7 +27,8 @@ public static Var apagarProdutoDaContagem(@ParamMetaData(description = "contagem
     cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Estoque"), Var.valueOf("delete from \n	\n	Estoque  \nwhere \n	contEst = :contEst"),Var.valueOf("contEst",contagemObject));
     cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Formulario1"), Var.valueOf("delete from \n	\n	Formulario1  \nwhere \n	contForm1 = :contForm1"),Var.valueOf("contForm1",contagemObject));
     cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Formulario2"), Var.valueOf("delete from \n	\n	Formulario2  \nwhere \n	contForm2 = :contForm2"),Var.valueOf("contForm2",contagemObject));
-    cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Produto"), Var.valueOf("delete from \n	\n	Produto  \nwhere \n	contProd = :contProd"),Var.valueOf("contProd",contagemObject));
+    cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Produto2"), Var.valueOf("delete from \n	\n	Produto2  \nwhere \n	contProd2 = :contProd2"),Var.valueOf("contProd2",contagemObject));
+    cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Produto1"), Var.valueOf("delete from \n	\n	Produto1  \nwhere \n	contProd1 = :contProd1"),Var.valueOf("contProd1",contagemObject));
     cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Contagem"), Var.valueOf("delete from \n	\n	Contagem  \nwhere \n	id = :id"),Var.valueOf("id",contagemObject));
     cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("success"),
     Var.valueOf("Contagem Apagada!"));
@@ -44,7 +45,7 @@ public static Var apagarProdutoDaContagem(@ParamMetaData(description = "contagem
  * @param contObj
  *
  * @author Willian Ferreira
- * @since 05/06/2025, 20:23:26
+ * @since 10/06/2025, 20:49:52
  *
  */
 public static Var obterProdutoParaContagem(@ParamMetaData(description = "contObj", id = "1b7b51d5") @RequestBody(required = false) Var contObj) throws Exception {
@@ -71,15 +72,15 @@ public static Var obterProdutoParaContagem(@ParamMetaData(description = "contObj
     cronapi.logic.Operations.isNullOrEmpty(codiGpr).getObjectAsBoolean() &&
     cronapi.logic.Operations.isNullOrEmpty(codiSbg).getObjectAsBoolean()).getObjectAsBoolean()) {
         produtosERP =
-        cronapi.database.Operations.query(Var.valueOf("app_oracle.entity.Produtocontagem"),Var.valueOf("select \n	p.coDI_PSV, \n	p.deSC_PSV, \n	p.coDI_BAR, \n	p.cuST_TAB \nfrom \n	Produtocontagem p"));
+        cronapi.database.Operations.query(Var.valueOf("app_oracle.entity.Produtocontagem"),Var.valueOf("select \n	p.coDI_PSV, \n	p.deSC_PSV, \n	p.coDI_BAR, \n	p.cuST_TAB, \n	p.coDI_GPR, \n	p.coDI_SBG \nfrom \n	Produtocontagem p  \nwhere NOT ( \n	p.coDI_GPR = 50 AND \n	p.coDI_GPR = 51 AND \n	p.coDI_GPR = 52 )"));
     } else {
         if (
         cronapi.logic.Operations.isNullOrEmpty(codiSbg).getObjectAsBoolean()) {
             produtosERP =
-            cronapi.database.Operations.query(Var.valueOf("app_oracle.entity.Produtocontagem"),Var.valueOf("select \n	p.coDI_PSV, \n	p.deSC_PSV, \n	p.coDI_BAR, \n	p.cuST_TAB \nfrom \n	Produtocontagem p  \nwhere \n	p.coDI_GPR = :coDI_GPR"),Var.valueOf("coDI_GPR",codiGpr));
+            cronapi.database.Operations.query(Var.valueOf("app_oracle.entity.Produtocontagem"),Var.valueOf("select \n	p.coDI_PSV, \n	p.deSC_PSV, \n	p.coDI_BAR, \n	p.cuST_TAB, \n	p.coDI_GPR, \n	p.coDI_SBG \nfrom \n	Produtocontagem p  \nwhere \n	p.coDI_GPR = :coDI_GPR AND ( NOT ( \n	p.coDI_GPR = 50 AND \n	p.coDI_GPR = 51 AND \n	p.coDI_GPR = 52 ) )"),Var.valueOf("coDI_GPR",codiGpr));
         } else {
             produtosERP =
-            cronapi.database.Operations.query(Var.valueOf("app_oracle.entity.Produtocontagem"),Var.valueOf("select \n	p.coDI_PSV, \n	p.deSC_PSV, \n	p.coDI_BAR, \n	p.cuST_TAB \nfrom \n	Produtocontagem p  \nwhere \n	p.coDI_GPR = :coDI_GPR AND \n	p.coDI_SBG = :coDI_SBG"),Var.valueOf("coDI_GPR",codiGpr),Var.valueOf("coDI_SBG",codiSbg));
+            cronapi.database.Operations.query(Var.valueOf("app_oracle.entity.Produtocontagem"),Var.valueOf("select \n	p.coDI_PSV, \n	p.deSC_PSV, \n	p.coDI_BAR, \n	p.cuST_TAB, \n	p.coDI_GPR, \n	p.coDI_SBG \nfrom \n	Produtocontagem p  \nwhere \n	p.coDI_GPR = :coDI_GPR AND \n	p.coDI_SBG = :coDI_SBG AND ( NOT ( \n	p.coDI_GPR = 50 AND \n	p.coDI_GPR = 51 AND \n	p.coDI_GPR = 52 ) )"),Var.valueOf("coDI_GPR",codiGpr),Var.valueOf("coDI_SBG",codiSbg));
         }
     }
     contador =
@@ -95,7 +96,11 @@ public static Var obterProdutoParaContagem(@ParamMetaData(description = "contObj
             cronapi.database.Operations.getField(produtosERP,
             Var.valueOf("this[1]"))),Var.valueOf("codiBar",
             cronapi.database.Operations.getField(produtosERP,
-            Var.valueOf("this[2]"))),Var.valueOf("custTab",
+            Var.valueOf("this[2]"))),Var.valueOf("codiGpr",
+            cronapi.database.Operations.getField(produtosERP,
+            Var.valueOf("this[4]"))),Var.valueOf("codiSbg",
+            cronapi.database.Operations.getField(produtosERP,
+            Var.valueOf("this[5]"))),Var.valueOf("custTab",
             cronapi.database.Operations.getField(produtosERP,
             Var.valueOf("this[3]"))),Var.valueOf("contAtuProd",contObj)));
             contador =

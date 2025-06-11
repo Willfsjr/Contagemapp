@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><blockly audit="false" blocklyType="WEB" bpmnAble="false" formTarget="src/main/webapp/views/admin/contagem.view.html" functionCategory="" linkHelp="" multilayer="false" resourceType="JS" ruleDescription="Contagem" ruleName="Contagem" ruleSynchronous="false" ruleTimeout="" ruleType="I" showAsFunction="false" soap="false" swagger="false">
-  <metadata scale="1" scrollx="268.1" scrolly="-343.99999999999955" target="Sp0eIO2ZR5eTBlqg@x#Z"/>
+  <metadata scale="1" scrollx="305.2000000000004" scrolly="-326.1" target="Sp0eIO2ZR5eTBlqg@x#Z"/>
   <block asynccall="false" colour="#995ba5" datasourcetype="" id="Anb:u5+^,0vLkL9QIqn5" origintype="procedures_defreturn" output="false" score="9007199254740991" tooltip="Cria uma função que possui um valor de retorno." type="procedures_defreturn" valueconstant="" x="-328" y="140">
     <field customattributes="" name="NAME">validarName</field>
     <statement name="STACK">
@@ -160,7 +160,7 @@
             </value>
             <value name="ARG1">
               <shadow asynccall="false" colour="#5ba593" datasourcetype="" dependencyby="Sp0eIO2ZR5eTBlqg@x#Z" id="Rr,$6|4%)6H^T`s~OVhv" origintype="text" output="true" score="9007199254740991" tooltip="function () { [native code] }" type="text" valueconstant="">
-                <field customattributes="" name="TEXT"/>
+                <field customattributes="" name="TEXT">E08D72DF-2E34-47D3-96FF-D7658332C151</field>
               </shadow>
             </value>
             <next>
@@ -176,7 +176,7 @@
                 </value>
                 <value name="ARG1">
                   <shadow asynccall="false" colour="#5ba593" datasourcetype="" dependencyby="Sp0eIO2ZR5eTBlqg@x#Z" id="D4{MRHI(v*-HgyYht5/," origintype="text" output="true" score="9007199254740991" tooltip="function () { [native code] }" type="text" valueconstant="">
-                    <field customattributes="" name="TEXT"/>
+                    <field customattributes="" name="TEXT">72623208-3E65-4A1C-9141-5292E99D7F6B</field>
                   </shadow>
                 </value>
                 <next>

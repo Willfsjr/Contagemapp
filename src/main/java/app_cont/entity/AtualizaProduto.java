@@ -70,6 +70,24 @@ public class AtualizaProduto implements Serializable {
     /**
     * @generated
     */
+    @CronappColumn(attributeType="INTEGER", label="Codi Gpr")
+    @Column(name = "CODI_GPR", nullable = true, unique = false, insertable=true, updatable=true)
+        
+        private java.lang.Integer codiGpr;
+
+
+    /**
+    * @generated
+    */
+    @CronappColumn(attributeType="INTEGER", label="Codi Sbg")
+    @Column(name = "CODI_SBG", nullable = true, unique = false, insertable=true, updatable=true)
+        
+        private java.lang.Integer codiSbg;
+
+
+    /**
+    * @generated
+    */
     @CronappColumn(attributeType="DOUBLE", label="Cust Tab")
     @Column(name = "CUST_TAB", nullable = true, unique = false, insertable=true, updatable=true)
         
@@ -162,6 +180,42 @@ public class AtualizaProduto implements Serializable {
     */
     public AtualizaProduto setCodiBar(java.lang.String codiBar) {
         this.codiBar = codiBar;
+        return this;
+    }
+    /**
+    * Obtém codiGpr
+    * return codiGpr
+    * @generated
+    */
+    public java.lang.Integer getCodiGpr() {
+        return this.codiGpr;
+    }
+
+    /**
+    * Define codiGpr
+    * @param codiGpr codiGpr
+    * @generated
+    */
+    public AtualizaProduto setCodiGpr(java.lang.Integer codiGpr) {
+        this.codiGpr = codiGpr;
+        return this;
+    }
+    /**
+    * Obtém codiSbg
+    * return codiSbg
+    * @generated
+    */
+    public java.lang.Integer getCodiSbg() {
+        return this.codiSbg;
+    }
+
+    /**
+    * Define codiSbg
+    * @param codiSbg codiSbg
+    * @generated
+    */
+    public AtualizaProduto setCodiSbg(java.lang.Integer codiSbg) {
+        this.codiSbg = codiSbg;
         return this;
     }
     /**
