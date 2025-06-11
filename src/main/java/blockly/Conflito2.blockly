@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><blockly audit="false" blocklyType="JAVA" bpmnAble="false" formTarget="src/main/webapp/views/logged/conform2.search.view.html" functionCategory="" linkHelp="" multilayer="false" resourceType="JAVA" ruleDescription="Conflito2" ruleName="Conflito2" ruleSynchronous="false" ruleTimeout="300" ruleType="I" showAsFunction="false" soap="false" swagger="false">
-  <metadata scale="1" scrollx="431.8000000000007" scrolly="-1492.9999999999884" target="Anb:u5+^,0vLkL9QIqn5"/>
+  <metadata scale="1" scrollx="439.29999999999995" scrolly="-62.099999999999795" target="Anb:u5+^,0vLkL9QIqn5"/>
   <block asynccall="false" colour="#995ba5" datasourcetype="" id="Anb:u5+^,0vLkL9QIqn5" origintype="procedures_defreturn" output="false" score="9007199254740991" tooltip="Cria uma função que possui um valor de retorno." type="procedures_defreturn" valueconstant="" x="-350" y="130">
     <mutation>
       <arg id="e2a9715f" name="idCont2"/>
@@ -18,7 +18,7 @@
                 </mutation>
                 <value name="ARG0">
                   <block asynccall="false" colour="#934848" datasourcetype="" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="mJ/!kvQq3ew5Qz1!=_]$" origintype="form_fieldscreen_callreturn" output="true" score="9007199254740991" type="form_fieldscreen_callreturn" valueconstant="">
-                    <field customattributes="" name="SELECT">conform2.active.codiPsv</field>
+                    <field customattributes="" name="SELECT">confrontoformulario2.active.codiPsv</field>
                   </block>
                 </value>
               </block>
@@ -33,7 +33,7 @@
                     </mutation>
                     <value name="ARG0">
                       <block asynccall="false" colour="#934848" datasourcetype="" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="g8kf*;zwP[w}RqIDu(/f" origintype="form_fieldscreen_callreturn" output="true" score="9007199254740991" type="form_fieldscreen_callreturn" valueconstant="">
-                        <field customattributes="" name="SELECT">conform2.active.quantForm2</field>
+                        <field customattributes="" name="SELECT">confrontoformulario2.active.quantForm2</field>
                       </block>
                     </value>
                   </block>
