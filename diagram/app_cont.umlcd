@@ -50,6 +50,7 @@
       "chkApi": false,
       "dataSource": "jdbc/contdb_dev",
       "disableCache": false,
+      "generationType": "none",
       "id": "paperCell",
       "methods": [],
       "namespace": "app_cont",
