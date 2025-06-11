@@ -14,18 +14,18 @@ public static final int TIMEOUT = 300;
 
 /**
  *
- * @param idCont
+ * @param idCont1
  *
  * @author Willian Ferreira
- * @since 11/06/2025, 16:05:08
+ * @since 11/06/2025, 16:18:00
  *
  */
-public static Var gravar(@ParamMetaData(description = "idCont", id = "f61439ba") @RequestBody(required = false) Var idCont) throws Exception {
+public static Var gravar(@ParamMetaData(description = "idCont1", id = "f61439ba") @RequestBody(required = false) Var idCont1) throws Exception {
  return new Callable<Var>() {
 
-   private Var codiPsv = Var.VAR_NULL;
+   private Var codiPsv1 = Var.VAR_NULL;
    private Var obterQuantidade1 = Var.VAR_NULL;
-   private Var validarProduto = Var.VAR_NULL;
+   private Var validarProduto1 = Var.VAR_NULL;
    private Var prod2 = Var.VAR_NULL;
    private Var inserir1a = Var.VAR_NULL;
    private Var prod1 = Var.VAR_NULL;
@@ -34,22 +34,19 @@ public static Var gravar(@ParamMetaData(description = "idCont", id = "f61439ba")
 
    public Var call() throws Exception {
     try {
-         codiPsv =
+         codiPsv1 =
         cronapi.screen.Operations.getValueOfField(
         Var.valueOf("confrotnoformulario1.active.codiPsv"));
         obterQuantidade1 =
         cronapi.screen.Operations.getValueOfField(
         Var.valueOf("confrotnoformulario1.active.quantForm1"));
         cronapi.database.Operations.beginTransaction(Var.valueOf("app_cont"));
-        validarProduto =
-        cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Formulario1"),Var.valueOf("select \n	f.prodForm1 \nfrom \n	Formulario1 f  \nwhere \n	f.prodForm1.codiProd1 = :prodForm1CodiProd1"),Var.valueOf("prodForm1CodiProd1",codiPsv));
-        cronapi.util.Operations.log(
-        Var.valueOf("General"),
-        Var.valueOf("INFO"), validarProduto, Var.VAR_NULL);
+        validarProduto1 =
+        cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Formulario1"),Var.valueOf("select \n	f.prodForm1 \nfrom \n	Formulario1 f  \nwhere \n	f.prodForm1.codiProd1 = :prodForm1CodiProd1"),Var.valueOf("prodForm1CodiProd1",codiPsv1));
         if (
-        cronapi.logic.Operations.isNullOrEmpty(validarProduto).getObjectAsBoolean()) {
+        cronapi.logic.Operations.isNullOrEmpty(validarProduto1).getObjectAsBoolean()) {
             prod2 =
-            cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Produto2"),Var.valueOf("select \n	p \nfrom \n	Produto2 p  \nwhere \n	p.codiProd2 = :codiProd2 AND \n	p.contProd2 = :contProd2"),Var.valueOf("codiProd2",codiPsv),Var.valueOf("contProd2",idCont));
+            cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Produto2"),Var.valueOf("select \n	p \nfrom \n	Produto2 p  \nwhere \n	p.codiProd2 = :codiProd2 AND \n	p.contProd2 = :contProd2"),Var.valueOf("codiProd2",codiPsv1),Var.valueOf("contProd2",idCont1));
             inserir1a =
             cronapi.database.Operations.insert(Var.valueOf("app_cont.entity.Produto1"),
             cronapi.object.Operations.newObject(Var.valueOf("app_cont.entity.Produto1"),Var.valueOf("codiProd1",
@@ -61,22 +58,21 @@ public static Var gravar(@ParamMetaData(description = "idCont", id = "f61439ba")
             cronapi.database.Operations.getField(prod2, Var.valueOf("this[0].sbgProd2"))),Var.valueOf("contProd1",
             cronapi.database.Operations.getField(prod2, Var.valueOf("this[0].contProd2")))));
             prod1 =
-            cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Produto1"),Var.valueOf("select \n	p.id \nfrom \n	Produto1 p  \nwhere \n	p.contProd1 = :contProd1 AND \n	p.codiProd1 = :codiProd1"),Var.valueOf("contProd1",idCont),Var.valueOf("codiProd1",codiPsv));
+            cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Produto1"),Var.valueOf("select \n	p.id \nfrom \n	Produto1 p  \nwhere \n	p.contProd1 = :contProd1 AND \n	p.codiProd1 = :codiProd1"),Var.valueOf("contProd1",idCont1),Var.valueOf("codiProd1",codiPsv1));
             inserir1b =
             cronapi.database.Operations.insert(Var.valueOf("app_cont.entity.Formulario1"),
             cronapi.object.Operations.newObject(Var.valueOf("app_cont.entity.Formulario1"),Var.valueOf("quantForm1",obterQuantidade1),Var.valueOf("dataForm1",
             cronapi.dateTime.Operations.getNowNoHour()),Var.valueOf("prodForm1",
-            cronapi.database.Operations.getField(prod1, Var.valueOf("this[0]"))),Var.valueOf("contForm1",idCont)));
+            cronapi.database.Operations.getField(prod1, Var.valueOf("this[0]"))),Var.valueOf("contForm1",idCont1)));
             cronapi.database.Operations.commitTransaction(Var.valueOf("app_cont"));
             cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("success"),
             Var.valueOf("Quantidade Inserida"));
+        } else {
             cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Formulario1"), Var.valueOf("update \n	Formulario1  \nset \n	quantForm1 = :quantForm1, \n	dataForm1 = :dataForm1 \nwhere \n	contForm1 = :contForm1 AND \n	prodForm1.codiProd1 = :codiProd1"),Var.valueOf("quantForm1",obterQuantidade1),Var.valueOf("dataForm1",
-            cronapi.dateTime.Operations.getNowNoHour()),Var.valueOf("contForm1",idCont),Var.valueOf("codiProd1",codiPsv));
+            cronapi.dateTime.Operations.getNowNoHour()),Var.valueOf("contForm1",idCont1),Var.valueOf("codiProd1",codiPsv1));
             cronapi.database.Operations.commitTransaction(Var.valueOf("app_cont"));
             cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("success"),
             Var.valueOf("Quantidade Atualizada"));
-        } else {
-          {}
         }
         cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.hideModal"),
         Var.valueOf("modal79293"));

@@ -1,0 +1,74 @@
+{
+  "customId": "confrontoformulario2",
+  "queryName": "Confronto do 2º Formulario",
+  "sourceType": "entityFullName",
+  "baseEntity": null,
+  "blockly": null,
+  "entitySimpleName": "AtualizaProduto",
+  "entityFullName": "app_cont.entity.AtualizaProduto",
+  "query": {
+    "isEmpty": true,
+    "isRawSql": true,
+    "isNativeQuery": false,
+    "namespace": "app_cont",
+    "sqlContent": "SELECT \r\n  a.codiPsv, \r\n  a.descPsv, \r\n  f.quantForm2, \r\n  fo.quantForm1\r\nFROM \r\n  AtualizaProduto a\r\nJOIN Produto2 p2 ON p2.codiProd2 \u003d a.codiPsv\r\nJOIN Produto1 p1 ON p1.codiProd1 \u003d a.codiPsv\r\nJOIN Formulario2 f ON f.prodForm2.id \u003d p2.id\r\nJOIN Formulario1 fo ON fo.prodForm1.id \u003d p1.id\r\nWHERE \r\n  f.quantForm2 IS NOT NULL AND \r\n  fo.quantForm1 IS NOT NULL AND \r\n  f.quantForm2 \u003c\u003e fo.quantForm1",
+    "multiTenant": false,
+    "paginatorAutomatic": false,
+    "pagination": false
+  },
+  "queryParamsValues": [],
+  "verbs": {
+    "GET": true,
+    "GETAuthorities": null,
+    "POST": true,
+    "POSTAuthorities": null,
+    "PUT": true,
+    "PUTAuthorities": null,
+    "DELETE": true,
+    "DELETEAuthorities": null,
+    "FILTER": true,
+    "FILTERAuthorities": null,
+    "COUNT": true,
+    "COUNTAuthorities": null
+  },
+  "events": {
+    "beforeInsert": null,
+    "beforeUpdate": null,
+    "beforeDelete": null,
+    "afterInsert": null,
+    "afterUpdate": null,
+    "afterDelete": null,
+    "onNavigate": null,
+    "onAuthorize": null,
+    "onError": null
+  },
+  "defaultValues": {
+    "codiPsv": null,
+    "descPsv": null,
+    "quantForm2": null,
+    "quantForm1": null
+  },
+  "defaultValuesProperties": {
+    "codiPsv": null,
+    "descPsv": null,
+    "quantForm2": null,
+    "quantForm1": null
+  },
+  "security": {
+    "codiPsv": null,
+    "descPsv": null,
+    "quantForm2": null,
+    "quantForm1": null
+  },
+  "calcFields": {},
+  "calcFieldsSecurity": {},
+  "calcFieldsProperties": {},
+  "headers": {},
+  "errorHandles": {
+    "primaryKey": null,
+    "foreignKey": null
+  },
+  "serviceUrl": "api/cronapi/odata/v2/app_cont/query246694/",
+  "audit": false,
+  "swagger": false
+}
