@@ -17,19 +17,59 @@ public static final int TIMEOUT = 300;
  * @param idCont
  *
  * @author Willian Ferreira
- * @since 11/06/2025, 17:57:57
+ * @since 12/06/2025, 10:12:14
  *
  */
 public static Var confrontoEstoque(@ParamMetaData(description = "idCont", id = "5285df7e") @RequestBody(required = false) Var idCont) throws Exception {
  return new Callable<Var>() {
 
+   private Var excecao = Var.VAR_NULL;
+   private Var contador = Var.VAR_NULL;
+   private Var codiPsvObj = Var.VAR_NULL;
+   private Var codiPsv = Var.VAR_NULL;
    private Var prodEst = Var.VAR_NULL;
    private Var inserirB = Var.VAR_NULL;
 
    public Var call() throws Exception {
-    prodEst =
-    cronapi.database.Operations.query(Var.valueOf("app_cont.entity.AtualizaEstoque"),Var.valueOf("select \n	a \nfrom \n	AtualizaEstoque a  \nwhere \n	a.contEst = :contEst"),Var.valueOf("contEst",idCont));
-    inserirB = Var.VAR_NULL;
+    contador =
+    Var.valueOf(0);
+    try {
+         codiPsvObj =
+        cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Produto1"),Var.valueOf("select \n	p.codiProd1 \nfrom \n	Produto1 p  \nwhere \n	p.contProd1 = :contProd1"),Var.valueOf("contProd1",idCont));
+        while (
+        cronapi.database.Operations.hasElement(codiPsvObj).getObjectAsBoolean()) {
+            codiPsv =
+            cronapi.database.Operations.getField(codiPsvObj, Var.valueOf("this[0]"));
+            prodEst =
+            cronapi.database.Operations.query(Var.valueOf("app_cont.entity.AtualizaEstoque"),Var.valueOf("select \n	a \nfrom \n	AtualizaEstoque a  \nwhere \n	a.contEst = :contEst AND \n	a.codiPsv = :codiPsv"),Var.valueOf("contEst",idCont),Var.valueOf("codiPsv",codiPsv));
+            inserirB =
+            cronapi.database.Operations.insert(Var.valueOf("app_cont.entity.Estoque"),
+            cronapi.object.Operations.newObject(Var.valueOf("app_cont.entity.Estoque"),Var.valueOf("codiEst",
+            cronapi.database.Operations.getField(prodEst, Var.valueOf("this[0].codiPsv"))),Var.valueOf("codiDpt",
+            cronapi.database.Operations.getField(prodEst, Var.valueOf("this[0].codiDpt"))),Var.valueOf("codiEmp",
+            cronapi.database.Operations.getField(prodEst, Var.valueOf("this[0].codiEmp"))),Var.valueOf("qteTotal",
+            cronapi.database.Operations.getField(prodEst, Var.valueOf("this[0].qteTotal"))),Var.valueOf("contEst",
+            cronapi.database.Operations.getField(prodEst, Var.valueOf("this[0].contEst")))));
+            contador =
+            cronapi.math.Operations.sum(contador,
+            Var.valueOf(1));
+            cronapi.database.Operations.next(codiPsvObj);
+        } // end while
+        cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.hideModal"),
+        Var.valueOf("modal71744"));
+        cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("success"),
+        Var.valueOf(
+        Var.valueOf("Confronto Concluído com Sucesso: ").getObjectAsString() +
+        contador.getObjectAsString() +
+        Var.valueOf(" Produtos Confrontados").getObjectAsString()));
+     } catch (Exception excecao_exception) {
+          excecao = Var.valueOf(excecao_exception);
+         cronapi.database.Operations.rollbackTransaction(Var.valueOf("app_cont"));
+        cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.hideModal"),
+        Var.valueOf("modal71744"));
+        cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("error"),
+        Var.valueOf("Erro: Confronto não Realizado!"));
+     }
     return Var.VAR_NULL;
    }
  }.call();
@@ -40,7 +80,7 @@ public static Var confrontoEstoque(@ParamMetaData(description = "idCont", id = "
  * @param idCont
  *
  * @author Willian Ferreira
- * @since 11/06/2025, 17:57:57
+ * @since 12/06/2025, 10:12:14
  *
  */
 public static Var encerrarContagem(@ParamMetaData(description = "idCont", id = "81c2b90d") @RequestBody(required = false) Var idCont) throws Exception {
@@ -60,7 +100,7 @@ Var.valueOf(obterEstoque(idCont));
  * @param idCont
  *
  * @author Willian Ferreira
- * @since 11/06/2025, 17:57:57
+ * @since 12/06/2025, 10:12:14
  *
  */
 public static Var obterEstoque(@ParamMetaData(description = "idCont", id = "afe8f604") @RequestBody(required = false) Var idCont) throws Exception {
@@ -74,16 +114,18 @@ public static Var obterEstoque(@ParamMetaData(description = "idCont", id = "afe8
    private Var excecao = Var.VAR_NULL;
 
    public Var call() throws Exception {
-    contObj =
-    cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Contagem"),Var.valueOf("select \n	c \nfrom \n	Contagem c  \nwhere \n	c.id = :id"),Var.valueOf("id",idCont));
-    contLoja =
-    cronapi.database.Operations.getField(contObj, Var.valueOf("this[0].lojaCont.codiLoja"));
-    contDpt =
-    cronapi.database.Operations.getField(contObj, Var.valueOf("this[0].depCont.codiDpt"));
-    estoqueERP =
-    cronapi.database.Operations.query(Var.valueOf("app_oracle.entity.Estoquecontagem"),Var.valueOf("select \n	e.codiPsv, \n	e.codiDpt, \n	e.codiEmp, \n	e.descPsv, \n	e.qteTotal \nfrom \n	Estoquecontagem e  \nwhere NOT ( \n	e.codiEmp = :codiEmp OR \n	e.codiDpt = :codiDpt )"),Var.valueOf("codiEmp",contLoja),Var.valueOf("codiDpt",contDpt));
+    cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.showModal"),
+    Var.valueOf("modal71744"));
     try {
-         while (
+         contObj =
+        cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Contagem"),Var.valueOf("select \n	c \nfrom \n	Contagem c  \nwhere \n	c.id = :id"),Var.valueOf("id",idCont));
+        contLoja =
+        cronapi.database.Operations.getField(contObj, Var.valueOf("this[0].lojaCont.codiLoja"));
+        contDpt =
+        cronapi.database.Operations.getField(contObj, Var.valueOf("this[0].depCont.codiDpt"));
+        estoqueERP =
+        cronapi.database.Operations.query(Var.valueOf("app_oracle.entity.Estoquecontagem"),Var.valueOf("select \n	e.codiPsv, \n	e.codiDpt, \n	e.codiEmp, \n	e.descPsv, \n	e.qteTotal \nfrom \n	Estoquecontagem e  \nwhere NOT ( \n	e.codiEmp = :codiEmp OR \n	e.codiDpt = :codiDpt )"),Var.valueOf("codiEmp",contLoja),Var.valueOf("codiDpt",contDpt));
+        while (
         cronapi.database.Operations.hasElement(estoqueERP).getObjectAsBoolean()) {
             inserirA =
             cronapi.database.Operations.insert(Var.valueOf("app_cont.entity.AtualizaEstoque"),
@@ -97,6 +139,10 @@ public static Var obterEstoque(@ParamMetaData(description = "idCont", id = "afe8
      } catch (Exception excecao_exception) {
           excecao = Var.valueOf(excecao_exception);
          cronapi.database.Operations.rollbackTransaction(Var.valueOf("app_cont"));
+        cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("error"),
+        Var.valueOf("Erro: Confronto não Realizado!"));
+        cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.hideModal"),
+        Var.valueOf("modal71744"));
      }
     return
 Var.valueOf(confrontoEstoque(idCont));

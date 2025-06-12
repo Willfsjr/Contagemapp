@@ -17,7 +17,7 @@ public static final int TIMEOUT = 300;
  * @param contagemObject
  *
  * @author Willian Ferreira
- * @since 11/06/2025, 08:34:36
+ * @since 12/06/2025, 10:11:38
  *
  */
 public static Var apagarProdutoDaContagem(@ParamMetaData(description = "contagemObject", id = "33ac3b42") @RequestBody(required = false) Var contagemObject) throws Exception {
@@ -46,7 +46,7 @@ public static Var apagarProdutoDaContagem(@ParamMetaData(description = "contagem
  * @param contObj
  *
  * @author Willian Ferreira
- * @since 11/06/2025, 08:34:36
+ * @since 12/06/2025, 10:11:38
  *
  */
 public static Var obterProdutoParaContagem(@ParamMetaData(description = "contObj", id = "1b7b51d5") @RequestBody(required = false) Var contObj) throws Exception {
@@ -123,7 +123,7 @@ public static Var obterProdutoParaContagem(@ParamMetaData(description = "contObj
         Var.valueOf(
         Var.valueOf("Importação Concluída com Sucesso: ").getObjectAsString() +
         contador.getObjectAsString() +
-        Var.valueOf(" Produtos Inseridos ").getObjectAsString()));
+        Var.valueOf(" Produtos Inseridos").getObjectAsString()));
         cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.refreshDatasource"),
         Var.valueOf("contagem"),
         Var.valueOf("true"));
