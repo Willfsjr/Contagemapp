@@ -4,17 +4,32 @@
   "sourceType": "entityFullName",
   "baseEntity": null,
   "blockly": null,
-  "entitySimpleName": "AtualizaProduto",
-  "entityFullName": "app_cont.entity.AtualizaProduto",
+  "entitySimpleName": "VwConfrontoContagem",
+  "entityFullName": "app_cont.entity.VwConfrontoContagem",
   "query": {
-    "isEmpty": true,
-    "isRawSql": true,
-    "isNativeQuery": false,
-    "namespace": "app_cont",
-    "sqlContent": "SELECT \r\n  a.codiPsv, \r\n  a.descPsv, \r\n  f.quantForm2, \r\n  fo.quantForm1\r\nFROM \r\n  AtualizaProduto a\r\nJOIN Produto2 p2 ON p2.codiProd2 \u003d a.codiPsv\r\nJOIN Produto1 p1 ON p1.codiProd1 \u003d a.codiPsv\r\nJOIN Formulario2 f ON f.prodForm2.id \u003d p2.id\r\nJOIN Formulario1 fo ON fo.prodForm1.id \u003d p1.id\r\nWHERE \r\n  f.quantForm2 IS NOT NULL AND \r\n  fo.quantForm1 IS NOT NULL AND \r\n  f.quantForm2 \u003c\u003e fo.quantForm1",
-    "multiTenant": false,
-    "paginatorAutomatic": false,
-    "pagination": false
+    "isValid": true,
+    "rulesEntity": [
+      {
+        "entity": "VwConfrontoContagem",
+        "alias": "v",
+        "namespace": "app_cont.entity.VwConfrontoContagem"
+      }
+    ],
+    "rulesSelect": [
+      {
+        "func": "get",
+        "field": "v"
+      }
+    ],
+    "rulesGroupBy": [],
+    "rulesHaving": [],
+    "rulesOrderBy": [],
+    "rules": {
+      "condition": "AND",
+      "not": false,
+      "valid": true,
+      "rules": []
+    }
   },
   "queryParamsValues": [],
   "verbs": {
@@ -45,20 +60,20 @@
   "defaultValues": {
     "codiPsv": null,
     "descPsv": null,
-    "quantForm2": null,
-    "quantForm1": null
+    "quantForm1": null,
+    "quantForm2": null
   },
   "defaultValuesProperties": {
     "codiPsv": null,
     "descPsv": null,
-    "quantForm2": null,
-    "quantForm1": null
+    "quantForm1": null,
+    "quantForm2": null
   },
   "security": {
     "codiPsv": null,
     "descPsv": null,
-    "quantForm2": null,
-    "quantForm1": null
+    "quantForm1": null,
+    "quantForm2": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},

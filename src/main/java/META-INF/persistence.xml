@@ -42,18 +42,19 @@
     <persistence-unit name="app_cont" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <non-jta-data-source>java:comp/env/jdbc/contdb_dev</non-jta-data-source>
-        <class>app_cont.entity.AtualizaEstoque</class>
         <class>app_cont.entity.Produto2</class>
         <class>app_cont.entity.Grupo</class>
         <class>app_cont.entity.Produto1</class>
-        <class>app_cont.entity.AtualizaProduto</class>
         <class>app_cont.entity.SubGrupo</class>
+        <class>app_cont.entity.VwConfrontoContagem</class>
         <class>app_cont.entity.Contagem</class>
         <class>app_cont.entity.Deposito</class>
         <class>app_cont.entity.Estoque</class>
-        <class>app_cont.entity.Loja</class>
         <class>app_cont.entity.Formulario1</class>
         <class>app_cont.entity.Formulario2</class>
+        <class>app_cont.entity.AtualizaEstoque</class>
+        <class>app_cont.entity.AtualizaProduto</class>
+        <class>app_cont.entity.Loja</class>
         <properties>
             <property name="eclipselink.ddl-generation" value="none"/>
             <property name="cronapp.diagram.namespace" value="app_cont"/>

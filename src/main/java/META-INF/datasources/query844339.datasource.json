@@ -4,17 +4,32 @@
   "sourceType": "entityFullName",
   "baseEntity": null,
   "blockly": null,
-  "entitySimpleName": "AtualizaProduto",
-  "entityFullName": "app_cont.entity.AtualizaProduto",
+  "entitySimpleName": "VwConfrontoContagem",
+  "entityFullName": "app_cont.entity.VwConfrontoContagem",
   "query": {
-    "isEmpty": true,
-    "isRawSql": true,
-    "isNativeQuery": false,
-    "namespace": "app_cont",
-    "sqlContent": "SELECT \r\n  a.codiPsv, \r\n  a.descPsv, \r\n  f.quantForm1, \r\n  fo.quantForm2\r\nFROM \r\n  AtualizaProduto a\r\nJOIN Produto1 p1 ON p1.codiProd1 \u003d a.codiPsv\r\nJOIN Produto2 p2 ON p2.codiProd2 \u003d a.codiPsv\r\nJOIN Formulario1 f ON f.prodForm1.id \u003d p1.id\r\nJOIN Formulario2 fo ON fo.prodForm2.id \u003d p2.id\r\nWHERE \r\n  f.quantForm1 IS NOT NULL AND \r\n  fo.quantForm2 IS NOT NULL AND \r\n  f.quantForm1 \u003c\u003e fo.quantForm2",
-    "multiTenant": false,
-    "paginatorAutomatic": false,
-    "pagination": false
+    "isValid": true,
+    "rulesEntity": [
+      {
+        "entity": "VwConfrontoContagem",
+        "alias": "v",
+        "namespace": "app_cont.entity.VwConfrontoContagem"
+      }
+    ],
+    "rulesSelect": [
+      {
+        "func": "get",
+        "field": "v"
+      }
+    ],
+    "rulesGroupBy": [],
+    "rulesHaving": [],
+    "rulesOrderBy": [],
+    "rules": {
+      "condition": "AND",
+      "not": false,
+      "valid": true,
+      "rules": []
+    }
   },
   "queryParamsValues": [],
   "verbs": {

@@ -1,0 +1,172 @@
+
+package app_cont.entity;
+
+import java.io.*;
+import jakarta.persistence.*;
+import java.util.*;
+import jakarta.xml.bind.annotation.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonFilter;
+import cronapi.rest.security.CronappSecurity;
+import cronapi.swagger.CronappSwagger;
+
+
+
+import cronapp.framework.core.persistence.*;
+
+/**
+* Classe que representa a tabela vw_confronto_contagem
+* @generated
+*/
+@jakarta.persistence.Entity
+@jakarta.persistence.Table(name = "\"vw_confronto_contagem\"", schema="\"contdb_dev\"")
+@XmlRootElement
+@CronappSecurity
+@JsonFilter("app_cont.entity.VwConfrontoContagem")
+@CronappTable(role=CronappTableRole.AUTO)
+public class VwConfrontoContagem implements Serializable {
+    /**
+    * UID da classe, necessário na serialização
+    * @generated
+    */
+    private static final long serialVersionUID = 1L;
+
+    /**
+    * @generated
+    */
+    @Id
+    @CronappColumn(attributeType="STRING", label="Codi Psv")
+    @Column(name = "codi_psv", nullable = false, length=255, insertable=true, updatable=true)
+        private java.lang.String codiPsv;
+
+
+    /**
+    * @generated
+    */
+    @CronappColumn(attributeType="STRING", label="Desc Psv")
+    @Column(name = "desc_psv", nullable = true, unique = false, length=255, insertable=true, updatable=true)
+        
+        private java.lang.String descPsv;
+
+
+    /**
+    * @generated
+    */
+    @CronappColumn(attributeType="DOUBLE", label="Quant Form 1")
+    @Column(name = "quant_form1", nullable = true, unique = false, precision=17, scale=17, insertable=true, updatable=true)
+        
+        private java.lang.Double quantForm1;
+
+
+    /**
+    * @generated
+    */
+    @CronappColumn(attributeType="DOUBLE", label="Quant Form 2")
+    @Column(name = "quant_form2", nullable = true, unique = false, precision=17, scale=17, insertable=true, updatable=true)
+        
+        private java.lang.Double quantForm2;
+
+
+    /**
+    * Construtor
+    * @generated
+    */
+    public VwConfrontoContagem(){
+    }
+
+    /**
+    * Obtém codiPsv
+    * return codiPsv
+    * @generated
+    */
+    public java.lang.String getCodiPsv() {
+        return this.codiPsv;
+    }
+
+    /**
+    * Define codiPsv
+    * @param codiPsv codiPsv
+    * @generated
+    */
+    public VwConfrontoContagem setCodiPsv(java.lang.String codiPsv) {
+        this.codiPsv = codiPsv;
+        return this;
+    }
+    /**
+    * Obtém descPsv
+    * return descPsv
+    * @generated
+    */
+    public java.lang.String getDescPsv() {
+        return this.descPsv;
+    }
+
+    /**
+    * Define descPsv
+    * @param descPsv descPsv
+    * @generated
+    */
+    public VwConfrontoContagem setDescPsv(java.lang.String descPsv) {
+        this.descPsv = descPsv;
+        return this;
+    }
+    /**
+    * Obtém quantForm1
+    * return quantForm1
+    * @generated
+    */
+    public java.lang.Double getQuantForm1() {
+        return this.quantForm1;
+    }
+
+    /**
+    * Define quantForm1
+    * @param quantForm1 quantForm1
+    * @generated
+    */
+    public VwConfrontoContagem setQuantForm1(java.lang.Double quantForm1) {
+        this.quantForm1 = quantForm1;
+        return this;
+    }
+    /**
+    * Obtém quantForm2
+    * return quantForm2
+    * @generated
+    */
+    public java.lang.Double getQuantForm2() {
+        return this.quantForm2;
+    }
+
+    /**
+    * Define quantForm2
+    * @param quantForm2 quantForm2
+    * @generated
+    */
+    public VwConfrontoContagem setQuantForm2(java.lang.Double quantForm2) {
+        this.quantForm2 = quantForm2;
+        return this;
+    }
+
+    /**
+    * @generated
+    */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+VwConfrontoContagem object = (VwConfrontoContagem)obj;
+        if (codiPsv != null ? !codiPsv.equals(object.codiPsv) : object.codiPsv != null) return false;
+        return true;
+    }
+
+    /**
+    * @generated
+    */
+    @Override
+    public int hashCode() {
+        int result = 1;
+        result = 31 * result + ((codiPsv == null) ? 0 : codiPsv.hashCode());
+        return result;
+    }
+
+}

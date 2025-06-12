@@ -55,8 +55,8 @@
       "methods": [],
       "namespace": "app_cont",
       "position": {
-        "x": 0,
-        "y": 75
+        "x": 1111,
+        "y": 70
       },
       "queries": [],
       "runtimeClass": "cronos.widgets.joint.uml.Paper",
@@ -360,8 +360,8 @@
       "modelType": "Table",
       "name": "AtualizaEstoque",
       "position": {
-        "x": 1090,
-        "y": 60
+        "x": 511,
+        "y": 620
       },
       "queries": [],
       "realName": "",
@@ -748,8 +748,8 @@
       "modelType": "Table",
       "name": "AtualizaProduto",
       "position": {
-        "x": 330,
-        "y": -34
+        "x": 251,
+        "y": 610
       },
       "queries": [],
       "realName": "",
@@ -1136,8 +1136,8 @@
       "modelType": "Table",
       "name": "Contagem",
       "position": {
-        "x": 305.75,
-        "y": 200
+        "x": 1002.25,
+        "y": 380
       },
       "queries": [],
       "realName": "",
@@ -1178,7 +1178,7 @@
         ".uml-class-attrs-value": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "ref-x": 151,
+          "ref-x": 148,
           "text": "Texto\nTexto\nInteiro\n"
         },
         ".uml-class-methods-rect": {
@@ -1329,8 +1329,8 @@
       "modelType": "Table",
       "name": "Deposito",
       "position": {
-        "x": 610,
-        "y": 2
+        "x": 920.5,
+        "y": 195
       },
       "queries": [],
       "realName": "",
@@ -1374,7 +1374,7 @@
         ".uml-class-attrs-value": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "ref-x": 135,
+          "ref-x": 136,
           "text": "Texto\nTexto\nInteiro\nInteiro\nNumérico\nContagem\n"
         },
         ".uml-class-methods-rect": {
@@ -1639,8 +1639,8 @@
       "modelType": "Table",
       "name": "Estoque",
       "position": {
-        "x": 162,
-        "y": 432
+        "x": 0,
+        "y": 620
       },
       "queries": [],
       "realName": "",
@@ -1910,8 +1910,8 @@
       "modelType": "Table",
       "name": "Formulario1",
       "position": {
-        "x": 281,
-        "y": 630
+        "x": 992.75,
+        "y": 840
       },
       "queries": [],
       "realName": "",
@@ -2181,8 +2181,8 @@
       "modelType": "Table",
       "name": "Formulario2",
       "position": {
-        "x": 546,
-        "y": 630
+        "x": 1730.25,
+        "y": 840
       },
       "queries": [],
       "realName": "",
@@ -2374,8 +2374,8 @@
       "modelType": "Table",
       "name": "Grupo",
       "position": {
-        "x": 850,
-        "y": 48
+        "x": 1418,
+        "y": 5
       },
       "queries": [],
       "realName": "",
@@ -2567,8 +2567,8 @@
       "modelType": "Table",
       "name": "Loja",
       "position": {
-        "x": 50,
-        "y": 10
+        "x": 672.5,
+        "y": 195
       },
       "queries": [],
       "realName": "",
@@ -2955,8 +2955,8 @@
       "modelType": "Table",
       "name": "Produto1",
       "position": {
-        "x": 552,
-        "y": 386
+        "x": 997.25,
+        "y": 610
       },
       "queries": [],
       "realName": "",
@@ -3343,8 +3343,8 @@
       "modelType": "Table",
       "name": "Produto2",
       "position": {
-        "x": 840,
-        "y": 492
+        "x": 1850.5,
+        "y": 610
       },
       "queries": [],
       "realName": "",
@@ -3575,8 +3575,8 @@
       "modelType": "Table",
       "name": "SubGrupo",
       "position": {
-        "x": 902,
-        "y": 274
+        "x": 1245.5,
+        "y": 190
       },
       "queries": [],
       "realName": "",
@@ -3593,6 +3593,225 @@
       "type": "uml.Class",
       "usePhysicalNames": false,
       "z": 40
+    },
+    {
+      "angle": 0,
+      "attributes": [
+        "codiPsv:java.lang.String",
+        "descPsv:java.lang.String",
+        "quantForm1:java.lang.Double",
+        "quantForm2:java.lang.Double"
+      ],
+      "attrs": {
+        ".uml-class-attrs-rect": {
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "height": 100,
+          "stroke": "#C2C2C2",
+          "transform": "translate(0,40)"
+        },
+        ".uml-class-attrs-text": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "font-size": 11,
+          "text": "* codiPsv\ndescPsv\nquantForm1\nquantForm2\n"
+        },
+        ".uml-class-attrs-value": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "font-size": 11,
+          "ref-x": 144,
+          "text": "Texto\nTexto\nNumérico\nNumérico\n"
+        },
+        ".uml-class-methods-rect": {
+          "fill": "#F0F0F0",
+          "height": 20,
+          "stroke": "#C2C2C2",
+          "stroke-width": 1,
+          "transform": "translate(0,140)"
+        },
+        ".uml-class-methods-text": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "font-size": 11,
+          "text": ""
+        },
+        ".uml-class-name-rect": {
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "height": 40,
+          "stroke": "#C2C2C2",
+          "transform": "translate(0,0)"
+        },
+        ".uml-class-name-text": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "text": "VwConfrontoContagem"
+        },
+        "rect": {
+          "stroke": "yellow",
+          "stroke-width": 2
+        }
+      },
+      "dbFieldNames": [
+        "codi_psv",
+        "desc_psv",
+        "quant_form1",
+        "quant_form2"
+      ],
+      "dbLengths": [
+        255,
+        255,
+        "",
+        ""
+      ],
+      "dbPrecisions": [
+        "",
+        "",
+        17,
+        17
+      ],
+      "dbScales": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "fields": [
+        {
+          "name": "codiPsv",
+          "type": "java.lang.String",
+          "dbName": "codi_psv",
+          "dbLength": 255,
+          "foreignKeyName": "",
+          "joins": "",
+          "isInsertable": true,
+          "isUpdatable": true,
+          "dbPrecision": "",
+          "dbScale": "",
+          "label": "Codi Psv",
+          "mask": "",
+          "isUniqueKey": false,
+          "isNullable": false,
+          "isPrimaryKey": true,
+          "pkType": "None",
+          "sequence": ""
+        },
+        {
+          "name": "descPsv",
+          "type": "java.lang.String",
+          "dbName": "desc_psv",
+          "dbLength": 255,
+          "foreignKeyName": "",
+          "joins": "",
+          "isInsertable": true,
+          "isUpdatable": true,
+          "dbPrecision": "",
+          "dbScale": "",
+          "label": "Desc Psv",
+          "mask": "",
+          "isUniqueKey": false,
+          "isNullable": true
+        },
+        {
+          "name": "quantForm1",
+          "type": "java.lang.Double",
+          "dbName": "quant_form1",
+          "dbLength": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isInsertable": true,
+          "isUpdatable": true,
+          "dbPrecision": 17,
+          "dbScale": 17,
+          "label": "Quant Form 1",
+          "mask": "",
+          "isUniqueKey": false,
+          "isNullable": true
+        },
+        {
+          "name": "quantForm2",
+          "type": "java.lang.Double",
+          "dbName": "quant_form2",
+          "dbLength": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isInsertable": true,
+          "isUpdatable": true,
+          "dbPrecision": 17,
+          "dbScale": 17,
+          "label": "Quant Form 2",
+          "mask": "",
+          "isUniqueKey": false,
+          "isNullable": true
+        }
+      ],
+      "foreignKeysName": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "id": "9988219e-5d89-49ee-a720-6ee9e10d2044",
+      "insertable": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "isRest": "true",
+      "joins": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "keyTypes": [
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "labels": [
+        "Codi Psv",
+        "Desc Psv",
+        "Quant Form 1",
+        "Quant Form 2"
+      ],
+      "methods": [],
+      "modelType": "View",
+      "name": "VwConfrontoContagem",
+      "nullables": [
+        "codiPsv"
+      ],
+      "position": {
+        "x": 1161,
+        "y": 0
+      },
+      "primaryKeys": [
+        "codiPsv"
+      ],
+      "queries": [],
+      "requireds": [],
+      "runtimeClass": "cronos.widgets.joint.uml.Class",
+      "sequences": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "size": {
+        "height": 140,
+        "width": 207
+      },
+      "tableName": "vw_confronto_contagem",
+      "tableScheme": "contdb_dev",
+      "type": "uml.Class",
+      "uniqueKeys": [],
+      "updatable": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "usePhysicalNames": "false",
+      "z": 2
     },
     {
       "associationType": "Association",
@@ -4507,14 +4726,15 @@
         "93e84505-9634-450d-8a4e-be520c5e87db",
         "4ff5eca1-6420-49b9-b4c7-333885281172",
         "2dec60e2-6345-46fa-9073-a9e543db4104",
+        "6da087c6-4e14-48cb-a353-af361661bdf4",
+        "4b9cd62c-47c1-4bff-951b-f617ac0d4741",
+        "ed4ba772-237d-4b32-9930-2ad4661d3866",
         "4d6b785a-97fd-4d53-98b3-1591caa1c0f8",
         "96af003a-45ce-4fd6-8ace-30144d01afe6",
-        "6da087c6-4e14-48cb-a353-af361661bdf4",
+        "9988219e-5d89-49ee-a720-6ee9e10d2044",
         "90fd0263-2160-404e-9963-11847cc61b70",
-        "4b9cd62c-47c1-4bff-951b-f617ac0d4741",
         "14cb1534-91d4-4b8b-8c6f-bc50eced9ee4",
-        "a1c3b9d9-f130-4294-b2b8-a089d6f49fc8",
-        "ed4ba772-237d-4b32-9930-2ad4661d3866"
+        "a1c3b9d9-f130-4294-b2b8-a089d6f49fc8"
       ],
       "groupPositions": []
     }
