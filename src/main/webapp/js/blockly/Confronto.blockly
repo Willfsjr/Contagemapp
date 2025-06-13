@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><blockly audit="false" blocklyType="WEB" bpmnAble="false" formTarget="src/main/webapp/views/admin/contagem.view.html" functionCategory="" linkHelp="" multilayer="false" resourceType="JS" ruleDescription="Confronto" ruleName="Confronto" ruleSynchronous="false" ruleTimeout="" ruleType="I" showAsFunction="false" soap="false" swagger="false">
+  <metadata scale="1" scrollx="424.79999999999995" scrolly="-75.10000000000002" target="Anb:u5+^,0vLkL9QIqn5"/>
+  <block asynccall="false" colour="#995ba5" datasourcetype="" id="Anb:u5+^,0vLkL9QIqn5" origintype="procedures_defreturn" output="false" score="9007199254740991" tooltip="Cria uma função que possui um valor de retorno." type="procedures_defreturn" valueconstant="" x="-337" y="143">
+    <mutation>
+      <arg id="f1db0d6a" name="idCont"/>
+    </mutation>
+    <field customattributes="" name="NAME">gravarConfronto</field>
+    <statement name="STACK">
+      <block asynccall="false" colour="#934848" datasourcetype="" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="wT+wcqDCVPl4N?-0r2Z+" multilayer="true" namespace="cronapi.screen.showModal" origintype="procedures_callnoreturn" output="false" returntype="ObjectType.VOID" score="9007199254740991" tooltip="%3Cdiv%20class=%22name%22%3E%3Cstrong%3ENome:%3C/strong%3E%3Cdiv%3EExibir%20modal%3C/div%3E%3C/div%3E%3Cdiv%20class=%22description%22%3E%3Cstrong%3EDescri%C3%A7%C3%A3o:%3C/strong%3E%3Cdiv%3EFun%C3%A7%C3%A3o%20que%20exibe%20um%20modal%3C/div%3E%3C/div%3E%3Cdiv%20class=%22params%22%3E%3Cstrong%3EParam%C3%AAtro:%3C/strong%3E%3Cdiv%3E%3Cspan%3E%20-%20Identificador%20:%20Objeto%3C/span%3E%3Cdiv%3E%20Identificador%20do%20componente%20a%20ser%20modificado%3C/div%3E%3C/div%3E%3C/div%3E%3Cdiv%20class=%22link%22%3E%3Cstrong%3EAjuda:%3C/strong%3E%3Cdiv%20class=%22tooltip-link%22%3E%3Ca%20onclick=%22Blockly.Search.goToDoc('http://127.0.0.1:8080/help?type=blockly&amp;amp;id=cronapi.screen.showModal','cronapi.screen.showModal')%22%20href=%22javascript:void(0)%22%3EAjuda%3C/a%3E%3C/div%3E%3C/div%3E" type="procedures_callnoreturn" valueconstant="">
+        <mutation name="{{cronapi.screen.showModal}}" return-raw-type="undefined">
+          <arg cronapi-raw-type="undefined" cronapi-type="ObjectType.OBJECT" name="Identificador"/>
+        </mutation>
+        <value name="ARG0">
+          <block asynccall="false" colour="#934848" datasourcetype="" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="`=uoocxDRb+IkCN-]2pF" origintype="ids_from_screen" output="true" score="9007199254740991" type="ids_from_screen" valueconstant="">
+            <field customattributes="" name="SELECT">modal71744</field>
+          </block>
+        </value>
+        <next>
+          <block asynccall="true" colour="#487f7f" datasourcetype="" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="up%jq9Y)W)r67%L26px;" multilayer="false" namespace="cronapi.util.callServerBlocklyNoReturn" origintype="procedures_callblockly_callnoreturn" output="false" returntype="ObjectType.VOID" score="9007199254740991" tooltip="%3Cdiv%20class=%22name%22%3E%3Cstrong%3ENome:%3C/strong%3E%3Cdiv%3EChamar%20Bloco%3C/div%3E%3C/div%3E%3Cdiv%20class=%22description%22%3E%3Cstrong%3EDescri%C3%A7%C3%A3o:%3C/strong%3E%3Cdiv%3EFun%C3%A7%C3%A3o%20para%20chamar%20bloco%20de%20programa%C3%A7%C3%A3o%3C/div%3E%3C/div%3E%3Cdiv%20class=%22params%22%3E%3Cstrong%3EParam%C3%AAtro:%3C/strong%3E%3Cdiv%3E%3Cspan%3E%20-%20Nome%20da%20fun%C3%A7%C3%A3o%20do%20bloco%20que%20dever%C3%A1%20ser%20chamada%20:%20Texto%3C/span%3E%3Cbr%3E%3Cspan%3E%20-%20Par%C3%A2metros%20:%20Objeto%3C/span%3E%3Cbr%3E%3C/div%3E%3C/div%3E%3Cdiv%20class=%22link%22%3E%3Cstrong%3EAjuda:%3C/strong%3E%3Cdiv%20class=%22tooltip-link%22%3E%3Ca%20onclick=%22Blockly.Search.goToDoc('http://127.0.0.1:8080/help?type=blockly&amp;amp;id=cronapi.util.callServerBlocklyNoReturn','cronapi.util.callServerBlocklyNoReturn')%22%20href=%22javascript:void(0)%22%3EAjuda%3C/a%3E%3C/div%3E%3C/div%3E" type="procedures_callblockly_callnoreturn" valueconstant="">
+            <mutation data="%7B%22name%22:%22Confronto%22,%22class%22:%22blockly.Confronto%22,%22function%22:%22encerrarContagem%22,%22oldName%22:%22encerrarContagem%22,%22params%22:%22%5B%5C%22idCont%5C%22%5D%22,%22argumentsIds%22:%5B%2281c2b90d%22%5D,%22type%22:%22java%22,%22namespace%22:%22blockly.Confronto%22,%22jsonBlocklySelected%22:%7B%22namespace%22:%22blockly.Confronto%22,%22blocklyType%22:%22JAVA%22,%22sourcePath%22:%22src/main/java/blockly/Confronto.blockly%22,%22language%22:%22java%22,%22class%22:%22blockly.Confronto%22,%22methods%22:%5B%7B%22name%22:%22encerrarContagem%22,%22hasReturn%22:%22true%22,%22params%22:%5B%22idCont%22%5D,%22paramsMap%22:%7B%22idCont%22:%2281c2b90d%22%7D%7D,%7B%22name%22:%22teste%22,%22hasReturn%22:%22true%22,%22params%22:%5B%22idCont%22%5D,%22paramsMap%22:%7B%22idCont%22:%221c569590%22%7D%7D%5D%7D%7D" name="{{cronapi.util.callServerBlocklyNoReturn}}">
+              <arg id="81c2b90d" name="idCont"/>
+            </mutation>
+            <value name="ARG0">
+              <block asynccall="false" colour="#0088ee" datasourcetype="" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="KQ5JKN%5kyonh`lYGGQd" origintype="variables_get" output="true" score="9007199254740991" tooltip="Retorna o valor desta variável." type="variables_get" valueconstant="">
+                <field customattributes="" name="VAR">idCont</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</blockly>
