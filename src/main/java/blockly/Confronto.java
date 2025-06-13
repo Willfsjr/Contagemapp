@@ -17,105 +17,27 @@ public static final int TIMEOUT = 300;
  * @param idCont
  *
  * @author Willian Ferreira
- * @since 12/06/2025, 10:12:14
- *
- */
-public static Var confrontoEstoque(@ParamMetaData(description = "idCont", id = "5285df7e") @RequestBody(required = false) Var idCont) throws Exception {
- return new Callable<Var>() {
-
-   private Var excecao = Var.VAR_NULL;
-   private Var contador = Var.VAR_NULL;
-   private Var codiPsvObj = Var.VAR_NULL;
-   private Var codiPsv = Var.VAR_NULL;
-   private Var prodEst = Var.VAR_NULL;
-   private Var inserirB = Var.VAR_NULL;
-
-   public Var call() throws Exception {
-    contador =
-    Var.valueOf(0);
-    try {
-         codiPsvObj =
-        cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Produto1"),Var.valueOf("select \n	p.codiProd1 \nfrom \n	Produto1 p  \nwhere \n	p.contProd1 = :contProd1"),Var.valueOf("contProd1",idCont));
-        while (
-        cronapi.database.Operations.hasElement(codiPsvObj).getObjectAsBoolean()) {
-            codiPsv =
-            cronapi.database.Operations.getField(codiPsvObj, Var.valueOf("this[0]"));
-            prodEst =
-            cronapi.database.Operations.query(Var.valueOf("app_cont.entity.AtualizaEstoque"),Var.valueOf("select \n	a \nfrom \n	AtualizaEstoque a  \nwhere \n	a.contEst = :contEst AND \n	a.codiPsv = :codiPsv"),Var.valueOf("contEst",idCont),Var.valueOf("codiPsv",codiPsv));
-            inserirB =
-            cronapi.database.Operations.insert(Var.valueOf("app_cont.entity.Estoque"),
-            cronapi.object.Operations.newObject(Var.valueOf("app_cont.entity.Estoque"),Var.valueOf("codiEst",
-            cronapi.database.Operations.getField(prodEst, Var.valueOf("this[0].codiPsv"))),Var.valueOf("codiDpt",
-            cronapi.database.Operations.getField(prodEst, Var.valueOf("this[0].codiDpt"))),Var.valueOf("codiEmp",
-            cronapi.database.Operations.getField(prodEst, Var.valueOf("this[0].codiEmp"))),Var.valueOf("qteTotal",
-            cronapi.database.Operations.getField(prodEst, Var.valueOf("this[0].qteTotal"))),Var.valueOf("contEst",
-            cronapi.database.Operations.getField(prodEst, Var.valueOf("this[0].contEst")))));
-            contador =
-            cronapi.math.Operations.sum(contador,
-            Var.valueOf(1));
-            cronapi.database.Operations.next(codiPsvObj);
-        } // end while
-        cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.hideModal"),
-        Var.valueOf("modal71744"));
-        cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("success"),
-        Var.valueOf(
-        Var.valueOf("Confronto Concluído com Sucesso: ").getObjectAsString() +
-        contador.getObjectAsString() +
-        Var.valueOf(" Produtos Confrontados").getObjectAsString()));
-     } catch (Exception excecao_exception) {
-          excecao = Var.valueOf(excecao_exception);
-         cronapi.database.Operations.rollbackTransaction(Var.valueOf("app_cont"));
-        cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.hideModal"),
-        Var.valueOf("modal71744"));
-        cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("error"),
-        Var.valueOf("Erro: Confronto não Realizado!"));
-     }
-    return Var.VAR_NULL;
-   }
- }.call();
-}
-
-/**
- *
- * @param idCont
- *
- * @author Willian Ferreira
- * @since 12/06/2025, 10:12:14
+ * @since 12/06/2025, 23:09:54
  *
  */
 public static Var encerrarContagem(@ParamMetaData(description = "idCont", id = "81c2b90d") @RequestBody(required = false) Var idCont) throws Exception {
  return new Callable<Var>() {
 
-   public Var call() throws Exception {
-    cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Contagem"), Var.valueOf("update \n	Contagem  \nset \n	fimCont = :fimCont \nwhere \n	id = :id"),Var.valueOf("fimCont",
-    Var.VAR_TRUE),Var.valueOf("id",idCont));
-    return
-Var.valueOf(obterEstoque(idCont));
-   }
- }.call();
-}
-
-/**
- *
- * @param idCont
- *
- * @author Willian Ferreira
- * @since 12/06/2025, 10:12:14
- *
- */
-public static Var obterEstoque(@ParamMetaData(description = "idCont", id = "afe8f604") @RequestBody(required = false) Var idCont) throws Exception {
- return new Callable<Var>() {
-
+   private Var contador = Var.VAR_NULL;
    private Var contObj = Var.VAR_NULL;
    private Var contLoja = Var.VAR_NULL;
    private Var contDpt = Var.VAR_NULL;
    private Var estoqueERP = Var.VAR_NULL;
    private Var inserirA = Var.VAR_NULL;
+   private Var codiPsvObj = Var.VAR_NULL;
+   private Var codiPsv = Var.VAR_NULL;
+   private Var prodEst = Var.VAR_NULL;
+   private Var inserirB = Var.VAR_NULL;
    private Var excecao = Var.VAR_NULL;
 
    public Var call() throws Exception {
-    cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.showModal"),
-    Var.valueOf("modal71744"));
+    contador =
+    Var.valueOf(0);
     try {
          contObj =
         cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Contagem"),Var.valueOf("select \n	c \nfrom \n	Contagem c  \nwhere \n	c.id = :id"),Var.valueOf("id",idCont));
@@ -136,6 +58,39 @@ public static Var obterEstoque(@ParamMetaData(description = "idCont", id = "afe8
             cronapi.database.Operations.getField(estoqueERP, Var.valueOf("this[4]"))),Var.valueOf("contEst",idCont)));
             cronapi.database.Operations.next(estoqueERP);
         } // end while
+        codiPsvObj =
+        cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Produto1"),Var.valueOf("select \n	p.codiProd1 \nfrom \n	Produto1 p  \nwhere \n	p.contProd1 = :contProd1"),Var.valueOf("contProd1",idCont));
+        while (
+        cronapi.database.Operations.hasElement(codiPsvObj).getObjectAsBoolean()) {
+            codiPsv =
+            cronapi.database.Operations.getField(codiPsvObj, Var.valueOf("this[0]"));
+            prodEst =
+            cronapi.database.Operations.query(Var.valueOf("app_cont.entity.AtualizaEstoque"),Var.valueOf("select \n	a \nfrom \n	AtualizaEstoque a  \nwhere \n	a.contEst = :contEst AND \n	a.codiPsv = :codiPsv"),Var.valueOf("contEst",idCont),Var.valueOf("codiPsv",codiPsv));
+            inserirB =
+            cronapi.database.Operations.insert(Var.valueOf("app_cont.entity.Estoque"),
+            cronapi.object.Operations.newObject(Var.valueOf("app_cont.entity.Estoque"),Var.valueOf("codiEst",
+            cronapi.database.Operations.getField(prodEst, Var.valueOf("this[0].codiPsv"))),Var.valueOf("codiDpt",
+            cronapi.database.Operations.getField(prodEst, Var.valueOf("this[0].codiDpt"))),Var.valueOf("codiEmp",
+            cronapi.database.Operations.getField(prodEst, Var.valueOf("this[0].codiEmp"))),Var.valueOf("qteTotal",
+            cronapi.database.Operations.getField(prodEst, Var.valueOf("this[0].qteTotal"))),Var.valueOf("contEst",
+            cronapi.database.Operations.getField(prodEst, Var.valueOf("this[0].contEst")))));
+            contador =
+            cronapi.math.Operations.sum(contador,
+            Var.valueOf(1));
+            cronapi.database.Operations.next(codiPsvObj);
+        } // end while
+        cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Contagem"), Var.valueOf("update \n	Contagem  \nset \n	fimCont = :fimCont \nwhere \n	id = :id"),Var.valueOf("fimCont",
+        Var.VAR_TRUE),Var.valueOf("id",idCont));
+        cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.hideModal"),
+        Var.valueOf("modal71744"));
+        cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.refreshDatasource"),
+        Var.valueOf("contagem"),
+        Var.valueOf("true"));
+        cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("success"),
+        Var.valueOf(
+        Var.valueOf("Confronto Concluído com Sucesso: ").getObjectAsString() +
+        contador.getObjectAsString() +
+        Var.valueOf(" Produtos Confrontados").getObjectAsString()));
      } catch (Exception excecao_exception) {
           excecao = Var.valueOf(excecao_exception);
          cronapi.database.Operations.rollbackTransaction(Var.valueOf("app_cont"));
@@ -144,8 +99,7 @@ public static Var obterEstoque(@ParamMetaData(description = "idCont", id = "afe8
         cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.hideModal"),
         Var.valueOf("modal71744"));
      }
-    return
-Var.valueOf(confrontoEstoque(idCont));
+    return Var.VAR_NULL;
    }
  }.call();
 }
