@@ -17,7 +17,7 @@ public static final int TIMEOUT = 300;
  * @param idCont1
  *
  * @author Willian Ferreira
- * @since 11/06/2025, 16:18:00
+ * @since 12/06/2025, 22:05:49
  *
  */
 public static Var gravar(@ParamMetaData(description = "idCont1", id = "f61439ba") @RequestBody(required = false) Var idCont1) throws Exception {
@@ -36,10 +36,10 @@ public static Var gravar(@ParamMetaData(description = "idCont1", id = "f61439ba"
     try {
          codiPsv1 =
         cronapi.screen.Operations.getValueOfField(
-        Var.valueOf("confrotnoformulario1.active.codiPsv"));
+        Var.valueOf("confrontoformulario.active.codiPsv"));
         obterQuantidade1 =
         cronapi.screen.Operations.getValueOfField(
-        Var.valueOf("confrotnoformulario1.active.quantForm1"));
+        Var.valueOf("confrontoformulario.active.quantForm1"));
         cronapi.database.Operations.beginTransaction(Var.valueOf("app_cont"));
         validarProduto1 =
         cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Formulario1"),Var.valueOf("select \n	f.prodForm1 \nfrom \n	Formulario1 f  \nwhere \n	f.prodForm1.codiProd1 = :prodForm1CodiProd1"),Var.valueOf("prodForm1CodiProd1",codiPsv1));
@@ -77,7 +77,7 @@ public static Var gravar(@ParamMetaData(description = "idCont1", id = "f61439ba"
         cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.hideModal"),
         Var.valueOf("modal79293"));
         cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.refreshDatasource"),
-        Var.valueOf("confrotnoformulario1"),
+        Var.valueOf("confrontoformulario"),
         Var.valueOf("true"));
      } catch (Exception excecao_exception) {
           excecao = Var.valueOf(excecao_exception);

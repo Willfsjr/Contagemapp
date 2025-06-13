@@ -19,6 +19,12 @@ import cronapp.framework.core.persistence.*;
 * @generated
 */
 @jakarta.persistence.Entity
+@Cacheable(false)
+@org.eclipse.persistence.annotations.Cache(
+  expiry = 0,
+  alwaysRefresh = true,
+  refreshOnlyIfNewer = false
+)
 @jakarta.persistence.Table(name = "\"vw_confronto_contagem\"", schema="\"contdb_dev\"")
 @XmlRootElement
 @CronappSecurity

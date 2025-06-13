@@ -1,6 +1,6 @@
 {
-  "customId": "confrontoformulario2",
-  "queryName": "Confronto do 2º Formulario",
+  "customId": "confrontoformulario",
+  "queryName": "Confronto do Formulario",
   "sourceType": "entityFullName",
   "baseEntity": null,
   "blockly": null,
@@ -83,7 +83,7 @@
     "primaryKey": null,
     "foreignKey": null
   },
-  "serviceUrl": "api/cronapi/odata/v2/app_cont/query246694/",
+  "serviceUrl": "api/cronapi/odata/v2/app_cont/query213645/",
   "audit": false,
   "swagger": false
 }
