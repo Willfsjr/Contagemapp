@@ -1,0 +1,364 @@
+{
+  "customId": "relatoriocontagem",
+  "queryName": "Relatorio Produtos Contados",
+  "sourceType": "entityFullName",
+  "baseEntity": null,
+  "blockly": null,
+  "entitySimpleName": "Formulario1",
+  "entityFullName": "app_cont.entity.Formulario1",
+  "query": {
+    "isValid": true,
+    "isEmpty": false,
+    "operationType": "object",
+    "isNativeQuery": false,
+    "namespace": "app_cont",
+    "type": "select",
+    "rulesEntity": [
+      {
+        "entity": "Formulario1",
+        "namespace": "app_cont.entity.Formulario1",
+        "dataSourceOptions": {
+          "id": "app_cont.Formulario1",
+          "customId": "Formulario1",
+          "customQueryName": "app_cont.Formulario1",
+          "paramValues": [],
+          "entityFullName": "app_cont.entity.Formulario1",
+          "schemaFields": [
+            {
+              "name": "id",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "quantForm1",
+              "type": "Double",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "dataForm1",
+              "type": "DateTime",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "prodForm1",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "contForm1",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "_objectKey",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": true
+            },
+            {
+              "name": "prodForm1_codiProd1",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "contForm1_descCont",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            }
+          ],
+          "type": "entity",
+          "hasError": false,
+          "customName": "Formulario1",
+          "fullName": "app_cont.entity.Formulario1",
+          "labelName": "app_cont.entity.Formulario1 (Formulario1)"
+        },
+        "alias": "f"
+      }
+    ],
+    "rulesSelect": [
+      {
+        "func": "get",
+        "field": "f.prodForm1.codiProd1",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "f.prodForm1.descProd1",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "e.qteTotal",
+        "type": "double"
+      },
+      {
+        "func": "get",
+        "field": "f.quantForm1",
+        "type": "double"
+      },
+      {
+        "func": "get",
+        "field": "f.contForm1.lojaCont.descLoja",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "f.contForm1.lojaCont.codiLoja",
+        "type": "integer"
+      },
+      {
+        "func": "get",
+        "field": "f.contForm1.depCont.descDpt",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "f.contForm1.depCont.codiDpt",
+        "type": "integer"
+      },
+      {
+        "func": "get",
+        "field": "f.contForm1.descCont",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "f.prodForm1.gprProd1.descGpr",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "f.prodForm1.gprProd1.codiGpr",
+        "type": "integer"
+      },
+      {
+        "func": "get",
+        "field": "f.prodForm1.sbgProd1.descSbg",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "f.prodForm1.sbgProd1.codiSbg",
+        "type": "integer"
+      },
+      {
+        "func": "get",
+        "field": "f.contForm1",
+        "type": "string"
+      }
+    ],
+    "rulesJoin": [
+      {
+        "entity": "Estoque",
+        "namespace": "app_cont.entity.Estoque",
+        "dataSourceOptions": {
+          "id": "app_cont.Estoque",
+          "customId": "Estoque",
+          "customQueryName": "app_cont.Estoque",
+          "paramValues": [],
+          "entityFullName": "app_cont.entity.Estoque",
+          "schemaFields": [
+            {
+              "name": "id",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "codiEst",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "codiDpt",
+              "type": "Int32",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "codiEmp",
+              "type": "Int32",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "qteTotal",
+              "type": "Double",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "contEst",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "_objectKey",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": true
+            },
+            {
+              "name": "contEst_descCont",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            }
+          ],
+          "type": "entity",
+          "hasError": false,
+          "customName": "Estoque",
+          "fullName": "app_cont.entity.Estoque",
+          "labelName": "app_cont.entity.Estoque (Estoque)"
+        },
+        "alias": "e",
+        "joinType": "join",
+        "joinField": "f.prodForm1.codiProd1",
+        "joinOperator": "equal",
+        "joinTargetField": "e.codiEst"
+      }
+    ],
+    "rulesGroupBy": [],
+    "rulesHaving": [],
+    "rulesOrderBy": [],
+    "rules": {
+      "condition": "AND",
+      "rules": [
+        {
+          "id": "f.contForm1",
+          "field": "f.contForm1",
+          "type": "string",
+          "input": "text",
+          "operator": "equal",
+          "valueType": "param",
+          "value": ":contForm1",
+          "valueIsField": false
+        }
+      ],
+      "not": false,
+      "valid": true
+    },
+    "isRawSql": false,
+    "multiTenant": false,
+    "paginatorAutomatic": false,
+    "pagination": false
+  },
+  "queryParamsValues": [
+    {
+      "fieldName": "contForm1",
+      "fieldValue": ""
+    }
+  ],
+  "verbs": {
+    "GET": true,
+    "GETAuthorities": null,
+    "POST": true,
+    "POSTAuthorities": null,
+    "PUT": true,
+    "PUTAuthorities": null,
+    "DELETE": true,
+    "DELETEAuthorities": null,
+    "FILTER": true,
+    "FILTERAuthorities": null,
+    "COUNT": true,
+    "COUNTAuthorities": null
+  },
+  "events": {
+    "beforeInsert": null,
+    "beforeUpdate": null,
+    "beforeDelete": null,
+    "afterInsert": null,
+    "afterUpdate": null,
+    "afterDelete": null,
+    "onNavigate": null,
+    "onAuthorize": null,
+    "onError": null
+  },
+  "defaultValues": {
+    "prodForm1_codiProd1": null,
+    "prodForm1_descProd1": null,
+    "qteTotal": null,
+    "quantForm1": null,
+    "contForm1_lojaCont_descLoja": null,
+    "contForm1_lojaCont_codiLoja": null,
+    "contForm1_depCont_descDpt": null,
+    "contForm1_depCont_codiDpt": null,
+    "contForm1_descCont": null,
+    "prodForm1_gprProd1_descGpr": null,
+    "prodForm1_gprProd1_codiGpr": null,
+    "prodForm1_sbgProd1_descSbg": null,
+    "prodForm1_sbgProd1_codiSbg": null,
+    "contForm1": null,
+    "contForm1_descCont_1": null
+  },
+  "defaultValuesProperties": {
+    "prodForm1_codiProd1": null,
+    "prodForm1_descProd1": null,
+    "qteTotal": null,
+    "quantForm1": null,
+    "contForm1_lojaCont_descLoja": null,
+    "contForm1_lojaCont_codiLoja": null,
+    "contForm1_depCont_descDpt": null,
+    "contForm1_depCont_codiDpt": null,
+    "contForm1_descCont": null,
+    "prodForm1_gprProd1_descGpr": null,
+    "prodForm1_gprProd1_codiGpr": null,
+    "prodForm1_sbgProd1_descSbg": null,
+    "prodForm1_sbgProd1_codiSbg": null,
+    "contForm1": null,
+    "contForm1_descCont_1": null
+  },
+  "security": {
+    "prodForm1_codiProd1": null,
+    "prodForm1_descProd1": null,
+    "qteTotal": null,
+    "quantForm1": null,
+    "contForm1_lojaCont_descLoja": null,
+    "contForm1_lojaCont_codiLoja": null,
+    "contForm1_depCont_descDpt": null,
+    "contForm1_depCont_codiDpt": null,
+    "contForm1_descCont": null,
+    "prodForm1_gprProd1_descGpr": null,
+    "prodForm1_gprProd1_codiGpr": null,
+    "prodForm1_sbgProd1_descSbg": null,
+    "prodForm1_sbgProd1_codiSbg": null,
+    "contForm1": null,
+    "contForm1_descCont_1": null
+  },
+  "calcFields": {},
+  "calcFieldsSecurity": {},
+  "calcFieldsProperties": {},
+  "headers": {},
+  "errorHandles": {
+    "primaryKey": null,
+    "foreignKey": null
+  },
+  "serviceUrl": "api/cronapi/odata/v2/app_cont/query225131/",
+  "audit": false,
+  "swagger": false
+}

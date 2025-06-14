@@ -1,0 +1,219 @@
+{
+  "customId": "contagemfinalizadadata",
+  "queryName": "Contagens Finalizadas por Data",
+  "sourceType": "entityFullName",
+  "baseEntity": null,
+  "blockly": null,
+  "entitySimpleName": "Contagem",
+  "entityFullName": "app_cont.entity.Contagem",
+  "query": {
+    "isValid": true,
+    "rulesEntity": [
+      {
+        "entity": "Contagem",
+        "alias": "c",
+        "namespace": "app_cont.entity.Contagem",
+        "dataSourceOptions": {
+          "id": "app_cont.Contagem",
+          "customId": "Contagem",
+          "customQueryName": "app_cont.Contagem",
+          "paramValues": [],
+          "entityFullName": "app_cont.entity.Contagem",
+          "schemaFields": [
+            {
+              "name": "id",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "descCont",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "fimCont",
+              "type": "Boolean",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "dataCont",
+              "type": "DateTime",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "lojaCont",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "depCont",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "gprCont",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "sbgCont",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "_objectKey",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": true
+            },
+            {
+              "name": "lojaCont_descLoja",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "depCont_descDpt",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "gprCont_descGpr",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "sbgCont_descSbg",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            }
+          ],
+          "type": "entity",
+          "hasError": false,
+          "customName": "Contagem",
+          "fullName": "app_cont.entity.Contagem",
+          "labelName": "app_cont.entity.Contagem (Contagem)"
+        },
+        "name": "Contagem"
+      }
+    ],
+    "rulesSelect": [
+      {
+        "func": "get",
+        "field": "c"
+      }
+    ],
+    "rulesGroupBy": [],
+    "rulesHaving": [],
+    "rulesOrderBy": [],
+    "rules": {
+      "condition": "AND",
+      "not": false,
+      "valid": true,
+      "rules": []
+    }
+  },
+  "queryParamsValues": [],
+  "verbs": {
+    "GET": true,
+    "GETAuthorities": null,
+    "POST": true,
+    "POSTAuthorities": null,
+    "PUT": true,
+    "PUTAuthorities": null,
+    "DELETE": true,
+    "DELETEAuthorities": null,
+    "FILTER": true,
+    "FILTERAuthorities": null,
+    "COUNT": true,
+    "COUNTAuthorities": null
+  },
+  "events": {
+    "beforeInsert": null,
+    "beforeUpdate": null,
+    "beforeDelete": null,
+    "afterInsert": null,
+    "afterUpdate": null,
+    "afterDelete": null,
+    "onNavigate": null,
+    "onAuthorize": null,
+    "onError": null
+  },
+  "defaultValues": {
+    "id": null,
+    "descCont": null,
+    "fimCont": null,
+    "dataCont": null,
+    "lojaCont": null,
+    "depCont": null,
+    "gprCont": null,
+    "sbgCont": null,
+    "lojaCont_descLoja": null,
+    "depCont_descDpt": null,
+    "gprCont_descGpr": null,
+    "sbgCont_descSbg": null
+  },
+  "defaultValuesProperties": {
+    "id": null,
+    "descCont": null,
+    "fimCont": null,
+    "dataCont": null,
+    "lojaCont": null,
+    "depCont": null,
+    "gprCont": null,
+    "sbgCont": null,
+    "lojaCont_descLoja": null,
+    "depCont_descDpt": null,
+    "gprCont_descGpr": null,
+    "sbgCont_descSbg": null
+  },
+  "security": {
+    "id": null,
+    "descCont": null,
+    "fimCont": null,
+    "dataCont": null,
+    "lojaCont": null,
+    "depCont": null,
+    "gprCont": null,
+    "sbgCont": null,
+    "lojaCont_descLoja": null,
+    "depCont_descDpt": null,
+    "gprCont_descGpr": null,
+    "sbgCont_descSbg": null
+  },
+  "calcFields": {},
+  "calcFieldsSecurity": {},
+  "calcFieldsProperties": {},
+  "headers": {},
+  "errorHandles": {
+    "primaryKey": null,
+    "foreignKey": null
+  },
+  "serviceUrl": "api/cronapi/odata/v2/app_cont/query400287/",
+  "audit": false,
+  "swagger": false
+}

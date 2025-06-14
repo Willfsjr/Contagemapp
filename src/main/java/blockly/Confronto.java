@@ -17,7 +17,7 @@ public static final int TIMEOUT = 300;
  * @param idCont
  *
  * @author Willian Ferreira
- * @since 13/06/2025, 15:32:32
+ * @since 14/06/2025, 18:18:24
  *
  */
 public static Var encerrarContagem(@ParamMetaData(description = "idCont", id = "81c2b90d") @RequestBody(required = false) Var idCont) throws Exception {
@@ -27,6 +27,8 @@ public static Var encerrarContagem(@ParamMetaData(description = "idCont", id = "
    private Var contObj = Var.VAR_NULL;
    private Var contLoja = Var.VAR_NULL;
    private Var contDpt = Var.VAR_NULL;
+   private Var contGpr = Var.VAR_NULL;
+   private Var contSbg = Var.VAR_NULL;
    private Var estoqueERP = Var.VAR_NULL;
    private Var inserirA = Var.VAR_NULL;
    private Var codiPsvObj = Var.VAR_NULL;
@@ -40,13 +42,19 @@ public static Var encerrarContagem(@ParamMetaData(description = "idCont", id = "
     Var.valueOf(0);
     try {
          contObj =
-        cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Contagem"),Var.valueOf("select \n	c.lojaCont.codiLoja, \n	c.depCont.codiDpt \nfrom \n	Contagem c  \nwhere \n	c.id = :id"),Var.valueOf("id",idCont));
+        cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Contagem"),Var.valueOf("select \n	c.lojaCont.codiLoja, \n	c.depCont.codiDpt, \n	c.gprCont.codiGpr, \n	c.sbgCont.codiSbg \nfrom \n	Contagem c  \nwhere \n	c.id = :id"),Var.valueOf("id",idCont));
         contLoja =
         cronapi.database.Operations.getField(contObj,
         Var.valueOf("this[0]"));
         contDpt =
         cronapi.database.Operations.getField(contObj,
         Var.valueOf("this[1]"));
+        contGpr =
+        cronapi.database.Operations.getField(contObj,
+        Var.valueOf("this[2]"));
+        contSbg =
+        cronapi.database.Operations.getField(contObj,
+        Var.valueOf("this[3]"));
         if (
         Var.valueOf(
         cronapi.logic.Operations.isNullOrEmpty(contLoja).getObjectAsBoolean() &&
@@ -78,6 +86,22 @@ public static Var encerrarContagem(@ParamMetaData(description = "idCont", id = "
             Var.valueOf("this[3]"))),Var.valueOf("contEst",idCont)));
             cronapi.database.Operations.next(estoqueERP);
         } // end while
+        if (
+        Var.valueOf(
+        cronapi.logic.Operations.isNullOrEmpty(contGpr).getObjectAsBoolean() &&
+        cronapi.logic.Operations.isNullOrEmpty(contSbg).getObjectAsBoolean()).getObjectAsBoolean()) {
+            codiPsvObj =
+            cronapi.database.Operations.query(Var.valueOf("app_cont.entity.AtualizaProduto"),Var.valueOf("select \n	a.codiPsv \nfrom \n	AtualizaProduto a"));
+        } else {
+            if (
+            cronapi.logic.Operations.isNullOrEmpty(contSbg).getObjectAsBoolean()) {
+                codiPsvObj =
+                cronapi.database.Operations.query(Var.valueOf("app_cont.entity.AtualizaProduto"),Var.valueOf("select \n	a.codiPsv \nfrom \n	AtualizaProduto a  \nwhere \n	a.codiGpr = :codiGpr"),Var.valueOf("codiGpr",contGpr));
+            } else {
+                codiPsvObj =
+                cronapi.database.Operations.query(Var.valueOf("app_oracle.entity.Estoquecontagem"),Var.valueOf("select \n	e.codiPsv, \n	e.codiDpt, \n	e.codiEmp, \n	e.qteTotal \nfrom \n	Estoquecontagem e  \nwhere \n	e.codiEmp = :codiEmp AND \n	e.codiDpt = :codiDpt"),Var.valueOf("codiEmp",contGpr),Var.valueOf("codiDpt",contSbg));
+            }
+        }
         codiPsvObj =
         cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Produto1"),Var.valueOf("select \n	p \nfrom \n	Produto1 p  \nwhere \n	p.contProd1 = :contProd1"),Var.valueOf("contProd1",idCont));
         while (
