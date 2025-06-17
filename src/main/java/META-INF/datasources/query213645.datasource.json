@@ -8,30 +8,120 @@
   "entityFullName": "app_cont.entity.VwConfrontoContagem",
   "query": {
     "isValid": true,
+    "isEmpty": false,
+    "operationType": "object",
+    "isNativeQuery": false,
+    "namespace": "app_cont",
+    "type": "select",
     "rulesEntity": [
       {
         "entity": "VwConfrontoContagem",
-        "alias": "v",
-        "namespace": "app_cont.entity.VwConfrontoContagem"
+        "namespace": "app_cont.entity.VwConfrontoContagem",
+        "dataSourceOptions": {
+          "id": "app_cont.VwConfrontoContagem",
+          "customId": "VwConfrontoContagem",
+          "customQueryName": "app_cont.VwConfrontoContagem",
+          "paramValues": [],
+          "entityFullName": "app_cont.entity.VwConfrontoContagem",
+          "schemaFields": [
+            {
+              "name": "codiPsv",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "contagemForm1Id",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "contagemForm2Id",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "descPsv",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "quantForm1",
+              "type": "Double",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "quantForm2",
+              "type": "Double",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "_objectKey",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": true
+            }
+          ],
+          "type": "entity",
+          "hasError": false,
+          "customName": "VwConfrontoContagem",
+          "fullName": "app_cont.entity.VwConfrontoContagem",
+          "labelName": "app_cont.entity.VwConfrontoContagem (VwConfrontoContagem)"
+        },
+        "alias": "v"
       }
     ],
     "rulesSelect": [
       {
         "func": "get",
-        "field": "v"
+        "field": "v",
+        "type": "string"
       }
     ],
+    "rulesJoin": [],
     "rulesGroupBy": [],
     "rulesHaving": [],
     "rulesOrderBy": [],
     "rules": {
       "condition": "AND",
+      "rules": [
+        {
+          "id": "v.contagemForm1Id",
+          "field": "v.contagemForm1Id",
+          "type": "string",
+          "input": "text",
+          "operator": "equal",
+          "valueType": "param",
+          "value": ":contagemForm1Id",
+          "valueIsField": false
+        }
+      ],
       "not": false,
-      "valid": true,
-      "rules": []
-    }
+      "valid": true
+    },
+    "isRawSql": false,
+    "multiTenant": false,
+    "paginatorAutomatic": false,
+    "pagination": false
   },
-  "queryParamsValues": [],
+  "queryParamsValues": [
+    {
+      "fieldName": "contagemForm1Id",
+      "fieldValue": ""
+    }
+  ],
   "verbs": {
     "GET": true,
     "GETAuthorities": null,
@@ -59,18 +149,24 @@
   },
   "defaultValues": {
     "codiPsv": null,
+    "contagemForm1Id": null,
+    "contagemForm2Id": null,
     "descPsv": null,
     "quantForm1": null,
     "quantForm2": null
   },
   "defaultValuesProperties": {
     "codiPsv": null,
+    "contagemForm1Id": null,
+    "contagemForm2Id": null,
     "descPsv": null,
     "quantForm1": null,
     "quantForm2": null
   },
   "security": {
     "codiPsv": null,
+    "contagemForm1Id": null,
+    "contagemForm2Id": null,
     "descPsv": null,
     "quantForm1": null,
     "quantForm2": null

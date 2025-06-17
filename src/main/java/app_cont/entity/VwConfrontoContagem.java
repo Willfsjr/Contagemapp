@@ -19,17 +19,11 @@ import cronapp.framework.core.persistence.*;
 * @generated
 */
 @jakarta.persistence.Entity
-@Cacheable(false)
-@org.eclipse.persistence.annotations.Cache(
-  expiry = 0,
-  alwaysRefresh = true,
-  refreshOnlyIfNewer = false
-)
 @jakarta.persistence.Table(name = "\"vw_confronto_contagem\"", schema="\"contdb_dev\"")
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("app_cont.entity.VwConfrontoContagem")
-@CronappTable(role=CronappTableRole.AUTO)
+@CronappTable(role=CronappTableRole.CLASS)
 public class VwConfrontoContagem implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -44,6 +38,24 @@ public class VwConfrontoContagem implements Serializable {
     @CronappColumn(attributeType="STRING", label="Codi Psv")
     @Column(name = "codi_psv", nullable = false, length=255, insertable=true, updatable=true)
         private java.lang.String codiPsv;
+
+
+    /**
+    * @generated
+    */
+    @CronappColumn(attributeType="STRING", label="Contagem Form 1 Id")
+    @Column(name = "contagem_form1_id", nullable = true, unique = false, length=255, insertable=true, updatable=true)
+        
+        private java.lang.String contagemForm1Id;
+
+
+    /**
+    * @generated
+    */
+    @CronappColumn(attributeType="STRING", label="Contagem Form 2 Id")
+    @Column(name = "contagem_form2_id", nullable = true, unique = false, length=255, insertable=true, updatable=true)
+        
+        private java.lang.String contagemForm2Id;
 
 
     /**
@@ -96,6 +108,42 @@ public class VwConfrontoContagem implements Serializable {
     */
     public VwConfrontoContagem setCodiPsv(java.lang.String codiPsv) {
         this.codiPsv = codiPsv;
+        return this;
+    }
+    /**
+    * Obtém contagemForm1Id
+    * return contagemForm1Id
+    * @generated
+    */
+    public java.lang.String getContagemForm1Id() {
+        return this.contagemForm1Id;
+    }
+
+    /**
+    * Define contagemForm1Id
+    * @param contagemForm1Id contagemForm1Id
+    * @generated
+    */
+    public VwConfrontoContagem setContagemForm1Id(java.lang.String contagemForm1Id) {
+        this.contagemForm1Id = contagemForm1Id;
+        return this;
+    }
+    /**
+    * Obtém contagemForm2Id
+    * return contagemForm2Id
+    * @generated
+    */
+    public java.lang.String getContagemForm2Id() {
+        return this.contagemForm2Id;
+    }
+
+    /**
+    * Define contagemForm2Id
+    * @param contagemForm2Id contagemForm2Id
+    * @generated
+    */
+    public VwConfrontoContagem setContagemForm2Id(java.lang.String contagemForm2Id) {
+        this.contagemForm2Id = contagemForm2Id;
         return this;
     }
     /**

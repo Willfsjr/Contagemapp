@@ -17,8 +17,8 @@ import org.springframework.transaction.annotation.*;
  * 
  * @generated
  */
-@Repository("app_cont-EstoqueDAO")
+@Repository("app_cont-ConfrontoDAO")
 @Transactional(transactionManager="app_cont-TransactionManager")
-public interface EstoqueDAO extends JpaRepository<Estoque, java.lang.String> {
+public interface ConfrontoDAO extends JpaRepository<Confronto, java.lang.String> {
 
 }

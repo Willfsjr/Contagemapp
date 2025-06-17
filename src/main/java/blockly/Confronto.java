@@ -17,7 +17,7 @@ public static final int TIMEOUT = 300;
  * @param idCont
  *
  * @author Willian Ferreira
- * @since 14/06/2025, 18:18:24
+ * @since 17/06/2025, 10:58:09
  *
  */
 public static Var encerrarContagem(@ParamMetaData(description = "idCont", id = "81c2b90d") @RequestBody(required = false) Var idCont) throws Exception {
@@ -29,12 +29,10 @@ public static Var encerrarContagem(@ParamMetaData(description = "idCont", id = "
    private Var contDpt = Var.VAR_NULL;
    private Var contGpr = Var.VAR_NULL;
    private Var contSbg = Var.VAR_NULL;
-   private Var estoqueERP = Var.VAR_NULL;
-   private Var inserirA = Var.VAR_NULL;
-   private Var codiPsvObj = Var.VAR_NULL;
-   private Var codiPsv = Var.VAR_NULL;
-   private Var prodEst = Var.VAR_NULL;
-   private Var inserirB = Var.VAR_NULL;
+   private Var fom1ObjPsv = Var.VAR_NULL;
+   private Var fomr1CodiPsv = Var.VAR_NULL;
+   private Var ConfNull = Var.VAR_NULL;
+   private Var inserirC = Var.VAR_NULL;
    private Var excecao = Var.VAR_NULL;
 
    public Var call() throws Exception {
@@ -55,90 +53,37 @@ public static Var encerrarContagem(@ParamMetaData(description = "idCont", id = "
         contSbg =
         cronapi.database.Operations.getField(contObj,
         Var.valueOf("this[3]"));
-        if (
-        Var.valueOf(
-        cronapi.logic.Operations.isNullOrEmpty(contLoja).getObjectAsBoolean() &&
-        cronapi.logic.Operations.isNullOrEmpty(contDpt).getObjectAsBoolean()).getObjectAsBoolean()) {
-            estoqueERP =
-            cronapi.database.Operations.query(Var.valueOf("app_oracle.entity.Estoquecontagem"),Var.valueOf("select \n	e.codiPsv, \n	e.codiDpt, \n	e.codiEmp, \n	e.qteTotal \nfrom \n	Estoquecontagem e"));
-        } else {
-            if (
-            cronapi.logic.Operations.isNullOrEmpty(contDpt).getObjectAsBoolean()) {
-                estoqueERP =
-                cronapi.database.Operations.query(Var.valueOf("app_oracle.entity.Estoquecontagem"),Var.valueOf("select \n	e.codiPsv, \n	e.codiDpt, \n	e.codiEmp, \n	e.qteTotal \nfrom \n	Estoquecontagem e  \nwhere \n	e.codiEmp = :codiEmp"),Var.valueOf("codiEmp",contLoja));
-            } else {
-                estoqueERP =
-                cronapi.database.Operations.query(Var.valueOf("app_oracle.entity.Estoquecontagem"),Var.valueOf("select \n	e.codiPsv, \n	e.codiDpt, \n	e.codiEmp, \n	e.qteTotal \nfrom \n	Estoquecontagem e  \nwhere \n	e.codiEmp = :codiEmp AND \n	e.codiDpt = :codiDpt"),Var.valueOf("codiEmp",contLoja),Var.valueOf("codiDpt",contDpt));
-            }
-        }
+        fom1ObjPsv =
+        cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Formulario1"),Var.valueOf("select \n	f.prodForm1.codiProd1, \n	f.quantForm1 \nfrom \n	Formulario1 f  \nwhere \n	f.contForm1 = :contForm1"),Var.valueOf("contForm1",idCont));
         while (
-        cronapi.database.Operations.hasElement(estoqueERP).getObjectAsBoolean()) {
-            inserirA =
-            cronapi.database.Operations.insert(Var.valueOf("app_cont.entity.AtualizaEstoque"),
-            cronapi.object.Operations.newObject(Var.valueOf("app_cont.entity.AtualizaEstoque"),Var.valueOf("codiPsv",
-            cronapi.database.Operations.getField(estoqueERP,
-            Var.valueOf("this[0]"))),Var.valueOf("codiDpt",
-            cronapi.database.Operations.getField(estoqueERP,
-            Var.valueOf("this[1]"))),Var.valueOf("codiEmp",
-            cronapi.database.Operations.getField(estoqueERP,
-            Var.valueOf("this[2]"))),Var.valueOf("qteTotal",
-            cronapi.database.Operations.getField(estoqueERP,
-            Var.valueOf("this[3]"))),Var.valueOf("contEst",idCont)));
-            cronapi.database.Operations.next(estoqueERP);
-        } // end while
-        if (
-        Var.valueOf(
-        cronapi.logic.Operations.isNullOrEmpty(contGpr).getObjectAsBoolean() &&
-        cronapi.logic.Operations.isNullOrEmpty(contSbg).getObjectAsBoolean()).getObjectAsBoolean()) {
-            codiPsvObj =
-            cronapi.database.Operations.query(Var.valueOf("app_cont.entity.AtualizaProduto"),Var.valueOf("select \n	a.codiPsv \nfrom \n	AtualizaProduto a"));
-        } else {
+        cronapi.database.Operations.hasElement(fom1ObjPsv).getObjectAsBoolean()) {
+            fomr1CodiPsv =
+            cronapi.database.Operations.getField(fom1ObjPsv,
+            Var.valueOf("this[0]"));
+            ConfNull =
+            cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Confronto"),Var.valueOf("select \n	c.codiPsv \nfrom \n	Confronto c  \nwhere \n	c.codiPsv = :codiPsv AND \n	c.contConf = :contConf"),Var.valueOf("codiPsv",fomr1CodiPsv),Var.valueOf("contConf",idCont));
             if (
-            cronapi.logic.Operations.isNullOrEmpty(contSbg).getObjectAsBoolean()) {
-                codiPsvObj =
-                cronapi.database.Operations.query(Var.valueOf("app_cont.entity.AtualizaProduto"),Var.valueOf("select \n	a.codiPsv \nfrom \n	AtualizaProduto a  \nwhere \n	a.codiGpr = :codiGpr"),Var.valueOf("codiGpr",contGpr));
+            cronapi.logic.Operations.isNullOrEmpty(ConfNull).getObjectAsBoolean()) {
+                inserirC =
+                cronapi.database.Operations.insert(Var.valueOf("app_cont.entity.Confronto"),
+                cronapi.object.Operations.newObject(Var.valueOf("app_cont.entity.Confronto"),Var.valueOf("codiPsv",
+                cronapi.database.Operations.getField(fom1ObjPsv,
+                Var.valueOf("this[0]"))),Var.valueOf("contConf",idCont),Var.valueOf("quantConf",
+                cronapi.database.Operations.getField(fom1ObjPsv,
+                Var.valueOf("this[1]")))));
+                contador =
+                cronapi.math.Operations.sum(contador,
+                Var.valueOf(1));
             } else {
-                codiPsvObj =
-                cronapi.database.Operations.query(Var.valueOf("app_oracle.entity.Estoquecontagem"),Var.valueOf("select \n	e.codiPsv, \n	e.codiDpt, \n	e.codiEmp, \n	e.qteTotal \nfrom \n	Estoquecontagem e  \nwhere \n	e.codiEmp = :codiEmp AND \n	e.codiDpt = :codiDpt"),Var.valueOf("codiEmp",contGpr),Var.valueOf("codiDpt",contSbg));
+                cronapi.database.Operations.update(Var.valueOf("app_cont.entity.Confronto"),
+                cronapi.object.Operations.newObject(Var.valueOf("app_cont.entity.Confronto"),Var.valueOf("codiPsv",
+                cronapi.database.Operations.getField(fom1ObjPsv,
+                Var.valueOf("this[0]"))),Var.valueOf("contConf",idCont),Var.valueOf("quantConf",
+                cronapi.database.Operations.getField(fom1ObjPsv,
+                Var.valueOf("this[1]")))));
             }
-        }
-        codiPsvObj =
-        cronapi.database.Operations.query(Var.valueOf("app_cont.entity.Produto1"),Var.valueOf("select \n	p \nfrom \n	Produto1 p  \nwhere \n	p.contProd1 = :contProd1"),Var.valueOf("contProd1",idCont));
-        while (
-        cronapi.database.Operations.hasElement(codiPsvObj).getObjectAsBoolean()) {
-            codiPsv =
-            cronapi.database.Operations.getField(codiPsvObj,
-            Var.valueOf("this[0].codiProd1"));
-            prodEst =
-            cronapi.database.Operations.query(Var.valueOf("app_cont.entity.AtualizaEstoque"),Var.valueOf("select \n	a \nfrom \n	AtualizaEstoque a  \nwhere \n	a.contEst = :contEst AND \n	a.codiPsv = :codiPsv"),Var.valueOf("contEst",idCont),Var.valueOf("codiPsv",codiPsv));
-            if (
-            cronapi.logic.Operations.isNullOrEmpty(prodEst)
-            .negate().getObjectAsBoolean()) {
-                inserirB =
-                cronapi.database.Operations.insert(Var.valueOf("app_cont.entity.Estoque"),
-                cronapi.object.Operations.newObject(Var.valueOf("app_cont.entity.Estoque"),Var.valueOf("codiEst",
-                cronapi.database.Operations.getField(prodEst,
-                Var.valueOf("this[0].codiPsv"))),Var.valueOf("codiDpt",
-                cronapi.database.Operations.getField(prodEst,
-                Var.valueOf("this[0].codiDpt"))),Var.valueOf("codiEmp",
-                cronapi.database.Operations.getField(prodEst,
-                Var.valueOf("this[0].codiEmp"))),Var.valueOf("qteTotal",
-                cronapi.database.Operations.getField(prodEst,
-                Var.valueOf("this[0].qteTotal"))),Var.valueOf("contEst",
-                cronapi.database.Operations.getField(prodEst,
-                Var.valueOf("this[0].contEst")))));
-            }
-            cronapi.database.Operations.close(prodEst);
-            contador =
-            cronapi.math.Operations.sum(contador,
-            Var.valueOf(1));
-            cronapi.database.Operations.next(codiPsvObj);
+            cronapi.database.Operations.next(fom1ObjPsv);
         } // end while
-        cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.Contagem"), Var.valueOf("update \n	Contagem  \nset \n	fimCont = :fimCont \nwhere \n	id = :id"),Var.valueOf("fimCont",
-        Var.VAR_TRUE),Var.valueOf("id",idCont));
-        cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.refreshDatasource"),
-        Var.valueOf("contagem"),
-        Var.valueOf("true"));
         cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.hideModal"),
         Var.valueOf("modal71744"));
         cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("success"),
@@ -146,10 +91,6 @@ public static Var encerrarContagem(@ParamMetaData(description = "idCont", id = "
         Var.valueOf("Confronto Concluído com Sucesso: ").getObjectAsString() +
         contador.getObjectAsString() +
         Var.valueOf(" Produtos Confrontados").getObjectAsString()));
-        cronapi.database.Operations.close(contObj);
-        cronapi.database.Operations.close(estoqueERP);
-        cronapi.database.Operations.close(codiPsvObj);
-        cronapi.database.Operations.execute(Var.valueOf("app_cont.entity.AtualizaEstoque"), Var.valueOf("delete from \n	\n	AtualizaEstoque  \nwhere \n	contEst = :contEst"),Var.valueOf("contEst",idCont));
      } catch (Exception excecao_exception) {
           excecao = Var.valueOf(excecao_exception);
          cronapi.database.Operations.rollbackTransaction(Var.valueOf("app_cont"));

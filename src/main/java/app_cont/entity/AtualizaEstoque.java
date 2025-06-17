@@ -52,6 +52,15 @@ public class AtualizaEstoque implements Serializable {
     /**
     * @generated
     */
+    @CronappColumn(attributeType="STRING", label="Desc Psv")
+    @Column(name = "DESC_PSV", nullable = true, unique = false, insertable=true, updatable=true)
+        
+        private java.lang.String descPsv;
+
+
+    /**
+    * @generated
+    */
     @CronappColumn(attributeType="INTEGER", label="Codi Dpt")
     @Column(name = "CODI_DPT", nullable = true, unique = false, insertable=true, updatable=true)
         
@@ -126,6 +135,24 @@ public class AtualizaEstoque implements Serializable {
     */
     public AtualizaEstoque setCodiPsv(java.lang.String codiPsv) {
         this.codiPsv = codiPsv;
+        return this;
+    }
+    /**
+    * Obtém descPsv
+    * return descPsv
+    * @generated
+    */
+    public java.lang.String getDescPsv() {
+        return this.descPsv;
+    }
+
+    /**
+    * Define descPsv
+    * @param descPsv descPsv
+    * @generated
+    */
+    public AtualizaEstoque setDescPsv(java.lang.String descPsv) {
+        this.descPsv = descPsv;
         return this;
     }
     /**
