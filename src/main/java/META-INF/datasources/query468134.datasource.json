@@ -169,8 +169,12 @@
     "dataCont": null,
     "lojaCont": null,
     "depCont": null,
+    "gprCont": null,
+    "sbgCont": null,
     "lojaCont_descLoja": null,
-    "depCont_descDpt": null
+    "depCont_descDpt": null,
+    "gprCont_descGpr": null,
+    "sbgCont_descSbg": null
   },
   "defaultValuesProperties": {
     "id": null,
@@ -179,8 +183,12 @@
     "dataCont": null,
     "lojaCont": null,
     "depCont": null,
+    "gprCont": null,
+    "sbgCont": null,
     "lojaCont_descLoja": null,
-    "depCont_descDpt": null
+    "depCont_descDpt": null,
+    "gprCont_descGpr": null,
+    "sbgCont_descSbg": null
   },
   "security": {
     "id": null,
@@ -189,8 +197,12 @@
     "dataCont": null,
     "lojaCont": null,
     "depCont": null,
+    "gprCont": null,
+    "sbgCont": null,
     "lojaCont_descLoja": null,
-    "depCont_descDpt": null
+    "depCont_descDpt": null,
+    "gprCont_descGpr": null,
+    "sbgCont_descSbg": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},

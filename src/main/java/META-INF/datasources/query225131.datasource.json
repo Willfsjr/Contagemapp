@@ -133,22 +133,22 @@
       },
       {
         "func": "get",
-        "field": "f.prodForm1.gprProd1.descGpr",
+        "field": "c.descGpr",
         "type": "string"
       },
       {
         "func": "get",
-        "field": "f.prodForm1.gprProd1.codiGpr",
+        "field": "c.codiGpr",
         "type": "integer"
       },
       {
         "func": "get",
-        "field": "f.prodForm1.sbgProd1.descSbg",
+        "field": "c.descSgb",
         "type": "string"
       },
       {
         "func": "get",
-        "field": "f.prodForm1.sbgProd1.codiSbg",
+        "field": "c.codiSbg",
         "type": "integer"
       },
       {
@@ -273,7 +273,7 @@
         },
         "alias": "c",
         "joinType": "join",
-        "joinField": "f.prodForm1",
+        "joinField": "f.prodForm1.codiProd1",
         "joinOperator": "equal",
         "joinTargetField": "c.codiPsv"
       }
@@ -335,25 +335,55 @@
     "onError": null
   },
   "defaultValues": {
-    "id": null,
+    "prodForm1_codiProd1": null,
+    "prodForm1_descProd1": null,
     "quantForm1": null,
-    "dataForm1": null,
-    "prodForm1": null,
-    "contForm1": null
+    "contForm1_lojaCont_descLoja": null,
+    "contForm1_lojaCont_codiLoja": null,
+    "contForm1_depCont_descDpt": null,
+    "contForm1_depCont_codiDpt": null,
+    "contForm1_descCont": null,
+    "descGpr": null,
+    "codiGpr": null,
+    "descSgb": null,
+    "codiSbg": null,
+    "contForm1": null,
+    "contForm1_descCont_1": null,
+    "qteTotal": null
   },
   "defaultValuesProperties": {
-    "id": null,
+    "prodForm1_codiProd1": null,
+    "prodForm1_descProd1": null,
     "quantForm1": null,
-    "dataForm1": null,
-    "prodForm1": null,
-    "contForm1": null
+    "contForm1_lojaCont_descLoja": null,
+    "contForm1_lojaCont_codiLoja": null,
+    "contForm1_depCont_descDpt": null,
+    "contForm1_depCont_codiDpt": null,
+    "contForm1_descCont": null,
+    "descGpr": null,
+    "codiGpr": null,
+    "descSgb": null,
+    "codiSbg": null,
+    "contForm1": null,
+    "contForm1_descCont_1": null,
+    "qteTotal": null
   },
   "security": {
-    "id": null,
+    "prodForm1_codiProd1": null,
+    "prodForm1_descProd1": null,
     "quantForm1": null,
-    "dataForm1": null,
-    "prodForm1": null,
-    "contForm1": null
+    "contForm1_lojaCont_descLoja": null,
+    "contForm1_lojaCont_codiLoja": null,
+    "contForm1_depCont_descDpt": null,
+    "contForm1_depCont_codiDpt": null,
+    "contForm1_descCont": null,
+    "descGpr": null,
+    "codiGpr": null,
+    "descSgb": null,
+    "codiSbg": null,
+    "contForm1": null,
+    "contForm1_descCont_1": null,
+    "qteTotal": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},
