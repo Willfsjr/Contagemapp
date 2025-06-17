@@ -103,11 +103,6 @@
       },
       {
         "func": "get",
-        "field": "e.qteTotal",
-        "type": "double"
-      },
-      {
-        "func": "get",
         "field": "f.quantForm1",
         "type": "double"
       },
@@ -160,18 +155,23 @@
         "func": "get",
         "field": "f.contForm1",
         "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "c.qteTotal",
+        "type": "double"
       }
     ],
     "rulesJoin": [
       {
-        "entity": "Estoque",
-        "namespace": "app_cont.entity.Estoque",
+        "entity": "Confronto",
+        "namespace": "app_cont.entity.Confronto",
         "dataSourceOptions": {
-          "id": "app_cont.Estoque",
-          "customId": "Estoque",
-          "customQueryName": "app_cont.Estoque",
+          "id": "app_cont.Confronto",
+          "customId": "Confronto",
+          "customQueryName": "app_cont.Confronto",
           "paramValues": [],
-          "entityFullName": "app_cont.entity.Estoque",
+          "entityFullName": "app_cont.entity.Confronto",
           "schemaFields": [
             {
               "name": "id",
@@ -181,22 +181,15 @@
               "key": false
             },
             {
-              "name": "codiEst",
+              "name": "codiPsv",
               "type": "String",
               "nullable": true,
               "notEmpty": false,
               "key": false
             },
             {
-              "name": "codiDpt",
-              "type": "Int32",
-              "nullable": true,
-              "notEmpty": false,
-              "key": false
-            },
-            {
-              "name": "codiEmp",
-              "type": "Int32",
+              "name": "descPsv",
+              "type": "String",
               "nullable": true,
               "notEmpty": false,
               "key": false
@@ -209,8 +202,50 @@
               "key": false
             },
             {
-              "name": "contEst",
+              "name": "contConf",
               "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "codiGpr",
+              "type": "Int32",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "descGpr",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "codiSbg",
+              "type": "Int32",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "descSgb",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "quantConf",
+              "type": "Double",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "custTab",
+              "type": "Double",
               "nullable": true,
               "notEmpty": false,
               "key": false
@@ -223,7 +258,7 @@
               "key": true
             },
             {
-              "name": "contEst_descCont",
+              "name": "contConf_descCont",
               "type": "String",
               "nullable": true,
               "notEmpty": false,
@@ -232,15 +267,15 @@
           ],
           "type": "entity",
           "hasError": false,
-          "customName": "Estoque",
-          "fullName": "app_cont.entity.Estoque",
-          "labelName": "app_cont.entity.Estoque (Estoque)"
+          "customName": "Confronto",
+          "fullName": "app_cont.entity.Confronto",
+          "labelName": "app_cont.entity.Confronto (Confronto)"
         },
-        "alias": "e",
+        "alias": "c",
         "joinType": "join",
-        "joinField": "f.prodForm1.codiProd1",
+        "joinField": "f.prodForm1",
         "joinOperator": "equal",
-        "joinTargetField": "e.codiEst"
+        "joinTargetField": "c.codiPsv"
       }
     ],
     "rulesGroupBy": [],
@@ -300,55 +335,25 @@
     "onError": null
   },
   "defaultValues": {
-    "prodForm1_codiProd1": null,
-    "prodForm1_descProd1": null,
-    "qteTotal": null,
+    "id": null,
     "quantForm1": null,
-    "contForm1_lojaCont_descLoja": null,
-    "contForm1_lojaCont_codiLoja": null,
-    "contForm1_depCont_descDpt": null,
-    "contForm1_depCont_codiDpt": null,
-    "contForm1_descCont": null,
-    "prodForm1_gprProd1_descGpr": null,
-    "prodForm1_gprProd1_codiGpr": null,
-    "prodForm1_sbgProd1_descSbg": null,
-    "prodForm1_sbgProd1_codiSbg": null,
-    "contForm1": null,
-    "contForm1_descCont_1": null
+    "dataForm1": null,
+    "prodForm1": null,
+    "contForm1": null
   },
   "defaultValuesProperties": {
-    "prodForm1_codiProd1": null,
-    "prodForm1_descProd1": null,
-    "qteTotal": null,
+    "id": null,
     "quantForm1": null,
-    "contForm1_lojaCont_descLoja": null,
-    "contForm1_lojaCont_codiLoja": null,
-    "contForm1_depCont_descDpt": null,
-    "contForm1_depCont_codiDpt": null,
-    "contForm1_descCont": null,
-    "prodForm1_gprProd1_descGpr": null,
-    "prodForm1_gprProd1_codiGpr": null,
-    "prodForm1_sbgProd1_descSbg": null,
-    "prodForm1_sbgProd1_codiSbg": null,
-    "contForm1": null,
-    "contForm1_descCont_1": null
+    "dataForm1": null,
+    "prodForm1": null,
+    "contForm1": null
   },
   "security": {
-    "prodForm1_codiProd1": null,
-    "prodForm1_descProd1": null,
-    "qteTotal": null,
+    "id": null,
     "quantForm1": null,
-    "contForm1_lojaCont_descLoja": null,
-    "contForm1_lojaCont_codiLoja": null,
-    "contForm1_depCont_descDpt": null,
-    "contForm1_depCont_codiDpt": null,
-    "contForm1_descCont": null,
-    "prodForm1_gprProd1_descGpr": null,
-    "prodForm1_gprProd1_codiGpr": null,
-    "prodForm1_sbgProd1_descSbg": null,
-    "prodForm1_sbgProd1_codiSbg": null,
-    "contForm1": null,
-    "contForm1_descCont_1": null
+    "dataForm1": null,
+    "prodForm1": null,
+    "contForm1": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},

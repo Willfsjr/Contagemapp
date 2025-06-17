@@ -104,6 +104,24 @@ public class AtualizaProduto implements Serializable {
 
 
     /**
+    * @generated
+    */
+    @CronappColumn(attributeType="STRING", label="Desc Gpr")
+    @Column(name = "DESC_GPR", nullable = true, unique = false, insertable=true, updatable=true)
+        
+        private java.lang.String descGpr;
+
+
+    /**
+    * @generated
+    */
+    @CronappColumn(attributeType="STRING", label="Desc Sbg")
+    @Column(name = "DESC_SBG", nullable = true, unique = false, insertable=true, updatable=true)
+        
+        private java.lang.String descSbg;
+
+
+    /**
     * Construtor
     * @generated
     */
@@ -252,6 +270,42 @@ public class AtualizaProduto implements Serializable {
     */
     public AtualizaProduto setContAtuProd(Contagem contAtuProd) {
         this.contAtuProd = contAtuProd;
+        return this;
+    }
+    /**
+    * Obtém descGpr
+    * return descGpr
+    * @generated
+    */
+    public java.lang.String getDescGpr() {
+        return this.descGpr;
+    }
+
+    /**
+    * Define descGpr
+    * @param descGpr descGpr
+    * @generated
+    */
+    public AtualizaProduto setDescGpr(java.lang.String descGpr) {
+        this.descGpr = descGpr;
+        return this;
+    }
+    /**
+    * Obtém descSbg
+    * return descSbg
+    * @generated
+    */
+    public java.lang.String getDescSbg() {
+        return this.descSbg;
+    }
+
+    /**
+    * Define descSbg
+    * @param descSbg descSbg
+    * @generated
+    */
+    public AtualizaProduto setDescSbg(java.lang.String descSbg) {
+        this.descSbg = descSbg;
         return this;
     }
 
