@@ -1,6 +1,6 @@
 {
-  "customId": "relatconf",
-  "queryName": "Relatorio Confronto",
+  "customId": "relatsobra",
+  "queryName": "Relatorio Sobra",
   "sourceType": "entityFullName",
   "baseEntity": null,
   "blockly": null,
@@ -11,7 +11,7 @@
     "isRawSql": true,
     "isNativeQuery": false,
     "namespace": "app_cont",
-    "sqlContent": "select \n\tc.codiPsv, \n\tc.descPsv, \n\tc.contConf.lojaCont.descLoja, \n\tc.contConf.lojaCont.codiLoja, \n\tc.contConf.depCont.descDpt, \n\tc.contConf.depCont.codiDpt, \n\tc.descGpr, \n\tc.codiGpr, \n\tc.descSgb, \n\tc.codiSbg, \n\tc.contConf.descCont, \n\tc.contConf.id, \n\tc.qteTotal, \n\tc.quantConf, \n\t(c.quantConf - c.qteTotal) as totalConf\nfrom \n\tConfronto c  \nwhere \n\tc.contConf.id \u003d :contConfId \norder by \n\tc.descPsv asc",
+    "sqlContent": "select \n\tc.codiPsv, \n\tc.descPsv, \n\tc.contConf.lojaCont.descLoja, \n\tc.contConf.lojaCont.codiLoja, \n\tc.contConf.depCont.descDpt, \n\tc.contConf.depCont.codiDpt, \n\tc.descGpr, \n\tc.codiGpr, \n\tc.descSgb, \n\tc.codiSbg, \n\tc.contConf.descCont, \n\tc.contConf.id, \n\tc.qteTotal, \n\tc.quantConf, \n\t(c.quantConf - c.qteTotal) as totalConf\nfrom \n\tConfronto c  \nwhere \n\tc.contConf.id \u003d :contConfId \n\tand (c.quantConf - c.qteTotal) \u003e 0\norder by \n\tc.descPsv asc",
     "multiTenant": false,
     "paginatorAutomatic": false,
     "pagination": false
@@ -106,7 +106,7 @@
     "primaryKey": null,
     "foreignKey": null
   },
-  "serviceUrl": "api/cronapi/odata/v2/app_cont/query955417/",
+  "serviceUrl": "api/cronapi/odata/v2/app_cont/query156195/",
   "audit": false,
   "swagger": false
 }

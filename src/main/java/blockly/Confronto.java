@@ -17,7 +17,7 @@ public static final int TIMEOUT = 300;
  * @param idCont
  *
  * @author Willian Ferreira
- * @since 17/06/2025, 14:38:38
+ * @since 18/06/2025, 12:01:19
  *
  */
 public static Var encerrarContagem(@ParamMetaData(description = "idCont", id = "81c2b90d") @RequestBody(required = false) Var idCont) throws Exception {
@@ -112,7 +112,8 @@ public static Var encerrarContagem(@ParamMetaData(description = "idCont", id = "
             cronapi.database.Operations.getField(prodConf,
             Var.valueOf("this[0]"))),Var.valueOf("qteTotal",
             cronapi.database.Operations.getField(prodConf,
-            Var.valueOf("this[1]"))),Var.valueOf("contConf",idCont)));
+            Var.valueOf("this[1]"))),Var.valueOf("contConf",idCont),Var.valueOf("quantConf",
+            Var.valueOf(0))));
             contador =
             cronapi.math.Operations.sum(contador,
             Var.valueOf(1));
@@ -133,7 +134,8 @@ public static Var encerrarContagem(@ParamMetaData(description = "idCont", id = "
                 cronapi.database.Operations.insert(Var.valueOf("app_cont.entity.Confronto"),
                 cronapi.object.Operations.newObject(Var.valueOf("app_cont.entity.Confronto"),Var.valueOf("codiPsv",
                 cronapi.database.Operations.getField(fom1ObjPsv,
-                Var.valueOf("this[0]"))),Var.valueOf("contConf",idCont),Var.valueOf("quantConf",
+                Var.valueOf("this[0]"))),Var.valueOf("qteTotal",
+                Var.valueOf(0)),Var.valueOf("contConf",idCont),Var.valueOf("quantConf",
                 cronapi.database.Operations.getField(fom1ObjPsv,
                 Var.valueOf("this[1]")))));
                 contador =

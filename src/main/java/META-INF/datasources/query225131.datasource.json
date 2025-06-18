@@ -280,7 +280,13 @@
     ],
     "rulesGroupBy": [],
     "rulesHaving": [],
-    "rulesOrderBy": [],
+    "rulesOrderBy": [
+      {
+        "func": "get",
+        "field": "f.prodForm1.descProd1",
+        "order": "asc"
+      }
+    ],
     "rules": {
       "condition": "AND",
       "rules": [
