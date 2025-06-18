@@ -8,28 +8,102 @@
   "entityFullName": "app_cont.entity.Loja",
   "query": {
     "isValid": true,
+    "isEmpty": false,
+    "operationType": "object",
+    "isNativeQuery": false,
+    "namespace": "app_cont",
+    "type": "select",
     "rulesEntity": [
       {
         "entity": "Loja",
-        "alias": "l",
-        "namespace": "app_cont.entity.Loja"
+        "namespace": "app_cont.entity.Loja",
+        "dataSourceOptions": {
+          "id": "app_cont.Loja",
+          "customId": "Loja",
+          "customQueryName": "app_cont.Loja",
+          "paramValues": [],
+          "entityFullName": "app_cont.entity.Loja",
+          "schemaFields": [
+            {
+              "name": "id",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "descLoja",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "codiLoja",
+              "type": "Int32",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "cnpj",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "logradouro",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "cidade",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "_objectKey",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": true
+            }
+          ],
+          "type": "entity",
+          "hasError": false,
+          "customName": "Loja",
+          "fullName": "app_cont.entity.Loja",
+          "labelName": "app_cont.entity.Loja (Loja)"
+        },
+        "alias": "l"
       }
     ],
     "rulesSelect": [
       {
         "func": "get",
-        "field": "l"
+        "field": "l",
+        "type": "string"
       }
     ],
+    "rulesJoin": [],
     "rulesGroupBy": [],
     "rulesHaving": [],
     "rulesOrderBy": [],
     "rules": {
       "condition": "AND",
+      "rules": [],
       "not": false,
-      "valid": true,
-      "rules": []
-    }
+      "valid": true
+    },
+    "isRawSql": false,
+    "multiTenant": false,
+    "paginatorAutomatic": false,
+    "pagination": false
   },
   "queryParamsValues": [],
   "verbs": {
@@ -60,17 +134,26 @@
   "defaultValues": {
     "id": null,
     "descLoja": null,
-    "codiLoja": null
+    "codiLoja": null,
+    "cnpj": null,
+    "logradouro": null,
+    "cidade": null
   },
   "defaultValuesProperties": {
     "id": null,
     "descLoja": null,
-    "codiLoja": null
+    "codiLoja": null,
+    "cnpj": null,
+    "logradouro": null,
+    "cidade": null
   },
   "security": {
     "id": null,
     "descLoja": null,
-    "codiLoja": null
+    "codiLoja": null,
+    "cnpj": null,
+    "logradouro": null,
+    "cidade": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},

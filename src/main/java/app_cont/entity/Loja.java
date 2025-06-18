@@ -59,6 +59,33 @@ public class Loja implements Serializable {
 
 
     /**
+    * @generated
+    */
+    @CronappColumn(attributeType="STRING", label="Cnpj", mask="99.999.999/9999-99;0")
+    @Column(name = "CNPJ", nullable = true, unique = false, insertable=true, updatable=true)
+        
+        private java.lang.String cnpj;
+
+
+    /**
+    * @generated
+    */
+    @CronappColumn(attributeType="STRING", label="Logradouro")
+    @Column(name = "ENDERECO", nullable = true, unique = false, insertable=true, updatable=true)
+        
+        private java.lang.String logradouro;
+
+
+    /**
+    * @generated
+    */
+    @CronappColumn(attributeType="STRING", label="Cidade")
+    @Column(name = "CIDADE", nullable = true, unique = false, insertable=true, updatable=true)
+        
+        private java.lang.String cidade;
+
+
+    /**
     * Construtor
     * @generated
     */
@@ -117,6 +144,60 @@ public class Loja implements Serializable {
     */
     public Loja setCodiLoja(java.lang.Integer codiLoja) {
         this.codiLoja = codiLoja;
+        return this;
+    }
+    /**
+    * Obtém cnpj
+    * return cnpj
+    * @generated
+    */
+    public java.lang.String getCnpj() {
+        return this.cnpj;
+    }
+
+    /**
+    * Define cnpj
+    * @param cnpj cnpj
+    * @generated
+    */
+    public Loja setCnpj(java.lang.String cnpj) {
+        this.cnpj = cnpj;
+        return this;
+    }
+    /**
+    * Obtém logradouro
+    * return logradouro
+    * @generated
+    */
+    public java.lang.String getLogradouro() {
+        return this.logradouro;
+    }
+
+    /**
+    * Define logradouro
+    * @param logradouro logradouro
+    * @generated
+    */
+    public Loja setLogradouro(java.lang.String logradouro) {
+        this.logradouro = logradouro;
+        return this;
+    }
+    /**
+    * Obtém cidade
+    * return cidade
+    * @generated
+    */
+    public java.lang.String getCidade() {
+        return this.cidade;
+    }
+
+    /**
+    * Define cidade
+    * @param cidade cidade
+    * @generated
+    */
+    public Loja setCidade(java.lang.String cidade) {
+        this.cidade = cidade;
         return this;
     }
 

@@ -160,6 +160,21 @@
         "func": "get",
         "field": "c.qteTotal",
         "type": "double"
+      },
+      {
+        "func": "get",
+        "field": "c.contConf.lojaCont.cnpj",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "c.contConf.lojaCont.logradouro",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "c.contConf.lojaCont.cidade",
+        "type": "string"
       }
     ],
     "rulesJoin": [
@@ -355,7 +370,10 @@
     "codiSbg": null,
     "contForm1": null,
     "contForm1_descCont_1": null,
-    "qteTotal": null
+    "qteTotal": null,
+    "contConf_lojaCont_cnpj": null,
+    "contConf_lojaCont_logradouro": null,
+    "contConf_lojaCont_cidade": null
   },
   "defaultValuesProperties": {
     "prodForm1_codiProd1": null,
@@ -372,7 +390,10 @@
     "codiSbg": null,
     "contForm1": null,
     "contForm1_descCont_1": null,
-    "qteTotal": null
+    "qteTotal": null,
+    "contConf_lojaCont_cnpj": null,
+    "contConf_lojaCont_logradouro": null,
+    "contConf_lojaCont_cidade": null
   },
   "security": {
     "prodForm1_codiProd1": null,
@@ -389,7 +410,10 @@
     "codiSbg": null,
     "contForm1": null,
     "contForm1_descCont_1": null,
-    "qteTotal": null
+    "qteTotal": null,
+    "contConf_lojaCont_cnpj": null,
+    "contConf_lojaCont_logradouro": null,
+    "contConf_lojaCont_cidade": null
   },
   "calcFields": {},
   "calcFieldsSecurity": {},
