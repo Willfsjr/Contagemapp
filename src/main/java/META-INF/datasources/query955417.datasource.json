@@ -1,0 +1,316 @@
+{
+  "customId": "relatconf",
+  "queryName": "Relatorio Confronto",
+  "sourceType": "entityFullName",
+  "baseEntity": null,
+  "blockly": null,
+  "entitySimpleName": "Confronto",
+  "entityFullName": "app_cont.entity.Confronto",
+  "query": {
+    "isValid": true,
+    "isEmpty": false,
+    "operationType": "object",
+    "isNativeQuery": false,
+    "namespace": "app_cont",
+    "type": "select",
+    "rulesEntity": [
+      {
+        "entity": "Confronto",
+        "namespace": "app_cont.entity.Confronto",
+        "dataSourceOptions": {
+          "id": "app_cont.Confronto",
+          "customId": "Confronto",
+          "customQueryName": "app_cont.Confronto",
+          "paramValues": [],
+          "entityFullName": "app_cont.entity.Confronto",
+          "schemaFields": [
+            {
+              "name": "id",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "codiPsv",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "descPsv",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "qteTotal",
+              "type": "Double",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "contConf",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "codiGpr",
+              "type": "Int32",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "descGpr",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "codiSbg",
+              "type": "Int32",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "descSgb",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "quantConf",
+              "type": "Double",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "custTab",
+              "type": "Double",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            },
+            {
+              "name": "_objectKey",
+              "type": "String",
+              "nullable": false,
+              "notEmpty": false,
+              "key": true
+            },
+            {
+              "name": "contConf_descCont",
+              "type": "String",
+              "nullable": true,
+              "notEmpty": false,
+              "key": false
+            }
+          ],
+          "type": "entity",
+          "hasError": false,
+          "customName": "Confronto",
+          "fullName": "app_cont.entity.Confronto",
+          "labelName": "app_cont.entity.Confronto (Confronto)"
+        },
+        "alias": "c"
+      }
+    ],
+    "rulesSelect": [
+      {
+        "func": "get",
+        "field": "c.codiPsv",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "c.descPsv",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "c.contConf.lojaCont.descLoja",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "c.contConf.lojaCont.codiLoja",
+        "type": "integer"
+      },
+      {
+        "func": "get",
+        "field": "c.contConf.depCont.descDpt",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "c.contConf.depCont.codiDpt",
+        "type": "integer"
+      },
+      {
+        "func": "get",
+        "field": "c.descGpr",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "c.codiGpr",
+        "type": "integer"
+      },
+      {
+        "func": "get",
+        "field": "c.descSgb",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "c.codiSbg",
+        "type": "integer"
+      },
+      {
+        "func": "get",
+        "field": "c.contConf.descCont",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "c.contConf.id",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "c.qteTotal",
+        "type": "double"
+      },
+      {
+        "func": "get",
+        "field": "c.quantConf",
+        "type": "double"
+      }
+    ],
+    "rulesJoin": [],
+    "rulesGroupBy": [],
+    "rulesHaving": [],
+    "rulesOrderBy": [],
+    "rules": {
+      "condition": "AND",
+      "rules": [
+        {
+          "id": "c.contConf.id",
+          "field": "c.contConf.id",
+          "type": "string",
+          "input": "text",
+          "operator": "equal",
+          "valueType": "param",
+          "value": ":contConfId",
+          "valueIsField": false
+        }
+      ],
+      "not": false,
+      "valid": true
+    },
+    "isRawSql": false,
+    "multiTenant": false,
+    "paginatorAutomatic": false,
+    "pagination": false
+  },
+  "queryParamsValues": [
+    {
+      "fieldName": "contConfId",
+      "fieldValue": ""
+    }
+  ],
+  "verbs": {
+    "GET": true,
+    "GETAuthorities": null,
+    "POST": true,
+    "POSTAuthorities": null,
+    "PUT": true,
+    "PUTAuthorities": null,
+    "DELETE": true,
+    "DELETEAuthorities": null,
+    "FILTER": true,
+    "FILTERAuthorities": null,
+    "COUNT": true,
+    "COUNTAuthorities": null
+  },
+  "events": {
+    "beforeInsert": null,
+    "beforeUpdate": null,
+    "beforeDelete": null,
+    "afterInsert": null,
+    "afterUpdate": null,
+    "afterDelete": null,
+    "onNavigate": null,
+    "onAuthorize": null,
+    "onError": null
+  },
+  "defaultValues": {
+    "codiPsv": null,
+    "descPsv": null,
+    "contConf_lojaCont_descLoja": null,
+    "contConf_lojaCont_codiLoja": null,
+    "contConf_depCont_descDpt": null,
+    "contConf_depCont_codiDpt": null,
+    "descGpr": null,
+    "codiGpr": null,
+    "descSgb": null,
+    "codiSbg": null,
+    "contConf_descCont": null,
+    "contConf_id": null,
+    "qteTotal": null,
+    "quantConf": null
+  },
+  "defaultValuesProperties": {
+    "codiPsv": null,
+    "descPsv": null,
+    "contConf_lojaCont_descLoja": null,
+    "contConf_lojaCont_codiLoja": null,
+    "contConf_depCont_descDpt": null,
+    "contConf_depCont_codiDpt": null,
+    "descGpr": null,
+    "codiGpr": null,
+    "descSgb": null,
+    "codiSbg": null,
+    "contConf_descCont": null,
+    "contConf_id": null,
+    "qteTotal": null,
+    "quantConf": null
+  },
+  "security": {
+    "codiPsv": null,
+    "descPsv": null,
+    "contConf_lojaCont_descLoja": null,
+    "contConf_lojaCont_codiLoja": null,
+    "contConf_depCont_descDpt": null,
+    "contConf_depCont_codiDpt": null,
+    "descGpr": null,
+    "codiGpr": null,
+    "descSgb": null,
+    "codiSbg": null,
+    "contConf_descCont": null,
+    "contConf_id": null,
+    "qteTotal": null,
+    "quantConf": null
+  },
+  "calcFields": {},
+  "calcFieldsSecurity": {},
+  "calcFieldsProperties": {},
+  "headers": {},
+  "errorHandles": {
+    "primaryKey": null,
+    "foreignKey": null
+  },
+  "serviceUrl": "api/cronapi/odata/v2/app_cont/query955417/",
+  "audit": false,
+  "swagger": false
+}
