@@ -1,8 +1,9 @@
-# Usa imagem oficial do Tomcat com Java 17
+FROM maven:3.9.5-eclipse-temurin-17 as builder
+
+WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
+
 FROM tomcat:10.1-jdk17-temurin
-
-# Remove a aplicação padrão do Tomcat
 RUN rm -rf /usr/local/tomcat/webapps/*
-
-# Copia seu WAR para a pasta do Tomcat com o nome ROOT.war
-COPY target/com.grupoflorindo.apps.contagem-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
+COPY --from=builder /app/target/*.war /usr/local/tomcat/webapps/ROOT.war
