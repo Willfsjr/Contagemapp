@@ -48,7 +48,7 @@
         }
       },
       "chkApi": false,
-      "dataSource": "jdbc/oracle_dev",
+      "dataSource": "jdbc/oracle_prod",
       "disableCache": false,
       "generationType": "none",
       "id": "paperCell",

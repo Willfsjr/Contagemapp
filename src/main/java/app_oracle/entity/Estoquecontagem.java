@@ -23,7 +23,7 @@ import cronapp.framework.core.persistence.*;
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("app_oracle.entity.Estoquecontagem")
-@CronappTable(role=CronappTableRole.AUTO)
+@CronappTable(role=CronappTableRole.CLASS)
 public class Estoquecontagem implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -43,10 +43,10 @@ public class Estoquecontagem implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="Codi Dpt")
+    @CronappColumn(attributeType="INTEGER", label="Codi Dpt")
     @Column(name = "CODI_DPT", nullable = false, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long codiDpt;
+        private java.lang.Integer codiDpt;
 
 
     /**
@@ -106,7 +106,7 @@ public class Estoquecontagem implements Serializable {
     * return codiDpt
     * @generated
     */
-    public java.lang.Long getCodiDpt() {
+    public java.lang.Integer getCodiDpt() {
         return this.codiDpt;
     }
 
@@ -115,7 +115,7 @@ public class Estoquecontagem implements Serializable {
     * @param codiDpt codiDpt
     * @generated
     */
-    public Estoquecontagem setCodiDpt(java.lang.Long codiDpt) {
+    public Estoquecontagem setCodiDpt(java.lang.Integer codiDpt) {
         this.codiDpt = codiDpt;
         return this;
     }

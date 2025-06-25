@@ -48,7 +48,7 @@
         }
       },
       "chkApi": false,
-      "dataSource": "jdbc/contdb_dev",
+      "dataSource": "jdbc/contdb_prod",
       "disableCache": false,
       "generationType": "none",
       "id": "paperCell",

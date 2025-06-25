@@ -23,7 +23,7 @@ import cronapp.framework.core.persistence.*;
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("app_oracle.entity.Produtocontagem")
-@CronappTable(role=CronappTableRole.AUTO)
+@CronappTable(role=CronappTableRole.CLASS)
 public class Produtocontagem implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -52,19 +52,19 @@ public class Produtocontagem implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="Codi Gpr")
+    @CronappColumn(attributeType="INTEGER", label="Codi Gpr")
     @Column(name = "CODI_GPR", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long codiGpr;
+        private java.lang.Integer codiGpr;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="LONG", label="Codi Sbg")
+    @CronappColumn(attributeType="INTEGER", label="Codi Sbg")
     @Column(name = "CODI_SBG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Long codiSbg;
+        private java.lang.Integer codiSbg;
 
 
     /**
@@ -151,7 +151,7 @@ public class Produtocontagem implements Serializable {
     * return codiGpr
     * @generated
     */
-    public java.lang.Long getCodiGpr() {
+    public java.lang.Integer getCodiGpr() {
         return this.codiGpr;
     }
 
@@ -160,7 +160,7 @@ public class Produtocontagem implements Serializable {
     * @param codiGpr codiGpr
     * @generated
     */
-    public Produtocontagem setCodiGpr(java.lang.Long codiGpr) {
+    public Produtocontagem setCodiGpr(java.lang.Integer codiGpr) {
         this.codiGpr = codiGpr;
         return this;
     }
@@ -169,7 +169,7 @@ public class Produtocontagem implements Serializable {
     * return codiSbg
     * @generated
     */
-    public java.lang.Long getCodiSbg() {
+    public java.lang.Integer getCodiSbg() {
         return this.codiSbg;
     }
 
@@ -178,7 +178,7 @@ public class Produtocontagem implements Serializable {
     * @param codiSbg codiSbg
     * @generated
     */
-    public Produtocontagem setCodiSbg(java.lang.Long codiSbg) {
+    public Produtocontagem setCodiSbg(java.lang.Integer codiSbg) {
         this.codiSbg = codiSbg;
         return this;
     }
