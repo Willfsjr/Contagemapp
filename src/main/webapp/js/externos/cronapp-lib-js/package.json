@@ -1,0 +1,23 @@
+{
+  "name": "cronapp-lib-js",
+  "version": "4.0.6",
+  "description": "Javascript library for CronApp's projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "minify": "node minify.js",
+    "build": "node minify.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/technecloud/cronapp-lib-js.git"
+  },
+  "author": "Cronapp",
+  "keywords": [
+    "cronapp"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "terser": "^4.8.0"
+  }
+}

@@ -1,0 +1,98 @@
+/* Wizard */
+.ctn-wizard .wizard-buttons {
+    text-align: right;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ctn-wizard .ctrl-button {
+    display: inline;
+}
+
+.ctn-wizard ul.nav-wizard {
+    list-style-type: none;
+    padding: 0 50px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.ctn-wizard .step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 5px auto;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.ctn-wizard .step-title {
+    font-weight: normal;
+    transition: font-weight 0.3s ease, color 0.3s ease;
+}
+
+.ctn-wizard .nav-wizard>li {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    transition: flex 0.3s ease;
+}
+
+.ctn-wizard .nav-wizard>li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+}
+
+.ctn-wizard .nav-wizard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: none;
+    position: relative;
+    padding-bottom: 10px;
+    flex: 1;
+}
+
+.ctn-wizard .nav-wizard:before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 50px;
+    right: 62px;
+    height: 2px;
+    background-color: #ccc;
+    z-index: 0;
+    transition: background-color 0.3s ease, height 0.3s ease;
+}
+
+.nav-wizard a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-wizard a:hover,
+.nav-wizard a:focus {
+    text-decoration: none;
+}
+
+.ctn-wizard .nav-wizard>li.active.invalid-step .step-circle::after {
+    border-color: #ff0000;
+}
+
+.is-invalid {
+    border-color: #dc3545;
+}
+
+.invalid-feedback {
+    color: #dc3545;
+    margin-top: 0.25rem;
+    font-size: 0.875em;
+}

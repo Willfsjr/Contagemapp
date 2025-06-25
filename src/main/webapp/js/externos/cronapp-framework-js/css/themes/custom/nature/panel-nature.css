@@ -1,0 +1,72 @@
+.panel {
+    background: var(--backgroundColor10, #ffffff);
+    box-shadow: none;
+    border: none;
+    padding-top: 0px !important;
+}
+
+.panel-footer {
+    color: var(---textColor40, #0f2e07);
+    background: var(--backgroundColor50, #d1d7dC);
+    border: none;
+}
+
+/* Default */
+.panel-default .panel-heading {
+    color: var(--textColorPrimary40, #ffffff);
+    background: var(--colorDefault40, #336825);
+}
+
+/* Primary */
+.panel-primary>.panel-heading {
+    color: var(--textColorDefault40, #ffffff);
+    background: var(--colorPrimary40, #008aed);
+}
+
+/* Sucess */
+.panel-success>.panel-heading {
+    color: var(--textColorDefault40, #ffffff);
+    background: var(--colorSuccess40, #10d13a);
+}
+
+/* Info */
+.panel-info>.panel-heading {
+    color: var(--textColorDefault40, #ffffff);
+    background: var(--colorCalm40, #24a9c3);
+}
+
+/* Warning */
+.panel-warning>.panel-heading {
+    color: var(--textColorDefault40, #ffffff);
+    background: var(--colorWarning40, #fd7903);
+}
+
+/* Danger */
+.panel-danger>.panel-heading {
+    color: var(--textColorDefault40, #ffffff);
+    background: var(--colorDanger40, #b70002);
+}
+
+/* Light */
+.panel-light>.panel-heading {
+    color: var(--textColorDefault40, #ffffff);
+    background: var(--colorLight40, #96a6b3);
+}
+
+/* Royal */
+.panel-royal>.panel-heading {
+    color: var(--textColorDefault40, #ffffff);
+    background: var(--colorRoyal40, #111a47);
+}
+
+/* Stable */
+.panel-stable>.panel-heading {
+    color: var(--textColorDefault40, #ffffff);
+    background: var(--colorStable40, #3a484b);
+}
+
+/* Dark */
+.panel-dark>.panel-heading {
+    color: var(--textColorDefault40, #ffffff);
+    background: var(--colorDark40, #111d23);
+}

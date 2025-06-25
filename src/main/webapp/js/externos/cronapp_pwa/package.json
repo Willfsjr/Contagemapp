@@ -1,0 +1,52 @@
+{
+  "_from": "cronapp_pwa@1.0.4",
+  "_id": "cronapp_pwa@1.0.4",
+  "_inBundle": false,
+  "_integrity": "sha512-8t0pMuu8t1vRGCzQPkzCuW5wDUVBM5fjv0FAz2gyoki/TOr4KxVMGAA6k+toWTWWAUrytpm3pUmYe4YLFUqjEA==",
+  "_location": "/cronapp_pwa",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "cronapp_pwa@1.0.4",
+    "name": "cronapp_pwa",
+    "escapedName": "cronapp_pwa",
+    "rawSpec": "1.0.4",
+    "saveSpec": null,
+    "fetchSpec": "1.0.4"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cronapp_pwa/-/cronapp_pwa-1.0.4.tgz",
+  "_shasum": "d6274f0f0f49cf0c76b50be68ea94dc578bafce8",
+  "_spec": "cronapp_pwa@1.0.4",
+  "_where": "/home/cronapp/project/src/main/webapp",
+  "author": {
+    "name": "Cronapp Studio"
+  },
+  "bugs": {
+    "url": "https://github.com/CronApp/cronapp_pwa/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Cronapp Plugin for PWA",
+  "homepage": "https://github.com/CronApp/cronapp_pwa#readme",
+  "keywords": [
+    "cronapp",
+    "pwa",
+    "mobile",
+    "plugin"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "cronapp_pwa",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CronApp/cronapp_pwa.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.4"
+}

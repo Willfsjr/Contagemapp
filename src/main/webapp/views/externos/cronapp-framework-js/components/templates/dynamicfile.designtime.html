@@ -1,0 +1,5 @@
+<div id="file-${RANDOM}" dynamic-file="" ng-model="vars.dynamicfile${RANDOM}" class="dynamic-image-container" style="padding: 50px 0;" ng-required="false" ngf-max-size="5MB" ngf-accept="'*.*'">
+  <button id="file-${RANDOM}-button" class="btn" ngf-drop ngf-select ngf-change="cronapi.internal.uploadFile('vars.dynamicfile${RANDOM}', $file, 'uploadprogress${RANDOM}', undefined, $invalidFiles)" style="position: absolute; left: 0;">
+    <span>Clique ou arraste um arquivo</span>
+  </button>
+</div>

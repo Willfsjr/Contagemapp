@@ -1,0 +1,16 @@
+{
+  "name":"",
+  "short_name": "",
+  "start_url": "",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#fff",
+  "description": "",
+  "dir": "ltf",
+  "lang": "en-US",
+  "orientation": "portrait-primary",
+  "icons": [
+
+  ]
+}

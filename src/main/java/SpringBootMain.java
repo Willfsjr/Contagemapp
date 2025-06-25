@@ -28,7 +28,7 @@ public class SpringBootMain extends CronappInitializer {
         TimeZone.setDefault(TimeZone.getTimeZone("Brazil/West"));
     }
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		SpringApplication.run(SpringBootMain.class, args);
 	}
 

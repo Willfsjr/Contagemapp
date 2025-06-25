@@ -1,34 +1,34 @@
 self.addEventListener('install', event => {
   console.debug('Installing SW');
-  const installPromise = new Promise(function (resolve, reject) {
-    // Do install stuff, like caching resources, etc.
-    resolve();
-  });
-
-  event.waitUntil(installPromise);
+  event.waitUntil(Promise.resolve());
 });
 
 self.addEventListener('fetch', event => {
-  const fetchPromise = new Promise((resolve, reject) => {
-    // Try to get from remote
-    fetch(event.request).then(response => {
-      // We have internet, try to cache it
-      caches.open('static').then(cache => {
-        try {
-          cache.add(event.request);
-        } catch (error) {
-          console.debug('Could not add cache for resource:', event.request);
-        }
-      });
-      resolve(response);
-    }).catch(error => {
-      // We are offline, try to get resource from cache
-      caches.match(event.request).then(response => {
-        resolve(response);
-      }).catch(ex => {
-        reject(error);
-      });
-    });
-  });
-  event.respondWith(fetchPromise)
+  // Somente processa requisições GET e http(s)
+  if (event.request.method !== 'GET' || !event.request.url.startsWith('http')) {
+    return;
+  }
+
+  event.respondWith(
+    fetch(event.request)
+      .then(response => {
+        // Clona a resposta para armazenar em cache
+        const responseClone = response.clone();
+        caches.open('static').then(cache => {
+          cache.put(event.request, responseClone).catch(err => {
+            console.debug('Erro ao armazenar no cache:', err);
+          });
+        });
+        return response;
+      })
+      .catch(() => {
+        // Se offline, tenta retornar do cache
+        return caches.match(event.request).then(cachedResponse => {
+          return cachedResponse || new Response('Offline e recurso não está no cache', {
+            status: 503,
+            statusText: 'Service Unavailable'
+          });
+        });
+      })
+  );
 });

@@ -1,0 +1,11 @@
+{
+  "name": "@cronapp/cronapp-mvc",
+  "version": "4.0.6",
+  "author": "Cronapp",
+  "license": "ISC",
+  "description": "Cronapp JS MVC Framework",
+  "scripts": {
+    "build": "npx webpack --progress --mode production --config webpack.config.js",
+    "prepack": "node scripts/clean-package.js"
+  }
+}

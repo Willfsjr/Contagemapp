@@ -1,0 +1,38 @@
+{
+  "name": "cronapp-common-js",
+  "version": "4.0.6",
+  "description": "Cronapp Commons Functions",
+  "main": "parser.js",
+  "type": "module",
+  "scripts": {
+    "build": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CronApp/cronapp-common-js.git"
+  },
+  "author": "Adir Santos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CronApp/cronapp-common-js/issues"
+  },
+  "homepage": "https://github.com/CronApp/cronapp-common-js#readme",
+  "keywords": [
+    "cronapp-common-js",
+    "cronapp",
+    "javascript"
+  ],
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^9.1.0",
+    "gulp-ng-annotate-patched": "^0.1.1",
+    "gulp-notify": "^5.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-terser": "^2.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglifycss": "^1.0.8"
+  }
+}

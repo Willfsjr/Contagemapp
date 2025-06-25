@@ -1,0 +1,89 @@
+.panel {
+    background: var(--backgroundColor40, #ffffff);
+    box-shadow: none;
+    border: 1px solid var(--colorDefault40, #eeeeee);
+    border-width: 0 1px 4px 1px;
+}
+
+.panel-footer {
+    color: var(--textColor40, #555555);
+    background: var(--colorLight40, #f6f6f6);
+    border-color: transparent;
+}
+
+/* Default */
+.panel-default .panel-heading {
+    background: var(--colorDefault40, #eeeeee);
+    color: var(--textColor40, #555555);
+    border-color: transparent;
+}
+
+/* Primary */
+.panel-primary>.panel-heading {
+    background: var(--colorPrimary40, #158cba);
+    color: var(--textColorPrimary40, #ffffff);
+    border-color: transparent;
+}
+
+/* Sucess */
+.panel-success>.panel-heading {
+    background: var(--colorSuccess40, #28b62c);
+    color: var(--textColorSuccess40, #ffffff);
+    border-color: transparent
+}
+
+/* Info */
+.panel-info>.panel-heading {
+    background: var(--colorCalm40, #75caeb);
+    color: var(--textColorCalm40, #ffffff);
+    border-color: transparent
+}
+
+/* Warning */
+.panel-warning>.panel-heading {
+    background: var(--colorWarning40, #ff851b);
+    color: var(--textColorWarning40, #ffffff);
+    border-color: transparent
+}
+
+/* Danger */
+.panel-danger>.panel-heading {
+    background: var(--colorDanger40, #ff4136);
+    color: var(--textColorDanger40, #ffffff);
+    border-color: transparent
+}
+
+/* Light */
+.panel-light>.panel-heading {
+    background: var(--colorLight40, #f6f6f6);
+    color: var(--textColor40, #555555);
+    border-color: transparent
+}
+
+/* Stable */
+.panel-stable>.panel-heading,
+.panel-stable>.panel-footer {
+    background: var(--colorStable50, #d9d9d9);
+    color: var(--textColorStable40, #444444);
+    border-color: transparent
+}
+
+/* Royal */
+.panel-royal>.panel-heading,
+.panel-royal>.panel-footer {
+    background: var(--colorRoyal40, #886aea);
+    color: var(--textColorRoyal40, #ffffff);
+    border-color: transparent
+}
+
+/* Dark */
+.panel-dark>.panel-heading,
+.panel-dark>.panel-footer {
+    background: var(--colorDark40, #555555);
+    color: var(--textColorDark40, #ffffff);
+    border-color: transparent
+}
+
+.panel-group .heading-arrow.panel-heading::after {
+    color: var(--textColor40, #555555);
+}

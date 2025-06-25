@@ -1,0 +1,6 @@
+{
+  "installPWA": "Instalar PWA",
+  "callbackSuccess": "Retorno quando Sucesso",
+  "callbackCancel": "Retorno quando Cancelar",
+  "descriptionPWA" : "Abrir o prompt para instalar o PWA APP"
+}

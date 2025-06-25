@@ -1,0 +1,46 @@
+{
+  "name": "cronapi-js",
+  "version": "4.0.6",
+  "description": "Public library for CronApp's users",
+  "main": "cronapi.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest --coverage",
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/technecloud/cronapi-js.git"
+  },
+  "author": "Arthemus Cicotti Moreira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/technecloud/cronapi-js/issues"
+  },
+  "homepage": "https://github.com/technecloud/cronapi-js#readme",
+  "keywords": [
+    "cronapi",
+    "cronapp",
+    "javascript"
+  ],
+  "devDependencies": {
+    "@types/chai": "^4.3.19",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.6",
+    "chai": "^5.1.1",
+    "gulp": "^5.0.0",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-concat": "2.6.1",
+    "gulp-notify": "^5.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-terser": "^2.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.8",
+    "jest": "^26.6.3",
+    "jquery": "3.5.1"
+  },
+  "dependencies": {
+    "@zxing/library": "0.18.5",
+    "natives": "1.1.6"
+  }
+}

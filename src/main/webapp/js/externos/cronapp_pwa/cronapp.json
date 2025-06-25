@@ -1,0 +1,84 @@
+{
+  "postUpdate": {
+    "angularJs": {
+      "includes": [
+        {
+          "file": "index.html",
+          "script": "node_modules/cronapp_pwa/src/PWA.cronapi.js",
+          "type": "script"
+        },
+        {
+          "file": "index.html",
+          "script": "node_modules/cronapp_pwa/src/pwa_register.js",
+          "type": "script"
+        },
+        {
+          "file": "index.html",
+          "script": "<link rel='manifest' href='js/manifest.json'>",
+          "type": "custom",
+          "onTop": true
+        }
+      ],
+      "copies": [
+        {
+          "from": "node_modules/cronapp_pwa/src/manifest.json",
+          "to": "js/manifest.json"
+        },
+        {
+          "from": "node_modules/cronapp_pwa/src/sw.js",
+          "to": ""
+        }
+      ],
+      "permissions": [
+        {
+          "permitAll": [
+            {
+              "content": "http.authorizeRequests().antMatchers(\"/sw.js\").permitAll();",
+              "pattern": "/sw.js"
+            }
+          ]
+        }
+      ]
+    },
+    "ionic": {
+      "includes": [
+        {
+          "file": "index.html",
+          "script": "node_modules/cronapp_pwa/src/PWA.cronapi.js",
+          "type": "script"
+        },
+        {
+          "file": "index.html",
+          "script": "node_modules/cronapp_pwa/src/pwa_register.js",
+          "type": "script"
+        },
+        {
+          "file": "index.html",
+          "script": "<link rel='manifest' href='js/manifest.json'>",
+          "type": "custom",
+          "onTop": true
+        }
+      ],
+      "copies": [
+        {
+          "from": "node_modules/cronapp_pwa/src/manifest.json",
+          "to": "js/manifest.json"
+        },
+        {
+          "from": "node_modules/cronapp_pwa/src/sw.js",
+          "to": ""
+        }
+      ],
+      "permissions": [
+        {
+          "permitAll": [
+            {
+              "content": "http.authorizeRequests().antMatchers(\"/mobileapp/sw.js\").permitAll();",
+              "pattern": "/mobileapp/sw.js"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
