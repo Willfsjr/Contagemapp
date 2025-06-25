@@ -12,6 +12,7 @@
   "dependencies": {
     "@cronapp/framework-core": "4.0.4",
     "cronapi-js": "4.0.4",
+    "cronapp_pwa": "1.0.4",
     "cronapp-common-js": "4.0.4",
     "cronapp-framework-mobile-js": "4.0.4",
     "cronapp-lib-js": "4.0.4"
