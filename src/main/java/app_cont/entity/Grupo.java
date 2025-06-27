@@ -1,18 +1,15 @@
 
 package app_cont.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+import java.util.UUID;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela GRUPO
@@ -21,9 +18,7 @@ import cronapp.framework.core.persistence.*;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "\"GRUPO\"")
 @XmlRootElement
-@CronappSecurity
 @JsonFilter("app_cont.entity.Grupo")
-@CronappTable(role=CronappTableRole.CLASS)
 public class Grupo implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,27 +30,24 @@ public class Grupo implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
     @Column(name = "ID", nullable = false, insertable=true, updatable=true)
-        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
+        private String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="Codi Gpr")
     @Column(name = "CODI_GPR", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer codiGpr;
+        private Integer codiGpr;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Gpr")
     @Column(name = "DESC_GPR", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String descGpr;
+        private String descGpr;
 
 
     /**
@@ -70,7 +62,7 @@ public class Grupo implements Serializable {
     * return id
     * @generated
     */
-    public java.lang.String getId() {
+    public String getId() {
         return this.id;
     }
 
@@ -79,7 +71,7 @@ public class Grupo implements Serializable {
     * @param id id
     * @generated
     */
-    public Grupo setId(java.lang.String id) {
+    public Grupo setId(String id) {
         this.id = id;
         return this;
     }
@@ -88,7 +80,7 @@ public class Grupo implements Serializable {
     * return codiGpr
     * @generated
     */
-    public java.lang.Integer getCodiGpr() {
+    public Integer getCodiGpr() {
         return this.codiGpr;
     }
 
@@ -97,7 +89,7 @@ public class Grupo implements Serializable {
     * @param codiGpr codiGpr
     * @generated
     */
-    public Grupo setCodiGpr(java.lang.Integer codiGpr) {
+    public Grupo setCodiGpr(Integer codiGpr) {
         this.codiGpr = codiGpr;
         return this;
     }
@@ -106,7 +98,7 @@ public class Grupo implements Serializable {
     * return descGpr
     * @generated
     */
-    public java.lang.String getDescGpr() {
+    public String getDescGpr() {
         return this.descGpr;
     }
 
@@ -115,7 +107,7 @@ public class Grupo implements Serializable {
     * @param descGpr descGpr
     * @generated
     */
-    public Grupo setDescGpr(java.lang.String descGpr) {
+    public Grupo setDescGpr(String descGpr) {
         this.descGpr = descGpr;
         return this;
     }

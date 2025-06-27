@@ -1,18 +1,15 @@
 
 package app_cont.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+import java.util.UUID;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela LOJA
@@ -21,9 +18,7 @@ import cronapp.framework.core.persistence.*;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "\"LOJA\"")
 @XmlRootElement
-@CronappSecurity
 @JsonFilter("app_cont.entity.Loja")
-@CronappTable(role=CronappTableRole.CLASS)
 public class Loja implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,54 +30,48 @@ public class Loja implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
     @Column(name = "ID", nullable = false, length=0, insertable=true, updatable=true)
-        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
+        private String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Loja")
     @Column(name = "DESC_LOJA", nullable = true, unique = false, length=255, insertable=true, updatable=true)
         
-        private java.lang.String descLoja;
+        private String descLoja;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="Codi Loja")
     @Column(name = "CODI_LOJA", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer codiLoja;
+        private Integer codiLoja;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Cnpj", mask="99.999.999/9999-99;0")
     @Column(name = "CNPJ", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String cnpj;
+        private String cnpj;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Logradouro")
     @Column(name = "ENDERECO", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String logradouro;
+        private String logradouro;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Cidade")
     @Column(name = "CIDADE", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String cidade;
+        private String cidade;
 
 
     /**
@@ -97,7 +86,7 @@ public class Loja implements Serializable {
     * return id
     * @generated
     */
-    public java.lang.String getId() {
+    public String getId() {
         return this.id;
     }
 
@@ -106,7 +95,7 @@ public class Loja implements Serializable {
     * @param id id
     * @generated
     */
-    public Loja setId(java.lang.String id) {
+    public Loja setId(String id) {
         this.id = id;
         return this;
     }
@@ -115,7 +104,7 @@ public class Loja implements Serializable {
     * return descLoja
     * @generated
     */
-    public java.lang.String getDescLoja() {
+    public String getDescLoja() {
         return this.descLoja;
     }
 
@@ -124,7 +113,7 @@ public class Loja implements Serializable {
     * @param descLoja descLoja
     * @generated
     */
-    public Loja setDescLoja(java.lang.String descLoja) {
+    public Loja setDescLoja(String descLoja) {
         this.descLoja = descLoja;
         return this;
     }
@@ -133,7 +122,7 @@ public class Loja implements Serializable {
     * return codiLoja
     * @generated
     */
-    public java.lang.Integer getCodiLoja() {
+    public Integer getCodiLoja() {
         return this.codiLoja;
     }
 
@@ -142,7 +131,7 @@ public class Loja implements Serializable {
     * @param codiLoja codiLoja
     * @generated
     */
-    public Loja setCodiLoja(java.lang.Integer codiLoja) {
+    public Loja setCodiLoja(Integer codiLoja) {
         this.codiLoja = codiLoja;
         return this;
     }
@@ -151,7 +140,7 @@ public class Loja implements Serializable {
     * return cnpj
     * @generated
     */
-    public java.lang.String getCnpj() {
+    public String getCnpj() {
         return this.cnpj;
     }
 
@@ -160,7 +149,7 @@ public class Loja implements Serializable {
     * @param cnpj cnpj
     * @generated
     */
-    public Loja setCnpj(java.lang.String cnpj) {
+    public Loja setCnpj(String cnpj) {
         this.cnpj = cnpj;
         return this;
     }
@@ -169,7 +158,7 @@ public class Loja implements Serializable {
     * return logradouro
     * @generated
     */
-    public java.lang.String getLogradouro() {
+    public String getLogradouro() {
         return this.logradouro;
     }
 
@@ -178,7 +167,7 @@ public class Loja implements Serializable {
     * @param logradouro logradouro
     * @generated
     */
-    public Loja setLogradouro(java.lang.String logradouro) {
+    public Loja setLogradouro(String logradouro) {
         this.logradouro = logradouro;
         return this;
     }
@@ -187,7 +176,7 @@ public class Loja implements Serializable {
     * return cidade
     * @generated
     */
-    public java.lang.String getCidade() {
+    public String getCidade() {
         return this.cidade;
     }
 
@@ -196,7 +185,7 @@ public class Loja implements Serializable {
     * @param cidade cidade
     * @generated
     */
-    public Loja setCidade(java.lang.String cidade) {
+    public Loja setCidade(String cidade) {
         this.cidade = cidade;
         return this;
     }

@@ -1,18 +1,15 @@
 
 package app_cont.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+import java.util.UUID;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela DEPOSITO
@@ -21,9 +18,7 @@ import cronapp.framework.core.persistence.*;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "\"DEPOSITO\"")
 @XmlRootElement
-@CronappSecurity
 @JsonFilter("app_cont.entity.Deposito")
-@CronappTable(role=CronappTableRole.CLASS)
 public class Deposito implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,27 +30,24 @@ public class Deposito implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
     @Column(name = "ID", nullable = false, insertable=true, updatable=true)
-        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
+        private String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Dpt")
     @Column(name = "DESC_DPT", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String descDpt;
+        private String descDpt;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="Codi Dpt")
     @Column(name = "CODI_DPT", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer codiDpt;
+        private Integer codiDpt;
 
 
     /**
@@ -70,7 +62,7 @@ public class Deposito implements Serializable {
     * return id
     * @generated
     */
-    public java.lang.String getId() {
+    public String getId() {
         return this.id;
     }
 
@@ -79,7 +71,7 @@ public class Deposito implements Serializable {
     * @param id id
     * @generated
     */
-    public Deposito setId(java.lang.String id) {
+    public Deposito setId(String id) {
         this.id = id;
         return this;
     }
@@ -88,7 +80,7 @@ public class Deposito implements Serializable {
     * return descDpt
     * @generated
     */
-    public java.lang.String getDescDpt() {
+    public String getDescDpt() {
         return this.descDpt;
     }
 
@@ -97,7 +89,7 @@ public class Deposito implements Serializable {
     * @param descDpt descDpt
     * @generated
     */
-    public Deposito setDescDpt(java.lang.String descDpt) {
+    public Deposito setDescDpt(String descDpt) {
         this.descDpt = descDpt;
         return this;
     }
@@ -106,7 +98,7 @@ public class Deposito implements Serializable {
     * return codiDpt
     * @generated
     */
-    public java.lang.Integer getCodiDpt() {
+    public Integer getCodiDpt() {
         return this.codiDpt;
     }
 
@@ -115,7 +107,7 @@ public class Deposito implements Serializable {
     * @param codiDpt codiDpt
     * @generated
     */
-    public Deposito setCodiDpt(java.lang.Integer codiDpt) {
+    public Deposito setCodiDpt(Integer codiDpt) {
         this.codiDpt = codiDpt;
         return this;
     }

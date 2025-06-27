@@ -1,18 +1,17 @@
 
 package app_cont.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+import java.util.UUID;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela SUBGRUPO
@@ -21,9 +20,7 @@ import cronapp.framework.core.persistence.*;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "\"SUBGRUPO\"")
 @XmlRootElement
-@CronappSecurity
 @JsonFilter("app_cont.entity.SubGrupo")
-@CronappTable(role=CronappTableRole.CLASS)
 public class SubGrupo implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,27 +32,24 @@ public class SubGrupo implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
     @Column(name = "ID", nullable = false, insertable=true, updatable=true)
-        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
+        private String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="Codi Sbg")
     @Column(name = "CODI_SBG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer codiSbg;
+        private Integer codiSbg;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Sbg")
     @Column(name = "DESC_SBG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String descSbg;
+        private String descSbg;
 
 
     /**
@@ -79,7 +73,7 @@ public class SubGrupo implements Serializable {
     * return id
     * @generated
     */
-    public java.lang.String getId() {
+    public String getId() {
         return this.id;
     }
 
@@ -88,7 +82,7 @@ public class SubGrupo implements Serializable {
     * @param id id
     * @generated
     */
-    public SubGrupo setId(java.lang.String id) {
+    public SubGrupo setId(String id) {
         this.id = id;
         return this;
     }
@@ -97,7 +91,7 @@ public class SubGrupo implements Serializable {
     * return codiSbg
     * @generated
     */
-    public java.lang.Integer getCodiSbg() {
+    public Integer getCodiSbg() {
         return this.codiSbg;
     }
 
@@ -106,7 +100,7 @@ public class SubGrupo implements Serializable {
     * @param codiSbg codiSbg
     * @generated
     */
-    public SubGrupo setCodiSbg(java.lang.Integer codiSbg) {
+    public SubGrupo setCodiSbg(Integer codiSbg) {
         this.codiSbg = codiSbg;
         return this;
     }
@@ -115,7 +109,7 @@ public class SubGrupo implements Serializable {
     * return descSbg
     * @generated
     */
-    public java.lang.String getDescSbg() {
+    public String getDescSbg() {
         return this.descSbg;
     }
 
@@ -124,7 +118,7 @@ public class SubGrupo implements Serializable {
     * @param descSbg descSbg
     * @generated
     */
-    public SubGrupo setDescSbg(java.lang.String descSbg) {
+    public SubGrupo setDescSbg(String descSbg) {
         this.descSbg = descSbg;
         return this;
     }

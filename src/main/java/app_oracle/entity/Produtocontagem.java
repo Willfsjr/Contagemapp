@@ -1,18 +1,14 @@
 
 package app_oracle.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela PRODUTOCONTAGEM
@@ -21,9 +17,7 @@ import cronapp.framework.core.persistence.*;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "\"PRODUTOCONTAGEM\"", schema="\"NEWFRD\"")
 @XmlRootElement
-@CronappSecurity
 @JsonFilter("app_oracle.entity.Produtocontagem")
-@CronappTable(role=CronappTableRole.CLASS)
 public class Produtocontagem implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,72 +29,64 @@ public class Produtocontagem implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Codi Psv")
     @Column(name = "CODI_PSV", nullable = false, length=15, insertable=true, updatable=true)
-        private java.lang.String codiPsv;
+        private String codiPsv;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Codi Bar")
     @Column(name = "CODI_BAR", nullable = true, unique = false, length=14, insertable=true, updatable=true)
         
-        private java.lang.String codiBar;
+        private String codiBar;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="Codi Gpr")
     @Column(name = "CODI_GPR", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer codiGpr;
+        private Integer codiGpr;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="Codi Sbg")
     @Column(name = "CODI_SBG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer codiSbg;
+        private Integer codiSbg;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="Cust Tab")
     @Column(name = "CUST_TAB", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double custTab;
+        private Double custTab;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Gpr")
     @Column(name = "DESC_GPR", nullable = true, unique = false, length=40, insertable=true, updatable=true)
         
-        private java.lang.String descGpr;
+        private String descGpr;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Psv")
     @Column(name = "DESC_PSV", nullable = true, unique = false, length=120, insertable=true, updatable=true)
         
-        private java.lang.String descPsv;
+        private String descPsv;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Sbg")
     @Column(name = "DESC_SBG", nullable = true, unique = false, length=30, insertable=true, updatable=true)
         
-        private java.lang.String descSbg;
+        private String descSbg;
 
 
     /**
@@ -115,7 +101,7 @@ public class Produtocontagem implements Serializable {
     * return codiPsv
     * @generated
     */
-    public java.lang.String getCodiPsv() {
+    public String getCodiPsv() {
         return this.codiPsv;
     }
 
@@ -124,7 +110,7 @@ public class Produtocontagem implements Serializable {
     * @param codiPsv codiPsv
     * @generated
     */
-    public Produtocontagem setCodiPsv(java.lang.String codiPsv) {
+    public Produtocontagem setCodiPsv(String codiPsv) {
         this.codiPsv = codiPsv;
         return this;
     }
@@ -133,7 +119,7 @@ public class Produtocontagem implements Serializable {
     * return codiBar
     * @generated
     */
-    public java.lang.String getCodiBar() {
+    public String getCodiBar() {
         return this.codiBar;
     }
 
@@ -142,7 +128,7 @@ public class Produtocontagem implements Serializable {
     * @param codiBar codiBar
     * @generated
     */
-    public Produtocontagem setCodiBar(java.lang.String codiBar) {
+    public Produtocontagem setCodiBar(String codiBar) {
         this.codiBar = codiBar;
         return this;
     }
@@ -151,7 +137,7 @@ public class Produtocontagem implements Serializable {
     * return codiGpr
     * @generated
     */
-    public java.lang.Integer getCodiGpr() {
+    public Integer getCodiGpr() {
         return this.codiGpr;
     }
 
@@ -160,7 +146,7 @@ public class Produtocontagem implements Serializable {
     * @param codiGpr codiGpr
     * @generated
     */
-    public Produtocontagem setCodiGpr(java.lang.Integer codiGpr) {
+    public Produtocontagem setCodiGpr(Integer codiGpr) {
         this.codiGpr = codiGpr;
         return this;
     }
@@ -169,7 +155,7 @@ public class Produtocontagem implements Serializable {
     * return codiSbg
     * @generated
     */
-    public java.lang.Integer getCodiSbg() {
+    public Integer getCodiSbg() {
         return this.codiSbg;
     }
 
@@ -178,7 +164,7 @@ public class Produtocontagem implements Serializable {
     * @param codiSbg codiSbg
     * @generated
     */
-    public Produtocontagem setCodiSbg(java.lang.Integer codiSbg) {
+    public Produtocontagem setCodiSbg(Integer codiSbg) {
         this.codiSbg = codiSbg;
         return this;
     }
@@ -187,7 +173,7 @@ public class Produtocontagem implements Serializable {
     * return custTab
     * @generated
     */
-    public java.lang.Double getCustTab() {
+    public Double getCustTab() {
         return this.custTab;
     }
 
@@ -196,7 +182,7 @@ public class Produtocontagem implements Serializable {
     * @param custTab custTab
     * @generated
     */
-    public Produtocontagem setCustTab(java.lang.Double custTab) {
+    public Produtocontagem setCustTab(Double custTab) {
         this.custTab = custTab;
         return this;
     }
@@ -205,7 +191,7 @@ public class Produtocontagem implements Serializable {
     * return descGpr
     * @generated
     */
-    public java.lang.String getDescGpr() {
+    public String getDescGpr() {
         return this.descGpr;
     }
 
@@ -214,7 +200,7 @@ public class Produtocontagem implements Serializable {
     * @param descGpr descGpr
     * @generated
     */
-    public Produtocontagem setDescGpr(java.lang.String descGpr) {
+    public Produtocontagem setDescGpr(String descGpr) {
         this.descGpr = descGpr;
         return this;
     }
@@ -223,7 +209,7 @@ public class Produtocontagem implements Serializable {
     * return descPsv
     * @generated
     */
-    public java.lang.String getDescPsv() {
+    public String getDescPsv() {
         return this.descPsv;
     }
 
@@ -232,7 +218,7 @@ public class Produtocontagem implements Serializable {
     * @param descPsv descPsv
     * @generated
     */
-    public Produtocontagem setDescPsv(java.lang.String descPsv) {
+    public Produtocontagem setDescPsv(String descPsv) {
         this.descPsv = descPsv;
         return this;
     }
@@ -241,7 +227,7 @@ public class Produtocontagem implements Serializable {
     * return descSbg
     * @generated
     */
-    public java.lang.String getDescSbg() {
+    public String getDescSbg() {
         return this.descSbg;
     }
 
@@ -250,7 +236,7 @@ public class Produtocontagem implements Serializable {
     * @param descSbg descSbg
     * @generated
     */
-    public Produtocontagem setDescSbg(java.lang.String descSbg) {
+    public Produtocontagem setDescSbg(String descSbg) {
         this.descSbg = descSbg;
         return this;
     }

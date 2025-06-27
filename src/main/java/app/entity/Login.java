@@ -1,18 +1,17 @@
 
 package app.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.ForeignKey;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela LOGIN
@@ -21,9 +20,7 @@ import cronapp.framework.core.persistence.*;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "\"LOGIN\"")
 @XmlRootElement
-@CronappSecurity(post = "Administrators", get = "Administrators", delete = "Administrators", put = "Administrators")
 @JsonFilter("app.entity.Login")
-@CronappTable(role=CronappTableRole.CLASS)
 public class Login implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,36 +32,32 @@ public class Login implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="{{'Id' | translate}}")
     @Column(name = "id", nullable = false, length=255, insertable=true, updatable=true)
-        private java.lang.String id;
+        private String id;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="{{'LoginProvider' | translate}}")
     @Column(name = "login_provider", nullable = false, unique = false, length=255, insertable=true, updatable=true)
         
-        private java.lang.String loginProvider;
+        private String loginProvider;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="{{'ProviderDisplayName' | translate}}")
     @Column(name = "provider_display_name", nullable = false, unique = false, length=255, insertable=true, updatable=true)
         
-        private java.lang.String providerDisplayName;
+        private String providerDisplayName;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="{{'ProviderKey' | translate}}")
     @Column(name = "provider_key", nullable = false, unique = false, length=255, insertable=true, updatable=true)
         
-        private java.lang.String providerKey;
+        private String providerKey;
 
 
     /**
@@ -88,7 +81,7 @@ public class Login implements Serializable {
     * return id
     * @generated
     */
-    public java.lang.String getId() {
+    public String getId() {
         return this.id;
     }
 
@@ -97,7 +90,7 @@ public class Login implements Serializable {
     * @param id id
     * @generated
     */
-    public Login setId(java.lang.String id) {
+    public Login setId(String id) {
         this.id = id;
         return this;
     }
@@ -106,7 +99,7 @@ public class Login implements Serializable {
     * return loginProvider
     * @generated
     */
-    public java.lang.String getLoginProvider() {
+    public String getLoginProvider() {
         return this.loginProvider;
     }
 
@@ -115,7 +108,7 @@ public class Login implements Serializable {
     * @param loginProvider loginProvider
     * @generated
     */
-    public Login setLoginProvider(java.lang.String loginProvider) {
+    public Login setLoginProvider(String loginProvider) {
         this.loginProvider = loginProvider;
         return this;
     }
@@ -124,7 +117,7 @@ public class Login implements Serializable {
     * return providerDisplayName
     * @generated
     */
-    public java.lang.String getProviderDisplayName() {
+    public String getProviderDisplayName() {
         return this.providerDisplayName;
     }
 
@@ -133,7 +126,7 @@ public class Login implements Serializable {
     * @param providerDisplayName providerDisplayName
     * @generated
     */
-    public Login setProviderDisplayName(java.lang.String providerDisplayName) {
+    public Login setProviderDisplayName(String providerDisplayName) {
         this.providerDisplayName = providerDisplayName;
         return this;
     }
@@ -142,7 +135,7 @@ public class Login implements Serializable {
     * return providerKey
     * @generated
     */
-    public java.lang.String getProviderKey() {
+    public String getProviderKey() {
         return this.providerKey;
     }
 
@@ -151,7 +144,7 @@ public class Login implements Serializable {
     * @param providerKey providerKey
     * @generated
     */
-    public Login setProviderKey(java.lang.String providerKey) {
+    public Login setProviderKey(String providerKey) {
         this.providerKey = providerKey;
         return this;
     }

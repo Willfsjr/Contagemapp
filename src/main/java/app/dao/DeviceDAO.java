@@ -1,12 +1,10 @@
 package app.dao;
 
-import app.entity.*;
-import java.util.*;
-import org.springframework.stereotype.*;
-import org.springframework.data.jpa.repository.*;
-import org.springframework.data.domain.*;
-import org.springframework.data.repository.query.*;
-import org.springframework.transaction.annotation.*;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import app.entity.Device;
 
 
 /**

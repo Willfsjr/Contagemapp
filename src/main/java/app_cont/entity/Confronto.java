@@ -1,18 +1,20 @@
 
 package app_cont.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+import java.util.UUID;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 
 
-import cronapp.framework.core.persistence.*;
+
 
 /**
 * Classe que representa a tabela CONFRONTO
@@ -21,9 +23,7 @@ import cronapp.framework.core.persistence.*;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "\"CONFRONTO\"")
 @XmlRootElement
-@CronappSecurity
 @JsonFilter("app_cont.entity.Confronto")
-@CronappTable(role=CronappTableRole.CLASS)
 public class Confronto implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,36 +35,32 @@ public class Confronto implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
     @Column(name = "ID", nullable = false, insertable=true, updatable=true)
-        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
+        private String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Codi Psv")
     @Column(name = "CODI_PSV", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String codiPsv;
+        private String codiPsv;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Psv")
     @Column(name = "DESC_PSV", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String descPsv;
+        private String descPsv;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="Qte Total")
     @Column(name = "QTE_TOTAL", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Double qteTotal;
+        private Double qteTotal;
 
 
     /**
@@ -79,55 +75,49 @@ public class Confronto implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="Codi Gpr")
     @Column(name = "CODI_GPR", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer codiGpr;
+        private Integer codiGpr;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Gpr")
     @Column(name = "DESC_GPR", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String descGpr;
+        private String descGpr;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="Codi Sbg")
     @Column(name = "CODI_SBG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer codiSbg;
+        private Integer codiSbg;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Sgb")
     @Column(name = "DESC_SBG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String descSgb;
+        private String descSgb;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="Quant Conf")
     @Column(name = "QUANT_CONF", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Double quantConf;
+        private Double quantConf;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="Cust Tab")
     @Column(name = "CUST_TAB", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Double custTab;
+        private Double custTab;
 
 
     /**
@@ -142,7 +132,7 @@ public class Confronto implements Serializable {
     * return id
     * @generated
     */
-    public java.lang.String getId() {
+    public String getId() {
         return this.id;
     }
 
@@ -151,7 +141,7 @@ public class Confronto implements Serializable {
     * @param id id
     * @generated
     */
-    public Confronto setId(java.lang.String id) {
+    public Confronto setId(String id) {
         this.id = id;
         return this;
     }
@@ -160,7 +150,7 @@ public class Confronto implements Serializable {
     * return codiPsv
     * @generated
     */
-    public java.lang.String getCodiPsv() {
+    public String getCodiPsv() {
         return this.codiPsv;
     }
 
@@ -169,7 +159,7 @@ public class Confronto implements Serializable {
     * @param codiPsv codiPsv
     * @generated
     */
-    public Confronto setCodiPsv(java.lang.String codiPsv) {
+    public Confronto setCodiPsv(String codiPsv) {
         this.codiPsv = codiPsv;
         return this;
     }
@@ -178,7 +168,7 @@ public class Confronto implements Serializable {
     * return descPsv
     * @generated
     */
-    public java.lang.String getDescPsv() {
+    public String getDescPsv() {
         return this.descPsv;
     }
 
@@ -187,7 +177,7 @@ public class Confronto implements Serializable {
     * @param descPsv descPsv
     * @generated
     */
-    public Confronto setDescPsv(java.lang.String descPsv) {
+    public Confronto setDescPsv(String descPsv) {
         this.descPsv = descPsv;
         return this;
     }
@@ -196,7 +186,7 @@ public class Confronto implements Serializable {
     * return qteTotal
     * @generated
     */
-    public java.lang.Double getQteTotal() {
+    public Double getQteTotal() {
         return this.qteTotal;
     }
 
@@ -205,7 +195,7 @@ public class Confronto implements Serializable {
     * @param qteTotal qteTotal
     * @generated
     */
-    public Confronto setQteTotal(java.lang.Double qteTotal) {
+    public Confronto setQteTotal(Double qteTotal) {
         this.qteTotal = qteTotal;
         return this;
     }
@@ -232,7 +222,7 @@ public class Confronto implements Serializable {
     * return codiGpr
     * @generated
     */
-    public java.lang.Integer getCodiGpr() {
+    public Integer getCodiGpr() {
         return this.codiGpr;
     }
 
@@ -241,7 +231,7 @@ public class Confronto implements Serializable {
     * @param codiGpr codiGpr
     * @generated
     */
-    public Confronto setCodiGpr(java.lang.Integer codiGpr) {
+    public Confronto setCodiGpr(Integer codiGpr) {
         this.codiGpr = codiGpr;
         return this;
     }
@@ -250,7 +240,7 @@ public class Confronto implements Serializable {
     * return descGpr
     * @generated
     */
-    public java.lang.String getDescGpr() {
+    public String getDescGpr() {
         return this.descGpr;
     }
 
@@ -259,7 +249,7 @@ public class Confronto implements Serializable {
     * @param descGpr descGpr
     * @generated
     */
-    public Confronto setDescGpr(java.lang.String descGpr) {
+    public Confronto setDescGpr(String descGpr) {
         this.descGpr = descGpr;
         return this;
     }
@@ -268,7 +258,7 @@ public class Confronto implements Serializable {
     * return codiSbg
     * @generated
     */
-    public java.lang.Integer getCodiSbg() {
+    public Integer getCodiSbg() {
         return this.codiSbg;
     }
 
@@ -277,7 +267,7 @@ public class Confronto implements Serializable {
     * @param codiSbg codiSbg
     * @generated
     */
-    public Confronto setCodiSbg(java.lang.Integer codiSbg) {
+    public Confronto setCodiSbg(Integer codiSbg) {
         this.codiSbg = codiSbg;
         return this;
     }
@@ -286,7 +276,7 @@ public class Confronto implements Serializable {
     * return descSgb
     * @generated
     */
-    public java.lang.String getDescSgb() {
+    public String getDescSgb() {
         return this.descSgb;
     }
 
@@ -295,7 +285,7 @@ public class Confronto implements Serializable {
     * @param descSgb descSgb
     * @generated
     */
-    public Confronto setDescSgb(java.lang.String descSgb) {
+    public Confronto setDescSgb(String descSgb) {
         this.descSgb = descSgb;
         return this;
     }
@@ -304,7 +294,7 @@ public class Confronto implements Serializable {
     * return quantConf
     * @generated
     */
-    public java.lang.Double getQuantConf() {
+    public Double getQuantConf() {
         return this.quantConf;
     }
 
@@ -313,7 +303,7 @@ public class Confronto implements Serializable {
     * @param quantConf quantConf
     * @generated
     */
-    public Confronto setQuantConf(java.lang.Double quantConf) {
+    public Confronto setQuantConf(Double quantConf) {
         this.quantConf = quantConf;
         return this;
     }
@@ -322,7 +312,7 @@ public class Confronto implements Serializable {
     * return custTab
     * @generated
     */
-    public java.lang.Double getCustTab() {
+    public Double getCustTab() {
         return this.custTab;
     }
 
@@ -331,7 +321,7 @@ public class Confronto implements Serializable {
     * @param custTab custTab
     * @generated
     */
-    public Confronto setCustTab(java.lang.Double custTab) {
+    public Confronto setCustTab(Double custTab) {
         this.custTab = custTab;
         return this;
     }

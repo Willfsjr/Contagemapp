@@ -1,18 +1,17 @@
 
 package app_oracle.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela TABELA
@@ -22,9 +21,7 @@ import cronapp.framework.core.persistence.*;
 @IdClass(TABELAPK.class)
 @jakarta.persistence.Table(name = "\"TABELA\"", schema="\"NEWFRD\"")
 @XmlRootElement
-@CronappSecurity
 @JsonFilter("app_oracle.entity.TABELA")
-@CronappTable(role=CronappTableRole.CLASS)
 public class TABELA implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -36,124 +33,110 @@ public class TABELA implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="CODI  PSV")
     @Column(name = "CODI_PSV", nullable = false, length=15, insertable=true, updatable=true)
-        private java.lang.String CODI_PSV;
+        private String CODI_PSV;
 
     /**
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="INTEGER", label="TABE  CTA")
     @Column(name = "TABE_CTA", nullable = false, insertable=true, updatable=true)
-        private java.lang.Integer TABE_CTA;
+        private Integer TABE_CTA;
 
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="AACR  TAB")
     @Column(name = "AACR_TAB", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double AACR_TAB;
+        private Double AACR_TAB;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="ABAS  TAB")
     @Column(name = "ABAS_TAB", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double ABAS_TAB;
+        private Double ABAS_TAB;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="ACRE  TAB")
     @Column(name = "ACRE_TAB", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double ACRE_TAB;
+        private Double ACRE_TAB;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="ADES  TAB")
     @Column(name = "ADES_TAB", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double ADES_TAB;
+        private Double ADES_TAB;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="BASI  TAB")
     @Column(name = "BASI_TAB", nullable = false, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double BASI_TAB;
+        private Double BASI_TAB;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CHEK  TAB")
     @Column(name = "CHEK_TAB", nullable = true, unique = false, length=5, insertable=true, updatable=true)
         
-        private java.lang.String CHEK_TAB;
+        private String CHEK_TAB;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CICL  TAB")
     @Column(name = "CICL_TAB", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String CICL_TAB;
+        private String CICL_TAB;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODIPESLANREG")
     @Column(name = "CODIPESLANREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CODIPESLANREG;
+        private Integer CODIPESLANREG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODIPESMANUTREG")
     @Column(name = "CODIPESMANUTREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CODIPESMANUTREG;
+        private Integer CODIPESMANUTREG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="COMI  TAB")
     @Column(name = "COMI_TAB", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double COMI_TAB;
+        private Double COMI_TAB;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="CUST  TAB")
     @Column(name = "CUST_TAB", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double CUST_TAB;
+        private Double CUST_TAB;
 
 
     /**
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DATAULTIMASINCRONIZACAOAPI")
     @Column(name = "DATAULTIMASINCRONIZACAOAPI", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DATAULTIMASINCRONIZACAOAPI;
@@ -162,17 +145,15 @@ public class TABELA implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="DESC  TAB")
     @Column(name = "DESC_TAB", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double DESC_TAB;
+        private Double DESC_TAB;
 
 
     /**
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DINSERT")
     @Column(name = "DINSERT", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DINSERT;
@@ -181,35 +162,31 @@ public class TABELA implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="DMOF  TAB")
     @Column(name = "DMOF_TAB", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double DMOF_TAB;
+        private Double DMOF_TAB;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="DSCT  TAB")
     @Column(name = "DSCT_TAB", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String DSCT_TAB;
+        private String DSCT_TAB;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="DSOF  TAB")
     @Column(name = "DSOF_TAB", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double DSOF_TAB;
+        private Double DSOF_TAB;
 
 
     /**
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DTSYNCAPI")
     @Column(name = "DTSYNCAPI", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DTSYNCAPI;
@@ -219,7 +196,6 @@ public class TABELA implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DUMANUT")
     @Column(name = "DUMANUT", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DUMANUT;
@@ -228,89 +204,79 @@ public class TABELA implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="MARG  TAB")
     @Column(name = "MARG_TAB", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double MARG_TAB;
+        private Double MARG_TAB;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="MKP  TAB")
     @Column(name = "MKP_TAB", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double MKP_TAB;
+        private Double MKP_TAB;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="PACR  TAB")
     @Column(name = "PACR_TAB", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double PACR_TAB;
+        private Double PACR_TAB;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="PDES  TAB")
     @Column(name = "PDES_TAB", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double PDES_TAB;
+        private Double PDES_TAB;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="QMIN  TAB")
     @Column(name = "QMIN_TAB", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double QMIN_TAB;
+        private Double QMIN_TAB;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="QTDC  TAB")
     @Column(name = "QTDC_TAB", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double QTDC_TAB;
+        private Double QTDC_TAB;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="RIVC  TAB")
     @Column(name = "RIVC_TAB", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String RIVC_TAB;
+        private String RIVC_TAB;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SITU  TAB")
     @Column(name = "SITU_TAB", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String SITU_TAB;
+        private String SITU_TAB;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="TCUS  TAB")
     @Column(name = "TCUS_TAB", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String TCUS_TAB;
+        private String TCUS_TAB;
 
 
     /**
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="VCDO  TAB")
     @Column(name = "VCDO_TAB", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.util.Date VCDO_TAB;
@@ -319,10 +285,9 @@ public class TABELA implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="VLOH  TAB")
     @Column(name = "VLOH_TAB", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double VLOH_TAB;
+        private Double VLOH_TAB;
 
 
     /**
@@ -337,7 +302,7 @@ public class TABELA implements Serializable {
     * return CODI_PSV
     * @generated
     */
-    public java.lang.String getCODI_PSV() {
+    public String getCODI_PSV() {
         return this.CODI_PSV;
     }
 
@@ -346,7 +311,7 @@ public class TABELA implements Serializable {
     * @param CODI_PSV CODI_PSV
     * @generated
     */
-    public TABELA setCODI_PSV(java.lang.String CODI_PSV) {
+    public TABELA setCODI_PSV(String CODI_PSV) {
         this.CODI_PSV = CODI_PSV;
         return this;
     }
@@ -355,7 +320,7 @@ public class TABELA implements Serializable {
     * return TABE_CTA
     * @generated
     */
-    public java.lang.Integer getTABE_CTA() {
+    public Integer getTABE_CTA() {
         return this.TABE_CTA;
     }
 
@@ -364,7 +329,7 @@ public class TABELA implements Serializable {
     * @param TABE_CTA TABE_CTA
     * @generated
     */
-    public TABELA setTABE_CTA(java.lang.Integer TABE_CTA) {
+    public TABELA setTABE_CTA(Integer TABE_CTA) {
         this.TABE_CTA = TABE_CTA;
         return this;
     }
@@ -373,7 +338,7 @@ public class TABELA implements Serializable {
     * return AACR_TAB
     * @generated
     */
-    public java.lang.Double getAACR_TAB() {
+    public Double getAACR_TAB() {
         return this.AACR_TAB;
     }
 
@@ -382,7 +347,7 @@ public class TABELA implements Serializable {
     * @param AACR_TAB AACR_TAB
     * @generated
     */
-    public TABELA setAACR_TAB(java.lang.Double AACR_TAB) {
+    public TABELA setAACR_TAB(Double AACR_TAB) {
         this.AACR_TAB = AACR_TAB;
         return this;
     }
@@ -391,7 +356,7 @@ public class TABELA implements Serializable {
     * return ABAS_TAB
     * @generated
     */
-    public java.lang.Double getABAS_TAB() {
+    public Double getABAS_TAB() {
         return this.ABAS_TAB;
     }
 
@@ -400,7 +365,7 @@ public class TABELA implements Serializable {
     * @param ABAS_TAB ABAS_TAB
     * @generated
     */
-    public TABELA setABAS_TAB(java.lang.Double ABAS_TAB) {
+    public TABELA setABAS_TAB(Double ABAS_TAB) {
         this.ABAS_TAB = ABAS_TAB;
         return this;
     }
@@ -409,7 +374,7 @@ public class TABELA implements Serializable {
     * return ACRE_TAB
     * @generated
     */
-    public java.lang.Double getACRE_TAB() {
+    public Double getACRE_TAB() {
         return this.ACRE_TAB;
     }
 
@@ -418,7 +383,7 @@ public class TABELA implements Serializable {
     * @param ACRE_TAB ACRE_TAB
     * @generated
     */
-    public TABELA setACRE_TAB(java.lang.Double ACRE_TAB) {
+    public TABELA setACRE_TAB(Double ACRE_TAB) {
         this.ACRE_TAB = ACRE_TAB;
         return this;
     }
@@ -427,7 +392,7 @@ public class TABELA implements Serializable {
     * return ADES_TAB
     * @generated
     */
-    public java.lang.Double getADES_TAB() {
+    public Double getADES_TAB() {
         return this.ADES_TAB;
     }
 
@@ -436,7 +401,7 @@ public class TABELA implements Serializable {
     * @param ADES_TAB ADES_TAB
     * @generated
     */
-    public TABELA setADES_TAB(java.lang.Double ADES_TAB) {
+    public TABELA setADES_TAB(Double ADES_TAB) {
         this.ADES_TAB = ADES_TAB;
         return this;
     }
@@ -445,7 +410,7 @@ public class TABELA implements Serializable {
     * return BASI_TAB
     * @generated
     */
-    public java.lang.Double getBASI_TAB() {
+    public Double getBASI_TAB() {
         return this.BASI_TAB;
     }
 
@@ -454,7 +419,7 @@ public class TABELA implements Serializable {
     * @param BASI_TAB BASI_TAB
     * @generated
     */
-    public TABELA setBASI_TAB(java.lang.Double BASI_TAB) {
+    public TABELA setBASI_TAB(Double BASI_TAB) {
         this.BASI_TAB = BASI_TAB;
         return this;
     }
@@ -463,7 +428,7 @@ public class TABELA implements Serializable {
     * return CHEK_TAB
     * @generated
     */
-    public java.lang.String getCHEK_TAB() {
+    public String getCHEK_TAB() {
         return this.CHEK_TAB;
     }
 
@@ -472,7 +437,7 @@ public class TABELA implements Serializable {
     * @param CHEK_TAB CHEK_TAB
     * @generated
     */
-    public TABELA setCHEK_TAB(java.lang.String CHEK_TAB) {
+    public TABELA setCHEK_TAB(String CHEK_TAB) {
         this.CHEK_TAB = CHEK_TAB;
         return this;
     }
@@ -481,7 +446,7 @@ public class TABELA implements Serializable {
     * return CICL_TAB
     * @generated
     */
-    public java.lang.String getCICL_TAB() {
+    public String getCICL_TAB() {
         return this.CICL_TAB;
     }
 
@@ -490,7 +455,7 @@ public class TABELA implements Serializable {
     * @param CICL_TAB CICL_TAB
     * @generated
     */
-    public TABELA setCICL_TAB(java.lang.String CICL_TAB) {
+    public TABELA setCICL_TAB(String CICL_TAB) {
         this.CICL_TAB = CICL_TAB;
         return this;
     }
@@ -499,7 +464,7 @@ public class TABELA implements Serializable {
     * return CODIPESLANREG
     * @generated
     */
-    public java.lang.Integer getCODIPESLANREG() {
+    public Integer getCODIPESLANREG() {
         return this.CODIPESLANREG;
     }
 
@@ -508,7 +473,7 @@ public class TABELA implements Serializable {
     * @param CODIPESLANREG CODIPESLANREG
     * @generated
     */
-    public TABELA setCODIPESLANREG(java.lang.Integer CODIPESLANREG) {
+    public TABELA setCODIPESLANREG(Integer CODIPESLANREG) {
         this.CODIPESLANREG = CODIPESLANREG;
         return this;
     }
@@ -517,7 +482,7 @@ public class TABELA implements Serializable {
     * return CODIPESMANUTREG
     * @generated
     */
-    public java.lang.Integer getCODIPESMANUTREG() {
+    public Integer getCODIPESMANUTREG() {
         return this.CODIPESMANUTREG;
     }
 
@@ -526,7 +491,7 @@ public class TABELA implements Serializable {
     * @param CODIPESMANUTREG CODIPESMANUTREG
     * @generated
     */
-    public TABELA setCODIPESMANUTREG(java.lang.Integer CODIPESMANUTREG) {
+    public TABELA setCODIPESMANUTREG(Integer CODIPESMANUTREG) {
         this.CODIPESMANUTREG = CODIPESMANUTREG;
         return this;
     }
@@ -535,7 +500,7 @@ public class TABELA implements Serializable {
     * return COMI_TAB
     * @generated
     */
-    public java.lang.Double getCOMI_TAB() {
+    public Double getCOMI_TAB() {
         return this.COMI_TAB;
     }
 
@@ -544,7 +509,7 @@ public class TABELA implements Serializable {
     * @param COMI_TAB COMI_TAB
     * @generated
     */
-    public TABELA setCOMI_TAB(java.lang.Double COMI_TAB) {
+    public TABELA setCOMI_TAB(Double COMI_TAB) {
         this.COMI_TAB = COMI_TAB;
         return this;
     }
@@ -553,7 +518,7 @@ public class TABELA implements Serializable {
     * return CUST_TAB
     * @generated
     */
-    public java.lang.Double getCUST_TAB() {
+    public Double getCUST_TAB() {
         return this.CUST_TAB;
     }
 
@@ -562,7 +527,7 @@ public class TABELA implements Serializable {
     * @param CUST_TAB CUST_TAB
     * @generated
     */
-    public TABELA setCUST_TAB(java.lang.Double CUST_TAB) {
+    public TABELA setCUST_TAB(Double CUST_TAB) {
         this.CUST_TAB = CUST_TAB;
         return this;
     }
@@ -589,7 +554,7 @@ public class TABELA implements Serializable {
     * return DESC_TAB
     * @generated
     */
-    public java.lang.Double getDESC_TAB() {
+    public Double getDESC_TAB() {
         return this.DESC_TAB;
     }
 
@@ -598,7 +563,7 @@ public class TABELA implements Serializable {
     * @param DESC_TAB DESC_TAB
     * @generated
     */
-    public TABELA setDESC_TAB(java.lang.Double DESC_TAB) {
+    public TABELA setDESC_TAB(Double DESC_TAB) {
         this.DESC_TAB = DESC_TAB;
         return this;
     }
@@ -625,7 +590,7 @@ public class TABELA implements Serializable {
     * return DMOF_TAB
     * @generated
     */
-    public java.lang.Double getDMOF_TAB() {
+    public Double getDMOF_TAB() {
         return this.DMOF_TAB;
     }
 
@@ -634,7 +599,7 @@ public class TABELA implements Serializable {
     * @param DMOF_TAB DMOF_TAB
     * @generated
     */
-    public TABELA setDMOF_TAB(java.lang.Double DMOF_TAB) {
+    public TABELA setDMOF_TAB(Double DMOF_TAB) {
         this.DMOF_TAB = DMOF_TAB;
         return this;
     }
@@ -643,7 +608,7 @@ public class TABELA implements Serializable {
     * return DSCT_TAB
     * @generated
     */
-    public java.lang.String getDSCT_TAB() {
+    public String getDSCT_TAB() {
         return this.DSCT_TAB;
     }
 
@@ -652,7 +617,7 @@ public class TABELA implements Serializable {
     * @param DSCT_TAB DSCT_TAB
     * @generated
     */
-    public TABELA setDSCT_TAB(java.lang.String DSCT_TAB) {
+    public TABELA setDSCT_TAB(String DSCT_TAB) {
         this.DSCT_TAB = DSCT_TAB;
         return this;
     }
@@ -661,7 +626,7 @@ public class TABELA implements Serializable {
     * return DSOF_TAB
     * @generated
     */
-    public java.lang.Double getDSOF_TAB() {
+    public Double getDSOF_TAB() {
         return this.DSOF_TAB;
     }
 
@@ -670,7 +635,7 @@ public class TABELA implements Serializable {
     * @param DSOF_TAB DSOF_TAB
     * @generated
     */
-    public TABELA setDSOF_TAB(java.lang.Double DSOF_TAB) {
+    public TABELA setDSOF_TAB(Double DSOF_TAB) {
         this.DSOF_TAB = DSOF_TAB;
         return this;
     }
@@ -715,7 +680,7 @@ public class TABELA implements Serializable {
     * return MARG_TAB
     * @generated
     */
-    public java.lang.Double getMARG_TAB() {
+    public Double getMARG_TAB() {
         return this.MARG_TAB;
     }
 
@@ -724,7 +689,7 @@ public class TABELA implements Serializable {
     * @param MARG_TAB MARG_TAB
     * @generated
     */
-    public TABELA setMARG_TAB(java.lang.Double MARG_TAB) {
+    public TABELA setMARG_TAB(Double MARG_TAB) {
         this.MARG_TAB = MARG_TAB;
         return this;
     }
@@ -733,7 +698,7 @@ public class TABELA implements Serializable {
     * return MKP_TAB
     * @generated
     */
-    public java.lang.Double getMKP_TAB() {
+    public Double getMKP_TAB() {
         return this.MKP_TAB;
     }
 
@@ -742,7 +707,7 @@ public class TABELA implements Serializable {
     * @param MKP_TAB MKP_TAB
     * @generated
     */
-    public TABELA setMKP_TAB(java.lang.Double MKP_TAB) {
+    public TABELA setMKP_TAB(Double MKP_TAB) {
         this.MKP_TAB = MKP_TAB;
         return this;
     }
@@ -751,7 +716,7 @@ public class TABELA implements Serializable {
     * return PACR_TAB
     * @generated
     */
-    public java.lang.Double getPACR_TAB() {
+    public Double getPACR_TAB() {
         return this.PACR_TAB;
     }
 
@@ -760,7 +725,7 @@ public class TABELA implements Serializable {
     * @param PACR_TAB PACR_TAB
     * @generated
     */
-    public TABELA setPACR_TAB(java.lang.Double PACR_TAB) {
+    public TABELA setPACR_TAB(Double PACR_TAB) {
         this.PACR_TAB = PACR_TAB;
         return this;
     }
@@ -769,7 +734,7 @@ public class TABELA implements Serializable {
     * return PDES_TAB
     * @generated
     */
-    public java.lang.Double getPDES_TAB() {
+    public Double getPDES_TAB() {
         return this.PDES_TAB;
     }
 
@@ -778,7 +743,7 @@ public class TABELA implements Serializable {
     * @param PDES_TAB PDES_TAB
     * @generated
     */
-    public TABELA setPDES_TAB(java.lang.Double PDES_TAB) {
+    public TABELA setPDES_TAB(Double PDES_TAB) {
         this.PDES_TAB = PDES_TAB;
         return this;
     }
@@ -787,7 +752,7 @@ public class TABELA implements Serializable {
     * return QMIN_TAB
     * @generated
     */
-    public java.lang.Double getQMIN_TAB() {
+    public Double getQMIN_TAB() {
         return this.QMIN_TAB;
     }
 
@@ -796,7 +761,7 @@ public class TABELA implements Serializable {
     * @param QMIN_TAB QMIN_TAB
     * @generated
     */
-    public TABELA setQMIN_TAB(java.lang.Double QMIN_TAB) {
+    public TABELA setQMIN_TAB(Double QMIN_TAB) {
         this.QMIN_TAB = QMIN_TAB;
         return this;
     }
@@ -805,7 +770,7 @@ public class TABELA implements Serializable {
     * return QTDC_TAB
     * @generated
     */
-    public java.lang.Double getQTDC_TAB() {
+    public Double getQTDC_TAB() {
         return this.QTDC_TAB;
     }
 
@@ -814,7 +779,7 @@ public class TABELA implements Serializable {
     * @param QTDC_TAB QTDC_TAB
     * @generated
     */
-    public TABELA setQTDC_TAB(java.lang.Double QTDC_TAB) {
+    public TABELA setQTDC_TAB(Double QTDC_TAB) {
         this.QTDC_TAB = QTDC_TAB;
         return this;
     }
@@ -823,7 +788,7 @@ public class TABELA implements Serializable {
     * return RIVC_TAB
     * @generated
     */
-    public java.lang.String getRIVC_TAB() {
+    public String getRIVC_TAB() {
         return this.RIVC_TAB;
     }
 
@@ -832,7 +797,7 @@ public class TABELA implements Serializable {
     * @param RIVC_TAB RIVC_TAB
     * @generated
     */
-    public TABELA setRIVC_TAB(java.lang.String RIVC_TAB) {
+    public TABELA setRIVC_TAB(String RIVC_TAB) {
         this.RIVC_TAB = RIVC_TAB;
         return this;
     }
@@ -841,7 +806,7 @@ public class TABELA implements Serializable {
     * return SITU_TAB
     * @generated
     */
-    public java.lang.String getSITU_TAB() {
+    public String getSITU_TAB() {
         return this.SITU_TAB;
     }
 
@@ -850,7 +815,7 @@ public class TABELA implements Serializable {
     * @param SITU_TAB SITU_TAB
     * @generated
     */
-    public TABELA setSITU_TAB(java.lang.String SITU_TAB) {
+    public TABELA setSITU_TAB(String SITU_TAB) {
         this.SITU_TAB = SITU_TAB;
         return this;
     }
@@ -859,7 +824,7 @@ public class TABELA implements Serializable {
     * return TCUS_TAB
     * @generated
     */
-    public java.lang.String getTCUS_TAB() {
+    public String getTCUS_TAB() {
         return this.TCUS_TAB;
     }
 
@@ -868,7 +833,7 @@ public class TABELA implements Serializable {
     * @param TCUS_TAB TCUS_TAB
     * @generated
     */
-    public TABELA setTCUS_TAB(java.lang.String TCUS_TAB) {
+    public TABELA setTCUS_TAB(String TCUS_TAB) {
         this.TCUS_TAB = TCUS_TAB;
         return this;
     }
@@ -895,7 +860,7 @@ public class TABELA implements Serializable {
     * return VLOH_TAB
     * @generated
     */
-    public java.lang.Double getVLOH_TAB() {
+    public Double getVLOH_TAB() {
         return this.VLOH_TAB;
     }
 
@@ -904,7 +869,7 @@ public class TABELA implements Serializable {
     * @param VLOH_TAB VLOH_TAB
     * @generated
     */
-    public TABELA setVLOH_TAB(java.lang.Double VLOH_TAB) {
+    public TABELA setVLOH_TAB(Double VLOH_TAB) {
         this.VLOH_TAB = VLOH_TAB;
         return this;
     }

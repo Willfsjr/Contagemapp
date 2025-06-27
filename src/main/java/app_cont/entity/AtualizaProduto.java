@@ -1,18 +1,19 @@
 
 package app_cont.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+import java.util.UUID;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 
 
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela ATUALIZA_PRODUTO
@@ -21,9 +22,7 @@ import cronapp.framework.core.persistence.*;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "\"ATUALIZA_PRODUTO\"")
 @XmlRootElement
-@CronappSecurity
 @JsonFilter("app_cont.entity.AtualizaProduto")
-@CronappTable(role=CronappTableRole.CLASS)
 public class AtualizaProduto implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,63 +34,56 @@ public class AtualizaProduto implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
     @Column(name = "ID", nullable = false, insertable=true, updatable=true)
-        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
+        private String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Codi Psv")
     @Column(name = "CODI_PSV", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String codiPsv;
+        private String codiPsv;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Psv")
     @Column(name = "DESC_PSV", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String descPsv;
+        private String descPsv;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Codi Bar")
     @Column(name = "CODI_BAR", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String codiBar;
+        private String codiBar;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="Codi Gpr")
     @Column(name = "CODI_GPR", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer codiGpr;
+        private Integer codiGpr;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="Codi Sbg")
     @Column(name = "CODI_SBG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer codiSbg;
+        private Integer codiSbg;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="Cust Tab")
     @Column(name = "CUST_TAB", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Double custTab;
+        private Double custTab;
 
 
     /**
@@ -106,19 +98,17 @@ public class AtualizaProduto implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Gpr")
     @Column(name = "DESC_GPR", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String descGpr;
+        private String descGpr;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Sbg")
     @Column(name = "DESC_SBG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String descSbg;
+        private String descSbg;
 
 
     /**
@@ -133,7 +123,7 @@ public class AtualizaProduto implements Serializable {
     * return id
     * @generated
     */
-    public java.lang.String getId() {
+    public String getId() {
         return this.id;
     }
 
@@ -142,7 +132,7 @@ public class AtualizaProduto implements Serializable {
     * @param id id
     * @generated
     */
-    public AtualizaProduto setId(java.lang.String id) {
+    public AtualizaProduto setId(String id) {
         this.id = id;
         return this;
     }
@@ -151,7 +141,7 @@ public class AtualizaProduto implements Serializable {
     * return codiPsv
     * @generated
     */
-    public java.lang.String getCodiPsv() {
+    public String getCodiPsv() {
         return this.codiPsv;
     }
 
@@ -160,7 +150,7 @@ public class AtualizaProduto implements Serializable {
     * @param codiPsv codiPsv
     * @generated
     */
-    public AtualizaProduto setCodiPsv(java.lang.String codiPsv) {
+    public AtualizaProduto setCodiPsv(String codiPsv) {
         this.codiPsv = codiPsv;
         return this;
     }
@@ -169,7 +159,7 @@ public class AtualizaProduto implements Serializable {
     * return descPsv
     * @generated
     */
-    public java.lang.String getDescPsv() {
+    public String getDescPsv() {
         return this.descPsv;
     }
 
@@ -178,7 +168,7 @@ public class AtualizaProduto implements Serializable {
     * @param descPsv descPsv
     * @generated
     */
-    public AtualizaProduto setDescPsv(java.lang.String descPsv) {
+    public AtualizaProduto setDescPsv(String descPsv) {
         this.descPsv = descPsv;
         return this;
     }
@@ -187,7 +177,7 @@ public class AtualizaProduto implements Serializable {
     * return codiBar
     * @generated
     */
-    public java.lang.String getCodiBar() {
+    public String getCodiBar() {
         return this.codiBar;
     }
 
@@ -196,7 +186,7 @@ public class AtualizaProduto implements Serializable {
     * @param codiBar codiBar
     * @generated
     */
-    public AtualizaProduto setCodiBar(java.lang.String codiBar) {
+    public AtualizaProduto setCodiBar(String codiBar) {
         this.codiBar = codiBar;
         return this;
     }
@@ -205,7 +195,7 @@ public class AtualizaProduto implements Serializable {
     * return codiGpr
     * @generated
     */
-    public java.lang.Integer getCodiGpr() {
+    public Integer getCodiGpr() {
         return this.codiGpr;
     }
 
@@ -214,7 +204,7 @@ public class AtualizaProduto implements Serializable {
     * @param codiGpr codiGpr
     * @generated
     */
-    public AtualizaProduto setCodiGpr(java.lang.Integer codiGpr) {
+    public AtualizaProduto setCodiGpr(Integer codiGpr) {
         this.codiGpr = codiGpr;
         return this;
     }
@@ -223,7 +213,7 @@ public class AtualizaProduto implements Serializable {
     * return codiSbg
     * @generated
     */
-    public java.lang.Integer getCodiSbg() {
+    public Integer getCodiSbg() {
         return this.codiSbg;
     }
 
@@ -232,7 +222,7 @@ public class AtualizaProduto implements Serializable {
     * @param codiSbg codiSbg
     * @generated
     */
-    public AtualizaProduto setCodiSbg(java.lang.Integer codiSbg) {
+    public AtualizaProduto setCodiSbg(Integer codiSbg) {
         this.codiSbg = codiSbg;
         return this;
     }
@@ -241,7 +231,7 @@ public class AtualizaProduto implements Serializable {
     * return custTab
     * @generated
     */
-    public java.lang.Double getCustTab() {
+    public Double getCustTab() {
         return this.custTab;
     }
 
@@ -250,7 +240,7 @@ public class AtualizaProduto implements Serializable {
     * @param custTab custTab
     * @generated
     */
-    public AtualizaProduto setCustTab(java.lang.Double custTab) {
+    public AtualizaProduto setCustTab(Double custTab) {
         this.custTab = custTab;
         return this;
     }
@@ -277,7 +267,7 @@ public class AtualizaProduto implements Serializable {
     * return descGpr
     * @generated
     */
-    public java.lang.String getDescGpr() {
+    public String getDescGpr() {
         return this.descGpr;
     }
 
@@ -286,7 +276,7 @@ public class AtualizaProduto implements Serializable {
     * @param descGpr descGpr
     * @generated
     */
-    public AtualizaProduto setDescGpr(java.lang.String descGpr) {
+    public AtualizaProduto setDescGpr(String descGpr) {
         this.descGpr = descGpr;
         return this;
     }
@@ -295,7 +285,7 @@ public class AtualizaProduto implements Serializable {
     * return descSbg
     * @generated
     */
-    public java.lang.String getDescSbg() {
+    public String getDescSbg() {
         return this.descSbg;
     }
 
@@ -304,7 +294,7 @@ public class AtualizaProduto implements Serializable {
     * @param descSbg descSbg
     * @generated
     */
-    public AtualizaProduto setDescSbg(java.lang.String descSbg) {
+    public AtualizaProduto setDescSbg(String descSbg) {
         this.descSbg = descSbg;
         return this;
     }

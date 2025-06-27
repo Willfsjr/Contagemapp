@@ -1,18 +1,16 @@
 
 package app_oracle.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela TOAD_PLAN_TABLE
@@ -21,9 +19,7 @@ import cronapp.framework.core.persistence.*;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "\"TOAD_PLAN_TABLE\"", schema="\"NEWFRD\"")
 @XmlRootElement
-@CronappSecurity
 @JsonFilter("app_oracle.entity.TOAD_PLAN_TABLE")
-@CronappTable(role=CronappTableRole.CLASS)
 public class TOAD_PLAN_TABLE implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,322 +31,286 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="STATEMENT  ID")
     @Column(name = "STATEMENT_ID", nullable = false, length=30, insertable=true, updatable=true)
-        private java.lang.String STATEMENT_ID;
+        private String STATEMENT_ID;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ACCESS  PREDICATES")
     @Column(name = "ACCESS_PREDICATES", nullable = true, unique = false, length=4000, insertable=true, updatable=true)
         
-        private java.lang.String ACCESS_PREDICATES;
+        private String ACCESS_PREDICATES;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="BYTES")
     @Column(name = "BYTES", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer BYTES;
+        private Integer BYTES;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CARDINALITY")
     @Column(name = "CARDINALITY", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CARDINALITY;
+        private Integer CARDINALITY;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="COST")
     @Column(name = "COST", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer COST;
+        private Integer COST;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CPU  COST")
     @Column(name = "CPU_COST", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CPU_COST;
+        private Integer CPU_COST;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="DEPTH")
     @Column(name = "DEPTH", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer DEPTH;
+        private Integer DEPTH;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="DISTRIBUTION")
     @Column(name = "DISTRIBUTION", nullable = true, unique = false, length=30, insertable=true, updatable=true)
         
-        private java.lang.String DISTRIBUTION;
+        private String DISTRIBUTION;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="FILTER  PREDICATES")
     @Column(name = "FILTER_PREDICATES", nullable = true, unique = false, length=4000, insertable=true, updatable=true)
         
-        private java.lang.String FILTER_PREDICATES;
+        private String FILTER_PREDICATES;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="ID")
     @Column(name = "ID", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer ID;
+        private Integer ID;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="IO  COST")
     @Column(name = "IO_COST", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer IO_COST;
+        private Integer IO_COST;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="OBJECT  ALIAS")
     @Column(name = "OBJECT_ALIAS", nullable = true, unique = false, length=65, insertable=true, updatable=true)
         
-        private java.lang.String OBJECT_ALIAS;
+        private String OBJECT_ALIAS;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="OBJECT  INSTANCE")
     @Column(name = "OBJECT_INSTANCE", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer OBJECT_INSTANCE;
+        private Integer OBJECT_INSTANCE;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="OBJECT  NAME")
     @Column(name = "OBJECT_NAME", nullable = true, unique = false, length=30, insertable=true, updatable=true)
         
-        private java.lang.String OBJECT_NAME;
+        private String OBJECT_NAME;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="OBJECT  NODE")
     @Column(name = "OBJECT_NODE", nullable = true, unique = false, length=128, insertable=true, updatable=true)
         
-        private java.lang.String OBJECT_NODE;
+        private String OBJECT_NODE;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="OBJECT  OWNER")
     @Column(name = "OBJECT_OWNER", nullable = true, unique = false, length=30, insertable=true, updatable=true)
         
-        private java.lang.String OBJECT_OWNER;
+        private String OBJECT_OWNER;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="OBJECT  TYPE")
     @Column(name = "OBJECT_TYPE", nullable = true, unique = false, length=30, insertable=true, updatable=true)
         
-        private java.lang.String OBJECT_TYPE;
+        private String OBJECT_TYPE;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="OPERATION")
     @Column(name = "OPERATION", nullable = true, unique = false, length=30, insertable=true, updatable=true)
         
-        private java.lang.String OPERATION;
+        private String OPERATION;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="OPTIMIZER")
     @Column(name = "OPTIMIZER", nullable = true, unique = false, length=255, insertable=true, updatable=true)
         
-        private java.lang.String OPTIMIZER;
+        private String OPTIMIZER;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="OPTIONS")
     @Column(name = "OPTIONS", nullable = true, unique = false, length=255, insertable=true, updatable=true)
         
-        private java.lang.String OPTIONS;
+        private String OPTIONS;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="OTHER")
     @Column(name = "OTHER", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String OTHER;
+        private String OTHER;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="OTHER  TAG")
     @Column(name = "OTHER_TAG", nullable = true, unique = false, length=255, insertable=true, updatable=true)
         
-        private java.lang.String OTHER_TAG;
+        private String OTHER_TAG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="OTHER  XML")
     @Column(name = "OTHER_XML", nullable = true, unique = false, length=4000, insertable=true, updatable=true)
         
-        private java.lang.String OTHER_XML;
+        private String OTHER_XML;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="PARENT  ID")
     @Column(name = "PARENT_ID", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer PARENT_ID;
+        private Integer PARENT_ID;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="PARTITION  ID")
     @Column(name = "PARTITION_ID", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer PARTITION_ID;
+        private Integer PARTITION_ID;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="PARTITION  START")
     @Column(name = "PARTITION_START", nullable = true, unique = false, length=255, insertable=true, updatable=true)
         
-        private java.lang.String PARTITION_START;
+        private String PARTITION_START;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="PARTITION  STOP")
     @Column(name = "PARTITION_STOP", nullable = true, unique = false, length=255, insertable=true, updatable=true)
         
-        private java.lang.String PARTITION_STOP;
+        private String PARTITION_STOP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="PLAN  ID")
     @Column(name = "PLAN_ID", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Double PLAN_ID;
+        private Double PLAN_ID;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="POSITION")
     @Column(name = "POSITION", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer POSITION;
+        private Integer POSITION;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="PROJECTION")
     @Column(name = "PROJECTION", nullable = true, unique = false, length=4000, insertable=true, updatable=true)
         
-        private java.lang.String PROJECTION;
+        private String PROJECTION;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="QBLOCK  NAME")
     @Column(name = "QBLOCK_NAME", nullable = true, unique = false, length=30, insertable=true, updatable=true)
         
-        private java.lang.String QBLOCK_NAME;
+        private String QBLOCK_NAME;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="REMARKS")
     @Column(name = "REMARKS", nullable = true, unique = false, length=4000, insertable=true, updatable=true)
         
-        private java.lang.String REMARKS;
+        private String REMARKS;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="SEARCH  COLUMNS")
     @Column(name = "SEARCH_COLUMNS", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Double SEARCH_COLUMNS;
+        private Double SEARCH_COLUMNS;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="TEMP  SPACE")
     @Column(name = "TEMP_SPACE", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer TEMP_SPACE;
+        private Integer TEMP_SPACE;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="TIME")
     @Column(name = "TIME", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer TIME;
+        private Integer TIME;
 
 
     /**
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="TIMESTAMP")
     @Column(name = "TIMESTAMP", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.util.Date TIMESTAMP;
@@ -368,7 +328,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return STATEMENT_ID
     * @generated
     */
-    public java.lang.String getSTATEMENT_ID() {
+    public String getSTATEMENT_ID() {
         return this.STATEMENT_ID;
     }
 
@@ -377,7 +337,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param STATEMENT_ID STATEMENT_ID
     * @generated
     */
-    public TOAD_PLAN_TABLE setSTATEMENT_ID(java.lang.String STATEMENT_ID) {
+    public TOAD_PLAN_TABLE setSTATEMENT_ID(String STATEMENT_ID) {
         this.STATEMENT_ID = STATEMENT_ID;
         return this;
     }
@@ -386,7 +346,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return ACCESS_PREDICATES
     * @generated
     */
-    public java.lang.String getACCESS_PREDICATES() {
+    public String getACCESS_PREDICATES() {
         return this.ACCESS_PREDICATES;
     }
 
@@ -395,7 +355,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param ACCESS_PREDICATES ACCESS_PREDICATES
     * @generated
     */
-    public TOAD_PLAN_TABLE setACCESS_PREDICATES(java.lang.String ACCESS_PREDICATES) {
+    public TOAD_PLAN_TABLE setACCESS_PREDICATES(String ACCESS_PREDICATES) {
         this.ACCESS_PREDICATES = ACCESS_PREDICATES;
         return this;
     }
@@ -404,7 +364,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return BYTES
     * @generated
     */
-    public java.lang.Integer getBYTES() {
+    public Integer getBYTES() {
         return this.BYTES;
     }
 
@@ -413,7 +373,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param BYTES BYTES
     * @generated
     */
-    public TOAD_PLAN_TABLE setBYTES(java.lang.Integer BYTES) {
+    public TOAD_PLAN_TABLE setBYTES(Integer BYTES) {
         this.BYTES = BYTES;
         return this;
     }
@@ -422,7 +382,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return CARDINALITY
     * @generated
     */
-    public java.lang.Integer getCARDINALITY() {
+    public Integer getCARDINALITY() {
         return this.CARDINALITY;
     }
 
@@ -431,7 +391,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param CARDINALITY CARDINALITY
     * @generated
     */
-    public TOAD_PLAN_TABLE setCARDINALITY(java.lang.Integer CARDINALITY) {
+    public TOAD_PLAN_TABLE setCARDINALITY(Integer CARDINALITY) {
         this.CARDINALITY = CARDINALITY;
         return this;
     }
@@ -440,7 +400,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return COST
     * @generated
     */
-    public java.lang.Integer getCOST() {
+    public Integer getCOST() {
         return this.COST;
     }
 
@@ -449,7 +409,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param COST COST
     * @generated
     */
-    public TOAD_PLAN_TABLE setCOST(java.lang.Integer COST) {
+    public TOAD_PLAN_TABLE setCOST(Integer COST) {
         this.COST = COST;
         return this;
     }
@@ -458,7 +418,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return CPU_COST
     * @generated
     */
-    public java.lang.Integer getCPU_COST() {
+    public Integer getCPU_COST() {
         return this.CPU_COST;
     }
 
@@ -467,7 +427,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param CPU_COST CPU_COST
     * @generated
     */
-    public TOAD_PLAN_TABLE setCPU_COST(java.lang.Integer CPU_COST) {
+    public TOAD_PLAN_TABLE setCPU_COST(Integer CPU_COST) {
         this.CPU_COST = CPU_COST;
         return this;
     }
@@ -476,7 +436,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return DEPTH
     * @generated
     */
-    public java.lang.Integer getDEPTH() {
+    public Integer getDEPTH() {
         return this.DEPTH;
     }
 
@@ -485,7 +445,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param DEPTH DEPTH
     * @generated
     */
-    public TOAD_PLAN_TABLE setDEPTH(java.lang.Integer DEPTH) {
+    public TOAD_PLAN_TABLE setDEPTH(Integer DEPTH) {
         this.DEPTH = DEPTH;
         return this;
     }
@@ -494,7 +454,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return DISTRIBUTION
     * @generated
     */
-    public java.lang.String getDISTRIBUTION() {
+    public String getDISTRIBUTION() {
         return this.DISTRIBUTION;
     }
 
@@ -503,7 +463,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param DISTRIBUTION DISTRIBUTION
     * @generated
     */
-    public TOAD_PLAN_TABLE setDISTRIBUTION(java.lang.String DISTRIBUTION) {
+    public TOAD_PLAN_TABLE setDISTRIBUTION(String DISTRIBUTION) {
         this.DISTRIBUTION = DISTRIBUTION;
         return this;
     }
@@ -512,7 +472,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return FILTER_PREDICATES
     * @generated
     */
-    public java.lang.String getFILTER_PREDICATES() {
+    public String getFILTER_PREDICATES() {
         return this.FILTER_PREDICATES;
     }
 
@@ -521,7 +481,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param FILTER_PREDICATES FILTER_PREDICATES
     * @generated
     */
-    public TOAD_PLAN_TABLE setFILTER_PREDICATES(java.lang.String FILTER_PREDICATES) {
+    public TOAD_PLAN_TABLE setFILTER_PREDICATES(String FILTER_PREDICATES) {
         this.FILTER_PREDICATES = FILTER_PREDICATES;
         return this;
     }
@@ -530,7 +490,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return ID
     * @generated
     */
-    public java.lang.Integer getID() {
+    public Integer getID() {
         return this.ID;
     }
 
@@ -539,7 +499,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param ID ID
     * @generated
     */
-    public TOAD_PLAN_TABLE setID(java.lang.Integer ID) {
+    public TOAD_PLAN_TABLE setID(Integer ID) {
         this.ID = ID;
         return this;
     }
@@ -548,7 +508,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return IO_COST
     * @generated
     */
-    public java.lang.Integer getIO_COST() {
+    public Integer getIO_COST() {
         return this.IO_COST;
     }
 
@@ -557,7 +517,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param IO_COST IO_COST
     * @generated
     */
-    public TOAD_PLAN_TABLE setIO_COST(java.lang.Integer IO_COST) {
+    public TOAD_PLAN_TABLE setIO_COST(Integer IO_COST) {
         this.IO_COST = IO_COST;
         return this;
     }
@@ -566,7 +526,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return OBJECT_ALIAS
     * @generated
     */
-    public java.lang.String getOBJECT_ALIAS() {
+    public String getOBJECT_ALIAS() {
         return this.OBJECT_ALIAS;
     }
 
@@ -575,7 +535,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param OBJECT_ALIAS OBJECT_ALIAS
     * @generated
     */
-    public TOAD_PLAN_TABLE setOBJECT_ALIAS(java.lang.String OBJECT_ALIAS) {
+    public TOAD_PLAN_TABLE setOBJECT_ALIAS(String OBJECT_ALIAS) {
         this.OBJECT_ALIAS = OBJECT_ALIAS;
         return this;
     }
@@ -584,7 +544,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return OBJECT_INSTANCE
     * @generated
     */
-    public java.lang.Integer getOBJECT_INSTANCE() {
+    public Integer getOBJECT_INSTANCE() {
         return this.OBJECT_INSTANCE;
     }
 
@@ -593,7 +553,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param OBJECT_INSTANCE OBJECT_INSTANCE
     * @generated
     */
-    public TOAD_PLAN_TABLE setOBJECT_INSTANCE(java.lang.Integer OBJECT_INSTANCE) {
+    public TOAD_PLAN_TABLE setOBJECT_INSTANCE(Integer OBJECT_INSTANCE) {
         this.OBJECT_INSTANCE = OBJECT_INSTANCE;
         return this;
     }
@@ -602,7 +562,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return OBJECT_NAME
     * @generated
     */
-    public java.lang.String getOBJECT_NAME() {
+    public String getOBJECT_NAME() {
         return this.OBJECT_NAME;
     }
 
@@ -611,7 +571,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param OBJECT_NAME OBJECT_NAME
     * @generated
     */
-    public TOAD_PLAN_TABLE setOBJECT_NAME(java.lang.String OBJECT_NAME) {
+    public TOAD_PLAN_TABLE setOBJECT_NAME(String OBJECT_NAME) {
         this.OBJECT_NAME = OBJECT_NAME;
         return this;
     }
@@ -620,7 +580,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return OBJECT_NODE
     * @generated
     */
-    public java.lang.String getOBJECT_NODE() {
+    public String getOBJECT_NODE() {
         return this.OBJECT_NODE;
     }
 
@@ -629,7 +589,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param OBJECT_NODE OBJECT_NODE
     * @generated
     */
-    public TOAD_PLAN_TABLE setOBJECT_NODE(java.lang.String OBJECT_NODE) {
+    public TOAD_PLAN_TABLE setOBJECT_NODE(String OBJECT_NODE) {
         this.OBJECT_NODE = OBJECT_NODE;
         return this;
     }
@@ -638,7 +598,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return OBJECT_OWNER
     * @generated
     */
-    public java.lang.String getOBJECT_OWNER() {
+    public String getOBJECT_OWNER() {
         return this.OBJECT_OWNER;
     }
 
@@ -647,7 +607,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param OBJECT_OWNER OBJECT_OWNER
     * @generated
     */
-    public TOAD_PLAN_TABLE setOBJECT_OWNER(java.lang.String OBJECT_OWNER) {
+    public TOAD_PLAN_TABLE setOBJECT_OWNER(String OBJECT_OWNER) {
         this.OBJECT_OWNER = OBJECT_OWNER;
         return this;
     }
@@ -656,7 +616,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return OBJECT_TYPE
     * @generated
     */
-    public java.lang.String getOBJECT_TYPE() {
+    public String getOBJECT_TYPE() {
         return this.OBJECT_TYPE;
     }
 
@@ -665,7 +625,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param OBJECT_TYPE OBJECT_TYPE
     * @generated
     */
-    public TOAD_PLAN_TABLE setOBJECT_TYPE(java.lang.String OBJECT_TYPE) {
+    public TOAD_PLAN_TABLE setOBJECT_TYPE(String OBJECT_TYPE) {
         this.OBJECT_TYPE = OBJECT_TYPE;
         return this;
     }
@@ -674,7 +634,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return OPERATION
     * @generated
     */
-    public java.lang.String getOPERATION() {
+    public String getOPERATION() {
         return this.OPERATION;
     }
 
@@ -683,7 +643,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param OPERATION OPERATION
     * @generated
     */
-    public TOAD_PLAN_TABLE setOPERATION(java.lang.String OPERATION) {
+    public TOAD_PLAN_TABLE setOPERATION(String OPERATION) {
         this.OPERATION = OPERATION;
         return this;
     }
@@ -692,7 +652,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return OPTIMIZER
     * @generated
     */
-    public java.lang.String getOPTIMIZER() {
+    public String getOPTIMIZER() {
         return this.OPTIMIZER;
     }
 
@@ -701,7 +661,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param OPTIMIZER OPTIMIZER
     * @generated
     */
-    public TOAD_PLAN_TABLE setOPTIMIZER(java.lang.String OPTIMIZER) {
+    public TOAD_PLAN_TABLE setOPTIMIZER(String OPTIMIZER) {
         this.OPTIMIZER = OPTIMIZER;
         return this;
     }
@@ -710,7 +670,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return OPTIONS
     * @generated
     */
-    public java.lang.String getOPTIONS() {
+    public String getOPTIONS() {
         return this.OPTIONS;
     }
 
@@ -719,7 +679,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param OPTIONS OPTIONS
     * @generated
     */
-    public TOAD_PLAN_TABLE setOPTIONS(java.lang.String OPTIONS) {
+    public TOAD_PLAN_TABLE setOPTIONS(String OPTIONS) {
         this.OPTIONS = OPTIONS;
         return this;
     }
@@ -728,7 +688,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return OTHER
     * @generated
     */
-    public java.lang.String getOTHER() {
+    public String getOTHER() {
         return this.OTHER;
     }
 
@@ -737,7 +697,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param OTHER OTHER
     * @generated
     */
-    public TOAD_PLAN_TABLE setOTHER(java.lang.String OTHER) {
+    public TOAD_PLAN_TABLE setOTHER(String OTHER) {
         this.OTHER = OTHER;
         return this;
     }
@@ -746,7 +706,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return OTHER_TAG
     * @generated
     */
-    public java.lang.String getOTHER_TAG() {
+    public String getOTHER_TAG() {
         return this.OTHER_TAG;
     }
 
@@ -755,7 +715,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param OTHER_TAG OTHER_TAG
     * @generated
     */
-    public TOAD_PLAN_TABLE setOTHER_TAG(java.lang.String OTHER_TAG) {
+    public TOAD_PLAN_TABLE setOTHER_TAG(String OTHER_TAG) {
         this.OTHER_TAG = OTHER_TAG;
         return this;
     }
@@ -764,7 +724,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return OTHER_XML
     * @generated
     */
-    public java.lang.String getOTHER_XML() {
+    public String getOTHER_XML() {
         return this.OTHER_XML;
     }
 
@@ -773,7 +733,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param OTHER_XML OTHER_XML
     * @generated
     */
-    public TOAD_PLAN_TABLE setOTHER_XML(java.lang.String OTHER_XML) {
+    public TOAD_PLAN_TABLE setOTHER_XML(String OTHER_XML) {
         this.OTHER_XML = OTHER_XML;
         return this;
     }
@@ -782,7 +742,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return PARENT_ID
     * @generated
     */
-    public java.lang.Integer getPARENT_ID() {
+    public Integer getPARENT_ID() {
         return this.PARENT_ID;
     }
 
@@ -791,7 +751,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param PARENT_ID PARENT_ID
     * @generated
     */
-    public TOAD_PLAN_TABLE setPARENT_ID(java.lang.Integer PARENT_ID) {
+    public TOAD_PLAN_TABLE setPARENT_ID(Integer PARENT_ID) {
         this.PARENT_ID = PARENT_ID;
         return this;
     }
@@ -800,7 +760,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return PARTITION_ID
     * @generated
     */
-    public java.lang.Integer getPARTITION_ID() {
+    public Integer getPARTITION_ID() {
         return this.PARTITION_ID;
     }
 
@@ -809,7 +769,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param PARTITION_ID PARTITION_ID
     * @generated
     */
-    public TOAD_PLAN_TABLE setPARTITION_ID(java.lang.Integer PARTITION_ID) {
+    public TOAD_PLAN_TABLE setPARTITION_ID(Integer PARTITION_ID) {
         this.PARTITION_ID = PARTITION_ID;
         return this;
     }
@@ -818,7 +778,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return PARTITION_START
     * @generated
     */
-    public java.lang.String getPARTITION_START() {
+    public String getPARTITION_START() {
         return this.PARTITION_START;
     }
 
@@ -827,7 +787,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param PARTITION_START PARTITION_START
     * @generated
     */
-    public TOAD_PLAN_TABLE setPARTITION_START(java.lang.String PARTITION_START) {
+    public TOAD_PLAN_TABLE setPARTITION_START(String PARTITION_START) {
         this.PARTITION_START = PARTITION_START;
         return this;
     }
@@ -836,7 +796,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return PARTITION_STOP
     * @generated
     */
-    public java.lang.String getPARTITION_STOP() {
+    public String getPARTITION_STOP() {
         return this.PARTITION_STOP;
     }
 
@@ -845,7 +805,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param PARTITION_STOP PARTITION_STOP
     * @generated
     */
-    public TOAD_PLAN_TABLE setPARTITION_STOP(java.lang.String PARTITION_STOP) {
+    public TOAD_PLAN_TABLE setPARTITION_STOP(String PARTITION_STOP) {
         this.PARTITION_STOP = PARTITION_STOP;
         return this;
     }
@@ -854,7 +814,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return PLAN_ID
     * @generated
     */
-    public java.lang.Double getPLAN_ID() {
+    public Double getPLAN_ID() {
         return this.PLAN_ID;
     }
 
@@ -863,7 +823,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param PLAN_ID PLAN_ID
     * @generated
     */
-    public TOAD_PLAN_TABLE setPLAN_ID(java.lang.Double PLAN_ID) {
+    public TOAD_PLAN_TABLE setPLAN_ID(Double PLAN_ID) {
         this.PLAN_ID = PLAN_ID;
         return this;
     }
@@ -872,7 +832,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return POSITION
     * @generated
     */
-    public java.lang.Integer getPOSITION() {
+    public Integer getPOSITION() {
         return this.POSITION;
     }
 
@@ -881,7 +841,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param POSITION POSITION
     * @generated
     */
-    public TOAD_PLAN_TABLE setPOSITION(java.lang.Integer POSITION) {
+    public TOAD_PLAN_TABLE setPOSITION(Integer POSITION) {
         this.POSITION = POSITION;
         return this;
     }
@@ -890,7 +850,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return PROJECTION
     * @generated
     */
-    public java.lang.String getPROJECTION() {
+    public String getPROJECTION() {
         return this.PROJECTION;
     }
 
@@ -899,7 +859,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param PROJECTION PROJECTION
     * @generated
     */
-    public TOAD_PLAN_TABLE setPROJECTION(java.lang.String PROJECTION) {
+    public TOAD_PLAN_TABLE setPROJECTION(String PROJECTION) {
         this.PROJECTION = PROJECTION;
         return this;
     }
@@ -908,7 +868,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return QBLOCK_NAME
     * @generated
     */
-    public java.lang.String getQBLOCK_NAME() {
+    public String getQBLOCK_NAME() {
         return this.QBLOCK_NAME;
     }
 
@@ -917,7 +877,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param QBLOCK_NAME QBLOCK_NAME
     * @generated
     */
-    public TOAD_PLAN_TABLE setQBLOCK_NAME(java.lang.String QBLOCK_NAME) {
+    public TOAD_PLAN_TABLE setQBLOCK_NAME(String QBLOCK_NAME) {
         this.QBLOCK_NAME = QBLOCK_NAME;
         return this;
     }
@@ -926,7 +886,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return REMARKS
     * @generated
     */
-    public java.lang.String getREMARKS() {
+    public String getREMARKS() {
         return this.REMARKS;
     }
 
@@ -935,7 +895,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param REMARKS REMARKS
     * @generated
     */
-    public TOAD_PLAN_TABLE setREMARKS(java.lang.String REMARKS) {
+    public TOAD_PLAN_TABLE setREMARKS(String REMARKS) {
         this.REMARKS = REMARKS;
         return this;
     }
@@ -944,7 +904,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return SEARCH_COLUMNS
     * @generated
     */
-    public java.lang.Double getSEARCH_COLUMNS() {
+    public Double getSEARCH_COLUMNS() {
         return this.SEARCH_COLUMNS;
     }
 
@@ -953,7 +913,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param SEARCH_COLUMNS SEARCH_COLUMNS
     * @generated
     */
-    public TOAD_PLAN_TABLE setSEARCH_COLUMNS(java.lang.Double SEARCH_COLUMNS) {
+    public TOAD_PLAN_TABLE setSEARCH_COLUMNS(Double SEARCH_COLUMNS) {
         this.SEARCH_COLUMNS = SEARCH_COLUMNS;
         return this;
     }
@@ -962,7 +922,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return TEMP_SPACE
     * @generated
     */
-    public java.lang.Integer getTEMP_SPACE() {
+    public Integer getTEMP_SPACE() {
         return this.TEMP_SPACE;
     }
 
@@ -971,7 +931,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param TEMP_SPACE TEMP_SPACE
     * @generated
     */
-    public TOAD_PLAN_TABLE setTEMP_SPACE(java.lang.Integer TEMP_SPACE) {
+    public TOAD_PLAN_TABLE setTEMP_SPACE(Integer TEMP_SPACE) {
         this.TEMP_SPACE = TEMP_SPACE;
         return this;
     }
@@ -980,7 +940,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * return TIME
     * @generated
     */
-    public java.lang.Integer getTIME() {
+    public Integer getTIME() {
         return this.TIME;
     }
 
@@ -989,7 +949,7 @@ public class TOAD_PLAN_TABLE implements Serializable {
     * @param TIME TIME
     * @generated
     */
-    public TOAD_PLAN_TABLE setTIME(java.lang.Integer TIME) {
+    public TOAD_PLAN_TABLE setTIME(Integer TIME) {
         this.TIME = TIME;
         return this;
     }

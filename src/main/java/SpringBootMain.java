@@ -1,34 +1,26 @@
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
-
 import java.util.TimeZone;
-import cronapp.framework.boot.CronappInitializer;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {
-    "cronapp.framework.core",
-	"cronapp.framework.security",
-	"cronapp.framework.rest",
 	"auth.permission",
 	"api.rest.events",
 	"api.rest.webservices",
 	"reports",
-	"cronapi",
-	"blockly",
-"app_cont", "app", "app_oracle"
+	"app_cont", 
+	"app", 
+	"app_oracle"
 })
-@EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class })
-public class SpringBootMain extends CronappInitializer {
+public class SpringBootMain {
 
     static {
         TimeZone.setDefault(TimeZone.getTimeZone("Brazil/West"));
     }
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		SpringApplication.run(SpringBootMain.class, args);
 	}
 

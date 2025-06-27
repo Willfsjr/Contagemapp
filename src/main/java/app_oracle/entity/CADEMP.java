@@ -1,19 +1,16 @@
 
 package app_oracle.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
-    import cronapi.CronapiByteHeaderSignature;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela CADEMP
@@ -22,9 +19,7 @@ import cronapp.framework.core.persistence.*;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "\"CADEMP\"", schema="\"NEWFRD\"")
 @XmlRootElement
-@CronappSecurity
 @JsonFilter("app_oracle.entity.CADEMP")
-@CronappTable(role=CronappTableRole.CLASS)
 public class CADEMP implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -36,538 +31,478 @@ public class CADEMP implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="INTEGER", label="CODI  EMP")
     @Column(name = "CODI_EMP", nullable = false, insertable=true, updatable=true)
-        private java.lang.Integer CODI_EMP;
+        private Integer CODI_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ABRE  MUN")
     @Column(name = "ABRE_MUN", nullable = true, unique = false, length=5, insertable=true, updatable=true)
         
-        private java.lang.String ABRE_MUN;
+        private String ABRE_MUN;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ACCC  EMP")
     @Column(name = "ACCC_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String ACCC_EMP;
+        private String ACCC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ACNF  EMP")
     @Column(name = "ACNF_EMP", nullable = true, unique = false, length=100, insertable=true, updatable=true)
         
-        private java.lang.String ACNF_EMP;
+        private String ACNF_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ACNP  EMP")
     @Column(name = "ACNP_EMP", nullable = true, unique = false, length=14, insertable=true, updatable=true)
         
-        private java.lang.String ACNP_EMP;
+        private String ACNP_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ACON  EMP")
     @Column(name = "ACON_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String ACON_EMP;
+        private String ACON_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ACTE  EMP")
     @Column(name = "ACTE_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String ACTE_EMP;
+        private String ACTE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="AECD  EMP")
     @Column(name = "AECD_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String AECD_EMP;
+        private String AECD_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="AECX  EMP")
     @Column(name = "AECX_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String AECX_EMP;
+        private String AECX_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="AMBI  EMP")
     @Column(name = "AMBI_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String AMBI_EMP;
+        private String AMBI_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="AMBS  EMP")
     @Column(name = "AMBS_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String AMBS_EMP;
+        private String AMBS_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ANFC  EMP")
     @Column(name = "ANFC_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String ANFC_EMP;
+        private String ANFC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ANFS  EMP")
     @Column(name = "ANFS_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String ANFS_EMP;
+        private String ANFS_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ASCC  EMP")
     @Column(name = "ASCC_EMP", nullable = true, unique = false, length=100, insertable=true, updatable=true)
         
-        private java.lang.String ASCC_EMP;
+        private String ASCC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ASCT  EMP")
     @Column(name = "ASCT_EMP", nullable = true, unique = false, length=100, insertable=true, updatable=true)
         
-        private java.lang.String ASCT_EMP;
+        private String ASCT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ASNF  EMP")
     @Column(name = "ASNF_EMP", nullable = true, unique = false, length=100, insertable=true, updatable=true)
         
-        private java.lang.String ASNF_EMP;
+        private String ASNF_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ASUN  EMP")
     @Column(name = "ASUN_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String ASUN_EMP;
+        private String ASUN_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ATIV  EMP")
     @Column(name = "ATIV_EMP", nullable = true, unique = false, length=60, insertable=true, updatable=true)
         
-        private java.lang.String ATIV_EMP;
+        private String ATIV_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="AVAL  CND")
     @Column(name = "AVAL_CND", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String AVAL_CND;
+        private String AVAL_CND;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="BAIC  EMP")
     @Column(name = "BAIC_EMP", nullable = true, unique = false, length=20, insertable=true, updatable=true)
         
-        private java.lang.String BAIC_EMP;
+        private String BAIC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="BAIR  EMP")
     @Column(name = "BAIR_EMP", nullable = true, unique = false, length=20, insertable=true, updatable=true)
         
-        private java.lang.String BAIR_EMP;
+        private String BAIR_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CAE  EMP")
     @Column(name = "CAE_EMP", nullable = true, unique = false, length=9, insertable=true, updatable=true)
         
-        private java.lang.String CAE_EMP;
+        private String CAE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CARI  EMP")
     @Column(name = "CARI_EMP", nullable = true, unique = false, length=10, insertable=true, updatable=true)
         
-        private java.lang.String CARI_EMP;
+        private String CARI_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CAUT  CND")
     @Column(name = "CAUT_CND", nullable = true, unique = false, length=40, insertable=true, updatable=true)
         
-        private java.lang.String CAUT_CND;
+        private String CAUT_CND;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="CAVE  EMP")
     @Column(name = "CAVE_EMP", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double CAVE_EMP;
+        private Double CAVE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CCCT  EMP")
     @Column(name = "CCCT_EMP", nullable = true, unique = false, length=100, insertable=true, updatable=true)
         
-        private java.lang.String CCCT_EMP;
+        private String CCCT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CCER  EMP")
     @Column(name = "CCER_EMP", nullable = true, unique = false, length=100, insertable=true, updatable=true)
         
-        private java.lang.String CCER_EMP;
+        private String CCER_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CENF  EMP")
     @Column(name = "CENF_EMP", nullable = true, unique = false, length=4000, insertable=true, updatable=true)
         
-        private java.lang.String CENF_EMP;
+        private String CENF_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CEPC  EMP")
     @Column(name = "CEPC_EMP", nullable = true, unique = false, length=8, insertable=true, updatable=true)
         
-        private java.lang.String CEPC_EMP;
+        private String CEPC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CEP  EMP")
     @Column(name = "CEP_EMP", nullable = true, unique = false, length=8, insertable=true, updatable=true)
         
-        private java.lang.String CEP_EMP;
+        private String CEP_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CHEK  EMP")
     @Column(name = "CHEK_EMP", nullable = true, unique = false, length=5, insertable=true, updatable=true)
         
-        private java.lang.String CHEK_EMP;
+        private String CHEK_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CICE  EMP")
     @Column(name = "CICE_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String CICE_EMP;
+        private String CICE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CIMA  EMP")
     @Column(name = "CIMA_EMP", nullable = true, unique = false, length=20, insertable=true, updatable=true)
         
-        private java.lang.String CIMA_EMP;
+        private String CIMA_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="CJUR  EMP")
     @Column(name = "CJUR_EMP", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double CJUR_EMP;
+        private Double CJUR_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CLIA  EMP")
     @Column(name = "CLIA_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CLIA_EMP;
+        private Integer CLIA_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CMAT  EMP")
     @Column(name = "CMAT_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CMAT_EMP;
+        private Integer CMAT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CMER  EMP")
     @Column(name = "CMER_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CMER_EMP;
+        private Integer CMER_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CNFS  EMP")
     @Column(name = "CNFS_EMP", nullable = true, unique = false, length=2, insertable=true, updatable=true)
         
-        private java.lang.String CNFS_EMP;
+        private String CNFS_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CNPJ  EMP")
     @Column(name = "CNPJ_EMP", nullable = false, unique = false, length=14, insertable=true, updatable=true)
         
-        private java.lang.String CNPJ_EMP;
+        private String CNPJ_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="COD 1 TRA")
     @Column(name = "COD1_TRA", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer COD1_TRA;
+        private Integer COD1_TRA;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="COD 2 TRA")
     @Column(name = "COD2_TRA", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer COD2_TRA;
+        private Integer COD2_TRA;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CODA  EMP")
     @Column(name = "CODA_EMP", nullable = true, unique = false, length=9, insertable=true, updatable=true)
         
-        private java.lang.String CODA_EMP;
+        private String CODA_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODIPESLANREG")
     @Column(name = "CODIPESLANREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CODIPESLANREG;
+        private Integer CODIPESLANREG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODIPESMANUTREG")
     @Column(name = "CODIPESMANUTREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CODIPESMANUTREG;
+        private Integer CODIPESMANUTREG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODI  AUD")
     @Column(name = "CODI_AUD", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CODI_AUD;
+        private Integer CODI_AUD;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CODI  CND")
     @Column(name = "CODI_CND", nullable = true, unique = false, length=20, insertable=true, updatable=true)
         
-        private java.lang.String CODI_CND;
+        private String CODI_CND;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODI  CTD")
     @Column(name = "CODI_CTD", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CODI_CTD;
+        private Integer CODI_CTD;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODI  FCR")
     @Column(name = "CODI_FCR", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CODI_FCR;
+        private Integer CODI_FCR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CODI  INS")
     @Column(name = "CODI_INS", nullable = true, unique = false, length=5, insertable=true, updatable=true)
         
-        private java.lang.String CODI_INS;
+        private String CODI_INS;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODI  MUN")
     @Column(name = "CODI_MUN", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CODI_MUN;
+        private Integer CODI_MUN;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODI  PES")
     @Column(name = "CODI_PES", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CODI_PES;
+        private Integer CODI_PES;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CODI  PRF")
     @Column(name = "CODI_PRF", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String CODI_PRF;
+        private String CODI_PRF;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CODM  EMP")
     @Column(name = "CODM_EMP", nullable = true, unique = false, length=10, insertable=true, updatable=true)
         
-        private java.lang.String CODM_EMP;
+        private String CODM_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="COMP  EMP")
     @Column(name = "COMP_EMP", nullable = true, unique = false, length=50, insertable=true, updatable=true)
         
-        private java.lang.String COMP_EMP;
+        private String COMP_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CONT  EMP")
     @Column(name = "CONT_EMP", nullable = true, unique = false, length=65, insertable=true, updatable=true)
         
-        private java.lang.String CONT_EMP;
+        private String CONT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CPON  EMP")
     @Column(name = "CPON_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String CPON_EMP;
+        private String CPON_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CTRL  SOE")
     @Column(name = "CTRL_SOE", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CTRL_SOE;
+        private Integer CTRL_SOE;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="CVEN  EMP")
     @Column(name = "CVEN_EMP", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double CVEN_EMP;
+        private Double CVEN_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CXPO  EMP")
     @Column(name = "CXPO_EMP", nullable = true, unique = false, length=6, insertable=true, updatable=true)
         
-        private java.lang.String CXPO_EMP;
+        private String CXPO_EMP;
 
 
     /**
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DATAULTIMASINCRONIZACAOAPI")
     @Column(name = "DATAULTIMASINCRONIZACAOAPI", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DATAULTIMASINCRONIZACAOAPI;
@@ -576,26 +511,23 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="DCCT  EMP")
     @Column(name = "DCCT_EMP", nullable = true, unique = false, length=100, insertable=true, updatable=true)
         
-        private java.lang.String DCCT_EMP;
+        private String DCCT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="DCER  EMP")
     @Column(name = "DCER_EMP", nullable = true, unique = false, length=100, insertable=true, updatable=true)
         
-        private java.lang.String DCER_EMP;
+        private String DCER_EMP;
 
 
     /**
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DCON  EMP")
     @Column(name = "DCON_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.util.Date DCON_EMP;
@@ -605,7 +537,6 @@ public class CADEMP implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DDES  EMP")
     @Column(name = "DDES_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.util.Date DDES_EMP;
@@ -615,7 +546,6 @@ public class CADEMP implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DFIN  EMP")
     @Column(name = "DFIN_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.util.Date DFIN_EMP;
@@ -625,7 +555,6 @@ public class CADEMP implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DFU  EMP")
     @Column(name = "DFU_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.util.Date DFU_EMP;
@@ -635,7 +564,6 @@ public class CADEMP implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DICC  EMP")
     @Column(name = "DICC_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.util.Date DICC_EMP;
@@ -645,7 +573,6 @@ public class CADEMP implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DICP  EMP")
     @Column(name = "DICP_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.util.Date DICP_EMP;
@@ -655,7 +582,6 @@ public class CADEMP implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DINSERT")
     @Column(name = "DINSERT", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DINSERT;
@@ -665,7 +591,6 @@ public class CADEMP implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DJC  EMP")
     @Column(name = "DJC_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.util.Date DJC_EMP;
@@ -675,7 +600,6 @@ public class CADEMP implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DSEF  EMP")
     @Column(name = "DSEF_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.util.Date DSEF_EMP;
@@ -685,7 +609,6 @@ public class CADEMP implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DTIC  EMP")
     @Column(name = "DTIC_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.util.Date DTIC_EMP;
@@ -695,7 +618,6 @@ public class CADEMP implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DTSYNCAPI")
     @Column(name = "DTSYNCAPI", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DTSYNCAPI;
@@ -705,7 +627,6 @@ public class CADEMP implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DUMANUT")
     @Column(name = "DUMANUT", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DUMANUT;
@@ -715,7 +636,6 @@ public class CADEMP implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DVCR  EMP")
     @Column(name = "DVCR_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.util.Date DVCR_EMP;
@@ -725,7 +645,6 @@ public class CADEMP implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DVCV  EMP")
     @Column(name = "DVCV_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.util.Date DVCV_EMP;
@@ -735,7 +654,6 @@ public class CADEMP implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DVTR  EMP")
     @Column(name = "DVTR_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.util.Date DVTR_EMP;
@@ -744,35 +662,31 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="EACA  EMP")
     @Column(name = "EACA_EMP", nullable = true, unique = false, length=100, insertable=true, updatable=true)
         
-        private java.lang.String EACA_EMP;
+        private String EACA_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="EASS  EMP")
     @Column(name = "EASS_EMP", nullable = true, unique = false, length=100, insertable=true, updatable=true)
         
-        private java.lang.String EASS_EMP;
+        private String EASS_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="EBNS  EMP")
     @Column(name = "EBNS_EMP", nullable = true, unique = false, length=15, insertable=true, updatable=true)
         
-        private java.lang.String EBNS_EMP;
+        private String EBNS_EMP;
 
 
     /**
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="ECDT  EMP")
     @Column(name = "ECDT_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.util.Date ECDT_EMP;
@@ -781,457 +695,406 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ECER  EMP")
     @Column(name = "ECER_EMP", nullable = true, unique = false, length=100, insertable=true, updatable=true)
         
-        private java.lang.String ECER_EMP;
+        private String ECER_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ECHR  EMP")
     @Column(name = "ECHR_EMP", nullable = true, unique = false, length=8, insertable=true, updatable=true)
         
-        private java.lang.String ECHR_EMP;
+        private String ECHR_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="EDCE  EMP")
     @Column(name = "EDCE_EMP", nullable = true, unique = false, length=100, insertable=true, updatable=true)
         
-        private java.lang.String EDCE_EMP;
+        private String EDCE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="EDIS  EMP")
     @Column(name = "EDIS_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String EDIS_EMP;
+        private String EDIS_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="EECC  EMP")
     @Column(name = "EECC_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String EECC_EMP;
+        private String EECC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="EEMA  EMP")
     @Column(name = "EEMA_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String EEMA_EMP;
+        private String EEMA_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="EGRP  EMP")
     @Column(name = "EGRP_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String EGRP_EMP;
+        private String EGRP_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ELTR  EMP")
     @Column(name = "ELTR_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String ELTR_EMP;
+        private String ELTR_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="EMAC  EMP")
     @Column(name = "EMAC_EMP", nullable = true, unique = false, length=40, insertable=true, updatable=true)
         
-        private java.lang.String EMAC_EMP;
+        private String EMAC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="EMAI  EMP")
     @Column(name = "EMAI_EMP", nullable = true, unique = false, length=40, insertable=true, updatable=true)
         
-        private java.lang.String EMAI_EMP;
+        private String EMAI_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="EMCA  EMP")
     @Column(name = "EMCA_EMP", nullable = true, unique = false, length=4000, insertable=true, updatable=true)
         
-        private java.lang.String EMCA_EMP;
+        private String EMCA_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="EMPR  FOL")
     @Column(name = "EMPR_FOL", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer EMPR_FOL;
+        private Integer EMPR_FOL;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="EMSG  EMP")
     @Column(name = "EMSG_EMP", nullable = true, unique = false, length=4000, insertable=true, updatable=true)
         
-        private java.lang.String EMSG_EMP;
+        private String EMSG_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ENDC  EMP")
     @Column(name = "ENDC_EMP", nullable = true, unique = false, length=40, insertable=true, updatable=true)
         
-        private java.lang.String ENDC_EMP;
+        private String ENDC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ENDE  EMP")
     @Column(name = "ENDE_EMP", nullable = true, unique = false, length=40, insertable=true, updatable=true)
         
-        private java.lang.String ENDE_EMP;
+        private String ENDE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ENVE  EMP")
     @Column(name = "ENVE_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String ENVE_EMP;
+        private String ENVE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ESCN  EMP")
     @Column(name = "ESCN_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String ESCN_EMP;
+        private String ESCN_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ESER  EMP")
     @Column(name = "ESER_EMP", nullable = true, unique = false, length=100, insertable=true, updatable=true)
         
-        private java.lang.String ESER_EMP;
+        private String ESER_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ESUB  EMP")
     @Column(name = "ESUB_EMP", nullable = true, unique = false, length=10, insertable=true, updatable=true)
         
-        private java.lang.String ESUB_EMP;
+        private String ESUB_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="EULL  EMP")
     @Column(name = "EULL_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer EULL_EMP;
+        private Integer EULL_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="EUTE  EMP")
     @Column(name = "EUTE_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String EUTE_EMP;
+        private String EUTE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="FANT  EMP")
     @Column(name = "FANT_EMP", nullable = true, unique = false, length=60, insertable=true, updatable=true)
         
-        private java.lang.String FANT_EMP;
+        private String FANT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="FAXC  EMP")
     @Column(name = "FAXC_EMP", nullable = true, unique = false, length=20, insertable=true, updatable=true)
         
-        private java.lang.String FAXC_EMP;
+        private String FAXC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="FAX  EMP")
     @Column(name = "FAX_EMP", nullable = true, unique = false, length=20, insertable=true, updatable=true)
         
-        private java.lang.String FAX_EMP;
+        private String FAX_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="FDCT  EMP")
     @Column(name = "FDCT_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String FDCT_EMP;
+        private String FDCT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="FONC  EMP")
     @Column(name = "FONC_EMP", nullable = true, unique = false, length=20, insertable=true, updatable=true)
         
-        private java.lang.String FONC_EMP;
+        private String FONC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="FONE  EMP")
     @Column(name = "FONE_EMP", nullable = true, unique = false, length=20, insertable=true, updatable=true)
         
-        private java.lang.String FONE_EMP;
+        private String FONE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="FORE  EMP")
     @Column(name = "FORE_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String FORE_EMP;
+        private String FORE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="GPDF  EMP")
     @Column(name = "GPDF_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String GPDF_EMP;
+        private String GPDF_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="GPZE  EMP")
     @Column(name = "GPZE_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String GPZE_EMP;
+        private String GPZE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="HCON  EMP")
     @Column(name = "HCON_EMP", nullable = true, unique = false, length=8, insertable=true, updatable=true)
         
-        private java.lang.String HCON_EMP;
+        private String HCON_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="IDAF  EMP")
     @Column(name = "IDAF_EMP", nullable = true, unique = false, length=25, insertable=true, updatable=true)
         
-        private java.lang.String IDAF_EMP;
+        private String IDAF_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="IDAT  EMP")
     @Column(name = "IDAT_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String IDAT_EMP;
+        private String IDAT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="IDCT  EMP")
     @Column(name = "IDCT_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String IDCT_EMP;
+        private String IDCT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="IDEN  EMP")
     @Column(name = "IDEN_EMP", nullable = false, unique = false, length=10, insertable=true, updatable=true)
         
-        private java.lang.String IDEN_EMP;
+        private String IDEN_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ILOG  EMP")
     @Column(name = "ILOG_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String ILOG_EMP;
+        private String ILOG_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="IMCA  EMP")
     @Column(name = "IMCA_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String IMCA_EMP;
+        private String IMCA_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="IMHS  EMP")
     @Column(name = "IMHS_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String IMHS_EMP;
+        private String IMHS_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="INDD  EMP")
     @Column(name = "INDD_EMP", nullable = true, unique = false, length=2, insertable=true, updatable=true)
         
-        private java.lang.String INDD_EMP;
+        private String INDD_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="INE  EMP")
     @Column(name = "INE_EMP", nullable = true, unique = false, length=20, insertable=true, updatable=true)
         
-        private java.lang.String INE_EMP;
+        private String INE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="INM  EMP")
     @Column(name = "INM_EMP", nullable = true, unique = false, length=20, insertable=true, updatable=true)
         
-        private java.lang.String INM_EMP;
+        private String INM_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="INST  EMP")
     @Column(name = "INST_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String INST_EMP;
+        private String INST_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="INTC  EMP")
     @Column(name = "INTC_EMP", nullable = true, unique = false, length=40, insertable=true, updatable=true)
         
-        private java.lang.String INTC_EMP;
+        private String INTC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="INTE  EMP")
     @Column(name = "INTE_EMP", nullable = true, unique = false, length=40, insertable=true, updatable=true)
         
-        private java.lang.String INTE_EMP;
+        private String INTE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ITAX  SEM")
     @Column(name = "ITAX_SEM", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String ITAX_SEM;
+        private String ITAX_SEM;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="IUCD  EMP")
     @Column(name = "IUCD_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String IUCD_EMP;
+        private String IUCD_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="IVLR  EMP")
     @Column(name = "IVLR_EMP", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double IVLR_EMP;
+        private Double IVLR_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="LAUD  EMP")
     @Column(name = "LAUD_EMP", nullable = true, unique = false, length=15, insertable=true, updatable=true)
         
-        private java.lang.String LAUD_EMP;
+        private String LAUD_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="LCTE  EMP")
     @Column(name = "LCTE_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer LCTE_EMP;
+        private Integer LCTE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="LMDF  EMP")
     @Column(name = "LMDF_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer LMDF_EMP;
+        private Integer LMDF_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="IMAGE_DATABASE", label="LOGO  EMP")
     @Column(name = "LOGO_EMP", nullable = true, unique = false, length=4000, insertable=true, updatable=true)
         
         private byte[] LOGO_EMP;
@@ -1240,396 +1103,351 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="LTRA  EMP")
     @Column(name = "LTRA_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String LTRA_EMP;
+        private String LTRA_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="MCNF  EMP")
     @Column(name = "MCNF_EMP", nullable = true, unique = false, length=4000, insertable=true, updatable=true)
         
-        private java.lang.String MCNF_EMP;
+        private String MCNF_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="MDCT  EMP")
     @Column(name = "MDCT_EMP", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double MDCT_EMP;
+        private Double MDCT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="MECT  EMP")
     @Column(name = "MECT_EMP", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double MECT_EMP;
+        private Double MECT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="MICT  EMP")
     @Column(name = "MICT_EMP", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double MICT_EMP;
+        private Double MICT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="MOD  EMP")
     @Column(name = "MOD_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer MOD_EMP;
+        private Integer MOD_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="MPCT  EMP")
     @Column(name = "MPCT_EMP", nullable = true, unique = false, length=4000, insertable=true, updatable=true)
         
-        private java.lang.String MPCT_EMP;
+        private String MPCT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="MSCC  EMP")
     @Column(name = "MSCC_EMP", nullable = true, unique = false, length=4000, insertable=true, updatable=true)
         
-        private java.lang.String MSCC_EMP;
+        private String MSCC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="MSCT  EMP")
     @Column(name = "MSCT_EMP", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double MSCT_EMP;
+        private Double MSCT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="MSIM  EMP")
     @Column(name = "MSIM_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String MSIM_EMP;
+        private String MSIM_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="MSNF  EMP")
     @Column(name = "MSNF_EMP", nullable = true, unique = false, length=4000, insertable=true, updatable=true)
         
-        private java.lang.String MSNF_EMP;
+        private String MSNF_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="MUNC  EMP")
     @Column(name = "MUNC_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer MUNC_EMP;
+        private Integer MUNC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="NCRE  EMP")
     @Column(name = "NCRE_EMP", nullable = true, unique = false, length=20, insertable=true, updatable=true)
         
-        private java.lang.String NCRE_EMP;
+        private String NCRE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="NCVI  EMP")
     @Column(name = "NCVI_EMP", nullable = true, unique = false, length=20, insertable=true, updatable=true)
         
-        private java.lang.String NCVI_EMP;
+        private String NCVI_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="NESO  EMP")
     @Column(name = "NESO_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String NESO_EMP;
+        private String NESO_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="NFC 4 EMP")
     @Column(name = "NFC4_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String NFC4_EMP;
+        private String NFC4_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="NFE 4 EMP")
     @Column(name = "NFE4_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String NFE4_EMP;
+        private String NFE4_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="NFEC  EMP")
     @Column(name = "NFEC_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String NFEC_EMP;
+        private String NFEC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="NFES  EMP")
     @Column(name = "NFES_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String NFES_EMP;
+        private String NFES_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="NFLT  EMP")
     @Column(name = "NFLT_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String NFLT_EMP;
+        private String NFLT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="NGRE  EMP")
     @Column(name = "NGRE_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String NGRE_EMP;
+        private String NGRE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="NIRE  EMP")
     @Column(name = "NIRE_EMP", nullable = true, unique = false, length=20, insertable=true, updatable=true)
         
-        private java.lang.String NIRE_EMP;
+        private String NIRE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="NLCC  EMP")
     @Column(name = "NLCC_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer NLCC_EMP;
+        private Integer NLCC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="NLIC  EMP")
     @Column(name = "NLIC_EMP", nullable = true, unique = false, length=20, insertable=true, updatable=true)
         
-        private java.lang.String NLIC_EMP;
+        private String NLIC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="NLTS  EMP")
     @Column(name = "NLTS_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer NLTS_EMP;
+        private Integer NLTS_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="NREG  EMP")
     @Column(name = "NREG_EMP", nullable = true, unique = false, length=40, insertable=true, updatable=true)
         
-        private java.lang.String NREG_EMP;
+        private String NREG_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="NRLT  EMP")
     @Column(name = "NRLT_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer NRLT_EMP;
+        private Integer NRLT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="NSCE  EMP")
     @Column(name = "NSCE_EMP", nullable = true, unique = false, length=100, insertable=true, updatable=true)
         
-        private java.lang.String NSCE_EMP;
+        private String NSCE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="NSCT  EMP")
     @Column(name = "NSCT_EMP", nullable = true, unique = false, length=100, insertable=true, updatable=true)
         
-        private java.lang.String NSCT_EMP;
+        private String NSCT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="NTAR  EMP")
     @Column(name = "NTAR_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer NTAR_EMP;
+        private Integer NTAR_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="NTCT  EMP")
     @Column(name = "NTCT_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer NTCT_EMP;
+        private Integer NTCT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="NUCO  EMP")
     @Column(name = "NUCO_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer NUCO_EMP;
+        private Integer NUCO_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="NUMC  EMP")
     @Column(name = "NUMC_EMP", nullable = true, unique = false, length=5, insertable=true, updatable=true)
         
-        private java.lang.String NUMC_EMP;
+        private String NUMC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="NUME  EMP")
     @Column(name = "NUME_EMP", nullable = true, unique = false, length=5, insertable=true, updatable=true)
         
-        private java.lang.String NUME_EMP;
+        private String NUME_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="ORIM  EMP")
     @Column(name = "ORIM_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String ORIM_EMP;
+        private String ORIM_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="PDCB  EMP")
     @Column(name = "PDCB_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String PDCB_EMP;
+        private String PDCB_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="PDCC  EMP")
     @Column(name = "PDCC_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String PDCC_EMP;
+        private String PDCC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="PDCD  EMP")
     @Column(name = "PDCD_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String PDCD_EMP;
+        private String PDCD_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="PDCE  EMP")
     @Column(name = "PDCE_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String PDCE_EMP;
+        private String PDCE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="PDCR  EMP")
     @Column(name = "PDCR_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String PDCR_EMP;
+        private String PDCR_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="PEFI  EMP")
     @Column(name = "PEFI_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer PEFI_EMP;
+        private Integer PEFI_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="PICT  EMP")
     @Column(name = "PICT_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String PICT_EMP;
+        private String PICT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="PORE  EMP")
     @Column(name = "PORE_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String PORE_EMP;
+        private String PORE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="FILE_DATABASE", label="PPAR  EMP")
     @Column(name = "PPAR_EMP", nullable = true, unique = false, length=4000, insertable=true, updatable=true)
-    @CronapiByteHeaderSignature
         
         private byte[] PPAR_EMP;
 
@@ -1637,440 +1455,391 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="RAZA  EMP")
     @Column(name = "RAZA_EMP", nullable = true, unique = false, length=60, insertable=true, updatable=true)
         
-        private java.lang.String RAZA_EMP;
+        private String RAZA_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="REGI  EMP")
     @Column(name = "REGI_EMP", nullable = true, unique = false, length=4, insertable=true, updatable=true)
         
-        private java.lang.String REGI_EMP;
+        private String REGI_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="RENA  EMP")
     @Column(name = "RENA_EMP", nullable = true, unique = false, length=20, insertable=true, updatable=true)
         
-        private java.lang.String RENA_EMP;
+        private String RENA_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="RNTC  EMP")
     @Column(name = "RNTC_EMP", nullable = true, unique = false, length=20, insertable=true, updatable=true)
         
-        private java.lang.String RNTC_EMP;
+        private String RNTC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="RQFA  EMP")
     @Column(name = "RQFA_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String RQFA_EMP;
+        private String RQFA_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="RREC  EMP")
     @Column(name = "RREC_EMP", nullable = true, unique = false, length=2, insertable=true, updatable=true)
         
-        private java.lang.String RREC_EMP;
+        private String RREC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="RVAL  CND")
     @Column(name = "RVAL_CND", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String RVAL_CND;
+        private String RVAL_CND;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SAPM  EMP")
     @Column(name = "SAPM_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String SAPM_EMP;
+        private String SAPM_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SCAN  EMP")
     @Column(name = "SCAN_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String SCAN_EMP;
+        private String SCAN_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SCNF  EMP")
     @Column(name = "SCNF_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String SCNF_EMP;
+        private String SCNF_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SCST  EMP")
     @Column(name = "SCST_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String SCST_EMP;
+        private String SCST_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SENV  EMP")
     @Column(name = "SENV_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String SENV_EMP;
+        private String SENV_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SHAB  EMP")
     @Column(name = "SHAB_EMP", nullable = true, unique = false, length=15, insertable=true, updatable=true)
         
-        private java.lang.String SHAB_EMP;
+        private String SHAB_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SINI  EMP")
     @Column(name = "SINI_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String SINI_EMP;
+        private String SINI_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SINP  EMP")
     @Column(name = "SINP_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String SINP_EMP;
+        private String SINP_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SINU  EMP")
     @Column(name = "SINU_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String SINU_EMP;
+        private String SINU_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SITE  CND")
     @Column(name = "SITE_CND", nullable = true, unique = false, length=255, insertable=true, updatable=true)
         
-        private java.lang.String SITE_CND;
+        private String SITE_CND;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SITU  EMP")
     @Column(name = "SITU_EMP", nullable = false, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String SITU_EMP;
+        private String SITU_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SLOG  EMP")
     @Column(name = "SLOG_EMP", nullable = true, unique = false, length=100, insertable=true, updatable=true)
         
-        private java.lang.String SLOG_EMP;
+        private String SLOG_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SNFC  EMP")
     @Column(name = "SNFC_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String SNFC_EMP;
+        private String SNFC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SOUT  EMP")
     @Column(name = "SOUT_EMP", nullable = true, unique = false, length=30, insertable=true, updatable=true)
         
-        private java.lang.String SOUT_EMP;
+        private String SOUT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SPAT  EMP")
     @Column(name = "SPAT_EMP", nullable = true, unique = false, length=2, insertable=true, updatable=true)
         
-        private java.lang.String SPAT_EMP;
+        private String SPAT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="SPCE  EMP")
     @Column(name = "SPCE_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer SPCE_EMP;
+        private Integer SPCE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SPIT  EMP")
     @Column(name = "SPIT_EMP", nullable = true, unique = false, length=2, insertable=true, updatable=true)
         
-        private java.lang.String SPIT_EMP;
+        private String SPIT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SPMA  EMP")
     @Column(name = "SPMA_EMP", nullable = true, unique = false, length=2, insertable=true, updatable=true)
         
-        private java.lang.String SPMA_EMP;
+        private String SPMA_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SPNA  EMP")
     @Column(name = "SPNA_EMP", nullable = true, unique = false, length=2, insertable=true, updatable=true)
         
-        private java.lang.String SPNA_EMP;
+        private String SPNA_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SPTC  EMP")
     @Column(name = "SPTC_EMP", nullable = true, unique = false, length=2, insertable=true, updatable=true)
         
-        private java.lang.String SPTC_EMP;
+        private String SPTC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SRES  EMP")
     @Column(name = "SRES_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String SRES_EMP;
+        private String SRES_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SRET  EMP")
     @Column(name = "SRET_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String SRET_EMP;
+        private String SRET_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SROU  EMP")
     @Column(name = "SROU_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String SROU_EMP;
+        private String SROU_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SWCA  EMP")
     @Column(name = "SWCA_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String SWCA_EMP;
+        private String SWCA_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SWCO  EMP")
     @Column(name = "SWCO_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String SWCO_EMP;
+        private String SWCO_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SWIN  EMP")
     @Column(name = "SWIN_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String SWIN_EMP;
+        private String SWIN_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SWRC  EMP")
     @Column(name = "SWRC_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String SWRC_EMP;
+        private String SWRC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SWRT  EMP")
     @Column(name = "SWRT_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String SWRT_EMP;
+        private String SWRT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SWST  EMP")
     @Column(name = "SWST_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String SWST_EMP;
+        private String SWST_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="TBLO  SEM")
     @Column(name = "TBLO_SEM", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String TBLO_SEM;
+        private String TBLO_SEM;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="TCCO  EMP")
     @Column(name = "TCCO_EMP", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double TCCO_EMP;
+        private Double TCCO_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="TCRE  EMP")
     @Column(name = "TCRE_EMP", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double TCRE_EMP;
+        private Double TCRE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="TIPO  EMP")
     @Column(name = "TIPO_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String TIPO_EMP;
+        private String TIPO_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="TJUR  EMP")
     @Column(name = "TJUR_EMP", nullable = false, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String TJUR_EMP;
+        private String TJUR_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="TPAG  EMP")
     @Column(name = "TPAG_EMP", nullable = true, unique = false, length=2, insertable=true, updatable=true)
         
-        private java.lang.String TPAG_EMP;
+        private String TPAG_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="TVAL  CND")
     @Column(name = "TVAL_CND", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String TVAL_CND;
+        private String TVAL_CND;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="UCFO  EMP")
     @Column(name = "UCFO_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String UCFO_EMP;
+        private String UCFO_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="UCRC  EMP")
     @Column(name = "UCRC_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String UCRC_EMP;
+        private String UCRC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="UECF  EMP")
     @Column(name = "UECF_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String UECF_EMP;
+        private String UECF_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="UPAF  EMP")
     @Column(name = "UPAF_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String UPAF_EMP;
+        private String UPAF_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="UTEV  EMP")
     @Column(name = "UTEV_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String UTEV_EMP;
+        private String UTEV_EMP;
 
 
     /**
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="VALI  CND")
     @Column(name = "VALI_CND", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.util.Date VALI_CND;
@@ -2079,172 +1848,153 @@ public class CADEMP implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="VEND  EMP")
     @Column(name = "VEND_EMP", nullable = true, unique = false, length=30, insertable=true, updatable=true)
         
-        private java.lang.String VEND_EMP;
+        private String VEND_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="VERS  EMP")
     @Column(name = "VERS_EMP", nullable = true, unique = false, length=15, insertable=true, updatable=true)
         
-        private java.lang.String VERS_EMP;
+        private String VERS_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="VIIM  EMP")
     @Column(name = "VIIM_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String VIIM_EMP;
+        private String VIIM_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="VMCT  EMP")
     @Column(name = "VMCT_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String VMCT_EMP;
+        private String VMCT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="VNF 4 EMP")
     @Column(name = "VNF4_EMP", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String VNF4_EMP;
+        private String VNF4_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="VTAX  SEM")
     @Column(name = "VTAX_SEM", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String VTAX_SEM;
+        private String VTAX_SEM;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="WCAN  EMP")
     @Column(name = "WCAN_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String WCAN_EMP;
+        private String WCAN_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="WCNF  EMP")
     @Column(name = "WCNF_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String WCNF_EMP;
+        private String WCNF_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="WCST  EMP")
     @Column(name = "WCST_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String WCST_EMP;
+        private String WCST_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="WENV  EMP")
     @Column(name = "WENV_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String WENV_EMP;
+        private String WENV_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="WESE  EMP")
     @Column(name = "WESE_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String WESE_EMP;
+        private String WESE_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="WINU  EMP")
     @Column(name = "WINU_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String WINU_EMP;
+        private String WINU_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="WRET  EMP")
     @Column(name = "WRET_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String WRET_EMP;
+        private String WRET_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="WSCA  EMP")
     @Column(name = "WSCA_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String WSCA_EMP;
+        private String WSCA_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="WSCO  EMP")
     @Column(name = "WSCO_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String WSCO_EMP;
+        private String WSCO_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="WSIN  EMP")
     @Column(name = "WSIN_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String WSIN_EMP;
+        private String WSIN_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="WSRC  EMP")
     @Column(name = "WSRC_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String WSRC_EMP;
+        private String WSRC_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="WSRT  EMP")
     @Column(name = "WSRT_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String WSRT_EMP;
+        private String WSRT_EMP;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="WSST  EMP")
     @Column(name = "WSST_EMP", nullable = true, unique = false, length=200, insertable=true, updatable=true)
         
-        private java.lang.String WSST_EMP;
+        private String WSST_EMP;
 
 
     /**
@@ -2259,7 +2009,7 @@ public class CADEMP implements Serializable {
     * return CODI_EMP
     * @generated
     */
-    public java.lang.Integer getCODI_EMP() {
+    public Integer getCODI_EMP() {
         return this.CODI_EMP;
     }
 
@@ -2268,7 +2018,7 @@ public class CADEMP implements Serializable {
     * @param CODI_EMP CODI_EMP
     * @generated
     */
-    public CADEMP setCODI_EMP(java.lang.Integer CODI_EMP) {
+    public CADEMP setCODI_EMP(Integer CODI_EMP) {
         this.CODI_EMP = CODI_EMP;
         return this;
     }
@@ -2277,7 +2027,7 @@ public class CADEMP implements Serializable {
     * return ABRE_MUN
     * @generated
     */
-    public java.lang.String getABRE_MUN() {
+    public String getABRE_MUN() {
         return this.ABRE_MUN;
     }
 
@@ -2286,7 +2036,7 @@ public class CADEMP implements Serializable {
     * @param ABRE_MUN ABRE_MUN
     * @generated
     */
-    public CADEMP setABRE_MUN(java.lang.String ABRE_MUN) {
+    public CADEMP setABRE_MUN(String ABRE_MUN) {
         this.ABRE_MUN = ABRE_MUN;
         return this;
     }
@@ -2295,7 +2045,7 @@ public class CADEMP implements Serializable {
     * return ACCC_EMP
     * @generated
     */
-    public java.lang.String getACCC_EMP() {
+    public String getACCC_EMP() {
         return this.ACCC_EMP;
     }
 
@@ -2304,7 +2054,7 @@ public class CADEMP implements Serializable {
     * @param ACCC_EMP ACCC_EMP
     * @generated
     */
-    public CADEMP setACCC_EMP(java.lang.String ACCC_EMP) {
+    public CADEMP setACCC_EMP(String ACCC_EMP) {
         this.ACCC_EMP = ACCC_EMP;
         return this;
     }
@@ -2313,7 +2063,7 @@ public class CADEMP implements Serializable {
     * return ACNF_EMP
     * @generated
     */
-    public java.lang.String getACNF_EMP() {
+    public String getACNF_EMP() {
         return this.ACNF_EMP;
     }
 
@@ -2322,7 +2072,7 @@ public class CADEMP implements Serializable {
     * @param ACNF_EMP ACNF_EMP
     * @generated
     */
-    public CADEMP setACNF_EMP(java.lang.String ACNF_EMP) {
+    public CADEMP setACNF_EMP(String ACNF_EMP) {
         this.ACNF_EMP = ACNF_EMP;
         return this;
     }
@@ -2331,7 +2081,7 @@ public class CADEMP implements Serializable {
     * return ACNP_EMP
     * @generated
     */
-    public java.lang.String getACNP_EMP() {
+    public String getACNP_EMP() {
         return this.ACNP_EMP;
     }
 
@@ -2340,7 +2090,7 @@ public class CADEMP implements Serializable {
     * @param ACNP_EMP ACNP_EMP
     * @generated
     */
-    public CADEMP setACNP_EMP(java.lang.String ACNP_EMP) {
+    public CADEMP setACNP_EMP(String ACNP_EMP) {
         this.ACNP_EMP = ACNP_EMP;
         return this;
     }
@@ -2349,7 +2099,7 @@ public class CADEMP implements Serializable {
     * return ACON_EMP
     * @generated
     */
-    public java.lang.String getACON_EMP() {
+    public String getACON_EMP() {
         return this.ACON_EMP;
     }
 
@@ -2358,7 +2108,7 @@ public class CADEMP implements Serializable {
     * @param ACON_EMP ACON_EMP
     * @generated
     */
-    public CADEMP setACON_EMP(java.lang.String ACON_EMP) {
+    public CADEMP setACON_EMP(String ACON_EMP) {
         this.ACON_EMP = ACON_EMP;
         return this;
     }
@@ -2367,7 +2117,7 @@ public class CADEMP implements Serializable {
     * return ACTE_EMP
     * @generated
     */
-    public java.lang.String getACTE_EMP() {
+    public String getACTE_EMP() {
         return this.ACTE_EMP;
     }
 
@@ -2376,7 +2126,7 @@ public class CADEMP implements Serializable {
     * @param ACTE_EMP ACTE_EMP
     * @generated
     */
-    public CADEMP setACTE_EMP(java.lang.String ACTE_EMP) {
+    public CADEMP setACTE_EMP(String ACTE_EMP) {
         this.ACTE_EMP = ACTE_EMP;
         return this;
     }
@@ -2385,7 +2135,7 @@ public class CADEMP implements Serializable {
     * return AECD_EMP
     * @generated
     */
-    public java.lang.String getAECD_EMP() {
+    public String getAECD_EMP() {
         return this.AECD_EMP;
     }
 
@@ -2394,7 +2144,7 @@ public class CADEMP implements Serializable {
     * @param AECD_EMP AECD_EMP
     * @generated
     */
-    public CADEMP setAECD_EMP(java.lang.String AECD_EMP) {
+    public CADEMP setAECD_EMP(String AECD_EMP) {
         this.AECD_EMP = AECD_EMP;
         return this;
     }
@@ -2403,7 +2153,7 @@ public class CADEMP implements Serializable {
     * return AECX_EMP
     * @generated
     */
-    public java.lang.String getAECX_EMP() {
+    public String getAECX_EMP() {
         return this.AECX_EMP;
     }
 
@@ -2412,7 +2162,7 @@ public class CADEMP implements Serializable {
     * @param AECX_EMP AECX_EMP
     * @generated
     */
-    public CADEMP setAECX_EMP(java.lang.String AECX_EMP) {
+    public CADEMP setAECX_EMP(String AECX_EMP) {
         this.AECX_EMP = AECX_EMP;
         return this;
     }
@@ -2421,7 +2171,7 @@ public class CADEMP implements Serializable {
     * return AMBI_EMP
     * @generated
     */
-    public java.lang.String getAMBI_EMP() {
+    public String getAMBI_EMP() {
         return this.AMBI_EMP;
     }
 
@@ -2430,7 +2180,7 @@ public class CADEMP implements Serializable {
     * @param AMBI_EMP AMBI_EMP
     * @generated
     */
-    public CADEMP setAMBI_EMP(java.lang.String AMBI_EMP) {
+    public CADEMP setAMBI_EMP(String AMBI_EMP) {
         this.AMBI_EMP = AMBI_EMP;
         return this;
     }
@@ -2439,7 +2189,7 @@ public class CADEMP implements Serializable {
     * return AMBS_EMP
     * @generated
     */
-    public java.lang.String getAMBS_EMP() {
+    public String getAMBS_EMP() {
         return this.AMBS_EMP;
     }
 
@@ -2448,7 +2198,7 @@ public class CADEMP implements Serializable {
     * @param AMBS_EMP AMBS_EMP
     * @generated
     */
-    public CADEMP setAMBS_EMP(java.lang.String AMBS_EMP) {
+    public CADEMP setAMBS_EMP(String AMBS_EMP) {
         this.AMBS_EMP = AMBS_EMP;
         return this;
     }
@@ -2457,7 +2207,7 @@ public class CADEMP implements Serializable {
     * return ANFC_EMP
     * @generated
     */
-    public java.lang.String getANFC_EMP() {
+    public String getANFC_EMP() {
         return this.ANFC_EMP;
     }
 
@@ -2466,7 +2216,7 @@ public class CADEMP implements Serializable {
     * @param ANFC_EMP ANFC_EMP
     * @generated
     */
-    public CADEMP setANFC_EMP(java.lang.String ANFC_EMP) {
+    public CADEMP setANFC_EMP(String ANFC_EMP) {
         this.ANFC_EMP = ANFC_EMP;
         return this;
     }
@@ -2475,7 +2225,7 @@ public class CADEMP implements Serializable {
     * return ANFS_EMP
     * @generated
     */
-    public java.lang.String getANFS_EMP() {
+    public String getANFS_EMP() {
         return this.ANFS_EMP;
     }
 
@@ -2484,7 +2234,7 @@ public class CADEMP implements Serializable {
     * @param ANFS_EMP ANFS_EMP
     * @generated
     */
-    public CADEMP setANFS_EMP(java.lang.String ANFS_EMP) {
+    public CADEMP setANFS_EMP(String ANFS_EMP) {
         this.ANFS_EMP = ANFS_EMP;
         return this;
     }
@@ -2493,7 +2243,7 @@ public class CADEMP implements Serializable {
     * return ASCC_EMP
     * @generated
     */
-    public java.lang.String getASCC_EMP() {
+    public String getASCC_EMP() {
         return this.ASCC_EMP;
     }
 
@@ -2502,7 +2252,7 @@ public class CADEMP implements Serializable {
     * @param ASCC_EMP ASCC_EMP
     * @generated
     */
-    public CADEMP setASCC_EMP(java.lang.String ASCC_EMP) {
+    public CADEMP setASCC_EMP(String ASCC_EMP) {
         this.ASCC_EMP = ASCC_EMP;
         return this;
     }
@@ -2511,7 +2261,7 @@ public class CADEMP implements Serializable {
     * return ASCT_EMP
     * @generated
     */
-    public java.lang.String getASCT_EMP() {
+    public String getASCT_EMP() {
         return this.ASCT_EMP;
     }
 
@@ -2520,7 +2270,7 @@ public class CADEMP implements Serializable {
     * @param ASCT_EMP ASCT_EMP
     * @generated
     */
-    public CADEMP setASCT_EMP(java.lang.String ASCT_EMP) {
+    public CADEMP setASCT_EMP(String ASCT_EMP) {
         this.ASCT_EMP = ASCT_EMP;
         return this;
     }
@@ -2529,7 +2279,7 @@ public class CADEMP implements Serializable {
     * return ASNF_EMP
     * @generated
     */
-    public java.lang.String getASNF_EMP() {
+    public String getASNF_EMP() {
         return this.ASNF_EMP;
     }
 
@@ -2538,7 +2288,7 @@ public class CADEMP implements Serializable {
     * @param ASNF_EMP ASNF_EMP
     * @generated
     */
-    public CADEMP setASNF_EMP(java.lang.String ASNF_EMP) {
+    public CADEMP setASNF_EMP(String ASNF_EMP) {
         this.ASNF_EMP = ASNF_EMP;
         return this;
     }
@@ -2547,7 +2297,7 @@ public class CADEMP implements Serializable {
     * return ASUN_EMP
     * @generated
     */
-    public java.lang.String getASUN_EMP() {
+    public String getASUN_EMP() {
         return this.ASUN_EMP;
     }
 
@@ -2556,7 +2306,7 @@ public class CADEMP implements Serializable {
     * @param ASUN_EMP ASUN_EMP
     * @generated
     */
-    public CADEMP setASUN_EMP(java.lang.String ASUN_EMP) {
+    public CADEMP setASUN_EMP(String ASUN_EMP) {
         this.ASUN_EMP = ASUN_EMP;
         return this;
     }
@@ -2565,7 +2315,7 @@ public class CADEMP implements Serializable {
     * return ATIV_EMP
     * @generated
     */
-    public java.lang.String getATIV_EMP() {
+    public String getATIV_EMP() {
         return this.ATIV_EMP;
     }
 
@@ -2574,7 +2324,7 @@ public class CADEMP implements Serializable {
     * @param ATIV_EMP ATIV_EMP
     * @generated
     */
-    public CADEMP setATIV_EMP(java.lang.String ATIV_EMP) {
+    public CADEMP setATIV_EMP(String ATIV_EMP) {
         this.ATIV_EMP = ATIV_EMP;
         return this;
     }
@@ -2583,7 +2333,7 @@ public class CADEMP implements Serializable {
     * return AVAL_CND
     * @generated
     */
-    public java.lang.String getAVAL_CND() {
+    public String getAVAL_CND() {
         return this.AVAL_CND;
     }
 
@@ -2592,7 +2342,7 @@ public class CADEMP implements Serializable {
     * @param AVAL_CND AVAL_CND
     * @generated
     */
-    public CADEMP setAVAL_CND(java.lang.String AVAL_CND) {
+    public CADEMP setAVAL_CND(String AVAL_CND) {
         this.AVAL_CND = AVAL_CND;
         return this;
     }
@@ -2601,7 +2351,7 @@ public class CADEMP implements Serializable {
     * return BAIC_EMP
     * @generated
     */
-    public java.lang.String getBAIC_EMP() {
+    public String getBAIC_EMP() {
         return this.BAIC_EMP;
     }
 
@@ -2610,7 +2360,7 @@ public class CADEMP implements Serializable {
     * @param BAIC_EMP BAIC_EMP
     * @generated
     */
-    public CADEMP setBAIC_EMP(java.lang.String BAIC_EMP) {
+    public CADEMP setBAIC_EMP(String BAIC_EMP) {
         this.BAIC_EMP = BAIC_EMP;
         return this;
     }
@@ -2619,7 +2369,7 @@ public class CADEMP implements Serializable {
     * return BAIR_EMP
     * @generated
     */
-    public java.lang.String getBAIR_EMP() {
+    public String getBAIR_EMP() {
         return this.BAIR_EMP;
     }
 
@@ -2628,7 +2378,7 @@ public class CADEMP implements Serializable {
     * @param BAIR_EMP BAIR_EMP
     * @generated
     */
-    public CADEMP setBAIR_EMP(java.lang.String BAIR_EMP) {
+    public CADEMP setBAIR_EMP(String BAIR_EMP) {
         this.BAIR_EMP = BAIR_EMP;
         return this;
     }
@@ -2637,7 +2387,7 @@ public class CADEMP implements Serializable {
     * return CAE_EMP
     * @generated
     */
-    public java.lang.String getCAE_EMP() {
+    public String getCAE_EMP() {
         return this.CAE_EMP;
     }
 
@@ -2646,7 +2396,7 @@ public class CADEMP implements Serializable {
     * @param CAE_EMP CAE_EMP
     * @generated
     */
-    public CADEMP setCAE_EMP(java.lang.String CAE_EMP) {
+    public CADEMP setCAE_EMP(String CAE_EMP) {
         this.CAE_EMP = CAE_EMP;
         return this;
     }
@@ -2655,7 +2405,7 @@ public class CADEMP implements Serializable {
     * return CARI_EMP
     * @generated
     */
-    public java.lang.String getCARI_EMP() {
+    public String getCARI_EMP() {
         return this.CARI_EMP;
     }
 
@@ -2664,7 +2414,7 @@ public class CADEMP implements Serializable {
     * @param CARI_EMP CARI_EMP
     * @generated
     */
-    public CADEMP setCARI_EMP(java.lang.String CARI_EMP) {
+    public CADEMP setCARI_EMP(String CARI_EMP) {
         this.CARI_EMP = CARI_EMP;
         return this;
     }
@@ -2673,7 +2423,7 @@ public class CADEMP implements Serializable {
     * return CAUT_CND
     * @generated
     */
-    public java.lang.String getCAUT_CND() {
+    public String getCAUT_CND() {
         return this.CAUT_CND;
     }
 
@@ -2682,7 +2432,7 @@ public class CADEMP implements Serializable {
     * @param CAUT_CND CAUT_CND
     * @generated
     */
-    public CADEMP setCAUT_CND(java.lang.String CAUT_CND) {
+    public CADEMP setCAUT_CND(String CAUT_CND) {
         this.CAUT_CND = CAUT_CND;
         return this;
     }
@@ -2691,7 +2441,7 @@ public class CADEMP implements Serializable {
     * return CAVE_EMP
     * @generated
     */
-    public java.lang.Double getCAVE_EMP() {
+    public Double getCAVE_EMP() {
         return this.CAVE_EMP;
     }
 
@@ -2700,7 +2450,7 @@ public class CADEMP implements Serializable {
     * @param CAVE_EMP CAVE_EMP
     * @generated
     */
-    public CADEMP setCAVE_EMP(java.lang.Double CAVE_EMP) {
+    public CADEMP setCAVE_EMP(Double CAVE_EMP) {
         this.CAVE_EMP = CAVE_EMP;
         return this;
     }
@@ -2709,7 +2459,7 @@ public class CADEMP implements Serializable {
     * return CCCT_EMP
     * @generated
     */
-    public java.lang.String getCCCT_EMP() {
+    public String getCCCT_EMP() {
         return this.CCCT_EMP;
     }
 
@@ -2718,7 +2468,7 @@ public class CADEMP implements Serializable {
     * @param CCCT_EMP CCCT_EMP
     * @generated
     */
-    public CADEMP setCCCT_EMP(java.lang.String CCCT_EMP) {
+    public CADEMP setCCCT_EMP(String CCCT_EMP) {
         this.CCCT_EMP = CCCT_EMP;
         return this;
     }
@@ -2727,7 +2477,7 @@ public class CADEMP implements Serializable {
     * return CCER_EMP
     * @generated
     */
-    public java.lang.String getCCER_EMP() {
+    public String getCCER_EMP() {
         return this.CCER_EMP;
     }
 
@@ -2736,7 +2486,7 @@ public class CADEMP implements Serializable {
     * @param CCER_EMP CCER_EMP
     * @generated
     */
-    public CADEMP setCCER_EMP(java.lang.String CCER_EMP) {
+    public CADEMP setCCER_EMP(String CCER_EMP) {
         this.CCER_EMP = CCER_EMP;
         return this;
     }
@@ -2745,7 +2495,7 @@ public class CADEMP implements Serializable {
     * return CENF_EMP
     * @generated
     */
-    public java.lang.String getCENF_EMP() {
+    public String getCENF_EMP() {
         return this.CENF_EMP;
     }
 
@@ -2754,7 +2504,7 @@ public class CADEMP implements Serializable {
     * @param CENF_EMP CENF_EMP
     * @generated
     */
-    public CADEMP setCENF_EMP(java.lang.String CENF_EMP) {
+    public CADEMP setCENF_EMP(String CENF_EMP) {
         this.CENF_EMP = CENF_EMP;
         return this;
     }
@@ -2763,7 +2513,7 @@ public class CADEMP implements Serializable {
     * return CEPC_EMP
     * @generated
     */
-    public java.lang.String getCEPC_EMP() {
+    public String getCEPC_EMP() {
         return this.CEPC_EMP;
     }
 
@@ -2772,7 +2522,7 @@ public class CADEMP implements Serializable {
     * @param CEPC_EMP CEPC_EMP
     * @generated
     */
-    public CADEMP setCEPC_EMP(java.lang.String CEPC_EMP) {
+    public CADEMP setCEPC_EMP(String CEPC_EMP) {
         this.CEPC_EMP = CEPC_EMP;
         return this;
     }
@@ -2781,7 +2531,7 @@ public class CADEMP implements Serializable {
     * return CEP_EMP
     * @generated
     */
-    public java.lang.String getCEP_EMP() {
+    public String getCEP_EMP() {
         return this.CEP_EMP;
     }
 
@@ -2790,7 +2540,7 @@ public class CADEMP implements Serializable {
     * @param CEP_EMP CEP_EMP
     * @generated
     */
-    public CADEMP setCEP_EMP(java.lang.String CEP_EMP) {
+    public CADEMP setCEP_EMP(String CEP_EMP) {
         this.CEP_EMP = CEP_EMP;
         return this;
     }
@@ -2799,7 +2549,7 @@ public class CADEMP implements Serializable {
     * return CHEK_EMP
     * @generated
     */
-    public java.lang.String getCHEK_EMP() {
+    public String getCHEK_EMP() {
         return this.CHEK_EMP;
     }
 
@@ -2808,7 +2558,7 @@ public class CADEMP implements Serializable {
     * @param CHEK_EMP CHEK_EMP
     * @generated
     */
-    public CADEMP setCHEK_EMP(java.lang.String CHEK_EMP) {
+    public CADEMP setCHEK_EMP(String CHEK_EMP) {
         this.CHEK_EMP = CHEK_EMP;
         return this;
     }
@@ -2817,7 +2567,7 @@ public class CADEMP implements Serializable {
     * return CICE_EMP
     * @generated
     */
-    public java.lang.String getCICE_EMP() {
+    public String getCICE_EMP() {
         return this.CICE_EMP;
     }
 
@@ -2826,7 +2576,7 @@ public class CADEMP implements Serializable {
     * @param CICE_EMP CICE_EMP
     * @generated
     */
-    public CADEMP setCICE_EMP(java.lang.String CICE_EMP) {
+    public CADEMP setCICE_EMP(String CICE_EMP) {
         this.CICE_EMP = CICE_EMP;
         return this;
     }
@@ -2835,7 +2585,7 @@ public class CADEMP implements Serializable {
     * return CIMA_EMP
     * @generated
     */
-    public java.lang.String getCIMA_EMP() {
+    public String getCIMA_EMP() {
         return this.CIMA_EMP;
     }
 
@@ -2844,7 +2594,7 @@ public class CADEMP implements Serializable {
     * @param CIMA_EMP CIMA_EMP
     * @generated
     */
-    public CADEMP setCIMA_EMP(java.lang.String CIMA_EMP) {
+    public CADEMP setCIMA_EMP(String CIMA_EMP) {
         this.CIMA_EMP = CIMA_EMP;
         return this;
     }
@@ -2853,7 +2603,7 @@ public class CADEMP implements Serializable {
     * return CJUR_EMP
     * @generated
     */
-    public java.lang.Double getCJUR_EMP() {
+    public Double getCJUR_EMP() {
         return this.CJUR_EMP;
     }
 
@@ -2862,7 +2612,7 @@ public class CADEMP implements Serializable {
     * @param CJUR_EMP CJUR_EMP
     * @generated
     */
-    public CADEMP setCJUR_EMP(java.lang.Double CJUR_EMP) {
+    public CADEMP setCJUR_EMP(Double CJUR_EMP) {
         this.CJUR_EMP = CJUR_EMP;
         return this;
     }
@@ -2871,7 +2621,7 @@ public class CADEMP implements Serializable {
     * return CLIA_EMP
     * @generated
     */
-    public java.lang.Integer getCLIA_EMP() {
+    public Integer getCLIA_EMP() {
         return this.CLIA_EMP;
     }
 
@@ -2880,7 +2630,7 @@ public class CADEMP implements Serializable {
     * @param CLIA_EMP CLIA_EMP
     * @generated
     */
-    public CADEMP setCLIA_EMP(java.lang.Integer CLIA_EMP) {
+    public CADEMP setCLIA_EMP(Integer CLIA_EMP) {
         this.CLIA_EMP = CLIA_EMP;
         return this;
     }
@@ -2889,7 +2639,7 @@ public class CADEMP implements Serializable {
     * return CMAT_EMP
     * @generated
     */
-    public java.lang.Integer getCMAT_EMP() {
+    public Integer getCMAT_EMP() {
         return this.CMAT_EMP;
     }
 
@@ -2898,7 +2648,7 @@ public class CADEMP implements Serializable {
     * @param CMAT_EMP CMAT_EMP
     * @generated
     */
-    public CADEMP setCMAT_EMP(java.lang.Integer CMAT_EMP) {
+    public CADEMP setCMAT_EMP(Integer CMAT_EMP) {
         this.CMAT_EMP = CMAT_EMP;
         return this;
     }
@@ -2907,7 +2657,7 @@ public class CADEMP implements Serializable {
     * return CMER_EMP
     * @generated
     */
-    public java.lang.Integer getCMER_EMP() {
+    public Integer getCMER_EMP() {
         return this.CMER_EMP;
     }
 
@@ -2916,7 +2666,7 @@ public class CADEMP implements Serializable {
     * @param CMER_EMP CMER_EMP
     * @generated
     */
-    public CADEMP setCMER_EMP(java.lang.Integer CMER_EMP) {
+    public CADEMP setCMER_EMP(Integer CMER_EMP) {
         this.CMER_EMP = CMER_EMP;
         return this;
     }
@@ -2925,7 +2675,7 @@ public class CADEMP implements Serializable {
     * return CNFS_EMP
     * @generated
     */
-    public java.lang.String getCNFS_EMP() {
+    public String getCNFS_EMP() {
         return this.CNFS_EMP;
     }
 
@@ -2934,7 +2684,7 @@ public class CADEMP implements Serializable {
     * @param CNFS_EMP CNFS_EMP
     * @generated
     */
-    public CADEMP setCNFS_EMP(java.lang.String CNFS_EMP) {
+    public CADEMP setCNFS_EMP(String CNFS_EMP) {
         this.CNFS_EMP = CNFS_EMP;
         return this;
     }
@@ -2943,7 +2693,7 @@ public class CADEMP implements Serializable {
     * return CNPJ_EMP
     * @generated
     */
-    public java.lang.String getCNPJ_EMP() {
+    public String getCNPJ_EMP() {
         return this.CNPJ_EMP;
     }
 
@@ -2952,7 +2702,7 @@ public class CADEMP implements Serializable {
     * @param CNPJ_EMP CNPJ_EMP
     * @generated
     */
-    public CADEMP setCNPJ_EMP(java.lang.String CNPJ_EMP) {
+    public CADEMP setCNPJ_EMP(String CNPJ_EMP) {
         this.CNPJ_EMP = CNPJ_EMP;
         return this;
     }
@@ -2961,7 +2711,7 @@ public class CADEMP implements Serializable {
     * return COD1_TRA
     * @generated
     */
-    public java.lang.Integer getCOD1_TRA() {
+    public Integer getCOD1_TRA() {
         return this.COD1_TRA;
     }
 
@@ -2970,7 +2720,7 @@ public class CADEMP implements Serializable {
     * @param COD1_TRA COD1_TRA
     * @generated
     */
-    public CADEMP setCOD1_TRA(java.lang.Integer COD1_TRA) {
+    public CADEMP setCOD1_TRA(Integer COD1_TRA) {
         this.COD1_TRA = COD1_TRA;
         return this;
     }
@@ -2979,7 +2729,7 @@ public class CADEMP implements Serializable {
     * return COD2_TRA
     * @generated
     */
-    public java.lang.Integer getCOD2_TRA() {
+    public Integer getCOD2_TRA() {
         return this.COD2_TRA;
     }
 
@@ -2988,7 +2738,7 @@ public class CADEMP implements Serializable {
     * @param COD2_TRA COD2_TRA
     * @generated
     */
-    public CADEMP setCOD2_TRA(java.lang.Integer COD2_TRA) {
+    public CADEMP setCOD2_TRA(Integer COD2_TRA) {
         this.COD2_TRA = COD2_TRA;
         return this;
     }
@@ -2997,7 +2747,7 @@ public class CADEMP implements Serializable {
     * return CODA_EMP
     * @generated
     */
-    public java.lang.String getCODA_EMP() {
+    public String getCODA_EMP() {
         return this.CODA_EMP;
     }
 
@@ -3006,7 +2756,7 @@ public class CADEMP implements Serializable {
     * @param CODA_EMP CODA_EMP
     * @generated
     */
-    public CADEMP setCODA_EMP(java.lang.String CODA_EMP) {
+    public CADEMP setCODA_EMP(String CODA_EMP) {
         this.CODA_EMP = CODA_EMP;
         return this;
     }
@@ -3015,7 +2765,7 @@ public class CADEMP implements Serializable {
     * return CODIPESLANREG
     * @generated
     */
-    public java.lang.Integer getCODIPESLANREG() {
+    public Integer getCODIPESLANREG() {
         return this.CODIPESLANREG;
     }
 
@@ -3024,7 +2774,7 @@ public class CADEMP implements Serializable {
     * @param CODIPESLANREG CODIPESLANREG
     * @generated
     */
-    public CADEMP setCODIPESLANREG(java.lang.Integer CODIPESLANREG) {
+    public CADEMP setCODIPESLANREG(Integer CODIPESLANREG) {
         this.CODIPESLANREG = CODIPESLANREG;
         return this;
     }
@@ -3033,7 +2783,7 @@ public class CADEMP implements Serializable {
     * return CODIPESMANUTREG
     * @generated
     */
-    public java.lang.Integer getCODIPESMANUTREG() {
+    public Integer getCODIPESMANUTREG() {
         return this.CODIPESMANUTREG;
     }
 
@@ -3042,7 +2792,7 @@ public class CADEMP implements Serializable {
     * @param CODIPESMANUTREG CODIPESMANUTREG
     * @generated
     */
-    public CADEMP setCODIPESMANUTREG(java.lang.Integer CODIPESMANUTREG) {
+    public CADEMP setCODIPESMANUTREG(Integer CODIPESMANUTREG) {
         this.CODIPESMANUTREG = CODIPESMANUTREG;
         return this;
     }
@@ -3051,7 +2801,7 @@ public class CADEMP implements Serializable {
     * return CODI_AUD
     * @generated
     */
-    public java.lang.Integer getCODI_AUD() {
+    public Integer getCODI_AUD() {
         return this.CODI_AUD;
     }
 
@@ -3060,7 +2810,7 @@ public class CADEMP implements Serializable {
     * @param CODI_AUD CODI_AUD
     * @generated
     */
-    public CADEMP setCODI_AUD(java.lang.Integer CODI_AUD) {
+    public CADEMP setCODI_AUD(Integer CODI_AUD) {
         this.CODI_AUD = CODI_AUD;
         return this;
     }
@@ -3069,7 +2819,7 @@ public class CADEMP implements Serializable {
     * return CODI_CND
     * @generated
     */
-    public java.lang.String getCODI_CND() {
+    public String getCODI_CND() {
         return this.CODI_CND;
     }
 
@@ -3078,7 +2828,7 @@ public class CADEMP implements Serializable {
     * @param CODI_CND CODI_CND
     * @generated
     */
-    public CADEMP setCODI_CND(java.lang.String CODI_CND) {
+    public CADEMP setCODI_CND(String CODI_CND) {
         this.CODI_CND = CODI_CND;
         return this;
     }
@@ -3087,7 +2837,7 @@ public class CADEMP implements Serializable {
     * return CODI_CTD
     * @generated
     */
-    public java.lang.Integer getCODI_CTD() {
+    public Integer getCODI_CTD() {
         return this.CODI_CTD;
     }
 
@@ -3096,7 +2846,7 @@ public class CADEMP implements Serializable {
     * @param CODI_CTD CODI_CTD
     * @generated
     */
-    public CADEMP setCODI_CTD(java.lang.Integer CODI_CTD) {
+    public CADEMP setCODI_CTD(Integer CODI_CTD) {
         this.CODI_CTD = CODI_CTD;
         return this;
     }
@@ -3105,7 +2855,7 @@ public class CADEMP implements Serializable {
     * return CODI_FCR
     * @generated
     */
-    public java.lang.Integer getCODI_FCR() {
+    public Integer getCODI_FCR() {
         return this.CODI_FCR;
     }
 
@@ -3114,7 +2864,7 @@ public class CADEMP implements Serializable {
     * @param CODI_FCR CODI_FCR
     * @generated
     */
-    public CADEMP setCODI_FCR(java.lang.Integer CODI_FCR) {
+    public CADEMP setCODI_FCR(Integer CODI_FCR) {
         this.CODI_FCR = CODI_FCR;
         return this;
     }
@@ -3123,7 +2873,7 @@ public class CADEMP implements Serializable {
     * return CODI_INS
     * @generated
     */
-    public java.lang.String getCODI_INS() {
+    public String getCODI_INS() {
         return this.CODI_INS;
     }
 
@@ -3132,7 +2882,7 @@ public class CADEMP implements Serializable {
     * @param CODI_INS CODI_INS
     * @generated
     */
-    public CADEMP setCODI_INS(java.lang.String CODI_INS) {
+    public CADEMP setCODI_INS(String CODI_INS) {
         this.CODI_INS = CODI_INS;
         return this;
     }
@@ -3141,7 +2891,7 @@ public class CADEMP implements Serializable {
     * return CODI_MUN
     * @generated
     */
-    public java.lang.Integer getCODI_MUN() {
+    public Integer getCODI_MUN() {
         return this.CODI_MUN;
     }
 
@@ -3150,7 +2900,7 @@ public class CADEMP implements Serializable {
     * @param CODI_MUN CODI_MUN
     * @generated
     */
-    public CADEMP setCODI_MUN(java.lang.Integer CODI_MUN) {
+    public CADEMP setCODI_MUN(Integer CODI_MUN) {
         this.CODI_MUN = CODI_MUN;
         return this;
     }
@@ -3159,7 +2909,7 @@ public class CADEMP implements Serializable {
     * return CODI_PES
     * @generated
     */
-    public java.lang.Integer getCODI_PES() {
+    public Integer getCODI_PES() {
         return this.CODI_PES;
     }
 
@@ -3168,7 +2918,7 @@ public class CADEMP implements Serializable {
     * @param CODI_PES CODI_PES
     * @generated
     */
-    public CADEMP setCODI_PES(java.lang.Integer CODI_PES) {
+    public CADEMP setCODI_PES(Integer CODI_PES) {
         this.CODI_PES = CODI_PES;
         return this;
     }
@@ -3177,7 +2927,7 @@ public class CADEMP implements Serializable {
     * return CODI_PRF
     * @generated
     */
-    public java.lang.String getCODI_PRF() {
+    public String getCODI_PRF() {
         return this.CODI_PRF;
     }
 
@@ -3186,7 +2936,7 @@ public class CADEMP implements Serializable {
     * @param CODI_PRF CODI_PRF
     * @generated
     */
-    public CADEMP setCODI_PRF(java.lang.String CODI_PRF) {
+    public CADEMP setCODI_PRF(String CODI_PRF) {
         this.CODI_PRF = CODI_PRF;
         return this;
     }
@@ -3195,7 +2945,7 @@ public class CADEMP implements Serializable {
     * return CODM_EMP
     * @generated
     */
-    public java.lang.String getCODM_EMP() {
+    public String getCODM_EMP() {
         return this.CODM_EMP;
     }
 
@@ -3204,7 +2954,7 @@ public class CADEMP implements Serializable {
     * @param CODM_EMP CODM_EMP
     * @generated
     */
-    public CADEMP setCODM_EMP(java.lang.String CODM_EMP) {
+    public CADEMP setCODM_EMP(String CODM_EMP) {
         this.CODM_EMP = CODM_EMP;
         return this;
     }
@@ -3213,7 +2963,7 @@ public class CADEMP implements Serializable {
     * return COMP_EMP
     * @generated
     */
-    public java.lang.String getCOMP_EMP() {
+    public String getCOMP_EMP() {
         return this.COMP_EMP;
     }
 
@@ -3222,7 +2972,7 @@ public class CADEMP implements Serializable {
     * @param COMP_EMP COMP_EMP
     * @generated
     */
-    public CADEMP setCOMP_EMP(java.lang.String COMP_EMP) {
+    public CADEMP setCOMP_EMP(String COMP_EMP) {
         this.COMP_EMP = COMP_EMP;
         return this;
     }
@@ -3231,7 +2981,7 @@ public class CADEMP implements Serializable {
     * return CONT_EMP
     * @generated
     */
-    public java.lang.String getCONT_EMP() {
+    public String getCONT_EMP() {
         return this.CONT_EMP;
     }
 
@@ -3240,7 +2990,7 @@ public class CADEMP implements Serializable {
     * @param CONT_EMP CONT_EMP
     * @generated
     */
-    public CADEMP setCONT_EMP(java.lang.String CONT_EMP) {
+    public CADEMP setCONT_EMP(String CONT_EMP) {
         this.CONT_EMP = CONT_EMP;
         return this;
     }
@@ -3249,7 +2999,7 @@ public class CADEMP implements Serializable {
     * return CPON_EMP
     * @generated
     */
-    public java.lang.String getCPON_EMP() {
+    public String getCPON_EMP() {
         return this.CPON_EMP;
     }
 
@@ -3258,7 +3008,7 @@ public class CADEMP implements Serializable {
     * @param CPON_EMP CPON_EMP
     * @generated
     */
-    public CADEMP setCPON_EMP(java.lang.String CPON_EMP) {
+    public CADEMP setCPON_EMP(String CPON_EMP) {
         this.CPON_EMP = CPON_EMP;
         return this;
     }
@@ -3267,7 +3017,7 @@ public class CADEMP implements Serializable {
     * return CTRL_SOE
     * @generated
     */
-    public java.lang.Integer getCTRL_SOE() {
+    public Integer getCTRL_SOE() {
         return this.CTRL_SOE;
     }
 
@@ -3276,7 +3026,7 @@ public class CADEMP implements Serializable {
     * @param CTRL_SOE CTRL_SOE
     * @generated
     */
-    public CADEMP setCTRL_SOE(java.lang.Integer CTRL_SOE) {
+    public CADEMP setCTRL_SOE(Integer CTRL_SOE) {
         this.CTRL_SOE = CTRL_SOE;
         return this;
     }
@@ -3285,7 +3035,7 @@ public class CADEMP implements Serializable {
     * return CVEN_EMP
     * @generated
     */
-    public java.lang.Double getCVEN_EMP() {
+    public Double getCVEN_EMP() {
         return this.CVEN_EMP;
     }
 
@@ -3294,7 +3044,7 @@ public class CADEMP implements Serializable {
     * @param CVEN_EMP CVEN_EMP
     * @generated
     */
-    public CADEMP setCVEN_EMP(java.lang.Double CVEN_EMP) {
+    public CADEMP setCVEN_EMP(Double CVEN_EMP) {
         this.CVEN_EMP = CVEN_EMP;
         return this;
     }
@@ -3303,7 +3053,7 @@ public class CADEMP implements Serializable {
     * return CXPO_EMP
     * @generated
     */
-    public java.lang.String getCXPO_EMP() {
+    public String getCXPO_EMP() {
         return this.CXPO_EMP;
     }
 
@@ -3312,7 +3062,7 @@ public class CADEMP implements Serializable {
     * @param CXPO_EMP CXPO_EMP
     * @generated
     */
-    public CADEMP setCXPO_EMP(java.lang.String CXPO_EMP) {
+    public CADEMP setCXPO_EMP(String CXPO_EMP) {
         this.CXPO_EMP = CXPO_EMP;
         return this;
     }
@@ -3339,7 +3089,7 @@ public class CADEMP implements Serializable {
     * return DCCT_EMP
     * @generated
     */
-    public java.lang.String getDCCT_EMP() {
+    public String getDCCT_EMP() {
         return this.DCCT_EMP;
     }
 
@@ -3348,7 +3098,7 @@ public class CADEMP implements Serializable {
     * @param DCCT_EMP DCCT_EMP
     * @generated
     */
-    public CADEMP setDCCT_EMP(java.lang.String DCCT_EMP) {
+    public CADEMP setDCCT_EMP(String DCCT_EMP) {
         this.DCCT_EMP = DCCT_EMP;
         return this;
     }
@@ -3357,7 +3107,7 @@ public class CADEMP implements Serializable {
     * return DCER_EMP
     * @generated
     */
-    public java.lang.String getDCER_EMP() {
+    public String getDCER_EMP() {
         return this.DCER_EMP;
     }
 
@@ -3366,7 +3116,7 @@ public class CADEMP implements Serializable {
     * @param DCER_EMP DCER_EMP
     * @generated
     */
-    public CADEMP setDCER_EMP(java.lang.String DCER_EMP) {
+    public CADEMP setDCER_EMP(String DCER_EMP) {
         this.DCER_EMP = DCER_EMP;
         return this;
     }
@@ -3645,7 +3395,7 @@ public class CADEMP implements Serializable {
     * return EACA_EMP
     * @generated
     */
-    public java.lang.String getEACA_EMP() {
+    public String getEACA_EMP() {
         return this.EACA_EMP;
     }
 
@@ -3654,7 +3404,7 @@ public class CADEMP implements Serializable {
     * @param EACA_EMP EACA_EMP
     * @generated
     */
-    public CADEMP setEACA_EMP(java.lang.String EACA_EMP) {
+    public CADEMP setEACA_EMP(String EACA_EMP) {
         this.EACA_EMP = EACA_EMP;
         return this;
     }
@@ -3663,7 +3413,7 @@ public class CADEMP implements Serializable {
     * return EASS_EMP
     * @generated
     */
-    public java.lang.String getEASS_EMP() {
+    public String getEASS_EMP() {
         return this.EASS_EMP;
     }
 
@@ -3672,7 +3422,7 @@ public class CADEMP implements Serializable {
     * @param EASS_EMP EASS_EMP
     * @generated
     */
-    public CADEMP setEASS_EMP(java.lang.String EASS_EMP) {
+    public CADEMP setEASS_EMP(String EASS_EMP) {
         this.EASS_EMP = EASS_EMP;
         return this;
     }
@@ -3681,7 +3431,7 @@ public class CADEMP implements Serializable {
     * return EBNS_EMP
     * @generated
     */
-    public java.lang.String getEBNS_EMP() {
+    public String getEBNS_EMP() {
         return this.EBNS_EMP;
     }
 
@@ -3690,7 +3440,7 @@ public class CADEMP implements Serializable {
     * @param EBNS_EMP EBNS_EMP
     * @generated
     */
-    public CADEMP setEBNS_EMP(java.lang.String EBNS_EMP) {
+    public CADEMP setEBNS_EMP(String EBNS_EMP) {
         this.EBNS_EMP = EBNS_EMP;
         return this;
     }
@@ -3717,7 +3467,7 @@ public class CADEMP implements Serializable {
     * return ECER_EMP
     * @generated
     */
-    public java.lang.String getECER_EMP() {
+    public String getECER_EMP() {
         return this.ECER_EMP;
     }
 
@@ -3726,7 +3476,7 @@ public class CADEMP implements Serializable {
     * @param ECER_EMP ECER_EMP
     * @generated
     */
-    public CADEMP setECER_EMP(java.lang.String ECER_EMP) {
+    public CADEMP setECER_EMP(String ECER_EMP) {
         this.ECER_EMP = ECER_EMP;
         return this;
     }
@@ -3735,7 +3485,7 @@ public class CADEMP implements Serializable {
     * return ECHR_EMP
     * @generated
     */
-    public java.lang.String getECHR_EMP() {
+    public String getECHR_EMP() {
         return this.ECHR_EMP;
     }
 
@@ -3744,7 +3494,7 @@ public class CADEMP implements Serializable {
     * @param ECHR_EMP ECHR_EMP
     * @generated
     */
-    public CADEMP setECHR_EMP(java.lang.String ECHR_EMP) {
+    public CADEMP setECHR_EMP(String ECHR_EMP) {
         this.ECHR_EMP = ECHR_EMP;
         return this;
     }
@@ -3753,7 +3503,7 @@ public class CADEMP implements Serializable {
     * return EDCE_EMP
     * @generated
     */
-    public java.lang.String getEDCE_EMP() {
+    public String getEDCE_EMP() {
         return this.EDCE_EMP;
     }
 
@@ -3762,7 +3512,7 @@ public class CADEMP implements Serializable {
     * @param EDCE_EMP EDCE_EMP
     * @generated
     */
-    public CADEMP setEDCE_EMP(java.lang.String EDCE_EMP) {
+    public CADEMP setEDCE_EMP(String EDCE_EMP) {
         this.EDCE_EMP = EDCE_EMP;
         return this;
     }
@@ -3771,7 +3521,7 @@ public class CADEMP implements Serializable {
     * return EDIS_EMP
     * @generated
     */
-    public java.lang.String getEDIS_EMP() {
+    public String getEDIS_EMP() {
         return this.EDIS_EMP;
     }
 
@@ -3780,7 +3530,7 @@ public class CADEMP implements Serializable {
     * @param EDIS_EMP EDIS_EMP
     * @generated
     */
-    public CADEMP setEDIS_EMP(java.lang.String EDIS_EMP) {
+    public CADEMP setEDIS_EMP(String EDIS_EMP) {
         this.EDIS_EMP = EDIS_EMP;
         return this;
     }
@@ -3789,7 +3539,7 @@ public class CADEMP implements Serializable {
     * return EECC_EMP
     * @generated
     */
-    public java.lang.String getEECC_EMP() {
+    public String getEECC_EMP() {
         return this.EECC_EMP;
     }
 
@@ -3798,7 +3548,7 @@ public class CADEMP implements Serializable {
     * @param EECC_EMP EECC_EMP
     * @generated
     */
-    public CADEMP setEECC_EMP(java.lang.String EECC_EMP) {
+    public CADEMP setEECC_EMP(String EECC_EMP) {
         this.EECC_EMP = EECC_EMP;
         return this;
     }
@@ -3807,7 +3557,7 @@ public class CADEMP implements Serializable {
     * return EEMA_EMP
     * @generated
     */
-    public java.lang.String getEEMA_EMP() {
+    public String getEEMA_EMP() {
         return this.EEMA_EMP;
     }
 
@@ -3816,7 +3566,7 @@ public class CADEMP implements Serializable {
     * @param EEMA_EMP EEMA_EMP
     * @generated
     */
-    public CADEMP setEEMA_EMP(java.lang.String EEMA_EMP) {
+    public CADEMP setEEMA_EMP(String EEMA_EMP) {
         this.EEMA_EMP = EEMA_EMP;
         return this;
     }
@@ -3825,7 +3575,7 @@ public class CADEMP implements Serializable {
     * return EGRP_EMP
     * @generated
     */
-    public java.lang.String getEGRP_EMP() {
+    public String getEGRP_EMP() {
         return this.EGRP_EMP;
     }
 
@@ -3834,7 +3584,7 @@ public class CADEMP implements Serializable {
     * @param EGRP_EMP EGRP_EMP
     * @generated
     */
-    public CADEMP setEGRP_EMP(java.lang.String EGRP_EMP) {
+    public CADEMP setEGRP_EMP(String EGRP_EMP) {
         this.EGRP_EMP = EGRP_EMP;
         return this;
     }
@@ -3843,7 +3593,7 @@ public class CADEMP implements Serializable {
     * return ELTR_EMP
     * @generated
     */
-    public java.lang.String getELTR_EMP() {
+    public String getELTR_EMP() {
         return this.ELTR_EMP;
     }
 
@@ -3852,7 +3602,7 @@ public class CADEMP implements Serializable {
     * @param ELTR_EMP ELTR_EMP
     * @generated
     */
-    public CADEMP setELTR_EMP(java.lang.String ELTR_EMP) {
+    public CADEMP setELTR_EMP(String ELTR_EMP) {
         this.ELTR_EMP = ELTR_EMP;
         return this;
     }
@@ -3861,7 +3611,7 @@ public class CADEMP implements Serializable {
     * return EMAC_EMP
     * @generated
     */
-    public java.lang.String getEMAC_EMP() {
+    public String getEMAC_EMP() {
         return this.EMAC_EMP;
     }
 
@@ -3870,7 +3620,7 @@ public class CADEMP implements Serializable {
     * @param EMAC_EMP EMAC_EMP
     * @generated
     */
-    public CADEMP setEMAC_EMP(java.lang.String EMAC_EMP) {
+    public CADEMP setEMAC_EMP(String EMAC_EMP) {
         this.EMAC_EMP = EMAC_EMP;
         return this;
     }
@@ -3879,7 +3629,7 @@ public class CADEMP implements Serializable {
     * return EMAI_EMP
     * @generated
     */
-    public java.lang.String getEMAI_EMP() {
+    public String getEMAI_EMP() {
         return this.EMAI_EMP;
     }
 
@@ -3888,7 +3638,7 @@ public class CADEMP implements Serializable {
     * @param EMAI_EMP EMAI_EMP
     * @generated
     */
-    public CADEMP setEMAI_EMP(java.lang.String EMAI_EMP) {
+    public CADEMP setEMAI_EMP(String EMAI_EMP) {
         this.EMAI_EMP = EMAI_EMP;
         return this;
     }
@@ -3897,7 +3647,7 @@ public class CADEMP implements Serializable {
     * return EMCA_EMP
     * @generated
     */
-    public java.lang.String getEMCA_EMP() {
+    public String getEMCA_EMP() {
         return this.EMCA_EMP;
     }
 
@@ -3906,7 +3656,7 @@ public class CADEMP implements Serializable {
     * @param EMCA_EMP EMCA_EMP
     * @generated
     */
-    public CADEMP setEMCA_EMP(java.lang.String EMCA_EMP) {
+    public CADEMP setEMCA_EMP(String EMCA_EMP) {
         this.EMCA_EMP = EMCA_EMP;
         return this;
     }
@@ -3915,7 +3665,7 @@ public class CADEMP implements Serializable {
     * return EMPR_FOL
     * @generated
     */
-    public java.lang.Integer getEMPR_FOL() {
+    public Integer getEMPR_FOL() {
         return this.EMPR_FOL;
     }
 
@@ -3924,7 +3674,7 @@ public class CADEMP implements Serializable {
     * @param EMPR_FOL EMPR_FOL
     * @generated
     */
-    public CADEMP setEMPR_FOL(java.lang.Integer EMPR_FOL) {
+    public CADEMP setEMPR_FOL(Integer EMPR_FOL) {
         this.EMPR_FOL = EMPR_FOL;
         return this;
     }
@@ -3933,7 +3683,7 @@ public class CADEMP implements Serializable {
     * return EMSG_EMP
     * @generated
     */
-    public java.lang.String getEMSG_EMP() {
+    public String getEMSG_EMP() {
         return this.EMSG_EMP;
     }
 
@@ -3942,7 +3692,7 @@ public class CADEMP implements Serializable {
     * @param EMSG_EMP EMSG_EMP
     * @generated
     */
-    public CADEMP setEMSG_EMP(java.lang.String EMSG_EMP) {
+    public CADEMP setEMSG_EMP(String EMSG_EMP) {
         this.EMSG_EMP = EMSG_EMP;
         return this;
     }
@@ -3951,7 +3701,7 @@ public class CADEMP implements Serializable {
     * return ENDC_EMP
     * @generated
     */
-    public java.lang.String getENDC_EMP() {
+    public String getENDC_EMP() {
         return this.ENDC_EMP;
     }
 
@@ -3960,7 +3710,7 @@ public class CADEMP implements Serializable {
     * @param ENDC_EMP ENDC_EMP
     * @generated
     */
-    public CADEMP setENDC_EMP(java.lang.String ENDC_EMP) {
+    public CADEMP setENDC_EMP(String ENDC_EMP) {
         this.ENDC_EMP = ENDC_EMP;
         return this;
     }
@@ -3969,7 +3719,7 @@ public class CADEMP implements Serializable {
     * return ENDE_EMP
     * @generated
     */
-    public java.lang.String getENDE_EMP() {
+    public String getENDE_EMP() {
         return this.ENDE_EMP;
     }
 
@@ -3978,7 +3728,7 @@ public class CADEMP implements Serializable {
     * @param ENDE_EMP ENDE_EMP
     * @generated
     */
-    public CADEMP setENDE_EMP(java.lang.String ENDE_EMP) {
+    public CADEMP setENDE_EMP(String ENDE_EMP) {
         this.ENDE_EMP = ENDE_EMP;
         return this;
     }
@@ -3987,7 +3737,7 @@ public class CADEMP implements Serializable {
     * return ENVE_EMP
     * @generated
     */
-    public java.lang.String getENVE_EMP() {
+    public String getENVE_EMP() {
         return this.ENVE_EMP;
     }
 
@@ -3996,7 +3746,7 @@ public class CADEMP implements Serializable {
     * @param ENVE_EMP ENVE_EMP
     * @generated
     */
-    public CADEMP setENVE_EMP(java.lang.String ENVE_EMP) {
+    public CADEMP setENVE_EMP(String ENVE_EMP) {
         this.ENVE_EMP = ENVE_EMP;
         return this;
     }
@@ -4005,7 +3755,7 @@ public class CADEMP implements Serializable {
     * return ESCN_EMP
     * @generated
     */
-    public java.lang.String getESCN_EMP() {
+    public String getESCN_EMP() {
         return this.ESCN_EMP;
     }
 
@@ -4014,7 +3764,7 @@ public class CADEMP implements Serializable {
     * @param ESCN_EMP ESCN_EMP
     * @generated
     */
-    public CADEMP setESCN_EMP(java.lang.String ESCN_EMP) {
+    public CADEMP setESCN_EMP(String ESCN_EMP) {
         this.ESCN_EMP = ESCN_EMP;
         return this;
     }
@@ -4023,7 +3773,7 @@ public class CADEMP implements Serializable {
     * return ESER_EMP
     * @generated
     */
-    public java.lang.String getESER_EMP() {
+    public String getESER_EMP() {
         return this.ESER_EMP;
     }
 
@@ -4032,7 +3782,7 @@ public class CADEMP implements Serializable {
     * @param ESER_EMP ESER_EMP
     * @generated
     */
-    public CADEMP setESER_EMP(java.lang.String ESER_EMP) {
+    public CADEMP setESER_EMP(String ESER_EMP) {
         this.ESER_EMP = ESER_EMP;
         return this;
     }
@@ -4041,7 +3791,7 @@ public class CADEMP implements Serializable {
     * return ESUB_EMP
     * @generated
     */
-    public java.lang.String getESUB_EMP() {
+    public String getESUB_EMP() {
         return this.ESUB_EMP;
     }
 
@@ -4050,7 +3800,7 @@ public class CADEMP implements Serializable {
     * @param ESUB_EMP ESUB_EMP
     * @generated
     */
-    public CADEMP setESUB_EMP(java.lang.String ESUB_EMP) {
+    public CADEMP setESUB_EMP(String ESUB_EMP) {
         this.ESUB_EMP = ESUB_EMP;
         return this;
     }
@@ -4059,7 +3809,7 @@ public class CADEMP implements Serializable {
     * return EULL_EMP
     * @generated
     */
-    public java.lang.Integer getEULL_EMP() {
+    public Integer getEULL_EMP() {
         return this.EULL_EMP;
     }
 
@@ -4068,7 +3818,7 @@ public class CADEMP implements Serializable {
     * @param EULL_EMP EULL_EMP
     * @generated
     */
-    public CADEMP setEULL_EMP(java.lang.Integer EULL_EMP) {
+    public CADEMP setEULL_EMP(Integer EULL_EMP) {
         this.EULL_EMP = EULL_EMP;
         return this;
     }
@@ -4077,7 +3827,7 @@ public class CADEMP implements Serializable {
     * return EUTE_EMP
     * @generated
     */
-    public java.lang.String getEUTE_EMP() {
+    public String getEUTE_EMP() {
         return this.EUTE_EMP;
     }
 
@@ -4086,7 +3836,7 @@ public class CADEMP implements Serializable {
     * @param EUTE_EMP EUTE_EMP
     * @generated
     */
-    public CADEMP setEUTE_EMP(java.lang.String EUTE_EMP) {
+    public CADEMP setEUTE_EMP(String EUTE_EMP) {
         this.EUTE_EMP = EUTE_EMP;
         return this;
     }
@@ -4095,7 +3845,7 @@ public class CADEMP implements Serializable {
     * return FANT_EMP
     * @generated
     */
-    public java.lang.String getFANT_EMP() {
+    public String getFANT_EMP() {
         return this.FANT_EMP;
     }
 
@@ -4104,7 +3854,7 @@ public class CADEMP implements Serializable {
     * @param FANT_EMP FANT_EMP
     * @generated
     */
-    public CADEMP setFANT_EMP(java.lang.String FANT_EMP) {
+    public CADEMP setFANT_EMP(String FANT_EMP) {
         this.FANT_EMP = FANT_EMP;
         return this;
     }
@@ -4113,7 +3863,7 @@ public class CADEMP implements Serializable {
     * return FAXC_EMP
     * @generated
     */
-    public java.lang.String getFAXC_EMP() {
+    public String getFAXC_EMP() {
         return this.FAXC_EMP;
     }
 
@@ -4122,7 +3872,7 @@ public class CADEMP implements Serializable {
     * @param FAXC_EMP FAXC_EMP
     * @generated
     */
-    public CADEMP setFAXC_EMP(java.lang.String FAXC_EMP) {
+    public CADEMP setFAXC_EMP(String FAXC_EMP) {
         this.FAXC_EMP = FAXC_EMP;
         return this;
     }
@@ -4131,7 +3881,7 @@ public class CADEMP implements Serializable {
     * return FAX_EMP
     * @generated
     */
-    public java.lang.String getFAX_EMP() {
+    public String getFAX_EMP() {
         return this.FAX_EMP;
     }
 
@@ -4140,7 +3890,7 @@ public class CADEMP implements Serializable {
     * @param FAX_EMP FAX_EMP
     * @generated
     */
-    public CADEMP setFAX_EMP(java.lang.String FAX_EMP) {
+    public CADEMP setFAX_EMP(String FAX_EMP) {
         this.FAX_EMP = FAX_EMP;
         return this;
     }
@@ -4149,7 +3899,7 @@ public class CADEMP implements Serializable {
     * return FDCT_EMP
     * @generated
     */
-    public java.lang.String getFDCT_EMP() {
+    public String getFDCT_EMP() {
         return this.FDCT_EMP;
     }
 
@@ -4158,7 +3908,7 @@ public class CADEMP implements Serializable {
     * @param FDCT_EMP FDCT_EMP
     * @generated
     */
-    public CADEMP setFDCT_EMP(java.lang.String FDCT_EMP) {
+    public CADEMP setFDCT_EMP(String FDCT_EMP) {
         this.FDCT_EMP = FDCT_EMP;
         return this;
     }
@@ -4167,7 +3917,7 @@ public class CADEMP implements Serializable {
     * return FONC_EMP
     * @generated
     */
-    public java.lang.String getFONC_EMP() {
+    public String getFONC_EMP() {
         return this.FONC_EMP;
     }
 
@@ -4176,7 +3926,7 @@ public class CADEMP implements Serializable {
     * @param FONC_EMP FONC_EMP
     * @generated
     */
-    public CADEMP setFONC_EMP(java.lang.String FONC_EMP) {
+    public CADEMP setFONC_EMP(String FONC_EMP) {
         this.FONC_EMP = FONC_EMP;
         return this;
     }
@@ -4185,7 +3935,7 @@ public class CADEMP implements Serializable {
     * return FONE_EMP
     * @generated
     */
-    public java.lang.String getFONE_EMP() {
+    public String getFONE_EMP() {
         return this.FONE_EMP;
     }
 
@@ -4194,7 +3944,7 @@ public class CADEMP implements Serializable {
     * @param FONE_EMP FONE_EMP
     * @generated
     */
-    public CADEMP setFONE_EMP(java.lang.String FONE_EMP) {
+    public CADEMP setFONE_EMP(String FONE_EMP) {
         this.FONE_EMP = FONE_EMP;
         return this;
     }
@@ -4203,7 +3953,7 @@ public class CADEMP implements Serializable {
     * return FORE_EMP
     * @generated
     */
-    public java.lang.String getFORE_EMP() {
+    public String getFORE_EMP() {
         return this.FORE_EMP;
     }
 
@@ -4212,7 +3962,7 @@ public class CADEMP implements Serializable {
     * @param FORE_EMP FORE_EMP
     * @generated
     */
-    public CADEMP setFORE_EMP(java.lang.String FORE_EMP) {
+    public CADEMP setFORE_EMP(String FORE_EMP) {
         this.FORE_EMP = FORE_EMP;
         return this;
     }
@@ -4221,7 +3971,7 @@ public class CADEMP implements Serializable {
     * return GPDF_EMP
     * @generated
     */
-    public java.lang.String getGPDF_EMP() {
+    public String getGPDF_EMP() {
         return this.GPDF_EMP;
     }
 
@@ -4230,7 +3980,7 @@ public class CADEMP implements Serializable {
     * @param GPDF_EMP GPDF_EMP
     * @generated
     */
-    public CADEMP setGPDF_EMP(java.lang.String GPDF_EMP) {
+    public CADEMP setGPDF_EMP(String GPDF_EMP) {
         this.GPDF_EMP = GPDF_EMP;
         return this;
     }
@@ -4239,7 +3989,7 @@ public class CADEMP implements Serializable {
     * return GPZE_EMP
     * @generated
     */
-    public java.lang.String getGPZE_EMP() {
+    public String getGPZE_EMP() {
         return this.GPZE_EMP;
     }
 
@@ -4248,7 +3998,7 @@ public class CADEMP implements Serializable {
     * @param GPZE_EMP GPZE_EMP
     * @generated
     */
-    public CADEMP setGPZE_EMP(java.lang.String GPZE_EMP) {
+    public CADEMP setGPZE_EMP(String GPZE_EMP) {
         this.GPZE_EMP = GPZE_EMP;
         return this;
     }
@@ -4257,7 +4007,7 @@ public class CADEMP implements Serializable {
     * return HCON_EMP
     * @generated
     */
-    public java.lang.String getHCON_EMP() {
+    public String getHCON_EMP() {
         return this.HCON_EMP;
     }
 
@@ -4266,7 +4016,7 @@ public class CADEMP implements Serializable {
     * @param HCON_EMP HCON_EMP
     * @generated
     */
-    public CADEMP setHCON_EMP(java.lang.String HCON_EMP) {
+    public CADEMP setHCON_EMP(String HCON_EMP) {
         this.HCON_EMP = HCON_EMP;
         return this;
     }
@@ -4275,7 +4025,7 @@ public class CADEMP implements Serializable {
     * return IDAF_EMP
     * @generated
     */
-    public java.lang.String getIDAF_EMP() {
+    public String getIDAF_EMP() {
         return this.IDAF_EMP;
     }
 
@@ -4284,7 +4034,7 @@ public class CADEMP implements Serializable {
     * @param IDAF_EMP IDAF_EMP
     * @generated
     */
-    public CADEMP setIDAF_EMP(java.lang.String IDAF_EMP) {
+    public CADEMP setIDAF_EMP(String IDAF_EMP) {
         this.IDAF_EMP = IDAF_EMP;
         return this;
     }
@@ -4293,7 +4043,7 @@ public class CADEMP implements Serializable {
     * return IDAT_EMP
     * @generated
     */
-    public java.lang.String getIDAT_EMP() {
+    public String getIDAT_EMP() {
         return this.IDAT_EMP;
     }
 
@@ -4302,7 +4052,7 @@ public class CADEMP implements Serializable {
     * @param IDAT_EMP IDAT_EMP
     * @generated
     */
-    public CADEMP setIDAT_EMP(java.lang.String IDAT_EMP) {
+    public CADEMP setIDAT_EMP(String IDAT_EMP) {
         this.IDAT_EMP = IDAT_EMP;
         return this;
     }
@@ -4311,7 +4061,7 @@ public class CADEMP implements Serializable {
     * return IDCT_EMP
     * @generated
     */
-    public java.lang.String getIDCT_EMP() {
+    public String getIDCT_EMP() {
         return this.IDCT_EMP;
     }
 
@@ -4320,7 +4070,7 @@ public class CADEMP implements Serializable {
     * @param IDCT_EMP IDCT_EMP
     * @generated
     */
-    public CADEMP setIDCT_EMP(java.lang.String IDCT_EMP) {
+    public CADEMP setIDCT_EMP(String IDCT_EMP) {
         this.IDCT_EMP = IDCT_EMP;
         return this;
     }
@@ -4329,7 +4079,7 @@ public class CADEMP implements Serializable {
     * return IDEN_EMP
     * @generated
     */
-    public java.lang.String getIDEN_EMP() {
+    public String getIDEN_EMP() {
         return this.IDEN_EMP;
     }
 
@@ -4338,7 +4088,7 @@ public class CADEMP implements Serializable {
     * @param IDEN_EMP IDEN_EMP
     * @generated
     */
-    public CADEMP setIDEN_EMP(java.lang.String IDEN_EMP) {
+    public CADEMP setIDEN_EMP(String IDEN_EMP) {
         this.IDEN_EMP = IDEN_EMP;
         return this;
     }
@@ -4347,7 +4097,7 @@ public class CADEMP implements Serializable {
     * return ILOG_EMP
     * @generated
     */
-    public java.lang.String getILOG_EMP() {
+    public String getILOG_EMP() {
         return this.ILOG_EMP;
     }
 
@@ -4356,7 +4106,7 @@ public class CADEMP implements Serializable {
     * @param ILOG_EMP ILOG_EMP
     * @generated
     */
-    public CADEMP setILOG_EMP(java.lang.String ILOG_EMP) {
+    public CADEMP setILOG_EMP(String ILOG_EMP) {
         this.ILOG_EMP = ILOG_EMP;
         return this;
     }
@@ -4365,7 +4115,7 @@ public class CADEMP implements Serializable {
     * return IMCA_EMP
     * @generated
     */
-    public java.lang.String getIMCA_EMP() {
+    public String getIMCA_EMP() {
         return this.IMCA_EMP;
     }
 
@@ -4374,7 +4124,7 @@ public class CADEMP implements Serializable {
     * @param IMCA_EMP IMCA_EMP
     * @generated
     */
-    public CADEMP setIMCA_EMP(java.lang.String IMCA_EMP) {
+    public CADEMP setIMCA_EMP(String IMCA_EMP) {
         this.IMCA_EMP = IMCA_EMP;
         return this;
     }
@@ -4383,7 +4133,7 @@ public class CADEMP implements Serializable {
     * return IMHS_EMP
     * @generated
     */
-    public java.lang.String getIMHS_EMP() {
+    public String getIMHS_EMP() {
         return this.IMHS_EMP;
     }
 
@@ -4392,7 +4142,7 @@ public class CADEMP implements Serializable {
     * @param IMHS_EMP IMHS_EMP
     * @generated
     */
-    public CADEMP setIMHS_EMP(java.lang.String IMHS_EMP) {
+    public CADEMP setIMHS_EMP(String IMHS_EMP) {
         this.IMHS_EMP = IMHS_EMP;
         return this;
     }
@@ -4401,7 +4151,7 @@ public class CADEMP implements Serializable {
     * return INDD_EMP
     * @generated
     */
-    public java.lang.String getINDD_EMP() {
+    public String getINDD_EMP() {
         return this.INDD_EMP;
     }
 
@@ -4410,7 +4160,7 @@ public class CADEMP implements Serializable {
     * @param INDD_EMP INDD_EMP
     * @generated
     */
-    public CADEMP setINDD_EMP(java.lang.String INDD_EMP) {
+    public CADEMP setINDD_EMP(String INDD_EMP) {
         this.INDD_EMP = INDD_EMP;
         return this;
     }
@@ -4419,7 +4169,7 @@ public class CADEMP implements Serializable {
     * return INE_EMP
     * @generated
     */
-    public java.lang.String getINE_EMP() {
+    public String getINE_EMP() {
         return this.INE_EMP;
     }
 
@@ -4428,7 +4178,7 @@ public class CADEMP implements Serializable {
     * @param INE_EMP INE_EMP
     * @generated
     */
-    public CADEMP setINE_EMP(java.lang.String INE_EMP) {
+    public CADEMP setINE_EMP(String INE_EMP) {
         this.INE_EMP = INE_EMP;
         return this;
     }
@@ -4437,7 +4187,7 @@ public class CADEMP implements Serializable {
     * return INM_EMP
     * @generated
     */
-    public java.lang.String getINM_EMP() {
+    public String getINM_EMP() {
         return this.INM_EMP;
     }
 
@@ -4446,7 +4196,7 @@ public class CADEMP implements Serializable {
     * @param INM_EMP INM_EMP
     * @generated
     */
-    public CADEMP setINM_EMP(java.lang.String INM_EMP) {
+    public CADEMP setINM_EMP(String INM_EMP) {
         this.INM_EMP = INM_EMP;
         return this;
     }
@@ -4455,7 +4205,7 @@ public class CADEMP implements Serializable {
     * return INST_EMP
     * @generated
     */
-    public java.lang.String getINST_EMP() {
+    public String getINST_EMP() {
         return this.INST_EMP;
     }
 
@@ -4464,7 +4214,7 @@ public class CADEMP implements Serializable {
     * @param INST_EMP INST_EMP
     * @generated
     */
-    public CADEMP setINST_EMP(java.lang.String INST_EMP) {
+    public CADEMP setINST_EMP(String INST_EMP) {
         this.INST_EMP = INST_EMP;
         return this;
     }
@@ -4473,7 +4223,7 @@ public class CADEMP implements Serializable {
     * return INTC_EMP
     * @generated
     */
-    public java.lang.String getINTC_EMP() {
+    public String getINTC_EMP() {
         return this.INTC_EMP;
     }
 
@@ -4482,7 +4232,7 @@ public class CADEMP implements Serializable {
     * @param INTC_EMP INTC_EMP
     * @generated
     */
-    public CADEMP setINTC_EMP(java.lang.String INTC_EMP) {
+    public CADEMP setINTC_EMP(String INTC_EMP) {
         this.INTC_EMP = INTC_EMP;
         return this;
     }
@@ -4491,7 +4241,7 @@ public class CADEMP implements Serializable {
     * return INTE_EMP
     * @generated
     */
-    public java.lang.String getINTE_EMP() {
+    public String getINTE_EMP() {
         return this.INTE_EMP;
     }
 
@@ -4500,7 +4250,7 @@ public class CADEMP implements Serializable {
     * @param INTE_EMP INTE_EMP
     * @generated
     */
-    public CADEMP setINTE_EMP(java.lang.String INTE_EMP) {
+    public CADEMP setINTE_EMP(String INTE_EMP) {
         this.INTE_EMP = INTE_EMP;
         return this;
     }
@@ -4509,7 +4259,7 @@ public class CADEMP implements Serializable {
     * return ITAX_SEM
     * @generated
     */
-    public java.lang.String getITAX_SEM() {
+    public String getITAX_SEM() {
         return this.ITAX_SEM;
     }
 
@@ -4518,7 +4268,7 @@ public class CADEMP implements Serializable {
     * @param ITAX_SEM ITAX_SEM
     * @generated
     */
-    public CADEMP setITAX_SEM(java.lang.String ITAX_SEM) {
+    public CADEMP setITAX_SEM(String ITAX_SEM) {
         this.ITAX_SEM = ITAX_SEM;
         return this;
     }
@@ -4527,7 +4277,7 @@ public class CADEMP implements Serializable {
     * return IUCD_EMP
     * @generated
     */
-    public java.lang.String getIUCD_EMP() {
+    public String getIUCD_EMP() {
         return this.IUCD_EMP;
     }
 
@@ -4536,7 +4286,7 @@ public class CADEMP implements Serializable {
     * @param IUCD_EMP IUCD_EMP
     * @generated
     */
-    public CADEMP setIUCD_EMP(java.lang.String IUCD_EMP) {
+    public CADEMP setIUCD_EMP(String IUCD_EMP) {
         this.IUCD_EMP = IUCD_EMP;
         return this;
     }
@@ -4545,7 +4295,7 @@ public class CADEMP implements Serializable {
     * return IVLR_EMP
     * @generated
     */
-    public java.lang.Double getIVLR_EMP() {
+    public Double getIVLR_EMP() {
         return this.IVLR_EMP;
     }
 
@@ -4554,7 +4304,7 @@ public class CADEMP implements Serializable {
     * @param IVLR_EMP IVLR_EMP
     * @generated
     */
-    public CADEMP setIVLR_EMP(java.lang.Double IVLR_EMP) {
+    public CADEMP setIVLR_EMP(Double IVLR_EMP) {
         this.IVLR_EMP = IVLR_EMP;
         return this;
     }
@@ -4563,7 +4313,7 @@ public class CADEMP implements Serializable {
     * return LAUD_EMP
     * @generated
     */
-    public java.lang.String getLAUD_EMP() {
+    public String getLAUD_EMP() {
         return this.LAUD_EMP;
     }
 
@@ -4572,7 +4322,7 @@ public class CADEMP implements Serializable {
     * @param LAUD_EMP LAUD_EMP
     * @generated
     */
-    public CADEMP setLAUD_EMP(java.lang.String LAUD_EMP) {
+    public CADEMP setLAUD_EMP(String LAUD_EMP) {
         this.LAUD_EMP = LAUD_EMP;
         return this;
     }
@@ -4581,7 +4331,7 @@ public class CADEMP implements Serializable {
     * return LCTE_EMP
     * @generated
     */
-    public java.lang.Integer getLCTE_EMP() {
+    public Integer getLCTE_EMP() {
         return this.LCTE_EMP;
     }
 
@@ -4590,7 +4340,7 @@ public class CADEMP implements Serializable {
     * @param LCTE_EMP LCTE_EMP
     * @generated
     */
-    public CADEMP setLCTE_EMP(java.lang.Integer LCTE_EMP) {
+    public CADEMP setLCTE_EMP(Integer LCTE_EMP) {
         this.LCTE_EMP = LCTE_EMP;
         return this;
     }
@@ -4599,7 +4349,7 @@ public class CADEMP implements Serializable {
     * return LMDF_EMP
     * @generated
     */
-    public java.lang.Integer getLMDF_EMP() {
+    public Integer getLMDF_EMP() {
         return this.LMDF_EMP;
     }
 
@@ -4608,7 +4358,7 @@ public class CADEMP implements Serializable {
     * @param LMDF_EMP LMDF_EMP
     * @generated
     */
-    public CADEMP setLMDF_EMP(java.lang.Integer LMDF_EMP) {
+    public CADEMP setLMDF_EMP(Integer LMDF_EMP) {
         this.LMDF_EMP = LMDF_EMP;
         return this;
     }
@@ -4635,7 +4385,7 @@ public class CADEMP implements Serializable {
     * return LTRA_EMP
     * @generated
     */
-    public java.lang.String getLTRA_EMP() {
+    public String getLTRA_EMP() {
         return this.LTRA_EMP;
     }
 
@@ -4644,7 +4394,7 @@ public class CADEMP implements Serializable {
     * @param LTRA_EMP LTRA_EMP
     * @generated
     */
-    public CADEMP setLTRA_EMP(java.lang.String LTRA_EMP) {
+    public CADEMP setLTRA_EMP(String LTRA_EMP) {
         this.LTRA_EMP = LTRA_EMP;
         return this;
     }
@@ -4653,7 +4403,7 @@ public class CADEMP implements Serializable {
     * return MCNF_EMP
     * @generated
     */
-    public java.lang.String getMCNF_EMP() {
+    public String getMCNF_EMP() {
         return this.MCNF_EMP;
     }
 
@@ -4662,7 +4412,7 @@ public class CADEMP implements Serializable {
     * @param MCNF_EMP MCNF_EMP
     * @generated
     */
-    public CADEMP setMCNF_EMP(java.lang.String MCNF_EMP) {
+    public CADEMP setMCNF_EMP(String MCNF_EMP) {
         this.MCNF_EMP = MCNF_EMP;
         return this;
     }
@@ -4671,7 +4421,7 @@ public class CADEMP implements Serializable {
     * return MDCT_EMP
     * @generated
     */
-    public java.lang.Double getMDCT_EMP() {
+    public Double getMDCT_EMP() {
         return this.MDCT_EMP;
     }
 
@@ -4680,7 +4430,7 @@ public class CADEMP implements Serializable {
     * @param MDCT_EMP MDCT_EMP
     * @generated
     */
-    public CADEMP setMDCT_EMP(java.lang.Double MDCT_EMP) {
+    public CADEMP setMDCT_EMP(Double MDCT_EMP) {
         this.MDCT_EMP = MDCT_EMP;
         return this;
     }
@@ -4689,7 +4439,7 @@ public class CADEMP implements Serializable {
     * return MECT_EMP
     * @generated
     */
-    public java.lang.Double getMECT_EMP() {
+    public Double getMECT_EMP() {
         return this.MECT_EMP;
     }
 
@@ -4698,7 +4448,7 @@ public class CADEMP implements Serializable {
     * @param MECT_EMP MECT_EMP
     * @generated
     */
-    public CADEMP setMECT_EMP(java.lang.Double MECT_EMP) {
+    public CADEMP setMECT_EMP(Double MECT_EMP) {
         this.MECT_EMP = MECT_EMP;
         return this;
     }
@@ -4707,7 +4457,7 @@ public class CADEMP implements Serializable {
     * return MICT_EMP
     * @generated
     */
-    public java.lang.Double getMICT_EMP() {
+    public Double getMICT_EMP() {
         return this.MICT_EMP;
     }
 
@@ -4716,7 +4466,7 @@ public class CADEMP implements Serializable {
     * @param MICT_EMP MICT_EMP
     * @generated
     */
-    public CADEMP setMICT_EMP(java.lang.Double MICT_EMP) {
+    public CADEMP setMICT_EMP(Double MICT_EMP) {
         this.MICT_EMP = MICT_EMP;
         return this;
     }
@@ -4725,7 +4475,7 @@ public class CADEMP implements Serializable {
     * return MOD_EMP
     * @generated
     */
-    public java.lang.Integer getMOD_EMP() {
+    public Integer getMOD_EMP() {
         return this.MOD_EMP;
     }
 
@@ -4734,7 +4484,7 @@ public class CADEMP implements Serializable {
     * @param MOD_EMP MOD_EMP
     * @generated
     */
-    public CADEMP setMOD_EMP(java.lang.Integer MOD_EMP) {
+    public CADEMP setMOD_EMP(Integer MOD_EMP) {
         this.MOD_EMP = MOD_EMP;
         return this;
     }
@@ -4743,7 +4493,7 @@ public class CADEMP implements Serializable {
     * return MPCT_EMP
     * @generated
     */
-    public java.lang.String getMPCT_EMP() {
+    public String getMPCT_EMP() {
         return this.MPCT_EMP;
     }
 
@@ -4752,7 +4502,7 @@ public class CADEMP implements Serializable {
     * @param MPCT_EMP MPCT_EMP
     * @generated
     */
-    public CADEMP setMPCT_EMP(java.lang.String MPCT_EMP) {
+    public CADEMP setMPCT_EMP(String MPCT_EMP) {
         this.MPCT_EMP = MPCT_EMP;
         return this;
     }
@@ -4761,7 +4511,7 @@ public class CADEMP implements Serializable {
     * return MSCC_EMP
     * @generated
     */
-    public java.lang.String getMSCC_EMP() {
+    public String getMSCC_EMP() {
         return this.MSCC_EMP;
     }
 
@@ -4770,7 +4520,7 @@ public class CADEMP implements Serializable {
     * @param MSCC_EMP MSCC_EMP
     * @generated
     */
-    public CADEMP setMSCC_EMP(java.lang.String MSCC_EMP) {
+    public CADEMP setMSCC_EMP(String MSCC_EMP) {
         this.MSCC_EMP = MSCC_EMP;
         return this;
     }
@@ -4779,7 +4529,7 @@ public class CADEMP implements Serializable {
     * return MSCT_EMP
     * @generated
     */
-    public java.lang.Double getMSCT_EMP() {
+    public Double getMSCT_EMP() {
         return this.MSCT_EMP;
     }
 
@@ -4788,7 +4538,7 @@ public class CADEMP implements Serializable {
     * @param MSCT_EMP MSCT_EMP
     * @generated
     */
-    public CADEMP setMSCT_EMP(java.lang.Double MSCT_EMP) {
+    public CADEMP setMSCT_EMP(Double MSCT_EMP) {
         this.MSCT_EMP = MSCT_EMP;
         return this;
     }
@@ -4797,7 +4547,7 @@ public class CADEMP implements Serializable {
     * return MSIM_EMP
     * @generated
     */
-    public java.lang.String getMSIM_EMP() {
+    public String getMSIM_EMP() {
         return this.MSIM_EMP;
     }
 
@@ -4806,7 +4556,7 @@ public class CADEMP implements Serializable {
     * @param MSIM_EMP MSIM_EMP
     * @generated
     */
-    public CADEMP setMSIM_EMP(java.lang.String MSIM_EMP) {
+    public CADEMP setMSIM_EMP(String MSIM_EMP) {
         this.MSIM_EMP = MSIM_EMP;
         return this;
     }
@@ -4815,7 +4565,7 @@ public class CADEMP implements Serializable {
     * return MSNF_EMP
     * @generated
     */
-    public java.lang.String getMSNF_EMP() {
+    public String getMSNF_EMP() {
         return this.MSNF_EMP;
     }
 
@@ -4824,7 +4574,7 @@ public class CADEMP implements Serializable {
     * @param MSNF_EMP MSNF_EMP
     * @generated
     */
-    public CADEMP setMSNF_EMP(java.lang.String MSNF_EMP) {
+    public CADEMP setMSNF_EMP(String MSNF_EMP) {
         this.MSNF_EMP = MSNF_EMP;
         return this;
     }
@@ -4833,7 +4583,7 @@ public class CADEMP implements Serializable {
     * return MUNC_EMP
     * @generated
     */
-    public java.lang.Integer getMUNC_EMP() {
+    public Integer getMUNC_EMP() {
         return this.MUNC_EMP;
     }
 
@@ -4842,7 +4592,7 @@ public class CADEMP implements Serializable {
     * @param MUNC_EMP MUNC_EMP
     * @generated
     */
-    public CADEMP setMUNC_EMP(java.lang.Integer MUNC_EMP) {
+    public CADEMP setMUNC_EMP(Integer MUNC_EMP) {
         this.MUNC_EMP = MUNC_EMP;
         return this;
     }
@@ -4851,7 +4601,7 @@ public class CADEMP implements Serializable {
     * return NCRE_EMP
     * @generated
     */
-    public java.lang.String getNCRE_EMP() {
+    public String getNCRE_EMP() {
         return this.NCRE_EMP;
     }
 
@@ -4860,7 +4610,7 @@ public class CADEMP implements Serializable {
     * @param NCRE_EMP NCRE_EMP
     * @generated
     */
-    public CADEMP setNCRE_EMP(java.lang.String NCRE_EMP) {
+    public CADEMP setNCRE_EMP(String NCRE_EMP) {
         this.NCRE_EMP = NCRE_EMP;
         return this;
     }
@@ -4869,7 +4619,7 @@ public class CADEMP implements Serializable {
     * return NCVI_EMP
     * @generated
     */
-    public java.lang.String getNCVI_EMP() {
+    public String getNCVI_EMP() {
         return this.NCVI_EMP;
     }
 
@@ -4878,7 +4628,7 @@ public class CADEMP implements Serializable {
     * @param NCVI_EMP NCVI_EMP
     * @generated
     */
-    public CADEMP setNCVI_EMP(java.lang.String NCVI_EMP) {
+    public CADEMP setNCVI_EMP(String NCVI_EMP) {
         this.NCVI_EMP = NCVI_EMP;
         return this;
     }
@@ -4887,7 +4637,7 @@ public class CADEMP implements Serializable {
     * return NESO_EMP
     * @generated
     */
-    public java.lang.String getNESO_EMP() {
+    public String getNESO_EMP() {
         return this.NESO_EMP;
     }
 
@@ -4896,7 +4646,7 @@ public class CADEMP implements Serializable {
     * @param NESO_EMP NESO_EMP
     * @generated
     */
-    public CADEMP setNESO_EMP(java.lang.String NESO_EMP) {
+    public CADEMP setNESO_EMP(String NESO_EMP) {
         this.NESO_EMP = NESO_EMP;
         return this;
     }
@@ -4905,7 +4655,7 @@ public class CADEMP implements Serializable {
     * return NFC4_EMP
     * @generated
     */
-    public java.lang.String getNFC4_EMP() {
+    public String getNFC4_EMP() {
         return this.NFC4_EMP;
     }
 
@@ -4914,7 +4664,7 @@ public class CADEMP implements Serializable {
     * @param NFC4_EMP NFC4_EMP
     * @generated
     */
-    public CADEMP setNFC4_EMP(java.lang.String NFC4_EMP) {
+    public CADEMP setNFC4_EMP(String NFC4_EMP) {
         this.NFC4_EMP = NFC4_EMP;
         return this;
     }
@@ -4923,7 +4673,7 @@ public class CADEMP implements Serializable {
     * return NFE4_EMP
     * @generated
     */
-    public java.lang.String getNFE4_EMP() {
+    public String getNFE4_EMP() {
         return this.NFE4_EMP;
     }
 
@@ -4932,7 +4682,7 @@ public class CADEMP implements Serializable {
     * @param NFE4_EMP NFE4_EMP
     * @generated
     */
-    public CADEMP setNFE4_EMP(java.lang.String NFE4_EMP) {
+    public CADEMP setNFE4_EMP(String NFE4_EMP) {
         this.NFE4_EMP = NFE4_EMP;
         return this;
     }
@@ -4941,7 +4691,7 @@ public class CADEMP implements Serializable {
     * return NFEC_EMP
     * @generated
     */
-    public java.lang.String getNFEC_EMP() {
+    public String getNFEC_EMP() {
         return this.NFEC_EMP;
     }
 
@@ -4950,7 +4700,7 @@ public class CADEMP implements Serializable {
     * @param NFEC_EMP NFEC_EMP
     * @generated
     */
-    public CADEMP setNFEC_EMP(java.lang.String NFEC_EMP) {
+    public CADEMP setNFEC_EMP(String NFEC_EMP) {
         this.NFEC_EMP = NFEC_EMP;
         return this;
     }
@@ -4959,7 +4709,7 @@ public class CADEMP implements Serializable {
     * return NFES_EMP
     * @generated
     */
-    public java.lang.String getNFES_EMP() {
+    public String getNFES_EMP() {
         return this.NFES_EMP;
     }
 
@@ -4968,7 +4718,7 @@ public class CADEMP implements Serializable {
     * @param NFES_EMP NFES_EMP
     * @generated
     */
-    public CADEMP setNFES_EMP(java.lang.String NFES_EMP) {
+    public CADEMP setNFES_EMP(String NFES_EMP) {
         this.NFES_EMP = NFES_EMP;
         return this;
     }
@@ -4977,7 +4727,7 @@ public class CADEMP implements Serializable {
     * return NFLT_EMP
     * @generated
     */
-    public java.lang.String getNFLT_EMP() {
+    public String getNFLT_EMP() {
         return this.NFLT_EMP;
     }
 
@@ -4986,7 +4736,7 @@ public class CADEMP implements Serializable {
     * @param NFLT_EMP NFLT_EMP
     * @generated
     */
-    public CADEMP setNFLT_EMP(java.lang.String NFLT_EMP) {
+    public CADEMP setNFLT_EMP(String NFLT_EMP) {
         this.NFLT_EMP = NFLT_EMP;
         return this;
     }
@@ -4995,7 +4745,7 @@ public class CADEMP implements Serializable {
     * return NGRE_EMP
     * @generated
     */
-    public java.lang.String getNGRE_EMP() {
+    public String getNGRE_EMP() {
         return this.NGRE_EMP;
     }
 
@@ -5004,7 +4754,7 @@ public class CADEMP implements Serializable {
     * @param NGRE_EMP NGRE_EMP
     * @generated
     */
-    public CADEMP setNGRE_EMP(java.lang.String NGRE_EMP) {
+    public CADEMP setNGRE_EMP(String NGRE_EMP) {
         this.NGRE_EMP = NGRE_EMP;
         return this;
     }
@@ -5013,7 +4763,7 @@ public class CADEMP implements Serializable {
     * return NIRE_EMP
     * @generated
     */
-    public java.lang.String getNIRE_EMP() {
+    public String getNIRE_EMP() {
         return this.NIRE_EMP;
     }
 
@@ -5022,7 +4772,7 @@ public class CADEMP implements Serializable {
     * @param NIRE_EMP NIRE_EMP
     * @generated
     */
-    public CADEMP setNIRE_EMP(java.lang.String NIRE_EMP) {
+    public CADEMP setNIRE_EMP(String NIRE_EMP) {
         this.NIRE_EMP = NIRE_EMP;
         return this;
     }
@@ -5031,7 +4781,7 @@ public class CADEMP implements Serializable {
     * return NLCC_EMP
     * @generated
     */
-    public java.lang.Integer getNLCC_EMP() {
+    public Integer getNLCC_EMP() {
         return this.NLCC_EMP;
     }
 
@@ -5040,7 +4790,7 @@ public class CADEMP implements Serializable {
     * @param NLCC_EMP NLCC_EMP
     * @generated
     */
-    public CADEMP setNLCC_EMP(java.lang.Integer NLCC_EMP) {
+    public CADEMP setNLCC_EMP(Integer NLCC_EMP) {
         this.NLCC_EMP = NLCC_EMP;
         return this;
     }
@@ -5049,7 +4799,7 @@ public class CADEMP implements Serializable {
     * return NLIC_EMP
     * @generated
     */
-    public java.lang.String getNLIC_EMP() {
+    public String getNLIC_EMP() {
         return this.NLIC_EMP;
     }
 
@@ -5058,7 +4808,7 @@ public class CADEMP implements Serializable {
     * @param NLIC_EMP NLIC_EMP
     * @generated
     */
-    public CADEMP setNLIC_EMP(java.lang.String NLIC_EMP) {
+    public CADEMP setNLIC_EMP(String NLIC_EMP) {
         this.NLIC_EMP = NLIC_EMP;
         return this;
     }
@@ -5067,7 +4817,7 @@ public class CADEMP implements Serializable {
     * return NLTS_EMP
     * @generated
     */
-    public java.lang.Integer getNLTS_EMP() {
+    public Integer getNLTS_EMP() {
         return this.NLTS_EMP;
     }
 
@@ -5076,7 +4826,7 @@ public class CADEMP implements Serializable {
     * @param NLTS_EMP NLTS_EMP
     * @generated
     */
-    public CADEMP setNLTS_EMP(java.lang.Integer NLTS_EMP) {
+    public CADEMP setNLTS_EMP(Integer NLTS_EMP) {
         this.NLTS_EMP = NLTS_EMP;
         return this;
     }
@@ -5085,7 +4835,7 @@ public class CADEMP implements Serializable {
     * return NREG_EMP
     * @generated
     */
-    public java.lang.String getNREG_EMP() {
+    public String getNREG_EMP() {
         return this.NREG_EMP;
     }
 
@@ -5094,7 +4844,7 @@ public class CADEMP implements Serializable {
     * @param NREG_EMP NREG_EMP
     * @generated
     */
-    public CADEMP setNREG_EMP(java.lang.String NREG_EMP) {
+    public CADEMP setNREG_EMP(String NREG_EMP) {
         this.NREG_EMP = NREG_EMP;
         return this;
     }
@@ -5103,7 +4853,7 @@ public class CADEMP implements Serializable {
     * return NRLT_EMP
     * @generated
     */
-    public java.lang.Integer getNRLT_EMP() {
+    public Integer getNRLT_EMP() {
         return this.NRLT_EMP;
     }
 
@@ -5112,7 +4862,7 @@ public class CADEMP implements Serializable {
     * @param NRLT_EMP NRLT_EMP
     * @generated
     */
-    public CADEMP setNRLT_EMP(java.lang.Integer NRLT_EMP) {
+    public CADEMP setNRLT_EMP(Integer NRLT_EMP) {
         this.NRLT_EMP = NRLT_EMP;
         return this;
     }
@@ -5121,7 +4871,7 @@ public class CADEMP implements Serializable {
     * return NSCE_EMP
     * @generated
     */
-    public java.lang.String getNSCE_EMP() {
+    public String getNSCE_EMP() {
         return this.NSCE_EMP;
     }
 
@@ -5130,7 +4880,7 @@ public class CADEMP implements Serializable {
     * @param NSCE_EMP NSCE_EMP
     * @generated
     */
-    public CADEMP setNSCE_EMP(java.lang.String NSCE_EMP) {
+    public CADEMP setNSCE_EMP(String NSCE_EMP) {
         this.NSCE_EMP = NSCE_EMP;
         return this;
     }
@@ -5139,7 +4889,7 @@ public class CADEMP implements Serializable {
     * return NSCT_EMP
     * @generated
     */
-    public java.lang.String getNSCT_EMP() {
+    public String getNSCT_EMP() {
         return this.NSCT_EMP;
     }
 
@@ -5148,7 +4898,7 @@ public class CADEMP implements Serializable {
     * @param NSCT_EMP NSCT_EMP
     * @generated
     */
-    public CADEMP setNSCT_EMP(java.lang.String NSCT_EMP) {
+    public CADEMP setNSCT_EMP(String NSCT_EMP) {
         this.NSCT_EMP = NSCT_EMP;
         return this;
     }
@@ -5157,7 +4907,7 @@ public class CADEMP implements Serializable {
     * return NTAR_EMP
     * @generated
     */
-    public java.lang.Integer getNTAR_EMP() {
+    public Integer getNTAR_EMP() {
         return this.NTAR_EMP;
     }
 
@@ -5166,7 +4916,7 @@ public class CADEMP implements Serializable {
     * @param NTAR_EMP NTAR_EMP
     * @generated
     */
-    public CADEMP setNTAR_EMP(java.lang.Integer NTAR_EMP) {
+    public CADEMP setNTAR_EMP(Integer NTAR_EMP) {
         this.NTAR_EMP = NTAR_EMP;
         return this;
     }
@@ -5175,7 +4925,7 @@ public class CADEMP implements Serializable {
     * return NTCT_EMP
     * @generated
     */
-    public java.lang.Integer getNTCT_EMP() {
+    public Integer getNTCT_EMP() {
         return this.NTCT_EMP;
     }
 
@@ -5184,7 +4934,7 @@ public class CADEMP implements Serializable {
     * @param NTCT_EMP NTCT_EMP
     * @generated
     */
-    public CADEMP setNTCT_EMP(java.lang.Integer NTCT_EMP) {
+    public CADEMP setNTCT_EMP(Integer NTCT_EMP) {
         this.NTCT_EMP = NTCT_EMP;
         return this;
     }
@@ -5193,7 +4943,7 @@ public class CADEMP implements Serializable {
     * return NUCO_EMP
     * @generated
     */
-    public java.lang.Integer getNUCO_EMP() {
+    public Integer getNUCO_EMP() {
         return this.NUCO_EMP;
     }
 
@@ -5202,7 +4952,7 @@ public class CADEMP implements Serializable {
     * @param NUCO_EMP NUCO_EMP
     * @generated
     */
-    public CADEMP setNUCO_EMP(java.lang.Integer NUCO_EMP) {
+    public CADEMP setNUCO_EMP(Integer NUCO_EMP) {
         this.NUCO_EMP = NUCO_EMP;
         return this;
     }
@@ -5211,7 +4961,7 @@ public class CADEMP implements Serializable {
     * return NUMC_EMP
     * @generated
     */
-    public java.lang.String getNUMC_EMP() {
+    public String getNUMC_EMP() {
         return this.NUMC_EMP;
     }
 
@@ -5220,7 +4970,7 @@ public class CADEMP implements Serializable {
     * @param NUMC_EMP NUMC_EMP
     * @generated
     */
-    public CADEMP setNUMC_EMP(java.lang.String NUMC_EMP) {
+    public CADEMP setNUMC_EMP(String NUMC_EMP) {
         this.NUMC_EMP = NUMC_EMP;
         return this;
     }
@@ -5229,7 +4979,7 @@ public class CADEMP implements Serializable {
     * return NUME_EMP
     * @generated
     */
-    public java.lang.String getNUME_EMP() {
+    public String getNUME_EMP() {
         return this.NUME_EMP;
     }
 
@@ -5238,7 +4988,7 @@ public class CADEMP implements Serializable {
     * @param NUME_EMP NUME_EMP
     * @generated
     */
-    public CADEMP setNUME_EMP(java.lang.String NUME_EMP) {
+    public CADEMP setNUME_EMP(String NUME_EMP) {
         this.NUME_EMP = NUME_EMP;
         return this;
     }
@@ -5247,7 +4997,7 @@ public class CADEMP implements Serializable {
     * return ORIM_EMP
     * @generated
     */
-    public java.lang.String getORIM_EMP() {
+    public String getORIM_EMP() {
         return this.ORIM_EMP;
     }
 
@@ -5256,7 +5006,7 @@ public class CADEMP implements Serializable {
     * @param ORIM_EMP ORIM_EMP
     * @generated
     */
-    public CADEMP setORIM_EMP(java.lang.String ORIM_EMP) {
+    public CADEMP setORIM_EMP(String ORIM_EMP) {
         this.ORIM_EMP = ORIM_EMP;
         return this;
     }
@@ -5265,7 +5015,7 @@ public class CADEMP implements Serializable {
     * return PDCB_EMP
     * @generated
     */
-    public java.lang.String getPDCB_EMP() {
+    public String getPDCB_EMP() {
         return this.PDCB_EMP;
     }
 
@@ -5274,7 +5024,7 @@ public class CADEMP implements Serializable {
     * @param PDCB_EMP PDCB_EMP
     * @generated
     */
-    public CADEMP setPDCB_EMP(java.lang.String PDCB_EMP) {
+    public CADEMP setPDCB_EMP(String PDCB_EMP) {
         this.PDCB_EMP = PDCB_EMP;
         return this;
     }
@@ -5283,7 +5033,7 @@ public class CADEMP implements Serializable {
     * return PDCC_EMP
     * @generated
     */
-    public java.lang.String getPDCC_EMP() {
+    public String getPDCC_EMP() {
         return this.PDCC_EMP;
     }
 
@@ -5292,7 +5042,7 @@ public class CADEMP implements Serializable {
     * @param PDCC_EMP PDCC_EMP
     * @generated
     */
-    public CADEMP setPDCC_EMP(java.lang.String PDCC_EMP) {
+    public CADEMP setPDCC_EMP(String PDCC_EMP) {
         this.PDCC_EMP = PDCC_EMP;
         return this;
     }
@@ -5301,7 +5051,7 @@ public class CADEMP implements Serializable {
     * return PDCD_EMP
     * @generated
     */
-    public java.lang.String getPDCD_EMP() {
+    public String getPDCD_EMP() {
         return this.PDCD_EMP;
     }
 
@@ -5310,7 +5060,7 @@ public class CADEMP implements Serializable {
     * @param PDCD_EMP PDCD_EMP
     * @generated
     */
-    public CADEMP setPDCD_EMP(java.lang.String PDCD_EMP) {
+    public CADEMP setPDCD_EMP(String PDCD_EMP) {
         this.PDCD_EMP = PDCD_EMP;
         return this;
     }
@@ -5319,7 +5069,7 @@ public class CADEMP implements Serializable {
     * return PDCE_EMP
     * @generated
     */
-    public java.lang.String getPDCE_EMP() {
+    public String getPDCE_EMP() {
         return this.PDCE_EMP;
     }
 
@@ -5328,7 +5078,7 @@ public class CADEMP implements Serializable {
     * @param PDCE_EMP PDCE_EMP
     * @generated
     */
-    public CADEMP setPDCE_EMP(java.lang.String PDCE_EMP) {
+    public CADEMP setPDCE_EMP(String PDCE_EMP) {
         this.PDCE_EMP = PDCE_EMP;
         return this;
     }
@@ -5337,7 +5087,7 @@ public class CADEMP implements Serializable {
     * return PDCR_EMP
     * @generated
     */
-    public java.lang.String getPDCR_EMP() {
+    public String getPDCR_EMP() {
         return this.PDCR_EMP;
     }
 
@@ -5346,7 +5096,7 @@ public class CADEMP implements Serializable {
     * @param PDCR_EMP PDCR_EMP
     * @generated
     */
-    public CADEMP setPDCR_EMP(java.lang.String PDCR_EMP) {
+    public CADEMP setPDCR_EMP(String PDCR_EMP) {
         this.PDCR_EMP = PDCR_EMP;
         return this;
     }
@@ -5355,7 +5105,7 @@ public class CADEMP implements Serializable {
     * return PEFI_EMP
     * @generated
     */
-    public java.lang.Integer getPEFI_EMP() {
+    public Integer getPEFI_EMP() {
         return this.PEFI_EMP;
     }
 
@@ -5364,7 +5114,7 @@ public class CADEMP implements Serializable {
     * @param PEFI_EMP PEFI_EMP
     * @generated
     */
-    public CADEMP setPEFI_EMP(java.lang.Integer PEFI_EMP) {
+    public CADEMP setPEFI_EMP(Integer PEFI_EMP) {
         this.PEFI_EMP = PEFI_EMP;
         return this;
     }
@@ -5373,7 +5123,7 @@ public class CADEMP implements Serializable {
     * return PICT_EMP
     * @generated
     */
-    public java.lang.String getPICT_EMP() {
+    public String getPICT_EMP() {
         return this.PICT_EMP;
     }
 
@@ -5382,7 +5132,7 @@ public class CADEMP implements Serializable {
     * @param PICT_EMP PICT_EMP
     * @generated
     */
-    public CADEMP setPICT_EMP(java.lang.String PICT_EMP) {
+    public CADEMP setPICT_EMP(String PICT_EMP) {
         this.PICT_EMP = PICT_EMP;
         return this;
     }
@@ -5391,7 +5141,7 @@ public class CADEMP implements Serializable {
     * return PORE_EMP
     * @generated
     */
-    public java.lang.String getPORE_EMP() {
+    public String getPORE_EMP() {
         return this.PORE_EMP;
     }
 
@@ -5400,7 +5150,7 @@ public class CADEMP implements Serializable {
     * @param PORE_EMP PORE_EMP
     * @generated
     */
-    public CADEMP setPORE_EMP(java.lang.String PORE_EMP) {
+    public CADEMP setPORE_EMP(String PORE_EMP) {
         this.PORE_EMP = PORE_EMP;
         return this;
     }
@@ -5427,7 +5177,7 @@ public class CADEMP implements Serializable {
     * return RAZA_EMP
     * @generated
     */
-    public java.lang.String getRAZA_EMP() {
+    public String getRAZA_EMP() {
         return this.RAZA_EMP;
     }
 
@@ -5436,7 +5186,7 @@ public class CADEMP implements Serializable {
     * @param RAZA_EMP RAZA_EMP
     * @generated
     */
-    public CADEMP setRAZA_EMP(java.lang.String RAZA_EMP) {
+    public CADEMP setRAZA_EMP(String RAZA_EMP) {
         this.RAZA_EMP = RAZA_EMP;
         return this;
     }
@@ -5445,7 +5195,7 @@ public class CADEMP implements Serializable {
     * return REGI_EMP
     * @generated
     */
-    public java.lang.String getREGI_EMP() {
+    public String getREGI_EMP() {
         return this.REGI_EMP;
     }
 
@@ -5454,7 +5204,7 @@ public class CADEMP implements Serializable {
     * @param REGI_EMP REGI_EMP
     * @generated
     */
-    public CADEMP setREGI_EMP(java.lang.String REGI_EMP) {
+    public CADEMP setREGI_EMP(String REGI_EMP) {
         this.REGI_EMP = REGI_EMP;
         return this;
     }
@@ -5463,7 +5213,7 @@ public class CADEMP implements Serializable {
     * return RENA_EMP
     * @generated
     */
-    public java.lang.String getRENA_EMP() {
+    public String getRENA_EMP() {
         return this.RENA_EMP;
     }
 
@@ -5472,7 +5222,7 @@ public class CADEMP implements Serializable {
     * @param RENA_EMP RENA_EMP
     * @generated
     */
-    public CADEMP setRENA_EMP(java.lang.String RENA_EMP) {
+    public CADEMP setRENA_EMP(String RENA_EMP) {
         this.RENA_EMP = RENA_EMP;
         return this;
     }
@@ -5481,7 +5231,7 @@ public class CADEMP implements Serializable {
     * return RNTC_EMP
     * @generated
     */
-    public java.lang.String getRNTC_EMP() {
+    public String getRNTC_EMP() {
         return this.RNTC_EMP;
     }
 
@@ -5490,7 +5240,7 @@ public class CADEMP implements Serializable {
     * @param RNTC_EMP RNTC_EMP
     * @generated
     */
-    public CADEMP setRNTC_EMP(java.lang.String RNTC_EMP) {
+    public CADEMP setRNTC_EMP(String RNTC_EMP) {
         this.RNTC_EMP = RNTC_EMP;
         return this;
     }
@@ -5499,7 +5249,7 @@ public class CADEMP implements Serializable {
     * return RQFA_EMP
     * @generated
     */
-    public java.lang.String getRQFA_EMP() {
+    public String getRQFA_EMP() {
         return this.RQFA_EMP;
     }
 
@@ -5508,7 +5258,7 @@ public class CADEMP implements Serializable {
     * @param RQFA_EMP RQFA_EMP
     * @generated
     */
-    public CADEMP setRQFA_EMP(java.lang.String RQFA_EMP) {
+    public CADEMP setRQFA_EMP(String RQFA_EMP) {
         this.RQFA_EMP = RQFA_EMP;
         return this;
     }
@@ -5517,7 +5267,7 @@ public class CADEMP implements Serializable {
     * return RREC_EMP
     * @generated
     */
-    public java.lang.String getRREC_EMP() {
+    public String getRREC_EMP() {
         return this.RREC_EMP;
     }
 
@@ -5526,7 +5276,7 @@ public class CADEMP implements Serializable {
     * @param RREC_EMP RREC_EMP
     * @generated
     */
-    public CADEMP setRREC_EMP(java.lang.String RREC_EMP) {
+    public CADEMP setRREC_EMP(String RREC_EMP) {
         this.RREC_EMP = RREC_EMP;
         return this;
     }
@@ -5535,7 +5285,7 @@ public class CADEMP implements Serializable {
     * return RVAL_CND
     * @generated
     */
-    public java.lang.String getRVAL_CND() {
+    public String getRVAL_CND() {
         return this.RVAL_CND;
     }
 
@@ -5544,7 +5294,7 @@ public class CADEMP implements Serializable {
     * @param RVAL_CND RVAL_CND
     * @generated
     */
-    public CADEMP setRVAL_CND(java.lang.String RVAL_CND) {
+    public CADEMP setRVAL_CND(String RVAL_CND) {
         this.RVAL_CND = RVAL_CND;
         return this;
     }
@@ -5553,7 +5303,7 @@ public class CADEMP implements Serializable {
     * return SAPM_EMP
     * @generated
     */
-    public java.lang.String getSAPM_EMP() {
+    public String getSAPM_EMP() {
         return this.SAPM_EMP;
     }
 
@@ -5562,7 +5312,7 @@ public class CADEMP implements Serializable {
     * @param SAPM_EMP SAPM_EMP
     * @generated
     */
-    public CADEMP setSAPM_EMP(java.lang.String SAPM_EMP) {
+    public CADEMP setSAPM_EMP(String SAPM_EMP) {
         this.SAPM_EMP = SAPM_EMP;
         return this;
     }
@@ -5571,7 +5321,7 @@ public class CADEMP implements Serializable {
     * return SCAN_EMP
     * @generated
     */
-    public java.lang.String getSCAN_EMP() {
+    public String getSCAN_EMP() {
         return this.SCAN_EMP;
     }
 
@@ -5580,7 +5330,7 @@ public class CADEMP implements Serializable {
     * @param SCAN_EMP SCAN_EMP
     * @generated
     */
-    public CADEMP setSCAN_EMP(java.lang.String SCAN_EMP) {
+    public CADEMP setSCAN_EMP(String SCAN_EMP) {
         this.SCAN_EMP = SCAN_EMP;
         return this;
     }
@@ -5589,7 +5339,7 @@ public class CADEMP implements Serializable {
     * return SCNF_EMP
     * @generated
     */
-    public java.lang.String getSCNF_EMP() {
+    public String getSCNF_EMP() {
         return this.SCNF_EMP;
     }
 
@@ -5598,7 +5348,7 @@ public class CADEMP implements Serializable {
     * @param SCNF_EMP SCNF_EMP
     * @generated
     */
-    public CADEMP setSCNF_EMP(java.lang.String SCNF_EMP) {
+    public CADEMP setSCNF_EMP(String SCNF_EMP) {
         this.SCNF_EMP = SCNF_EMP;
         return this;
     }
@@ -5607,7 +5357,7 @@ public class CADEMP implements Serializable {
     * return SCST_EMP
     * @generated
     */
-    public java.lang.String getSCST_EMP() {
+    public String getSCST_EMP() {
         return this.SCST_EMP;
     }
 
@@ -5616,7 +5366,7 @@ public class CADEMP implements Serializable {
     * @param SCST_EMP SCST_EMP
     * @generated
     */
-    public CADEMP setSCST_EMP(java.lang.String SCST_EMP) {
+    public CADEMP setSCST_EMP(String SCST_EMP) {
         this.SCST_EMP = SCST_EMP;
         return this;
     }
@@ -5625,7 +5375,7 @@ public class CADEMP implements Serializable {
     * return SENV_EMP
     * @generated
     */
-    public java.lang.String getSENV_EMP() {
+    public String getSENV_EMP() {
         return this.SENV_EMP;
     }
 
@@ -5634,7 +5384,7 @@ public class CADEMP implements Serializable {
     * @param SENV_EMP SENV_EMP
     * @generated
     */
-    public CADEMP setSENV_EMP(java.lang.String SENV_EMP) {
+    public CADEMP setSENV_EMP(String SENV_EMP) {
         this.SENV_EMP = SENV_EMP;
         return this;
     }
@@ -5643,7 +5393,7 @@ public class CADEMP implements Serializable {
     * return SHAB_EMP
     * @generated
     */
-    public java.lang.String getSHAB_EMP() {
+    public String getSHAB_EMP() {
         return this.SHAB_EMP;
     }
 
@@ -5652,7 +5402,7 @@ public class CADEMP implements Serializable {
     * @param SHAB_EMP SHAB_EMP
     * @generated
     */
-    public CADEMP setSHAB_EMP(java.lang.String SHAB_EMP) {
+    public CADEMP setSHAB_EMP(String SHAB_EMP) {
         this.SHAB_EMP = SHAB_EMP;
         return this;
     }
@@ -5661,7 +5411,7 @@ public class CADEMP implements Serializable {
     * return SINI_EMP
     * @generated
     */
-    public java.lang.String getSINI_EMP() {
+    public String getSINI_EMP() {
         return this.SINI_EMP;
     }
 
@@ -5670,7 +5420,7 @@ public class CADEMP implements Serializable {
     * @param SINI_EMP SINI_EMP
     * @generated
     */
-    public CADEMP setSINI_EMP(java.lang.String SINI_EMP) {
+    public CADEMP setSINI_EMP(String SINI_EMP) {
         this.SINI_EMP = SINI_EMP;
         return this;
     }
@@ -5679,7 +5429,7 @@ public class CADEMP implements Serializable {
     * return SINP_EMP
     * @generated
     */
-    public java.lang.String getSINP_EMP() {
+    public String getSINP_EMP() {
         return this.SINP_EMP;
     }
 
@@ -5688,7 +5438,7 @@ public class CADEMP implements Serializable {
     * @param SINP_EMP SINP_EMP
     * @generated
     */
-    public CADEMP setSINP_EMP(java.lang.String SINP_EMP) {
+    public CADEMP setSINP_EMP(String SINP_EMP) {
         this.SINP_EMP = SINP_EMP;
         return this;
     }
@@ -5697,7 +5447,7 @@ public class CADEMP implements Serializable {
     * return SINU_EMP
     * @generated
     */
-    public java.lang.String getSINU_EMP() {
+    public String getSINU_EMP() {
         return this.SINU_EMP;
     }
 
@@ -5706,7 +5456,7 @@ public class CADEMP implements Serializable {
     * @param SINU_EMP SINU_EMP
     * @generated
     */
-    public CADEMP setSINU_EMP(java.lang.String SINU_EMP) {
+    public CADEMP setSINU_EMP(String SINU_EMP) {
         this.SINU_EMP = SINU_EMP;
         return this;
     }
@@ -5715,7 +5465,7 @@ public class CADEMP implements Serializable {
     * return SITE_CND
     * @generated
     */
-    public java.lang.String getSITE_CND() {
+    public String getSITE_CND() {
         return this.SITE_CND;
     }
 
@@ -5724,7 +5474,7 @@ public class CADEMP implements Serializable {
     * @param SITE_CND SITE_CND
     * @generated
     */
-    public CADEMP setSITE_CND(java.lang.String SITE_CND) {
+    public CADEMP setSITE_CND(String SITE_CND) {
         this.SITE_CND = SITE_CND;
         return this;
     }
@@ -5733,7 +5483,7 @@ public class CADEMP implements Serializable {
     * return SITU_EMP
     * @generated
     */
-    public java.lang.String getSITU_EMP() {
+    public String getSITU_EMP() {
         return this.SITU_EMP;
     }
 
@@ -5742,7 +5492,7 @@ public class CADEMP implements Serializable {
     * @param SITU_EMP SITU_EMP
     * @generated
     */
-    public CADEMP setSITU_EMP(java.lang.String SITU_EMP) {
+    public CADEMP setSITU_EMP(String SITU_EMP) {
         this.SITU_EMP = SITU_EMP;
         return this;
     }
@@ -5751,7 +5501,7 @@ public class CADEMP implements Serializable {
     * return SLOG_EMP
     * @generated
     */
-    public java.lang.String getSLOG_EMP() {
+    public String getSLOG_EMP() {
         return this.SLOG_EMP;
     }
 
@@ -5760,7 +5510,7 @@ public class CADEMP implements Serializable {
     * @param SLOG_EMP SLOG_EMP
     * @generated
     */
-    public CADEMP setSLOG_EMP(java.lang.String SLOG_EMP) {
+    public CADEMP setSLOG_EMP(String SLOG_EMP) {
         this.SLOG_EMP = SLOG_EMP;
         return this;
     }
@@ -5769,7 +5519,7 @@ public class CADEMP implements Serializable {
     * return SNFC_EMP
     * @generated
     */
-    public java.lang.String getSNFC_EMP() {
+    public String getSNFC_EMP() {
         return this.SNFC_EMP;
     }
 
@@ -5778,7 +5528,7 @@ public class CADEMP implements Serializable {
     * @param SNFC_EMP SNFC_EMP
     * @generated
     */
-    public CADEMP setSNFC_EMP(java.lang.String SNFC_EMP) {
+    public CADEMP setSNFC_EMP(String SNFC_EMP) {
         this.SNFC_EMP = SNFC_EMP;
         return this;
     }
@@ -5787,7 +5537,7 @@ public class CADEMP implements Serializable {
     * return SOUT_EMP
     * @generated
     */
-    public java.lang.String getSOUT_EMP() {
+    public String getSOUT_EMP() {
         return this.SOUT_EMP;
     }
 
@@ -5796,7 +5546,7 @@ public class CADEMP implements Serializable {
     * @param SOUT_EMP SOUT_EMP
     * @generated
     */
-    public CADEMP setSOUT_EMP(java.lang.String SOUT_EMP) {
+    public CADEMP setSOUT_EMP(String SOUT_EMP) {
         this.SOUT_EMP = SOUT_EMP;
         return this;
     }
@@ -5805,7 +5555,7 @@ public class CADEMP implements Serializable {
     * return SPAT_EMP
     * @generated
     */
-    public java.lang.String getSPAT_EMP() {
+    public String getSPAT_EMP() {
         return this.SPAT_EMP;
     }
 
@@ -5814,7 +5564,7 @@ public class CADEMP implements Serializable {
     * @param SPAT_EMP SPAT_EMP
     * @generated
     */
-    public CADEMP setSPAT_EMP(java.lang.String SPAT_EMP) {
+    public CADEMP setSPAT_EMP(String SPAT_EMP) {
         this.SPAT_EMP = SPAT_EMP;
         return this;
     }
@@ -5823,7 +5573,7 @@ public class CADEMP implements Serializable {
     * return SPCE_EMP
     * @generated
     */
-    public java.lang.Integer getSPCE_EMP() {
+    public Integer getSPCE_EMP() {
         return this.SPCE_EMP;
     }
 
@@ -5832,7 +5582,7 @@ public class CADEMP implements Serializable {
     * @param SPCE_EMP SPCE_EMP
     * @generated
     */
-    public CADEMP setSPCE_EMP(java.lang.Integer SPCE_EMP) {
+    public CADEMP setSPCE_EMP(Integer SPCE_EMP) {
         this.SPCE_EMP = SPCE_EMP;
         return this;
     }
@@ -5841,7 +5591,7 @@ public class CADEMP implements Serializable {
     * return SPIT_EMP
     * @generated
     */
-    public java.lang.String getSPIT_EMP() {
+    public String getSPIT_EMP() {
         return this.SPIT_EMP;
     }
 
@@ -5850,7 +5600,7 @@ public class CADEMP implements Serializable {
     * @param SPIT_EMP SPIT_EMP
     * @generated
     */
-    public CADEMP setSPIT_EMP(java.lang.String SPIT_EMP) {
+    public CADEMP setSPIT_EMP(String SPIT_EMP) {
         this.SPIT_EMP = SPIT_EMP;
         return this;
     }
@@ -5859,7 +5609,7 @@ public class CADEMP implements Serializable {
     * return SPMA_EMP
     * @generated
     */
-    public java.lang.String getSPMA_EMP() {
+    public String getSPMA_EMP() {
         return this.SPMA_EMP;
     }
 
@@ -5868,7 +5618,7 @@ public class CADEMP implements Serializable {
     * @param SPMA_EMP SPMA_EMP
     * @generated
     */
-    public CADEMP setSPMA_EMP(java.lang.String SPMA_EMP) {
+    public CADEMP setSPMA_EMP(String SPMA_EMP) {
         this.SPMA_EMP = SPMA_EMP;
         return this;
     }
@@ -5877,7 +5627,7 @@ public class CADEMP implements Serializable {
     * return SPNA_EMP
     * @generated
     */
-    public java.lang.String getSPNA_EMP() {
+    public String getSPNA_EMP() {
         return this.SPNA_EMP;
     }
 
@@ -5886,7 +5636,7 @@ public class CADEMP implements Serializable {
     * @param SPNA_EMP SPNA_EMP
     * @generated
     */
-    public CADEMP setSPNA_EMP(java.lang.String SPNA_EMP) {
+    public CADEMP setSPNA_EMP(String SPNA_EMP) {
         this.SPNA_EMP = SPNA_EMP;
         return this;
     }
@@ -5895,7 +5645,7 @@ public class CADEMP implements Serializable {
     * return SPTC_EMP
     * @generated
     */
-    public java.lang.String getSPTC_EMP() {
+    public String getSPTC_EMP() {
         return this.SPTC_EMP;
     }
 
@@ -5904,7 +5654,7 @@ public class CADEMP implements Serializable {
     * @param SPTC_EMP SPTC_EMP
     * @generated
     */
-    public CADEMP setSPTC_EMP(java.lang.String SPTC_EMP) {
+    public CADEMP setSPTC_EMP(String SPTC_EMP) {
         this.SPTC_EMP = SPTC_EMP;
         return this;
     }
@@ -5913,7 +5663,7 @@ public class CADEMP implements Serializable {
     * return SRES_EMP
     * @generated
     */
-    public java.lang.String getSRES_EMP() {
+    public String getSRES_EMP() {
         return this.SRES_EMP;
     }
 
@@ -5922,7 +5672,7 @@ public class CADEMP implements Serializable {
     * @param SRES_EMP SRES_EMP
     * @generated
     */
-    public CADEMP setSRES_EMP(java.lang.String SRES_EMP) {
+    public CADEMP setSRES_EMP(String SRES_EMP) {
         this.SRES_EMP = SRES_EMP;
         return this;
     }
@@ -5931,7 +5681,7 @@ public class CADEMP implements Serializable {
     * return SRET_EMP
     * @generated
     */
-    public java.lang.String getSRET_EMP() {
+    public String getSRET_EMP() {
         return this.SRET_EMP;
     }
 
@@ -5940,7 +5690,7 @@ public class CADEMP implements Serializable {
     * @param SRET_EMP SRET_EMP
     * @generated
     */
-    public CADEMP setSRET_EMP(java.lang.String SRET_EMP) {
+    public CADEMP setSRET_EMP(String SRET_EMP) {
         this.SRET_EMP = SRET_EMP;
         return this;
     }
@@ -5949,7 +5699,7 @@ public class CADEMP implements Serializable {
     * return SROU_EMP
     * @generated
     */
-    public java.lang.String getSROU_EMP() {
+    public String getSROU_EMP() {
         return this.SROU_EMP;
     }
 
@@ -5958,7 +5708,7 @@ public class CADEMP implements Serializable {
     * @param SROU_EMP SROU_EMP
     * @generated
     */
-    public CADEMP setSROU_EMP(java.lang.String SROU_EMP) {
+    public CADEMP setSROU_EMP(String SROU_EMP) {
         this.SROU_EMP = SROU_EMP;
         return this;
     }
@@ -5967,7 +5717,7 @@ public class CADEMP implements Serializable {
     * return SWCA_EMP
     * @generated
     */
-    public java.lang.String getSWCA_EMP() {
+    public String getSWCA_EMP() {
         return this.SWCA_EMP;
     }
 
@@ -5976,7 +5726,7 @@ public class CADEMP implements Serializable {
     * @param SWCA_EMP SWCA_EMP
     * @generated
     */
-    public CADEMP setSWCA_EMP(java.lang.String SWCA_EMP) {
+    public CADEMP setSWCA_EMP(String SWCA_EMP) {
         this.SWCA_EMP = SWCA_EMP;
         return this;
     }
@@ -5985,7 +5735,7 @@ public class CADEMP implements Serializable {
     * return SWCO_EMP
     * @generated
     */
-    public java.lang.String getSWCO_EMP() {
+    public String getSWCO_EMP() {
         return this.SWCO_EMP;
     }
 
@@ -5994,7 +5744,7 @@ public class CADEMP implements Serializable {
     * @param SWCO_EMP SWCO_EMP
     * @generated
     */
-    public CADEMP setSWCO_EMP(java.lang.String SWCO_EMP) {
+    public CADEMP setSWCO_EMP(String SWCO_EMP) {
         this.SWCO_EMP = SWCO_EMP;
         return this;
     }
@@ -6003,7 +5753,7 @@ public class CADEMP implements Serializable {
     * return SWIN_EMP
     * @generated
     */
-    public java.lang.String getSWIN_EMP() {
+    public String getSWIN_EMP() {
         return this.SWIN_EMP;
     }
 
@@ -6012,7 +5762,7 @@ public class CADEMP implements Serializable {
     * @param SWIN_EMP SWIN_EMP
     * @generated
     */
-    public CADEMP setSWIN_EMP(java.lang.String SWIN_EMP) {
+    public CADEMP setSWIN_EMP(String SWIN_EMP) {
         this.SWIN_EMP = SWIN_EMP;
         return this;
     }
@@ -6021,7 +5771,7 @@ public class CADEMP implements Serializable {
     * return SWRC_EMP
     * @generated
     */
-    public java.lang.String getSWRC_EMP() {
+    public String getSWRC_EMP() {
         return this.SWRC_EMP;
     }
 
@@ -6030,7 +5780,7 @@ public class CADEMP implements Serializable {
     * @param SWRC_EMP SWRC_EMP
     * @generated
     */
-    public CADEMP setSWRC_EMP(java.lang.String SWRC_EMP) {
+    public CADEMP setSWRC_EMP(String SWRC_EMP) {
         this.SWRC_EMP = SWRC_EMP;
         return this;
     }
@@ -6039,7 +5789,7 @@ public class CADEMP implements Serializable {
     * return SWRT_EMP
     * @generated
     */
-    public java.lang.String getSWRT_EMP() {
+    public String getSWRT_EMP() {
         return this.SWRT_EMP;
     }
 
@@ -6048,7 +5798,7 @@ public class CADEMP implements Serializable {
     * @param SWRT_EMP SWRT_EMP
     * @generated
     */
-    public CADEMP setSWRT_EMP(java.lang.String SWRT_EMP) {
+    public CADEMP setSWRT_EMP(String SWRT_EMP) {
         this.SWRT_EMP = SWRT_EMP;
         return this;
     }
@@ -6057,7 +5807,7 @@ public class CADEMP implements Serializable {
     * return SWST_EMP
     * @generated
     */
-    public java.lang.String getSWST_EMP() {
+    public String getSWST_EMP() {
         return this.SWST_EMP;
     }
 
@@ -6066,7 +5816,7 @@ public class CADEMP implements Serializable {
     * @param SWST_EMP SWST_EMP
     * @generated
     */
-    public CADEMP setSWST_EMP(java.lang.String SWST_EMP) {
+    public CADEMP setSWST_EMP(String SWST_EMP) {
         this.SWST_EMP = SWST_EMP;
         return this;
     }
@@ -6075,7 +5825,7 @@ public class CADEMP implements Serializable {
     * return TBLO_SEM
     * @generated
     */
-    public java.lang.String getTBLO_SEM() {
+    public String getTBLO_SEM() {
         return this.TBLO_SEM;
     }
 
@@ -6084,7 +5834,7 @@ public class CADEMP implements Serializable {
     * @param TBLO_SEM TBLO_SEM
     * @generated
     */
-    public CADEMP setTBLO_SEM(java.lang.String TBLO_SEM) {
+    public CADEMP setTBLO_SEM(String TBLO_SEM) {
         this.TBLO_SEM = TBLO_SEM;
         return this;
     }
@@ -6093,7 +5843,7 @@ public class CADEMP implements Serializable {
     * return TCCO_EMP
     * @generated
     */
-    public java.lang.Double getTCCO_EMP() {
+    public Double getTCCO_EMP() {
         return this.TCCO_EMP;
     }
 
@@ -6102,7 +5852,7 @@ public class CADEMP implements Serializable {
     * @param TCCO_EMP TCCO_EMP
     * @generated
     */
-    public CADEMP setTCCO_EMP(java.lang.Double TCCO_EMP) {
+    public CADEMP setTCCO_EMP(Double TCCO_EMP) {
         this.TCCO_EMP = TCCO_EMP;
         return this;
     }
@@ -6111,7 +5861,7 @@ public class CADEMP implements Serializable {
     * return TCRE_EMP
     * @generated
     */
-    public java.lang.Double getTCRE_EMP() {
+    public Double getTCRE_EMP() {
         return this.TCRE_EMP;
     }
 
@@ -6120,7 +5870,7 @@ public class CADEMP implements Serializable {
     * @param TCRE_EMP TCRE_EMP
     * @generated
     */
-    public CADEMP setTCRE_EMP(java.lang.Double TCRE_EMP) {
+    public CADEMP setTCRE_EMP(Double TCRE_EMP) {
         this.TCRE_EMP = TCRE_EMP;
         return this;
     }
@@ -6129,7 +5879,7 @@ public class CADEMP implements Serializable {
     * return TIPO_EMP
     * @generated
     */
-    public java.lang.String getTIPO_EMP() {
+    public String getTIPO_EMP() {
         return this.TIPO_EMP;
     }
 
@@ -6138,7 +5888,7 @@ public class CADEMP implements Serializable {
     * @param TIPO_EMP TIPO_EMP
     * @generated
     */
-    public CADEMP setTIPO_EMP(java.lang.String TIPO_EMP) {
+    public CADEMP setTIPO_EMP(String TIPO_EMP) {
         this.TIPO_EMP = TIPO_EMP;
         return this;
     }
@@ -6147,7 +5897,7 @@ public class CADEMP implements Serializable {
     * return TJUR_EMP
     * @generated
     */
-    public java.lang.String getTJUR_EMP() {
+    public String getTJUR_EMP() {
         return this.TJUR_EMP;
     }
 
@@ -6156,7 +5906,7 @@ public class CADEMP implements Serializable {
     * @param TJUR_EMP TJUR_EMP
     * @generated
     */
-    public CADEMP setTJUR_EMP(java.lang.String TJUR_EMP) {
+    public CADEMP setTJUR_EMP(String TJUR_EMP) {
         this.TJUR_EMP = TJUR_EMP;
         return this;
     }
@@ -6165,7 +5915,7 @@ public class CADEMP implements Serializable {
     * return TPAG_EMP
     * @generated
     */
-    public java.lang.String getTPAG_EMP() {
+    public String getTPAG_EMP() {
         return this.TPAG_EMP;
     }
 
@@ -6174,7 +5924,7 @@ public class CADEMP implements Serializable {
     * @param TPAG_EMP TPAG_EMP
     * @generated
     */
-    public CADEMP setTPAG_EMP(java.lang.String TPAG_EMP) {
+    public CADEMP setTPAG_EMP(String TPAG_EMP) {
         this.TPAG_EMP = TPAG_EMP;
         return this;
     }
@@ -6183,7 +5933,7 @@ public class CADEMP implements Serializable {
     * return TVAL_CND
     * @generated
     */
-    public java.lang.String getTVAL_CND() {
+    public String getTVAL_CND() {
         return this.TVAL_CND;
     }
 
@@ -6192,7 +5942,7 @@ public class CADEMP implements Serializable {
     * @param TVAL_CND TVAL_CND
     * @generated
     */
-    public CADEMP setTVAL_CND(java.lang.String TVAL_CND) {
+    public CADEMP setTVAL_CND(String TVAL_CND) {
         this.TVAL_CND = TVAL_CND;
         return this;
     }
@@ -6201,7 +5951,7 @@ public class CADEMP implements Serializable {
     * return UCFO_EMP
     * @generated
     */
-    public java.lang.String getUCFO_EMP() {
+    public String getUCFO_EMP() {
         return this.UCFO_EMP;
     }
 
@@ -6210,7 +5960,7 @@ public class CADEMP implements Serializable {
     * @param UCFO_EMP UCFO_EMP
     * @generated
     */
-    public CADEMP setUCFO_EMP(java.lang.String UCFO_EMP) {
+    public CADEMP setUCFO_EMP(String UCFO_EMP) {
         this.UCFO_EMP = UCFO_EMP;
         return this;
     }
@@ -6219,7 +5969,7 @@ public class CADEMP implements Serializable {
     * return UCRC_EMP
     * @generated
     */
-    public java.lang.String getUCRC_EMP() {
+    public String getUCRC_EMP() {
         return this.UCRC_EMP;
     }
 
@@ -6228,7 +5978,7 @@ public class CADEMP implements Serializable {
     * @param UCRC_EMP UCRC_EMP
     * @generated
     */
-    public CADEMP setUCRC_EMP(java.lang.String UCRC_EMP) {
+    public CADEMP setUCRC_EMP(String UCRC_EMP) {
         this.UCRC_EMP = UCRC_EMP;
         return this;
     }
@@ -6237,7 +5987,7 @@ public class CADEMP implements Serializable {
     * return UECF_EMP
     * @generated
     */
-    public java.lang.String getUECF_EMP() {
+    public String getUECF_EMP() {
         return this.UECF_EMP;
     }
 
@@ -6246,7 +5996,7 @@ public class CADEMP implements Serializable {
     * @param UECF_EMP UECF_EMP
     * @generated
     */
-    public CADEMP setUECF_EMP(java.lang.String UECF_EMP) {
+    public CADEMP setUECF_EMP(String UECF_EMP) {
         this.UECF_EMP = UECF_EMP;
         return this;
     }
@@ -6255,7 +6005,7 @@ public class CADEMP implements Serializable {
     * return UPAF_EMP
     * @generated
     */
-    public java.lang.String getUPAF_EMP() {
+    public String getUPAF_EMP() {
         return this.UPAF_EMP;
     }
 
@@ -6264,7 +6014,7 @@ public class CADEMP implements Serializable {
     * @param UPAF_EMP UPAF_EMP
     * @generated
     */
-    public CADEMP setUPAF_EMP(java.lang.String UPAF_EMP) {
+    public CADEMP setUPAF_EMP(String UPAF_EMP) {
         this.UPAF_EMP = UPAF_EMP;
         return this;
     }
@@ -6273,7 +6023,7 @@ public class CADEMP implements Serializable {
     * return UTEV_EMP
     * @generated
     */
-    public java.lang.String getUTEV_EMP() {
+    public String getUTEV_EMP() {
         return this.UTEV_EMP;
     }
 
@@ -6282,7 +6032,7 @@ public class CADEMP implements Serializable {
     * @param UTEV_EMP UTEV_EMP
     * @generated
     */
-    public CADEMP setUTEV_EMP(java.lang.String UTEV_EMP) {
+    public CADEMP setUTEV_EMP(String UTEV_EMP) {
         this.UTEV_EMP = UTEV_EMP;
         return this;
     }
@@ -6309,7 +6059,7 @@ public class CADEMP implements Serializable {
     * return VEND_EMP
     * @generated
     */
-    public java.lang.String getVEND_EMP() {
+    public String getVEND_EMP() {
         return this.VEND_EMP;
     }
 
@@ -6318,7 +6068,7 @@ public class CADEMP implements Serializable {
     * @param VEND_EMP VEND_EMP
     * @generated
     */
-    public CADEMP setVEND_EMP(java.lang.String VEND_EMP) {
+    public CADEMP setVEND_EMP(String VEND_EMP) {
         this.VEND_EMP = VEND_EMP;
         return this;
     }
@@ -6327,7 +6077,7 @@ public class CADEMP implements Serializable {
     * return VERS_EMP
     * @generated
     */
-    public java.lang.String getVERS_EMP() {
+    public String getVERS_EMP() {
         return this.VERS_EMP;
     }
 
@@ -6336,7 +6086,7 @@ public class CADEMP implements Serializable {
     * @param VERS_EMP VERS_EMP
     * @generated
     */
-    public CADEMP setVERS_EMP(java.lang.String VERS_EMP) {
+    public CADEMP setVERS_EMP(String VERS_EMP) {
         this.VERS_EMP = VERS_EMP;
         return this;
     }
@@ -6345,7 +6095,7 @@ public class CADEMP implements Serializable {
     * return VIIM_EMP
     * @generated
     */
-    public java.lang.String getVIIM_EMP() {
+    public String getVIIM_EMP() {
         return this.VIIM_EMP;
     }
 
@@ -6354,7 +6104,7 @@ public class CADEMP implements Serializable {
     * @param VIIM_EMP VIIM_EMP
     * @generated
     */
-    public CADEMP setVIIM_EMP(java.lang.String VIIM_EMP) {
+    public CADEMP setVIIM_EMP(String VIIM_EMP) {
         this.VIIM_EMP = VIIM_EMP;
         return this;
     }
@@ -6363,7 +6113,7 @@ public class CADEMP implements Serializable {
     * return VMCT_EMP
     * @generated
     */
-    public java.lang.String getVMCT_EMP() {
+    public String getVMCT_EMP() {
         return this.VMCT_EMP;
     }
 
@@ -6372,7 +6122,7 @@ public class CADEMP implements Serializable {
     * @param VMCT_EMP VMCT_EMP
     * @generated
     */
-    public CADEMP setVMCT_EMP(java.lang.String VMCT_EMP) {
+    public CADEMP setVMCT_EMP(String VMCT_EMP) {
         this.VMCT_EMP = VMCT_EMP;
         return this;
     }
@@ -6381,7 +6131,7 @@ public class CADEMP implements Serializable {
     * return VNF4_EMP
     * @generated
     */
-    public java.lang.String getVNF4_EMP() {
+    public String getVNF4_EMP() {
         return this.VNF4_EMP;
     }
 
@@ -6390,7 +6140,7 @@ public class CADEMP implements Serializable {
     * @param VNF4_EMP VNF4_EMP
     * @generated
     */
-    public CADEMP setVNF4_EMP(java.lang.String VNF4_EMP) {
+    public CADEMP setVNF4_EMP(String VNF4_EMP) {
         this.VNF4_EMP = VNF4_EMP;
         return this;
     }
@@ -6399,7 +6149,7 @@ public class CADEMP implements Serializable {
     * return VTAX_SEM
     * @generated
     */
-    public java.lang.String getVTAX_SEM() {
+    public String getVTAX_SEM() {
         return this.VTAX_SEM;
     }
 
@@ -6408,7 +6158,7 @@ public class CADEMP implements Serializable {
     * @param VTAX_SEM VTAX_SEM
     * @generated
     */
-    public CADEMP setVTAX_SEM(java.lang.String VTAX_SEM) {
+    public CADEMP setVTAX_SEM(String VTAX_SEM) {
         this.VTAX_SEM = VTAX_SEM;
         return this;
     }
@@ -6417,7 +6167,7 @@ public class CADEMP implements Serializable {
     * return WCAN_EMP
     * @generated
     */
-    public java.lang.String getWCAN_EMP() {
+    public String getWCAN_EMP() {
         return this.WCAN_EMP;
     }
 
@@ -6426,7 +6176,7 @@ public class CADEMP implements Serializable {
     * @param WCAN_EMP WCAN_EMP
     * @generated
     */
-    public CADEMP setWCAN_EMP(java.lang.String WCAN_EMP) {
+    public CADEMP setWCAN_EMP(String WCAN_EMP) {
         this.WCAN_EMP = WCAN_EMP;
         return this;
     }
@@ -6435,7 +6185,7 @@ public class CADEMP implements Serializable {
     * return WCNF_EMP
     * @generated
     */
-    public java.lang.String getWCNF_EMP() {
+    public String getWCNF_EMP() {
         return this.WCNF_EMP;
     }
 
@@ -6444,7 +6194,7 @@ public class CADEMP implements Serializable {
     * @param WCNF_EMP WCNF_EMP
     * @generated
     */
-    public CADEMP setWCNF_EMP(java.lang.String WCNF_EMP) {
+    public CADEMP setWCNF_EMP(String WCNF_EMP) {
         this.WCNF_EMP = WCNF_EMP;
         return this;
     }
@@ -6453,7 +6203,7 @@ public class CADEMP implements Serializable {
     * return WCST_EMP
     * @generated
     */
-    public java.lang.String getWCST_EMP() {
+    public String getWCST_EMP() {
         return this.WCST_EMP;
     }
 
@@ -6462,7 +6212,7 @@ public class CADEMP implements Serializable {
     * @param WCST_EMP WCST_EMP
     * @generated
     */
-    public CADEMP setWCST_EMP(java.lang.String WCST_EMP) {
+    public CADEMP setWCST_EMP(String WCST_EMP) {
         this.WCST_EMP = WCST_EMP;
         return this;
     }
@@ -6471,7 +6221,7 @@ public class CADEMP implements Serializable {
     * return WENV_EMP
     * @generated
     */
-    public java.lang.String getWENV_EMP() {
+    public String getWENV_EMP() {
         return this.WENV_EMP;
     }
 
@@ -6480,7 +6230,7 @@ public class CADEMP implements Serializable {
     * @param WENV_EMP WENV_EMP
     * @generated
     */
-    public CADEMP setWENV_EMP(java.lang.String WENV_EMP) {
+    public CADEMP setWENV_EMP(String WENV_EMP) {
         this.WENV_EMP = WENV_EMP;
         return this;
     }
@@ -6489,7 +6239,7 @@ public class CADEMP implements Serializable {
     * return WESE_EMP
     * @generated
     */
-    public java.lang.String getWESE_EMP() {
+    public String getWESE_EMP() {
         return this.WESE_EMP;
     }
 
@@ -6498,7 +6248,7 @@ public class CADEMP implements Serializable {
     * @param WESE_EMP WESE_EMP
     * @generated
     */
-    public CADEMP setWESE_EMP(java.lang.String WESE_EMP) {
+    public CADEMP setWESE_EMP(String WESE_EMP) {
         this.WESE_EMP = WESE_EMP;
         return this;
     }
@@ -6507,7 +6257,7 @@ public class CADEMP implements Serializable {
     * return WINU_EMP
     * @generated
     */
-    public java.lang.String getWINU_EMP() {
+    public String getWINU_EMP() {
         return this.WINU_EMP;
     }
 
@@ -6516,7 +6266,7 @@ public class CADEMP implements Serializable {
     * @param WINU_EMP WINU_EMP
     * @generated
     */
-    public CADEMP setWINU_EMP(java.lang.String WINU_EMP) {
+    public CADEMP setWINU_EMP(String WINU_EMP) {
         this.WINU_EMP = WINU_EMP;
         return this;
     }
@@ -6525,7 +6275,7 @@ public class CADEMP implements Serializable {
     * return WRET_EMP
     * @generated
     */
-    public java.lang.String getWRET_EMP() {
+    public String getWRET_EMP() {
         return this.WRET_EMP;
     }
 
@@ -6534,7 +6284,7 @@ public class CADEMP implements Serializable {
     * @param WRET_EMP WRET_EMP
     * @generated
     */
-    public CADEMP setWRET_EMP(java.lang.String WRET_EMP) {
+    public CADEMP setWRET_EMP(String WRET_EMP) {
         this.WRET_EMP = WRET_EMP;
         return this;
     }
@@ -6543,7 +6293,7 @@ public class CADEMP implements Serializable {
     * return WSCA_EMP
     * @generated
     */
-    public java.lang.String getWSCA_EMP() {
+    public String getWSCA_EMP() {
         return this.WSCA_EMP;
     }
 
@@ -6552,7 +6302,7 @@ public class CADEMP implements Serializable {
     * @param WSCA_EMP WSCA_EMP
     * @generated
     */
-    public CADEMP setWSCA_EMP(java.lang.String WSCA_EMP) {
+    public CADEMP setWSCA_EMP(String WSCA_EMP) {
         this.WSCA_EMP = WSCA_EMP;
         return this;
     }
@@ -6561,7 +6311,7 @@ public class CADEMP implements Serializable {
     * return WSCO_EMP
     * @generated
     */
-    public java.lang.String getWSCO_EMP() {
+    public String getWSCO_EMP() {
         return this.WSCO_EMP;
     }
 
@@ -6570,7 +6320,7 @@ public class CADEMP implements Serializable {
     * @param WSCO_EMP WSCO_EMP
     * @generated
     */
-    public CADEMP setWSCO_EMP(java.lang.String WSCO_EMP) {
+    public CADEMP setWSCO_EMP(String WSCO_EMP) {
         this.WSCO_EMP = WSCO_EMP;
         return this;
     }
@@ -6579,7 +6329,7 @@ public class CADEMP implements Serializable {
     * return WSIN_EMP
     * @generated
     */
-    public java.lang.String getWSIN_EMP() {
+    public String getWSIN_EMP() {
         return this.WSIN_EMP;
     }
 
@@ -6588,7 +6338,7 @@ public class CADEMP implements Serializable {
     * @param WSIN_EMP WSIN_EMP
     * @generated
     */
-    public CADEMP setWSIN_EMP(java.lang.String WSIN_EMP) {
+    public CADEMP setWSIN_EMP(String WSIN_EMP) {
         this.WSIN_EMP = WSIN_EMP;
         return this;
     }
@@ -6597,7 +6347,7 @@ public class CADEMP implements Serializable {
     * return WSRC_EMP
     * @generated
     */
-    public java.lang.String getWSRC_EMP() {
+    public String getWSRC_EMP() {
         return this.WSRC_EMP;
     }
 
@@ -6606,7 +6356,7 @@ public class CADEMP implements Serializable {
     * @param WSRC_EMP WSRC_EMP
     * @generated
     */
-    public CADEMP setWSRC_EMP(java.lang.String WSRC_EMP) {
+    public CADEMP setWSRC_EMP(String WSRC_EMP) {
         this.WSRC_EMP = WSRC_EMP;
         return this;
     }
@@ -6615,7 +6365,7 @@ public class CADEMP implements Serializable {
     * return WSRT_EMP
     * @generated
     */
-    public java.lang.String getWSRT_EMP() {
+    public String getWSRT_EMP() {
         return this.WSRT_EMP;
     }
 
@@ -6624,7 +6374,7 @@ public class CADEMP implements Serializable {
     * @param WSRT_EMP WSRT_EMP
     * @generated
     */
-    public CADEMP setWSRT_EMP(java.lang.String WSRT_EMP) {
+    public CADEMP setWSRT_EMP(String WSRT_EMP) {
         this.WSRT_EMP = WSRT_EMP;
         return this;
     }
@@ -6633,7 +6383,7 @@ public class CADEMP implements Serializable {
     * return WSST_EMP
     * @generated
     */
-    public java.lang.String getWSST_EMP() {
+    public String getWSST_EMP() {
         return this.WSST_EMP;
     }
 
@@ -6642,7 +6392,7 @@ public class CADEMP implements Serializable {
     * @param WSST_EMP WSST_EMP
     * @generated
     */
-    public CADEMP setWSST_EMP(java.lang.String WSST_EMP) {
+    public CADEMP setWSST_EMP(String WSST_EMP) {
         this.WSST_EMP = WSST_EMP;
         return this;
     }

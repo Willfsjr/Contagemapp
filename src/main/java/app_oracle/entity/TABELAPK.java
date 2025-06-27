@@ -1,9 +1,7 @@
 package app_oracle.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
+import java.io.Serializable;
+
 
 
 /**
@@ -20,12 +18,12 @@ public class TABELAPK implements Serializable {
   /**
    * @generated
    */
-  private java.lang.String CODI_PSV;
+  private String CODI_PSV;
 
   /**
    * @generated
    */
-  private java.lang.Integer TABE_CTA;
+  private Integer TABE_CTA;
 
   /**
    * Construtor
@@ -39,7 +37,7 @@ public class TABELAPK implements Serializable {
    * return CODI_PSV
    * @generated
    */
-  public java.lang.String getCODI_PSV(){
+  public String getCODI_PSV(){
     return this.CODI_PSV;
   }
 
@@ -48,7 +46,7 @@ public class TABELAPK implements Serializable {
    * @param CODI_PSV CODI_PSV
    * @generated
    */
-  public TABELAPK setCODI_PSV(java.lang.String CODI_PSV){
+  public TABELAPK setCODI_PSV(String CODI_PSV){
     this.CODI_PSV = CODI_PSV;
     return this;
   }
@@ -57,7 +55,7 @@ public class TABELAPK implements Serializable {
    * return TABE_CTA
    * @generated
    */
-  public java.lang.Integer getTABE_CTA(){
+  public Integer getTABE_CTA(){
     return this.TABE_CTA;
   }
 
@@ -66,7 +64,7 @@ public class TABELAPK implements Serializable {
    * @param TABE_CTA TABE_CTA
    * @generated
    */
-  public TABELAPK setTABE_CTA(java.lang.Integer TABE_CTA){
+  public TABELAPK setTABE_CTA(Integer TABE_CTA){
     this.TABE_CTA = TABE_CTA;
     return this;
   }

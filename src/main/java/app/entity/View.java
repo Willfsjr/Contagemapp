@@ -1,18 +1,17 @@
 
 package app.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+import java.util.UUID;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela VIEW
@@ -21,9 +20,7 @@ import cronapp.framework.core.persistence.*;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "\"VIEW\"")
 @XmlRootElement
-@CronappSecurity(post = "Administrators", get = "Administrators", delete = "Administrators", put = "Administrators")
 @JsonFilter("app.entity.View")
-@CronappTable(role=CronappTableRole.ASSOCIATION_CLASS)
 public class View implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,9 +32,8 @@ public class View implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
     @Column(name = "id", nullable = false, insertable=true, updatable=true)
-        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
+        private String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
@@ -52,82 +48,73 @@ public class View implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Pattern")
     @Column(name = "pattern", nullable = false, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String pattern;
+        private String pattern;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="BOOLEAN", label="Get Method Allowed")
     @Column(name = "getMethodAllowed", nullable = false, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Boolean getMethodAllowed;
+        private Boolean getMethodAllowed;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="BOOLEAN", label="Head Method Allowed")
     @Column(name = "headMethodAllowed", nullable = false, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Boolean headMethodAllowed;
+        private Boolean headMethodAllowed;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="BOOLEAN", label="Put Method Allowed")
     @Column(name = "putMethodAllowed", nullable = false, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Boolean putMethodAllowed;
+        private Boolean putMethodAllowed;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="BOOLEAN", label="Post Method Allowed")
     @Column(name = "postMethodAllowed", nullable = false, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Boolean postMethodAllowed;
+        private Boolean postMethodAllowed;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="BOOLEAN", label="Patch Method Allowed")
     @Column(name = "patchMethodAllowed", nullable = false, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Boolean patchMethodAllowed;
+        private Boolean patchMethodAllowed;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="BOOLEAN", label="Delete Method Allowed")
     @Column(name = "deleteMethodAllowed", nullable = false, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Boolean deleteMethodAllowed;
+        private Boolean deleteMethodAllowed;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="BOOLEAN", label="Options Method Allowed")
     @Column(name = "optionsMethodAllowed", nullable = false, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Boolean optionsMethodAllowed;
+        private Boolean optionsMethodAllowed;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="BOOLEAN", label="Trace Method Allowed")
     @Column(name = "traceMethodAllowed", nullable = false, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Boolean traceMethodAllowed;
+        private Boolean traceMethodAllowed;
 
 
     /**
@@ -151,7 +138,7 @@ public class View implements Serializable {
     * return id
     * @generated
     */
-    public java.lang.String getId() {
+    public String getId() {
         return this.id;
     }
 
@@ -160,7 +147,7 @@ public class View implements Serializable {
     * @param id id
     * @generated
     */
-    public View setId(java.lang.String id) {
+    public View setId(String id) {
         this.id = id;
         return this;
     }
@@ -187,7 +174,7 @@ public class View implements Serializable {
     * return pattern
     * @generated
     */
-    public java.lang.String getPattern() {
+    public String getPattern() {
         return this.pattern;
     }
 
@@ -196,7 +183,7 @@ public class View implements Serializable {
     * @param pattern pattern
     * @generated
     */
-    public View setPattern(java.lang.String pattern) {
+    public View setPattern(String pattern) {
         this.pattern = pattern;
         return this;
     }
@@ -205,7 +192,7 @@ public class View implements Serializable {
     * return getMethodAllowed
     * @generated
     */
-    public java.lang.Boolean getGetMethodAllowed() {
+    public Boolean getGetMethodAllowed() {
         return this.getMethodAllowed;
     }
 
@@ -214,7 +201,7 @@ public class View implements Serializable {
     * @param getMethodAllowed getMethodAllowed
     * @generated
     */
-    public View setGetMethodAllowed(java.lang.Boolean getMethodAllowed) {
+    public View setGetMethodAllowed(Boolean getMethodAllowed) {
         this.getMethodAllowed = getMethodAllowed;
         return this;
     }
@@ -223,7 +210,7 @@ public class View implements Serializable {
     * return headMethodAllowed
     * @generated
     */
-    public java.lang.Boolean getHeadMethodAllowed() {
+    public Boolean getHeadMethodAllowed() {
         return this.headMethodAllowed;
     }
 
@@ -232,7 +219,7 @@ public class View implements Serializable {
     * @param headMethodAllowed headMethodAllowed
     * @generated
     */
-    public View setHeadMethodAllowed(java.lang.Boolean headMethodAllowed) {
+    public View setHeadMethodAllowed(Boolean headMethodAllowed) {
         this.headMethodAllowed = headMethodAllowed;
         return this;
     }
@@ -241,7 +228,7 @@ public class View implements Serializable {
     * return putMethodAllowed
     * @generated
     */
-    public java.lang.Boolean getPutMethodAllowed() {
+    public Boolean getPutMethodAllowed() {
         return this.putMethodAllowed;
     }
 
@@ -250,7 +237,7 @@ public class View implements Serializable {
     * @param putMethodAllowed putMethodAllowed
     * @generated
     */
-    public View setPutMethodAllowed(java.lang.Boolean putMethodAllowed) {
+    public View setPutMethodAllowed(Boolean putMethodAllowed) {
         this.putMethodAllowed = putMethodAllowed;
         return this;
     }
@@ -259,7 +246,7 @@ public class View implements Serializable {
     * return postMethodAllowed
     * @generated
     */
-    public java.lang.Boolean getPostMethodAllowed() {
+    public Boolean getPostMethodAllowed() {
         return this.postMethodAllowed;
     }
 
@@ -268,7 +255,7 @@ public class View implements Serializable {
     * @param postMethodAllowed postMethodAllowed
     * @generated
     */
-    public View setPostMethodAllowed(java.lang.Boolean postMethodAllowed) {
+    public View setPostMethodAllowed(Boolean postMethodAllowed) {
         this.postMethodAllowed = postMethodAllowed;
         return this;
     }
@@ -277,7 +264,7 @@ public class View implements Serializable {
     * return patchMethodAllowed
     * @generated
     */
-    public java.lang.Boolean getPatchMethodAllowed() {
+    public Boolean getPatchMethodAllowed() {
         return this.patchMethodAllowed;
     }
 
@@ -286,7 +273,7 @@ public class View implements Serializable {
     * @param patchMethodAllowed patchMethodAllowed
     * @generated
     */
-    public View setPatchMethodAllowed(java.lang.Boolean patchMethodAllowed) {
+    public View setPatchMethodAllowed(Boolean patchMethodAllowed) {
         this.patchMethodAllowed = patchMethodAllowed;
         return this;
     }
@@ -295,7 +282,7 @@ public class View implements Serializable {
     * return deleteMethodAllowed
     * @generated
     */
-    public java.lang.Boolean getDeleteMethodAllowed() {
+    public Boolean getDeleteMethodAllowed() {
         return this.deleteMethodAllowed;
     }
 
@@ -304,7 +291,7 @@ public class View implements Serializable {
     * @param deleteMethodAllowed deleteMethodAllowed
     * @generated
     */
-    public View setDeleteMethodAllowed(java.lang.Boolean deleteMethodAllowed) {
+    public View setDeleteMethodAllowed(Boolean deleteMethodAllowed) {
         this.deleteMethodAllowed = deleteMethodAllowed;
         return this;
     }
@@ -313,7 +300,7 @@ public class View implements Serializable {
     * return optionsMethodAllowed
     * @generated
     */
-    public java.lang.Boolean getOptionsMethodAllowed() {
+    public Boolean getOptionsMethodAllowed() {
         return this.optionsMethodAllowed;
     }
 
@@ -322,7 +309,7 @@ public class View implements Serializable {
     * @param optionsMethodAllowed optionsMethodAllowed
     * @generated
     */
-    public View setOptionsMethodAllowed(java.lang.Boolean optionsMethodAllowed) {
+    public View setOptionsMethodAllowed(Boolean optionsMethodAllowed) {
         this.optionsMethodAllowed = optionsMethodAllowed;
         return this;
     }
@@ -331,7 +318,7 @@ public class View implements Serializable {
     * return traceMethodAllowed
     * @generated
     */
-    public java.lang.Boolean getTraceMethodAllowed() {
+    public Boolean getTraceMethodAllowed() {
         return this.traceMethodAllowed;
     }
 
@@ -340,7 +327,7 @@ public class View implements Serializable {
     * @param traceMethodAllowed traceMethodAllowed
     * @generated
     */
-    public View setTraceMethodAllowed(java.lang.Boolean traceMethodAllowed) {
+    public View setTraceMethodAllowed(Boolean traceMethodAllowed) {
         this.traceMethodAllowed = traceMethodAllowed;
         return this;
     }

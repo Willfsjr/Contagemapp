@@ -1,18 +1,19 @@
 
 package app_cont.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+import java.util.UUID;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela FORMULARIO1
@@ -21,9 +22,7 @@ import cronapp.framework.core.persistence.*;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "\"FORMULARIO1\"")
 @XmlRootElement
-@CronappSecurity
 @JsonFilter("app_cont.entity.Formulario1")
-@CronappTable(role=CronappTableRole.CLASS)
 public class Formulario1 implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,25 +34,22 @@ public class Formulario1 implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
     @Column(name = "ID", nullable = false, length=0, insertable=true, updatable=true)
-        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
+        private String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="Quant Form 1")
     @Column(name = "QUANT_FORM1", nullable = true, unique = false, scale=17, insertable=true, updatable=true)
         
-        private java.lang.Double quantForm1;
+        private Double quantForm1;
 
 
     /**
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="Data Form 1")
     @Column(name = "DATA_FORM1", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date dataForm1;
@@ -89,7 +85,7 @@ public class Formulario1 implements Serializable {
     * return id
     * @generated
     */
-    public java.lang.String getId() {
+    public String getId() {
         return this.id;
     }
 
@@ -98,7 +94,7 @@ public class Formulario1 implements Serializable {
     * @param id id
     * @generated
     */
-    public Formulario1 setId(java.lang.String id) {
+    public Formulario1 setId(String id) {
         this.id = id;
         return this;
     }
@@ -107,7 +103,7 @@ public class Formulario1 implements Serializable {
     * return quantForm1
     * @generated
     */
-    public java.lang.Double getQuantForm1() {
+    public Double getQuantForm1() {
         return this.quantForm1;
     }
 
@@ -116,7 +112,7 @@ public class Formulario1 implements Serializable {
     * @param quantForm1 quantForm1
     * @generated
     */
-    public Formulario1 setQuantForm1(java.lang.Double quantForm1) {
+    public Formulario1 setQuantForm1(Double quantForm1) {
         this.quantForm1 = quantForm1;
         return this;
     }

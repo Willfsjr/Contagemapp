@@ -8,7 +8,7 @@ public class Messages {
   
   private static final String BUNDLE_NAME = "i18n.Messages";
   
-  private static final ResourceBundle DEFAULT_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME, new Locale("pt", "BR"));
+  private static final ResourceBundle DEFAULT_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME, new Locale.Builder().setLanguage("pt").setRegion("BR").build());
 
   public static final ThreadLocal<ResourceBundle> RESOURCE_BUNDLE = new ThreadLocal<>();
 

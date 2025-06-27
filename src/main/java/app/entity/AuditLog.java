@@ -1,18 +1,18 @@
 
 package app.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela AUDIT_LOG
@@ -21,9 +21,7 @@ import cronapp.framework.core.persistence.*;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "\"AUDIT_LOG\"")
 @XmlRootElement
-@CronappSecurity(post = "Administrators", get = "Administrators", delete = "Administrators", put = "Administrators")
 @JsonFilter("app.entity.AuditLog")
-@CronappTable(role=CronappTableRole.CLASS)
 public class AuditLog implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -36,34 +34,30 @@ public class AuditLog implements Serializable {
     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @CronappColumn(attributeType="INTEGER", label="Id")
     @Column(name = "id", nullable = false, insertable=true, updatable=true)
-        private java.lang.Integer id;
+        private Integer id;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="{{'Type' | translate}}")
     @Column(name = "type", nullable = false, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String type;
+        private String type;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="{{'Command' | translate}}")
     @Column(name = "command", nullable = false, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String command;
+        private String command;
 
 
     /**
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="{{'Date' | translate}}")
     @Column(name = "dateCreated", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.util.Date date;
@@ -72,82 +66,73 @@ public class AuditLog implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="TEXT", label="{{'ObjectData' | translate}}")
     @Column(name = "objectData", nullable = true, unique = false, insertable=true, updatable=true, columnDefinition = "TEXT")
         
-        private java.lang.String objectData;
+        private String objectData;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="{{'User' | translate}}")
     @Column(name = "userName", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String user;
+        private String user;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Host")
     @Column(name = "host", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String host;
+        private String host;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="{{'Agent' | translate}}")
     @Column(name = "agent", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String agent;
+        private String agent;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="{{'Server' | translate}}")
     @Column(name = "server", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String server;
+        private String server;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="{{'AffectedFields' | translate}}")
     @Column(name = "affectedFields", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String affectedFields;
+        private String affectedFields;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="{{'Category' | translate}}")
     @Column(name = "category", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String category;
+        private String category;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="{{'Application' | translate}}")
     @Column(name = "application", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String application;
+        private String application;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="{{'Error' | translate}}")
     @Column(name = "error", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String error;
+        private String error;
 
 
     /**
@@ -162,7 +147,7 @@ public class AuditLog implements Serializable {
     * return id
     * @generated
     */
-    public java.lang.Integer getId() {
+    public Integer getId() {
         return this.id;
     }
 
@@ -171,7 +156,7 @@ public class AuditLog implements Serializable {
     * @param id id
     * @generated
     */
-    public AuditLog setId(java.lang.Integer id) {
+    public AuditLog setId(Integer id) {
         this.id = id;
         return this;
     }
@@ -180,7 +165,7 @@ public class AuditLog implements Serializable {
     * return type
     * @generated
     */
-    public java.lang.String getType() {
+    public String getType() {
         return this.type;
     }
 
@@ -189,7 +174,7 @@ public class AuditLog implements Serializable {
     * @param type type
     * @generated
     */
-    public AuditLog setType(java.lang.String type) {
+    public AuditLog setType(String type) {
         this.type = type;
         return this;
     }
@@ -198,7 +183,7 @@ public class AuditLog implements Serializable {
     * return command
     * @generated
     */
-    public java.lang.String getCommand() {
+    public String getCommand() {
         return this.command;
     }
 
@@ -207,7 +192,7 @@ public class AuditLog implements Serializable {
     * @param command command
     * @generated
     */
-    public AuditLog setCommand(java.lang.String command) {
+    public AuditLog setCommand(String command) {
         this.command = command;
         return this;
     }
@@ -234,7 +219,7 @@ public class AuditLog implements Serializable {
     * return objectData
     * @generated
     */
-    public java.lang.String getObjectData() {
+    public String getObjectData() {
         return this.objectData;
     }
 
@@ -243,7 +228,7 @@ public class AuditLog implements Serializable {
     * @param objectData objectData
     * @generated
     */
-    public AuditLog setObjectData(java.lang.String objectData) {
+    public AuditLog setObjectData(String objectData) {
         this.objectData = objectData;
         return this;
     }
@@ -252,7 +237,7 @@ public class AuditLog implements Serializable {
     * return user
     * @generated
     */
-    public java.lang.String getUser() {
+    public String getUser() {
         return this.user;
     }
 
@@ -261,7 +246,7 @@ public class AuditLog implements Serializable {
     * @param user user
     * @generated
     */
-    public AuditLog setUser(java.lang.String user) {
+    public AuditLog setUser(String user) {
         this.user = user;
         return this;
     }
@@ -270,7 +255,7 @@ public class AuditLog implements Serializable {
     * return host
     * @generated
     */
-    public java.lang.String getHost() {
+    public String getHost() {
         return this.host;
     }
 
@@ -279,7 +264,7 @@ public class AuditLog implements Serializable {
     * @param host host
     * @generated
     */
-    public AuditLog setHost(java.lang.String host) {
+    public AuditLog setHost(String host) {
         this.host = host;
         return this;
     }
@@ -288,7 +273,7 @@ public class AuditLog implements Serializable {
     * return agent
     * @generated
     */
-    public java.lang.String getAgent() {
+    public String getAgent() {
         return this.agent;
     }
 
@@ -297,7 +282,7 @@ public class AuditLog implements Serializable {
     * @param agent agent
     * @generated
     */
-    public AuditLog setAgent(java.lang.String agent) {
+    public AuditLog setAgent(String agent) {
         this.agent = agent;
         return this;
     }
@@ -306,7 +291,7 @@ public class AuditLog implements Serializable {
     * return server
     * @generated
     */
-    public java.lang.String getServer() {
+    public String getServer() {
         return this.server;
     }
 
@@ -315,7 +300,7 @@ public class AuditLog implements Serializable {
     * @param server server
     * @generated
     */
-    public AuditLog setServer(java.lang.String server) {
+    public AuditLog setServer(String server) {
         this.server = server;
         return this;
     }
@@ -324,7 +309,7 @@ public class AuditLog implements Serializable {
     * return affectedFields
     * @generated
     */
-    public java.lang.String getAffectedFields() {
+    public String getAffectedFields() {
         return this.affectedFields;
     }
 
@@ -333,7 +318,7 @@ public class AuditLog implements Serializable {
     * @param affectedFields affectedFields
     * @generated
     */
-    public AuditLog setAffectedFields(java.lang.String affectedFields) {
+    public AuditLog setAffectedFields(String affectedFields) {
         this.affectedFields = affectedFields;
         return this;
     }
@@ -342,7 +327,7 @@ public class AuditLog implements Serializable {
     * return category
     * @generated
     */
-    public java.lang.String getCategory() {
+    public String getCategory() {
         return this.category;
     }
 
@@ -351,7 +336,7 @@ public class AuditLog implements Serializable {
     * @param category category
     * @generated
     */
-    public AuditLog setCategory(java.lang.String category) {
+    public AuditLog setCategory(String category) {
         this.category = category;
         return this;
     }
@@ -360,7 +345,7 @@ public class AuditLog implements Serializable {
     * return application
     * @generated
     */
-    public java.lang.String getApplication() {
+    public String getApplication() {
         return this.application;
     }
 
@@ -369,7 +354,7 @@ public class AuditLog implements Serializable {
     * @param application application
     * @generated
     */
-    public AuditLog setApplication(java.lang.String application) {
+    public AuditLog setApplication(String application) {
         this.application = application;
         return this;
     }
@@ -378,7 +363,7 @@ public class AuditLog implements Serializable {
     * return error
     * @generated
     */
-    public java.lang.String getError() {
+    public String getError() {
         return this.error;
     }
 
@@ -387,7 +372,7 @@ public class AuditLog implements Serializable {
     * @param error error
     * @generated
     */
-    public AuditLog setError(java.lang.String error) {
+    public AuditLog setError(String error) {
         this.error = error;
         return this;
     }

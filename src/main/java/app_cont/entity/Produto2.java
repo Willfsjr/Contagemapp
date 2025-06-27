@@ -1,18 +1,17 @@
 
 package app_cont.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+import java.util.UUID;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela PRODUTO2
@@ -21,9 +20,7 @@ import cronapp.framework.core.persistence.*;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "\"PRODUTO2\"")
 @XmlRootElement
-@CronappSecurity
 @JsonFilter("app_cont.entity.Produto2")
-@CronappTable(role=CronappTableRole.CLASS)
 public class Produto2 implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,45 +32,40 @@ public class Produto2 implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
     @Column(name = "ID", nullable = false, length=0, insertable=true, updatable=true)
-        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
+        private String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Codi Prod 2")
     @Column(name = "CODI_PROD2", nullable = true, unique = false, length=255, insertable=true, updatable=true)
         
-        private java.lang.String codiProd2;
+        private String codiProd2;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Prod 2")
     @Column(name = "DESC_PROD2", nullable = true, unique = false, length=255, insertable=true, updatable=true)
         
-        private java.lang.String descProd2;
+        private String descProd2;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Codi Bar 2")
     @Column(name = "CODI_BAR2", nullable = true, unique = false, length=255, insertable=true, updatable=true)
         
-        private java.lang.String codiBar2;
+        private String codiBar2;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="Cust Tab 2")
     @Column(name = "CUST_TAB2", nullable = true, unique = false, precision=17, scale=17, insertable=true, updatable=true)
         
-        private java.lang.Double custTab2;
+        private Double custTab2;
 
 
     /**
@@ -115,7 +107,7 @@ public class Produto2 implements Serializable {
     * return id
     * @generated
     */
-    public java.lang.String getId() {
+    public String getId() {
         return this.id;
     }
 
@@ -124,7 +116,7 @@ public class Produto2 implements Serializable {
     * @param id id
     * @generated
     */
-    public Produto2 setId(java.lang.String id) {
+    public Produto2 setId(String id) {
         this.id = id;
         return this;
     }
@@ -133,7 +125,7 @@ public class Produto2 implements Serializable {
     * return codiProd2
     * @generated
     */
-    public java.lang.String getCodiProd2() {
+    public String getCodiProd2() {
         return this.codiProd2;
     }
 
@@ -142,7 +134,7 @@ public class Produto2 implements Serializable {
     * @param codiProd2 codiProd2
     * @generated
     */
-    public Produto2 setCodiProd2(java.lang.String codiProd2) {
+    public Produto2 setCodiProd2(String codiProd2) {
         this.codiProd2 = codiProd2;
         return this;
     }
@@ -151,7 +143,7 @@ public class Produto2 implements Serializable {
     * return descProd2
     * @generated
     */
-    public java.lang.String getDescProd2() {
+    public String getDescProd2() {
         return this.descProd2;
     }
 
@@ -160,7 +152,7 @@ public class Produto2 implements Serializable {
     * @param descProd2 descProd2
     * @generated
     */
-    public Produto2 setDescProd2(java.lang.String descProd2) {
+    public Produto2 setDescProd2(String descProd2) {
         this.descProd2 = descProd2;
         return this;
     }
@@ -169,7 +161,7 @@ public class Produto2 implements Serializable {
     * return codiBar2
     * @generated
     */
-    public java.lang.String getCodiBar2() {
+    public String getCodiBar2() {
         return this.codiBar2;
     }
 
@@ -178,7 +170,7 @@ public class Produto2 implements Serializable {
     * @param codiBar2 codiBar2
     * @generated
     */
-    public Produto2 setCodiBar2(java.lang.String codiBar2) {
+    public Produto2 setCodiBar2(String codiBar2) {
         this.codiBar2 = codiBar2;
         return this;
     }
@@ -187,7 +179,7 @@ public class Produto2 implements Serializable {
     * return custTab2
     * @generated
     */
-    public java.lang.Double getCustTab2() {
+    public Double getCustTab2() {
         return this.custTab2;
     }
 
@@ -196,7 +188,7 @@ public class Produto2 implements Serializable {
     * @param custTab2 custTab2
     * @generated
     */
-    public Produto2 setCustTab2(java.lang.Double custTab2) {
+    public Produto2 setCustTab2(Double custTab2) {
         this.custTab2 = custTab2;
         return this;
     }

@@ -1,18 +1,17 @@
 
 package app_oracle.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela CODBARRA
@@ -22,9 +21,7 @@ import cronapp.framework.core.persistence.*;
 @IdClass(CODBARRAPK.class)
 @jakarta.persistence.Table(name = "\"CODBARRA\"", schema="\"NEWFRD\"")
 @XmlRootElement
-@CronappSecurity
 @JsonFilter("app_oracle.entity.CODBARRA")
-@CronappTable(role=CronappTableRole.CLASS)
 public class CODBARRA implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -36,52 +33,46 @@ public class CODBARRA implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="CODI  BAR")
     @Column(name = "CODI_BAR", nullable = false, length=14, insertable=true, updatable=true)
-        private java.lang.String CODI_BAR;
+        private String CODI_BAR;
 
     /**
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="CODI  PSV")
     @Column(name = "CODI_PSV", nullable = false, length=15, insertable=true, updatable=true)
-        private java.lang.String CODI_PSV;
+        private String CODI_PSV;
 
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CGTI  BAR")
     @Column(name = "CGTI_BAR", nullable = true, unique = false, length=7, insertable=true, updatable=true)
         
-        private java.lang.String CGTI_BAR;
+        private String CGTI_BAR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODIPESLANREG")
     @Column(name = "CODIPESLANREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CODIPESLANREG;
+        private Integer CODIPESLANREG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODIPESMANUTREG")
     @Column(name = "CODIPESMANUTREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CODIPESMANUTREG;
+        private Integer CODIPESMANUTREG;
 
 
     /**
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DATAULTIMASINCRONIZACAOAPI")
     @Column(name = "DATAULTIMASINCRONIZACAOAPI", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DATAULTIMASINCRONIZACAOAPI;
@@ -91,7 +82,6 @@ public class CODBARRA implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DGTI  BAR")
     @Column(name = "DGTI_BAR", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DGTI_BAR;
@@ -101,7 +91,6 @@ public class CODBARRA implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DINSERT")
     @Column(name = "DINSERT", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DINSERT;
@@ -111,7 +100,6 @@ public class CODBARRA implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DTSYNCAPI")
     @Column(name = "DTSYNCAPI", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DTSYNCAPI;
@@ -121,7 +109,6 @@ public class CODBARRA implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DUMANUT")
     @Column(name = "DUMANUT", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DUMANUT;
@@ -130,100 +117,89 @@ public class CODBARRA implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="FCON  BAR")
     @Column(name = "FCON_BAR", nullable = false, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double FCON_BAR;
+        private Double FCON_BAR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="GTIN  BAR")
     @Column(name = "GTIN_BAR", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String GTIN_BAR;
+        private String GTIN_BAR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="MGTI  BAR")
     @Column(name = "MGTI_BAR", nullable = true, unique = false, length=255, insertable=true, updatable=true)
         
-        private java.lang.String MGTI_BAR;
+        private String MGTI_BAR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="NGTI  BAR")
     @Column(name = "NGTI_BAR", nullable = true, unique = false, length=8, insertable=true, updatable=true)
         
-        private java.lang.String NGTI_BAR;
+        private String NGTI_BAR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="RGTI  BAR")
     @Column(name = "RGTI_BAR", nullable = true, unique = false, length=14, insertable=true, updatable=true)
         
-        private java.lang.String RGTI_BAR;
+        private String RGTI_BAR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SGTI  BAR")
     @Column(name = "SGTI_BAR", nullable = false, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String SGTI_BAR;
+        private String SGTI_BAR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="STAG  BAR")
     @Column(name = "STAG_BAR", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer STAG_BAR;
+        private Integer STAG_BAR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="TCOD  BAR")
     @Column(name = "TCOD_BAR", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String TCOD_BAR;
+        private String TCOD_BAR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="TGTI  BAR")
     @Column(name = "TGTI_BAR", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer TGTI_BAR;
+        private Integer TGTI_BAR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="UNID  BAR")
     @Column(name = "UNID_BAR", nullable = false, unique = false, length=14, insertable=true, updatable=true)
         
-        private java.lang.String UNID_BAR;
+        private String UNID_BAR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="VGTI  BAR")
     @Column(name = "VGTI_BAR", nullable = false, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String VGTI_BAR;
+        private String VGTI_BAR;
 
 
     /**
@@ -238,7 +214,7 @@ public class CODBARRA implements Serializable {
     * return CODI_BAR
     * @generated
     */
-    public java.lang.String getCODI_BAR() {
+    public String getCODI_BAR() {
         return this.CODI_BAR;
     }
 
@@ -247,7 +223,7 @@ public class CODBARRA implements Serializable {
     * @param CODI_BAR CODI_BAR
     * @generated
     */
-    public CODBARRA setCODI_BAR(java.lang.String CODI_BAR) {
+    public CODBARRA setCODI_BAR(String CODI_BAR) {
         this.CODI_BAR = CODI_BAR;
         return this;
     }
@@ -256,7 +232,7 @@ public class CODBARRA implements Serializable {
     * return CODI_PSV
     * @generated
     */
-    public java.lang.String getCODI_PSV() {
+    public String getCODI_PSV() {
         return this.CODI_PSV;
     }
 
@@ -265,7 +241,7 @@ public class CODBARRA implements Serializable {
     * @param CODI_PSV CODI_PSV
     * @generated
     */
-    public CODBARRA setCODI_PSV(java.lang.String CODI_PSV) {
+    public CODBARRA setCODI_PSV(String CODI_PSV) {
         this.CODI_PSV = CODI_PSV;
         return this;
     }
@@ -274,7 +250,7 @@ public class CODBARRA implements Serializable {
     * return CGTI_BAR
     * @generated
     */
-    public java.lang.String getCGTI_BAR() {
+    public String getCGTI_BAR() {
         return this.CGTI_BAR;
     }
 
@@ -283,7 +259,7 @@ public class CODBARRA implements Serializable {
     * @param CGTI_BAR CGTI_BAR
     * @generated
     */
-    public CODBARRA setCGTI_BAR(java.lang.String CGTI_BAR) {
+    public CODBARRA setCGTI_BAR(String CGTI_BAR) {
         this.CGTI_BAR = CGTI_BAR;
         return this;
     }
@@ -292,7 +268,7 @@ public class CODBARRA implements Serializable {
     * return CODIPESLANREG
     * @generated
     */
-    public java.lang.Integer getCODIPESLANREG() {
+    public Integer getCODIPESLANREG() {
         return this.CODIPESLANREG;
     }
 
@@ -301,7 +277,7 @@ public class CODBARRA implements Serializable {
     * @param CODIPESLANREG CODIPESLANREG
     * @generated
     */
-    public CODBARRA setCODIPESLANREG(java.lang.Integer CODIPESLANREG) {
+    public CODBARRA setCODIPESLANREG(Integer CODIPESLANREG) {
         this.CODIPESLANREG = CODIPESLANREG;
         return this;
     }
@@ -310,7 +286,7 @@ public class CODBARRA implements Serializable {
     * return CODIPESMANUTREG
     * @generated
     */
-    public java.lang.Integer getCODIPESMANUTREG() {
+    public Integer getCODIPESMANUTREG() {
         return this.CODIPESMANUTREG;
     }
 
@@ -319,7 +295,7 @@ public class CODBARRA implements Serializable {
     * @param CODIPESMANUTREG CODIPESMANUTREG
     * @generated
     */
-    public CODBARRA setCODIPESMANUTREG(java.lang.Integer CODIPESMANUTREG) {
+    public CODBARRA setCODIPESMANUTREG(Integer CODIPESMANUTREG) {
         this.CODIPESMANUTREG = CODIPESMANUTREG;
         return this;
     }
@@ -418,7 +394,7 @@ public class CODBARRA implements Serializable {
     * return FCON_BAR
     * @generated
     */
-    public java.lang.Double getFCON_BAR() {
+    public Double getFCON_BAR() {
         return this.FCON_BAR;
     }
 
@@ -427,7 +403,7 @@ public class CODBARRA implements Serializable {
     * @param FCON_BAR FCON_BAR
     * @generated
     */
-    public CODBARRA setFCON_BAR(java.lang.Double FCON_BAR) {
+    public CODBARRA setFCON_BAR(Double FCON_BAR) {
         this.FCON_BAR = FCON_BAR;
         return this;
     }
@@ -436,7 +412,7 @@ public class CODBARRA implements Serializable {
     * return GTIN_BAR
     * @generated
     */
-    public java.lang.String getGTIN_BAR() {
+    public String getGTIN_BAR() {
         return this.GTIN_BAR;
     }
 
@@ -445,7 +421,7 @@ public class CODBARRA implements Serializable {
     * @param GTIN_BAR GTIN_BAR
     * @generated
     */
-    public CODBARRA setGTIN_BAR(java.lang.String GTIN_BAR) {
+    public CODBARRA setGTIN_BAR(String GTIN_BAR) {
         this.GTIN_BAR = GTIN_BAR;
         return this;
     }
@@ -454,7 +430,7 @@ public class CODBARRA implements Serializable {
     * return MGTI_BAR
     * @generated
     */
-    public java.lang.String getMGTI_BAR() {
+    public String getMGTI_BAR() {
         return this.MGTI_BAR;
     }
 
@@ -463,7 +439,7 @@ public class CODBARRA implements Serializable {
     * @param MGTI_BAR MGTI_BAR
     * @generated
     */
-    public CODBARRA setMGTI_BAR(java.lang.String MGTI_BAR) {
+    public CODBARRA setMGTI_BAR(String MGTI_BAR) {
         this.MGTI_BAR = MGTI_BAR;
         return this;
     }
@@ -472,7 +448,7 @@ public class CODBARRA implements Serializable {
     * return NGTI_BAR
     * @generated
     */
-    public java.lang.String getNGTI_BAR() {
+    public String getNGTI_BAR() {
         return this.NGTI_BAR;
     }
 
@@ -481,7 +457,7 @@ public class CODBARRA implements Serializable {
     * @param NGTI_BAR NGTI_BAR
     * @generated
     */
-    public CODBARRA setNGTI_BAR(java.lang.String NGTI_BAR) {
+    public CODBARRA setNGTI_BAR(String NGTI_BAR) {
         this.NGTI_BAR = NGTI_BAR;
         return this;
     }
@@ -490,7 +466,7 @@ public class CODBARRA implements Serializable {
     * return RGTI_BAR
     * @generated
     */
-    public java.lang.String getRGTI_BAR() {
+    public String getRGTI_BAR() {
         return this.RGTI_BAR;
     }
 
@@ -499,7 +475,7 @@ public class CODBARRA implements Serializable {
     * @param RGTI_BAR RGTI_BAR
     * @generated
     */
-    public CODBARRA setRGTI_BAR(java.lang.String RGTI_BAR) {
+    public CODBARRA setRGTI_BAR(String RGTI_BAR) {
         this.RGTI_BAR = RGTI_BAR;
         return this;
     }
@@ -508,7 +484,7 @@ public class CODBARRA implements Serializable {
     * return SGTI_BAR
     * @generated
     */
-    public java.lang.String getSGTI_BAR() {
+    public String getSGTI_BAR() {
         return this.SGTI_BAR;
     }
 
@@ -517,7 +493,7 @@ public class CODBARRA implements Serializable {
     * @param SGTI_BAR SGTI_BAR
     * @generated
     */
-    public CODBARRA setSGTI_BAR(java.lang.String SGTI_BAR) {
+    public CODBARRA setSGTI_BAR(String SGTI_BAR) {
         this.SGTI_BAR = SGTI_BAR;
         return this;
     }
@@ -526,7 +502,7 @@ public class CODBARRA implements Serializable {
     * return STAG_BAR
     * @generated
     */
-    public java.lang.Integer getSTAG_BAR() {
+    public Integer getSTAG_BAR() {
         return this.STAG_BAR;
     }
 
@@ -535,7 +511,7 @@ public class CODBARRA implements Serializable {
     * @param STAG_BAR STAG_BAR
     * @generated
     */
-    public CODBARRA setSTAG_BAR(java.lang.Integer STAG_BAR) {
+    public CODBARRA setSTAG_BAR(Integer STAG_BAR) {
         this.STAG_BAR = STAG_BAR;
         return this;
     }
@@ -544,7 +520,7 @@ public class CODBARRA implements Serializable {
     * return TCOD_BAR
     * @generated
     */
-    public java.lang.String getTCOD_BAR() {
+    public String getTCOD_BAR() {
         return this.TCOD_BAR;
     }
 
@@ -553,7 +529,7 @@ public class CODBARRA implements Serializable {
     * @param TCOD_BAR TCOD_BAR
     * @generated
     */
-    public CODBARRA setTCOD_BAR(java.lang.String TCOD_BAR) {
+    public CODBARRA setTCOD_BAR(String TCOD_BAR) {
         this.TCOD_BAR = TCOD_BAR;
         return this;
     }
@@ -562,7 +538,7 @@ public class CODBARRA implements Serializable {
     * return TGTI_BAR
     * @generated
     */
-    public java.lang.Integer getTGTI_BAR() {
+    public Integer getTGTI_BAR() {
         return this.TGTI_BAR;
     }
 
@@ -571,7 +547,7 @@ public class CODBARRA implements Serializable {
     * @param TGTI_BAR TGTI_BAR
     * @generated
     */
-    public CODBARRA setTGTI_BAR(java.lang.Integer TGTI_BAR) {
+    public CODBARRA setTGTI_BAR(Integer TGTI_BAR) {
         this.TGTI_BAR = TGTI_BAR;
         return this;
     }
@@ -580,7 +556,7 @@ public class CODBARRA implements Serializable {
     * return UNID_BAR
     * @generated
     */
-    public java.lang.String getUNID_BAR() {
+    public String getUNID_BAR() {
         return this.UNID_BAR;
     }
 
@@ -589,7 +565,7 @@ public class CODBARRA implements Serializable {
     * @param UNID_BAR UNID_BAR
     * @generated
     */
-    public CODBARRA setUNID_BAR(java.lang.String UNID_BAR) {
+    public CODBARRA setUNID_BAR(String UNID_BAR) {
         this.UNID_BAR = UNID_BAR;
         return this;
     }
@@ -598,7 +574,7 @@ public class CODBARRA implements Serializable {
     * return VGTI_BAR
     * @generated
     */
-    public java.lang.String getVGTI_BAR() {
+    public String getVGTI_BAR() {
         return this.VGTI_BAR;
     }
 
@@ -607,7 +583,7 @@ public class CODBARRA implements Serializable {
     * @param VGTI_BAR VGTI_BAR
     * @generated
     */
-    public CODBARRA setVGTI_BAR(java.lang.String VGTI_BAR) {
+    public CODBARRA setVGTI_BAR(String VGTI_BAR) {
         this.VGTI_BAR = VGTI_BAR;
         return this;
     }

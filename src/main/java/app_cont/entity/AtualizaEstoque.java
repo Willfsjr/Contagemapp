@@ -1,18 +1,17 @@
-
 package app_cont.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+import java.util.UUID;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela ATUALIZA_ESTOQUE
@@ -21,9 +20,7 @@ import cronapp.framework.core.persistence.*;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "\"ATUALIZA_ESTOQUE\"")
 @XmlRootElement
-@CronappSecurity
 @JsonFilter("app_cont.entity.AtualizaEstoque")
-@CronappTable(role=CronappTableRole.CLASS)
 public class AtualizaEstoque implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,54 +32,48 @@ public class AtualizaEstoque implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
     @Column(name = "ID", nullable = false, insertable=true, updatable=true)
-        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
+        private String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Codi Psv")
     @Column(name = "CODI_PSV", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String codiPsv;
+        private String codiPsv;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Psv")
     @Column(name = "DESC_PSV", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.String descPsv;
+        private String descPsv;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="Codi Dpt")
     @Column(name = "CODI_DPT", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer codiDpt;
+        private Integer codiDpt;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="Codi Emp")
     @Column(name = "CODI_EMP", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer codiEmp;
+        private Integer codiEmp;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="Qte Total")
     @Column(name = "QTE_TOTAL", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Double qteTotal;
+        private Double qteTotal;
 
 
     /**
@@ -106,7 +97,7 @@ public class AtualizaEstoque implements Serializable {
     * return id
     * @generated
     */
-    public java.lang.String getId() {
+    public String getId() {
         return this.id;
     }
 
@@ -115,7 +106,7 @@ public class AtualizaEstoque implements Serializable {
     * @param id id
     * @generated
     */
-    public AtualizaEstoque setId(java.lang.String id) {
+    public AtualizaEstoque setId(String id) {
         this.id = id;
         return this;
     }
@@ -124,7 +115,7 @@ public class AtualizaEstoque implements Serializable {
     * return codiPsv
     * @generated
     */
-    public java.lang.String getCodiPsv() {
+    public String getCodiPsv() {
         return this.codiPsv;
     }
 
@@ -133,7 +124,7 @@ public class AtualizaEstoque implements Serializable {
     * @param codiPsv codiPsv
     * @generated
     */
-    public AtualizaEstoque setCodiPsv(java.lang.String codiPsv) {
+    public AtualizaEstoque setCodiPsv(String codiPsv) {
         this.codiPsv = codiPsv;
         return this;
     }
@@ -142,7 +133,7 @@ public class AtualizaEstoque implements Serializable {
     * return descPsv
     * @generated
     */
-    public java.lang.String getDescPsv() {
+    public String getDescPsv() {
         return this.descPsv;
     }
 
@@ -151,7 +142,7 @@ public class AtualizaEstoque implements Serializable {
     * @param descPsv descPsv
     * @generated
     */
-    public AtualizaEstoque setDescPsv(java.lang.String descPsv) {
+    public AtualizaEstoque setDescPsv(String descPsv) {
         this.descPsv = descPsv;
         return this;
     }
@@ -160,7 +151,7 @@ public class AtualizaEstoque implements Serializable {
     * return codiDpt
     * @generated
     */
-    public java.lang.Integer getCodiDpt() {
+    public Integer getCodiDpt() {
         return this.codiDpt;
     }
 
@@ -169,7 +160,7 @@ public class AtualizaEstoque implements Serializable {
     * @param codiDpt codiDpt
     * @generated
     */
-    public AtualizaEstoque setCodiDpt(java.lang.Integer codiDpt) {
+    public AtualizaEstoque setCodiDpt(Integer codiDpt) {
         this.codiDpt = codiDpt;
         return this;
     }
@@ -178,7 +169,7 @@ public class AtualizaEstoque implements Serializable {
     * return codiEmp
     * @generated
     */
-    public java.lang.Integer getCodiEmp() {
+    public Integer getCodiEmp() {
         return this.codiEmp;
     }
 
@@ -187,7 +178,7 @@ public class AtualizaEstoque implements Serializable {
     * @param codiEmp codiEmp
     * @generated
     */
-    public AtualizaEstoque setCodiEmp(java.lang.Integer codiEmp) {
+    public AtualizaEstoque setCodiEmp(Integer codiEmp) {
         this.codiEmp = codiEmp;
         return this;
     }
@@ -196,7 +187,7 @@ public class AtualizaEstoque implements Serializable {
     * return qteTotal
     * @generated
     */
-    public java.lang.Double getQteTotal() {
+    public Double getQteTotal() {
         return this.qteTotal;
     }
 
@@ -205,7 +196,7 @@ public class AtualizaEstoque implements Serializable {
     * @param qteTotal qteTotal
     * @generated
     */
-    public AtualizaEstoque setQteTotal(java.lang.Double qteTotal) {
+    public AtualizaEstoque setQteTotal(Double qteTotal) {
         this.qteTotal = qteTotal;
         return this;
     }
@@ -235,7 +226,7 @@ public class AtualizaEstoque implements Serializable {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-AtualizaEstoque object = (AtualizaEstoque)obj;
+        AtualizaEstoque object = (AtualizaEstoque)obj;
         if (id != null ? !id.equals(object.id) : object.id != null) return false;
         return true;
     }

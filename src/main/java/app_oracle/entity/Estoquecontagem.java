@@ -1,18 +1,14 @@
 
 package app_oracle.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela ESTOQUECONTAGEM
@@ -21,9 +17,7 @@ import cronapp.framework.core.persistence.*;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "\"ESTOQUECONTAGEM\"", schema="\"NEWFRD\"")
 @XmlRootElement
-@CronappSecurity
 @JsonFilter("app_oracle.entity.Estoquecontagem")
-@CronappTable(role=CronappTableRole.CLASS)
 public class Estoquecontagem implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,45 +29,40 @@ public class Estoquecontagem implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Codi Psv")
     @Column(name = "CODI_PSV", nullable = false, length=15, insertable=true, updatable=true)
-        private java.lang.String codiPsv;
+        private String codiPsv;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="Codi Dpt")
     @Column(name = "CODI_DPT", nullable = false, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer codiDpt;
+        private Integer codiDpt;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="Codi Emp")
     @Column(name = "CODI_EMP", nullable = false, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer codiEmp;
+        private Integer codiEmp;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Psv")
     @Column(name = "DESC_PSV", nullable = true, unique = false, length=120, insertable=true, updatable=true)
         
-        private java.lang.String descPsv;
+        private String descPsv;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="Qte Total")
     @Column(name = "QTE_TOTAL", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Double qteTotal;
+        private Double qteTotal;
 
 
     /**
@@ -88,7 +77,7 @@ public class Estoquecontagem implements Serializable {
     * return codiPsv
     * @generated
     */
-    public java.lang.String getCodiPsv() {
+    public String getCodiPsv() {
         return this.codiPsv;
     }
 
@@ -97,7 +86,7 @@ public class Estoquecontagem implements Serializable {
     * @param codiPsv codiPsv
     * @generated
     */
-    public Estoquecontagem setCodiPsv(java.lang.String codiPsv) {
+    public Estoquecontagem setCodiPsv(String codiPsv) {
         this.codiPsv = codiPsv;
         return this;
     }
@@ -106,7 +95,7 @@ public class Estoquecontagem implements Serializable {
     * return codiDpt
     * @generated
     */
-    public java.lang.Integer getCodiDpt() {
+    public Integer getCodiDpt() {
         return this.codiDpt;
     }
 
@@ -115,7 +104,7 @@ public class Estoquecontagem implements Serializable {
     * @param codiDpt codiDpt
     * @generated
     */
-    public Estoquecontagem setCodiDpt(java.lang.Integer codiDpt) {
+    public Estoquecontagem setCodiDpt(Integer codiDpt) {
         this.codiDpt = codiDpt;
         return this;
     }
@@ -124,7 +113,7 @@ public class Estoquecontagem implements Serializable {
     * return codiEmp
     * @generated
     */
-    public java.lang.Integer getCodiEmp() {
+    public Integer getCodiEmp() {
         return this.codiEmp;
     }
 
@@ -133,7 +122,7 @@ public class Estoquecontagem implements Serializable {
     * @param codiEmp codiEmp
     * @generated
     */
-    public Estoquecontagem setCodiEmp(java.lang.Integer codiEmp) {
+    public Estoquecontagem setCodiEmp(Integer codiEmp) {
         this.codiEmp = codiEmp;
         return this;
     }
@@ -142,7 +131,7 @@ public class Estoquecontagem implements Serializable {
     * return descPsv
     * @generated
     */
-    public java.lang.String getDescPsv() {
+    public String getDescPsv() {
         return this.descPsv;
     }
 
@@ -151,7 +140,7 @@ public class Estoquecontagem implements Serializable {
     * @param descPsv descPsv
     * @generated
     */
-    public Estoquecontagem setDescPsv(java.lang.String descPsv) {
+    public Estoquecontagem setDescPsv(String descPsv) {
         this.descPsv = descPsv;
         return this;
     }
@@ -160,7 +149,7 @@ public class Estoquecontagem implements Serializable {
     * return qteTotal
     * @generated
     */
-    public java.lang.Double getQteTotal() {
+    public Double getQteTotal() {
         return this.qteTotal;
     }
 
@@ -169,7 +158,7 @@ public class Estoquecontagem implements Serializable {
     * @param qteTotal qteTotal
     * @generated
     */
-    public Estoquecontagem setQteTotal(java.lang.Double qteTotal) {
+    public Estoquecontagem setQteTotal(Double qteTotal) {
         this.qteTotal = qteTotal;
         return this;
     }

@@ -1,18 +1,17 @@
 
 package app.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+import java.util.UUID;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela INVALIDATED_TOKEN
@@ -21,9 +20,7 @@ import cronapp.framework.core.persistence.*;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "\"INVALIDATED_TOKEN\"")
 @XmlRootElement
-@CronappSecurity
 @JsonFilter("app.entity.InvalidatedToken")
-@CronappTable(role=CronappTableRole.CLASS)
 public class InvalidatedToken implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,16 +32,14 @@ public class InvalidatedToken implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="{{'Id' | translate}}", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
     @Column(name = "id", nullable = false, insertable=true, updatable=true)
-        private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
+        private String id = UUID.randomUUID().toString().toUpperCase();
 
 
     /**
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="TIMESTAMP", label="{{'ExpirationDate' | translate}}")
     @Column(name = "expiration_date", nullable = true, unique = false, insertable=true, updatable=true, columnDefinition = "TIMESTAMP")
         
         private java.util.Date expirationDate;
@@ -62,7 +57,7 @@ public class InvalidatedToken implements Serializable {
     * return id
     * @generated
     */
-    public java.lang.String getId() {
+    public String getId() {
         return this.id;
     }
 
@@ -71,7 +66,7 @@ public class InvalidatedToken implements Serializable {
     * @param id id
     * @generated
     */
-    public InvalidatedToken setId(java.lang.String id) {
+    public InvalidatedToken setId(String id) {
         this.id = id;
         return this;
     }

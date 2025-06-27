@@ -1,18 +1,16 @@
 
 package app_oracle.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela DEPOSITO
@@ -21,9 +19,7 @@ import cronapp.framework.core.persistence.*;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "\"DEPOSITO\"", schema="\"NEWFRD\"")
 @XmlRootElement
-@CronappSecurity
 @JsonFilter("app_oracle.entity.DEPOSITO")
-@CronappTable(role=CronappTableRole.CLASS)
 public class DEPOSITO implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,70 +31,62 @@ public class DEPOSITO implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="INTEGER", label="CODI  DPT")
     @Column(name = "CODI_DPT", nullable = false, insertable=true, updatable=true)
-        private java.lang.Integer CODI_DPT;
+        private Integer CODI_DPT;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="AFAT  DPT")
     @Column(name = "AFAT_DPT", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String AFAT_DPT;
+        private String AFAT_DPT;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODIPESLANREG")
     @Column(name = "CODIPESLANREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CODIPESLANREG;
+        private Integer CODIPESLANREG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODIPESMANUTREG")
     @Column(name = "CODIPESMANUTREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CODIPESMANUTREG;
+        private Integer CODIPESMANUTREG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CODI  PSV")
     @Column(name = "CODI_PSV", nullable = true, unique = false, length=15, insertable=true, updatable=true)
         
-        private java.lang.String CODI_PSV;
+        private String CODI_PSV;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODI  TRA")
     @Column(name = "CODI_TRA", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CODI_TRA;
+        private Integer CODI_TRA;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="CUAE  DPT")
     @Column(name = "CUAE_DPT", nullable = false, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String CUAE_DPT;
+        private String CUAE_DPT;
 
 
     /**
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DATAULTIMASINCRONIZACAOAPI")
     @Column(name = "DATAULTIMASINCRONIZACAOAPI", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DATAULTIMASINCRONIZACAOAPI;
@@ -107,17 +95,15 @@ public class DEPOSITO implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="DESC  DPT")
     @Column(name = "DESC_DPT", nullable = false, unique = false, length=65, insertable=true, updatable=true)
         
-        private java.lang.String DESC_DPT;
+        private String DESC_DPT;
 
 
     /**
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DINSERT")
     @Column(name = "DINSERT", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DINSERT;
@@ -127,7 +113,6 @@ public class DEPOSITO implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DTIN  DPT")
     @Column(name = "DTIN_DPT", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.util.Date DTIN_DPT;
@@ -137,7 +122,6 @@ public class DEPOSITO implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DTSYNCAPI")
     @Column(name = "DTSYNCAPI", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DTSYNCAPI;
@@ -147,7 +131,6 @@ public class DEPOSITO implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DUMANUT")
     @Column(name = "DUMANUT", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DUMANUT;
@@ -156,28 +139,25 @@ public class DEPOSITO implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="RETE  DPT")
     @Column(name = "RETE_DPT", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double RETE_DPT;
+        private Double RETE_DPT;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SITU  DPT")
     @Column(name = "SITU_DPT", nullable = false, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String SITU_DPT;
+        private String SITU_DPT;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="UUMANUT")
     @Column(name = "UUMANUT", nullable = false, unique = false, length=10, insertable=true, updatable=true)
         
-        private java.lang.String UUMANUT;
+        private String UUMANUT;
 
 
     /**
@@ -192,7 +172,7 @@ public class DEPOSITO implements Serializable {
     * return CODI_DPT
     * @generated
     */
-    public java.lang.Integer getCODI_DPT() {
+    public Integer getCODI_DPT() {
         return this.CODI_DPT;
     }
 
@@ -201,7 +181,7 @@ public class DEPOSITO implements Serializable {
     * @param CODI_DPT CODI_DPT
     * @generated
     */
-    public DEPOSITO setCODI_DPT(java.lang.Integer CODI_DPT) {
+    public DEPOSITO setCODI_DPT(Integer CODI_DPT) {
         this.CODI_DPT = CODI_DPT;
         return this;
     }
@@ -210,7 +190,7 @@ public class DEPOSITO implements Serializable {
     * return AFAT_DPT
     * @generated
     */
-    public java.lang.String getAFAT_DPT() {
+    public String getAFAT_DPT() {
         return this.AFAT_DPT;
     }
 
@@ -219,7 +199,7 @@ public class DEPOSITO implements Serializable {
     * @param AFAT_DPT AFAT_DPT
     * @generated
     */
-    public DEPOSITO setAFAT_DPT(java.lang.String AFAT_DPT) {
+    public DEPOSITO setAFAT_DPT(String AFAT_DPT) {
         this.AFAT_DPT = AFAT_DPT;
         return this;
     }
@@ -228,7 +208,7 @@ public class DEPOSITO implements Serializable {
     * return CODIPESLANREG
     * @generated
     */
-    public java.lang.Integer getCODIPESLANREG() {
+    public Integer getCODIPESLANREG() {
         return this.CODIPESLANREG;
     }
 
@@ -237,7 +217,7 @@ public class DEPOSITO implements Serializable {
     * @param CODIPESLANREG CODIPESLANREG
     * @generated
     */
-    public DEPOSITO setCODIPESLANREG(java.lang.Integer CODIPESLANREG) {
+    public DEPOSITO setCODIPESLANREG(Integer CODIPESLANREG) {
         this.CODIPESLANREG = CODIPESLANREG;
         return this;
     }
@@ -246,7 +226,7 @@ public class DEPOSITO implements Serializable {
     * return CODIPESMANUTREG
     * @generated
     */
-    public java.lang.Integer getCODIPESMANUTREG() {
+    public Integer getCODIPESMANUTREG() {
         return this.CODIPESMANUTREG;
     }
 
@@ -255,7 +235,7 @@ public class DEPOSITO implements Serializable {
     * @param CODIPESMANUTREG CODIPESMANUTREG
     * @generated
     */
-    public DEPOSITO setCODIPESMANUTREG(java.lang.Integer CODIPESMANUTREG) {
+    public DEPOSITO setCODIPESMANUTREG(Integer CODIPESMANUTREG) {
         this.CODIPESMANUTREG = CODIPESMANUTREG;
         return this;
     }
@@ -264,7 +244,7 @@ public class DEPOSITO implements Serializable {
     * return CODI_PSV
     * @generated
     */
-    public java.lang.String getCODI_PSV() {
+    public String getCODI_PSV() {
         return this.CODI_PSV;
     }
 
@@ -273,7 +253,7 @@ public class DEPOSITO implements Serializable {
     * @param CODI_PSV CODI_PSV
     * @generated
     */
-    public DEPOSITO setCODI_PSV(java.lang.String CODI_PSV) {
+    public DEPOSITO setCODI_PSV(String CODI_PSV) {
         this.CODI_PSV = CODI_PSV;
         return this;
     }
@@ -282,7 +262,7 @@ public class DEPOSITO implements Serializable {
     * return CODI_TRA
     * @generated
     */
-    public java.lang.Integer getCODI_TRA() {
+    public Integer getCODI_TRA() {
         return this.CODI_TRA;
     }
 
@@ -291,7 +271,7 @@ public class DEPOSITO implements Serializable {
     * @param CODI_TRA CODI_TRA
     * @generated
     */
-    public DEPOSITO setCODI_TRA(java.lang.Integer CODI_TRA) {
+    public DEPOSITO setCODI_TRA(Integer CODI_TRA) {
         this.CODI_TRA = CODI_TRA;
         return this;
     }
@@ -300,7 +280,7 @@ public class DEPOSITO implements Serializable {
     * return CUAE_DPT
     * @generated
     */
-    public java.lang.String getCUAE_DPT() {
+    public String getCUAE_DPT() {
         return this.CUAE_DPT;
     }
 
@@ -309,7 +289,7 @@ public class DEPOSITO implements Serializable {
     * @param CUAE_DPT CUAE_DPT
     * @generated
     */
-    public DEPOSITO setCUAE_DPT(java.lang.String CUAE_DPT) {
+    public DEPOSITO setCUAE_DPT(String CUAE_DPT) {
         this.CUAE_DPT = CUAE_DPT;
         return this;
     }
@@ -336,7 +316,7 @@ public class DEPOSITO implements Serializable {
     * return DESC_DPT
     * @generated
     */
-    public java.lang.String getDESC_DPT() {
+    public String getDESC_DPT() {
         return this.DESC_DPT;
     }
 
@@ -345,7 +325,7 @@ public class DEPOSITO implements Serializable {
     * @param DESC_DPT DESC_DPT
     * @generated
     */
-    public DEPOSITO setDESC_DPT(java.lang.String DESC_DPT) {
+    public DEPOSITO setDESC_DPT(String DESC_DPT) {
         this.DESC_DPT = DESC_DPT;
         return this;
     }
@@ -426,7 +406,7 @@ public class DEPOSITO implements Serializable {
     * return RETE_DPT
     * @generated
     */
-    public java.lang.Double getRETE_DPT() {
+    public Double getRETE_DPT() {
         return this.RETE_DPT;
     }
 
@@ -435,7 +415,7 @@ public class DEPOSITO implements Serializable {
     * @param RETE_DPT RETE_DPT
     * @generated
     */
-    public DEPOSITO setRETE_DPT(java.lang.Double RETE_DPT) {
+    public DEPOSITO setRETE_DPT(Double RETE_DPT) {
         this.RETE_DPT = RETE_DPT;
         return this;
     }
@@ -444,7 +424,7 @@ public class DEPOSITO implements Serializable {
     * return SITU_DPT
     * @generated
     */
-    public java.lang.String getSITU_DPT() {
+    public String getSITU_DPT() {
         return this.SITU_DPT;
     }
 
@@ -453,7 +433,7 @@ public class DEPOSITO implements Serializable {
     * @param SITU_DPT SITU_DPT
     * @generated
     */
-    public DEPOSITO setSITU_DPT(java.lang.String SITU_DPT) {
+    public DEPOSITO setSITU_DPT(String SITU_DPT) {
         this.SITU_DPT = SITU_DPT;
         return this;
     }
@@ -462,7 +442,7 @@ public class DEPOSITO implements Serializable {
     * return UUMANUT
     * @generated
     */
-    public java.lang.String getUUMANUT() {
+    public String getUUMANUT() {
         return this.UUMANUT;
     }
 
@@ -471,7 +451,7 @@ public class DEPOSITO implements Serializable {
     * @param UUMANUT UUMANUT
     * @generated
     */
-    public DEPOSITO setUUMANUT(java.lang.String UUMANUT) {
+    public DEPOSITO setUUMANUT(String UUMANUT) {
         this.UUMANUT = UUMANUT;
         return this;
     }

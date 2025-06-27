@@ -1,18 +1,14 @@
 
 package app_cont.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela vw_confronto_contagem
@@ -21,9 +17,7 @@ import cronapp.framework.core.persistence.*;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "\"vw_confronto_contagem\"", schema="\"contdb_dev\"")
 @XmlRootElement
-@CronappSecurity
 @JsonFilter("app_cont.entity.VwConfrontoContagem")
-@CronappTable(role=CronappTableRole.CLASS)
 public class VwConfrontoContagem implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,54 +29,48 @@ public class VwConfrontoContagem implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="STRING", label="Codi Psv")
     @Column(name = "codi_psv", nullable = false, length=255, insertable=true, updatable=true)
-        private java.lang.String codiPsv;
+        private String codiPsv;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Contagem Form 1 Id")
     @Column(name = "contagem_form1_id", nullable = true, unique = false, length=255, insertable=true, updatable=true)
         
-        private java.lang.String contagemForm1Id;
+        private String contagemForm1Id;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Contagem Form 2 Id")
     @Column(name = "contagem_form2_id", nullable = true, unique = false, length=255, insertable=true, updatable=true)
         
-        private java.lang.String contagemForm2Id;
+        private String contagemForm2Id;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="Desc Psv")
     @Column(name = "desc_psv", nullable = true, unique = false, length=255, insertable=true, updatable=true)
         
-        private java.lang.String descPsv;
+        private String descPsv;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="Quant Form 1")
     @Column(name = "quant_form1", nullable = true, unique = false, precision=17, scale=17, insertable=true, updatable=true)
         
-        private java.lang.Double quantForm1;
+        private Double quantForm1;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="Quant Form 2")
     @Column(name = "quant_form2", nullable = true, unique = false, precision=17, scale=17, insertable=true, updatable=true)
         
-        private java.lang.Double quantForm2;
+        private Double quantForm2;
 
 
     /**
@@ -97,7 +85,7 @@ public class VwConfrontoContagem implements Serializable {
     * return codiPsv
     * @generated
     */
-    public java.lang.String getCodiPsv() {
+    public String getCodiPsv() {
         return this.codiPsv;
     }
 
@@ -106,7 +94,7 @@ public class VwConfrontoContagem implements Serializable {
     * @param codiPsv codiPsv
     * @generated
     */
-    public VwConfrontoContagem setCodiPsv(java.lang.String codiPsv) {
+    public VwConfrontoContagem setCodiPsv(String codiPsv) {
         this.codiPsv = codiPsv;
         return this;
     }
@@ -115,7 +103,7 @@ public class VwConfrontoContagem implements Serializable {
     * return contagemForm1Id
     * @generated
     */
-    public java.lang.String getContagemForm1Id() {
+    public String getContagemForm1Id() {
         return this.contagemForm1Id;
     }
 
@@ -124,7 +112,7 @@ public class VwConfrontoContagem implements Serializable {
     * @param contagemForm1Id contagemForm1Id
     * @generated
     */
-    public VwConfrontoContagem setContagemForm1Id(java.lang.String contagemForm1Id) {
+    public VwConfrontoContagem setContagemForm1Id(String contagemForm1Id) {
         this.contagemForm1Id = contagemForm1Id;
         return this;
     }
@@ -133,7 +121,7 @@ public class VwConfrontoContagem implements Serializable {
     * return contagemForm2Id
     * @generated
     */
-    public java.lang.String getContagemForm2Id() {
+    public String getContagemForm2Id() {
         return this.contagemForm2Id;
     }
 
@@ -142,7 +130,7 @@ public class VwConfrontoContagem implements Serializable {
     * @param contagemForm2Id contagemForm2Id
     * @generated
     */
-    public VwConfrontoContagem setContagemForm2Id(java.lang.String contagemForm2Id) {
+    public VwConfrontoContagem setContagemForm2Id(String contagemForm2Id) {
         this.contagemForm2Id = contagemForm2Id;
         return this;
     }
@@ -151,7 +139,7 @@ public class VwConfrontoContagem implements Serializable {
     * return descPsv
     * @generated
     */
-    public java.lang.String getDescPsv() {
+    public String getDescPsv() {
         return this.descPsv;
     }
 
@@ -160,7 +148,7 @@ public class VwConfrontoContagem implements Serializable {
     * @param descPsv descPsv
     * @generated
     */
-    public VwConfrontoContagem setDescPsv(java.lang.String descPsv) {
+    public VwConfrontoContagem setDescPsv(String descPsv) {
         this.descPsv = descPsv;
         return this;
     }
@@ -169,7 +157,7 @@ public class VwConfrontoContagem implements Serializable {
     * return quantForm1
     * @generated
     */
-    public java.lang.Double getQuantForm1() {
+    public Double getQuantForm1() {
         return this.quantForm1;
     }
 
@@ -178,7 +166,7 @@ public class VwConfrontoContagem implements Serializable {
     * @param quantForm1 quantForm1
     * @generated
     */
-    public VwConfrontoContagem setQuantForm1(java.lang.Double quantForm1) {
+    public VwConfrontoContagem setQuantForm1(Double quantForm1) {
         this.quantForm1 = quantForm1;
         return this;
     }
@@ -187,7 +175,7 @@ public class VwConfrontoContagem implements Serializable {
     * return quantForm2
     * @generated
     */
-    public java.lang.Double getQuantForm2() {
+    public Double getQuantForm2() {
         return this.quantForm2;
     }
 
@@ -196,7 +184,7 @@ public class VwConfrontoContagem implements Serializable {
     * @param quantForm2 quantForm2
     * @generated
     */
-    public VwConfrontoContagem setQuantForm2(java.lang.Double quantForm2) {
+    public VwConfrontoContagem setQuantForm2(Double quantForm2) {
         this.quantForm2 = quantForm2;
         return this;
     }

@@ -1,18 +1,16 @@
 
 package app_oracle.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela GRUPO
@@ -21,9 +19,7 @@ import cronapp.framework.core.persistence.*;
 @jakarta.persistence.Entity
 @jakarta.persistence.Table(name = "\"GRUPO\"", schema="\"NEWFRD\"")
 @XmlRootElement
-@CronappSecurity
 @JsonFilter("app_oracle.entity.GRUPO")
-@CronappTable(role=CronappTableRole.CLASS)
 public class GRUPO implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -35,43 +31,38 @@ public class GRUPO implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="INTEGER", label="CODI  GPR")
     @Column(name = "CODI_GPR", nullable = false, insertable=true, updatable=true)
-        private java.lang.Integer CODI_GPR;
+        private Integer CODI_GPR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODIPESLANREG")
     @Column(name = "CODIPESLANREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CODIPESLANREG;
+        private Integer CODIPESLANREG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODIPESMANUTREG")
     @Column(name = "CODIPESMANUTREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CODIPESMANUTREG;
+        private Integer CODIPESMANUTREG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="CTAB  GPR")
     @Column(name = "CTAB_GPR", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double CTAB_GPR;
+        private Double CTAB_GPR;
 
 
     /**
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DATAULTIMASINCRONIZACAOAPI")
     @Column(name = "DATAULTIMASINCRONIZACAOAPI", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DATAULTIMASINCRONIZACAOAPI;
@@ -80,17 +71,15 @@ public class GRUPO implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="DESC  GPR")
     @Column(name = "DESC_GPR", nullable = true, unique = false, length=40, insertable=true, updatable=true)
         
-        private java.lang.String DESC_GPR;
+        private String DESC_GPR;
 
 
     /**
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DINSERT")
     @Column(name = "DINSERT", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DINSERT;
@@ -100,7 +89,6 @@ public class GRUPO implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DTSYNCAPI")
     @Column(name = "DTSYNCAPI", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DTSYNCAPI;
@@ -110,7 +98,6 @@ public class GRUPO implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DUMANUT")
     @Column(name = "DUMANUT", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DUMANUT;
@@ -119,73 +106,65 @@ public class GRUPO implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="FTAB  GPR")
     @Column(name = "FTAB_GPR", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double FTAB_GPR;
+        private Double FTAB_GPR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="IVCD  GPR")
     @Column(name = "IVCD_GPR", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String IVCD_GPR;
+        private String IVCD_GPR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="IVD 2 GPR")
     @Column(name = "IVD2_GPR", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String IVD2_GPR;
+        private String IVD2_GPR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="PVPC  GPR")
     @Column(name = "PVPC_GPR", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String PVPC_GPR;
+        private String PVPC_GPR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="QADC  GPR")
     @Column(name = "QADC_GPR", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer QADC_GPR;
+        private Integer QADC_GPR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SITU  GPR")
     @Column(name = "SITU_GPR", nullable = false, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String SITU_GPR;
+        private String SITU_GPR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="UADC  GPR")
     @Column(name = "UADC_GPR", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String UADC_GPR;
+        private String UADC_GPR;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="UCVT  GPR")
     @Column(name = "UCVT_GPR", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String UCVT_GPR;
+        private String UCVT_GPR;
 
 
     /**
@@ -200,7 +179,7 @@ public class GRUPO implements Serializable {
     * return CODI_GPR
     * @generated
     */
-    public java.lang.Integer getCODI_GPR() {
+    public Integer getCODI_GPR() {
         return this.CODI_GPR;
     }
 
@@ -209,7 +188,7 @@ public class GRUPO implements Serializable {
     * @param CODI_GPR CODI_GPR
     * @generated
     */
-    public GRUPO setCODI_GPR(java.lang.Integer CODI_GPR) {
+    public GRUPO setCODI_GPR(Integer CODI_GPR) {
         this.CODI_GPR = CODI_GPR;
         return this;
     }
@@ -218,7 +197,7 @@ public class GRUPO implements Serializable {
     * return CODIPESLANREG
     * @generated
     */
-    public java.lang.Integer getCODIPESLANREG() {
+    public Integer getCODIPESLANREG() {
         return this.CODIPESLANREG;
     }
 
@@ -227,7 +206,7 @@ public class GRUPO implements Serializable {
     * @param CODIPESLANREG CODIPESLANREG
     * @generated
     */
-    public GRUPO setCODIPESLANREG(java.lang.Integer CODIPESLANREG) {
+    public GRUPO setCODIPESLANREG(Integer CODIPESLANREG) {
         this.CODIPESLANREG = CODIPESLANREG;
         return this;
     }
@@ -236,7 +215,7 @@ public class GRUPO implements Serializable {
     * return CODIPESMANUTREG
     * @generated
     */
-    public java.lang.Integer getCODIPESMANUTREG() {
+    public Integer getCODIPESMANUTREG() {
         return this.CODIPESMANUTREG;
     }
 
@@ -245,7 +224,7 @@ public class GRUPO implements Serializable {
     * @param CODIPESMANUTREG CODIPESMANUTREG
     * @generated
     */
-    public GRUPO setCODIPESMANUTREG(java.lang.Integer CODIPESMANUTREG) {
+    public GRUPO setCODIPESMANUTREG(Integer CODIPESMANUTREG) {
         this.CODIPESMANUTREG = CODIPESMANUTREG;
         return this;
     }
@@ -254,7 +233,7 @@ public class GRUPO implements Serializable {
     * return CTAB_GPR
     * @generated
     */
-    public java.lang.Double getCTAB_GPR() {
+    public Double getCTAB_GPR() {
         return this.CTAB_GPR;
     }
 
@@ -263,7 +242,7 @@ public class GRUPO implements Serializable {
     * @param CTAB_GPR CTAB_GPR
     * @generated
     */
-    public GRUPO setCTAB_GPR(java.lang.Double CTAB_GPR) {
+    public GRUPO setCTAB_GPR(Double CTAB_GPR) {
         this.CTAB_GPR = CTAB_GPR;
         return this;
     }
@@ -290,7 +269,7 @@ public class GRUPO implements Serializable {
     * return DESC_GPR
     * @generated
     */
-    public java.lang.String getDESC_GPR() {
+    public String getDESC_GPR() {
         return this.DESC_GPR;
     }
 
@@ -299,7 +278,7 @@ public class GRUPO implements Serializable {
     * @param DESC_GPR DESC_GPR
     * @generated
     */
-    public GRUPO setDESC_GPR(java.lang.String DESC_GPR) {
+    public GRUPO setDESC_GPR(String DESC_GPR) {
         this.DESC_GPR = DESC_GPR;
         return this;
     }
@@ -362,7 +341,7 @@ public class GRUPO implements Serializable {
     * return FTAB_GPR
     * @generated
     */
-    public java.lang.Double getFTAB_GPR() {
+    public Double getFTAB_GPR() {
         return this.FTAB_GPR;
     }
 
@@ -371,7 +350,7 @@ public class GRUPO implements Serializable {
     * @param FTAB_GPR FTAB_GPR
     * @generated
     */
-    public GRUPO setFTAB_GPR(java.lang.Double FTAB_GPR) {
+    public GRUPO setFTAB_GPR(Double FTAB_GPR) {
         this.FTAB_GPR = FTAB_GPR;
         return this;
     }
@@ -380,7 +359,7 @@ public class GRUPO implements Serializable {
     * return IVCD_GPR
     * @generated
     */
-    public java.lang.String getIVCD_GPR() {
+    public String getIVCD_GPR() {
         return this.IVCD_GPR;
     }
 
@@ -389,7 +368,7 @@ public class GRUPO implements Serializable {
     * @param IVCD_GPR IVCD_GPR
     * @generated
     */
-    public GRUPO setIVCD_GPR(java.lang.String IVCD_GPR) {
+    public GRUPO setIVCD_GPR(String IVCD_GPR) {
         this.IVCD_GPR = IVCD_GPR;
         return this;
     }
@@ -398,7 +377,7 @@ public class GRUPO implements Serializable {
     * return IVD2_GPR
     * @generated
     */
-    public java.lang.String getIVD2_GPR() {
+    public String getIVD2_GPR() {
         return this.IVD2_GPR;
     }
 
@@ -407,7 +386,7 @@ public class GRUPO implements Serializable {
     * @param IVD2_GPR IVD2_GPR
     * @generated
     */
-    public GRUPO setIVD2_GPR(java.lang.String IVD2_GPR) {
+    public GRUPO setIVD2_GPR(String IVD2_GPR) {
         this.IVD2_GPR = IVD2_GPR;
         return this;
     }
@@ -416,7 +395,7 @@ public class GRUPO implements Serializable {
     * return PVPC_GPR
     * @generated
     */
-    public java.lang.String getPVPC_GPR() {
+    public String getPVPC_GPR() {
         return this.PVPC_GPR;
     }
 
@@ -425,7 +404,7 @@ public class GRUPO implements Serializable {
     * @param PVPC_GPR PVPC_GPR
     * @generated
     */
-    public GRUPO setPVPC_GPR(java.lang.String PVPC_GPR) {
+    public GRUPO setPVPC_GPR(String PVPC_GPR) {
         this.PVPC_GPR = PVPC_GPR;
         return this;
     }
@@ -434,7 +413,7 @@ public class GRUPO implements Serializable {
     * return QADC_GPR
     * @generated
     */
-    public java.lang.Integer getQADC_GPR() {
+    public Integer getQADC_GPR() {
         return this.QADC_GPR;
     }
 
@@ -443,7 +422,7 @@ public class GRUPO implements Serializable {
     * @param QADC_GPR QADC_GPR
     * @generated
     */
-    public GRUPO setQADC_GPR(java.lang.Integer QADC_GPR) {
+    public GRUPO setQADC_GPR(Integer QADC_GPR) {
         this.QADC_GPR = QADC_GPR;
         return this;
     }
@@ -452,7 +431,7 @@ public class GRUPO implements Serializable {
     * return SITU_GPR
     * @generated
     */
-    public java.lang.String getSITU_GPR() {
+    public String getSITU_GPR() {
         return this.SITU_GPR;
     }
 
@@ -461,7 +440,7 @@ public class GRUPO implements Serializable {
     * @param SITU_GPR SITU_GPR
     * @generated
     */
-    public GRUPO setSITU_GPR(java.lang.String SITU_GPR) {
+    public GRUPO setSITU_GPR(String SITU_GPR) {
         this.SITU_GPR = SITU_GPR;
         return this;
     }
@@ -470,7 +449,7 @@ public class GRUPO implements Serializable {
     * return UADC_GPR
     * @generated
     */
-    public java.lang.String getUADC_GPR() {
+    public String getUADC_GPR() {
         return this.UADC_GPR;
     }
 
@@ -479,7 +458,7 @@ public class GRUPO implements Serializable {
     * @param UADC_GPR UADC_GPR
     * @generated
     */
-    public GRUPO setUADC_GPR(java.lang.String UADC_GPR) {
+    public GRUPO setUADC_GPR(String UADC_GPR) {
         this.UADC_GPR = UADC_GPR;
         return this;
     }
@@ -488,7 +467,7 @@ public class GRUPO implements Serializable {
     * return UCVT_GPR
     * @generated
     */
-    public java.lang.String getUCVT_GPR() {
+    public String getUCVT_GPR() {
         return this.UCVT_GPR;
     }
 
@@ -497,7 +476,7 @@ public class GRUPO implements Serializable {
     * @param UCVT_GPR UCVT_GPR
     * @generated
     */
-    public GRUPO setUCVT_GPR(java.lang.String UCVT_GPR) {
+    public GRUPO setUCVT_GPR(String UCVT_GPR) {
         this.UCVT_GPR = UCVT_GPR;
         return this;
     }

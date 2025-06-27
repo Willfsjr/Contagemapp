@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>cronapp-framework-spring</artifactId>
-        <groupId>io.cronapp</groupId>
-        <version>4.0.6</version>
-        <relativePath></relativePath>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.5</version>
+        <relativePath/>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.grupoflorindo.apps.contagem</groupId>
@@ -12,7 +12,17 @@
     <packaging>war</packaging>
     <name>Contagem</name>
     <version>1.0-SNAPSHOT</version>
-    <url>http://maven.apache.org</url>
+    <url>http://maven.apache.org</url>           
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+        <repository>
+            <id>shibboleth</id>
+            <url>https://build.shibboleth.net/nexus/content/repositories/releases/</url>
+        </repository>
+    </repositories>
     <build>
         <resources>
             <resource>
@@ -56,10 +66,6 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             <plugin>
-                <groupId>io.cronapp</groupId>
-                <artifactId>cronapp-compile-plugin</artifactId>
-            </plugin>
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
             </plugin>
@@ -101,24 +107,9 @@
             <version>1.1.2</version>
         </dependency>
         <dependency>
-            <groupId>io.cronapp</groupId>
-            <artifactId>cronapi-java</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.cronapp</groupId>
-            <artifactId>cronapp-framework-java</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.cronapp</groupId>
-            <artifactId>olingo-odata2-jpa-processor-core</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-dbcp</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.cronapp</groupId>
-            <artifactId>cronapi-apm</artifactId>
+            <version>9.0.85</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -141,26 +132,35 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>io.cronapp</groupId>
-            <artifactId>cronapp-framework-auditlog</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.oracle</groupId>
-            <artifactId>ojdbc7</artifactId>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc17</artifactId>
+            <version>21.9.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.opensaml</groupId>
+            <artifactId>opensaml-core</artifactId>
+            <version>4.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
         </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <project.cronospass.resource mimetype="folder/servercontext">config</project.cronospass.resource>
-        <project.cronospass.resource mimetype="folder/src">src/main/java</project.cronospass.resource>
-        <project.cronospass.resource mimetype="folder/web">src/main/mobileapp/www</project.cronospass.resource>
-        <project.cronospass.resource mimetype="folder/web">src/main/webapp</project.cronospass.resource>
-        <project.cronospass.resource mimetype="folder/regular">src/test</project.cronospass.resource>
-        <project.cronospass.resource mimetype="folder/src">src/test/java</project.cronospass.resource>
+        <java.version>21</java.version>
     </properties>
 </project>

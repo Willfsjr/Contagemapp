@@ -1,18 +1,17 @@
 
 package app_oracle.entity;
 
-import java.io.*;
-import jakarta.persistence.*;
-import java.util.*;
-import jakarta.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonFilter;
-import cronapi.rest.security.CronappSecurity;
-import cronapi.swagger.CronappSwagger;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-
-import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela SUBGRUPO
@@ -22,9 +21,7 @@ import cronapp.framework.core.persistence.*;
 @IdClass(SUBGRUPOPK.class)
 @jakarta.persistence.Table(name = "\"SUBGRUPO\"", schema="\"NEWFRD\"")
 @XmlRootElement
-@CronappSecurity
 @JsonFilter("app_oracle.entity.SUBGRUPO")
-@CronappTable(role=CronappTableRole.CLASS)
 public class SUBGRUPO implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -36,61 +33,54 @@ public class SUBGRUPO implements Serializable {
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="INTEGER", label="CODI  GPR")
     @Column(name = "CODI_GPR", nullable = false, insertable=true, updatable=true)
-        private java.lang.Integer CODI_GPR;
+        private Integer CODI_GPR;
 
     /**
     * @generated
     */
     @Id
-    @CronappColumn(attributeType="INTEGER", label="CODI  SBG")
     @Column(name = "CODI_SBG", nullable = false, insertable=true, updatable=true)
-        private java.lang.Integer CODI_SBG;
+        private Integer CODI_SBG;
 
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODIPESLANREG")
     @Column(name = "CODIPESLANREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CODIPESLANREG;
+        private Integer CODIPESLANREG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODIPESMANUTREG")
     @Column(name = "CODIPESMANUTREG", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CODIPESMANUTREG;
+        private Integer CODIPESMANUTREG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODI  BDC")
     @Column(name = "CODI_BDC", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CODI_BDC;
+        private Integer CODI_BDC;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="CODI  CRO")
     @Column(name = "CODI_CRO", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer CODI_CRO;
+        private Integer CODI_CRO;
 
 
     /**
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DATAULTIMASINCRONIZACAOAPI")
     @Column(name = "DATAULTIMASINCRONIZACAOAPI", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DATAULTIMASINCRONIZACAOAPI;
@@ -99,17 +89,15 @@ public class SUBGRUPO implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="DESC  SBG")
     @Column(name = "DESC_SBG", nullable = true, unique = false, length=30, insertable=true, updatable=true)
         
-        private java.lang.String DESC_SBG;
+        private String DESC_SBG;
 
 
     /**
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DINSERT")
     @Column(name = "DINSERT", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DINSERT;
@@ -119,7 +107,6 @@ public class SUBGRUPO implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DTSYNCAPI")
     @Column(name = "DTSYNCAPI", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DTSYNCAPI;
@@ -129,7 +116,6 @@ public class SUBGRUPO implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
-    @CronappColumn(attributeType="DATETIME", label="DUMANUT")
     @Column(name = "DUMANUT", nullable = true, unique = false, precision=6, scale=6, insertable=true, updatable=true)
         
         private java.util.Date DUMANUT;
@@ -138,55 +124,49 @@ public class SUBGRUPO implements Serializable {
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="IMAR  SBG")
     @Column(name = "IMAR_SBG", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String IMAR_SBG;
+        private String IMAR_SBG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="IVD 2 SBG")
     @Column(name = "IVD2_SBG", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String IVD2_SBG;
+        private String IVD2_SBG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="DOUBLE", label="MLUC  SBG")
     @Column(name = "MLUC_SBG", nullable = true, unique = false, precision=9, scale=9, insertable=true, updatable=true)
         
-        private java.lang.Double MLUC_SBG;
+        private Double MLUC_SBG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="SITU  SBG")
     @Column(name = "SITU_SBG", nullable = false, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String SITU_SBG;
+        private String SITU_SBG;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="INTEGER", label="TABE  CTA")
     @Column(name = "TABE_CTA", nullable = true, unique = false, insertable=true, updatable=true)
         
-        private java.lang.Integer TABE_CTA;
+        private Integer TABE_CTA;
 
 
     /**
     * @generated
     */
-    @CronappColumn(attributeType="STRING", label="VHIT  SBG")
     @Column(name = "VHIT_SBG", nullable = true, unique = false, length=1, insertable=true, updatable=true)
         
-        private java.lang.String VHIT_SBG;
+        private String VHIT_SBG;
 
 
     /**
@@ -201,7 +181,7 @@ public class SUBGRUPO implements Serializable {
     * return CODI_GPR
     * @generated
     */
-    public java.lang.Integer getCODI_GPR() {
+    public Integer getCODI_GPR() {
         return this.CODI_GPR;
     }
 
@@ -210,7 +190,7 @@ public class SUBGRUPO implements Serializable {
     * @param CODI_GPR CODI_GPR
     * @generated
     */
-    public SUBGRUPO setCODI_GPR(java.lang.Integer CODI_GPR) {
+    public SUBGRUPO setCODI_GPR(Integer CODI_GPR) {
         this.CODI_GPR = CODI_GPR;
         return this;
     }
@@ -219,7 +199,7 @@ public class SUBGRUPO implements Serializable {
     * return CODI_SBG
     * @generated
     */
-    public java.lang.Integer getCODI_SBG() {
+    public Integer getCODI_SBG() {
         return this.CODI_SBG;
     }
 
@@ -228,7 +208,7 @@ public class SUBGRUPO implements Serializable {
     * @param CODI_SBG CODI_SBG
     * @generated
     */
-    public SUBGRUPO setCODI_SBG(java.lang.Integer CODI_SBG) {
+    public SUBGRUPO setCODI_SBG(Integer CODI_SBG) {
         this.CODI_SBG = CODI_SBG;
         return this;
     }
@@ -237,7 +217,7 @@ public class SUBGRUPO implements Serializable {
     * return CODIPESLANREG
     * @generated
     */
-    public java.lang.Integer getCODIPESLANREG() {
+    public Integer getCODIPESLANREG() {
         return this.CODIPESLANREG;
     }
 
@@ -246,7 +226,7 @@ public class SUBGRUPO implements Serializable {
     * @param CODIPESLANREG CODIPESLANREG
     * @generated
     */
-    public SUBGRUPO setCODIPESLANREG(java.lang.Integer CODIPESLANREG) {
+    public SUBGRUPO setCODIPESLANREG(Integer CODIPESLANREG) {
         this.CODIPESLANREG = CODIPESLANREG;
         return this;
     }
@@ -255,7 +235,7 @@ public class SUBGRUPO implements Serializable {
     * return CODIPESMANUTREG
     * @generated
     */
-    public java.lang.Integer getCODIPESMANUTREG() {
+    public Integer getCODIPESMANUTREG() {
         return this.CODIPESMANUTREG;
     }
 
@@ -264,7 +244,7 @@ public class SUBGRUPO implements Serializable {
     * @param CODIPESMANUTREG CODIPESMANUTREG
     * @generated
     */
-    public SUBGRUPO setCODIPESMANUTREG(java.lang.Integer CODIPESMANUTREG) {
+    public SUBGRUPO setCODIPESMANUTREG(Integer CODIPESMANUTREG) {
         this.CODIPESMANUTREG = CODIPESMANUTREG;
         return this;
     }
@@ -273,7 +253,7 @@ public class SUBGRUPO implements Serializable {
     * return CODI_BDC
     * @generated
     */
-    public java.lang.Integer getCODI_BDC() {
+    public Integer getCODI_BDC() {
         return this.CODI_BDC;
     }
 
@@ -282,7 +262,7 @@ public class SUBGRUPO implements Serializable {
     * @param CODI_BDC CODI_BDC
     * @generated
     */
-    public SUBGRUPO setCODI_BDC(java.lang.Integer CODI_BDC) {
+    public SUBGRUPO setCODI_BDC(Integer CODI_BDC) {
         this.CODI_BDC = CODI_BDC;
         return this;
     }
@@ -291,7 +271,7 @@ public class SUBGRUPO implements Serializable {
     * return CODI_CRO
     * @generated
     */
-    public java.lang.Integer getCODI_CRO() {
+    public Integer getCODI_CRO() {
         return this.CODI_CRO;
     }
 
@@ -300,7 +280,7 @@ public class SUBGRUPO implements Serializable {
     * @param CODI_CRO CODI_CRO
     * @generated
     */
-    public SUBGRUPO setCODI_CRO(java.lang.Integer CODI_CRO) {
+    public SUBGRUPO setCODI_CRO(Integer CODI_CRO) {
         this.CODI_CRO = CODI_CRO;
         return this;
     }
@@ -327,7 +307,7 @@ public class SUBGRUPO implements Serializable {
     * return DESC_SBG
     * @generated
     */
-    public java.lang.String getDESC_SBG() {
+    public String getDESC_SBG() {
         return this.DESC_SBG;
     }
 
@@ -336,7 +316,7 @@ public class SUBGRUPO implements Serializable {
     * @param DESC_SBG DESC_SBG
     * @generated
     */
-    public SUBGRUPO setDESC_SBG(java.lang.String DESC_SBG) {
+    public SUBGRUPO setDESC_SBG(String DESC_SBG) {
         this.DESC_SBG = DESC_SBG;
         return this;
     }
@@ -399,7 +379,7 @@ public class SUBGRUPO implements Serializable {
     * return IMAR_SBG
     * @generated
     */
-    public java.lang.String getIMAR_SBG() {
+    public String getIMAR_SBG() {
         return this.IMAR_SBG;
     }
 
@@ -408,7 +388,7 @@ public class SUBGRUPO implements Serializable {
     * @param IMAR_SBG IMAR_SBG
     * @generated
     */
-    public SUBGRUPO setIMAR_SBG(java.lang.String IMAR_SBG) {
+    public SUBGRUPO setIMAR_SBG(String IMAR_SBG) {
         this.IMAR_SBG = IMAR_SBG;
         return this;
     }
@@ -417,7 +397,7 @@ public class SUBGRUPO implements Serializable {
     * return IVD2_SBG
     * @generated
     */
-    public java.lang.String getIVD2_SBG() {
+    public String getIVD2_SBG() {
         return this.IVD2_SBG;
     }
 
@@ -426,7 +406,7 @@ public class SUBGRUPO implements Serializable {
     * @param IVD2_SBG IVD2_SBG
     * @generated
     */
-    public SUBGRUPO setIVD2_SBG(java.lang.String IVD2_SBG) {
+    public SUBGRUPO setIVD2_SBG(String IVD2_SBG) {
         this.IVD2_SBG = IVD2_SBG;
         return this;
     }
@@ -435,7 +415,7 @@ public class SUBGRUPO implements Serializable {
     * return MLUC_SBG
     * @generated
     */
-    public java.lang.Double getMLUC_SBG() {
+    public Double getMLUC_SBG() {
         return this.MLUC_SBG;
     }
 
@@ -444,7 +424,7 @@ public class SUBGRUPO implements Serializable {
     * @param MLUC_SBG MLUC_SBG
     * @generated
     */
-    public SUBGRUPO setMLUC_SBG(java.lang.Double MLUC_SBG) {
+    public SUBGRUPO setMLUC_SBG(Double MLUC_SBG) {
         this.MLUC_SBG = MLUC_SBG;
         return this;
     }
@@ -453,7 +433,7 @@ public class SUBGRUPO implements Serializable {
     * return SITU_SBG
     * @generated
     */
-    public java.lang.String getSITU_SBG() {
+    public String getSITU_SBG() {
         return this.SITU_SBG;
     }
 
@@ -462,7 +442,7 @@ public class SUBGRUPO implements Serializable {
     * @param SITU_SBG SITU_SBG
     * @generated
     */
-    public SUBGRUPO setSITU_SBG(java.lang.String SITU_SBG) {
+    public SUBGRUPO setSITU_SBG(String SITU_SBG) {
         this.SITU_SBG = SITU_SBG;
         return this;
     }
@@ -471,7 +451,7 @@ public class SUBGRUPO implements Serializable {
     * return TABE_CTA
     * @generated
     */
-    public java.lang.Integer getTABE_CTA() {
+    public Integer getTABE_CTA() {
         return this.TABE_CTA;
     }
 
@@ -480,7 +460,7 @@ public class SUBGRUPO implements Serializable {
     * @param TABE_CTA TABE_CTA
     * @generated
     */
-    public SUBGRUPO setTABE_CTA(java.lang.Integer TABE_CTA) {
+    public SUBGRUPO setTABE_CTA(Integer TABE_CTA) {
         this.TABE_CTA = TABE_CTA;
         return this;
     }
@@ -489,7 +469,7 @@ public class SUBGRUPO implements Serializable {
     * return VHIT_SBG
     * @generated
     */
-    public java.lang.String getVHIT_SBG() {
+    public String getVHIT_SBG() {
         return this.VHIT_SBG;
     }
 
@@ -498,7 +478,7 @@ public class SUBGRUPO implements Serializable {
     * @param VHIT_SBG VHIT_SBG
     * @generated
     */
-    public SUBGRUPO setVHIT_SBG(java.lang.String VHIT_SBG) {
+    public SUBGRUPO setVHIT_SBG(String VHIT_SBG) {
         this.VHIT_SBG = VHIT_SBG;
         return this;
     }
